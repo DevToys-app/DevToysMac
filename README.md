@@ -3,24 +3,23 @@ DevToys For mac
 
 # TODOs
 
-- [] App Icon
 - [x] Home
 - [x] Json Yaml Converter  
 - [x] Number Base Converter
-- [] HTML Encoder / Decoder (50%)
-- [] URL Encoder / Decoder (50%)
-- [] Base 64 Encoder / Decoder (50%)
-- [] JWT Encoder / Decoder
+- [x] HTML Encoder / Decoder
+- [x] URL Encoder / Decoder
+- [x] Base 64 Encoder / Decoder
+- [ ] JWT Encoder / Decoder
 - [x] JSON Formatter 
-- [] Hash Generator
-- [] UUID Generator
-- [] Lorem Ipsum Generator
-- [] Text Inspector / Case Converter
-- [] Regex Tester
-- [] Text Comparer
-- [] Markdown Preview
-- [] Color Blindness Simulator
-- [] PNG / JPEG Compressor
+- [ ] Hash Generator
+- [ ] UUID Generator
+- [ ] Lorem Ipsum Generator
+- [ ] Text Inspector / Case Converter
+- [ ] Regex Tester
+- [ ] Text Comparer
+- [ ] Markdown Preview
+- [ ] Color Blindness Simulator
+- [ ] PNG / JPEG Compressor
 
 # Screen Shots
 
