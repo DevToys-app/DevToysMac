@@ -1,6 +1,6 @@
 # DevToysMac
 
-![Dribbble Shot](https://user-images.githubusercontent.com/20896810/151812911-33c45a0c-2950-4f0e-bdca-1b802446b94f.png)
+![Dribbble Shot](https://user-images.githubusercontent.com/20896810/151813062-75292bd5-c254-4eb4-b95a-01026a06d559.png)
 
 This is the mac app version of DevToys!
 Currently under development.
