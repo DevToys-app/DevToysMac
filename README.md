@@ -1,8 +1,11 @@
 # DevToysMac
-DevToys For mac
+This is the mac app version of DevToys!
+Currently under development.
 
 # TODOs
 
+- [x] Windows/.NET like UI Components
+- [x] Minimum Code Editor
 - [x] Home
 - [x] Json Yaml Converter  
 - [x] Number Base Converter
