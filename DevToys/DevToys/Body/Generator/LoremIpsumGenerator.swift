@@ -83,8 +83,3 @@ final private class LoremIpsumGeneratorView: ToolPage {
 
 private let wordSource: Set = ["est", "quis", "ipsum", "labore", "cillum", "velit", "consequat", "dolore", "proident", "non", "sint", "nisi", "in", "officia", "sed", "deserunt", "aute", "pariatur", "aliquip", "eiusmod", "ex", "excepteur", "et", "esse", "sunt", "dolor", "nulla", "lorem", "ullamco", "amet", "culpa", "eu", "adipiscing", "commodo", "ea", "fugiat", "qui", "minim", "enim", "ut", "anim", "cupidatat", "aliqua", "laboris", "ad", "exercitation", "id", "mollit", "tempor", "veniam", "reprehenderit", "occaecat", "sit", "consectetur", "duis", "voluptate", "nostrud", "laborum", "magna", "incididunt", "elit", "irure", "do"]
 
-extension String {
-    func capitalizingFirstLetter() -> String {
-        return prefix(1).capitalized + dropFirst()
-    }
-}

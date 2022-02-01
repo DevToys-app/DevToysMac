@@ -11,7 +11,21 @@ import CoreUtil
 final class TagCloudView: NSLoadView {
     let collectionView = NSCollectionView()
     let flowLayout = LeftAlignedCollectionViewFlowLayout()
+    let buttonPublisher = PassthroughSubject<Int, Never>()
     let selectPublisher = PassthroughSubject<Int, Never>()
+    
+    var selectedItem: Int? {
+        didSet {
+            if let selectedItem = selectedItem {
+                collectionView.selectItems(at: [IndexPath(item: selectedItem, section: 0)], scrollPosition: .bottom)
+            } else {
+                collectionView.deselectAll(nil)
+            }
+        }
+    }
+    var isSelectable = false {
+        didSet { collectionView.isSelectable = isSelectable; collectionView.reloadData() }
+    }
     var items: [String] = ["Hello", "World"] {
         didSet {
             collectionView.reloadData()
@@ -55,11 +69,17 @@ extension TagCloudView: NSCollectionViewDelegateFlowLayout, NSCollectionViewData
         items.count
     }
     
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        guard let indexPath = indexPaths.first else { return }
+        selectPublisher.send(indexPath.item)
+    }
+    
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let item = collectionView.makeItem(withIdentifier: TagCloudItem.identifier, for: indexPath) as! TagCloudItem
         
+        item.cell.isEnabled = !isSelectable
         item.cell.actionPublisher
-            .sink{ self.selectPublisher.send(indexPath.item) }.store(in: &item.objectBag)
+            .sink{ self.buttonPublisher.send(indexPath.item) }.store(in: &item.objectBag)
         
         item.cell.label.stringValue = items[indexPath.item]
         return item
@@ -75,10 +95,12 @@ extension TagCloudView: NSCollectionViewDelegateFlowLayout, NSCollectionViewData
 
 final private class TagCloudItem: NSCollectionViewItem {
     static let identifier = NSUserInterfaceItemIdentifier(rawValue: "TagCloudItem")
+    override var isSelected: Bool { didSet { cell.isSelected = isSelected } }
     
     class Cell: NSLoadButton {
         let label = NSTextField(labelWithString: "")
         let backgroundLayer = ControlButtonBackgroundLayer.animationDisabled()
+        var isSelected: Bool = false { didSet { needsDisplay = true } }
         
         override func layout() {
             super.layout()
@@ -86,6 +108,16 @@ final private class TagCloudItem: NSCollectionViewItem {
         }
         override func updateLayer() {
             backgroundLayer.update(isHighlighted: isHighlighted)
+            
+            backgroundLayer.areAnimationsEnabled = true
+            if isSelected {
+                backgroundLayer.backgroundColor = NSColor.controlAccentColor.withAlphaComponent(0.5).cgColor
+                backgroundLayer.borderColor = NSColor.controlAccentColor.cgColor
+                backgroundLayer.borderWidth = 1
+            } else {
+                backgroundLayer.borderWidth = 0
+            }
+            backgroundLayer.areAnimationsEnabled = false
         }
         
         override func onAwake() {
