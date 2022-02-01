@@ -19,8 +19,8 @@ Currently under development.
 - [x] JWT Encoder / Decoder
 - [x] JSON Formatter 
 - [x] Hash Generator
-- [ ] UUID Generator
-- [ ] Lorem Ipsum Generator
+- [x] UUID Generator
+- [x] Lorem Ipsum Generator
 - [ ] Text Inspector / Case Converter
 - [ ] Regex Tester
 - [ ] Text Comparer
