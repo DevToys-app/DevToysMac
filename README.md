@@ -15,7 +15,7 @@ Currently under development.
 - [x] HTML Encoder / Decoder
 - [x] URL Encoder / Decoder
 - [x] Base 64 Encoder / Decoder
-- [ ] JWT Encoder / Decoder
+- [x] JWT Encoder / Decoder
 - [x] JSON Formatter 
 - [ ] Hash Generator
 - [ ] UUID Generator
