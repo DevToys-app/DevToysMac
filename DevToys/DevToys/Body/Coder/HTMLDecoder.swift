@@ -31,7 +31,7 @@ final class HTMLDecoderViewController: NSViewController {
 
 final private class HTMLDecoderView: ToolPage {
     
-    let encodeTextSection = TextViewSection(title: "Encoded", options: [.all])
+    let encodeTextSection = CodeViewSection(title: "Encoded", options: [.all], language: .xml)
     let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])
     
     override func onAwake() {

@@ -12,8 +12,8 @@ final class JSONYamlConverterViewController: NSViewController {
     private let cell = JSONYamlConverterView()
     
     @RestorableState("jy.format") private var formatStyle: FormatStyle = .pretty
-    @Observable private var jsonCode = ""
-    @Observable private var yamlCode = ""
+    @RestorableState("jy.json") private var jsonCode = defaultJsonCode
+    @RestorableState("jy.yaml") private var yamlCode = defaultYamlCode
     
     override func loadView() { self.view = cell }
     
@@ -114,3 +114,29 @@ final private class JSONYamlConverterView: ToolPage {
         self.addSection2(jsonSection, yamlSection)
     }
 }
+
+private let defaultJsonCode = """
+{
+    "type" : "members",
+    "members" : [
+        {
+            "name" : "Alice",
+            "age" : 16
+        },
+        {
+            "name" : "Bob",
+            "age" : 24
+        }
+    ],
+}
+"""
+
+private let defaultYamlCode = """
+members:
+- age: 16
+  name: Alice
+- age: 24
+  name: Bob
+type: members
+
+"""
