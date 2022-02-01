@@ -36,6 +36,7 @@
 		B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A83227A8BF7D007CB707 /* TextViewSection.swift */; };
 		B680A86827A8D4D1007CB707 /* TextFieldSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A86727A8D4D1007CB707 /* TextFieldSection.swift */; };
 		B680A89A27A8D9DD007CB707 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A89927A8D9DD007CB707 /* Toast.swift */; };
+		B680A8A727A8DD5D007CB707 /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A8A627A8DD5D007CB707 /* JWTDecoder.swift */; };
 		B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEDE27A534960022FED2 /* BodyViewController.swift */; };
 		B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */; };
 		B6D1AEE927A545230022FED2 /* ControlArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* ControlArea.swift */; };
@@ -108,6 +109,7 @@
 		B680A83227A8BF7D007CB707 /* TextViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewSection.swift; sourceTree = "<group>"; };
 		B680A86727A8D4D1007CB707 /* TextFieldSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSection.swift; sourceTree = "<group>"; };
 		B680A89927A8D9DD007CB707 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		B680A8A627A8DD5D007CB707 /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
 		B6D1AEDE27A534960022FED2 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
 		B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllToolCollectionItemView+.swift"; sourceTree = "<group>"; };
 		B6D1AEE827A545230022FED2 /* ControlArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlArea.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				B680A79427A68B35007CB707 /* HTMLDecoder.swift */,
 				B680A79927A69324007CB707 /* URLDecoder.swift */,
 				B680A79B27A6947D007CB707 /* Base64Decoder.swift */,
+				B680A8A627A8DD5D007CB707 /* JWTDecoder.swift */,
 			);
 			path = Coder;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				B680A79C27A6947D007CB707 /* Base64Decoder.swift in Sources */,
 				B680A86827A8D4D1007CB707 /* TextFieldSection.swift in Sources */,
 				B680A79527A68B35007CB707 /* HTMLDecoder.swift in Sources */,
+				B680A8A727A8DD5D007CB707 /* JWTDecoder.swift in Sources */,
 				B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */,
 				B608542027A67E4D003BF243 /* TextField.swift in Sources */,
 				B680A79A27A69324007CB707 /* URLDecoder.swift in Sources */,

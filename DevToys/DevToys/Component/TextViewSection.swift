@@ -32,7 +32,9 @@ protocol TextViewType: NSView {
 extension TextView: TextViewType {}
 extension CodeTextView: TextViewType {}
 
-final class TextViewSection: TextViewSectionBase<TextView> {}
+final class TextViewSection: TextViewSectionBase<TextView> {
+    
+}
 final class CodeViewSection: TextViewSectionBase<CodeTextView> {
     var language: CodeTextView.Language = .json { didSet { textView.language = language } }
     
@@ -60,7 +62,7 @@ class TextViewSectionBase<TextView: TextViewType>: ControlSection {
     
     var textSectionOptions = TextSectionOptions.defaultInput { didSet { updateToolbar() } }
     
-    fileprivate let textView = TextView()
+    let textView = TextView()
     
     convenience init(title: String, options: TextSectionOptions) {
         self.init()

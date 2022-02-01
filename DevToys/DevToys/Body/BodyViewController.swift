@@ -18,6 +18,7 @@ final class BodyViewController: NSViewController {
     private lazy var HTMLDecoderController = HTMLDecoderViewController()
     private lazy var URLDecoderController = URLDecoderViewController()
     private lazy var base64DecoderController = Base64DecoderViewController()
+    private lazy var jwtDecoderController = JWTDecoderViewController()
     
     private lazy var notImplementedController = NotImplementedViewController()
     
@@ -36,6 +37,7 @@ final class BodyViewController: NSViewController {
                 case .htmlDecoder: self.replaceContentViewController(HTMLDecoderController)
                 case .urlDecoder: self.replaceContentViewController(URLDecoderController)
                 case .base64Decoder: self.replaceContentViewController(base64DecoderController)
+                case .jwtDecoder: self.replaceContentViewController(jwtDecoderController)
                 default: self.replaceContentViewController(notImplementedController)
                 }
             }
