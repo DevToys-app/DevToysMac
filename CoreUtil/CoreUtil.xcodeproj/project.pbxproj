@@ -43,6 +43,10 @@
 		B64B209527A5323A00AC2601 /* Combine+ObjectBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B209427A5323A00AC2601 /* Combine+ObjectBag.swift */; };
 		B680A79127A681F8007CB707 /* NSTextField+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79027A681F8007CB707 /* NSTextField+Combine.swift */; };
 		B680A86527A8C58C007CB707 /* Combine+Peek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A86427A8C58C007CB707 /* Combine+Peek.swift */; };
+		B680A89C27A8DA16007CB707 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A89B27A8DA16007CB707 /* Action.swift */; };
+		B680A8A027A8DA78007CB707 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = B680A89F27A8DA78007CB707 /* OrderedCollections */; };
+		B680A8A227A8DA78007CB707 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = B680A8A127A8DA78007CB707 /* DequeModule */; };
+		B680A8A427A8DA78007CB707 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = B680A8A327A8DA78007CB707 /* Collections */; };
 		B6D1AF3D27A60A210022FED2 /* ExceptionHanlder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AF3A27A60A210022FED2 /* ExceptionHanlder.m */; };
 		B6D1AF3E27A60A210022FED2 /* ExceptionHanlder.h in Headers */ = {isa = PBXBuildFile; fileRef = B6D1AF3B27A60A210022FED2 /* ExceptionHanlder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6D1AF3F27A60A210022FED2 /* ExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AF3C27A60A210022FED2 /* ExceptionHandler.swift */; };
@@ -85,6 +89,7 @@
 		B64B209427A5323A00AC2601 /* Combine+ObjectBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Combine+ObjectBag.swift"; sourceTree = "<group>"; };
 		B680A79027A681F8007CB707 /* NSTextField+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextField+Combine.swift"; sourceTree = "<group>"; };
 		B680A86427A8C58C007CB707 /* Combine+Peek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Peek.swift"; sourceTree = "<group>"; };
+		B680A89B27A8DA16007CB707 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		B6D1AF3A27A60A210022FED2 /* ExceptionHanlder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionHanlder.m; sourceTree = "<group>"; };
 		B6D1AF3B27A60A210022FED2 /* ExceptionHanlder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionHanlder.h; sourceTree = "<group>"; };
 		B6D1AF3C27A60A210022FED2 /* ExceptionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionHandler.swift; sourceTree = "<group>"; };
@@ -96,7 +101,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B64B1F6327A4FC5100AC2601 /* Promise in Frameworks */,
+				B680A8A227A8DA78007CB707 /* DequeModule in Frameworks */,
+				B680A8A427A8DA78007CB707 /* Collections in Frameworks */,
 				B64B1F6827A4FC8A00AC2601 /* SnapKit in Frameworks */,
+				B680A8A027A8DA78007CB707 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +206,7 @@
 				B64B201027A50E5200AC2601 /* NSColorView.swift */,
 				B64B1ECF27A4F71200AC2601 /* ViewPlaceholder.swift */,
 				B64B1ED527A4F72D00AC2601 /* Query.swift */,
+				B680A89B27A8DA16007CB707 /* Action.swift */,
 				B64B205827A530D700AC2601 /* NSViewController+ChainObject.swift */,
 				B64B205B27A530E800AC2601 /* NSViewController+StateObject.swift */,
 				B64B1ED827A4F73700AC2601 /* Observable.swift */,
@@ -260,6 +269,9 @@
 			packageProductDependencies = (
 				B64B1F6227A4FC5100AC2601 /* Promise */,
 				B64B1F6727A4FC8A00AC2601 /* SnapKit */,
+				B680A89F27A8DA78007CB707 /* OrderedCollections */,
+				B680A8A127A8DA78007CB707 /* DequeModule */,
+				B680A8A327A8DA78007CB707 /* Collections */,
 			);
 			productName = CoreUtil;
 			productReference = B64B1E8F27A4F67000AC2601 /* CoreUtil.framework */;
@@ -291,6 +303,7 @@
 			packageReferences = (
 				B64B1F6127A4FC5100AC2601 /* XCRemoteSwiftPackageReference "Promise" */,
 				B64B1F6627A4FC8A00AC2601 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B680A89E27A8DA78007CB707 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = B64B1E9027A4F67000AC2601 /* Products */;
 			projectDirPath = "";
@@ -317,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D1AF3D27A60A210022FED2 /* ExceptionHanlder.m in Sources */,
+				B680A89C27A8DA16007CB707 /* Action.swift in Sources */,
 				B64B1F6B27A4FC8F00AC2601 /* Export.swift in Sources */,
 				B64B205C27A530E800AC2601 /* NSViewController+StateObject.swift in Sources */,
 				B608540827A66635003BF243 /* NSControl+Combine.swift in Sources */,
@@ -573,6 +587,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		B680A89E27A8DA78007CB707 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -585,6 +607,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B64B1F6627A4FC8A00AC2601 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		B680A89F27A8DA78007CB707 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B680A89E27A8DA78007CB707 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+		B680A8A127A8DA78007CB707 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B680A89E27A8DA78007CB707 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		B680A8A327A8DA78007CB707 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B680A89E27A8DA78007CB707 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

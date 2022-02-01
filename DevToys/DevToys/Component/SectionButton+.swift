@@ -55,6 +55,7 @@ final class CopySectionButton: SectionButton {
                 guard let stringContent = self.stringContent else { return NSSound.beep() }
                 NSPasteboard.general.prepareForNewContents(with: .none)
                 NSPasteboard.general.setString(stringContent, forType: .string)
+                Toast.show(message: "Copied!")
             }
             .store(in: &objectBag)
     }
@@ -63,7 +64,8 @@ final class CopySectionButton: SectionButton {
 final class PasteSectionButton: SectionButton {
     var stringPublisher: AnyPublisher<String?, Never> {
         self.actionPublisher
-            .map{ NSPasteboard.general.string(forType: .string) }
+            .peek{ Toast.show(message: "Pasted!") }
+            .map{ return NSPasteboard.general.string(forType: .string) }
             .eraseToAnyPublisher()
     }
     

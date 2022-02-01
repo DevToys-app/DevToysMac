@@ -17,7 +17,7 @@ struct TextSectionOptions: OptionSet {
     static let outputable = TextSectionOptions(rawValue: 1 << 4)
     static let copyable = TextSectionOptions(rawValue: 1 << 5)
     
-    static let defaultInput = TextSectionOptions([.inputable, .clearable, .pastable, .fileImportable])
+    static let defaultInput = TextSectionOptions([.inputable, .clearable, .pastable, .fileImportable, .outputable])
     static let defaultOutput = TextSectionOptions([.outputable, .copyable])
 }
 

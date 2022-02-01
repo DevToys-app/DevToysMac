@@ -11,32 +11,46 @@ final class NumberBaseConverterViewController: NSViewController {
     private let cell = NumberBaseConverterView()
     
     @RestorableState("numbase.format") private var formatNumber = true
-    @RestorableState("numbase.type") private var inputType = InputType.decimal
-    @Observable private var inputValue: Int? = nil
+    @RestorableState("numbase.2") private var value2 = "1 0101 1010 0101 0011"
+    @RestorableState("numbase.10") private var value10 = "88,659"
+    @RestorableState("numbase.8") private var value8 = "255 123"
+    @RestorableState("numbase.16") private var value16 = "1 5A53"
     
     override func loadView() { self.view = cell }
     
     override func viewDidLoad() {
-        self.cell.inputTypePicker.itemPublisher
-            .sink{[unowned self] in self.inputType = $0 }.store(in: &objectBag)
-        self.cell.formatSwitch.actionPublisher
-            .sink{[unowned self] in self.formatNumber = self.cell.formatSwitch.state == NSControl.StateValue.on }.store(in: &objectBag)
-        self.cell.inputTextField.changeStringPublisher.combineLatest($inputType)
-            .sink{[unowned self] in processValue($0, inputType: $1) }.store(in: &objectBag)
-        
+        self.$value2
+            .sink{[unowned self] in cell.binarySection.string = $0 }.store(in: &objectBag)
+        self.$value8
+            .sink{[unowned self] in cell.octalSection.string = $0 }.store(in: &objectBag)
+        self.$value10
+            .sink{[unowned self] in cell.decimalSection.string = $0 }.store(in: &objectBag)
+        self.$value16
+            .sink{[unowned self] in cell.hexSection.string = $0 }.store(in: &objectBag)
         self.$formatNumber
-            .sink{[unowned self] in self.cell.formatSwitch.state = $0 ? .on : .off }.store(in: &objectBag)
-        self.$inputType
-            .sink{[unowned self] in self.cell.inputTypePicker.selectedItem = $0 }.store(in: &objectBag)
+            .sink{[unowned self] in cell.formatSwitch.state = $0 ? .on : .off }.store(in: &objectBag)
         
-        self.$inputValue.combineLatest($formatNumber)
-            .sink{[unowned self] in self.cell.hexTextField.string = convertHex($0, format: $1) }.store(in: &objectBag)
-        self.$inputValue.combineLatest($formatNumber)
-            .sink{[unowned self] in self.cell.decimalTextField.string = convertDecimal($0, format: $1) }.store(in: &objectBag)
-        self.$inputValue.combineLatest($formatNumber)
-            .sink{[unowned self] in self.cell.octalTextField.string = convertOctal($0, format: $1) }.store(in: &objectBag)
-        self.$inputValue.combineLatest($formatNumber)
-            .sink{[unowned self] in self.cell.binaryTextField.string = convertBinary($0, format: $1) }.store(in: &objectBag)
+        self.cell.binarySection.stringPublisher
+            .sink{[unowned self] in self.updateValue(string: $0, inputRadix: 2) }.store(in: &objectBag)
+        self.cell.octalSection.stringPublisher
+            .sink{[unowned self] in self.updateValue(string: $0, inputRadix: 8) }.store(in: &objectBag)
+        self.cell.decimalSection.stringPublisher
+            .sink{[unowned self] in self.updateValue(string: $0, inputRadix: 10) }.store(in: &objectBag)
+        self.cell.hexSection.stringPublisher
+            .sink{[unowned self] in self.updateValue(string: $0, inputRadix: 16) }.store(in: &objectBag)
+        self.cell.formatSwitch.actionPublisher.map{[unowned self] in self.cell.formatSwitch.state == .on }
+            .sink{[unowned self] in self.formatNumber = $0; updateFormat() }.store(in: &objectBag)
+    }
+    
+    private func updateFormat() {
+        self.updateValue(string: value10, inputRadix: 10)
+    }
+    private func updateValue(string: String, inputRadix: Int) {
+        let value = Int(string.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: ",", with: ""), radix: inputRadix)
+        self.value2 = self.convertBinary(value, format: self.formatNumber)
+        self.value8 = self.convertOctal(value, format: self.formatNumber)
+        self.value10 = self.convertDecimal(value, format: self.formatNumber)
+        self.value16 = self.convertHex(value, format: self.formatNumber)
     }
     
     private func convertHex(_ value: Int?, format: Bool) -> String {
@@ -81,64 +95,28 @@ final class NumberBaseConverterViewController: NSViewController {
         guard let value = value else { return "0" }
         return String(value, radix: radix, uppercase: true)
     }
-    
-    private func processValue(_ value: String, inputType: InputType) {
-        switch inputType {
-        case .binary: self.inputValue = Int(value, radix: 2)
-        case .octal: self.inputValue = Int(value, radix: 8)
-        case .decimal: self.inputValue = Int(value, radix: 10)
-        case .hexdecimal: self.inputValue = Int(value, radix: 16)
-        }
-    }
-}
-
-private enum InputType: String, TextItem {
-    case binary = "Binary"
-    case decimal = "Decimal"
-    case octal = "Octal"
-    case hexdecimal = "Hexadecimal"
-    
-    var title: String { rawValue }
 }
 
 final private class NumberBaseConverterView: ToolPage {
     let formatSwitch = NSSwitch()
-    let inputTypePicker = EnumPopupButton<InputType>()
     
-    let pasteButton = PasteSectionButton()
-    let inputTextField = TextField(showCopyButton: false)
-    
-    let hexTextField = TextField()
-    let decimalTextField = TextField()
-    let octalTextField = TextField()
-    let binaryTextField = TextField()
+    let decimalSection = TextFieldSection(title: "Decimal")
+    let hexSection = TextFieldSection(title: "Hexdecimal")
+    let octalSection = TextFieldSection(title: "Octal")
+    let binarySection = TextFieldSection(title: "Binary")
     
     private lazy var formatNumberArea = ControlArea(icon: R.Image.format, title: "Format number", control: formatSwitch)
-    private lazy var inputTypeArea = ControlArea(icon: R.Image.convert, title: "Input type", message: "Select which input type you want to use", control: inputTypePicker)
     
-    private lazy var configurationSection = ControlSection(title: "Configuration", items: [formatNumberArea, inputTypeArea])
-    private lazy var inputSection = ControlSection(title: "Input", items: [inputTextField], toolbarItems: [pasteButton])
-    private lazy var hexSection = ControlSection(title: "Hexadecimal", items: [hexTextField]) => { $0.minTitle = true }
-    private lazy var decimalSection = ControlSection(title: "Decimal", items: [decimalTextField]) => { $0.minTitle = true }
-    private lazy var octalSection = ControlSection(title: "Octal", items: [octalTextField]) => { $0.minTitle = true }
-    private lazy var binarySection = ControlSection(title: "Binary", items: [binaryTextField]) => { $0.minTitle = true }
+    private lazy var configurationSection = ControlSection(title: "Configuration", items: [formatNumberArea])
     
     override func onAwake() {
         self.title = "Number Base Converter"
         
         self.addSection(configurationSection)
         
-        self.addSection(inputSection)
-        self.addSection(hexSection)
         self.addSection(decimalSection)
+        self.addSection(hexSection)
         self.addSection(octalSection)
         self.addSection(binarySection)
-        
-        self.hexTextField.isEditable = false
-        self.decimalTextField.isEditable = false
-        self.octalTextField.isEditable = false
-        self.binaryTextField.isEditable = false
-        
-        
     }
 }

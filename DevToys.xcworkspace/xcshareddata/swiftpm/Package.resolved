@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "swift-collections",
+        "repositoryURL": "https://github.com/apple/swift-collections",
+        "state": {
+          "branch": null,
+          "revision": "48254824bb4248676bf7ce56014ff57b142b77eb",
+          "version": "1.0.2"
+        }
+      },
+      {
         "package": "HTMLEntities",
         "repositoryURL": "https://github.com/Kitura/swift-html-entities.git",
         "state": {

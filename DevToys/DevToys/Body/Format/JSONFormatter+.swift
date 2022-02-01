@@ -10,41 +10,34 @@ import SwiftJSONFormatter
 
 final class JSONFormatterViewController: NSViewController {
     
-    @RestorableState("json.spacingtype") var spacingType: JSONSpacingType = .spaces2
-    @RestorableState("json.raw") var rawCode: String = #"{ "Hello": "World" }"#
-    @Observable var formattedCode: String = #"{ "Hello": "World" }"#
+    @RestorableState("json.spacingtype") var spacingType: JSONSpacingType = .spaces4
     
-    private let contentView = JSONFormatterView()
+    @RestorableState("jq.rawCode") var rawCode: String = #"{ "Hello": "World" }"#
+    @RestorableState("jq.formattedCode") var formattedCode: String = "{\n    \"Hello\": \"World\"\n}"
     
-    override func loadView() { self.view = contentView }
+    private let cell = JSONFormatterView()
+    
+    override func loadView() { self.view = cell }
     
     override func viewDidLoad() {
-//        self.$spacingType
-//            .sink{[unowned self] in contentView.indentControl.selectedItem = $0 }.store(in: &objectBag)
-//        self.$rawCode.combineLatest($spacingType)
-//            .sink{[unowned self] in self.formattedCode = self.processJSON($0, spacingType: $1) }.store(in: &objectBag)
-//        self.$rawCode
-//            .sink{[unowned self] in self.contentView.codeInput.code = $0 }.store(in: &objectBag)
-//        self.$formattedCode
-//            .sink{[unowned self] in contentView.codeOutput.code = $0 }.store(in: &objectBag)
-//        self.$formattedCode
-//            .sink{[unowned self] in contentView.copyButton.stringContent = $0 }.store(in: &objectBag)
-//        
-//        self.contentView.indentControl.itemPublisher
-//            .sink{ self.spacingType = $0 }.store(in: &objectBag)
-//        self.contentView.codeInput.codePublisher
-//            .sink{[unowned self] in self.rawCode = $0 }.store(in: &objectBag)
-//        self.contentView.pasteButton.stringPublisher.compactMap{ $0 }
-//            .sink{[unowned self] in self.rawCode = $0 }.store(in: &objectBag)
-//        self.contentView.clearButton.actionPublisher
-//            .sink{[unowned self] in self.rawCode = "" }.store(in: &objectBag)
-//        self.contentView.openButton.urlPublisher
-//            .sink{[unowned self] in self.processURL($0) }.store(in: &objectBag)
+        
+        print(TextSectionOptions.defaultInput.contains(.inputable))
+        
+        self.$spacingType
+            .sink{[unowned self] in cell.indentControl.selectedItem = $0 }.store(in: &objectBag)
+        self.$rawCode
+            .sink{[unowned self] in cell.inputSection.string = $0 }.store(in: &objectBag)
+        self.$formattedCode
+            .sink{[unowned self] in cell.outputSection.string = $0 }.store(in: &objectBag)
+        
+        self.cell.inputSection.stringPublisher
+            .sink{[unowned self] in self.rawCode = $0; updateFormattedCode() }.store(in: &objectBag)
+        self.cell.indentControl.itemPublisher
+            .sink{[unowned self] in self.spacingType = $0; updateFormattedCode() }.store(in: &objectBag)
     }
     
-    private func processURL(_ url: URL) {
-        guard let code = try? String(contentsOf: url) else { return NSSound.beep() }
-        self.rawCode = code
+    private func updateFormattedCode() {
+        self.formattedCode = processJSON(rawCode, spacingType: spacingType)
     }
     
     private func processJSON(_ code: String, spacingType: JSONSpacingType) -> String {
@@ -69,26 +62,15 @@ enum JSONSpacingType: String, TextItem {
 final private class JSONFormatterView: ToolPage {
     
     let indentControl = EnumPopupButton<JSONSpacingType>()
-    let codeInput = CodeTextView(language: .javascript)
-    let codeOutput = CodeTextView(language: .javascript)
-    let pasteButton = PasteSectionButton()
-    let openButton = OpenSectionButton()
-    let clearButton = SectionButton(image: R.Image.clear)
-    let copyButton = CopySectionButton()
+    let inputSection = CodeViewSection(title: "Input", options: .defaultInput, language: .javascript)
+    let outputSection = CodeViewSection(title: "Output", options: .defaultOutput, language: .javascript)
         
     private lazy var indentArea = ControlArea(icon: R.Image.spacing, title: "Indentation", control: indentControl)
     
     private lazy var configurationSection = ControlSection(title: "Configuration", items: [indentArea])
     
-    private lazy var inputSection = ControlSection(title: "Input", items: [codeInput], toolbarItems: [pasteButton, openButton, clearButton])
-    private lazy var outputSection = ControlSection(title: "Output", items: [codeOutput], toolbarItems: [copyButton])
-    
     override func onAwake() {
         self.addSection(configurationSection)
         self.addSection2(inputSection, outputSection)
-        
-        self.codeInput.snp.makeConstraints{ make in
-            make.height.equalTo(320)
-        }
     }
 }

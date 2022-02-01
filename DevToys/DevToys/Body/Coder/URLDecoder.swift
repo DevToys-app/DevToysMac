@@ -10,13 +10,21 @@ import CoreUtil
 final class URLDecoderViewController: NSViewController {
     private let cell = URLDecoderView()
     
+    @RestorableState("url.rawString") var rawString = "https://www.microsoft.com/ja-jp/p/devtoys/9pgcv4v3bk4w?rtc=1#activetab=pivot:overviewtab"
+    @RestorableState("url.formattedString") var formattedString = "https%3A%2F%2Fwww.microsoft.com%2Fja-jp%2Fp%2Fdevtoys%2F9pgcv4v3bk4w%3Frtc%3D1%23activetab%3Dpivot%3Aoverviewtab"
+    
     override func loadView() { self.view = cell }
     
     override func viewDidLoad() {
-        cell.inputTextView.stringPublisher
-            .sink{[unowned self] in cell.outputTextView.string = encodeToURL($0) }.store(in: &objectBag)
-        cell.outputTextView.stringPublisher
-            .sink{[unowned self] in cell.inputTextView.string = $0.removingPercentEncoding ?? "???" }.store(in: &objectBag)
+        self.cell.encodeTextSection.stringPublisher
+            .sink{[unowned self] in self.rawString = $0; self.formattedString = encodeToURL($0) }.store(in: &objectBag)
+        self.cell.decodeTextSection.stringPublisher
+            .sink{[unowned self] in self.formattedString = $0; if let s = $0.removingPercentEncoding { self.rawString = s } }.store(in: &objectBag)
+        
+        self.$rawString
+            .sink{[unowned self] in self.cell.encodeTextSection.string = $0 }.store(in: &objectBag)
+        self.$formattedString
+            .sink{[unowned self] in self.cell.decodeTextSection.string = $0 }.store(in: &objectBag)
     }
     
     private func encodeToURL(_ string: String) -> String {
@@ -26,24 +34,13 @@ final class URLDecoderViewController: NSViewController {
 }
 
 final private class URLDecoderView: ToolPage {
-    
-    let inputTextView = TextView()
-    let outputTextView = TextView()
-    
-    private lazy var inputSection = ControlSection(title: "Encoded", items: [inputTextView]) => { $0.minTitle = true }
-    private lazy var outputSection = ControlSection(title: "Decoded", items: [outputTextView]) => { $0.minTitle = true }
+    let encodeTextSection = TextViewSection(title: "Encoded", options: [.all])
+    let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])
     
     override func onAwake() {
         self.title = "URL Encoder / Decoder"
         
-        self.addSection(inputSection)
-        self.addSection(outputSection)
-        
-        self.inputTextView.snp.makeConstraints{ make in
-            make.height.equalTo(200)
-        }
-        self.outputTextView.snp.makeConstraints{ make in
-            make.height.equalTo(200)
-        }
+        self.addSection(encodeTextSection)
+        self.addSection(decodeTextSection)
     }
 }

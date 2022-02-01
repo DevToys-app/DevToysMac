@@ -11,22 +11,21 @@ import HTMLEntities
 final class HTMLDecoderViewController: NSViewController {
     private let cell = HTMLDecoderView()
     
-    @Observable var rawString = "<script>alert(\"abc\")</script>"
+    @RestorableState("html.rawString") var rawString = "<script>alert(\"abc\")</script>"
+    @RestorableState("html.formattedString") var formattedString = "&#x3C;script&#x3E;alert(&#x22;abc&#x22;)&#x3C;/script&#x3E;"
     
     override func loadView() { self.view = cell }
     
     override func viewDidLoad() {
-        cell.encodeTextSection.stringPublisher
-            .sink{[unowned self] in self.rawString = $0 }.store(in: &objectBag)
-        cell.decodeTextSection.stringPublisher
-            .sink{[unowned self] in self.rawString = $0.htmlUnescape() }.store(in: &objectBag)
+        self.cell.encodeTextSection.stringPublisher
+            .sink{[unowned self] in self.rawString = $0; self.formattedString = $0.htmlEscape() }.store(in: &objectBag)
+        self.cell.decodeTextSection.stringPublisher
+            .sink{[unowned self] in self.formattedString = $0; self.rawString = $0.htmlUnescape() }.store(in: &objectBag)
         
         self.$rawString
-            .sink{[unowned self] in
-                self.cell.encodeTextSection.string = $0
-                self.cell.decodeTextSection.string = $0.htmlEscape()
-            }
-            .store(in: &objectBag)
+            .sink{[unowned self] in self.cell.encodeTextSection.string = $0 }.store(in: &objectBag)
+        self.$formattedString
+            .sink{[unowned self] in self.cell.decodeTextSection.string = $0 }.store(in: &objectBag)
     }
 }
 
