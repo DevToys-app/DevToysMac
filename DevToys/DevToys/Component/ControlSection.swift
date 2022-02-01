@@ -48,7 +48,7 @@ class ControlSection: NSLoadView {
     
     private let titleStackView = NSStackView()
     private let toolbarStackView = NSStackView()
-    private let contentStackView = NSStackView()
+    let contentStackView = NSStackView()
     private let stackView = NSStackView()
     
     override func onAwake() {

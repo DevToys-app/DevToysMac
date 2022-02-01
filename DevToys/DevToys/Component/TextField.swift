@@ -20,9 +20,7 @@ final class TextField: NSLoadView {
     var showCopyButton = false {
         didSet { copyButton.isHidden = !showCopyButton }
     }
-    var isEditable: Bool {
-        get { textField.textField.isEditable } set { textField.textField.isEditable = newValue }
-    }
+    var isEditable: Bool = true
     
     convenience init(showCopyButton: Bool) {
         self.init()
@@ -31,6 +29,10 @@ final class TextField: NSLoadView {
     
     private func setup(showCopyButton: Bool) {
         self.showCopyButton = showCopyButton
+    }
+    
+    override func layout() {
+        super.layout()
     }
     
     private let textField = DotNetTextField()
@@ -47,6 +49,7 @@ final class TextField: NSLoadView {
         }
         
         self.stackView.addArrangedSubview(textField)
+        self.textField.textField.lineBreakMode = .byTruncatingTail
         self.stackView.addArrangedSubview(copyButton)
         
         self.textField.snp.makeConstraints{ make in

@@ -37,6 +37,8 @@
 		B680A86827A8D4D1007CB707 /* TextFieldSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A86727A8D4D1007CB707 /* TextFieldSection.swift */; };
 		B680A89A27A8D9DD007CB707 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A89927A8D9DD007CB707 /* Toast.swift */; };
 		B680A8A727A8DD5D007CB707 /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A8A627A8DD5D007CB707 /* JWTDecoder.swift */; };
+		B680A8AA27A8E106007CB707 /* HashGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A8A927A8E106007CB707 /* HashGenerator.swift */; };
+		B680A8AD27A8E31C007CB707 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B680A8AC27A8E31C007CB707 /* CryptoSwift */; };
 		B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEDE27A534960022FED2 /* BodyViewController.swift */; };
 		B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */; };
 		B6D1AEE927A545230022FED2 /* ControlArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* ControlArea.swift */; };
@@ -110,6 +112,7 @@
 		B680A86727A8D4D1007CB707 /* TextFieldSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSection.swift; sourceTree = "<group>"; };
 		B680A89927A8D9DD007CB707 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		B680A8A627A8DD5D007CB707 /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
+		B680A8A927A8E106007CB707 /* HashGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashGenerator.swift; sourceTree = "<group>"; };
 		B6D1AEDE27A534960022FED2 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
 		B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllToolCollectionItemView+.swift"; sourceTree = "<group>"; };
 		B6D1AEE827A545230022FED2 /* ControlArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlArea.swift; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 				B680A79827A69268007CB707 /* HTMLEntities in Frameworks */,
 				B608541B27A672E3003BF243 /* Yams in Frameworks */,
 				B66850F227A65FC200A3FE01 /* SwiftJSONFormatter in Frameworks */,
+				B680A8AD27A8E31C007CB707 /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +266,14 @@
 			path = Coder;
 			sourceTree = "<group>";
 		};
+		B680A8A827A8E0F8007CB707 /* Generator */ = {
+			isa = PBXGroup;
+			children = (
+				B680A8A927A8E106007CB707 /* HashGenerator.swift */,
+			);
+			path = Generator;
+			sourceTree = "<group>";
+		};
 		B6D1AEDD27A534850022FED2 /* Body */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +282,7 @@
 				B608542127A67FF7003BF243 /* Convert */,
 				B608542227A68008003BF243 /* Format */,
 				B680A79327A68B2D007CB707 /* Coder */,
+				B680A8A827A8E0F8007CB707 /* Generator */,
 			);
 			path = Body;
 			sourceTree = "<group>";
@@ -316,6 +329,7 @@
 				B66850F127A65FC200A3FE01 /* SwiftJSONFormatter */,
 				B608541A27A672E3003BF243 /* Yams */,
 				B680A79727A69268007CB707 /* HTMLEntities */,
+				B680A8AC27A8E31C007CB707 /* CryptoSwift */,
 			);
 			productName = DevToys;
 			productReference = B64B1E7027A4F5E200AC2601 /* DevToys.app */;
@@ -349,6 +363,7 @@
 				B66850F027A65FC200A3FE01 /* XCRemoteSwiftPackageReference "SwiftJSONFormatter" */,
 				B608541927A672E3003BF243 /* XCRemoteSwiftPackageReference "Yams" */,
 				B680A79627A69268007CB707 /* XCRemoteSwiftPackageReference "swift-html-entities" */,
+				B680A8AB27A8E31C007CB707 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
 			);
 			productRefGroup = B64B1E7127A4F5E200AC2601 /* Products */;
 			projectDirPath = "";
@@ -393,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B608541E27A67B48003BF243 /* NumberBaseConverter+.swift in Sources */,
+				B680A8AA27A8E106007CB707 /* HashGenerator.swift in Sources */,
 				B64B202027A523A200AC2601 /* ToolmenuCell.swift in Sources */,
 				B608540B27A66694003BF243 /* SectionButton+.swift in Sources */,
 				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
@@ -500,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -555,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -658,6 +674,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		B680A8AB27A8E31C007CB707 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.2;
+			};
+		};
 		B6D1AF0427A5603B0022FED2 /* XCRemoteSwiftPackageReference "Highlightr" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/raspu/Highlightr";
@@ -683,6 +707,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B680A79627A69268007CB707 /* XCRemoteSwiftPackageReference "swift-html-entities" */;
 			productName = HTMLEntities;
+		};
+		B680A8AC27A8E31C007CB707 /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B680A8AB27A8E31C007CB707 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
 		};
 		B6D1AF0527A5603B0022FED2 /* Highlightr */ = {
 			isa = XCSwiftPackageProductDependency;

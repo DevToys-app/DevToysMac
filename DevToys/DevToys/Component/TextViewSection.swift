@@ -32,9 +32,7 @@ protocol TextViewType: NSView {
 extension TextView: TextViewType {}
 extension CodeTextView: TextViewType {}
 
-final class TextViewSection: TextViewSectionBase<TextView> {
-    
-}
+final class TextViewSection: TextViewSectionBase<TextView> {}
 final class CodeViewSection: TextViewSectionBase<CodeTextView> {
     var language: CodeTextView.Language = .json { didSet { textView.language = language } }
     
