@@ -1,5 +1,31 @@
 # DevToysMac
-DevToys For mac
+
+![Dribbble Shot](https://user-images.githubusercontent.com/20896810/151813062-75292bd5-c254-4eb4-b95a-01026a06d559.png)
+
+This is the mac app version of DevToys!
+Currently under development.
+
+# TODOs
+
+- [x] Windows/.NET like UI Components
+- [x] Minimum Code Editor
+- [x] Home
+- [x] Json Yaml Converter  
+- [x] Number Base Converter
+- [x] HTML Encoder / Decoder
+- [x] URL Encoder / Decoder
+- [x] Base 64 Encoder / Decoder
+- [ ] JWT Encoder / Decoder
+- [x] JSON Formatter 
+- [ ] Hash Generator
+- [ ] UUID Generator
+- [ ] Lorem Ipsum Generator
+- [ ] Text Inspector / Case Converter
+- [ ] Regex Tester
+- [ ] Text Comparer
+- [ ] Markdown Preview
+- [ ] Color Blindness Simulator
+- [ ] PNG / JPEG Compressor
 
 # Screen Shots
 
