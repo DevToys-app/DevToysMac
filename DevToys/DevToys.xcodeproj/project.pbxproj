@@ -33,6 +33,7 @@
 		B680A79827A69268007CB707 /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = B680A79727A69268007CB707 /* HTMLEntities */; };
 		B680A79A27A69324007CB707 /* URLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79927A69324007CB707 /* URLDecoder.swift */; };
 		B680A79C27A6947D007CB707 /* Base64Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79B27A6947D007CB707 /* Base64Decoder.swift */; };
+		B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A83227A8BF7D007CB707 /* TextViewSection.swift */; };
 		B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEDE27A534960022FED2 /* BodyViewController.swift */; };
 		B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */; };
 		B6D1AEE927A545230022FED2 /* ControlArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* ControlArea.swift */; };
@@ -102,6 +103,7 @@
 		B680A79427A68B35007CB707 /* HTMLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLDecoder.swift; sourceTree = "<group>"; };
 		B680A79927A69324007CB707 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
 		B680A79B27A6947D007CB707 /* Base64Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Decoder.swift; sourceTree = "<group>"; };
+		B680A83227A8BF7D007CB707 /* TextViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewSection.swift; sourceTree = "<group>"; };
 		B6D1AEDE27A534960022FED2 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
 		B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllToolCollectionItemView+.swift"; sourceTree = "<group>"; };
 		B6D1AEE827A545230022FED2 /* ControlArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlArea.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				B6D1AEFC27A55ED50022FED2 /* CodeTextView.swift */,
 				B66850ED27A64D3200A3FE01 /* ToolPage.swift */,
 				B608541F27A67E4D003BF243 /* TextField.swift */,
+				B680A83227A8BF7D007CB707 /* TextViewSection.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				B608541E27A67B48003BF243 /* NumberBaseConverter+.swift in Sources */,
 				B64B202027A523A200AC2601 /* ToolmenuCell.swift in Sources */,
 				B608540B27A66694003BF243 /* SectionButton+.swift in Sources */,
+				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
 				B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */,
 				B6D1AEF727A54F750022FED2 /* SectionButton.swift in Sources */,
 				B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */,

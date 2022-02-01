@@ -11,6 +11,13 @@ final class OpenSectionButton: SectionButton {
     
     let urlPublisher = PassthroughSubject<URL, Never>()
     
+    var fileStringPublisher: AnyPublisher<String, Never> {
+        urlPublisher.compactMap{ try? String(contentsOf: $0) }.eraseToAnyPublisher()
+    }
+    var fileDataPublisher: AnyPublisher<Data, Never> {
+        urlPublisher.compactMap{ try? Data(contentsOf: $0) }.eraseToAnyPublisher()
+    }
+    
     @objc private func buttonAction(_: Any) {
         let panel = NSOpenPanel()
         guard panel.runModal() == .OK, let url = panel.url else { return }

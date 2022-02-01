@@ -19,27 +19,27 @@ final class JSONFormatterViewController: NSViewController {
     override func loadView() { self.view = contentView }
     
     override func viewDidLoad() {
-        self.$spacingType
-            .sink{[unowned self] in contentView.indentControl.selectedItem = $0 }.store(in: &objectBag)
-        self.$rawCode.combineLatest($spacingType)
-            .sink{[unowned self] in self.formattedCode = self.processJSON($0, spacingType: $1) }.store(in: &objectBag)
-        self.$rawCode
-            .sink{[unowned self] in self.contentView.codeInput.code = $0 }.store(in: &objectBag)
-        self.$formattedCode
-            .sink{[unowned self] in contentView.codeOutput.code = $0 }.store(in: &objectBag)
-        self.$formattedCode
-            .sink{[unowned self] in contentView.copyButton.stringContent = $0 }.store(in: &objectBag)
-        
-        self.contentView.indentControl.itemPublisher
-            .sink{ self.spacingType = $0 }.store(in: &objectBag)
-        self.contentView.codeInput.codePublisher
-            .sink{[unowned self] in self.rawCode = $0 }.store(in: &objectBag)
-        self.contentView.pasteButton.stringPublisher.compactMap{ $0 }
-            .sink{[unowned self] in self.rawCode = $0 }.store(in: &objectBag)
-        self.contentView.clearButton.actionPublisher
-            .sink{[unowned self] in self.rawCode = "" }.store(in: &objectBag)
-        self.contentView.openButton.urlPublisher
-            .sink{[unowned self] in self.processURL($0) }.store(in: &objectBag)
+//        self.$spacingType
+//            .sink{[unowned self] in contentView.indentControl.selectedItem = $0 }.store(in: &objectBag)
+//        self.$rawCode.combineLatest($spacingType)
+//            .sink{[unowned self] in self.formattedCode = self.processJSON($0, spacingType: $1) }.store(in: &objectBag)
+//        self.$rawCode
+//            .sink{[unowned self] in self.contentView.codeInput.code = $0 }.store(in: &objectBag)
+//        self.$formattedCode
+//            .sink{[unowned self] in contentView.codeOutput.code = $0 }.store(in: &objectBag)
+//        self.$formattedCode
+//            .sink{[unowned self] in contentView.copyButton.stringContent = $0 }.store(in: &objectBag)
+//        
+//        self.contentView.indentControl.itemPublisher
+//            .sink{ self.spacingType = $0 }.store(in: &objectBag)
+//        self.contentView.codeInput.codePublisher
+//            .sink{[unowned self] in self.rawCode = $0 }.store(in: &objectBag)
+//        self.contentView.pasteButton.stringPublisher.compactMap{ $0 }
+//            .sink{[unowned self] in self.rawCode = $0 }.store(in: &objectBag)
+//        self.contentView.clearButton.actionPublisher
+//            .sink{[unowned self] in self.rawCode = "" }.store(in: &objectBag)
+//        self.contentView.openButton.urlPublisher
+//            .sink{[unowned self] in self.processURL($0) }.store(in: &objectBag)
     }
     
     private func processURL(_ url: URL) {

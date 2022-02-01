@@ -26,6 +26,9 @@ final class TextView: NSLoadView {
     var string: String { get { textView.string } set { textView.string = newValue } }
     var stringPublisher: AnyPublisher<String, Never> { textView.stringPublisher.eraseToAnyPublisher() }
     
+    var isEditable: Bool { get { textView.isEditable } set { textView.isEditable = newValue } }
+    var isSelectable: Bool { get { textView.isSelectable } set { textView.isSelectable = newValue } }
+    
     private let scrollView = _TextView.scrollableTextView()
     private lazy var textView = scrollView.documentView as! _TextView
 
@@ -46,12 +49,15 @@ final class TextView: NSLoadView {
 
 final class CodeTextView: NSLoadView {
     
-    var code: String? { get { textView?.string } set { textView?.setString(newValue ?? "") } }
+    var string: String { get { textView.string } set { textView.setString(newValue) } }
+    var isEditable: Bool { get { textView.isEditable } set { textView.isEditable = newValue } }
+    var isSelectable: Bool { get { textView.isSelectable } set { textView.isSelectable = newValue } }
+    
     var language: Language = .json { didSet { textStorage.language = language.rawValue } }
     var contentInsets = NSSize.zero {
         didSet { textView?.textContainerInset = contentInsets }
     }
-    var codePublisher: AnyPublisher<String, Never> {
+    var stringPublisher: AnyPublisher<String, Never> {
         textView.stringSubject.map{ self.textView.string }.eraseToAnyPublisher()
     }
     

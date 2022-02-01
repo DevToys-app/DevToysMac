@@ -42,6 +42,7 @@
 		B64B205C27A530E800AC2601 /* NSViewController+StateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B205B27A530E800AC2601 /* NSViewController+StateObject.swift */; };
 		B64B209527A5323A00AC2601 /* Combine+ObjectBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B209427A5323A00AC2601 /* Combine+ObjectBag.swift */; };
 		B680A79127A681F8007CB707 /* NSTextField+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79027A681F8007CB707 /* NSTextField+Combine.swift */; };
+		B680A86527A8C58C007CB707 /* Combine+Peek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A86427A8C58C007CB707 /* Combine+Peek.swift */; };
 		B6D1AF3D27A60A210022FED2 /* ExceptionHanlder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AF3A27A60A210022FED2 /* ExceptionHanlder.m */; };
 		B6D1AF3E27A60A210022FED2 /* ExceptionHanlder.h in Headers */ = {isa = PBXBuildFile; fileRef = B6D1AF3B27A60A210022FED2 /* ExceptionHanlder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6D1AF3F27A60A210022FED2 /* ExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AF3C27A60A210022FED2 /* ExceptionHandler.swift */; };
@@ -83,6 +84,7 @@
 		B64B205B27A530E800AC2601 /* NSViewController+StateObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSViewController+StateObject.swift"; sourceTree = "<group>"; };
 		B64B209427A5323A00AC2601 /* Combine+ObjectBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Combine+ObjectBag.swift"; sourceTree = "<group>"; };
 		B680A79027A681F8007CB707 /* NSTextField+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextField+Combine.swift"; sourceTree = "<group>"; };
+		B680A86427A8C58C007CB707 /* Combine+Peek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Peek.swift"; sourceTree = "<group>"; };
 		B6D1AF3A27A60A210022FED2 /* ExceptionHanlder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionHanlder.m; sourceTree = "<group>"; };
 		B6D1AF3B27A60A210022FED2 /* ExceptionHanlder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionHanlder.h; sourceTree = "<group>"; };
 		B6D1AF3C27A60A210022FED2 /* ExceptionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionHandler.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				B608540727A66635003BF243 /* NSControl+Combine.swift */,
 				B680A79027A681F8007CB707 /* NSTextField+Combine.swift */,
 				B64B209427A5323A00AC2601 /* Combine+ObjectBag.swift */,
+				B680A86427A8C58C007CB707 /* Combine+Peek.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				B64B209527A5323A00AC2601 /* Combine+ObjectBag.swift in Sources */,
 				B64B1EDC27A4F75600AC2601 /* PipeOperator.swift in Sources */,
 				B64B1F1827A4F80800AC2601 /* Ex+CGPoint.swift in Sources */,
+				B680A86527A8C58C007CB707 /* Combine+Peek.swift in Sources */,
 				B64B1ED027A4F71200AC2601 /* ViewPlaceholder.swift in Sources */,
 				B64B1F3127A4F83500AC2601 /* Ex+Image.swift in Sources */,
 				B64B1ED627A4F72D00AC2601 /* Query.swift in Sources */,

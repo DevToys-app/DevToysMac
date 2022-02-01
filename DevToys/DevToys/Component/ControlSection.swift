@@ -7,12 +7,15 @@
 
 import CoreUtil
 
-final class ControlSection: NSLoadView {
+class ControlSection: NSLoadView {
     func addStackItem(_ item: NSView) {
         self.contentStackView.addArrangedSubview(item)
     }
     func addToolbarItem(_ item: NSView) {
-        self.titleStackView.addArrangedSubview(item)
+        self.toolbarStackView.addArrangedSubview(item)
+    }
+    func removeAllToolbarItem() {
+        self.toolbarStackView.subviews.removeAll()
     }
     
     var orientation: NSUserInterfaceLayoutOrientation {
@@ -44,6 +47,7 @@ final class ControlSection: NSLoadView {
     private let titleLabel = NSTextField(labelWithString: "Title")
     
     private let titleStackView = NSStackView()
+    private let toolbarStackView = NSStackView()
     private let contentStackView = NSStackView()
     private let stackView = NSStackView()
     
@@ -68,5 +72,7 @@ final class ControlSection: NSLoadView {
         self.titleLabel.font = .systemFont(ofSize: R.Size.controlTitleFontSize)
         
         self.titleStackView.addArrangedSubview(NSView())
+        self.titleStackView.distribution = .fillProportionally
+        self.titleStackView.addArrangedSubview(toolbarStackView)
     }
 }
