@@ -21,11 +21,7 @@ Currently under development.
 - [x] Hash Generator
 - [x] UUID Generator
 - [x] Lorem Ipsum Generator
-- [ ] Text Inspector / Case Converter
-- [ ] Regex Tester
-- [ ] Text Comparer
-- [ ] Markdown Preview
-- [ ] Color Blindness Simulator
+- [x] Text Inspector / Case Converter
 - [ ] PNG / JPEG Compressor
 
 # Screen Shots
