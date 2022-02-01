@@ -103,7 +103,7 @@ class TextViewSectionBase<TextView: TextViewType>: ControlSection {
         
         self.addStackItem(textView)
         self.textView.snp.makeConstraints{ make in
-            make.height.equalTo(200)
+            make.height.equalTo(180)
         }
     }
 }

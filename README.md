@@ -2,7 +2,8 @@
 
 ![Dribbble Shot](https://user-images.githubusercontent.com/20896810/151813062-75292bd5-c254-4eb4-b95a-01026a06d559.png)
 
-This is the mac app version of DevToys!
+This is the mac app version of [DevToys](https://github.com/veler/DevToys)!
+
 Currently under development.
 
 # TODOs

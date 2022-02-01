@@ -48,7 +48,6 @@ final class CopySectionButton: SectionButton {
     override func onAwake() {
         super.onAwake()
         self.image = R.Image.copy
-        self.title = "Copy"
         
         self.actionPublisher
             .sink{[unowned self] in

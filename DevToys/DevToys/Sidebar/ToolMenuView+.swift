@@ -36,7 +36,7 @@ final class ToolmenuViewController: NSViewController {
         homeMenu, convertMenu, coderMenu, formatMenu, generatorMenu, textMenu, graphicMenu
     ]
     
-    private struct ToolMenu {
+    final private class ToolMenu {
         let icon: NSImage
         let title: String
         let identifier: String
@@ -78,6 +78,8 @@ final class ToolmenuViewController: NSViewController {
         self.outlineView.delegate = self
         self.outlineView.dataSource = self
         self.outlineView.selectionHighlightStyle = .sourceList
+        self.outlineView.autosaveExpandedItems = true
+        self.outlineView.autosaveName = "sidebar"
     }
 }
 
@@ -112,6 +114,21 @@ extension ToolmenuViewController: NSOutlineViewDataSource {
         }
         
         return cell
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
+        if let menu = item as? ToolMenu {
+            return menu.identifier
+        } else if let tool = item as? ToolType {
+            return tool.rawValue
+        }
+        return nil
+    }
+    func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
+        guard let identifier = object as? String else { return nil }
+        if let toolMenu = self.toolMenus.first(where: { $0.identifier == identifier }) { return toolMenu }
+        if let toolType = ToolType(rawValue: identifier) { return toolType }
+        return nil
     }
 }
 

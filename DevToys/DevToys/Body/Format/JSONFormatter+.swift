@@ -70,6 +70,7 @@ final private class JSONFormatterView: ToolPage {
     private lazy var configurationSection = ControlSection(title: "Configuration", items: [indentArea])
     
     override func onAwake() {
+        self.title = "Json Formatter"
         self.addSection(configurationSection)
         self.addSection2(inputSection, outputSection)
     }

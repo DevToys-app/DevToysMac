@@ -13,7 +13,7 @@ class ToolPage: NSLoadView {
         get { titleLabel.stringValue } set { titleLabel.stringValue = newValue }
     }
     
-    private let titleLabel = NSTextField(labelWithString: "Json Formatter")
+    private let titleLabel = NSTextField(labelWithString: "Title")
     private let stackView = NSStackView()
     private let scrollView = NSScrollView()
     
@@ -43,7 +43,7 @@ class ToolPage: NSLoadView {
         }
         
         self.scrollView.documentView = stackView
-        self.stackView.edgeInsets = NSEdgeInsets(x: 32, y: 32)
+        self.stackView.edgeInsets = NSEdgeInsets(x: 32, y: 20)
         self.stackView.orientation = .vertical
         self.stackView.spacing = 8
         self.stackView.alignment = .left
@@ -52,8 +52,8 @@ class ToolPage: NSLoadView {
         }
         
         self.stackView.insertArrangedSubview(titleLabel, at: 0)
-        self.stackView.setCustomSpacing(32, after: titleLabel)
-        self.titleLabel.font = .systemFont(ofSize: 26)
+        self.stackView.setCustomSpacing(20, after: titleLabel)
+        self.titleLabel.font = .systemFont(ofSize: 32, weight: .medium)
     }
 
     public override init(frame frameRect: NSRect) {
