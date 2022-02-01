@@ -201,6 +201,19 @@ open class NSLoadButton: NSButton {
     }
 }
 
+open class NSLoadCollectionView: NSCollectionView {
+    open func onAwake() {}
+
+    public override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        onAwake()
+    }
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        onAwake()
+    }
+}
+
 open class CALoadLayer: CALayer {
 
     open func onAwake() {}

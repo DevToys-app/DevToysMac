@@ -22,6 +22,7 @@ final class BodyViewController: NSViewController {
     private lazy var hashGeneratorController = HashGeneratorViewController()
     private lazy var uuidGeneratorController = UUIDGeneratorViewController()
     private lazy var loremIpsumGeneratorController = LoremIpsumGeneratorViewController()
+    private lazy var textInspectorController = TextInspectorViewController()
     
     private lazy var notImplementedController = NotImplementedViewController()
     
@@ -44,6 +45,7 @@ final class BodyViewController: NSViewController {
                 case .hashGenerator: self.replaceContentViewController(hashGeneratorController)
                 case .uuidGenerator: self.replaceContentViewController(uuidGeneratorController)
                 case .leremIpsumGenerator: self.replaceContentViewController(loremIpsumGeneratorController)
+                case .caseConverter: self.replaceContentViewController(textInspectorController)
                 default: self.replaceContentViewController(notImplementedController)
                 }
             }
