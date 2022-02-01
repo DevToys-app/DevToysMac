@@ -26,6 +26,7 @@ final class JWTDecoderViewController: NSViewController {
         
         self.cell.tokenTextSection.stringPublisher
             .sink{[unowned self] in
+                self.token = $0
                 guard let (header, payload) = self.decodeJWT($0) else {
                     self.header = "[Decode Failed]"
                     self.payload = "[Decode Failed]"
@@ -41,19 +42,17 @@ final class JWTDecoderViewController: NSViewController {
     private func decodeJWT(_ token: String) -> (header: String, payload: String)? {
         let components = token.split(separator: ".").map{ String($0) }
         
-        guard components.count == 3,
-              let header = self.decodeBase64ToJson(components[0]),
-              let payload = self.decodeBase64ToJson(components[1])
-        else { return nil }
+        guard components.count == 3 else { print("not3"); return nil }
+        guard let header = self.decodeBase64ToJson(components[0]) else { print("he"); return nil }
+        guard let payload = self.decodeBase64ToJson(components[1]) else { print("pa"); return nil }
         
         return (header, payload)
     }
     
     private func decodeBase64ToJson(_ string: String) -> String? {
-        guard let data = Data(base64Encoded: string),
-              let object = try? JSONSerialization.jsonObject(with: data, options: []),
-              let json = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted)
-        else { return nil }
+        guard let data = Data(base64Encoded: string) ?? Data(base64Encoded: string + "=") ?? Data(base64Encoded: string + "==") else { return nil }
+        guard let object = try? JSONSerialization.jsonObject(with: data, options: []) else { return nil }
+        guard let json = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) else { return nil }
         
         return String(data: json, encoding: .utf8)
     }

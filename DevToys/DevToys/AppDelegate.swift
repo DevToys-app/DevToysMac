@@ -11,9 +11,6 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         NSApplication.shared.appearance = NSAppearance(named: .darkAqua)
-//        let domain = Bundle.main.bundleIdentifier!
-//        UserDefaults.standard.removePersistentDomain(forName: domain)
-//        UserDefaults.standard.synchronize()
     }
 }
 
