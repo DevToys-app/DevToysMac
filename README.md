@@ -17,7 +17,7 @@ Currently under development.
 - [x] Base 64 Encoder / Decoder
 - [x] JWT Encoder / Decoder
 - [x] JSON Formatter 
-- [ ] Hash Generator
+- [x] Hash Generator
 - [ ] UUID Generator
 - [ ] Lorem Ipsum Generator
 - [ ] Text Inspector / Case Converter
