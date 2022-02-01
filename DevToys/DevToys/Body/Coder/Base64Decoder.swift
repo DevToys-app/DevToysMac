@@ -40,7 +40,7 @@ final private class Base64DecoderView: ToolPage {
     let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])
     
     override func onAwake() {
-        self.title = "URL Encoder / Decoder"
+        self.title = "Base64 Encoder / Decoder"
         
         self.addSection(encodeTextSection)
         self.addSection(decodeTextSection)
