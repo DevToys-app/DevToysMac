@@ -65,7 +65,7 @@ class ControlSection: NSLoadView {
         self.titleStackView.orientation = .horizontal
         self.titleStackView.alignment = .bottom
         self.titleStackView.snp.makeConstraints{ make in
-            make.height.equalTo(36)
+            make.height.equalTo(R.Size.controlHeight)
         }
         
         self.titleStackView.addArrangedSubview(titleLabel)

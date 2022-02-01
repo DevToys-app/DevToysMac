@@ -26,7 +26,8 @@ final class AllToolCollectionItemViewController: NSViewController {
         
         let flowLayout = NSCollectionViewFlowLayout()
         flowLayout.itemSize = [125, 230]
-        flowLayout.sectionInset = NSEdgeInsets(top: 32, left: 42, bottom: 32, right: 42)
+        flowLayout.sectionInset = NSEdgeInsets(top: 32, left: 32, bottom: 32, right: 32)
+        flowLayout.minimumInteritemSpacing = 8
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self

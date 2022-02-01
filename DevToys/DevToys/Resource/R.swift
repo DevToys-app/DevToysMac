@@ -31,6 +31,8 @@ enum R {
         static let number = NSImage(named: "number")!
         static let text = NSImage(named: "text")!
         
+        static let stepperUp = NSImage(named: "stepper.up")!
+        static let stepperDown = NSImage(named: "stepper.down")!
         
         enum Sidebar {
             static let home = NSImage(named: "sidebar/home")!

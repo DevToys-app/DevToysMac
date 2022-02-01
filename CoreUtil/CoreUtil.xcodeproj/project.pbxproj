@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B608540827A66635003BF243 /* NSControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608540727A66635003BF243 /* NSControl+Combine.swift */; };
+		B62013E927A9147600AF5386 /* Delta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62013E827A9147600AF5386 /* Delta.swift */; };
 		B64B1E9427A4F67000AC2601 /* CoreUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = B64B1E9227A4F67000AC2601 /* CoreUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B64B1ED027A4F71200AC2601 /* ViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1ECF27A4F71200AC2601 /* ViewPlaceholder.swift */; };
 		B64B1ED327A4F71F00AC2601 /* NS+OnAwake.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1ED227A4F71F00AC2601 /* NS+OnAwake.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		B608540727A66635003BF243 /* NSControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSControl+Combine.swift"; sourceTree = "<group>"; };
+		B62013E827A9147600AF5386 /* Delta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delta.swift; sourceTree = "<group>"; };
 		B64B1E8F27A4F67000AC2601 /* CoreUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64B1E9227A4F67000AC2601 /* CoreUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreUtil.h; sourceTree = "<group>"; };
 		B64B1E9327A4F67000AC2601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				B680A89B27A8DA16007CB707 /* Action.swift */,
 				B64B205827A530D700AC2601 /* NSViewController+ChainObject.swift */,
 				B64B205B27A530E800AC2601 /* NSViewController+StateObject.swift */,
+				B62013E827A9147600AF5386 /* Delta.swift */,
 				B64B1ED827A4F73700AC2601 /* Observable.swift */,
 				B64B1EDB27A4F75600AC2601 /* PipeOperator.swift */,
 				B64B1ED227A4F71F00AC2601 /* NS+OnAwake.swift */,
@@ -363,6 +366,7 @@
 				B64B1F3927A4F8AD00AC2601 /* Ex+NSTableView.swift in Sources */,
 				B64B1F0127A4F7AA00AC2601 /* Ex+Clamp.swift in Sources */,
 				B64B1EF727A4F7AA00AC2601 /* Ex+Number.swift in Sources */,
+				B62013E927A9147600AF5386 /* Delta.swift in Sources */,
 				B6D1AF3F27A60A210022FED2 /* ExceptionHandler.swift in Sources */,
 				B64B1ED327A4F71F00AC2601 /* NS+OnAwake.swift in Sources */,
 			);

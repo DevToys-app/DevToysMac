@@ -20,7 +20,9 @@ final class TextField: NSLoadView {
     var showCopyButton = false {
         didSet { copyButton.isHidden = !showCopyButton }
     }
-    var isEditable: Bool = true
+    var isEditable: Bool = true {
+        didSet { textField.textField.isEditable = isEditable }
+    }
     
     convenience init(showCopyButton: Bool) {
         self.init()
@@ -30,11 +32,7 @@ final class TextField: NSLoadView {
     private func setup(showCopyButton: Bool) {
         self.showCopyButton = showCopyButton
     }
-    
-    override func layout() {
-        super.layout()
-    }
-    
+        
     private let textField = DotNetTextField()
     private let stackView = NSStackView()
     private let copyButton = CopySectionButton(hasTitle: false)
@@ -58,16 +56,20 @@ final class TextField: NSLoadView {
     }
 }
 
-final private class DotNetTextField: NSLoadStackView {
+final private class DotNetTextField: NSLoadView {
     let textField = CustomFocusRingTextField()
     let backgroundLayer = ControlBackgroundLayer.animationDisabled()
     
     override func layout() {
-        super.layout()
         self.backgroundLayer.frame = bounds
-        let focusRingBounds = CGRect(origin: bounds.origin - textField.frame.origin, size: bounds.size)
+        let textFieldFrame = CGRect(originX: 12, centerY: bounds.midY, size: [bounds.width - 24, textField.intrinsicContentSize.height])
+        
+        let focusRingBounds = CGRect(origin: bounds.origin - textFieldFrame.origin, size: bounds.size)
         self.textField.focusRingBounds = focusRingBounds
+        self.textField.frame = textFieldFrame
+        super.layout()
     }
+    
     
     override func updateLayer() {
         self.backgroundLayer.update()
@@ -77,10 +79,7 @@ final private class DotNetTextField: NSLoadStackView {
         self.wantsLayer = true
         self.layer?.addSublayer(backgroundLayer)
         
-        self.spacing = 0
-        self.edgeInsets = .init(x: 12, y: 0)
-        self.addArrangedSubview(textField)
-        self.addArrangedSubview(NSView())
+        self.addSubview(textField)
         self.textField.font = .systemFont(ofSize: 12)
     }
 }

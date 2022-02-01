@@ -33,6 +33,7 @@ final class ToolmenuCell: NSLoadView {
         }
         
         self.addSubview(titleLabel)
+        self.titleLabel.lineBreakMode = .byTruncatingTail
         self.titleLabel.snp.makeConstraints{ make in
             make.left.equalTo(self.iconView.snp.right).offset(8)
             make.centerY.equalToSuperview()

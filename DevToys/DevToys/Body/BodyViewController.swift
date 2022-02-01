@@ -20,6 +20,7 @@ final class BodyViewController: NSViewController {
     private lazy var base64DecoderController = Base64DecoderViewController()
     private lazy var jwtDecoderController = JWTDecoderViewController()
     private lazy var hashGeneratorController = HashGeneratorViewController()
+    private lazy var uuidGeneratorController = UUIDGeneratorViewController()
     
     private lazy var notImplementedController = NotImplementedViewController()
     
@@ -40,6 +41,7 @@ final class BodyViewController: NSViewController {
                 case .base64Decoder: self.replaceContentViewController(base64DecoderController)
                 case .jwtDecoder: self.replaceContentViewController(jwtDecoderController)
                 case .hashGenerator: self.replaceContentViewController(hashGeneratorController)
+                case .uuidGenerator: self.replaceContentViewController(uuidGeneratorController)
                 default: self.replaceContentViewController(notImplementedController)
                 }
             }

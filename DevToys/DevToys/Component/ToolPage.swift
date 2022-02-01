@@ -14,7 +14,7 @@ class ToolPage: NSLoadView {
     }
     
     private let titleLabel = NSTextField(labelWithString: "Title")
-    private let stackView = NSStackView()
+    let stackView = NSStackView()
     private let scrollView = NSScrollView()
     
     func addSection(_ title: String, orientation: NSUserInterfaceLayoutOrientation = .vertical, items: [NSView], toolbarItems: [NSView]) {

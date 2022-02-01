@@ -9,7 +9,7 @@ import CoreUtil
 
 final class ControlBackgroundLayer: CALoadLayer {
     func update() {
-        self.backgroundColor = NSColor.textColor.withAlphaComponent(0.08).cgColor
+        self.backgroundColor = R.Color.controlBackgroundColor.cgColor
     }
     override func onAwake() {
         self.cornerRadius = R.Size.corner
@@ -23,9 +23,9 @@ final class ControlButtonBackgroundLayer: CALoadLayer {
         defer { self.areAnimationsEnabled = false }
         
         if isHighlighted {
-            self.backgroundColor = NSColor.textColor.withAlphaComponent(0.2).cgColor
+            self.backgroundColor = R.Color.controlHighlightedBackgroundColor.cgColor
         } else {
-            self.backgroundColor = NSColor.textColor.withAlphaComponent(0.08).cgColor
+            self.backgroundColor = R.Color.controlBackgroundColor.cgColor
         }
     }
     override func onAwake() {
@@ -33,3 +33,12 @@ final class ControlButtonBackgroundLayer: CALoadLayer {
         self.areAnimationsEnabled = false
     }
 }
+
+
+extension R {
+    enum Color {
+        static var controlBackgroundColor: NSColor { NSColor.textColor.withAlphaComponent(0.08) }
+        static var controlHighlightedBackgroundColor: NSColor { NSColor.textColor.withAlphaComponent(0.2) }
+    }
+}
+

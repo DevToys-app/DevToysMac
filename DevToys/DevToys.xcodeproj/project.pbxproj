@@ -14,6 +14,9 @@
 		B608541B27A672E3003BF243 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = B608541A27A672E3003BF243 /* Yams */; };
 		B608541E27A67B48003BF243 /* NumberBaseConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608541D27A67B48003BF243 /* NumberBaseConverter+.swift */; };
 		B608542027A67E4D003BF243 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608541F27A67E4D003BF243 /* TextField.swift */; };
+		B62013B427A9070D00AF5386 /* UUIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62013B327A9070D00AF5386 /* UUIDGenerator.swift */; };
+		B62013B627A90B8900AF5386 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62013B527A90B8900AF5386 /* NumberField.swift */; };
+		B620141C27A917E000AF5386 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620141B27A917E000AF5386 /* Button.swift */; };
 		B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */; };
 		B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7527A4F5E200AC2601 /* AppViewController.swift */; };
 		B64B1E7827A4F5E300AC2601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64B1E7727A4F5E300AC2601 /* Assets.xcassets */; };
@@ -87,6 +90,9 @@
 		B608541127A66A90003BF243 /* JSONYamlConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONYamlConverter+.swift"; sourceTree = "<group>"; };
 		B608541D27A67B48003BF243 /* NumberBaseConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberBaseConverter+.swift"; sourceTree = "<group>"; };
 		B608541F27A67E4D003BF243 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		B62013B327A9070D00AF5386 /* UUIDGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDGenerator.swift; sourceTree = "<group>"; };
+		B62013B527A90B8900AF5386 /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
+		B620141B27A917E000AF5386 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		B64B1E7027A4F5E200AC2601 /* DevToys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevToys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B64B1E7527A4F5E200AC2601 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				B680A8A927A8E106007CB707 /* HashGenerator.swift */,
+				B62013B327A9070D00AF5386 /* UUIDGenerator.swift */,
 			);
 			path = Generator;
 			sourceTree = "<group>";
@@ -302,6 +309,8 @@
 				B608541F27A67E4D003BF243 /* TextField.swift */,
 				B680A83227A8BF7D007CB707 /* TextViewSection.swift */,
 				B680A86727A8D4D1007CB707 /* TextFieldSection.swift */,
+				B62013B527A90B8900AF5386 /* NumberField.swift */,
+				B620141B27A917E000AF5386 /* Button.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -407,12 +416,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B62013B627A90B8900AF5386 /* NumberField.swift in Sources */,
 				B608541E27A67B48003BF243 /* NumberBaseConverter+.swift in Sources */,
 				B680A8AA27A8E106007CB707 /* HashGenerator.swift in Sources */,
 				B64B202027A523A200AC2601 /* ToolmenuCell.swift in Sources */,
 				B608540B27A66694003BF243 /* SectionButton+.swift in Sources */,
 				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
 				B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */,
+				B620141C27A917E000AF5386 /* Button.swift in Sources */,
 				B680A89A27A8D9DD007CB707 /* Toast.swift in Sources */,
 				B6D1AEF727A54F750022FED2 /* SectionButton.swift in Sources */,
 				B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */,
@@ -437,6 +448,7 @@
 				B64B202627A52DB400AC2601 /* ToolType.swift in Sources */,
 				B608541227A66A90003BF243 /* JSONYamlConverter+.swift in Sources */,
 				B6D1AEFD27A55ED50022FED2 /* CodeTextView.swift in Sources */,
+				B62013B427A9070D00AF5386 /* UUIDGenerator.swift in Sources */,
 				B6D1AEEC27A546810022FED2 /* ControlBackgroundLayer.swift in Sources */,
 				B64B1F7C27A4FFB400AC2601 /* SidebarView+.swift in Sources */,
 				B64B201627A5100800AC2601 /* Separator.swift in Sources */,
