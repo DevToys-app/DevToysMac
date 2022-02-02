@@ -6,6 +6,11 @@ This is the mac app version of [DevToys](https://github.com/veler/DevToys)!
 
 Currently under development.
 
+# How to instal
+
+- Download and extract the latest [Releases](https://github.com/ObuchiYuki/DevToysMac/releases).
+- Extract `DevToys.app` from `DevToys.zip`
+
 # TODOs
 
 - [x] Windows/.NET like UI Components
@@ -21,11 +26,7 @@ Currently under development.
 - [x] Hash Generator
 - [x] UUID Generator
 - [x] Lorem Ipsum Generator
-- [ ] Text Inspector / Case Converter
-- [ ] Regex Tester
-- [ ] Text Comparer
-- [ ] Markdown Preview
-- [ ] Color Blindness Simulator
+- [x] Text Inspector / Case Converter
 - [ ] PNG / JPEG Compressor
 
 # Screen Shots
