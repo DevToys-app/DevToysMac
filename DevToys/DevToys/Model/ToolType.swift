@@ -28,6 +28,8 @@ enum ToolType: String, CaseIterable {
     
     case imageCompressor
     case pdfGenerator
+    
+    case networkInfomation
 }
 
 extension ToolType {
@@ -47,6 +49,7 @@ extension ToolType {
         case .caseConverter: return R.Image.Sidebar.textIspector
         case .imageCompressor: return R.Image.Sidebar.imageCompressor
         case .pdfGenerator: return R.Image.Sidebar.graphic
+        case .networkInfomation: return R.Image.hyphen
         }
     }
     var toolListIcon: NSImage {
@@ -65,6 +68,7 @@ extension ToolType {
         case .caseConverter: return R.Image.ToolList.textIspector
         case .imageCompressor: return R.Image.ToolList.imageCompressor
         case .pdfGenerator: return R.Image.ToolList.graphic
+        case .networkInfomation: return R.Image.hyphen
         }
     }
     
@@ -84,6 +88,7 @@ extension ToolType {
         case .caseConverter: return "Inspector & Case Converter"
         case .imageCompressor: return "PNG / JPEG Compressor"
         case .pdfGenerator: return "PDF Generator"
+        case .networkInfomation: return "Network"
         }
     }
     
@@ -103,6 +108,7 @@ extension ToolType {
         case .caseConverter: return "Text Case Converter and Inspector"
         case .pdfGenerator: return "PDF Generator"
         case .imageCompressor: return "PNG / JPEG Compressor"
+        case .networkInfomation: return "Network Infomation"
         }
     }
     
@@ -122,6 +128,7 @@ extension ToolType {
         case .caseConverter: return "Analyze text and convert it to differenct case"
         case .pdfGenerator: return "Generate PDF from images"
         case .imageCompressor: return "Lossless PNG and JPEG optimizer"
+        case .networkInfomation: return "Observe network infomation"
         }
     }
 }

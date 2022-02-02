@@ -25,6 +25,7 @@ final class BodyViewController: NSViewController {
     private lazy var textInspectorController = TextInspectorViewController()
     private lazy var imageOptimaizerController = ImageOptimaizerViewController()
     private lazy var pdfGeneratorController = PDFGeneratorViewController()
+    private lazy var networkInfomationController = NetworkInfomationViewController()
     
     private lazy var notImplementedController = NotImplementedViewController()
     
@@ -50,6 +51,7 @@ final class BodyViewController: NSViewController {
                 case .caseConverter: self.replaceContentViewController(textInspectorController)
                 case .imageCompressor: self.replaceContentViewController(imageOptimaizerController)
                 case .pdfGenerator: self.replaceContentViewController(pdfGeneratorController)
+                case .networkInfomation: self.replaceContentViewController(networkInfomationController)
                 }
             }
             .store(in: &objectBag)

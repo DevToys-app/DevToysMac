@@ -28,12 +28,15 @@ final class ToolmenuViewController: NSViewController {
     private let textMenu = ToolMenu(R.Image.Sidebar.text, "Text", "text", [
         .caseConverter,
     ])
-    private let graphicMenu = ToolMenu(R.Image.Sidebar.graphic, "Graphic", "graphic", [
+    private let graphicMenu = ToolMenu(R.Image.Sidebar.graphic, "Media", "graphic", [
         .imageCompressor, .pdfGenerator
+    ])
+    private let networkMenu = ToolMenu(R.Image.Sidebar.network, "Network", "graphic", [
+        .networkInfomation
     ])
     
     private lazy var toolMenus = [
-        homeMenu, convertMenu, coderMenu, formatMenu, generatorMenu, textMenu, graphicMenu
+        homeMenu, convertMenu, coderMenu, formatMenu, generatorMenu, textMenu, graphicMenu, networkMenu
     ]
     
     final private class ToolMenu {

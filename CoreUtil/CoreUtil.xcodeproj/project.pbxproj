@@ -48,6 +48,8 @@
 		B680A8A027A8DA78007CB707 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = B680A89F27A8DA78007CB707 /* OrderedCollections */; };
 		B680A8A227A8DA78007CB707 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = B680A8A127A8DA78007CB707 /* DequeModule */; };
 		B680A8A427A8DA78007CB707 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = B680A8A327A8DA78007CB707 /* Collections */; };
+		B6AC27A327AA6F5C000FD713 /* Reachability+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC27A127AA6F5B000FD713 /* Reachability+Publisher.swift */; };
+		B6AC27A427AA6F5C000FD713 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC27A227AA6F5C000FD713 /* Reachability.swift */; };
 		B6D1AF3D27A60A210022FED2 /* ExceptionHanlder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AF3A27A60A210022FED2 /* ExceptionHanlder.m */; };
 		B6D1AF3E27A60A210022FED2 /* ExceptionHanlder.h in Headers */ = {isa = PBXBuildFile; fileRef = B6D1AF3B27A60A210022FED2 /* ExceptionHanlder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6D1AF3F27A60A210022FED2 /* ExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AF3C27A60A210022FED2 /* ExceptionHandler.swift */; };
@@ -92,6 +94,8 @@
 		B680A79027A681F8007CB707 /* NSTextField+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextField+Combine.swift"; sourceTree = "<group>"; };
 		B680A86427A8C58C007CB707 /* Combine+Peek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Peek.swift"; sourceTree = "<group>"; };
 		B680A89B27A8DA16007CB707 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		B6AC27A127AA6F5B000FD713 /* Reachability+Publisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reachability+Publisher.swift"; sourceTree = "<group>"; };
+		B6AC27A227AA6F5C000FD713 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B6D1AF3A27A60A210022FED2 /* ExceptionHanlder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionHanlder.m; sourceTree = "<group>"; };
 		B6D1AF3B27A60A210022FED2 /* ExceptionHanlder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionHanlder.h; sourceTree = "<group>"; };
 		B6D1AF3C27A60A210022FED2 /* ExceptionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionHandler.swift; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 		B64B1F6D27A4FC9100AC2601 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				B6AC27A227AA6F5C000FD713 /* Reachability.swift */,
+				B6AC27A127AA6F5B000FD713 /* Reachability+Publisher.swift */,
 				B64B201027A50E5200AC2601 /* NSColorView.swift */,
 				B64B1ECF27A4F71200AC2601 /* ViewPlaceholder.swift */,
 				B64B1ED527A4F72D00AC2601 /* Query.swift */,
@@ -341,6 +347,7 @@
 				B64B205927A530D700AC2601 /* NSViewController+ChainObject.swift in Sources */,
 				B64B1EE427A4F79100AC2601 /* Key.swift in Sources */,
 				B64B1F0027A4F7AA00AC2601 /* Ex+OptionSet.swift in Sources */,
+				B6AC27A327AA6F5C000FD713 /* Reachability+Publisher.swift in Sources */,
 				B64B1F2E27A4F83500AC2601 /* Ex+NSControl.swift in Sources */,
 				B64B1F1627A4F80800AC2601 /* Ex+CGSize.swift in Sources */,
 				B64B1ED927A4F73700AC2601 /* Observable.swift in Sources */,
@@ -369,6 +376,7 @@
 				B62013E927A9147600AF5386 /* Delta.swift in Sources */,
 				B6D1AF3F27A60A210022FED2 /* ExceptionHandler.swift in Sources */,
 				B64B1ED327A4F71F00AC2601 /* NS+OnAwake.swift in Sources */,
+				B6AC27A427AA6F5C000FD713 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

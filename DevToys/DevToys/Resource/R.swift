@@ -67,6 +67,8 @@ enum R {
             static let graphic = NSImage(named: "sidebar/graphic")!
             static let colorBlindnessSimulator = NSImage(named: "sidebar/color.blindness.simulator")!
             static let imageCompressor = NSImage(named: "sidebar/image.compressor")!
+            
+            static let network = NSImage(named: "sidebar/network")!
         }
         
         enum ToolList {
@@ -99,6 +101,8 @@ enum R {
             static let graphic = NSImage(named: "toollist/graphic")!
             static let colorBlindnessSimulator = NSImage(named: "toollist/color.blindness.simulator")!
             static let imageCompressor = NSImage(named: "toollist/image.compressor")!
+            
+            static let network = NSImage(named: "sidebar/network")!
         }
     }
 }
