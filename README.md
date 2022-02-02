@@ -4,8 +4,6 @@
 
 This is the mac app version of [DevToys](https://github.com/veler/DevToys)!
 
-Currently under development.
-
 # How to install
 
 - Download and extract the latest [Releases](https://github.com/ObuchiYuki/DevToysMac/releases).
