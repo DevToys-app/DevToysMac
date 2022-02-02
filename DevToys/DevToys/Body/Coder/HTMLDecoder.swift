@@ -47,7 +47,7 @@ final private class HTMLDecoderView: ToolPage {
     }
     
     override func onAwake() {
-        self.title = "HEML Encoder / Decoder"
+        self.title = "HTML Encoder / Decoder"
         
         self.addSection(encodeTextSection)
         self.addSection(decodeTextSection)
