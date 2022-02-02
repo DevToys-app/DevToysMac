@@ -58,30 +58,34 @@ final private class UUIDGeneratorView: ToolPage {
     let hyphensSwitch = NSSwitch()
     let uppercaseSwitch = NSSwitch()
     let generateCount = NumberField()
-    let generateButton = Button(title: "Generate UUID")
+    let generateButton = Button(title: "Generate UUIDs")
     let uuidView = TextView() => { $0.isEditable = false }
     let clearButton = SectionButton(image: R.Image.clear)
+    
+    override func layout() {
+        super.layout()
+        
+        self.uuidView.snp.remakeConstraints{ make in
+            make.height.equalTo(max(200, self.frame.height - 320))
+        }
+    }
     
     override func onAwake() {
         self.title = "UUID Generator"
         
-        self.generateCount.snp.makeConstraints{ make in
-            make.width.equalTo(100)
-        }
         self.addSection(ControlSection(title: "Configuration", items: [
             ControlArea(icon: R.Image.hyphen, title: "Hyphens", control: hyphensSwitch),
             ControlArea(icon: R.Image.format, title: "Uppercase", message: "Whether to use uppercase for generate UUIDs.", control: uppercaseSwitch),
-            ControlArea(icon: R.Image.number, title: "Conut", message: "Number of generate UUIDs count.", control: generateCount),
         ]))
         
-        self.stackView.addArrangedSubview(generateButton)
-        self.generateButton.snp.makeConstraints{ make in
-            make.width.equalToSuperview().inset(32)
-        }
-        self.uuidView.snp.makeConstraints{ make in
-            make.height.equalTo(100)
-        }
-        self.addSection(ControlSection(title: "UUID(s)", items: [
+        self.stackView.addArrangedSubview(NSStackView() => {
+            $0.addArrangedSubview(generateCount)
+            $0.addArrangedSubview(NSTextField(labelWithString: "x") => {
+                $0.font = .monospacedSystemFont(ofSize: 12, weight: .medium)
+            })
+            $0.addArrangedSubview(generateButton)
+        })
+        self.addSection(ControlSection(title: "UUIDs", items: [
             uuidView
         ], toolbarItems: [clearButton]))
     }

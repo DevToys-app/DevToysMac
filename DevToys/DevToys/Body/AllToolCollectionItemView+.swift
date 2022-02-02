@@ -11,7 +11,7 @@ final class AllToolCollectionItemViewController: NSViewController {
     private let scrollView = NSScrollView()
     private let collectionView = NSCollectionView()
     
-    private let allTools = ToolType.allCases
+    private let allTools = ToolType.allCases.filter{ $0 != .allTools }
     
     override func loadView() {
         self.view = scrollView

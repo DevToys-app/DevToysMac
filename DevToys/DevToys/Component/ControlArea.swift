@@ -57,7 +57,7 @@ final class ControlArea: NSLoadView {
         self.wantsLayer = true
         self.layer?.addSublayer(backgroundLayer)
         self.snp.makeConstraints{ make in
-            make.height.equalTo(52)
+            make.height.equalTo(48)
         }
         
         self.addSubview(stackView)

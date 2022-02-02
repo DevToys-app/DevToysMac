@@ -45,7 +45,7 @@ class ToolPage: NSLoadView {
         }
         
         self.scrollView.documentView = stackView
-        self.stackView.edgeInsets = NSEdgeInsets(x: 32, y: 20)
+        self.stackView.edgeInsets = NSEdgeInsets(x: 16, y: 16)
         self.stackView.orientation = .vertical
         self.stackView.spacing = 8
         self.stackView.alignment = .left
@@ -54,8 +54,8 @@ class ToolPage: NSLoadView {
         }
         
         self.stackView.insertArrangedSubview(titleLabel, at: 0)
-        self.stackView.setCustomSpacing(20, after: titleLabel)
-        self.titleLabel.font = .systemFont(ofSize: 28, weight: .medium)
+        self.stackView.setCustomSpacing(16, after: titleLabel)
+        self.titleLabel.font = .systemFont(ofSize: 24, weight: .medium)
     }
 
     public override init(frame frameRect: NSRect) {
