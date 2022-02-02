@@ -27,7 +27,7 @@ Currently under development.
 - [x] UUID Generator
 - [x] Lorem Ipsum Generator
 - [x] Text Inspector / Case Converter
-- [ ] PNG / JPEG Compressor
+- [x] PNG / JPEG Compressor
 
 # Screen Shots
 
