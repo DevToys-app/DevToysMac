@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class Base64DecoderViewController: NSViewController {
+final class Base64DecoderViewController: ToolPageViewController {
     private let cell = Base64DecoderView()
     
     @RestorableState("base64.rawString") var rawString = defaultRawString

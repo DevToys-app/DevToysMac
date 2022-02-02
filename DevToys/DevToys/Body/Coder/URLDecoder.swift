@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class URLDecoderViewController: NSViewController {
+final class URLDecoderViewController: ToolPageViewController {
     private let cell = URLDecoderView()
     
     @RestorableState("url.rawString") var rawString = "https://www.microsoft.com/ja-jp/p/devtoys/9pgcv4v3bk4w?rtc=1#activetab=pivot:overviewtab"

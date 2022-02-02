@@ -8,7 +8,7 @@
 import CoreUtil
 import SwiftJSONFormatter
 
-final class JSONFormatterViewController: NSViewController {
+final class JSONFormatterViewController: ToolPageViewController {
     
     @RestorableState("json.spacingtype") var spacingType: JSONSpacingType = .spaces4
     

@@ -8,7 +8,7 @@
 import CoreUtil
 import CryptoSwift
 
-final class HashGeneratorViewController: NSViewController {
+final class HashGeneratorViewController: ToolPageViewController {
     private let cell = HashGeneratorView()
     
     @RestorableState("hash.upper") var isUppercase = false

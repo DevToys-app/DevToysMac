@@ -71,3 +71,9 @@ class ToolPage: NSLoadView {
 private class FlipClipView: NSClipView {
     override var isFlipped: Bool { true }
 }
+
+class ToolPageViewController: NSViewController {
+    override func viewDidAppear() {
+        view.window?.title = (view as? ToolPage)?.title ?? "DevToys"
+    }
+}

@@ -691,6 +691,21 @@
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="720" height="400"/>
+                        <toolbar key="toolbar" implicitIdentifier="713C7DDB-DDC8-443B-A41D-721120BB189C" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="OVR-JY-Bvo">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="wPb-bg-HQa"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="K7S-7D-oF9"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="uag-Fy-LfN"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="KFp-lV-ESO"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ORy-LD-yBt"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="wPb-bg-HQa"/>
+                                <toolbarItem reference="K7S-7D-oF9"/>
+                                <toolbarItem reference="ORy-LD-yBt"/>
+                                <toolbarItem reference="uag-Fy-LfN"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
