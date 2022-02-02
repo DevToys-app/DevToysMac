@@ -26,13 +26,15 @@ class ToolPage: NSLoadView {
         self.stackView.addArrangedSubview(stack)
     }
     
-    func addSection2(_ stack1: ControlSection, _ stack2: ControlSection) {
+    @discardableResult
+    func addSection2(_ stack1: ControlSection, _ stack2: ControlSection) -> NSStackView {
         let stackView = NSStackView()
         stackView.distribution = .fillEqually
         stackView.orientation = .horizontal
         stackView.addArrangedSubview(stack1)
         stackView.addArrangedSubview(stack2)
         self.stackView.addArrangedSubview(stackView)
+        return stackView
     }
     
     private func commonInit() {
@@ -53,7 +55,7 @@ class ToolPage: NSLoadView {
         
         self.stackView.insertArrangedSubview(titleLabel, at: 0)
         self.stackView.setCustomSpacing(20, after: titleLabel)
-        self.titleLabel.font = .systemFont(ofSize: 32, weight: .medium)
+        self.titleLabel.font = .systemFont(ofSize: 28, weight: .medium)
     }
 
     public override init(frame frameRect: NSRect) {

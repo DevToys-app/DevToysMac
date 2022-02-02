@@ -46,6 +46,7 @@ final class NumberField: NSLoadView {
     override func onAwake() {
         self.snp.makeConstraints{ make in
             make.height.equalTo(R.Size.controlHeight)
+            make.width.equalTo(100)
         }
         self.wantsLayer = true
         self.layer?.cornerRadius = R.Size.corner

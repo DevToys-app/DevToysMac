@@ -72,7 +72,7 @@ final class CodeTextView: NSLoadView {
     private var textView: _CodeTextView!
     private let highlightr = Highlightr()! => { highlightr in
         highlightr.setTheme(to: "vs2015")
-        highlightr.theme.setCodeFont(.monospacedSystemFont(ofSize: 12, weight: .regular))
+        highlightr.theme.setCodeFont(.monospacedSystemFont(ofSize: R.Size.codeFontSize, weight: .regular))
     }
     private lazy var textStorage = CodeAttributedString(highlightr: highlightr) => {
         $0.language = "Json"

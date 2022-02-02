@@ -73,8 +73,8 @@ final private class LoremIpsumGeneratorView: ToolPage {
         self.title = "Lorem Ipsum Generator"
         
         self.addSection(ControlSection(title: "Configuration", items: [
-            ControlArea(icon: R.Image.text, title: "Type", message: "Generate words, sentences or paragraphes of Lorem Ipsum", control: typePicker),
-            ControlArea(icon: R.Image.number, title: "Length", message: "Number of words, sentences or paragraphes of generate", control: lengthField),
+            ControlArea(icon: R.Image.text, title: "Type", message: "Type of generating Lorem Ipsum", control: typePicker),
+            ControlArea(icon: R.Image.number, title: "Length", message: "Length of generating Lorem Ipsum", control: lengthField),
         ]))
         
         self.addSection(outputSection)

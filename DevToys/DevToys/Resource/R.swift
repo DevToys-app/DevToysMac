@@ -12,7 +12,8 @@ enum R {
         static let corner: CGFloat = 5
         
         static let controlTitleFontSize: CGFloat = 12
-        static let controlFontSize: CGFloat = 11
+        static let controlFontSize: CGFloat = 10.5
+        static let codeFontSize: CGFloat = 10.5
         
         static let controlHeight: CGFloat = 28
     }
@@ -100,3 +101,6 @@ enum R {
     }
 }
 
+extension Bundle {
+    static let current = Bundle(for: { class __ {}; return  __.self }())
+}

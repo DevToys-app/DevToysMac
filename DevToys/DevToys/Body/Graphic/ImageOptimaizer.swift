@@ -7,8 +7,11 @@
 
 import CoreUtil
 
-
-
 final class ImageOptimaizerViewController: NSViewController {
     
 }
+
+final class ImageOptimaizerView: ToolPage {
+    
+}
+

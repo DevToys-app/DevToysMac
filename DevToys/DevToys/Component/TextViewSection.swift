@@ -92,9 +92,9 @@ class TextViewSectionBase<TextView: TextViewType>: ControlSection {
         if self.textSectionOptions.contains(.fileImportable) {
             self.addToolbarItem(openButton)
         }
-        if self.textSectionOptions.contains(.clearable) {
-            self.addToolbarItem(clearButton)
-        }
+//        if self.textSectionOptions.contains(.clearable) {
+//            self.addToolbarItem(clearButton)
+//        }
     }
     
     override func onAwake() {
@@ -103,7 +103,7 @@ class TextViewSectionBase<TextView: TextViewType>: ControlSection {
         
         self.addStackItem(textView)
         self.textView.snp.makeConstraints{ make in
-            make.height.equalTo(180)
+//            make.height.equalTo(180)
         }
     }
 }

@@ -104,8 +104,15 @@ final private class JSONYamlConverterView: ToolPage {
     let yamlSection = CodeViewSection(title: "Yaml", options: .all, language: .yaml)
     
     private lazy var formatStyleArea = ControlArea(icon: R.Image.format, title: "Format", control: formatStylePicker)
-    
     private lazy var configurationSection = ControlSection(title: "Configuration", items: [formatStyleArea])
+    
+    override func layout() {
+        super.layout()
+        
+        jsonSection.snp.remakeConstraints{ make in
+            make.height.equalTo(self.frame.height - 300)
+        }
+    }
     
     override func onAwake() {
         self.title = "JSON <> Yaml Converter"
