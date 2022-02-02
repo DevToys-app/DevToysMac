@@ -7,6 +7,7 @@
 
 import CoreUtil
 import Yams
+import SwiftJSONFormatter
 
 final class JSONYamlConverterViewController: NSViewController {
     private let cell = JSONYamlConverterView()
@@ -48,10 +49,13 @@ final class JSONYamlConverterViewController: NSViewController {
         guard let object = try? Yams.load(yaml: code) else { return nil }
         
         var options = JSONSerialization.WritingOptions()
+        options.insert(.sortedKeys)
         if formatStyle == .pretty { options.insert(.prettyPrinted) }
         return try? objc_try {
             guard let data = try? JSONSerialization.data(withJSONObject: object, options: options) else { return nil }
-            return String(data: data, encoding: .utf8)
+            let json = String(data: data, encoding: .utf8)!
+            
+            return SwiftJSONFormatter.beautify(json, indent: "    ")
         }
     }
     
@@ -105,12 +109,13 @@ final private class JSONYamlConverterView: ToolPage {
     
     private lazy var formatStyleArea = ControlArea(icon: R.Image.format, title: "Format", control: formatStylePicker)
     private lazy var configurationSection = ControlSection(title: "Configuration", items: [formatStyleArea])
+    private lazy var ioStack = self.addSection2(jsonSection, yamlSection)
     
     override func layout() {
         super.layout()
         
-        jsonSection.snp.remakeConstraints{ make in
-            make.height.equalTo(self.frame.height - 300)
+        self.ioStack.snp.remakeConstraints{ make in
+            make.height.equalTo(max(240, self.frame.height - 220))
         }
     }
     
@@ -118,7 +123,6 @@ final private class JSONYamlConverterView: ToolPage {
         self.title = "JSON <> Yaml Converter"
         
         self.addSection(configurationSection)
-        self.addSection2(jsonSection, yamlSection)
     }
 }
 

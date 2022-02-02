@@ -34,6 +34,18 @@ final private class HTMLDecoderView: ToolPage {
     let encodeTextSection = CodeViewSection(title: "Encoded", options: [.all], language: .xml)
     let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])
     
+    override func layout() {
+        super.layout()
+        let halfHeight = max(200, (self.frame.height - 140) / 2)
+        
+        self.encodeTextSection.snp.remakeConstraints{ make in
+            make.height.equalTo(halfHeight)
+        }
+        self.decodeTextSection.snp.remakeConstraints{ make in
+            make.height.equalTo(halfHeight)
+        }
+    }
+    
     override func onAwake() {
         self.title = "HEML Encoder / Decoder"
         

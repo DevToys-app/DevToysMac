@@ -39,6 +39,18 @@ final private class Base64DecoderView: ToolPage {
     let encodeTextSection = TextViewSection(title: "Encoded", options: [.all])
     let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])
     
+    override func layout() {
+        super.layout()
+        let halfHeight = max(200, (self.frame.height - 140) / 2)
+        
+        self.encodeTextSection.snp.remakeConstraints{ make in
+            make.height.equalTo(halfHeight)
+        }
+        self.decodeTextSection.snp.remakeConstraints{ make in
+            make.height.equalTo(halfHeight)
+        }
+    }
+    
     override func onAwake() {
         self.title = "Base64 Encoder / Decoder"
         

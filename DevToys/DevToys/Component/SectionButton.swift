@@ -7,7 +7,6 @@
 
 import CoreUtil
 
-
 class SectionButton: NSLoadButton {
     override var title: String { didSet { updateTitle()  } }
     override var image: NSImage? { didSet { iconView.image = image } }

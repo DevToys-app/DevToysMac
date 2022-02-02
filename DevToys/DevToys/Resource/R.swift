@@ -13,9 +13,9 @@ enum R {
         
         static let controlTitleFontSize: CGFloat = 12
         static let controlFontSize: CGFloat = 10.5
-        static let codeFontSize: CGFloat = 10.5
+        static let codeFontSize: CGFloat = 12
         
-        static let controlHeight: CGFloat = 28
+        static let controlHeight: CGFloat = 26
     }
     enum Image {
         static let spacing = NSImage(named: "spacing")!

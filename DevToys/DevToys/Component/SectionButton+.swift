@@ -26,6 +26,7 @@ final class OpenSectionButton: SectionButton {
     
     override func onAwake() {
         super.onAwake()
+        self.toolTip = "Open File"
         self.title = ""
         self.image = R.Image.open
         self.setTarget(self, action: #selector(buttonAction))
@@ -48,6 +49,7 @@ final class CopySectionButton: SectionButton {
     override func onAwake() {
         super.onAwake()
         self.image = R.Image.copy
+        self.toolTip = "Copy"
         
         self.actionPublisher
             .sink{[unowned self] in
@@ -70,7 +72,7 @@ final class PasteSectionButton: SectionButton {
     
     override func onAwake() {
         super.onAwake()
-        
+        self.toolTip = "Paste"
         self.title = "Paste"
         self.image = R.Image.paste
     }

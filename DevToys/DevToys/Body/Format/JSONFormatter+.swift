@@ -66,12 +66,19 @@ final private class JSONFormatterView: ToolPage {
     let outputSection = CodeViewSection(title: "Output", options: .defaultOutput, language: .javascript)
         
     private lazy var indentArea = ControlArea(icon: R.Image.spacing, title: "Indentation", control: indentControl)
-    
     private lazy var configurationSection = ControlSection(title: "Configuration", items: [indentArea])
+    private lazy var ioStack = self.addSection2(inputSection, outputSection)
+    
+    override func layout() {
+        super.layout()
+        
+        self.ioStack.snp.remakeConstraints{ make in
+            make.height.equalTo(max(240, self.frame.height - 220))
+        }
+    }
     
     override func onAwake() {
         self.title = "Json Formatter"
         self.addSection(configurationSection)
-        self.addSection2(inputSection, outputSection)
     }
 }

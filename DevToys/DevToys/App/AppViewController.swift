@@ -16,7 +16,7 @@ final class AppViewController: NSSplitViewController {
         super.viewDidLoad()
         
         let sidebarItem = NSSplitViewItem(sidebarWithViewController: sidebarController)
-        sidebarItem.minimumThickness = 230
+        sidebarItem.minimumThickness = 180
         sidebarItem.canCollapse = false
         self.addSplitViewItem(sidebarItem)
         self.linkState(for: .appModelChannel, to: sidebarController)

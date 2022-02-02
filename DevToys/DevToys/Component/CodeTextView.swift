@@ -38,7 +38,7 @@ final class TextView: NSLoadView {
         
         self.addSubview(scrollView)
         self.textView.allowsUndo = true
-        self.textView.font = .monospacedSystemFont(ofSize: 12, weight: .medium)
+        self.textView.font = .monospacedSystemFont(ofSize: R.Size.codeFontSize, weight: .medium)
         self.textView.backgroundColor = .quaternaryLabelColor
         self.textView.textContainerInset = [0, 4]
         self.scrollView.snp.makeConstraints{ make in
