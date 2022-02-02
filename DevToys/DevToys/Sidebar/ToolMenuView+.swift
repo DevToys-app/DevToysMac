@@ -31,8 +31,8 @@ final class ToolmenuViewController: NSViewController {
     private let graphicMenu = ToolMenu(R.Image.Sidebar.graphic, "Media", "graphic", [
         .imageCompressor, .pdfGenerator
     ])
-    private let networkMenu = ToolMenu(R.Image.Sidebar.network, "Network", "graphic", [
-        .networkInfomation
+    private let networkMenu = ToolMenu(R.Image.Sidebar.network, "Network", "network", [
+        .networkInfomation, .apiTest
     ])
     
     private lazy var toolMenus = [

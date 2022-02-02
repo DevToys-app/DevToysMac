@@ -43,7 +43,7 @@ final class NetworkInfomationViewController: ToolPageViewController {
         testIsRunning = true
         speedTest.networkSpeedTestStart(UrlForTestSpeed: "https://fast.com")
         
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) {_ in
             self.speedTest.networkSpeedTestStop()
             self.testIsRunning = false
         }
@@ -71,9 +71,9 @@ final private class NetworkInfomationView: ToolPage {
         self.title = "Network Infomation"
         
         self.addSection(ControlSection(title: "Infomation", items: [
-            ControlArea(title: "Local IP Address", control: ipaddressLabel),
-            ControlArea(title: "Status", control: statusLabel),
-            ControlArea(title: "Network Speed", control: NSStackView() => {
+            ControlArea(icon: R.Image.ipaddress, title: "Local IP Address", control: ipaddressLabel),
+            ControlArea(icon: R.Image.networkStatus, title: "Status", control: statusLabel),
+            ControlArea(icon: R.Image.speed, title: "Network Speed", control: NSStackView() => {
                 $0.addArrangedSubview(speedLabel)
                 $0.addArrangedSubview(restartButton)
             }),

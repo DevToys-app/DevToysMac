@@ -37,6 +37,10 @@ enum R {
         static let stepperUp = NSImage(named: "stepper.up")!
         static let stepperDown = NSImage(named: "stepper.down")!
         
+        static let ipaddress = NSImage(named: "ipaddress")!
+        static let networkStatus = NSImage(named: "network.status")!
+        static let speed = NSImage(named: "speed")!
+        
         enum Sidebar {
             static let home = NSImage(named: "sidebar/home")!
             
@@ -69,6 +73,7 @@ enum R {
             static let imageCompressor = NSImage(named: "sidebar/image.compressor")!
             
             static let network = NSImage(named: "sidebar/network")!
+            static let api = NSImage(named: "sidebar/api")!
         }
         
         enum ToolList {
@@ -102,7 +107,8 @@ enum R {
             static let colorBlindnessSimulator = NSImage(named: "toollist/color.blindness.simulator")!
             static let imageCompressor = NSImage(named: "toollist/image.compressor")!
             
-            static let network = NSImage(named: "sidebar/network")!
+            static let network = NSImage(named: "toollist/network")!
+            static let api = NSImage(named: "toollist/api")!
         }
     }
 }

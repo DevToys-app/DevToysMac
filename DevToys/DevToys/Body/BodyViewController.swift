@@ -52,6 +52,7 @@ final class BodyViewController: NSViewController {
                 case .imageCompressor: self.replaceContentViewController(imageOptimaizerController)
                 case .pdfGenerator: self.replaceContentViewController(pdfGeneratorController)
                 case .networkInfomation: self.replaceContentViewController(networkInfomationController)
+                default: self.replaceContentViewController(notImplementedController)
                 }
             }
             .store(in: &objectBag)

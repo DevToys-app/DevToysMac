@@ -30,6 +30,7 @@ enum ToolType: String, CaseIterable {
     case pdfGenerator
     
     case networkInfomation
+    case apiTest
 }
 
 extension ToolType {
@@ -49,7 +50,8 @@ extension ToolType {
         case .caseConverter: return R.Image.Sidebar.textIspector
         case .imageCompressor: return R.Image.Sidebar.imageCompressor
         case .pdfGenerator: return R.Image.Sidebar.graphic
-        case .networkInfomation: return R.Image.hyphen
+        case .networkInfomation: return R.Image.Sidebar.network
+        case .apiTest: return R.Image.Sidebar.api
         }
     }
     var toolListIcon: NSImage {
@@ -68,7 +70,8 @@ extension ToolType {
         case .caseConverter: return R.Image.ToolList.textIspector
         case .imageCompressor: return R.Image.ToolList.imageCompressor
         case .pdfGenerator: return R.Image.ToolList.graphic
-        case .networkInfomation: return R.Image.hyphen
+        case .networkInfomation: return R.Image.ToolList.network
+        case .apiTest: return R.Image.ToolList.api
         }
     }
     
@@ -88,7 +91,8 @@ extension ToolType {
         case .caseConverter: return "Inspector & Case Converter"
         case .imageCompressor: return "PNG / JPEG Compressor"
         case .pdfGenerator: return "PDF Generator"
-        case .networkInfomation: return "Network"
+        case .networkInfomation: return "Infomation"
+        case .apiTest: return "API"
         }
     }
     
@@ -109,6 +113,7 @@ extension ToolType {
         case .pdfGenerator: return "PDF Generator"
         case .imageCompressor: return "PNG / JPEG Compressor"
         case .networkInfomation: return "Network Infomation"
+        case .apiTest: return "API Tester"
         }
     }
     
@@ -129,6 +134,7 @@ extension ToolType {
         case .pdfGenerator: return "Generate PDF from images"
         case .imageCompressor: return "Lossless PNG and JPEG optimizer"
         case .networkInfomation: return "Observe network infomation"
+        case .apiTest: return "Send request to servers"
         }
     }
 }
