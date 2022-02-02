@@ -100,7 +100,7 @@ final class TextInspectorView: ToolPage {
         super.layout()
     
         self.outputSection.snp.remakeConstraints{ make in
-            make.height.equalTo(max(240, self.frame.height - 320))
+            make.height.equalTo(max(240, self.frame.height - 360))
         }
     }
     

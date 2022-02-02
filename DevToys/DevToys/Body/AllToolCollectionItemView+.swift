@@ -17,7 +17,7 @@ final class AllToolCollectionItemViewController: ToolPageViewController {
         self.view = scrollView
         self.scrollView.documentView = collectionView
         
-        let flowLayout = NSCollectionViewFlowLayout()
+        let flowLayout = LeftAlignedCollectionViewFlowLayout()
         flowLayout.itemSize = [125, 230]
         flowLayout.sectionInset = NSEdgeInsets(top: 32, left: 32, bottom: 32, right: 32)
         flowLayout.minimumInteritemSpacing = 8

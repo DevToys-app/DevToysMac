@@ -20,9 +20,6 @@ final class JSONFormatterViewController: ToolPageViewController {
     override func loadView() { self.view = cell }
     
     override func viewDidLoad() {
-        
-        print(TextSectionOptions.defaultInput.contains(.inputable))
-        
         self.$spacingType
             .sink{[unowned self] in cell.indentControl.selectedItem = $0 }.store(in: &objectBag)
         self.$rawCode

@@ -9,7 +9,7 @@ import CoreUtil
 
 final class ToolmenuCell: NSLoadView {
     
-    static let height: CGFloat = 30
+    static let height: CGFloat = 36
     
     var title: String {
         get { titleLabel.stringValue } set { titleLabel.stringValue = newValue }

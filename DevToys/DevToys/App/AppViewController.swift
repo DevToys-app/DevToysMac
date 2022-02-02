@@ -16,7 +16,7 @@ final class AppViewController: NSSplitViewController {
         super.viewDidLoad()
         
         let sidebarItem = NSSplitViewItem(sidebarWithViewController: sidebarController)
-        sidebarItem.minimumThickness = 160
+        sidebarItem.minimumThickness = 200
         sidebarItem.canCollapse = false
         self.addSplitViewItem(sidebarItem)
         self.linkState(for: .appModelChannel, to: sidebarController)
@@ -26,5 +26,9 @@ final class AppViewController: NSSplitViewController {
         bodyItem.canCollapse = false
         self.addSplitViewItem(bodyItem)
         self.linkState(for: .appModelChannel, to: bodyController)
+        
+        splitView.setPosition(220, ofDividerAt: 0)
+        
+        self.splitView.autosaveName = "app.splitv"
     }
 }
