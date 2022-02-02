@@ -1,0 +1,16 @@
+//
+//  ExceptionHanlder.h
+//  CoreUtil
+//
+//  Created by yuki on 2021/06/26.
+//  Copyright © 2021 yuki. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface _ExceptionHandler : NSObject
++ (void)objc_try: (nonnull __attribute__((noescape)) void(^)(void))objc_try
+      objc_catch: (nonnull __attribute__((noescape)) void(^)(NSException* _Nonnull))objc_catch
+    objc_finally: (nullable __attribute__((noescape)) void(^)(void))objc_finally;
+@end
+
