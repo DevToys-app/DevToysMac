@@ -193,15 +193,12 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
-		B620145427A9440E00AF5386 /* Graphic */ = {
+		B620145427A9440E00AF5386 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				B6AC276427AA3D61000FD713 /* jpegoptim */,
-				B6AC272F27AA1373000FD713 /* optipng */,
-				B620145527A9442100AF5386 /* ImageOptimaizerView.swift */,
-				B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */,
+				B6AC276827AA532B000FD713 /* Image Optimizer */,
 			);
-			path = Graphic;
+			path = Media;
 			sourceTree = "<group>";
 		};
 		B64B1E6727A4F5E200AC2601 = {
@@ -315,6 +312,17 @@
 			path = Generator;
 			sourceTree = "<group>";
 		};
+		B6AC276827AA532B000FD713 /* Image Optimizer */ = {
+			isa = PBXGroup;
+			children = (
+				B6AC276427AA3D61000FD713 /* jpegoptim */,
+				B6AC272F27AA1373000FD713 /* optipng */,
+				B620145527A9442100AF5386 /* ImageOptimaizerView.swift */,
+				B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */,
+			);
+			path = "Image Optimizer";
+			sourceTree = "<group>";
+		};
 		B6D1AEDD27A534850022FED2 /* Body */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,7 +332,7 @@
 				B608542227A68008003BF243 /* Format */,
 				B680A79327A68B2D007CB707 /* Coder */,
 				B620141F27A926B400AF5386 /* Text */,
-				B620145427A9440E00AF5386 /* Graphic */,
+				B620145427A9440E00AF5386 /* Media */,
 				B680A8A827A8E0F8007CB707 /* Generator */,
 			);
 			path = Body;
