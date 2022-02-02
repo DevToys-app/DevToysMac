@@ -11,24 +11,6 @@ Currently under development.
 - Download and extract the latest [Releases](https://github.com/ObuchiYuki/DevToysMac/releases).
 - Extract `DevToys.app` from `DevToys.zip`
 
-# TODOs
-
-- [x] Windows/.NET like UI Components
-- [x] Minimum Code Editor
-- [x] Home
-- [x] Json Yaml Converter  
-- [x] Number Base Converter
-- [x] HTML Encoder / Decoder
-- [x] URL Encoder / Decoder
-- [x] Base 64 Encoder / Decoder
-- [x] JWT Encoder / Decoder
-- [x] JSON Formatter 
-- [x] Hash Generator
-- [x] UUID Generator
-- [x] Lorem Ipsum Generator
-- [x] Text Inspector / Case Converter
-- [x] PNG / JPEG Compressor
-
 # Screen Shots
 
 ### Home
