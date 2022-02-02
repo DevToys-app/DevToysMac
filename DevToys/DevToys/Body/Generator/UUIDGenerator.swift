@@ -66,7 +66,7 @@ final private class UUIDGeneratorView: ToolPage {
         super.layout()
         
         self.uuidView.snp.remakeConstraints{ make in
-            make.height.equalTo(max(200, self.frame.height - 320))
+            make.height.equalTo(max(200, self.frame.height - 290))
         }
     }
     
@@ -78,7 +78,7 @@ final private class UUIDGeneratorView: ToolPage {
             ControlArea(icon: R.Image.format, title: "Uppercase", message: "Whether to use uppercase for generate UUIDs.", control: uppercaseSwitch),
         ]))
         
-        self.stackView.addArrangedSubview(NSStackView() => {
+        self.addSection(NSStackView() => {
             $0.addArrangedSubview(generateCount)
             $0.addArrangedSubview(NSTextField(labelWithString: "x") => {
                 $0.font = .monospacedSystemFont(ofSize: 12, weight: .medium)

@@ -94,8 +94,15 @@ final class TextInspectorView: ToolPage {
     let inputSection = TextViewSection(title: "Input", options: .defaultInput)
     let tagCloudView = TagCloudView()
     let outputSection = TextViewSection(title: "Output", options: .defaultOutput)
-    
     let infomationView = NSTextView()
+    
+    override func layout() {
+        super.layout()
+    
+        self.outputSection.snp.remakeConstraints{ make in
+            make.height.equalTo(max(240, self.frame.height - 320))
+        }
+    }
     
     override func onAwake() {
         self.title = "Text Case Converter and Inspector"

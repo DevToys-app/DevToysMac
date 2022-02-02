@@ -9,20 +9,17 @@ import CoreUtil
  
 class ToolPage: NSLoadView {
     
-    var title: String {
-        get { titleLabel.stringValue } set { titleLabel.stringValue = newValue }
-    }
+    var title: String = "Untitled Tool"
     
-    private let titleLabel = NSTextField(labelWithString: "Title")
     let stackView = NSStackView()
-    private let scrollView = NSScrollView()
+    let scrollView = NSScrollView()
     
     func addSection(_ title: String, orientation: NSUserInterfaceLayoutOrientation = .vertical, items: [NSView], toolbarItems: [NSView]) {
         let stack = ControlSection(title: title, orientation: orientation, items: items, toolbarItems: toolbarItems)
         self.stackView.addArrangedSubview(stack)
     }
     
-    func addSection(_ stack: ControlSection) {
+    func addSection(_ stack: NSView) {
         self.stackView.addArrangedSubview(stack)
     }
     
@@ -45,17 +42,13 @@ class ToolPage: NSLoadView {
         }
         
         self.scrollView.documentView = stackView
-        self.stackView.edgeInsets = NSEdgeInsets(x: 16, y: 16)
+        self.stackView.edgeInsets = NSEdgeInsets(x: 16, y: 0)
         self.stackView.orientation = .vertical
         self.stackView.spacing = 8
         self.stackView.alignment = .left
         self.stackView.snp.makeConstraints{ make in
             make.left.right.equalToSuperview()
         }
-        
-        self.stackView.insertArrangedSubview(titleLabel, at: 0)
-        self.stackView.setCustomSpacing(16, after: titleLabel)
-        self.titleLabel.font = .systemFont(ofSize: 24, weight: .medium)
     }
 
     public override init(frame frameRect: NSRect) {

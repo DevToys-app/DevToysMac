@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class LoremIpsumGeneratorViewController: NSViewController {
+final class LoremIpsumGeneratorViewController: ToolPageViewController {
     private let cell = LoremIpsumGeneratorView()
     
     @RestorableState("li.type") var generateType = LoremIpsumGenerateType.sentences
@@ -63,11 +63,18 @@ enum LoremIpsumGenerateType: String, TextItem {
 }
 
 final private class LoremIpsumGeneratorView: ToolPage {
-    
     let typePicker = EnumPopupButton<LoremIpsumGenerateType>()
     let lengthField = NumberField()
     
     let outputSection = TextViewSection(title: "Output", options: [.outputable, .copyable, .inputable])
+    
+    override func layout() {
+        super.layout()
+    
+        self.outputSection.snp.remakeConstraints{ make in
+            make.height.equalTo(max(240, self.frame.height - 220))
+        }
+    }
     
     override func onAwake() {
         self.title = "Lorem Ipsum Generator"

@@ -74,12 +74,13 @@ final class ToolmenuViewController: NSViewController {
         self.scrollView.documentView = outlineView
         
         self.outlineView.setTarget(self, action: #selector(onClick))
-        self.outlineView.indentationPerLevel = 8
+        self.outlineView.outlineTableColumn = self.outlineView.tableColumns[0]
         self.outlineView.delegate = self
         self.outlineView.dataSource = self
         self.outlineView.selectionHighlightStyle = .sourceList
         self.outlineView.autosaveExpandedItems = true
         self.outlineView.autosaveName = "sidebar"
+        self.outlineView.indentationPerLevel = 4
     }
 }
 

@@ -27,7 +27,7 @@ final private class SidebarView: NSLoadStackView {
     let toolMenuView = NSPlaceholderView()
     
     override func onAwake() {
-        self.edgeInsets.top = 32
+        self.edgeInsets.top = 48
         self.orientation = .vertical
         
         self.addArrangedSubview(searchView)

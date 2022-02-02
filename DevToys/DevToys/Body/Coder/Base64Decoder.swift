@@ -41,7 +41,7 @@ final private class Base64DecoderView: ToolPage {
     
     override func layout() {
         super.layout()
-        let halfHeight = max(200, (self.frame.height - 140) / 2)
+        let halfHeight = max(200, (self.frame.height - 80) / 2)
         
         self.encodeTextSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)

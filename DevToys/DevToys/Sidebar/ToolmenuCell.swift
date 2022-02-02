@@ -9,7 +9,7 @@ import CoreUtil
 
 final class ToolmenuCell: NSLoadView {
     
-    static let height: CGFloat = 36
+    static let height: CGFloat = 30
     
     var title: String {
         get { titleLabel.stringValue } set { titleLabel.stringValue = newValue }
@@ -34,8 +34,10 @@ final class ToolmenuCell: NSLoadView {
         
         self.addSubview(titleLabel)
         self.titleLabel.lineBreakMode = .byTruncatingTail
+        self.titleLabel.font = .systemFont(ofSize: R.Size.controlTitleFontSize)
         self.titleLabel.snp.makeConstraints{ make in
             make.left.equalTo(self.iconView.snp.right).offset(8)
+            make.right.equalToSuperview().inset(4)
             make.centerY.equalToSuperview()
         }
     }

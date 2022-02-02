@@ -115,7 +115,7 @@ final private class JSONYamlConverterView: ToolPage {
         super.layout()
         
         self.ioStack.snp.remakeConstraints{ make in
-            make.height.equalTo(max(240, self.frame.height - 220))
+            make.height.equalTo(max(240, self.frame.height - 160))
         }
     }
     
