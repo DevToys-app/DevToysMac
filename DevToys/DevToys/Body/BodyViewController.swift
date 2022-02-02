@@ -24,6 +24,7 @@ final class BodyViewController: NSViewController {
     private lazy var loremIpsumGeneratorController = LoremIpsumGeneratorViewController()
     private lazy var textInspectorController = TextInspectorViewController()
     private lazy var imageOptimaizerController = ImageOptimaizerViewController()
+    private lazy var pdfGeneratorController = PDFGeneratorViewController()
     
     private lazy var notImplementedController = NotImplementedViewController()
     
@@ -48,7 +49,7 @@ final class BodyViewController: NSViewController {
                 case .leremIpsumGenerator: self.replaceContentViewController(loremIpsumGeneratorController)
                 case .caseConverter: self.replaceContentViewController(textInspectorController)
                 case .imageCompressor: self.replaceContentViewController(imageOptimaizerController)
-//                default: self.replaceContentViewController(notImplementedController)
+                case .pdfGenerator: self.replaceContentViewController(pdfGeneratorController)
                 }
             }
             .store(in: &objectBag)

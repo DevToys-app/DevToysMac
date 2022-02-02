@@ -25,12 +25,9 @@ enum ToolType: String, CaseIterable {
     case leremIpsumGenerator
     
     case caseConverter
-//    case regexTester
-//    case textComparer
-//    case markdownPreview
     
-//    case colorBlindnessSimulator
     case imageCompressor
+    case pdfGenerator
 }
 
 extension ToolType {
@@ -48,11 +45,8 @@ extension ToolType {
         case .uuidGenerator: return R.Image.Sidebar.uuidGenerator
         case .leremIpsumGenerator: return R.Image.Sidebar.loremIpsumGenerator
         case .caseConverter: return R.Image.Sidebar.textIspector
-//        case .regexTester: return R.Image.Sidebar.regexTester
-//        case .textComparer: return R.Image.Sidebar.imageCompressor
-//        case .markdownPreview: return R.Image.Sidebar.markdownPreview
-//        case .colorBlindnessSimulator: return R.Image.Sidebar.colorBlindnessSimulator
         case .imageCompressor: return R.Image.Sidebar.imageCompressor
+        case .pdfGenerator: return R.Image.Sidebar.graphic
         }
     }
     var toolListIcon: NSImage {
@@ -69,11 +63,8 @@ extension ToolType {
         case .uuidGenerator: return R.Image.ToolList.uuidGenerator
         case .leremIpsumGenerator: return R.Image.ToolList.loremIpsumGenerator
         case .caseConverter: return R.Image.ToolList.textIspector
-//        case .regexTester: return R.Image.ToolList.regexTester
-//        case .textComparer: return R.Image.ToolList.imageCompressor
-//        case .markdownPreview: return R.Image.ToolList.markdownPreview
-//        case .colorBlindnessSimulator: return R.Image.ToolList.colorBlindnessSimulator
         case .imageCompressor: return R.Image.ToolList.imageCompressor
+        case .pdfGenerator: return R.Image.ToolList.graphic
         }
     }
     
@@ -91,11 +82,8 @@ extension ToolType {
         case .uuidGenerator: return "UUID"
         case .leremIpsumGenerator: return "Lorem Ipsum"
         case .caseConverter: return "Inspector & Case Converter"
-//        case .regexTester: return "Regex Tester"
-//        case .textComparer: return "Text Comparer"
-//        case .markdownPreview: return "Markdown Preview"
-//        case .colorBlindnessSimulator: return "Color Blindness Simulator"
         case .imageCompressor: return "PNG / JPEG Compressor"
+        case .pdfGenerator: return "PDF Generator"
         }
     }
     
@@ -113,10 +101,7 @@ extension ToolType {
         case .uuidGenerator: return "UUID Generator"
         case .leremIpsumGenerator: return "Lorem Ipsum Generator"
         case .caseConverter: return "Text Case Converter and Inspector"
-//        case .regexTester: return "Regex Tester"
-//        case .textComparer: return "Text Comparer"
-//        case .markdownPreview: return "Markdown Preview"
-//        case .colorBlindnessSimulator: return "Color Blindness Simulator"
+        case .pdfGenerator: return "PDF Generator"
         case .imageCompressor: return "PNG / JPEG Compressor"
         }
     }
@@ -127,7 +112,7 @@ extension ToolType {
         case .jsonYamlConvertor: return "Convert Json data to Yaml and vice versa"
         case .numberBaseConvertor: return "Convert numbers from one base to another"
         case .htmlDecoder: return "Encoder or decode all the applicable charactors to their corresponding HTML"
-        case .urlDecoder: return "Encoder or decode all the applicable charactors to their corresponding UR:"
+        case .urlDecoder: return "Encoder or decode all the applicable charactors to their corresponding URL"
         case .base64Decoder: return "Encode and decode Base64 data"
         case .jwtDecoder: return "Decode a JWT header playload and signature"
         case .jsonFormatter: return "Indent or minify Json data"
@@ -135,10 +120,7 @@ extension ToolType {
         case .uuidGenerator: return "Generate UUIDs version 1 and 4"
         case .leremIpsumGenerator: return "Generate Lorem Ipsum placeholder text"
         case .caseConverter: return "Analyze text and convert it to differenct case"
-//        case .regexTester: return "Validate and test reguler expressions"
-//        case .textComparer: return "Compare two texts"
-//        case .markdownPreview: return "Preview Markdown document with a Github-like render"
-//        case .colorBlindnessSimulator: return "Simulator color blindness on a picture or screenshot"
+        case .pdfGenerator: return "Generate PDF from images"
         case .imageCompressor: return "Lossless PNG and JPEG optimizer"
         }
     }

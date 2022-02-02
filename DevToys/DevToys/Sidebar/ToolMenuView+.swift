@@ -29,7 +29,7 @@ final class ToolmenuViewController: NSViewController {
         .caseConverter,
     ])
     private let graphicMenu = ToolMenu(R.Image.Sidebar.graphic, "Graphic", "graphic", [
-        .imageCompressor
+        .imageCompressor, .pdfGenerator
     ])
     
     private lazy var toolMenus = [

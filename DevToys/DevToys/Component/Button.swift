@@ -9,7 +9,7 @@ import CoreUtil
 
 final class Button: NSLoadButton {
     override var intrinsicContentSize: NSSize {
-        super.intrinsicContentSize + [12, 0]
+        super.intrinsicContentSize + [64, 0]
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -29,9 +29,6 @@ final class Button: NSLoadButton {
         }
         self.isBordered = false
         self.bezelStyle = .rounded
-        
-        self.actionPublisher
-            .sink{ print("action") }.store(in: &objectBag)
     }
 }
 
