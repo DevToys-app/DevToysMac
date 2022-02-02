@@ -11,14 +11,7 @@ final class AllToolCollectionItemViewController: NSViewController {
     private let scrollView = NSScrollView()
     private let collectionView = NSCollectionView()
     
-    private let allTools: [ToolType] = [
-        .jsonYamlConvertor, .numberBaseConvertor,
-        .htmlDecoder, .urlDecoder, .base64Decoder, .jwtDecoder,
-        .jsonFormatter,
-        .hashGenerator, .uuidGenerator, .leremIpsumGenerator,
-        .caseConverter, .regexTester, .textComparer, .markdownPreview,
-        .colorBlindnessSimulator, .imageCompressor
-    ]
+    private let allTools = ToolType.allCases
     
     override func loadView() {
         self.view = scrollView

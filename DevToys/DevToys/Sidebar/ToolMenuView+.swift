@@ -26,10 +26,10 @@ final class ToolmenuViewController: NSViewController {
         .hashGenerator, .uuidGenerator, .leremIpsumGenerator
     ])
     private let textMenu = ToolMenu(R.Image.Sidebar.text, "Text", "text", [
-        .caseConverter, .regexTester, .textComparer, .markdownPreview
+        .caseConverter,
     ])
     private let graphicMenu = ToolMenu(R.Image.Sidebar.graphic, "Graphic", "graphic", [
-        .colorBlindnessSimulator, .imageCompressor
+        .imageCompressor
     ])
     
     private lazy var toolMenus = [

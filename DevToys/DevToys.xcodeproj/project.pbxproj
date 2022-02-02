@@ -20,6 +20,7 @@
 		B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620141D27A91F6700AF5386 /* LoremIpsumGenerator.swift */; };
 		B620142127A9271500AF5386 /* TextInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142027A9271500AF5386 /* TextInspector.swift */; };
 		B620142327A929B400AF5386 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142227A929B400AF5386 /* TagCloudView.swift */; };
+		B620145627A9442100AF5386 /* ImageOptimaizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620145527A9442100AF5386 /* ImageOptimaizer.swift */; };
 		B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */; };
 		B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7527A4F5E200AC2601 /* AppViewController.swift */; };
 		B64B1E7827A4F5E300AC2601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64B1E7727A4F5E300AC2601 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		B680A8A727A8DD5D007CB707 /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A8A627A8DD5D007CB707 /* JWTDecoder.swift */; };
 		B680A8AA27A8E106007CB707 /* HashGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A8A927A8E106007CB707 /* HashGenerator.swift */; };
 		B680A8AD27A8E31C007CB707 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B680A8AC27A8E31C007CB707 /* CryptoSwift */; };
+		B6AC273027AA1373000FD713 /* optipng in Resources */ = {isa = PBXBuildFile; fileRef = B6AC272F27AA1373000FD713 /* optipng */; };
 		B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEDE27A534960022FED2 /* BodyViewController.swift */; };
 		B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */; };
 		B6D1AEE927A545230022FED2 /* ControlArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* ControlArea.swift */; };
@@ -99,6 +101,7 @@
 		B620141D27A91F6700AF5386 /* LoremIpsumGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoremIpsumGenerator.swift; sourceTree = "<group>"; };
 		B620142027A9271500AF5386 /* TextInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInspector.swift; sourceTree = "<group>"; };
 		B620142227A929B400AF5386 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
+		B620145527A9442100AF5386 /* ImageOptimaizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOptimaizer.swift; sourceTree = "<group>"; };
 		B64B1E7027A4F5E200AC2601 /* DevToys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevToys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B64B1E7527A4F5E200AC2601 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 		B680A89927A8D9DD007CB707 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		B680A8A627A8DD5D007CB707 /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
 		B680A8A927A8E106007CB707 /* HashGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashGenerator.swift; sourceTree = "<group>"; };
+		B6AC272F27AA1373000FD713 /* optipng */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = optipng; sourceTree = "<group>"; };
 		B6D1AEDE27A534960022FED2 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
 		B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllToolCollectionItemView+.swift"; sourceTree = "<group>"; };
 		B6D1AEE827A545230022FED2 /* ControlArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlArea.swift; sourceTree = "<group>"; };
@@ -183,6 +187,15 @@
 				B620142027A9271500AF5386 /* TextInspector.swift */,
 			);
 			path = Text;
+			sourceTree = "<group>";
+		};
+		B620145427A9440E00AF5386 /* Graphic */ = {
+			isa = PBXGroup;
+			children = (
+				B6AC272F27AA1373000FD713 /* optipng */,
+				B620145527A9442100AF5386 /* ImageOptimaizer.swift */,
+			);
+			path = Graphic;
 			sourceTree = "<group>";
 		};
 		B64B1E6727A4F5E200AC2601 = {
@@ -305,6 +318,7 @@
 				B608542227A68008003BF243 /* Format */,
 				B680A79327A68B2D007CB707 /* Coder */,
 				B620141F27A926B400AF5386 /* Text */,
+				B620145427A9440E00AF5386 /* Graphic */,
 				B680A8A827A8E0F8007CB707 /* Generator */,
 			);
 			path = Body;
@@ -421,6 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6AC273027AA1373000FD713 /* optipng in Resources */,
 				B64B1E7827A4F5E300AC2601 /* Assets.xcassets in Resources */,
 				B64B1E7B27A4F5E300AC2601 /* Main.storyboard in Resources */,
 			);
@@ -457,6 +472,7 @@
 				B620142127A9271500AF5386 /* TextInspector.swift in Sources */,
 				B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */,
 				B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */,
+				B620145627A9442100AF5386 /* ImageOptimaizer.swift in Sources */,
 				B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */,
 				B680A79C27A6947D007CB707 /* Base64Decoder.swift in Sources */,
 				B680A86827A8D4D1007CB707 /* TextFieldSection.swift in Sources */,
