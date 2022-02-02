@@ -23,6 +23,7 @@ final class BodyViewController: NSViewController {
     private lazy var uuidGeneratorController = UUIDGeneratorViewController()
     private lazy var loremIpsumGeneratorController = LoremIpsumGeneratorViewController()
     private lazy var textInspectorController = TextInspectorViewController()
+    private lazy var imageOptimaizerController = ImageOptimaizerViewController()
     
     private lazy var notImplementedController = NotImplementedViewController()
     
@@ -46,7 +47,8 @@ final class BodyViewController: NSViewController {
                 case .uuidGenerator: self.replaceContentViewController(uuidGeneratorController)
                 case .leremIpsumGenerator: self.replaceContentViewController(loremIpsumGeneratorController)
                 case .caseConverter: self.replaceContentViewController(textInspectorController)
-                default: self.replaceContentViewController(notImplementedController)
+                case .imageCompressor: self.replaceContentViewController(imageOptimaizerController)
+//                default: self.replaceContentViewController(notImplementedController)
                 }
             }
             .store(in: &objectBag)

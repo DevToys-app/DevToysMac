@@ -18,6 +18,8 @@ enum R {
         static let controlHeight: CGFloat = 26
     }
     enum Image {
+        static let check = NSImage(named: "check")!
+        
         static let spacing = NSImage(named: "spacing")!
         static let clear = NSImage(named: "clear")!
         static let open = NSImage(named: "open")!
