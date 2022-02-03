@@ -40,6 +40,8 @@ enum R {
         static let ipaddress = NSImage(named: "ipaddress")!
         static let networkStatus = NSImage(named: "network.status")!
         static let speed = NSImage(named: "speed")!
+        static let drop = NSImage(named: "drop")!
+        static let export = NSImage(named: "export")!
         
         enum Sidebar {
             static let home = NSImage(named: "sidebar/home")!

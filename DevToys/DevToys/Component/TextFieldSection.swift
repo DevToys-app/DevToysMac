@@ -40,7 +40,6 @@ final class TextFieldSection: ControlSection {
     override func onAwake() {
         super.onAwake()
         self.addStackItem(textView)
-        self.contentStackView.setVisibilityPriority(.detachOnlyIfNecessary, for: textView)
         self.addToolbarItem(pasteButton)
         self.addToolbarItem(copyButton)
     }

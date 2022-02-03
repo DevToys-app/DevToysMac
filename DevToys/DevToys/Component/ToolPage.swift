@@ -11,26 +11,25 @@ class ToolPage: NSLoadView {
     
     var title: String = "Untitled Tool"
     
-    let stackView = NSStackView()
-    let scrollView = NSScrollView()
+    private let stackView = NSStackView()
+    private let scrollView = NSScrollView()
     
-    func addSection(_ title: String, orientation: NSUserInterfaceLayoutOrientation = .vertical, items: [NSView], toolbarItems: [NSView]) {
-        let stack = ControlSection(title: title, orientation: orientation, items: items, toolbarItems: toolbarItems)
-        self.stackView.addArrangedSubview(stack)
-    }
-    
-    func addSection(_ stack: NSView) {
-        self.stackView.addArrangedSubview(stack)
+    func addSection(_ section: NSView) {
+        self.stackView.addArrangedSubview(section)
+//        section.__setBackgroundColor(.yellow)
+        section.snp.makeConstraints{ make in
+            make.right.left.equalToSuperview().inset(16)
+        }
     }
     
     @discardableResult
-    func addSection2(_ stack1: ControlSection, _ stack2: ControlSection) -> NSStackView {
+    func addSection2(_ stack1: NSView, _ stack2: NSView) -> NSStackView {
         let stackView = NSStackView()
         stackView.distribution = .fillEqually
         stackView.orientation = .horizontal
         stackView.addArrangedSubview(stack1)
         stackView.addArrangedSubview(stack2)
-        self.stackView.addArrangedSubview(stackView)
+        self.addSection(stackView)
         return stackView
     }
     
@@ -41,13 +40,13 @@ class ToolPage: NSLoadView {
             make.edges.equalToSuperview()
         }
         
-        self.scrollView.documentView = stackView
         self.stackView.edgeInsets = NSEdgeInsets(x: 16, y: 0)
         self.stackView.orientation = .vertical
-        self.stackView.spacing = 8
         self.stackView.alignment = .left
+        self.scrollView.documentView = stackView
+        
         self.stackView.snp.makeConstraints{ make in
-            make.left.right.equalToSuperview()
+            make.width.equalToSuperview()
         }
     }
 

@@ -132,9 +132,7 @@ final private class PDFGeneratorView: ToolPage {
             ControlSection(title: "Configuration", items: [
                 ControlArea(icon: R.Image.paramators, title: "Scale Mode", control: scaleModePicker),
                 generateButton,
-            ]) => {
-                $0.stackView.alignment = .width
-            }
+            ])
         ) => {
             $0.alignment = .top
         }
@@ -151,7 +149,8 @@ final private class ImageListView: NSLoadScrollView {
     var imageItems = [ImageItem]() { didSet { listView.reloadData() } }
     var removePublisher = PassthroughSubject<[Int], Never>()
     var movePublisher = PassthroughSubject<(from: Int, to: Int), Never>()
-    
+    private let backgroundLayer = ControlBackgroundLayer.animationDisabled()
+
     override func keyDown(with event: NSEvent) {
         switch event.hotKey {
         case .delete: self.removePublisher.send(listView.selectedRowIndexes.map{ $0 })
@@ -159,13 +158,21 @@ final private class ImageListView: NSLoadScrollView {
         }
     }
     
+    override func updateLayer() {
+        self.backgroundLayer.update()
+    }
+    
+    override func layout() {
+        super.layout()
+        self.backgroundLayer.frame = bounds
+    }
+    
     override func onAwake() {
-        self.drawsBackground = true
-        self.backgroundColor = .quaternaryLabelColor
+        self.drawsBackground = false
         self.wantsLayer = true
+        self.layer?.addSublayer(backgroundLayer)
         self.layer?.cornerRadius = R.Size.corner
         self.documentView = listView
-//        self.listView.allowsMultipleSelection = true
         self.listView.delegate = self
         self.listView.dataSource = self
         self.listView.registerForDraggedTypes([.imageItem])

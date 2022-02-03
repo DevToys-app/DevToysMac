@@ -109,7 +109,7 @@ final class TextInspectorView: ToolPage {
         
         let convertSection = ControlSection(title: "Convert", items: [tagCloudView])
         self.addSection(convertSection)
-        self.stackView.setCustomSpacing(32, after: convertSection)
+//        self.stackView.setCustomSpacing(32, after: convertSection)
         self.tagCloudView.items = ConvertType.allCases.map{ $0.rawValue }
         self.tagCloudView.isSelectable = true
         

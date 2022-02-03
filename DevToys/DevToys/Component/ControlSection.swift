@@ -10,16 +10,15 @@ import CoreUtil
 class ControlSection: NSLoadView {
     func addStackItem(_ item: NSView) {
         self.contentStackView.addArrangedSubview(item)
+        item.snp.makeConstraints{ make in
+            make.right.left.equalToSuperview()
+        }
     }
     func addToolbarItem(_ item: NSView) {
-        self.toolbarStackView.addArrangedSubview(item)
+        self.titleStackView.addArrangedSubview(item)
     }
     func removeAllToolbarItem() {
-        self.toolbarStackView.subviews.removeAll()
-    }
-    
-    var orientation: NSUserInterfaceLayoutOrientation {
-        get { contentStackView.orientation } set { contentStackView.orientation = newValue }
+        self.titleStackView.subviews.removeAll(where: { $0 !== titleLabel && $0 !== spacer })
     }
     var title: String {
         get { titleLabel.stringValue } set { titleLabel.stringValue = newValue }
@@ -27,52 +26,41 @@ class ControlSection: NSLoadView {
     var minTitle: Bool = false {
         didSet {
             self.titleStackView.snp.remakeConstraints{ make in
-                if minTitle {
-                    make.height.equalTo(16)
-                } else {
-                    make.height.equalTo(36)
-                }
+                make.height.equalTo(minTitle ? 16 : 36)
             }
         }
     }
     
-    convenience init(title: String, orientation: NSUserInterfaceLayoutOrientation = .vertical, items: [NSView] = [], toolbarItems: [NSView] = []) {
+    convenience init(title: String, items: [NSView] = [], toolbarItems: [NSView] = []) {
         self.init()
         self.title = title
-        self.orientation = orientation
         for item in items { self.addStackItem(item) }
         for toolbarItem in toolbarItems { self.addToolbarItem(toolbarItem) }
     }
     
     private let titleLabel = NSTextField(labelWithString: "Title")
-    
+    private let spacer = NSView()
     private let titleStackView = NSStackView()
-    private let toolbarStackView = NSStackView()
-    let contentStackView = NSStackView()
-    let stackView = NSStackView()
+    private let contentStackView = NSStackView()
     
     override func onAwake() {
-        self.addSubview(stackView)
-        self.stackView.orientation = .vertical
-        self.stackView.snp.makeConstraints{ make in
-            make.edges.equalToSuperview()
-        }
-        
-        self.stackView.addArrangedSubview(titleStackView)
-        self.stackView.addArrangedSubview(contentStackView)
-        self.contentStackView.distribution = .fillEqually
-        
+        self.addSubview(titleStackView)
         self.titleStackView.orientation = .horizontal
-        self.titleStackView.alignment = .bottom
+        self.titleStackView.distribution = .fillProportionally
         self.titleStackView.snp.makeConstraints{ make in
+            make.left.right.top.equalToSuperview()
             make.height.equalTo(R.Size.controlHeight)
+        }
+        self.addSubview(contentStackView)
+        self.contentStackView.distribution = .fillEqually
+        self.contentStackView.orientation = .vertical
+        self.contentStackView.snp.makeConstraints{ make in
+            make.bottom.right.left.equalToSuperview()
+            make.top.equalTo(titleStackView.snp.bottom).offset(8)
         }
         
         self.titleStackView.addArrangedSubview(titleLabel)
+        self.titleStackView.addArrangedSubview(spacer)
         self.titleLabel.font = .systemFont(ofSize: R.Size.controlTitleFontSize)
-        
-        self.titleStackView.addArrangedSubview(NSView())
-        self.titleStackView.distribution = .fillProportionally
-        self.titleStackView.addArrangedSubview(toolbarStackView)
     }
 }

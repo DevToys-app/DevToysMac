@@ -38,6 +38,7 @@
 		B66850F227A65FC200A3FE01 /* SwiftJSONFormatter in Frameworks */ = {isa = PBXBuildFile; productRef = B66850F127A65FC200A3FE01 /* SwiftJSONFormatter */; };
 		B672CF6527AA763100391A5D /* NetworkSpeedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF6427AA763100391A5D /* NetworkSpeedTest.swift */; };
 		B672CF9727AA7E2C00391A5D /* APITestView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF9627AA7E2C00391A5D /* APITestView+.swift */; };
+		B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF9F27AAB8DD00391A5D /* FileDrop.swift */; };
 		B680A79527A68B35007CB707 /* HTMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79427A68B35007CB707 /* HTMLDecoder.swift */; };
 		B680A79827A69268007CB707 /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = B680A79727A69268007CB707 /* HTMLEntities */; };
 		B680A79A27A69324007CB707 /* URLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79927A69324007CB707 /* URLDecoder.swift */; };
@@ -128,6 +129,7 @@
 		B66850ED27A64D3200A3FE01 /* ToolPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolPage.swift; sourceTree = "<group>"; };
 		B672CF6427AA763100391A5D /* NetworkSpeedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpeedTest.swift; sourceTree = "<group>"; };
 		B672CF9627AA7E2C00391A5D /* APITestView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APITestView+.swift"; sourceTree = "<group>"; };
+		B672CF9F27AAB8DD00391A5D /* FileDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDrop.swift; sourceTree = "<group>"; };
 		B680A79427A68B35007CB707 /* HTMLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLDecoder.swift; sourceTree = "<group>"; };
 		B680A79927A69324007CB707 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
 		B680A79B27A6947D007CB707 /* Base64Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Decoder.swift; sourceTree = "<group>"; };
@@ -362,8 +364,8 @@
 			isa = PBXGroup;
 			children = (
 				B6D1AEE827A545230022FED2 /* ControlArea.swift */,
-				B6D1AEEB27A546810022FED2 /* ControlBackgroundLayer.swift */,
 				B6D1AEF327A54C440022FED2 /* ControlSection.swift */,
+				B6D1AEEB27A546810022FED2 /* ControlBackgroundLayer.swift */,
 				B6D1AEF627A54F750022FED2 /* SectionButton.swift */,
 				B608540A27A66694003BF243 /* SectionButton+.swift */,
 				B680A89927A8D9DD007CB707 /* Toast.swift */,
@@ -376,6 +378,7 @@
 				B62013B527A90B8900AF5386 /* NumberField.swift */,
 				B620141B27A917E000AF5386 /* Button.swift */,
 				B620142227A929B400AF5386 /* TagCloudView.swift */,
+				B672CF9F27AAB8DD00391A5D /* FileDrop.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				B64B202027A523A200AC2601 /* ToolmenuCell.swift in Sources */,
 				B672CF9727AA7E2C00391A5D /* APITestView+.swift in Sources */,
 				B672CF6527AA763100391A5D /* NetworkSpeedTest.swift in Sources */,
+				B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */,
 				B608540B27A66694003BF243 /* SectionButton+.swift in Sources */,
 				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
 				B620142327A929B400AF5386 /* TagCloudView.swift in Sources */,

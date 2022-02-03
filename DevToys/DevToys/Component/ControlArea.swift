@@ -22,7 +22,10 @@ final class ControlArea: NSLoadView {
         get { titleLabel.stringValue } set { titleLabel.stringValue = newValue }
     }
     var message: String? = "Message" {
-        didSet { messageLabel.isHidden = message == nil; messageLabel.stringValue = message ?? "" }
+        didSet {
+            messageLabel.isHidden = message == nil
+            messageLabel.stringValue = message ?? ""
+        }
     }
     
     convenience init(icon: NSImage? = nil, title: String, message: String? = nil, control: NSView) {
@@ -62,6 +65,8 @@ final class ControlArea: NSLoadView {
         
         self.addSubview(stackView)
         self.stackView.orientation = .horizontal
+        self.stackView.distribution = .fill
+        self.stackView.alignment = .centerY
         self.stackView.edgeInsets = .init(x: 16, y: 0)
         self.stackView.spacing = 16
         self.stackView.snp.makeConstraints{ make in
@@ -77,12 +82,14 @@ final class ControlArea: NSLoadView {
         self.stackView.addArrangedSubview(titleStack)
         self.titleStack.orientation = .vertical
         self.titleStack.spacing = 4
+        self.titleStack.distribution = .equalSpacing
         self.titleStack.alignment = .left
         
         self.titleStack.addArrangedSubview(titleLabel)
         self.titleLabel.font = NSFont.systemFont(ofSize: R.Size.controlTitleFontSize)
         
         self.titleStack.addArrangedSubview(messageLabel)
+        self.messageLabel.isHidden = true
         self.messageLabel.font = NSFont.systemFont(ofSize: R.Size.controlFontSize)
         self.messageLabel.textColor = .secondaryLabelColor
         self.messageLabel.lineBreakMode = .byTruncatingTail

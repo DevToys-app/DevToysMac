@@ -50,7 +50,6 @@ final private class ImageOptimaizerView: ToolPage {
     let deletePublisher = PassthroughSubject<[Int], Never>()
     
     var tasks: [ImageOptimizeTask] = [] { didSet { listView.reloadData() } }
-    let replaceSwitch = NSSwitch()
     let levelPicker = EnumPopupButton<OptimizeLevel>()
     
     override func keyDown(with event: NSEvent) {
@@ -77,7 +76,6 @@ final private class ImageOptimaizerView: ToolPage {
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
         self.addSection(ControlSection(title: "Configuration", items: [
-//            ControlArea(title: "Override", message: "Whether to overwrite the image or not.", control: replaceSwitch),
             ControlArea(title: "Optimize Level", control: levelPicker),
         ]))
         

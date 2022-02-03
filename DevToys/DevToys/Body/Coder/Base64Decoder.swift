@@ -10,8 +10,9 @@ import CoreUtil
 final class Base64DecoderViewController: ToolPageViewController {
     private let cell = Base64DecoderView()
     
-    @RestorableState("base64.rawString") var rawString = defaultRawString
-    @RestorableState("base64.formattedString") var formattedString = defaultBase64String
+    @RestorableState("base64.sourceType") private var sourceType = SourceType.text
+    @RestorableState("base64.rawString") private var rawString = defaultRawString
+    @Observable private var formattedString = defaultBase64String
     
     override func loadView() { self.view = cell }
     
@@ -20,13 +21,44 @@ final class Base64DecoderViewController: ToolPageViewController {
             .sink{[unowned self] in self.rawString = $0; self.formattedString = encode($0) }.store(in: &objectBag)
         self.cell.decodeTextSection.stringPublisher
             .sink{[unowned self] in self.formattedString = $0; self.rawString = decode($0) }.store(in: &objectBag)
+        self.cell.sourceTypePicker.itemPublisher
+            .sink{[unowned self] in self.sourceType = $0 }.store(in: &objectBag)
+        self.cell.fileDrop.urlsPublisher.compactMap{ $0.first }
+            .sink{[unowned self] in self.formattedString = self.encodeFile($0) }.store(in: &objectBag)
+        self.cell.exportButton.actionPublisher
+            .sink{[unowned self] in self.exportFile() }.store(in: &objectBag)
         
+        self.$sourceType
+            .sink{[unowned self] in self.cell.sourceTypePicker.selectedItem = $0; updateEncodeView($0) }.store(in: &objectBag)
         self.$rawString
             .sink{[unowned self] in self.cell.encodeTextSection.string = $0 }.store(in: &objectBag)
         self.$formattedString
             .sink{[unowned self] in self.cell.decodeTextSection.string = $0 }.store(in: &objectBag)
     }
     
+    private func updateEncodeView(_ sourceType: SourceType) {
+        switch sourceType {
+        case .file:
+            self.cell.encodeSectionContainer.contentView = cell.fileDropSection
+        case .text:
+            self.cell.encodeSectionContainer.contentView = cell.encodeTextSection
+            self.formattedString = self.encode(rawString)
+        }
+    }
+    
+    private func exportFile() {
+        let panel = NSSavePanel()
+        guard let data = Data(base64Encoded: formattedString), panel.runModal() == .OK, let url = panel.url else { return }
+        
+        do {
+            try data.write(to: url)
+        } catch {
+            NSSound.beep()
+        }
+    }
+    private func encodeFile(_ url: URL) -> String {
+        (try? Data(contentsOf: url).base64EncodedString()) ?? "[Encode Failed]"
+    }
     private func encode(_ string: String) -> String {
         string.data(using: .utf8)!.base64EncodedString()
     }
@@ -35,14 +67,30 @@ final class Base64DecoderViewController: ToolPageViewController {
     }
 }
 
+private enum SourceType: String, TextItem {
+    case text = "Text Source"
+    case file = "File Source"
+    var title: String { rawValue }
+}
+
 final private class Base64DecoderView: ToolPage {
-    let encodeTextSection = TextViewSection(title: "Encoded", options: [.all])
+    let sourceTypePicker = EnumPopupButton<SourceType>()
+    
+    let fileDrop = FileDrop()
+    let exportButton = SectionButton(title: "Export", image: R.Image.export)
+    let encodeSectionContainer = NSPlaceholderView()
+    let encodeTextSection = TextViewSection(title: "Text", options: [.all])
+    lazy var fileDropSection = ControlSection(title: "File", items: [fileDrop], toolbarItems: [exportButton])
+    
     let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])
     
     override func layout() {
         super.layout()
-        let halfHeight = max(200, (self.frame.height - 80) / 2)
+        let halfHeight = max(200, (self.frame.height - 200) / 2)
         
+        self.fileDropSection.snp.remakeConstraints{ make in
+            make.height.equalTo(halfHeight)
+        }
         self.encodeTextSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)
         }
@@ -53,8 +101,12 @@ final private class Base64DecoderView: ToolPage {
     
     override func onAwake() {
         self.title = "Base64 Encoder / Decoder"
-        
-        self.addSection(encodeTextSection)
+            
+        self.addSection(ControlSection(title: "Configuration", items: [
+            ControlArea(icon: R.Image.convert, title: "Source Type", control: sourceTypePicker)
+        ]))
+        self.encodeSectionContainer.contentView = encodeTextSection
+        self.addSection(encodeSectionContainer)
         self.addSection(decodeTextSection)
     }
 }
