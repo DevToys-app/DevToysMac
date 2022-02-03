@@ -100,7 +100,7 @@ private enum FormatStyle: String, TextItem {
     var title: String { rawValue }
 }
 
-final private class JSONYamlConverterView: ToolPage {
+final private class JSONYamlConverterView: Page {
     
     let formatStylePicker = EnumPopupButton<FormatStyle>()
     

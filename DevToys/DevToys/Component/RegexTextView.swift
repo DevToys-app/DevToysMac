@@ -25,7 +25,7 @@ final class RegexTextView: NSLoadView {
             textStorage.removeAttribute(NSAttributedString.Key.backgroundColor, range: NSRange(location: 0, length: textStorage.length))
             
             for range in highlightRanges {
-                textStorage.addAttribute(NSAttributedString.Key.backgroundColor, value: NSColor.systemOrange, range: range)
+                textStorage.addAttribute(NSAttributedString.Key.backgroundColor, value: NSColor.systemOrange.withAlphaComponent(0.7), range: range)
             }
         } catch: { error in
             print(error)

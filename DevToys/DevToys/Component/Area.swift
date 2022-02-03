@@ -82,7 +82,7 @@ final class Area: NSLoadView {
         self.stackView.addArrangedSubview(titleStack)
         self.titleStack.orientation = .vertical
         self.titleStack.spacing = 4
-        self.titleStack.distribution = .equalSpacing
+        self.titleStack.distribution = .fillProportionally
         self.titleStack.alignment = .left
         
         self.titleStack.addArrangedSubview(titleLabel)

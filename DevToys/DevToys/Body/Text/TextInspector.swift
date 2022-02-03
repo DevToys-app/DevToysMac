@@ -90,7 +90,7 @@ private enum ConvertType: String, CaseIterable {
     case trainCase = "Traint-Case"
 }
 
-final class TextInspectorView: ToolPage {
+final class TextInspectorView: Page {
     let inputSection = TextViewSection(title: "Input", options: .defaultInput)
     let tagCloudView = TagCloudView()
     let outputSection = TextViewSection(title: "Output", options: .defaultOutput)

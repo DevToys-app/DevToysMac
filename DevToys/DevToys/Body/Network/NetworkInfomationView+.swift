@@ -61,7 +61,7 @@ extension NetworkInfomationViewController: NetworkSpeedProviderDelegate {
     }
 }
 
-final private class NetworkInfomationView: ToolPage {
+final private class NetworkInfomationView: Page {
     let ipaddressLabel = NSTextField(labelWithString: "0.0.0.0")
     let statusLabel = NSTextField(labelWithString: "fetching...")
     let speedLabel = NSTextField(labelWithString: "0Mbps")

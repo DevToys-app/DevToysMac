@@ -62,7 +62,7 @@ enum LoremIpsumGenerateType: String, TextItem {
     var title: String { rawValue }
 }
 
-final private class LoremIpsumGeneratorView: ToolPage {
+final private class LoremIpsumGeneratorView: Page {
     let typePicker = EnumPopupButton<LoremIpsumGenerateType>()
     let lengthField = NumberField()
     

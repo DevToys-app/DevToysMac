@@ -10,11 +10,12 @@ import CoreUtil
 final class PDFGeneratorViewController: ToolPageViewController {
     private let cell = PDFGeneratorView()
     
-    @Observable var images = [ImageItem]()
+    @RestorableData("pdf.input") var images = [ImageItem]()
     
     override func loadView() { self.view = cell }
     
     override func viewDidLoad() {
+        print(_images.fileURL)
         self.$images
             .sink{[unowned self] in cell.imageListView.imageItems = $0 }.store(in: &objectBag)
         
@@ -25,9 +26,33 @@ final class PDFGeneratorViewController: ToolPageViewController {
         self.cell.imageListView.removePublisher
             .sink{[unowned self] in $0.reversed().forEach{ self.images.remove(at: $0) } }.store(in: &objectBag)
         self.cell.imageListView.movePublisher
-            .sink{[unowned self] in self.images.move(fromIndex: $0.from, toIndex: $0.to) }.store(in: &objectBag)
+            .sink{[unowned self] in self.moveItems($0, to: $1) }.store(in: &objectBag)
         self.cell.clearButton.actionPublisher
             .sink{[unowned self] in self.images = [] }.store(in: &objectBag)
+    }
+    
+    private func moveItems(_ fromRows: [Int], to row: Int) {
+        guard !fromRows.isEmpty else { return }
+        
+        let fromMin = fromRows.min()!
+        
+        let fromRows = fromRows.sorted().reversed()
+        var nextImages = self.images
+        var removed = [ImageItem]()
+        
+        for fromRow in fromRows {
+            let item = nextImages.remove(at: fromRow)
+            removed.append(item)
+        }
+        
+        removed.reverse()
+        
+        if row < fromMin {
+            nextImages.insert(contentsOf: removed, at: row)
+        } else {
+            nextImages.insert(contentsOf: removed, at: row - fromRows.count)
+        }
+        self.images = nextImages
     }
     
     private func readURLs(_ pasteboard: NSPasteboard) {
@@ -103,7 +128,7 @@ private enum ScaleMode: String, TextItem {
     var title: String { rawValue }
 }
 
-final private class PDFGeneratorView: ToolPage {
+final private class PDFGeneratorView: Page {
     let imageListView = ImageListView()
     let clearButton = SectionButton(title: "Clear", image: R.Image.clear)
     let generateButton = Button(title: "Generate PDF")
@@ -142,16 +167,22 @@ final private class PDFGeneratorView: ToolPage {
     }
 }
 
-struct ImageItem {
+struct ImageItem: Codable {
     let title: String
-    let image: NSImage
+    var image: NSImage { imageContainer.image }
+    private let imageContainer: NSImageContainer
+    
+    init(title: String, image: NSImage) {
+        self.title = title
+        self.imageContainer = .wrap(image)
+    }
 }
 
 final private class ImageListView: NSLoadScrollView {
     let listView = NSTableView.list()
     var imageItems = [ImageItem]() { didSet { listView.reloadData() } }
     var removePublisher = PassthroughSubject<[Int], Never>()
-    var movePublisher = PassthroughSubject<(from: Int, to: Int), Never>()
+    var movePublisher = PassthroughSubject<(from: [Int], to: Int), Never>()
     private let backgroundLayer = ControlBackgroundLayer.animationDisabled()
 
     override func keyDown(with event: NSEvent) {
@@ -254,7 +285,7 @@ extension ImageListView: NSTableViewDelegate, NSTableViewDataSource {
     
     func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
         guard dropOperation == .above else { return false }
-        guard let fromRow = info.draggingPasteboard.propertyList(forType: .imageItem) as? Int else { return false }
+        guard let fromRow = info.draggingPasteboard.pasteboardItems?.map{ $0.propertyList(forType: .imageItem) } as? [Int] else { return false }
         
         movePublisher.send((fromRow, row))
         

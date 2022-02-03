@@ -56,7 +56,7 @@ enum JSONSpacingType: String, TextItem {
     var title: String { rawValue }
 }
 
-final private class JSONFormatterView: ToolPage {
+final private class JSONFormatterView: Page {
     
     let indentControl = EnumPopupButton<JSONSpacingType>()
     let inputSection = CodeViewSection(title: "Input", options: .defaultInput, language: .javascript)

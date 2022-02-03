@@ -29,7 +29,7 @@ final class HTMLDecoderViewController: ToolPageViewController {
     }
 }
 
-final private class HTMLDecoderView: ToolPage {
+final private class HTMLDecoderView: Page {
     
     let encodeTextSection = CodeViewSection(title: "Encoded", options: [.all], language: .xml)
     let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])

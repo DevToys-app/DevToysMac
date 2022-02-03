@@ -58,7 +58,7 @@ final class JWTDecoderViewController: ToolPageViewController {
     }
 }
 
-final private class JWTDecoderView: ToolPage {
+final private class JWTDecoderView: Page {
     
     let tokenTextSection = TextViewSection(title: "JWT Token", options: .defaultInput)
     let headerCodeSection = CodeViewSection(title: "Header", options: .defaultOutput, language: .javascript)

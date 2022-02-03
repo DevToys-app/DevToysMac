@@ -10,8 +10,8 @@ import CoreUtil
 final class RegexTesterViewController: ToolPageViewController {
     private let cell = RegexTesterView()
     
-    @RestorableState("regex.pattern") var pattern = #"\d+.\d"#
-    @RestorableState("regex.sample") var text = #"100, 3.141, "Hello World""#
+    @RestorableState("rx.pattern") var pattern = #"(macOS|OS X) \d+\.\d+"#
+    @RestorableState("rx.sample") var text = defaultText
     
     @Observable var regex: NSRegularExpression? = nil
     @Observable var isError = false
@@ -59,7 +59,7 @@ final class RegexTesterViewController: ToolPageViewController {
     }
 }
 
-final private class RegexTesterView: ToolPage {
+final private class RegexTesterView: Page {
     let regexField = TextField(showCopyButton: false)
     let textView = RegexTextView()
     
@@ -79,3 +79,15 @@ final private class RegexTesterView: ToolPage {
         self.addSection(Section(title: "Text", items: [textView]))
     }
 }
+
+private let defaultText = """
+OS X 10.9 Mavericks
+OS X 10.10 Yosemite
+OS X 10.11 El Capitan
+macOS 10.12 Sierra
+macOS 10.13 High Sierra
+macOS 10.14 Mojave
+macOS 10.15 Catalina
+macOS 11.0 Big Sur
+macOS 12.0 Monterey
+"""

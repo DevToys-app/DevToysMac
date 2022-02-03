@@ -33,7 +33,7 @@ final class URLDecoderViewController: ToolPageViewController {
     }
 }
 
-final private class URLDecoderView: ToolPage {
+final private class URLDecoderView: Page {
     let encodeTextSection = TextViewSection(title: "Encoded", options: [.all])
     let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])
     

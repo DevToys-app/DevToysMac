@@ -22,14 +22,14 @@ final class HashGeneratorViewController: ToolPageViewController {
     
     override func viewDidLoad() {
         self.$isUppercase.sink{[unowned self] in self.cell.formatSwitch.isOn = $0 }.store(in: &objectBag)
-        self.$input.sink{[unowned self] in self.cell.inputSection.string = $0 }.store(in: &objectBag)
+        self.$input.sink{[unowned self] in self.cell.textInputSection.string = $0 }.store(in: &objectBag)
         self.$md5.sink{[unowned self] in self.cell.md5Section.string = $0 }.store(in: &objectBag)
         self.$sha1.sink{[unowned self] in self.cell.sha1Section.string = $0 }.store(in: &objectBag)
         self.$sha256.sink{[unowned self] in self.cell.sha256Section.string = $0 }.store(in: &objectBag)
         self.$sha512.sink{[unowned self] in self.cell.sha512Section.string = $0 }.store(in: &objectBag)
         
-        self.cell.inputSection.stringPublisher
-            .sink{[unowned self] in self.input = $0; updateHash() }.store(in: &objectBag)
+//        self.cell.inputSection.stringPublisher
+//            .sink{[unowned self] in self.input = $0; updateHash() }.store(in: &objectBag)
         self.cell.formatSwitch.isOnPublisher
             .sink{[unowned self] in self.isUppercase = $0; updateHash() }.store(in: &objectBag)
     }
@@ -42,10 +42,14 @@ final class HashGeneratorViewController: ToolPageViewController {
     }
 }
 
-final class HashGeneratorView: ToolPage {
+final class HashGeneratorView: Page {
     let formatSwitch = NSSwitch()
     
-    let inputSection = TextViewSection(title: "Input", options: .all)
+    let fileDrop = FileDrop()
+    lazy var fileInputSection = Section(title: "Input", items: [fileDrop])
+    let textInputSection = TextViewSection(title: "Input", options: .all)
+    let inputSection = NSPlaceholderView()
+    
     let md5Section = TextFieldSection(title: "MD5", isEditable: false)
     let sha1Section = TextFieldSection(title: "SHA1", isEditable: false)
     let sha256Section = TextFieldSection(title: "SHA256", isEditable: false)
@@ -60,8 +64,9 @@ final class HashGeneratorView: ToolPage {
         self.addSection(configurationSection)
         
         self.addSection(inputSection)
-        self.inputSection.textView.snp.remakeConstraints{ make in
-            make.height.equalTo(100)
+        self.inputSection.contentView = textInputSection
+        self.inputSection.snp.remakeConstraints{ make in
+            make.height.equalTo(180)
         }
         
         self.addSection(md5Section)

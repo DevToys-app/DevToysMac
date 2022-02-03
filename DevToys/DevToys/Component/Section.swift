@@ -13,8 +13,8 @@ class Section: NSLoadView {
     }
     var minTitle: Bool = false {
         didSet {
-            self.titleStackView.snp.remakeConstraints{ make in
-                make.height.equalTo(minTitle ? 16 : 36)
+            self.titleStackView.snp.updateConstraints{ make in
+                make.height.equalTo(minTitle ? 16 : R.Size.controlHeight)
             }
         }
     }

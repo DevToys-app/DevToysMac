@@ -97,7 +97,7 @@ final class NumberBaseConverterViewController: ToolPageViewController {
     }
 }
 
-final private class NumberBaseConverterView: ToolPage {
+final private class NumberBaseConverterView: Page {
     let formatSwitch = NSSwitch()
     
     let decimalSection = TextFieldSection(title: "Decimal")

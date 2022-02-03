@@ -27,7 +27,6 @@ enum ImageOptimizer {
         if ext == "png" { return PngOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
         if ext == "jpg" || ext == "jpeg" { return JpegOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
         
-        assertionFailure("\(ext) is not supported.")
         return nil
     }
 }

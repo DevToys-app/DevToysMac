@@ -50,6 +50,8 @@
 		B680A8A427A8DA78007CB707 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = B680A8A327A8DA78007CB707 /* Collections */; };
 		B6AC27A327AA6F5C000FD713 /* Reachability+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC27A127AA6F5B000FD713 /* Reachability+Publisher.swift */; };
 		B6AC27A427AA6F5C000FD713 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC27A227AA6F5C000FD713 /* Reachability.swift */; };
+		B6B5727A27AC223A0069DBA7 /* RestorableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5727927AC223A0069DBA7 /* RestorableState.swift */; };
+		B6B5727D27AC22480069DBA7 /* RestorableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5727C27AC22480069DBA7 /* RestorableData.swift */; };
 		B6D1AF3D27A60A210022FED2 /* ExceptionHanlder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AF3A27A60A210022FED2 /* ExceptionHanlder.m */; };
 		B6D1AF3E27A60A210022FED2 /* ExceptionHanlder.h in Headers */ = {isa = PBXBuildFile; fileRef = B6D1AF3B27A60A210022FED2 /* ExceptionHanlder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6D1AF3F27A60A210022FED2 /* ExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AF3C27A60A210022FED2 /* ExceptionHandler.swift */; };
@@ -96,6 +98,8 @@
 		B680A89B27A8DA16007CB707 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		B6AC27A127AA6F5B000FD713 /* Reachability+Publisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reachability+Publisher.swift"; sourceTree = "<group>"; };
 		B6AC27A227AA6F5C000FD713 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		B6B5727927AC223A0069DBA7 /* RestorableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorableState.swift; sourceTree = "<group>"; };
+		B6B5727C27AC22480069DBA7 /* RestorableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorableData.swift; sourceTree = "<group>"; };
 		B6D1AF3A27A60A210022FED2 /* ExceptionHanlder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionHanlder.m; sourceTree = "<group>"; };
 		B6D1AF3B27A60A210022FED2 /* ExceptionHanlder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionHanlder.h; sourceTree = "<group>"; };
 		B6D1AF3C27A60A210022FED2 /* ExceptionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionHandler.swift; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 				B64B1ED827A4F73700AC2601 /* Observable.swift */,
 				B64B1EDB27A4F75600AC2601 /* PipeOperator.swift */,
 				B64B1ED227A4F71F00AC2601 /* NS+OnAwake.swift */,
+				B6B5727927AC223A0069DBA7 /* RestorableState.swift */,
+				B6B5727C27AC22480069DBA7 /* RestorableData.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 				B6AC27A327AA6F5C000FD713 /* Reachability+Publisher.swift in Sources */,
 				B64B1F2E27A4F83500AC2601 /* Ex+NSControl.swift in Sources */,
 				B64B1F1627A4F80800AC2601 /* Ex+CGSize.swift in Sources */,
+				B6B5727A27AC223A0069DBA7 /* RestorableState.swift in Sources */,
 				B64B1ED927A4F73700AC2601 /* Observable.swift in Sources */,
 				B64B201127A50E5200AC2601 /* NSColorView.swift in Sources */,
 				B64B1EE327A4F79100AC2601 /* NSEvent+HotKey.swift in Sources */,
@@ -377,6 +384,7 @@
 				B6D1AF3F27A60A210022FED2 /* ExceptionHandler.swift in Sources */,
 				B64B1ED327A4F71F00AC2601 /* NS+OnAwake.swift in Sources */,
 				B6AC27A427AA6F5C000FD713 /* Reachability.swift in Sources */,
+				B6B5727D27AC22480069DBA7 /* RestorableData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

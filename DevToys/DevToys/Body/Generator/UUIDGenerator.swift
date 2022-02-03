@@ -54,7 +54,7 @@ final class UUIDGeneratorViewController: ToolPageViewController {
     }
 }
 
-final private class UUIDGeneratorView: ToolPage {
+final private class UUIDGeneratorView: Page {
     let hyphensSwitch = NSSwitch()
     let uppercaseSwitch = NSSwitch()
     let generateCount = NumberField()

@@ -73,7 +73,7 @@ private enum SourceType: String, TextItem {
     var title: String { rawValue }
 }
 
-final private class Base64DecoderView: ToolPage {
+final private class Base64DecoderView: Page {
     let sourceTypePicker = EnumPopupButton<SourceType>()
     
     let fileDrop = FileDrop()

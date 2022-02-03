@@ -43,7 +43,7 @@ final class ImageOptimaizerViewController: ToolPageViewController {
 }
 
 
-final private class ImageOptimaizerView: ToolPage {
+final private class ImageOptimaizerView: Page {
     private let listView = NSTableView.list()
     
     let urlPublisher = PassthroughSubject<[URL], Never>()

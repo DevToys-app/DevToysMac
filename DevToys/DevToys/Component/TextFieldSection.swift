@@ -13,33 +13,29 @@ struct TextFieldSectionOptions: OptionSet {
 
 final class TextFieldSection: Section {
     var string: String {
-        get { textView.string } set { textView.string = newValue; copyButton.stringContent = newValue }
+        get { textField.string } set { textField.string = newValue; copyButton.stringContent = newValue }
     }
     var stringPublisher: AnyPublisher<String, Never> {
-        textView.changeStringPublisher.merge(with: self.pasteButton.stringPublisher.map{ $0 ?? "" }).eraseToAnyPublisher()
-    }
-    
-    func setMinified() {
-        self.textView.showCopyButton = true
-        self.minTitle = true
-        self.removeAllToolbarItem()
+        textField.changeStringPublisher.merge(with: self.pasteButton.stringPublisher.map{ $0 ?? "" }).eraseToAnyPublisher()
     }
     
     convenience init(title: String, isEditable: Bool) {
         self.init(title: title)
-        self.textView.isEditable = isEditable
+        self.textField.isEditable = isEditable
         if !isEditable {
-            self.setMinified()
+            self.textField.showCopyButton = true
+            self.minTitle = true
+            self.removeAllToolbarItem()
         }
     }
     
-    let textView = TextField(showCopyButton: false)
+    let textField = TextField(showCopyButton: false)
     private let pasteButton = PasteSectionButton()
     private let copyButton = CopySectionButton(hasTitle: false)
     
     override func onAwake() {
         super.onAwake()
-        self.addStackItem(textView)
+        self.addStackItem(textField)
         self.addToolbarItem(pasteButton)
         self.addToolbarItem(copyButton)
     }

@@ -7,7 +7,7 @@
 
 import CoreUtil
  
-class ToolPage: NSLoadView {
+class Page: NSLoadView {
     
     var title: String = "Untitled Tool"
     
@@ -45,7 +45,8 @@ class ToolPage: NSLoadView {
         self.scrollView.documentView = stackView
         
         self.stackView.snp.makeConstraints{ make in
-            make.width.equalToSuperview()
+            make.top.equalToSuperview()
+            make.right.left.equalToSuperview()
         }
     }
 
@@ -65,6 +66,6 @@ private class FlipClipView: NSClipView {
 
 class ToolPageViewController: NSViewController {
     override func viewDidAppear() {
-        view.window?.title = (view as? ToolPage)?.title ?? "DevToys"
+        view.window?.title = (view as? Page)?.title ?? "DevToys"
     }
 }
