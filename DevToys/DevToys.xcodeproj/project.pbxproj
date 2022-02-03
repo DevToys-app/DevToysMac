@@ -34,6 +34,7 @@
 		B64B202327A52A2D00AC2601 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B202227A52A2D00AC2601 /* R.swift */; };
 		B64B202627A52DB400AC2601 /* ToolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B202527A52DB400AC2601 /* ToolType.swift */; };
 		B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B209727A532DF00AC2601 /* AppWindowController.swift */; };
+		B65DB78027AC0EB400146A3C /* RegexTesterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65DB77F27AC0EB400146A3C /* RegexTesterView+.swift */; };
 		B66850EE27A64D3200A3FE01 /* ToolPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66850ED27A64D3200A3FE01 /* ToolPage.swift */; };
 		B66850F227A65FC200A3FE01 /* SwiftJSONFormatter in Frameworks */ = {isa = PBXBuildFile; productRef = B66850F127A65FC200A3FE01 /* SwiftJSONFormatter */; };
 		B672CF6527AA763100391A5D /* NetworkSpeedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF6427AA763100391A5D /* NetworkSpeedTest.swift */; };
@@ -59,7 +60,7 @@
 		B6D1AEE927A545230022FED2 /* ControlArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* ControlArea.swift */; };
 		B6D1AEEC27A546810022FED2 /* ControlBackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEEB27A546810022FED2 /* ControlBackgroundLayer.swift */; };
 		B6D1AEF027A547B90022FED2 /* JSONFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEEF27A547B90022FED2 /* JSONFormatter+.swift */; };
-		B6D1AEF427A54C440022FED2 /* ControlSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEF327A54C440022FED2 /* ControlSection.swift */; };
+		B6D1AEF427A54C440022FED2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEF327A54C440022FED2 /* Section.swift */; };
 		B6D1AEF727A54F750022FED2 /* SectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEF627A54F750022FED2 /* SectionButton.swift */; };
 		B6D1AEFA27A557280022FED2 /* PopupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEF927A557280022FED2 /* PopupButton.swift */; };
 		B6D1AEFD27A55ED50022FED2 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEFC27A55ED50022FED2 /* CodeTextView.swift */; };
@@ -126,6 +127,7 @@
 		B64B202227A52A2D00AC2601 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		B64B202527A52DB400AC2601 /* ToolType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolType.swift; sourceTree = "<group>"; };
 		B64B209727A532DF00AC2601 /* AppWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowController.swift; sourceTree = "<group>"; };
+		B65DB77F27AC0EB400146A3C /* RegexTesterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegexTesterView+.swift"; sourceTree = "<group>"; };
 		B66850ED27A64D3200A3FE01 /* ToolPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolPage.swift; sourceTree = "<group>"; };
 		B672CF6427AA763100391A5D /* NetworkSpeedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpeedTest.swift; sourceTree = "<group>"; };
 		B672CF9627AA7E2C00391A5D /* APITestView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APITestView+.swift"; sourceTree = "<group>"; };
@@ -148,7 +150,7 @@
 		B6D1AEE827A545230022FED2 /* ControlArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlArea.swift; sourceTree = "<group>"; };
 		B6D1AEEB27A546810022FED2 /* ControlBackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBackgroundLayer.swift; sourceTree = "<group>"; };
 		B6D1AEEF27A547B90022FED2 /* JSONFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONFormatter+.swift"; sourceTree = "<group>"; };
-		B6D1AEF327A54C440022FED2 /* ControlSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlSection.swift; sourceTree = "<group>"; };
+		B6D1AEF327A54C440022FED2 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		B6D1AEF627A54F750022FED2 /* SectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionButton.swift; sourceTree = "<group>"; };
 		B6D1AEF927A557280022FED2 /* PopupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupButton.swift; sourceTree = "<group>"; };
 		B6D1AEFC27A55ED50022FED2 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				B620142027A9271500AF5386 /* TextInspector.swift */,
+				B65DB77F27AC0EB400146A3C /* RegexTesterView+.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -364,7 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				B6D1AEE827A545230022FED2 /* ControlArea.swift */,
-				B6D1AEF327A54C440022FED2 /* ControlSection.swift */,
+				B6D1AEF327A54C440022FED2 /* Section.swift */,
 				B6D1AEEB27A546810022FED2 /* ControlBackgroundLayer.swift */,
 				B6D1AEF627A54F750022FED2 /* SectionButton.swift */,
 				B608540A27A66694003BF243 /* SectionButton+.swift */,
@@ -500,6 +503,7 @@
 				B6AC277027AA6EFE000FD713 /* NetworkInfomationView+.swift in Sources */,
 				B620141C27A917E000AF5386 /* Button.swift in Sources */,
 				B6AC273227AA2BF6000FD713 /* ImageOptimizer.swift in Sources */,
+				B65DB78027AC0EB400146A3C /* RegexTesterView+.swift in Sources */,
 				B680A89A27A8D9DD007CB707 /* Toast.swift in Sources */,
 				B6D1AEF727A54F750022FED2 /* SectionButton.swift in Sources */,
 				B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */,
@@ -508,7 +512,7 @@
 				B64B202327A52A2D00AC2601 /* R.swift in Sources */,
 				B64B201D27A5219400AC2601 /* SidebarSearchView+.swift in Sources */,
 				B66850EE27A64D3200A3FE01 /* ToolPage.swift in Sources */,
-				B6D1AEF427A54C440022FED2 /* ControlSection.swift in Sources */,
+				B6D1AEF427A54C440022FED2 /* Section.swift in Sources */,
 				B64B1F7227A4FDC800AC2601 /* AppModel.swift in Sources */,
 				B6D1AEFA27A557280022FED2 /* PopupButton.swift in Sources */,
 				B6D1AEF027A547B90022FED2 /* JSONFormatter+.swift in Sources */,

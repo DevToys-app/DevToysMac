@@ -107,7 +107,7 @@ final private class NumberBaseConverterView: ToolPage {
     
     private lazy var formatNumberArea = ControlArea(icon: R.Image.format, title: "Format number", control: formatSwitch)
     
-    private lazy var configurationSection = ControlSection(title: "Configuration", items: [formatNumberArea])
+    private lazy var configurationSection = Section(title: "Configuration", items: [formatNumberArea])
     
     override func onAwake() {
         self.title = "Number Base Converter"

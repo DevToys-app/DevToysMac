@@ -79,7 +79,7 @@ final private class LoremIpsumGeneratorView: ToolPage {
     override func onAwake() {
         self.title = "Lorem Ipsum Generator"
         
-        self.addSection(ControlSection(title: "Configuration", items: [
+        self.addSection(Section(title: "Configuration", items: [
             ControlArea(icon: R.Image.text, title: "Type", message: "Type of generating Lorem Ipsum", control: typePicker),
             ControlArea(icon: R.Image.number, title: "Length", message: "Length of generating Lorem Ipsum", control: lengthField),
         ]))

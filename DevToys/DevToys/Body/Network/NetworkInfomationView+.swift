@@ -70,7 +70,7 @@ final private class NetworkInfomationView: ToolPage {
     override func onAwake() {
         self.title = "Network Infomation"
         
-        self.addSection(ControlSection(title: "Infomation", items: [
+        self.addSection(Section(title: "Infomation", items: [
             ControlArea(icon: R.Image.ipaddress, title: "Local IP Address", control: ipaddressLabel),
             ControlArea(icon: R.Image.networkStatus, title: "Status", control: statusLabel),
             ControlArea(icon: R.Image.speed, title: "Network Speed", control: NSStackView() => {

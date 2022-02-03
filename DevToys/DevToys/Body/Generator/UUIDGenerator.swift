@@ -73,7 +73,7 @@ final private class UUIDGeneratorView: ToolPage {
     override func onAwake() {
         self.title = "UUID Generator"
         
-        self.addSection(ControlSection(title: "Configuration", items: [
+        self.addSection(Section(title: "Configuration", items: [
             ControlArea(icon: R.Image.hyphen, title: "Hyphens", control: hyphensSwitch),
             ControlArea(icon: R.Image.format, title: "Uppercase", message: "Whether to use uppercase for generate UUIDs.", control: uppercaseSwitch),
         ]))
@@ -85,7 +85,7 @@ final private class UUIDGeneratorView: ToolPage {
             })
             $0.addArrangedSubview(generateButton)
         })
-        self.addSection(ControlSection(title: "UUIDs", items: [
+        self.addSection(Section(title: "UUIDs", items: [
             uuidView
         ], toolbarItems: [clearButton]))
     }

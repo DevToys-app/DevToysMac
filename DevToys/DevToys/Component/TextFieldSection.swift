@@ -11,7 +11,7 @@ struct TextFieldSectionOptions: OptionSet {
     let rawValue: UInt64
 }
 
-final class TextFieldSection: ControlSection {
+final class TextFieldSection: Section {
     var string: String {
         get { textView.string } set { textView.string = newValue; copyButton.stringContent = newValue }
     }

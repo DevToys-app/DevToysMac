@@ -131,8 +131,8 @@ final private class PDFGeneratorView: ToolPage {
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
         self.addSection2(
-            ControlSection(title: "Images", items: [imageListView], toolbarItems: [clearButton]),
-            ControlSection(title: "Configuration", items: [
+            Section(title: "Images", items: [imageListView], toolbarItems: [clearButton]),
+            Section(title: "Configuration", items: [
                 ControlArea(icon: R.Image.paramators, title: "Scale Mode", control: scaleModePicker),
                 generateButton,
             ])

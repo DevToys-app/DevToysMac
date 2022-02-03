@@ -80,7 +80,7 @@ final private class Base64DecoderView: ToolPage {
     let exportButton = SectionButton(title: "Export", image: R.Image.export)
     let encodeSectionContainer = NSPlaceholderView()
     let encodeTextSection = TextViewSection(title: "Text", options: [.all])
-    lazy var fileDropSection = ControlSection(title: "File", items: [fileDrop], toolbarItems: [exportButton])
+    lazy var fileDropSection = Section(title: "File", items: [fileDrop], toolbarItems: [exportButton])
     
     let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])
     
@@ -102,7 +102,7 @@ final private class Base64DecoderView: ToolPage {
     override func onAwake() {
         self.title = "Base64 Encoder / Decoder"
             
-        self.addSection(ControlSection(title: "Configuration", items: [
+        self.addSection(Section(title: "Configuration", items: [
             ControlArea(icon: R.Image.convert, title: "Source Type", control: sourceTypePicker)
         ]))
         self.encodeSectionContainer.contentView = encodeTextSection

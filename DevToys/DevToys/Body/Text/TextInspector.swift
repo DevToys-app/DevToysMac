@@ -107,7 +107,7 @@ final class TextInspectorView: ToolPage {
     override func onAwake() {
         self.title = "Text Case Converter and Inspector"
         
-        let convertSection = ControlSection(title: "Convert", items: [tagCloudView])
+        let convertSection = Section(title: "Convert", items: [tagCloudView])
         self.addSection(convertSection)
 //        self.stackView.setCustomSpacing(32, after: convertSection)
         self.tagCloudView.items = ConvertType.allCases.map{ $0.rawValue }
@@ -127,7 +127,7 @@ final class TextInspectorView: ToolPage {
         }
         self.infomationView.backgroundColor = .clear
         self.infomationView.isEditable = false
-        self.addSection(ControlSection(title: "Infomation", items: [
+        self.addSection(Section(title: "Infomation", items: [
             infomationView
         ]))
     }

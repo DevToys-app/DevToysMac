@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-class ControlSection: NSLoadView {
+class Section: NSLoadView {
     var title: String {
         get { titleLabel.stringValue } set { titleLabel.stringValue = newValue }
     }

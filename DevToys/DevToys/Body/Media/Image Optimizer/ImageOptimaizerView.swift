@@ -80,11 +80,11 @@ final private class ImageOptimaizerView: ToolPage {
         self.title = "Image Optimaizer"
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
-        self.addSection(ControlSection(title: "Configuration", items: [
+        self.addSection(Section(title: "Configuration", items: [
             ControlArea(title: "Optimize Level", control: levelPicker),
         ]))
         
-        self.addSection(ControlSection(title: "Images", items: [listView]))
+        self.addSection(Section(title: "Images", items: [listView]))
         self.listView.snp.makeConstraints{ make in
             make.height.greaterThanOrEqualTo(1) // AppKitのバグ対処用
         }

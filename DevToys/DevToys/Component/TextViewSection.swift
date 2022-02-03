@@ -45,7 +45,7 @@ final class CodeViewSection: TextViewSectionBase<CodeTextView> {
     }
 }
 
-class TextViewSectionBase<TextView: TextViewType>: ControlSection {
+class TextViewSectionBase<TextView: TextViewType>: Section {
     
     var string = "" {
         didSet {

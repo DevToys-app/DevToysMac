@@ -52,7 +52,7 @@ final class HashGeneratorView: ToolPage {
     let sha512Section = TextFieldSection(title: "SHA512", isEditable: false)
     
     private lazy var formatNumberArea = ControlArea(icon: R.Image.format, title: "Uppercase", control: formatSwitch)
-    private lazy var configurationSection = ControlSection(title: "Configuration", items: [formatNumberArea])
+    private lazy var configurationSection = Section(title: "Configuration", items: [formatNumberArea])
 
     override func onAwake() {
         self.title = "Hash Generator"
