@@ -8,6 +8,23 @@
 import CoreUtil
 
 class ControlSection: NSLoadView {
+    var title: String {
+        get { titleLabel.stringValue } set { titleLabel.stringValue = newValue }
+    }
+    var minTitle: Bool = false {
+        didSet {
+            self.titleStackView.snp.remakeConstraints{ make in
+                make.height.equalTo(minTitle ? 16 : 36)
+            }
+        }
+    }
+    
+    func setContentView(_ item: NSView) {
+        self.contentStackView.addSubview(item)
+        item.snp.makeConstraints{ make in
+            make.edges.equalToSuperview()
+        }
+    }
     func addStackItem(_ item: NSView) {
         self.contentStackView.addArrangedSubview(item)
         item.snp.makeConstraints{ make in
@@ -19,16 +36,6 @@ class ControlSection: NSLoadView {
     }
     func removeAllToolbarItem() {
         self.titleStackView.subviews.removeAll(where: { $0 !== titleLabel && $0 !== spacer })
-    }
-    var title: String {
-        get { titleLabel.stringValue } set { titleLabel.stringValue = newValue }
-    }
-    var minTitle: Bool = false {
-        didSet {
-            self.titleStackView.snp.remakeConstraints{ make in
-                make.height.equalTo(minTitle ? 16 : 36)
-            }
-        }
     }
     
     convenience init(title: String, items: [NSView] = [], toolbarItems: [NSView] = []) {

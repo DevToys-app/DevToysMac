@@ -49,7 +49,12 @@ final private class ImageOptimaizerView: ToolPage {
     let urlPublisher = PassthroughSubject<[URL], Never>()
     let deletePublisher = PassthroughSubject<[Int], Never>()
     
-    var tasks: [ImageOptimizeTask] = [] { didSet { listView.reloadData() } }
+    var tasks: [ImageOptimizeTask] = [] {
+        didSet {
+            listView.reloadData()
+            self.subviews.forEach{ $0.needsLayout = true }
+        }
+    }
     let levelPicker = EnumPopupButton<OptimizeLevel>()
     
     override func keyDown(with event: NSEvent) {
@@ -80,6 +85,9 @@ final private class ImageOptimaizerView: ToolPage {
         ]))
         
         self.addSection(ControlSection(title: "Images", items: [listView]))
+        self.listView.snp.makeConstraints{ make in
+            make.height.greaterThanOrEqualTo(1) // AppKitのバグ対処用
+        }
         
         self.listView.allowsMultipleSelection = true
         self.listView.delegate = self

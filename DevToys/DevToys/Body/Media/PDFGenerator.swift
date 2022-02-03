@@ -26,6 +26,8 @@ final class PDFGeneratorViewController: ToolPageViewController {
             .sink{[unowned self] in $0.reversed().forEach{ self.images.remove(at: $0) } }.store(in: &objectBag)
         self.cell.imageListView.movePublisher
             .sink{[unowned self] in self.images.move(fromIndex: $0.from, toIndex: $0.to) }.store(in: &objectBag)
+        self.cell.clearButton.actionPublisher
+            .sink{[unowned self] in self.images = [] }.store(in: &objectBag)
     }
     
     private func readURLs(_ pasteboard: NSPasteboard) {
@@ -103,6 +105,7 @@ private enum ScaleMode: String, TextItem {
 
 final private class PDFGeneratorView: ToolPage {
     let imageListView = ImageListView()
+    let clearButton = SectionButton(title: "Clear", image: R.Image.clear)
     let generateButton = Button(title: "Generate PDF")
     let scaleModePicker = EnumPopupButton<ScaleMode>()
     let dragPublisher = PassthroughSubject<NSPasteboard, Never>()
@@ -128,7 +131,7 @@ final private class PDFGeneratorView: ToolPage {
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
         self.addSection2(
-            ControlSection(title: "Images", items: [imageListView]),
+            ControlSection(title: "Images", items: [imageListView], toolbarItems: [clearButton]),
             ControlSection(title: "Configuration", items: [
                 ControlArea(icon: R.Image.paramators, title: "Scale Mode", control: scaleModePicker),
                 generateButton,
@@ -174,6 +177,7 @@ final private class ImageListView: NSLoadScrollView {
         self.layer?.cornerRadius = R.Size.corner
         self.documentView = listView
         self.listView.delegate = self
+        self.listView.allowsMultipleSelection = true
         self.listView.dataSource = self
         self.listView.registerForDraggedTypes([.imageItem])
     }
