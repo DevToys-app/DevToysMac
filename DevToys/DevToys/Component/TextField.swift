@@ -17,12 +17,10 @@ final class TextField: NSLoadView {
     var endEditingStringPublisher: AnyPublisher<String, Never> {
         textField.textField.endEditingStringPublisher
     }
-    var showCopyButton = false {
-        didSet { copyButton.isHidden = !showCopyButton }
-    }
-    var isEditable: Bool = true {
-        didSet { textField.textField.isEditable = isEditable }
-    }
+    var isError: Bool { get { textField.isError } set { textField.isError = newValue } }
+    var font: NSFont? { get { textField.textField.font } set { textField.textField.font = newValue } }
+    var showCopyButton = false { didSet { copyButton.isHidden = !showCopyButton } }
+    var isEditable: Bool = true { didSet { textField.textField.isEditable = isEditable } }
     
     convenience init(showCopyButton: Bool) {
         self.init()
@@ -58,11 +56,12 @@ final class TextField: NSLoadView {
 
 final private class DotNetTextField: NSLoadView {
     let textField = CustomFocusRingTextField()
-    let backgroundLayer = ControlBackgroundLayer.animationDisabled()
+    let backgroundLayer = ControlErrorBackgroundLayer.animationDisabled()
+    var isError = false { didSet { needsDisplay = true } }
     
     override func layout() {
         self.backgroundLayer.frame = bounds
-        let textFieldFrame = CGRect(originX: 12, centerY: bounds.midY, size: [bounds.width - 24, textField.intrinsicContentSize.height])
+        let textFieldFrame = CGRect(originX: 8, centerY: bounds.midY, size: [bounds.width - 16, textField.intrinsicContentSize.height])
         
         let focusRingBounds = CGRect(origin: bounds.origin - textFieldFrame.origin, size: bounds.size)
         self.textField.focusRingBounds = focusRingBounds
@@ -72,7 +71,7 @@ final private class DotNetTextField: NSLoadView {
     
     
     override func updateLayer() {
-        self.backgroundLayer.update()
+        self.backgroundLayer.update(isError: isError)
     }
     
     override func onAwake() {

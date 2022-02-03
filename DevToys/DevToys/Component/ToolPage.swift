@@ -16,7 +16,6 @@ class ToolPage: NSLoadView {
     
     func addSection(_ section: NSView) {
         self.stackView.addArrangedSubview(section)
-//        section.__setBackgroundColor(.yellow)
         section.snp.makeConstraints{ make in
             make.right.left.equalToSuperview().inset(16)
         }
