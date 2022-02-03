@@ -103,7 +103,7 @@ final private class Base64DecoderView: ToolPage {
         self.title = "Base64 Encoder / Decoder"
             
         self.addSection(Section(title: "Configuration", items: [
-            ControlArea(icon: R.Image.convert, title: "Source Type", control: sourceTypePicker)
+            Area(icon: R.Image.convert, title: "Source Type", control: sourceTypePicker)
         ]))
         self.encodeSectionContainer.contentView = encodeTextSection
         self.addSection(encodeSectionContainer)

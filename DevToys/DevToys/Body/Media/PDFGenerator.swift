@@ -133,7 +133,7 @@ final private class PDFGeneratorView: ToolPage {
         self.addSection2(
             Section(title: "Images", items: [imageListView], toolbarItems: [clearButton]),
             Section(title: "Configuration", items: [
-                ControlArea(icon: R.Image.paramators, title: "Scale Mode", control: scaleModePicker),
+                Area(icon: R.Image.paramators, title: "Scale Mode", control: scaleModePicker),
                 generateButton,
             ])
         ) => {

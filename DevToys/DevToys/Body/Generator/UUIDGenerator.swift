@@ -74,8 +74,8 @@ final private class UUIDGeneratorView: ToolPage {
         self.title = "UUID Generator"
         
         self.addSection(Section(title: "Configuration", items: [
-            ControlArea(icon: R.Image.hyphen, title: "Hyphens", control: hyphensSwitch),
-            ControlArea(icon: R.Image.format, title: "Uppercase", message: "Whether to use uppercase for generate UUIDs.", control: uppercaseSwitch),
+            Area(icon: R.Image.hyphen, title: "Hyphens", control: hyphensSwitch),
+            Area(icon: R.Image.format, title: "Uppercase", message: "Whether to use uppercase for generate UUIDs.", control: uppercaseSwitch),
         ]))
         
         self.addSection(NSStackView() => {

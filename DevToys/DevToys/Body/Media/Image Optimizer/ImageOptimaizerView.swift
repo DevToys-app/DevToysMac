@@ -81,7 +81,7 @@ final private class ImageOptimaizerView: ToolPage {
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
         self.addSection(Section(title: "Configuration", items: [
-            ControlArea(title: "Optimize Level", control: levelPicker),
+            Area(title: "Optimize Level", control: levelPicker),
         ]))
         
         self.addSection(Section(title: "Images", items: [listView]))

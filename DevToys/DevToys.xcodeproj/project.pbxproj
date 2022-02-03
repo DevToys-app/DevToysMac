@@ -57,7 +57,7 @@
 		B6AC277027AA6EFE000FD713 /* NetworkInfomationView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC276F27AA6EFE000FD713 /* NetworkInfomationView+.swift */; };
 		B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEDE27A534960022FED2 /* BodyViewController.swift */; };
 		B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */; };
-		B6D1AEE927A545230022FED2 /* ControlArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* ControlArea.swift */; };
+		B6D1AEE927A545230022FED2 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* Area.swift */; };
 		B6D1AEEC27A546810022FED2 /* ControlBackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEEB27A546810022FED2 /* ControlBackgroundLayer.swift */; };
 		B6D1AEF027A547B90022FED2 /* JSONFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEEF27A547B90022FED2 /* JSONFormatter+.swift */; };
 		B6D1AEF427A54C440022FED2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEF327A54C440022FED2 /* Section.swift */; };
@@ -147,7 +147,7 @@
 		B6AC276F27AA6EFE000FD713 /* NetworkInfomationView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkInfomationView+.swift"; sourceTree = "<group>"; };
 		B6D1AEDE27A534960022FED2 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
 		B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllToolCollectionItemView+.swift"; sourceTree = "<group>"; };
-		B6D1AEE827A545230022FED2 /* ControlArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlArea.swift; sourceTree = "<group>"; };
+		B6D1AEE827A545230022FED2 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		B6D1AEEB27A546810022FED2 /* ControlBackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBackgroundLayer.swift; sourceTree = "<group>"; };
 		B6D1AEEF27A547B90022FED2 /* JSONFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONFormatter+.swift"; sourceTree = "<group>"; };
 		B6D1AEF327A54C440022FED2 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -366,7 +366,7 @@
 		B6D1AEE727A544F20022FED2 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				B6D1AEE827A545230022FED2 /* ControlArea.swift */,
+				B6D1AEE827A545230022FED2 /* Area.swift */,
 				B6D1AEF327A54C440022FED2 /* Section.swift */,
 				B6D1AEEB27A546810022FED2 /* ControlBackgroundLayer.swift */,
 				B6D1AEF627A54F750022FED2 /* SectionButton.swift */,
@@ -507,7 +507,7 @@
 				B680A89A27A8D9DD007CB707 /* Toast.swift in Sources */,
 				B6D1AEF727A54F750022FED2 /* SectionButton.swift in Sources */,
 				B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */,
-				B6D1AEE927A545230022FED2 /* ControlArea.swift in Sources */,
+				B6D1AEE927A545230022FED2 /* Area.swift in Sources */,
 				B64B1F7727A4FF8B00AC2601 /* ToolMenuView+.swift in Sources */,
 				B64B202327A52A2D00AC2601 /* R.swift in Sources */,
 				B64B201D27A5219400AC2601 /* SidebarSearchView+.swift in Sources */,

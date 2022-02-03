@@ -71,9 +71,9 @@ final private class NetworkInfomationView: ToolPage {
         self.title = "Network Infomation"
         
         self.addSection(Section(title: "Infomation", items: [
-            ControlArea(icon: R.Image.ipaddress, title: "Local IP Address", control: ipaddressLabel),
-            ControlArea(icon: R.Image.networkStatus, title: "Status", control: statusLabel),
-            ControlArea(icon: R.Image.speed, title: "Network Speed", control: NSStackView() => {
+            Area(icon: R.Image.ipaddress, title: "Local IP Address", control: ipaddressLabel),
+            Area(icon: R.Image.networkStatus, title: "Status", control: statusLabel),
+            Area(icon: R.Image.speed, title: "Network Speed", control: NSStackView() => {
                 $0.addArrangedSubview(speedLabel)
                 $0.addArrangedSubview(restartButton)
             }),

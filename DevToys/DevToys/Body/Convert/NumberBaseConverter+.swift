@@ -105,7 +105,7 @@ final private class NumberBaseConverterView: ToolPage {
     let octalSection = TextFieldSection(title: "Octal")
     let binarySection = TextFieldSection(title: "Binary")
     
-    private lazy var formatNumberArea = ControlArea(icon: R.Image.format, title: "Format number", control: formatSwitch)
+    private lazy var formatNumberArea = Area(icon: R.Image.format, title: "Format number", control: formatSwitch)
     
     private lazy var configurationSection = Section(title: "Configuration", items: [formatNumberArea])
     

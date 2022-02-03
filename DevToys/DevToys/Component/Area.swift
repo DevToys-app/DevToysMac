@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class ControlArea: NSLoadView {
+final class Area: NSLoadView {
     var control: NSView? {
         didSet {
             oldValue?.removeFromSuperview()

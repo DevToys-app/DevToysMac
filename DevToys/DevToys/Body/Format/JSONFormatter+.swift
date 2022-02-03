@@ -62,7 +62,7 @@ final private class JSONFormatterView: ToolPage {
     let inputSection = CodeViewSection(title: "Input", options: .defaultInput, language: .javascript)
     let outputSection = CodeViewSection(title: "Output", options: .defaultOutput, language: .javascript)
         
-    private lazy var indentArea = ControlArea(icon: R.Image.spacing, title: "Indentation", control: indentControl)
+    private lazy var indentArea = Area(icon: R.Image.spacing, title: "Indentation", control: indentControl)
     private lazy var configurationSection = Section(title: "Configuration", items: [indentArea])
     private lazy var ioStack = self.addSection2(inputSection, outputSection)
     

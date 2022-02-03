@@ -8,7 +8,13 @@
 import Cocoa
 
 final class RegexTesterViewController: ToolPageViewController {
+    private let cell = RegexTesterView()
     
+    override func loadView() { self.view = cell }
+    
+    override func viewDidLoad() {
+        
+    }
 }
 
 final private class RegexTesterView: ToolPage {

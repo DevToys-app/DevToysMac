@@ -25,6 +25,7 @@ enum ToolType: String, CaseIterable {
     case leremIpsumGenerator
     
     case caseConverter
+    case regexTester
     
     case imageCompressor
     case pdfGenerator
@@ -48,6 +49,7 @@ extension ToolType {
         case .uuidGenerator: return R.Image.Sidebar.uuidGenerator
         case .leremIpsumGenerator: return R.Image.Sidebar.loremIpsumGenerator
         case .caseConverter: return R.Image.Sidebar.textIspector
+        case .regexTester: return R.Image.Sidebar.regexTester
         case .imageCompressor: return R.Image.Sidebar.imageCompressor
         case .pdfGenerator: return R.Image.Sidebar.graphic
         case .networkInfomation: return R.Image.Sidebar.network
@@ -68,6 +70,7 @@ extension ToolType {
         case .uuidGenerator: return R.Image.ToolList.uuidGenerator
         case .leremIpsumGenerator: return R.Image.ToolList.loremIpsumGenerator
         case .caseConverter: return R.Image.ToolList.textIspector
+        case .regexTester: return R.Image.ToolList.regexTester
         case .imageCompressor: return R.Image.ToolList.imageCompressor
         case .pdfGenerator: return R.Image.ToolList.graphic
         case .networkInfomation: return R.Image.ToolList.network
@@ -89,6 +92,7 @@ extension ToolType {
         case .uuidGenerator: return "UUID"
         case .leremIpsumGenerator: return "Lorem Ipsum"
         case .caseConverter: return "Inspector & Case Converter"
+        case .regexTester: return "Regex"
         case .imageCompressor: return "PNG / JPEG Compressor"
         case .pdfGenerator: return "PDF Generator"
         case .networkInfomation: return "Infomation"
@@ -110,6 +114,7 @@ extension ToolType {
         case .uuidGenerator: return "UUID Generator"
         case .leremIpsumGenerator: return "Lorem Ipsum Generator"
         case .caseConverter: return "Text Case Converter and Inspector"
+        case .regexTester: return "Regex Tester"
         case .pdfGenerator: return "PDF Generator"
         case .imageCompressor: return "PNG / JPEG Compressor"
         case .networkInfomation: return "Network Infomation"
@@ -131,6 +136,7 @@ extension ToolType {
         case .uuidGenerator: return "Generate UUIDs version 1 and 4"
         case .leremIpsumGenerator: return "Generate Lorem Ipsum placeholder text"
         case .caseConverter: return "Analyze text and convert it to differenct case"
+        case .regexTester: return "Test reguler expression"
         case .pdfGenerator: return "Generate PDF from images"
         case .imageCompressor: return "Lossless PNG and JPEG optimizer"
         case .networkInfomation: return "Observe network infomation"

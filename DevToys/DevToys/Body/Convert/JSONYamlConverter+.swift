@@ -107,7 +107,7 @@ final private class JSONYamlConverterView: ToolPage {
     let jsonSection = CodeViewSection(title: "JSON", options: .all, language: .javascript)
     let yamlSection = CodeViewSection(title: "Yaml", options: .all, language: .yaml)
     
-    private lazy var formatStyleArea = ControlArea(icon: R.Image.format, title: "Format", control: formatStylePicker)
+    private lazy var formatStyleArea = Area(icon: R.Image.format, title: "Format", control: formatStylePicker)
     private lazy var configurationSection = Section(title: "Configuration", items: [formatStyleArea])
     private lazy var ioStack = self.addSection2(jsonSection, yamlSection)
     
