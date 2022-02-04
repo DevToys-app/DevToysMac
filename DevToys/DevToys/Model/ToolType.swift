@@ -12,6 +12,7 @@ enum ToolType: String, CaseIterable {
         
     case jsonYamlConvertor
     case numberBaseConvertor
+    case dateConvertor
     
     case htmlDecoder
     case urlDecoder
@@ -19,6 +20,7 @@ enum ToolType: String, CaseIterable {
     case jwtDecoder
     
     case jsonFormatter
+    case xmlFormatter
     
     case hashGenerator
     case uuidGenerator
@@ -30,6 +32,7 @@ enum ToolType: String, CaseIterable {
     
     case imageCompressor
     case pdfGenerator
+    case imageConverter
     
     case networkInfomation
     case apiTest
@@ -46,6 +49,7 @@ extension ToolType {
         case .base64Decoder: return R.Image.Sidebar.base64Coder
         case .jwtDecoder: return R.Image.Sidebar.jwtCoder
         case .jsonFormatter: return R.Image.Sidebar.jsonFormatter
+        case .xmlFormatter: return R.Image.Sidebar.jsonFormatter
         case .hashGenerator: return R.Image.Sidebar.hashGenerator
         case .uuidGenerator: return R.Image.Sidebar.uuidGenerator
         case .leremIpsumGenerator: return R.Image.Sidebar.loremIpsumGenerator
@@ -53,9 +57,11 @@ extension ToolType {
         case .caseConverter: return R.Image.Sidebar.textIspector
         case .regexTester: return R.Image.Sidebar.regexTester
         case .imageCompressor: return R.Image.Sidebar.imageCompressor
+        case .imageConverter: return R.Image.Sidebar.imageCompressor
         case .pdfGenerator: return R.Image.Sidebar.graphic
         case .networkInfomation: return R.Image.Sidebar.network
         case .apiTest: return R.Image.Sidebar.api
+        case .dateConvertor: return R.Image.speed
         }
     }
     var toolListIcon: NSImage {
@@ -68,6 +74,7 @@ extension ToolType {
         case .base64Decoder: return R.Image.ToolList.base64Coder
         case .jwtDecoder: return R.Image.ToolList.jwtCoder
         case .jsonFormatter: return R.Image.ToolList.jsonFormatter
+        case .xmlFormatter: return R.Image.ToolList.jsonFormatter
         case .hashGenerator: return R.Image.ToolList.hashGenerator
         case .uuidGenerator: return R.Image.ToolList.uuidGenerator
         case .leremIpsumGenerator: return R.Image.ToolList.loremIpsumGenerator
@@ -75,9 +82,11 @@ extension ToolType {
         case .caseConverter: return R.Image.ToolList.textIspector
         case .regexTester: return R.Image.ToolList.regexTester
         case .imageCompressor: return R.Image.ToolList.imageCompressor
+        case .imageConverter: return R.Image.ToolList.imageCompressor
         case .pdfGenerator: return R.Image.ToolList.graphic
         case .networkInfomation: return R.Image.ToolList.network
         case .apiTest: return R.Image.ToolList.api
+        case .dateConvertor: return R.Image.speed
         }
     }
     
@@ -91,6 +100,7 @@ extension ToolType {
         case .base64Decoder: return "Base 64"
         case .jwtDecoder: return "JWT Decoder"
         case .jsonFormatter: return "JSON"
+        case .xmlFormatter: return "XML"
         case .hashGenerator: return "Hash"
         case .uuidGenerator: return "UUID"
         case .leremIpsumGenerator: return "Lorem Ipsum"
@@ -98,9 +108,11 @@ extension ToolType {
         case .caseConverter: return "Inspector & Case Converter"
         case .regexTester: return "Regex"
         case .imageCompressor: return "PNG / JPEG Compressor"
+        case .imageConverter: return "Image Converter"
         case .pdfGenerator: return "PDF Generator"
         case .networkInfomation: return "Infomation"
         case .apiTest: return "API"
+        case .dateConvertor: return "Date"
         }
     }
     
@@ -114,6 +126,7 @@ extension ToolType {
         case .base64Decoder: return "Base 64 Encoder / Decoder"
         case .jwtDecoder: return "JWT Decoder"
         case .jsonFormatter: return "JSON Formatter"
+        case .xmlFormatter: return "XML Formatter"
         case .hashGenerator: return "Hash Generator"
         case .uuidGenerator: return "UUID Generator"
         case .leremIpsumGenerator: return "Lorem Ipsum Generator"
@@ -122,8 +135,10 @@ extension ToolType {
         case .regexTester: return "Regex Tester"
         case .pdfGenerator: return "PDF Generator"
         case .imageCompressor: return "PNG / JPEG Compressor"
+        case .imageConverter: return "Image Converter"
         case .networkInfomation: return "Network Infomation"
         case .apiTest: return "API Tester"
+        case .dateConvertor: return "Date Converter"
         }
     }
     
@@ -137,6 +152,7 @@ extension ToolType {
         case .base64Decoder: return "Encode and decode Base64 data"
         case .jwtDecoder: return "Decode a JWT header playload and signature"
         case .jsonFormatter: return "Indent or minify Json data"
+        case .xmlFormatter: return "Indent or minify XML data"
         case .hashGenerator: return "Calculate MD5, SHA1, SHA256 and SHA 512 hash from text data"
         case .uuidGenerator: return "Generate UUIDs version 1 and 4"
         case .leremIpsumGenerator: return "Generate Lorem Ipsum placeholder text"
@@ -145,8 +161,10 @@ extension ToolType {
         case .regexTester: return "Test reguler expression"
         case .pdfGenerator: return "Generate PDF from images"
         case .imageCompressor: return "Lossless PNG and JPEG optimizer"
+        case .imageConverter: return "Convert image format and size"
         case .networkInfomation: return "Observe network infomation"
         case .apiTest: return "Send request to servers"
+        case .dateConvertor: return "Convert date to other style"
         }
     }
 }

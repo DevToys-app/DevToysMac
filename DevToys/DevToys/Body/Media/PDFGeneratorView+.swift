@@ -15,7 +15,6 @@ final class PDFGeneratorViewController: PageViewController {
     override func loadView() { self.view = cell }
     
     override func viewDidLoad() {
-        print(_images.fileURL)
         self.$images
             .sink{[unowned self] in cell.imageListView.imageItems = $0 }.store(in: &objectBag)
         
@@ -56,26 +55,10 @@ final class PDFGeneratorViewController: PageViewController {
     }
     
     private func readURLs(_ pasteboard: NSPasteboard) {
-        var newImageItems = [ImageItem]()
-        
-        guard let items = pasteboard.pasteboardItems else { return }
-        
-        if items.count == 1 {
-            guard let image = NSImage(pasteboard: pasteboard) else { return }
-            let imageName = (pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL])?.first?.lastPathComponent ?? "Image"
-            newImageItems =  [ImageItem(title: imageName, image: image)]
-        } else {
-            guard let urls = pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL] else { return }
-            let images = urls.compactMap{ url in
-                NSImage(contentsOf: url).map{ ImageItem(title: url.lastPathComponent, image: $0) }
-            }
-            newImageItems = images
-        }
+        let newImageItems = ImageDropper.images(fromPasteboard: pasteboard)
+        guard !newImageItems.isEmpty else { return }
         images.append(contentsOf: newImageItems)
-        
-        guard let last = cell.imageListView.documentView?.frame.size.height else { return }
-        
-        cell.imageListView.contentView.animator().scroll(to: [0, last - cell.imageListView.frame.height])
+        cell.imageListView.contentView.scrollToBottom()
     }
     
     private func makePDF(from images: [NSImage]) {
@@ -158,7 +141,7 @@ final private class PDFGeneratorView: Page {
         self.addSection2(
             Section(title: "Images", items: [imageListView], toolbarItems: [clearButton]),
             Section(title: "Configuration", items: [
-                Area(icon: R.Image.paramators, title: "Scale Mode", control: scaleModePicker),
+                Area(icon: R.Image.paramators, title: "Scale", control: scaleModePicker),
                 generateButton,
             ])
         ) => {
@@ -285,7 +268,7 @@ extension ImageListView: NSTableViewDelegate, NSTableViewDataSource {
     
     func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
         guard dropOperation == .above else { return false }
-        guard let fromRow = info.draggingPasteboard.pasteboardItems?.map{ $0.propertyList(forType: .imageItem) } as? [Int] else { return false }
+        guard let fromRow = info.draggingPasteboard.pasteboardItems?.map({ $0.propertyList(forType: .imageItem) }) as? [Int] else { return false }
         
         movePublisher.send((fromRow, row))
         
@@ -295,4 +278,11 @@ extension ImageListView: NSTableViewDelegate, NSTableViewDataSource {
 
 extension NSPasteboard.PasteboardType {
     static let imageItem = NSPasteboard.PasteboardType("com.devtoys.imageitem")
+}
+
+extension NSClipView {
+    func scrollToBottom() {
+        guard let last = self.documentView?.frame.size.height, let scrollView = self.enclosingScrollView else { return }
+        self.scroll(to: [0, last - scrollView.frame.height])
+    }
 }

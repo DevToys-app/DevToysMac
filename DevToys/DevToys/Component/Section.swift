@@ -18,6 +18,9 @@ class Section: NSLoadView {
             }
         }
     }
+    var orientation: NSUserInterfaceLayoutOrientation {
+        get { contentStackView.orientation } set { contentStackView.orientation = newValue }
+    }
     
     func setContentView(_ item: NSView) {
         self.contentStackView.addSubview(item)

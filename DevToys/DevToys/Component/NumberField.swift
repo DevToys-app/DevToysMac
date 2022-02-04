@@ -10,10 +10,18 @@ import CoreUtil
 final class NumberField: NSLoadView {
     
     var value: Double = 0 {
-        didSet { textField.doubleValue = value }
+        didSet { textField.stringValue = value.formattedString() }
     }
     var valuePublisher: AnyPublisher<Delta<Double>, Never> {
         self.valueSubject.eraseToAnyPublisher()
+    }
+    var isEnabled: Bool {
+        get { textField.isEnabled } set { textField.isEnabled = newValue }
+    }
+    var showStepper = true {
+        didSet {
+            self.stepper.isHidden = !showStepper
+        }
     }
         
     private let stepper = NumberFieldStepper()
@@ -46,7 +54,7 @@ final class NumberField: NSLoadView {
     override func onAwake() {
         self.snp.makeConstraints{ make in
             make.height.equalTo(R.Size.controlHeight)
-            make.width.equalTo(100)
+            make.width.equalTo(70)
         }
         self.wantsLayer = true
         self.layer?.cornerRadius = R.Size.corner

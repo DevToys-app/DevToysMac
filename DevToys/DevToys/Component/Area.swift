@@ -27,6 +27,9 @@ final class Area: NSLoadView {
             messageLabel.stringValue = message ?? ""
         }
     }
+    var insetLevel = 0 {
+        didSet { self.stackView.edgeInsets.left = CGFloat(insetLevel + 1) * 16 }
+    }
     
     convenience init(icon: NSImage? = nil, title: String, message: String? = nil, control: NSView) {
         self.init()
@@ -53,7 +56,9 @@ final class Area: NSLoadView {
     
     override func layout() {
         super.layout()
-        self.backgroundLayer.frame = bounds
+        var edgeInsets = NSEdgeInsets.zero
+        edgeInsets.left = CGFloat(insetLevel) * 16
+        self.backgroundLayer.frame = bounds.slimmed(by: edgeInsets)
     }
     
     override func onAwake() {

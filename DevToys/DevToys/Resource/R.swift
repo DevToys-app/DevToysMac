@@ -19,6 +19,7 @@ enum R {
     }
     enum Image {
         static let check = NSImage(named: "check")!
+        static let error = NSImage(named: "error")!
         
         static let spacing = NSImage(named: "spacing")!
         static let clear = NSImage(named: "clear")!

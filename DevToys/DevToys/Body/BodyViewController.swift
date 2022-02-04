@@ -28,6 +28,9 @@ final class BodyViewController: NSViewController {
     private lazy var networkInfomationController = NetworkInfomationViewController()
     private lazy var regexTesterController = RegexTesterViewController()
     private lazy var checksumGeneratorController = ChecksumGeneratorViewController()
+    private lazy var xmlFormatterController = XMLFormatterViewController()
+    private lazy var imageConverterController = ImageConverterViewController()
+    private lazy var dateConverterController = DateConverterViewController()
     
     private lazy var notImplementedController = NotImplementedViewController()
     
@@ -56,6 +59,9 @@ final class BodyViewController: NSViewController {
                 case .networkInfomation: self.replaceContentViewController(networkInfomationController)
                 case .regexTester: self.replaceContentViewController(regexTesterController)
                 case .checksumGenerator: self.replaceContentViewController(checksumGeneratorController)
+                case .xmlFormatter: self.replaceContentViewController(xmlFormatterController)
+                case .imageConverter: self.replaceContentViewController(imageConverterController)
+                case .dateConvertor: self.replaceContentViewController(dateConverterController)
                 default: self.replaceContentViewController(notImplementedController)
                 }
             }

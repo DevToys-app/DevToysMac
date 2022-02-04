@@ -11,6 +11,10 @@ protocol TextItem: CaseIterable, Equatable {
     var title: String { get }
 }
 
+extension RawRepresentable where RawValue == String {
+    var title: String { rawValue }
+}
+
 final class EnumPopupButton<Item: TextItem>: PopupButton {
     
     var selectedItem: Item? {

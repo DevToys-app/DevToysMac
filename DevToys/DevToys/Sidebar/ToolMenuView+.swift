@@ -15,13 +15,13 @@ final class ToolmenuViewController: NSViewController {
     
     private let homeMenu = ToolMenu(R.Image.Sidebar.home, "All Tools", "all", hasOwnAction: true)
     private let convertMenu = ToolMenu(R.Image.Sidebar.convert, "Convertors", "convert", [
-        .jsonYamlConvertor, .numberBaseConvertor
+        .jsonYamlConvertor, .numberBaseConvertor, .dateConvertor
     ])
     private let coderMenu = ToolMenu(R.Image.Sidebar.encoderDecoder, "Encoder / Decoder", "coder", [
         .htmlDecoder, .urlDecoder, .base64Decoder, .jwtDecoder
     ])
     private let formatMenu = ToolMenu(R.Image.Sidebar.formatter, "Formatters", "format", [
-        .jsonFormatter
+        .jsonFormatter, .xmlFormatter
     ])
     private let generatorMenu = ToolMenu(R.Image.Sidebar.generator, "Generators", "generator", [
         .hashGenerator, .uuidGenerator, .leremIpsumGenerator, .checksumGenerator
@@ -30,7 +30,7 @@ final class ToolmenuViewController: NSViewController {
         .caseConverter, .regexTester
     ])
     private let graphicMenu = ToolMenu(R.Image.Sidebar.graphic, "Media", "graphic", [
-        .imageCompressor, .pdfGenerator
+        .imageCompressor, .pdfGenerator, .imageConverter
     ])
     private let networkMenu = ToolMenu(R.Image.Sidebar.network, "Network", "network", [
         .networkInfomation,
@@ -101,7 +101,7 @@ extension ToolmenuViewController: NSOutlineViewDataSource {
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         if item == nil {
             return self.toolMenus
-                .filter{ !$0.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }.isEmpty }[index]
+                .filter{ !$0.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }.isEmpty || $0 === homeMenu }[index]
         }
         guard let menu = item as? ToolMenu else { return () }
         return menu.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }[index]
@@ -109,7 +109,7 @@ extension ToolmenuViewController: NSOutlineViewDataSource {
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         if item == nil {
             return self.toolMenus
-                .filter{ !$0.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }.isEmpty }.count
+                .filter{ !$0.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }.isEmpty || $0 === homeMenu }.count
         }
         guard let menu = item as? ToolMenu else { return 0 }
         return menu.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }.count

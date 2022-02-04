@@ -21,6 +21,7 @@
 		B620142127A9271500AF5386 /* TextInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142027A9271500AF5386 /* TextInspector.swift */; };
 		B620142327A929B400AF5386 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142227A929B400AF5386 /* TagCloudView.swift */; };
 		B620145627A9442100AF5386 /* ImageOptimaizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620145527A9442100AF5386 /* ImageOptimaizerView.swift */; };
+		B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64AA44F27AD0D3900EC436D /* DateConverter+.swift */; };
 		B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */; };
 		B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7527A4F5E200AC2601 /* AppViewController.swift */; };
 		B64B1E7827A4F5E300AC2601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64B1E7727A4F5E300AC2601 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		B672CF6527AA763100391A5D /* NetworkSpeedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF6427AA763100391A5D /* NetworkSpeedTest.swift */; };
 		B672CF9727AA7E2C00391A5D /* APITestView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF9627AA7E2C00391A5D /* APITestView+.swift */; };
 		B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF9F27AAB8DD00391A5D /* FileDrop.swift */; };
+		B673A90227AD0E78005512AB /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A90127AD0E78005512AB /* DatePicker.swift */; };
 		B680A79527A68B35007CB707 /* HTMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79427A68B35007CB707 /* HTMLDecoder.swift */; };
 		B680A79827A69268007CB707 /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = B680A79727A69268007CB707 /* HTMLEntities */; };
 		B680A79A27A69324007CB707 /* URLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79927A69324007CB707 /* URLDecoder.swift */; };
@@ -53,11 +55,16 @@
 		B6AC273027AA1373000FD713 /* optipng in Resources */ = {isa = PBXBuildFile; fileRef = B6AC272F27AA1373000FD713 /* optipng */; };
 		B6AC273227AA2BF6000FD713 /* ImageOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */; };
 		B6AC276527AA3D61000FD713 /* jpegoptim in Resources */ = {isa = PBXBuildFile; fileRef = B6AC276427AA3D61000FD713 /* jpegoptim */; };
-		B6AC276A27AA535A000FD713 /* PDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC276927AA535A000FD713 /* PDFGenerator.swift */; };
+		B6AC276A27AA535A000FD713 /* PDFGeneratorView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */; };
 		B6AC277027AA6EFE000FD713 /* NetworkInfomationView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC276F27AA6EFE000FD713 /* NetworkInfomationView+.swift */; };
 		B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5726127AC14B60069DBA7 /* TextView.swift */; };
 		B6B5726427AC14D10069DBA7 /* RegexTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5726327AC14D10069DBA7 /* RegexTextView.swift */; };
 		B6B5728027ACC3AF0069DBA7 /* ChecksumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5727F27ACC3AE0069DBA7 /* ChecksumGenerator.swift */; };
+		B6B5728227ACCF2F0069DBA7 /* XMLFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728127ACCF2F0069DBA7 /* XMLFormatter.swift */; };
+		B6B5728827ACD2F20069DBA7 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = B6B5728727ACD2F20069DBA7 /* Kanna */; };
+		B6B5728A27ACDA420069DBA7 /* ImageConverterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728927ACDA420069DBA7 /* ImageConverterView+.swift */; };
+		B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */; };
+		B6B5728F27ACFA6E0069DBA7 /* ImageDropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */; };
 		B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEDE27A534960022FED2 /* BodyViewController.swift */; };
 		B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */; };
 		B6D1AEE927A545230022FED2 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* Area.swift */; };
@@ -113,6 +120,7 @@
 		B620142027A9271500AF5386 /* TextInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInspector.swift; sourceTree = "<group>"; };
 		B620142227A929B400AF5386 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
 		B620145527A9442100AF5386 /* ImageOptimaizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOptimaizerView.swift; sourceTree = "<group>"; };
+		B64AA44F27AD0D3900EC436D /* DateConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateConverter+.swift"; sourceTree = "<group>"; };
 		B64B1E7027A4F5E200AC2601 /* DevToys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevToys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B64B1E7527A4F5E200AC2601 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +143,7 @@
 		B672CF6427AA763100391A5D /* NetworkSpeedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpeedTest.swift; sourceTree = "<group>"; };
 		B672CF9627AA7E2C00391A5D /* APITestView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APITestView+.swift"; sourceTree = "<group>"; };
 		B672CF9F27AAB8DD00391A5D /* FileDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDrop.swift; sourceTree = "<group>"; };
+		B673A90127AD0E78005512AB /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		B680A79427A68B35007CB707 /* HTMLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLDecoder.swift; sourceTree = "<group>"; };
 		B680A79927A69324007CB707 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
 		B680A79B27A6947D007CB707 /* Base64Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Decoder.swift; sourceTree = "<group>"; };
@@ -146,11 +155,15 @@
 		B6AC272F27AA1373000FD713 /* optipng */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = optipng; sourceTree = "<group>"; };
 		B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOptimizer.swift; sourceTree = "<group>"; };
 		B6AC276427AA3D61000FD713 /* jpegoptim */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = jpegoptim; sourceTree = "<group>"; };
-		B6AC276927AA535A000FD713 /* PDFGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGenerator.swift; sourceTree = "<group>"; };
+		B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFGeneratorView+.swift"; sourceTree = "<group>"; };
 		B6AC276F27AA6EFE000FD713 /* NetworkInfomationView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkInfomationView+.swift"; sourceTree = "<group>"; };
 		B6B5726127AC14B60069DBA7 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		B6B5726327AC14D10069DBA7 /* RegexTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTextView.swift; sourceTree = "<group>"; };
 		B6B5727F27ACC3AE0069DBA7 /* ChecksumGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecksumGenerator.swift; sourceTree = "<group>"; };
+		B6B5728127ACCF2F0069DBA7 /* XMLFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLFormatter.swift; sourceTree = "<group>"; };
+		B6B5728927ACDA420069DBA7 /* ImageConverterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageConverterView+.swift"; sourceTree = "<group>"; };
+		B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
+		B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropper.swift; sourceTree = "<group>"; };
 		B6D1AEDE27A534960022FED2 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
 		B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllToolCollectionItemView+.swift"; sourceTree = "<group>"; };
 		B6D1AEE827A545230022FED2 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
@@ -171,6 +184,7 @@
 				B608541527A66CC9003BF243 /* CoreUtil.framework in Frameworks */,
 				B680A79827A69268007CB707 /* HTMLEntities in Frameworks */,
 				B608541B27A672E3003BF243 /* Yams in Frameworks */,
+				B6B5728827ACD2F20069DBA7 /* Kanna in Frameworks */,
 				B66850F227A65FC200A3FE01 /* SwiftJSONFormatter in Frameworks */,
 				B680A8AD27A8E31C007CB707 /* CryptoSwift in Frameworks */,
 			);
@@ -191,6 +205,7 @@
 			children = (
 				B608541127A66A90003BF243 /* JSONYamlConverter+.swift */,
 				B608541D27A67B48003BF243 /* NumberBaseConverter+.swift */,
+				B64AA44F27AD0D3900EC436D /* DateConverter+.swift */,
 			);
 			path = Convert;
 			sourceTree = "<group>";
@@ -199,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				B6D1AEEF27A547B90022FED2 /* JSONFormatter+.swift */,
+				B6B5728127ACCF2F0069DBA7 /* XMLFormatter.swift */,
 			);
 			path = Format;
 			sourceTree = "<group>";
@@ -215,8 +231,9 @@
 		B620145427A9440E00AF5386 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */,
 				B6AC276827AA532B000FD713 /* Image Optimizer */,
-				B6AC276927AA535A000FD713 /* PDFGenerator.swift */,
+				B6B5729027ACFE020069DBA7 /* Image Converter */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -354,6 +371,16 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		B6B5729027ACFE020069DBA7 /* Image Converter */ = {
+			isa = PBXGroup;
+			children = (
+				B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */,
+				B6B5728927ACDA420069DBA7 /* ImageConverterView+.swift */,
+				B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */,
+			);
+			path = "Image Converter";
+			sourceTree = "<group>";
+		};
 		B6D1AEDD27A534850022FED2 /* Body */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +418,7 @@
 				B620142227A929B400AF5386 /* TagCloudView.swift */,
 				B6B5726127AC14B60069DBA7 /* TextView.swift */,
 				B6B5726327AC14D10069DBA7 /* RegexTextView.swift */,
+				B673A90127AD0E78005512AB /* DatePicker.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -419,6 +447,7 @@
 				B608541A27A672E3003BF243 /* Yams */,
 				B680A79727A69268007CB707 /* HTMLEntities */,
 				B680A8AC27A8E31C007CB707 /* CryptoSwift */,
+				B6B5728727ACD2F20069DBA7 /* Kanna */,
 			);
 			productName = DevToys;
 			productReference = B64B1E7027A4F5E200AC2601 /* DevToys.app */;
@@ -453,6 +482,7 @@
 				B608541927A672E3003BF243 /* XCRemoteSwiftPackageReference "Yams" */,
 				B680A79627A69268007CB707 /* XCRemoteSwiftPackageReference "swift-html-entities" */,
 				B680A8AB27A8E31C007CB707 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				B6B5728627ACD2F20069DBA7 /* XCRemoteSwiftPackageReference "Kanna" */,
 			);
 			productRefGroup = B64B1E7127A4F5E200AC2601 /* Products */;
 			projectDirPath = "";
@@ -502,6 +532,7 @@
 				B608541E27A67B48003BF243 /* NumberBaseConverter+.swift in Sources */,
 				B680A8AA27A8E106007CB707 /* HashGenerator.swift in Sources */,
 				B64B202027A523A200AC2601 /* ToolmenuCell.swift in Sources */,
+				B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */,
 				B672CF9727AA7E2C00391A5D /* APITestView+.swift in Sources */,
 				B672CF6527AA763100391A5D /* NetworkSpeedTest.swift in Sources */,
 				B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */,
@@ -512,33 +543,38 @@
 				B620142327A929B400AF5386 /* TagCloudView.swift in Sources */,
 				B6B5728027ACC3AF0069DBA7 /* ChecksumGenerator.swift in Sources */,
 				B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */,
+				B673A90227AD0E78005512AB /* DatePicker.swift in Sources */,
 				B6AC277027AA6EFE000FD713 /* NetworkInfomationView+.swift in Sources */,
 				B620141C27A917E000AF5386 /* Button.swift in Sources */,
 				B6AC273227AA2BF6000FD713 /* ImageOptimizer.swift in Sources */,
 				B65DB78027AC0EB400146A3C /* RegexTesterView+.swift in Sources */,
+				B6B5728F27ACFA6E0069DBA7 /* ImageDropper.swift in Sources */,
 				B680A89A27A8D9DD007CB707 /* Toast.swift in Sources */,
 				B6D1AEF727A54F750022FED2 /* SectionButton.swift in Sources */,
 				B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */,
 				B6D1AEE927A545230022FED2 /* Area.swift in Sources */,
 				B64B1F7727A4FF8B00AC2601 /* ToolMenuView+.swift in Sources */,
 				B64B202327A52A2D00AC2601 /* R.swift in Sources */,
+				B6B5728227ACCF2F0069DBA7 /* XMLFormatter.swift in Sources */,
 				B64B201D27A5219400AC2601 /* SidebarSearchView+.swift in Sources */,
 				B66850EE27A64D3200A3FE01 /* Page.swift in Sources */,
 				B6D1AEF427A54C440022FED2 /* Section.swift in Sources */,
 				B64B1F7227A4FDC800AC2601 /* AppModel.swift in Sources */,
 				B6D1AEFA27A557280022FED2 /* PopupButton.swift in Sources */,
+				B6B5728A27ACDA420069DBA7 /* ImageConverterView+.swift in Sources */,
 				B6D1AEF027A547B90022FED2 /* JSONFormatter+.swift in Sources */,
 				B620142127A9271500AF5386 /* TextInspector.swift in Sources */,
 				B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */,
 				B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */,
 				B620145627A9442100AF5386 /* ImageOptimaizerView.swift in Sources */,
+				B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */,
 				B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */,
 				B680A79C27A6947D007CB707 /* Base64Decoder.swift in Sources */,
 				B680A86827A8D4D1007CB707 /* TextFieldSection.swift in Sources */,
 				B680A79527A68B35007CB707 /* HTMLDecoder.swift in Sources */,
 				B680A8A727A8DD5D007CB707 /* JWTDecoder.swift in Sources */,
 				B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */,
-				B6AC276A27AA535A000FD713 /* PDFGenerator.swift in Sources */,
+				B6AC276A27AA535A000FD713 /* PDFGeneratorView+.swift in Sources */,
 				B608542027A67E4D003BF243 /* TextField.swift in Sources */,
 				B680A79A27A69324007CB707 /* URLDecoder.swift in Sources */,
 				B64B202627A52DB400AC2601 /* ToolType.swift in Sources */,
@@ -790,6 +826,14 @@
 				minimumVersion = 1.4.2;
 			};
 		};
+		B6B5728627ACD2F20069DBA7 /* XCRemoteSwiftPackageReference "Kanna" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tid-kijyun/Kanna.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.7;
+			};
+		};
 		B6D1AF0427A5603B0022FED2 /* XCRemoteSwiftPackageReference "Highlightr" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/raspu/Highlightr";
@@ -820,6 +864,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B680A8AB27A8E31C007CB707 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
 			productName = CryptoSwift;
+		};
+		B6B5728727ACD2F20069DBA7 /* Kanna */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6B5728627ACD2F20069DBA7 /* XCRemoteSwiftPackageReference "Kanna" */;
+			productName = Kanna;
 		};
 		B6D1AF0527A5603B0022FED2 /* Highlightr */ = {
 			isa = XCSwiftPackageProductDependency;

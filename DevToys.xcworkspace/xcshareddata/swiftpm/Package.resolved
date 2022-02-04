@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "Kanna",
+        "repositoryURL": "https://github.com/tid-kijyun/Kanna.git",
+        "state": {
+          "branch": null,
+          "revision": "f9e4922223dd0d3dfbf02ca70812cf5531fc0593",
+          "version": "5.2.7"
+        }
+      },
+      {
         "package": "Promise",
         "repositoryURL": "https://github.com/ObuchiYuki/Promise.git",
         "state": {

@@ -26,6 +26,7 @@ class Page: NSLoadView {
         let stackView = NSStackView()
         stackView.distribution = .fillEqually
         stackView.orientation = .horizontal
+        stackView.alignment = .top
         stackView.addArrangedSubview(stack1)
         stackView.addArrangedSubview(stack2)
         self.addSection(stackView)
@@ -39,7 +40,7 @@ class Page: NSLoadView {
             make.edges.equalToSuperview()
         }
         
-        self.stackView.edgeInsets = NSEdgeInsets(x: 16, y: 0)
+        self.stackView.edgeInsets = NSEdgeInsets(x: 16, y: 16)
         self.stackView.orientation = .vertical
         self.stackView.alignment = .left
         self.scrollView.documentView = stackView
