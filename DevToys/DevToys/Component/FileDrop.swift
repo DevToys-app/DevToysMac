@@ -7,6 +7,26 @@
 
 import CoreUtil
 
+final class FileDropSection: Section {
+    
+    var urlsPublisher: AnyPublisher<[URL], Never> {
+        fileDrop.urlsPublisher.merge(with: openButton.urlPublisher.map{ [$0] }).eraseToAnyPublisher()
+    }
+    
+    private let fileDrop = FileDrop()
+    private let openButton = OpenSectionButton(title: "Open File", image: R.Image.open)
+    
+    override func onAwake() {
+        super.onAwake()
+        self.title = "File"
+        self.addToolbarItem(openButton)
+        self.addStackItem(fileDrop)
+        self.snp.makeConstraints{ make in
+            make.height.equalTo(160)
+        }
+    }
+}
+
 final class FileDrop: NSLoadView {
     
     let urlsPublisher = PassthroughSubject<[URL], Never>()

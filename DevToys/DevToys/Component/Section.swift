@@ -34,6 +34,9 @@ class Section: NSLoadView {
     func addToolbarItem(_ item: NSView) {
         self.titleStackView.addArrangedSubview(item)
     }
+    func removeToolbarItem(_ item: NSView) {
+        self.titleStackView.removeArrangedSubview(item)
+    }
     func removeAllToolbarItem() {
         self.titleStackView.subviews.removeAll(where: { $0 !== titleLabel && $0 !== spacer })
     }
