@@ -29,7 +29,8 @@ enum ToolType: String, CaseIterable {
     
     case caseConverter
     case regexTester
-    
+    case hyphenationRemover
+
     case imageCompressor
     case pdfGenerator
     case imageConverter
@@ -56,6 +57,7 @@ extension ToolType {
         case .checksumGenerator: return R.Image.Sidebar.hashGenerator
         case .caseConverter: return R.Image.Sidebar.textIspector
         case .regexTester: return R.Image.Sidebar.regexTester
+        case .hyphenationRemover: return R.Image.Sidebar.textIspector
         case .imageCompressor: return R.Image.Sidebar.imageCompressor
         case .imageConverter: return R.Image.Sidebar.imageCompressor
         case .pdfGenerator: return R.Image.Sidebar.graphic
@@ -81,6 +83,7 @@ extension ToolType {
         case .checksumGenerator: return R.Image.ToolList.hashGenerator
         case .caseConverter: return R.Image.ToolList.textIspector
         case .regexTester: return R.Image.ToolList.regexTester
+        case .hyphenationRemover: return R.Image.ToolList.textIspector
         case .imageCompressor: return R.Image.ToolList.imageCompressor
         case .imageConverter: return R.Image.ToolList.imageCompressor
         case .pdfGenerator: return R.Image.ToolList.graphic
@@ -107,6 +110,7 @@ extension ToolType {
         case .checksumGenerator: return "Checksum"
         case .caseConverter: return "Inspector & Case Converter"
         case .regexTester: return "Regex"
+        case .hyphenationRemover: return "Hyphen Remover"
         case .imageCompressor: return "PNG / JPEG Compressor"
         case .imageConverter: return "Image Converter"
         case .pdfGenerator: return "PDF Generator"
@@ -133,6 +137,7 @@ extension ToolType {
         case .checksumGenerator: return "Checksum Generator"
         case .caseConverter: return "Text Case Converter and Inspector"
         case .regexTester: return "Regex Tester"
+        case .hyphenationRemover: return "Hyphenation Remover"
         case .pdfGenerator: return "PDF Generator"
         case .imageCompressor: return "PNG / JPEG Compressor"
         case .imageConverter: return "Image Converter"
@@ -159,6 +164,7 @@ extension ToolType {
         case .checksumGenerator: return "Generate or Test checksum of a file"
         case .caseConverter: return "Analyze text and convert it to differenct case"
         case .regexTester: return "Test reguler expression"
+        case .hyphenationRemover: return "Remove hyphenations copied from PDF text"
         case .pdfGenerator: return "Generate PDF from images"
         case .imageCompressor: return "Lossless PNG and JPEG optimizer"
         case .imageConverter: return "Convert image format and size"
