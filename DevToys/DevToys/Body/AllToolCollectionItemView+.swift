@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class AllToolCollectionItemViewController: ToolPageViewController {
+final class AllToolCollectionItemViewController: PageViewController {
     private let scrollView = NSScrollView()
     private let collectionView = NSCollectionView()
     

@@ -57,6 +57,7 @@
 		B6AC277027AA6EFE000FD713 /* NetworkInfomationView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC276F27AA6EFE000FD713 /* NetworkInfomationView+.swift */; };
 		B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5726127AC14B60069DBA7 /* TextView.swift */; };
 		B6B5726427AC14D10069DBA7 /* RegexTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5726327AC14D10069DBA7 /* RegexTextView.swift */; };
+		B6B5728027ACC3AF0069DBA7 /* ChecksumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5727F27ACC3AE0069DBA7 /* ChecksumGenerator.swift */; };
 		B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEDE27A534960022FED2 /* BodyViewController.swift */; };
 		B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */; };
 		B6D1AEE927A545230022FED2 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* Area.swift */; };
@@ -149,6 +150,7 @@
 		B6AC276F27AA6EFE000FD713 /* NetworkInfomationView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkInfomationView+.swift"; sourceTree = "<group>"; };
 		B6B5726127AC14B60069DBA7 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		B6B5726327AC14D10069DBA7 /* RegexTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTextView.swift; sourceTree = "<group>"; };
+		B6B5727F27ACC3AE0069DBA7 /* ChecksumGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecksumGenerator.swift; sourceTree = "<group>"; };
 		B6D1AEDE27A534960022FED2 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
 		B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllToolCollectionItemView+.swift"; sourceTree = "<group>"; };
 		B6D1AEE827A545230022FED2 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				B680A8A927A8E106007CB707 /* HashGenerator.swift */,
 				B62013B327A9070D00AF5386 /* UUIDGenerator.swift */,
 				B620141D27A91F6700AF5386 /* LoremIpsumGenerator.swift */,
+				B6B5727F27ACC3AE0069DBA7 /* ChecksumGenerator.swift */,
 			);
 			path = Generator;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
 				B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */,
 				B620142327A929B400AF5386 /* TagCloudView.swift in Sources */,
+				B6B5728027ACC3AF0069DBA7 /* ChecksumGenerator.swift in Sources */,
 				B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */,
 				B6AC277027AA6EFE000FD713 /* NetworkInfomationView+.swift in Sources */,
 				B620141C27A917E000AF5386 /* Button.swift in Sources */,

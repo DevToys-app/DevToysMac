@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class TextInspectorViewController: ToolPageViewController {
+final class TextInspectorViewController: PageViewController {
     private let cell = TextInspectorView()
     
     @RestorableState("textin.input") private var input = "Hello World"

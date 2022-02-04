@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class Base64DecoderViewController: ToolPageViewController {
+final class Base64DecoderViewController: PageViewController {
     private let cell = Base64DecoderView()
     
     @RestorableState("base64.sourceType") private var sourceType = SourceType.text

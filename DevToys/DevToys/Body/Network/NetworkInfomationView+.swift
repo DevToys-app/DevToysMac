@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class NetworkInfomationViewController: ToolPageViewController {
+final class NetworkInfomationViewController: PageViewController {
     private let cell = NetworkInfomationView()
     private let reachability = try! Reachability()
     private let speedTest = NetworkSpeedTest()

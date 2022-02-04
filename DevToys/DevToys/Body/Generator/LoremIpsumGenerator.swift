@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class LoremIpsumGeneratorViewController: ToolPageViewController {
+final class LoremIpsumGeneratorViewController: PageViewController {
     private let cell = LoremIpsumGeneratorView()
     
     @RestorableState("li.type") var generateType = LoremIpsumGenerateType.sentences

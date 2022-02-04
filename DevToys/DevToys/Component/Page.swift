@@ -64,7 +64,7 @@ private class FlipClipView: NSClipView {
     override var isFlipped: Bool { true }
 }
 
-class ToolPageViewController: NSViewController {
+class PageViewController: NSViewController {
     override func viewDidAppear() {
         view.window?.title = (view as? Page)?.title ?? "DevToys"
     }

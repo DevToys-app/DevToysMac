@@ -8,7 +8,7 @@
 import CoreUtil
 import CryptoSwift
 
-final class HashGeneratorViewController: ToolPageViewController {
+final class HashGeneratorViewController: PageViewController {
     private let cell = HashGeneratorView()
     
     @RestorableState("hash.upper") var isUppercase = false
@@ -28,8 +28,8 @@ final class HashGeneratorViewController: ToolPageViewController {
         self.$sha256.sink{[unowned self] in self.cell.sha256Section.string = $0 }.store(in: &objectBag)
         self.$sha512.sink{[unowned self] in self.cell.sha512Section.string = $0 }.store(in: &objectBag)
         
-//        self.cell.inputSection.stringPublisher
-//            .sink{[unowned self] in self.input = $0; updateHash() }.store(in: &objectBag)
+        self.cell.textInputSection.stringPublisher
+            .sink{[unowned self] in self.input = $0; updateHash() }.store(in: &objectBag)
         self.cell.formatSwitch.isOnPublisher
             .sink{[unowned self] in self.isUppercase = $0; updateHash() }.store(in: &objectBag)
     }
@@ -45,10 +45,7 @@ final class HashGeneratorViewController: ToolPageViewController {
 final class HashGeneratorView: Page {
     let formatSwitch = NSSwitch()
     
-    let fileDrop = FileDrop()
-    lazy var fileInputSection = Section(title: "Input", items: [fileDrop])
     let textInputSection = TextViewSection(title: "Input", options: .all)
-    let inputSection = NSPlaceholderView()
     
     let md5Section = TextFieldSection(title: "MD5", isEditable: false)
     let sha1Section = TextFieldSection(title: "SHA1", isEditable: false)
@@ -63,9 +60,8 @@ final class HashGeneratorView: Page {
         
         self.addSection(configurationSection)
         
-        self.addSection(inputSection)
-        self.inputSection.contentView = textInputSection
-        self.inputSection.snp.remakeConstraints{ make in
+        self.addSection(textInputSection)
+        self.textInputSection.snp.remakeConstraints{ make in
             make.height.equalTo(180)
         }
         
