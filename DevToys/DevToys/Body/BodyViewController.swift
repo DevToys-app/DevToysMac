@@ -27,6 +27,7 @@ final class BodyViewController: NSViewController {
     private lazy var pdfGeneratorController = PDFGeneratorViewController()
     private lazy var networkInfomationController = NetworkInfomationViewController()
     private lazy var regexTesterController = RegexTesterViewController()
+    private lazy var checksumGeneratorController = ChecksumGeneratorViewController()
     
     private lazy var notImplementedController = NotImplementedViewController()
     
@@ -54,6 +55,7 @@ final class BodyViewController: NSViewController {
                 case .pdfGenerator: self.replaceContentViewController(pdfGeneratorController)
                 case .networkInfomation: self.replaceContentViewController(networkInfomationController)
                 case .regexTester: self.replaceContentViewController(regexTesterController)
+                case .checksumGenerator: self.replaceContentViewController(checksumGeneratorController)
                 default: self.replaceContentViewController(notImplementedController)
                 }
             }

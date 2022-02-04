@@ -11,6 +11,7 @@ final class ToolmenuViewController: NSViewController {
     
     private let scrollView = NSScrollView()
     private let outlineView = NSOutlineView.list()
+    private var searchQuery = Query() { didSet { outlineView.reloadData() } }
     
     private let homeMenu = ToolMenu(R.Image.Sidebar.home, "All Tools", "all", hasOwnAction: true)
     private let convertMenu = ToolMenu(R.Image.Sidebar.convert, "Convertors", "convert", [
@@ -23,7 +24,7 @@ final class ToolmenuViewController: NSViewController {
         .jsonFormatter
     ])
     private let generatorMenu = ToolMenu(R.Image.Sidebar.generator, "Generators", "generator", [
-        .hashGenerator, .uuidGenerator, .leremIpsumGenerator
+        .hashGenerator, .uuidGenerator, .leremIpsumGenerator, .checksumGenerator
     ])
     private let textMenu = ToolMenu(R.Image.Sidebar.text, "Text", "text", [
         .caseConverter, .regexTester
@@ -33,7 +34,6 @@ final class ToolmenuViewController: NSViewController {
     ])
     private let networkMenu = ToolMenu(R.Image.Sidebar.network, "Network", "network", [
         .networkInfomation,
-//        .apiTest
     ])
     
     private lazy var toolMenus = [
@@ -86,6 +86,11 @@ final class ToolmenuViewController: NSViewController {
         self.outlineView.autosaveName = "sidebar"
         self.outlineView.indentationPerLevel = 4
     }
+    
+    override func viewDidAppear() {
+        self.getStatePublisher(for: .appModelChannel).compactMap{ $0?.$searchQuery }.switchToLatest()
+            .sink{[unowned self] in self.searchQuery = Query($0) }.store(in: &objectBag)
+    }
 }
 
 extension ToolmenuViewController: NSOutlineViewDataSource {
@@ -94,14 +99,20 @@ extension ToolmenuViewController: NSOutlineViewDataSource {
         return !menu.toolTypes.isEmpty
     }
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
-        if item == nil { return self.toolMenus[index] }
+        if item == nil {
+            return self.toolMenus
+                .filter{ !$0.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }.isEmpty }[index]
+        }
         guard let menu = item as? ToolMenu else { return () }
-        return menu.toolTypes[index]
+        return menu.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }[index]
     }
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
-        if item == nil { return self.toolMenus.count }
+        if item == nil {
+            return self.toolMenus
+                .filter{ !$0.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }.isEmpty }.count
+        }
         guard let menu = item as? ToolMenu else { return 0 }
-        return menu.toolTypes.count
+        return menu.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }.count
     }
     
     public func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {

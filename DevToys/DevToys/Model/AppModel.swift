@@ -17,4 +17,5 @@ extension NSViewController {
 
 final class AppModel {
     @RestorableState("app.tooltype") var toolType: ToolType = ToolType.jsonFormatter
+    @RestorableState("app.searchQuery") var searchQuery = ""
 }

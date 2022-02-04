@@ -23,6 +23,7 @@ enum ToolType: String, CaseIterable {
     case hashGenerator
     case uuidGenerator
     case leremIpsumGenerator
+    case checksumGenerator
     
     case caseConverter
     case regexTester
@@ -48,6 +49,7 @@ extension ToolType {
         case .hashGenerator: return R.Image.Sidebar.hashGenerator
         case .uuidGenerator: return R.Image.Sidebar.uuidGenerator
         case .leremIpsumGenerator: return R.Image.Sidebar.loremIpsumGenerator
+        case .checksumGenerator: return R.Image.Sidebar.hashGenerator
         case .caseConverter: return R.Image.Sidebar.textIspector
         case .regexTester: return R.Image.Sidebar.regexTester
         case .imageCompressor: return R.Image.Sidebar.imageCompressor
@@ -69,6 +71,7 @@ extension ToolType {
         case .hashGenerator: return R.Image.ToolList.hashGenerator
         case .uuidGenerator: return R.Image.ToolList.uuidGenerator
         case .leremIpsumGenerator: return R.Image.ToolList.loremIpsumGenerator
+        case .checksumGenerator: return R.Image.ToolList.hashGenerator
         case .caseConverter: return R.Image.ToolList.textIspector
         case .regexTester: return R.Image.ToolList.regexTester
         case .imageCompressor: return R.Image.ToolList.imageCompressor
@@ -91,6 +94,7 @@ extension ToolType {
         case .hashGenerator: return "Hash"
         case .uuidGenerator: return "UUID"
         case .leremIpsumGenerator: return "Lorem Ipsum"
+        case .checksumGenerator: return "Checksum"
         case .caseConverter: return "Inspector & Case Converter"
         case .regexTester: return "Regex"
         case .imageCompressor: return "PNG / JPEG Compressor"
@@ -113,6 +117,7 @@ extension ToolType {
         case .hashGenerator: return "Hash Generator"
         case .uuidGenerator: return "UUID Generator"
         case .leremIpsumGenerator: return "Lorem Ipsum Generator"
+        case .checksumGenerator: return "Checksum Generator"
         case .caseConverter: return "Text Case Converter and Inspector"
         case .regexTester: return "Regex Tester"
         case .pdfGenerator: return "PDF Generator"
@@ -135,6 +140,7 @@ extension ToolType {
         case .hashGenerator: return "Calculate MD5, SHA1, SHA256 and SHA 512 hash from text data"
         case .uuidGenerator: return "Generate UUIDs version 1 and 4"
         case .leremIpsumGenerator: return "Generate Lorem Ipsum placeholder text"
+        case .checksumGenerator: return "Generate or Test checksum of a file"
         case .caseConverter: return "Analyze text and convert it to differenct case"
         case .regexTester: return "Test reguler expression"
         case .pdfGenerator: return "Generate PDF from images"
