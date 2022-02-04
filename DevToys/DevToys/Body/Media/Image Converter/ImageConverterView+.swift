@@ -15,7 +15,6 @@ final class ImageConverterViewController: PageViewController {
     @RestorableState("imc.resize") private var resize = false
     @RestorableState("imc.width") private var width = 1280.0
     @RestorableState("imc.height") private var height = 720.0
-    @RestorableState("imc.width") private var padding = true
     
     @Observable var task: [ImageConvertTask] = []
     
@@ -34,8 +33,6 @@ final class ImageConverterViewController: PageViewController {
             .sink{[unowned self] in self.cell.widthField.value = $0 }.store(in: &objectBag)
         self.$height
             .sink{[unowned self] in self.cell.heightField.value = $0 }.store(in: &objectBag)
-        self.$padding
-            .sink{[unowned self] in self.cell.paddingSwitch.isOn = $0 }.store(in: &objectBag)
         
         self.cell.resizeSwitch.isOnPublisher
             .sink{[unowned self] in self.resize = $0 }.store(in: &objectBag)
@@ -49,8 +46,6 @@ final class ImageConverterViewController: PageViewController {
             .sink{[unowned self] in self.format = $0 }.store(in: &objectBag)
         self.cell.dragPublisher
             .sink{[unowned self] in self.readURLs($0) }.store(in: &objectBag)
-        self.cell.paddingSwitch.isOnPublisher
-            .sink{[unowned self] in self.padding = $0 }.store(in: &objectBag)
     }
     
     private func readURLs(_ pasteboard: NSPasteboard) {
@@ -58,8 +53,10 @@ final class ImageConverterViewController: PageViewController {
         guard !newImageItems.isEmpty else { return }
         
         self.task.append(contentsOf: newImageItems.map{
-            ImageConverter.convert($0, format: format, resize: self.resize, size: [CGFloat(width), CGFloat(height)], scale: scaleMode, padding: padding)
-        }) 
+            ImageConverter.convert($0, format: format, resize: self.resize, size: [CGFloat(width), CGFloat(height)], scale: scaleMode)
+        })
+        
+        self.cell.listView.scrollView.contentView.scrollToBottom()
     }
 }
 
@@ -73,14 +70,12 @@ enum ImageFormatType: String, TextItem {
 enum ImageScaleMode: String, TextItem {
     case scaleToFill = "Scale to Fill"
     case scaleToFit = "Scale to Fit"
-    case stretch = "Stretch"
 }
 
 final private class ImageConverterView: Page {
     
     let formatTypePicker = EnumPopupButton<ImageFormatType>()
     let resizeSwitch = NSSwitch()
-    let paddingSwitch = NSSwitch()
     let widthField = NumberField()
     let heightField = NumberField()
     let scaleModePicker = EnumPopupButton<ImageScaleMode>()
@@ -98,7 +93,6 @@ final private class ImageConverterView: Page {
             $0.addArrangedSubview(NSTextField(labelWithString: "x"))
             $0.addArrangedSubview(heightField)
         }))
-        $0.addArrangedSubview(Area(title: "Padding", control: paddingSwitch))
     }
     
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
@@ -129,7 +123,7 @@ final private class ImageConverterView: Page {
             ])
         )
         
-        self.addSection(Section(title: "Images", items: [listView]))
+        self.addSection(Section(title: "Converted Images", items: [listView]))
     }
 }
 
@@ -155,7 +149,7 @@ final private class ImageListView: NSLoadView {
 
 extension ImageListView: NSTableViewDataSource, NSTableViewDelegate {
     func numberOfRows(in tableView: NSTableView) -> Int { convertTasks.count }
-    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat { 80 }
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat { 46 }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = ImageListCell()
@@ -200,14 +194,15 @@ final private class ImageListCell: NSLoadStackView {
         self.spacing = 16
         self.edgeInsets = .init(x: 16, y: 4)
         self.imageView.snp.makeConstraints{ make in
-            make.width.equalTo(100)
-            make.height.equalTo(64)
+            make.width.equalTo(48)
+            make.height.equalTo(28)
         }
         
         let titleStack = NSStackView()
         self.addArrangedSubview(titleStack)
         titleStack.orientation = .vertical
         titleStack.alignment = .left
+        titleStack.spacing = 4
         titleStack.distribution = .fillProportionally
         titleStack.addArrangedSubview(titleLabel)
         titleStack.addArrangedSubview(sizeLabel)
