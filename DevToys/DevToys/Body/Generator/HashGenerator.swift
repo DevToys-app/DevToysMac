@@ -21,6 +21,8 @@ final class HashGeneratorViewController: PageViewController {
     override func loadView() { self.view = cell }
     
     override func viewDidLoad() {
+        self.updateHash()
+        
         self.$isUppercase.sink{[unowned self] in self.cell.formatSwitch.isOn = $0 }.store(in: &objectBag)
         self.$input.sink{[unowned self] in self.cell.textInputSection.string = $0 }.store(in: &objectBag)
         self.$md5.sink{[unowned self] in self.cell.md5Section.string = $0 }.store(in: &objectBag)
