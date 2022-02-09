@@ -12,7 +12,7 @@ final class JWTDecoderViewController: PageViewController {
     
     @RestorableState("jwt.token") var token = defaultToken
     @RestorableState("jwt.header") var header = defaultHeader
-    @RestorableState("jwt.payload") var payload = defaultPaylaod
+    @RestorableState("jwt.payload") var payload = defaultPayload
     
     override func loadView() { self.view = cell }
     
@@ -62,7 +62,7 @@ final private class JWTDecoderView: Page {
     
     let tokenTextSection = TextViewSection(title: "JWT Token", options: .defaultInput)
     let headerCodeSection = CodeViewSection(title: "Header", options: .defaultOutput, language: .javascript)
-    let payloadCodeSection = CodeViewSection(title: "Header", options: .defaultOutput, language: .javascript)
+    let payloadCodeSection = CodeViewSection(title: "Payload", options: .defaultOutput, language: .javascript)
     
     override func onAwake() {
         self.title = "JWT Decoder"
@@ -84,7 +84,7 @@ final private class JWTDecoderView: Page {
 
 private let defaultToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFsaWNlIiwiYWdlIjoxNn0.Ir_wyzMjqDXeeaGWJVgdysutJ6C9E3MX11t38LD2K60"
 
-private let defaultPaylaod = """
+private let defaultPayload = """
 {
   "sub": "1234567890",
   "name": "Alice",
