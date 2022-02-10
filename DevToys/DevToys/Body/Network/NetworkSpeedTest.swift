@@ -8,7 +8,7 @@
 import Foundation
 
 
-protocol NetworkSpeedProviderDelegate: class {
+protocol NetworkSpeedProviderDelegate: AnyObject {
     func networkSpeedUpdated(to megabytesPerSecond: CGFloat?)
 }
 public enum NetworkStatus: String {
