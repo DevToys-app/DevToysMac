@@ -11,7 +11,7 @@ final class ImageOptimaizerViewController: PageViewController {
     private let cell = ImageOptimaizerView()
     
     @Observable var tasks = [ImageOptimizeTask]()
-    @RestorableState("imop.level") var level = OptimizeLevel.mediam
+    @RestorableState("imop.level") var level = OptimizeLevel.medium
     
     override func loadView() { self.view = cell }
     
