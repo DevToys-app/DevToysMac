@@ -37,6 +37,7 @@ enum PngOptimizer {
     private static let numberFormatter = NumberFormatter() => { $0.maximumFractionDigits = 2 }
     
     static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {
+        #warning("これだとoptipngが書き込めない")
         guard let optpingURL = self.optpingURL else { assertionFailure(); return nil }
         
         let task = Process()
@@ -66,6 +67,7 @@ enum PngOptimizer {
             
             if task.terminationStatus != 0 {
                 let error = errorPipe.readStringToEndOfFile ?? "Error"
+                print("error", error)
                 reject(error)
             } else {
                 if let oldFileSize = oldFileSize, let newFileSize = newFileSize {
@@ -83,54 +85,60 @@ enum PngOptimizer {
 }
 
 enum JpegOptimizer {
-    private static let optpingURL = Bundle.current.url(forResource: "jpegoptim", withExtension: nil)
+    private static let jpegoptimURL = Bundle.current.url(forResource: "jpegoptim", withExtension: nil)
+    private static let dylibURL = Bundle.current.url(forResource: "jpegoptim", withExtension: nil)
+    
+    static func load() {
+        
+    }
+    
     private static let numberFormatter = NumberFormatter() => {
         $0.maximumFractionDigits = 2
     }
     
     static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {
-        guard let optpingURL = self.optpingURL else { assertionFailure(); return nil }
-        
-        let task = Process()
-        var arguments = [String]()
-        switch optimizeLevel {
-        case .low: arguments.append(contentsOf: ["--strip-all"])
-        case .mediam: arguments.append(contentsOf: ["--strip-all", "-m95"])
-        case .high: arguments.append(contentsOf: ["--strip-all", "-m90"])
-        case .veryHigh: arguments.append(contentsOf: ["--strip-all", "-m80"])
-        }
-        arguments.append(url.path)
-        
-        let outputPipe = Pipe()
-        let errorPipe = Pipe()
-        
-        task.executableURL = optpingURL
-        task.arguments = arguments
-        task.standardOutput = outputPipe
-        task.standardError = errorPipe
-        
-        let promise = Promise<String, Error>.asyncError(on: .global()) { resolve, reject in
-            
-            let oldFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
-            task.launch()
-            task.waitUntilExit()
-            let newFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
-            
-            if task.terminationStatus != 0 {
-                let error = errorPipe.readStringToEndOfFile ?? "Error"
-                reject(error)
-            } else {
-                if let oldFileSize = oldFileSize, let newFileSize = newFileSize {
-                    let percent = newFileSize / oldFileSize * 100
-                    let result = (numberFormatter.string(from: NSNumber(value: percent)) ?? "[Unkown]") + "%"
-                    resolve(result)
-                } else {
-                    resolve("[Unkown]")
-                }
-            }
-        }
-        
-        return .init(title: url.lastPathComponent, result: promise)
+        fatalError()
+//        guard let optpingURL = self.optpingURL else { assertionFailure(); return nil }
+//        let task = Process()
+//        var arguments = [String]()
+//        switch optimizeLevel {
+//        case .low: arguments.append(contentsOf: ["--strip-all"])
+//        case .mediam: arguments.append(contentsOf: ["--strip-all", "-m95"])
+//        case .high: arguments.append(contentsOf: ["--strip-all", "-m90"])
+//        case .veryHigh: arguments.append(contentsOf: ["--strip-all", "-m80"])
+//        }
+//        arguments.append(url.path)
+//
+//        let outputPipe = Pipe()
+//        let errorPipe = Pipe()
+//
+//        task.executableURL = optpingURL
+//        task.arguments = arguments
+//        task.standardOutput = outputPipe
+//        task.standardError = errorPipe
+//
+//        let promise = Promise<String, Error>.asyncError(on: .global()) { resolve, reject in
+//
+//            let oldFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
+//            task.launch()
+//            task.waitUntilExit()
+//            let newFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
+//
+//            if task.terminationStatus != 0 {
+//                let error = errorPipe.readStringToEndOfFile ?? "Error"
+//                reject(error)
+//            } else {
+//                if let oldFileSize = oldFileSize, let newFileSize = newFileSize {
+//                    let percent = newFileSize / oldFileSize * 100
+//                    let result = (numberFormatter.string(from: NSNumber(value: percent)) ?? "[Unkown]") + "%"
+//                    resolve(result)
+//                } else {
+//                    resolve("[Unkown]")
+//                }
+//            }
+//        }
+//
+//        return .init(title: url.lastPathComponent, result: promise)
     }
 }
 

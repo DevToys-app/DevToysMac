@@ -739,6 +739,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
+					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuki.DevToys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -761,6 +766,11 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
+					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuki.DevToys;
