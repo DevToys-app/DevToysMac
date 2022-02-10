@@ -20,7 +20,7 @@ This is the mac app version of [DevToys](https://github.com/veler/DevToys)!
 <img width="500" alt="スクリーンショット 2022-01-30 19 01 23" src="https://user-images.githubusercontent.com/20896810/151695289-cf2a4c2f-8ca9-4537-a896-5fc944b706ac.png">
 
 
-### Numer Base Converter
+### Number Base Converter
 
 <img width="500" alt="スクリーンショット 2022-01-30 19 01 41" src="https://user-images.githubusercontent.com/20896810/151695294-88c629d9-514f-4966-a174-1fcec9c29185.png">
 
