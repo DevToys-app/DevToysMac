@@ -1,5 +1,5 @@
 //
-//  Image Optimaizer.swift
+//  Image Optimizer.swift
 //  DevToys
 //
 //  Created by yuki on 2022/02/01.
@@ -7,11 +7,11 @@
 
 import CoreUtil
 
-final class ImageOptimaizerViewController: PageViewController {
-    private let cell = ImageOptimaizerView()
+final class ImageOptimizerViewController: PageViewController {
+    private let cell = ImageOptimizerView()
     
     @Observable var tasks = [ImageOptimizeTask]()
-    @RestorableState("imop.level") var level = OptimizeLevel.mediam
+    @RestorableState("imop.level") var level = OptimizeLevel.medium
     
     override func loadView() { self.view = cell }
     
@@ -43,7 +43,7 @@ final class ImageOptimaizerViewController: PageViewController {
 }
 
 
-final private class ImageOptimaizerView: Page {
+final private class ImageOptimizerView: Page {
     private let listView = NSTableView.list()
     
     let urlPublisher = PassthroughSubject<[URL], Never>()
@@ -77,7 +77,7 @@ final private class ImageOptimaizerView: Page {
     }
     
     override func onAwake() {
-        self.title = "Image Optimaizer"
+        self.title = "Image Optimizer"
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
         self.addSection(Section(title: "Configuration", items: [
@@ -95,7 +95,7 @@ final private class ImageOptimaizerView: Page {
     }
 }
 
-extension ImageOptimaizerView: NSTableViewDataSource, NSTableViewDelegate {
+extension ImageOptimizerView: NSTableViewDataSource, NSTableViewDelegate {
     func numberOfRows(in tableView: NSTableView) -> Int { tasks.count }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat { 32 }

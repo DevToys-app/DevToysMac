@@ -14,7 +14,7 @@ struct ImageOptimizeTask {
 
 enum OptimizeLevel: String, TextItem {
     case low = "Low"
-    case mediam = "Mediam"
+    case medium = "Medium"
     case high = "High"
     case veryHigh = "Very High (Slow)"
     
@@ -44,7 +44,7 @@ enum PngOptimizer {
         var arguments = [String]()
         switch optimizeLevel {
         case .low: arguments.append("-o1")
-        case .mediam: arguments.append("-o2")
+        case .medium: arguments.append("-o2")
         case .high: arguments.append("-o3")
         case .veryHigh: arguments.append("-o7")
         }
@@ -103,7 +103,7 @@ enum JpegOptimizer {
 //        var arguments = [String]()
 //        switch optimizeLevel {
 //        case .low: arguments.append(contentsOf: ["--strip-all"])
-//        case .mediam: arguments.append(contentsOf: ["--strip-all", "-m95"])
+//        case .medium: arguments.append(contentsOf: ["--strip-all", "-m95"])
 //        case .high: arguments.append(contentsOf: ["--strip-all", "-m90"])
 //        case .veryHigh: arguments.append(contentsOf: ["--strip-all", "-m80"])
 //        }
