@@ -27,7 +27,7 @@ enum Terminal {
             task.waitUntilExit()
             
             if task.terminationStatus != 0 {
-                reject(errorPipe.readStringToEndOfFile ?? "[binary]")
+                reject(TerminalError.nonZeroExit(errorPipe.readStringToEndOfFile ?? "[binary]"))
             } else {
                 resolve(outputPipe.readStringToEndOfFile ?? "[binary]")
             }
