@@ -42,6 +42,7 @@
 		B64B205927A530D700AC2601 /* NSViewController+ChainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B205827A530D700AC2601 /* NSViewController+ChainObject.swift */; };
 		B64B205C27A530E800AC2601 /* NSViewController+StateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B205B27A530E800AC2601 /* NSViewController+StateObject.swift */; };
 		B64B209527A5323A00AC2601 /* Combine+ObjectBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B209427A5323A00AC2601 /* Combine+ObjectBag.swift */; };
+		B66F0D4C27B6176A00DC812D /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F0D4B27B6176A00DC812D /* Terminal.swift */; };
 		B680A79127A681F8007CB707 /* NSTextField+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79027A681F8007CB707 /* NSTextField+Combine.swift */; };
 		B680A86527A8C58C007CB707 /* Combine+Peek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A86427A8C58C007CB707 /* Combine+Peek.swift */; };
 		B680A89C27A8DA16007CB707 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A89B27A8DA16007CB707 /* Action.swift */; };
@@ -93,6 +94,7 @@
 		B64B205827A530D700AC2601 /* NSViewController+ChainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSViewController+ChainObject.swift"; sourceTree = "<group>"; };
 		B64B205B27A530E800AC2601 /* NSViewController+StateObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSViewController+StateObject.swift"; sourceTree = "<group>"; };
 		B64B209427A5323A00AC2601 /* Combine+ObjectBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Combine+ObjectBag.swift"; sourceTree = "<group>"; };
+		B66F0D4B27B6176A00DC812D /* Terminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terminal.swift; sourceTree = "<group>"; };
 		B680A79027A681F8007CB707 /* NSTextField+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextField+Combine.swift"; sourceTree = "<group>"; };
 		B680A86427A8C58C007CB707 /* Combine+Peek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Peek.swift"; sourceTree = "<group>"; };
 		B680A89B27A8DA16007CB707 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				B64B1ED227A4F71F00AC2601 /* NS+OnAwake.swift */,
 				B6B5727927AC223A0069DBA7 /* RestorableState.swift */,
 				B6B5727C27AC22480069DBA7 /* RestorableData.swift */,
+				B66F0D4B27B6176A00DC812D /* Terminal.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				B64B1F3627A4F83500AC2601 /* Ex+NSColor.swift in Sources */,
 				B64B209527A5323A00AC2601 /* Combine+ObjectBag.swift in Sources */,
 				B64B1EDC27A4F75600AC2601 /* PipeOperator.swift in Sources */,
+				B66F0D4C27B6176A00DC812D /* Terminal.swift in Sources */,
 				B64B1F1827A4F80800AC2601 /* Ex+CGPoint.swift in Sources */,
 				B680A86527A8C58C007CB707 /* Combine+Peek.swift in Sources */,
 				B64B1ED027A4F71200AC2601 /* ViewPlaceholder.swift in Sources */,

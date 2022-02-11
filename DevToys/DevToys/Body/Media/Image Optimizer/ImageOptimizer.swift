@@ -37,10 +37,8 @@ enum PngOptimizer {
     private static let numberFormatter = NumberFormatter() => { $0.maximumFractionDigits = 2 }
     
     static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {
-        #warning("これだとoptipngが書き込めない")
         guard let optpingURL = self.optpingURL else { assertionFailure(); return nil }
         
-        let task = Process()
         var arguments = [String]()
         switch optimizeLevel {
         case .low: arguments.append("-o1")
@@ -50,35 +48,22 @@ enum PngOptimizer {
         }
         arguments.append(url.path)
         
-        let outputPipe = Pipe()
-        let errorPipe = Pipe()
+        print("arguments", arguments)
         
-        task.executableURL = optpingURL
-        task.arguments = arguments
-        task.standardOutput = outputPipe
-        task.standardError = errorPipe
-        
-        let promise = Promise<String, Error>.asyncError(on: .global()) { resolve, reject in
-            
-            let oldFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
-            task.launch()
-            task.waitUntilExit()
-            let newFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
-            
-            if task.terminationStatus != 0 {
-                let error = errorPipe.readStringToEndOfFile ?? "Error"
-                print("error", error)
-                reject(error)
-            } else {
+        let oldFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
+        let promise = Terminal.run(optpingURL, arguments: arguments)
+            .peekError{ print($0) }
+            .map{ _ -> String in
+                let newFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
+                
                 if let oldFileSize = oldFileSize, let newFileSize = newFileSize {
                     let percent = newFileSize / oldFileSize * 100
                     let result = (numberFormatter.string(from: NSNumber(value: percent)) ?? "[Unkown]") + "%"
-                    resolve(result)
+                    return result
                 } else {
-                    resolve("[Unkown]")
+                    return "[Unkown file size]"
                 }
             }
-        }
         
         return .init(title: url.lastPathComponent, result: promise)
     }
@@ -143,37 +128,3 @@ enum JpegOptimizer {
 }
 
 extension String: Error {}
-
-enum TerminalError: Error {
-    case nonZeroExit(String)
-}
-
-enum Terminal {
-    static func run(_ executableURL: URL, arguments: [String], queue: DispatchQueue = .global()) -> Promise<String, Error> {
-        let task = Process()
-        let outputPipe = Pipe()
-        let errorPipe = Pipe()
-        
-        task.executableURL = executableURL
-        task.arguments = arguments
-        task.standardOutput = outputPipe
-        task.standardError = errorPipe
-        
-        return Promise<String, Error>.asyncError(on: queue) { resolve, reject in
-            try task.run()
-            task.waitUntilExit()
-            
-            if task.terminationStatus != 0 {
-                reject(errorPipe.readStringToEndOfFile ?? "[binary]")
-            } else {
-                resolve(outputPipe.readStringToEndOfFile ?? "")
-            }
-        }
-    }
-}
-
-extension Pipe {
-    public var readStringToEndOfFile: String? {
-        String(data: self.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8)
-    }
-}
