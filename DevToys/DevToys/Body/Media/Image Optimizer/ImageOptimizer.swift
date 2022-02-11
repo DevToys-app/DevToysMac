@@ -32,9 +32,8 @@ enum ImageOptimizer {
 }
 
 
-enum PngOptimizer {
+enum PNGOptimizer {
     private static let optpingURL = Bundle.current.url(forResource: "optipng", withExtension: nil)
-    private static let numberFormatter = NumberFormatter() => { $0.maximumFractionDigits = 2 }
     
     static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {
         guard let optpingURL = self.optpingURL else { assertionFailure(); return nil }
@@ -48,81 +47,60 @@ enum PngOptimizer {
         }
         arguments.append(url.path)
         
-        let oldFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
+        let fileCompression = FileCompression(url: url)
         let promise = Terminal.run(optpingURL, arguments: arguments)
-            .peekError{ print($0) }
-            .map{ _ -> String in
-                let newFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
-                
-                if let oldFileSize = oldFileSize, let newFileSize = newFileSize {
-                    let percent = newFileSize / oldFileSize * 100
-                    let result = (numberFormatter.string(from: NSNumber(value: percent)) ?? "[Unkown]") + "%"
-                    return result
-                } else {
-                    return "[Unkown file size]"
-                }
+            .map{ _ in
+                fileCompression.currentCompressionRatioString()
             }
         
-        return .init(title: url.lastPathComponent, result: promise)
+        return ImageOptimizeTask(title: url.lastPathComponent, result: promise)
     }
 }
 
-enum JpegOptimizer {
+enum JPEGOptimizer {
     private static let jpegoptimURL = Bundle.current.url(forResource: "jpegoptim", withExtension: nil)
-    private static let dylibURL = Bundle.current.url(forResource: "jpegoptim", withExtension: nil)
-    
-    static func load() {
-        
-    }
-    
-    private static let numberFormatter = NumberFormatter() => {
-        $0.maximumFractionDigits = 2
-    }
-    
+            
     static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {
-        fatalError()
-//        guard let optpingURL = self.optpingURL else { assertionFailure(); return nil }
-//        let task = Process()
-//        var arguments = [String]()
-//        switch optimizeLevel {
-//        case .low: arguments.append(contentsOf: ["--strip-all"])
-//        case .mediam: arguments.append(contentsOf: ["--strip-all", "-m95"])
-//        case .high: arguments.append(contentsOf: ["--strip-all", "-m90"])
-//        case .veryHigh: arguments.append(contentsOf: ["--strip-all", "-m80"])
-//        }
-//        arguments.append(url.path)
-//
-//        let outputPipe = Pipe()
-//        let errorPipe = Pipe()
-//
-//        task.executableURL = optpingURL
-//        task.arguments = arguments
-//        task.standardOutput = outputPipe
-//        task.standardError = errorPipe
-//
-//        let promise = Promise<String, Error>.asyncError(on: .global()) { resolve, reject in
-//
-//            let oldFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
-//            task.launch()
-//            task.waitUntilExit()
-//            let newFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
-//
-//            if task.terminationStatus != 0 {
-//                let error = errorPipe.readStringToEndOfFile ?? "Error"
-//                reject(error)
-//            } else {
-//                if let oldFileSize = oldFileSize, let newFileSize = newFileSize {
-//                    let percent = newFileSize / oldFileSize * 100
-//                    let result = (numberFormatter.string(from: NSNumber(value: percent)) ?? "[Unkown]") + "%"
-//                    resolve(result)
-//                } else {
-//                    resolve("[Unkown]")
-//                }
-//            }
-//        }
-//
-//        return .init(title: url.lastPathComponent, result: promise)
+        guard let jpegoptimURL = self.jpegoptimURL else { assertionFailure(); return nil }
+
+        var arguments = [String]()
+        switch optimizeLevel {
+        case .low: arguments.append(contentsOf: ["--strip-all"])
+        case .mediam: arguments.append(contentsOf: ["--strip-all", "-m95"])
+        case .high: arguments.append(contentsOf: ["--strip-all", "-m90"])
+        case .veryHigh: arguments.append(contentsOf: ["--strip-all", "-m80"])
+        }
+        arguments.append(url.path)
+        
+        let fileCompression = FileCompression(url: url)
+        let promise = Terminal.run(jpegoptimURL, arguments: arguments)
+            .map{ _ in
+                fileCompression.currentCompressionRatioString()
+            }
+        
+        return ImageOptimizeTask(title: url.lastPathComponent, result: promise)
     }
 }
 
 extension String: Error {}
+
+final class FileCompression {
+    let initialSize: Double?
+    let url: URL
+    
+    private static let numberFormatter = NumberFormatter() => { $0.maximumFractionDigits = 2 }
+    
+    init(url: URL) {
+        self.url = url
+        self.initialSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
+    }
+    
+    func currentCompressionRatioString() -> String {
+        let currentSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
+        
+        guard let initialSize = initialSize, let currentSize = currentSize, initialSize != 0 else { return "-%" }
+        let percent = currentSize / initialSize * 100
+        guard let formattedString = FileCompression.numberFormatter.string(from: NSNumber(value: percent)) else { return "-%" }
+        return formattedString + "%"
+    }
+}
