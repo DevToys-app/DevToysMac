@@ -75,6 +75,7 @@
 		B6D1AEFA27A557280022FED2 /* PopupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEF927A557280022FED2 /* PopupButton.swift */; };
 		B6D1AEFD27A55ED50022FED2 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEFC27A55ED50022FED2 /* CodeTextView.swift */; };
 		B6D1AF0627A5603B0022FED2 /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = B6D1AF0527A5603B0022FED2 /* Highlightr */; };
+		B6E15A9427B6745100DC4D6B /* libimageoptimjpeg.dylib in Resources */ = {isa = PBXBuildFile; fileRef = B6E15A9227B6742300DC4D6B /* libimageoptimjpeg.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		B6D1AEF627A54F750022FED2 /* SectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionButton.swift; sourceTree = "<group>"; };
 		B6D1AEF927A557280022FED2 /* PopupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupButton.swift; sourceTree = "<group>"; };
 		B6D1AEFC27A55ED50022FED2 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
+		B6E15A9227B6742300DC4D6B /* libimageoptimjpeg.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libimageoptimjpeg.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +355,7 @@
 		B6AC276827AA532B000FD713 /* Image Optimizer */ = {
 			isa = PBXGroup;
 			children = (
+				B6E15A9227B6742300DC4D6B /* libimageoptimjpeg.dylib */,
 				B6AC276427AA3D61000FD713 /* jpegoptim */,
 				B6AC272F27AA1373000FD713 /* optipng */,
 				B620145527A9442100AF5386 /* ImageOptimaizerView.swift */,
@@ -514,6 +517,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E15A9427B6745100DC4D6B /* libimageoptimjpeg.dylib in Resources */,
 				B6AC276527AA3D61000FD713 /* jpegoptim in Resources */,
 				B6AC273027AA1373000FD713 /* optipng in Resources */,
 				B64B1E7827A4F5E300AC2601 /* Assets.xcassets in Resources */,
@@ -743,6 +747,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
+					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuki.DevToys;
@@ -769,6 +774,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 				);

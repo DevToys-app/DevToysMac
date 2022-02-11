@@ -72,6 +72,9 @@ enum JPEGOptimizer {
         
         let fileCompression = FileCompression(url: url)
         let promise = Terminal.run(jpegoptimURL, arguments: arguments)
+            .peekError{
+                print($0)
+            }
             .map{ _ in
                 fileCompression.currentCompressionRatioString()
             }

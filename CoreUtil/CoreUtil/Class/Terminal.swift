@@ -7,8 +7,14 @@
 
 import Foundation
 
-public enum TerminalError: Error {
+public enum TerminalError: Error, CustomStringConvertible {
     case nonZeroExit(String)
+    
+    public var description: String {
+        switch self {
+        case .nonZeroExit(let string): return string
+        }
+    }
 }
 
 public enum Terminal {
