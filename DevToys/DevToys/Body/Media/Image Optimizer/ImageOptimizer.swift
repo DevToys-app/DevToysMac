@@ -17,15 +17,13 @@ enum OptimizeLevel: String, TextItem {
     case mediam = "Mediam"
     case high = "High"
     case veryHigh = "Very High (Slow)"
-    
-    var title: String { rawValue }
 }
 
 enum ImageOptimizer {
     static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {
         let ext = url.pathExtension.lowercased()
-        if ext == "png" { return PngOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
-        if ext == "jpg" || ext == "jpeg" { return JpegOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
+        if ext == "png" { return PNGOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
+        if ext == "jpg" || ext == "jpeg" { return JPEGOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
         
         return nil
     }
