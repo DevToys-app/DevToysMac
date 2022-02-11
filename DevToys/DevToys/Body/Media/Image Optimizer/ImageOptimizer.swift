@@ -48,8 +48,6 @@ enum PngOptimizer {
         }
         arguments.append(url.path)
         
-        print("arguments", arguments)
-        
         let oldFileSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
         let promise = Terminal.run(optpingURL, arguments: arguments)
             .peekError{ print($0) }

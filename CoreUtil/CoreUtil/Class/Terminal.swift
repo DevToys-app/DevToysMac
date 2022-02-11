@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum TerminalError: Error {
+public enum TerminalError: Error {
     case nonZeroExit(String)
 }
 
-enum Terminal {
-    static func run(_ executableURL: URL, arguments: [String], queue: DispatchQueue = .global()) -> Promise<String, Error> {
+public enum Terminal {
+    public static func run(_ executableURL: URL, arguments: [String], queue: DispatchQueue = .global()) -> Promise<String, Error> {
         let task = Process()
         let outputPipe = Pipe()
         let errorPipe = Pipe()
