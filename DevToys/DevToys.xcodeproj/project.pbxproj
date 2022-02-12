@@ -22,6 +22,7 @@
 		B620142127A9271500AF5386 /* TextInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142027A9271500AF5386 /* TextInspector.swift */; };
 		B620142327A929B400AF5386 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142227A929B400AF5386 /* TagCloudView.swift */; };
 		B620145627A9442100AF5386 /* ImageOptimizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620145527A9442100AF5386 /* ImageOptimizerView.swift */; };
+		B64844FF27B767EC004FE02B /* ToolManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64844FE27B767EC004FE02B /* ToolManager+.swift */; };
 		B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64AA44F27AD0D3900EC436D /* DateConverter+.swift */; };
 		B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */; };
 		B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7527A4F5E200AC2601 /* AppViewController.swift */; };
@@ -123,6 +124,7 @@
 		B620142027A9271500AF5386 /* TextInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInspector.swift; sourceTree = "<group>"; };
 		B620142227A929B400AF5386 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
 		B620145527A9442100AF5386 /* ImageOptimizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOptimizerView.swift; sourceTree = "<group>"; };
+		B64844FE27B767EC004FE02B /* ToolManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+.swift"; sourceTree = "<group>"; };
 		B64AA44F27AD0D3900EC436D /* DateConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateConverter+.swift"; sourceTree = "<group>"; };
 		B64B1E7027A4F5E200AC2601 /* DevToys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevToys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			children = (
 				B64B1F7127A4FDC800AC2601 /* AppModel.swift */,
 				B64B202527A52DB400AC2601 /* ToolType.swift */,
+				B64844FE27B767EC004FE02B /* ToolManager+.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				B6D1AEFA27A557280022FED2 /* PopupButton.swift in Sources */,
 				B6B5728A27ACDA420069DBA7 /* ImageConverterView+.swift in Sources */,
 				B6D1AEF027A547B90022FED2 /* JSONFormatter+.swift in Sources */,
+				B64844FF27B767EC004FE02B /* ToolManager+.swift in Sources */,
 				B620142127A9271500AF5386 /* TextInspector.swift in Sources */,
 				B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */,
 				B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */,

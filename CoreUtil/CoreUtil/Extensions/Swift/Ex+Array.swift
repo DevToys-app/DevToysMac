@@ -96,3 +96,13 @@ extension Sequence where Element: Comparable {
     @inlinable public func min(_ replace: Element) -> Element { self.min() ?? replace }
 }
 
+extension Dictionary {
+    public mutating func arrayAppend<T>(_ value: T, forKey key: Key) where Self.Value == Array<T> {
+        if self[key] == nil { self[key] = [] }
+        self[key]!.append(value)
+    }
+    public mutating func arrayAppend<T, S: Sequence>(contentsOf newElements: S, forKey key: Key) where Self.Value == Array<T>, S.Element == T {
+        if self[key] == nil { self[key] = [] }
+        self[key]!.append(contentsOf: newElements)
+    }
+}
