@@ -1,5 +1,5 @@
 //
-//  NetworkInfomationView+.swift
+//  NetworkInformationView+.swift
 //  DevToys
 //
 //  Created by yuki on 2022/02/02.
@@ -7,8 +7,8 @@
 
 import CoreUtil
 
-final class NetworkInfomationViewController: PageViewController {
-    private let cell = NetworkInfomationView()
+final class NetworkInformationViewController: PageViewController {
+    private let cell = NetworkInformationView()
     private let reachability = try! Reachability()
     private let speedTest = NetworkSpeedTest()
     private let formatter = NumberFormatter() => {
@@ -50,7 +50,7 @@ final class NetworkInfomationViewController: PageViewController {
     }
 }
 
-extension NetworkInfomationViewController: NetworkSpeedProviderDelegate {
+extension NetworkInformationViewController: NetworkSpeedProviderDelegate {
     func networkSpeedUpdated(to megabytesPerSecond: CGFloat?) {
         DispatchQueue.main.async {[self] in
             guard let megabytesPerSecond = megabytesPerSecond else { return }
@@ -61,16 +61,16 @@ extension NetworkInfomationViewController: NetworkSpeedProviderDelegate {
     }
 }
 
-final private class NetworkInfomationView: Page {
+final private class NetworkInformationView: Page {
     let ipaddressLabel = NSTextField(labelWithString: "0.0.0.0")
     let statusLabel = NSTextField(labelWithString: "fetching...")
     let speedLabel = NSTextField(labelWithString: "0Mbps")
     let restartButton = NSButton(title: "Restart") => { $0.bezelStyle = .rounded }
     
     override func onAwake() {
-        self.title = "Network Infomation"
+        self.title = "Network Information"
         
-        self.addSection(Section(title: "Infomation", items: [
+        self.addSection(Section(title: "Information", items: [
             Area(icon: R.Image.ipaddress, title: "Local IP Address", control: ipaddressLabel),
             Area(icon: R.Image.networkStatus, title: "Status", control: statusLabel),
             Area(icon: R.Image.speed, title: "Network Speed", control: NSStackView() => {

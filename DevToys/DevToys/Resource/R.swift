@@ -66,8 +66,8 @@ enum R {
             static let loremIpsumGenerator = NSImage(named: "sidebar/lorem.ipsum.generator")!
             
             static let text = NSImage(named: "sidebar/text")!
-            static let textIspector = NSImage(named: "sidebar/text.ispector")!
-            static let regexTester = NSImage(named: "sidebar/regex.testor")!
+            static let textInspector = NSImage(named: "sidebar/text.inspector")!
+            static let regexTester = NSImage(named: "sidebar/regex.tester")!
             static let textDiff = NSImage(named: "sidebar/text.diff")!
             static let markdownPreview = NSImage(named: "sidebar/markdown.preview")!
             
@@ -101,8 +101,8 @@ enum R {
             static let loremIpsumGenerator = NSImage(named: "toollist/lorem.ipsum.generator")!
             
             static let text = NSImage(named: "toollist/text")!
-            static let textIspector = NSImage(named: "toollist/text.ispector")!
-            static let regexTester = NSImage(named: "toollist/regex.testor")!
+            static let textInspector = NSImage(named: "toollist/text.inspector")!
+            static let regexTester = NSImage(named: "toollist/regex.tester")!
             static let textDiff = NSImage(named: "toollist/text.diff")!
             static let markdownPreview = NSImage(named: "toollist/markdown.preview")!
             

@@ -9,7 +9,7 @@ This is the mac app version of [DevToys](https://github.com/veler/DevToys)!
 - Download and extract the latest [Releases](https://github.com/ObuchiYuki/DevToysMac/releases).
 - Extract `DevToys.app` from `DevToys.zip`
 
-# Screen Shots
+# Screenshots
 
 ### Home
 <img width="500" alt="スクリーンショット 2022-01-30 19 01 01" src="https://user-images.githubusercontent.com/20896810/151695286-7984d264-e590-43b8-9ed7-03853967b0e4.png">
@@ -20,7 +20,7 @@ This is the mac app version of [DevToys](https://github.com/veler/DevToys)!
 <img width="500" alt="スクリーンショット 2022-01-30 19 01 23" src="https://user-images.githubusercontent.com/20896810/151695289-cf2a4c2f-8ca9-4537-a896-5fc944b706ac.png">
 
 
-### Numer Base Converter
+### Number Base Converter
 
 <img width="500" alt="スクリーンショット 2022-01-30 19 01 41" src="https://user-images.githubusercontent.com/20896810/151695294-88c629d9-514f-4966-a174-1fcec9c29185.png">
 
@@ -37,7 +37,7 @@ This is the mac app version of [DevToys](https://github.com/veler/DevToys)!
 
 <img width="500" alt="スクリーンショット 2022-01-30 19 02 49" src="https://user-images.githubusercontent.com/20896810/151695317-a821fc62-64b6-4e09-a7dc-cb661f10ee7d.png">
 
-### Json Formatter
+### JSON Formatter
 
 <img width="500" alt="スクリーンショット 2022-01-30 19 04 43" src="https://user-images.githubusercontent.com/20896810/151695321-f996ddc7-27d3-457e-8086-d40848ce8d68.png">
 
