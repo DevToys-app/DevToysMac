@@ -62,7 +62,7 @@ final private class JWTDecoderView: Page {
     
     let tokenTextSection = TextViewSection(title: "JWT Token", options: .defaultInput)
     let headerCodeSection = CodeViewSection(title: "Header", options: .defaultOutput, language: .javascript)
-    let payloadCodeSection = CodeViewSection(title: "Header", options: .defaultOutput, language: .javascript)
+    let payloadCodeSection = CodeViewSection(title: "Payload", options: .defaultOutput, language: .javascript)
     
     override func onAwake() {
         self.title = "JWT Decoder"
