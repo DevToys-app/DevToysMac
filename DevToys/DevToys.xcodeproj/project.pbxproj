@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B42318827AD1BC0002D135A /* HyphenationRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B42318727AD1BC0002D135A /* HyphenationRemover.swift */; };
 		B608540B27A66694003BF243 /* SectionButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608540A27A66694003BF243 /* SectionButton+.swift */; };
 		B608541227A66A90003BF243 /* JSONYamlConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608541127A66A90003BF243 /* JSONYamlConverter+.swift */; };
 		B608541527A66CC9003BF243 /* CoreUtil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64B1F5E27A4FC1900AC2601 /* CoreUtil.framework */; };
@@ -110,6 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B42318727AD1BC0002D135A /* HyphenationRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyphenationRemover.swift; sourceTree = "<group>"; };
 		B608540A27A66694003BF243 /* SectionButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SectionButton+.swift"; sourceTree = "<group>"; };
 		B608541127A66A90003BF243 /* JSONYamlConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONYamlConverter+.swift"; sourceTree = "<group>"; };
 		B608541D27A67B48003BF243 /* NumberBaseConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberBaseConverter+.swift"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				B620142027A9271500AF5386 /* TextInspector.swift */,
 				B65DB77F27AC0EB400146A3C /* RegexTesterView+.swift */,
+				6B42318727AD1BC0002D135A /* HyphenationRemover.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				B680A86827A8D4D1007CB707 /* TextFieldSection.swift in Sources */,
 				B680A79527A68B35007CB707 /* HTMLDecoder.swift in Sources */,
 				B680A8A727A8DD5D007CB707 /* JWTDecoder.swift in Sources */,
+				6B42318827AD1BC0002D135A /* HyphenationRemover.swift in Sources */,
 				B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */,
 				B6AC276A27AA535A000FD713 /* PDFGeneratorView+.swift in Sources */,
 				B608542027A67E4D003BF243 /* TextField.swift in Sources */,

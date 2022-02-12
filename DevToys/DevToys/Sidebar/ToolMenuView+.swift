@@ -27,7 +27,7 @@ final class ToolmenuViewController: NSViewController {
         .hashGenerator, .uuidGenerator, .loremIpsumGenerator, .checksumGenerator
     ])
     private let textMenu = ToolMenu(R.Image.Sidebar.text, "Text", "text", [
-        .caseConverter, .regexTester
+        .caseConverter, .regexTester, .hyphenationRemover,
     ])
     private let graphicMenu = ToolMenu(R.Image.Sidebar.graphic, "Media", "graphic", [
         .imageCompressor, .pdfGenerator, .imageConverter
