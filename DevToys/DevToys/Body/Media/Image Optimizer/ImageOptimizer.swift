@@ -59,12 +59,10 @@ enum JPEGOptimizer {
     private static let jpegoptimURL = Bundle.current.url(forResource: "jpegoptim", withExtension: nil)
             
     static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {
-        guard let jpegoptimURL = self.jpegoptimURL else { assertionFailure(); return nil }
-
         var arguments = [String]()
         switch optimizeLevel {
         case .low: arguments.append(contentsOf: ["--strip-all"])
-        case .mediam: arguments.append(contentsOf: ["--strip-all", "-m95"])
+        case .medium: arguments.append(contentsOf: ["--strip-all", "-m95"])
         case .high: arguments.append(contentsOf: ["--strip-all", "-m90"])
         case .veryHigh: arguments.append(contentsOf: ["--strip-all", "-m80"])
         }
@@ -72,9 +70,6 @@ enum JPEGOptimizer {
         
         let fileCompression = FileCompression(url: url)
         let promise = Terminal.run(jpegoptimURL, arguments: arguments)
-            .peekError{
-                print($0)
-            }
             .map{ _ in
                 fileCompression.currentCompressionRatioString()
             }
