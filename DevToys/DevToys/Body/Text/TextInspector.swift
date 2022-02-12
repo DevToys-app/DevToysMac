@@ -13,7 +13,7 @@ final class TextInspectorViewController: PageViewController {
     @RestorableState("textin.input") private var input = "Hello World"
     @RestorableState("textin.output") private var output = "hello_world"
     @RestorableState("textin.convert") private var convertType: ConvertType = .camelCase
-    @RestorableState("textin.info") private var infomation: String = ""
+    @RestorableState("textin.info") private var information: String = ""
     
     override func loadView() { self.view = cell }
     
@@ -30,7 +30,7 @@ final class TextInspectorViewController: PageViewController {
         append("Lines", data: input.split(separator: "\n").count)
         append("Bytes", data: input.data(using: .utf8)!.count)
         
-        self.infomation = result
+        self.information = result
     }
     
     override func viewDidLoad() {
@@ -40,8 +40,8 @@ final class TextInspectorViewController: PageViewController {
             .sink{[unowned self] in cell.outputSection.string = $0 }.store(in: &objectBag)
         self.$convertType.map{ ConvertType.allCases.firstIndex(of: $0) }
             .sink{[unowned self] in cell.tagCloudView.selectedItem = $0 }.store(in: &objectBag)
-        self.$infomation
-            .sink{[unowned self] in cell.infomationView.string = $0 }.store(in: &objectBag)
+        self.$information
+            .sink{[unowned self] in cell.informationView.string = $0 }.store(in: &objectBag)
         
         self.cell.inputSection.stringPublisher
             .sink{[unowned self] in self.input = $0; generate(); updateInfo() }.store(in: &objectBag)
@@ -94,7 +94,7 @@ final class TextInspectorView: Page {
     let inputSection = TextViewSection(title: "Input", options: .defaultInput)
     let tagCloudView = TagCloudView()
     let outputSection = TextViewSection(title: "Output", options: .defaultOutput)
-    let infomationView = NSTextView()
+    let informationView = NSTextView()
     
     override func layout() {
         super.layout()
@@ -120,15 +120,15 @@ final class TextInspectorView: Page {
             make.width.equalToSuperview()
         }
         
-        self.infomationView.font = .monospacedSystemFont(ofSize: R.Size.controlTitleFontSize, weight: .regular)
+        self.informationView.font = .monospacedSystemFont(ofSize: R.Size.controlTitleFontSize, weight: .regular)
         
-        self.infomationView.snp.makeConstraints{ make in
+        self.informationView.snp.makeConstraints{ make in
             make.height.equalTo(100)
         }
-        self.infomationView.backgroundColor = .clear
-        self.infomationView.isEditable = false
-        self.addSection(Section(title: "Infomation", items: [
-            infomationView
+        self.informationView.backgroundColor = .clear
+        self.informationView.isEditable = false
+        self.addSection(Section(title: "Information", items: [
+            informationView
         ]))
     }
 }

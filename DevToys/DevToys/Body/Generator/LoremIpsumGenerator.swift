@@ -36,11 +36,11 @@ final class LoremIpsumGeneratorViewController: PageViewController {
         switch self.generateType {
         case .words: self.output = generateWords(length)
         case .sentences: self.output = generateSentences(length)
-        case .paragraphes: self.output = generateParagraphes(length)
+        case .paragraphs: self.output = generateParagraphs(length)
         }
     }
     
-    private func generateParagraphes(_ count: Int) -> String {
+    private func generateParagraphs(_ count: Int) -> String {
         if count < 0 { return "" }
         return (0..<count).map{_ in generateSentences(.random(in: 3...6)) }.joined(separator: "\n\n")
     }
@@ -57,7 +57,7 @@ final class LoremIpsumGeneratorViewController: PageViewController {
 enum LoremIpsumGenerateType: String, TextItem {
     case words = "Words"
     case sentences = "Sentences"
-    case paragraphes = "Paragraphs"
+    case paragraphs = "Paragraphs"
     
     var title: String { rawValue }
 }

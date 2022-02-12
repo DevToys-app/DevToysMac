@@ -24,7 +24,7 @@ final class ToolmenuViewController: NSViewController {
         .jsonFormatter, .xmlFormatter
     ])
     private let generatorMenu = ToolMenu(R.Image.Sidebar.generator, "Generators", "generator", [
-        .hashGenerator, .uuidGenerator, .leremIpsumGenerator, .checksumGenerator
+        .hashGenerator, .uuidGenerator, .loremIpsumGenerator, .checksumGenerator
     ])
     private let textMenu = ToolMenu(R.Image.Sidebar.text, "Text", "text", [
         .caseConverter, .regexTester
@@ -33,7 +33,7 @@ final class ToolmenuViewController: NSViewController {
         .imageCompressor, .pdfGenerator, .imageConverter
     ])
     private let networkMenu = ToolMenu(R.Image.Sidebar.network, "Network", "network", [
-        .networkInfomation,
+        .networkInformation,
     ])
     
     private lazy var toolMenus = [

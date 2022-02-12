@@ -20,7 +20,7 @@
 		B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620141D27A91F6700AF5386 /* LoremIpsumGenerator.swift */; };
 		B620142127A9271500AF5386 /* TextInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142027A9271500AF5386 /* TextInspector.swift */; };
 		B620142327A929B400AF5386 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142227A929B400AF5386 /* TagCloudView.swift */; };
-		B620145627A9442100AF5386 /* ImageOptimaizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620145527A9442100AF5386 /* ImageOptimaizerView.swift */; };
+		B620145627A9442100AF5386 /* ImageOptimizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620145527A9442100AF5386 /* ImageOptimizerView.swift */; };
 		B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64AA44F27AD0D3900EC436D /* DateConverter+.swift */; };
 		B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */; };
 		B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7527A4F5E200AC2601 /* AppViewController.swift */; };
@@ -56,7 +56,7 @@
 		B6AC273227AA2BF6000FD713 /* ImageOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */; };
 		B6AC276527AA3D61000FD713 /* jpegoptim in Resources */ = {isa = PBXBuildFile; fileRef = B6AC276427AA3D61000FD713 /* jpegoptim */; };
 		B6AC276A27AA535A000FD713 /* PDFGeneratorView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */; };
-		B6AC277027AA6EFE000FD713 /* NetworkInfomationView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC276F27AA6EFE000FD713 /* NetworkInfomationView+.swift */; };
+		B6AC277027AA6EFE000FD713 /* NetworkInformationView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC276F27AA6EFE000FD713 /* NetworkInformationView+.swift */; };
 		B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5726127AC14B60069DBA7 /* TextView.swift */; };
 		B6B5726427AC14D10069DBA7 /* RegexTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5726327AC14D10069DBA7 /* RegexTextView.swift */; };
 		B6B5728027ACC3AF0069DBA7 /* ChecksumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5727F27ACC3AE0069DBA7 /* ChecksumGenerator.swift */; };
@@ -120,7 +120,7 @@
 		B620141D27A91F6700AF5386 /* LoremIpsumGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoremIpsumGenerator.swift; sourceTree = "<group>"; };
 		B620142027A9271500AF5386 /* TextInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInspector.swift; sourceTree = "<group>"; };
 		B620142227A929B400AF5386 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
-		B620145527A9442100AF5386 /* ImageOptimaizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOptimaizerView.swift; sourceTree = "<group>"; };
+		B620145527A9442100AF5386 /* ImageOptimizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOptimizerView.swift; sourceTree = "<group>"; };
 		B64AA44F27AD0D3900EC436D /* DateConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateConverter+.swift"; sourceTree = "<group>"; };
 		B64B1E7027A4F5E200AC2601 /* DevToys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevToys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOptimizer.swift; sourceTree = "<group>"; };
 		B6AC276427AA3D61000FD713 /* jpegoptim */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = jpegoptim; sourceTree = "<group>"; };
 		B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFGeneratorView+.swift"; sourceTree = "<group>"; };
-		B6AC276F27AA6EFE000FD713 /* NetworkInfomationView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkInfomationView+.swift"; sourceTree = "<group>"; };
+		B6AC276F27AA6EFE000FD713 /* NetworkInformationView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkInformationView+.swift"; sourceTree = "<group>"; };
 		B6B5726127AC14B60069DBA7 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		B6B5726327AC14D10069DBA7 /* RegexTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTextView.swift; sourceTree = "<group>"; };
 		B6B5727F27ACC3AE0069DBA7 /* ChecksumGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecksumGenerator.swift; sourceTree = "<group>"; };
@@ -358,7 +358,7 @@
 				B6E15A9227B6742300DC4D6B /* libimageoptimjpeg.dylib */,
 				B6AC276427AA3D61000FD713 /* jpegoptim */,
 				B6AC272F27AA1373000FD713 /* optipng */,
-				B620145527A9442100AF5386 /* ImageOptimaizerView.swift */,
+				B620145527A9442100AF5386 /* ImageOptimizerView.swift */,
 				B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */,
 			);
 			path = "Image Optimizer";
@@ -367,7 +367,7 @@
 		B6AC27A827AA71B9000FD713 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B6AC276F27AA6EFE000FD713 /* NetworkInfomationView+.swift */,
+				B6AC276F27AA6EFE000FD713 /* NetworkInformationView+.swift */,
 				B672CF6427AA763100391A5D /* NetworkSpeedTest.swift */,
 				B672CF9627AA7E2C00391A5D /* APITestView+.swift */,
 			);
@@ -548,7 +548,7 @@
 				B6B5728027ACC3AF0069DBA7 /* ChecksumGenerator.swift in Sources */,
 				B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */,
 				B673A90227AD0E78005512AB /* DatePicker.swift in Sources */,
-				B6AC277027AA6EFE000FD713 /* NetworkInfomationView+.swift in Sources */,
+				B6AC277027AA6EFE000FD713 /* NetworkInformationView+.swift in Sources */,
 				B620141C27A917E000AF5386 /* Button.swift in Sources */,
 				B6AC273227AA2BF6000FD713 /* ImageOptimizer.swift in Sources */,
 				B65DB78027AC0EB400146A3C /* RegexTesterView+.swift in Sources */,
@@ -570,7 +570,7 @@
 				B620142127A9271500AF5386 /* TextInspector.swift in Sources */,
 				B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */,
 				B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */,
-				B620145627A9442100AF5386 /* ImageOptimaizerView.swift in Sources */,
+				B620145627A9442100AF5386 /* ImageOptimizerView.swift in Sources */,
 				B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */,
 				B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */,
 				B680A79C27A6947D007CB707 /* Base64Decoder.swift in Sources */,
