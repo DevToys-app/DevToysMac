@@ -20,7 +20,7 @@
 "tool.home.mintitle" = "ホーム";
 "tool.home.description" = "全てのツールをここで探せます";
 
-"tool.jsonyaml.title" = "JSON/Yaml 変換";
+"tool.jsonyaml.title" = "JSON/Yaml変換";
 "tool.jsonyaml.mintitle" = "JSON/Yaml";
 "tool.jsonyaml.description" = "JSONとYamlを相互に変換します";
 
@@ -31,3 +31,19 @@
 "tool.date.title" = "日付変換";
 "tool.date.mintitle" = "日付変換";
 "tool.date.description" = "日付の表現を変換します";
+
+"tool.html.title" = "HTMLエンコード・デコード";
+"tool.html.mintitle" = "HTML";
+"tool.html.description" = "文字をHTMLエスケープ・アンエスケープします";
+
+"tool.url.title" = "URLエンコード・デコード";
+"tool.url.mintitle" = "URL";
+"tool.url.description" = "文字をURLパーセントエンコード・逆パーセントエンコードします";
+
+"tool.base64.title" = "Base64エンコード・デコード";
+"tool.base64.mintitle" = "Base64";
+"tool.base64.description" = "文字・ファイルをBase64にエンコード・デコードします";
+
+"tool.jwt.title" = "JWTデコード";
+"tool.jwt.mintitle" = "JWT";
+"tool.jwt.description" = "JWTのヘッダ・ペイロードをデコードします";

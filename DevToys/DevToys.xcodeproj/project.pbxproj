@@ -39,8 +39,6 @@
 		B65DB78027AC0EB400146A3C /* RegexTesterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65DB77F27AC0EB400146A3C /* RegexTesterView+.swift */; };
 		B66850EE27A64D3200A3FE01 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66850ED27A64D3200A3FE01 /* Page.swift */; };
 		B66850F227A65FC200A3FE01 /* SwiftJSONFormatter in Frameworks */ = {isa = PBXBuildFile; productRef = B66850F127A65FC200A3FE01 /* SwiftJSONFormatter */; };
-		B672CF6527AA763100391A5D /* NetworkSpeedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF6427AA763100391A5D /* NetworkSpeedTest.swift */; };
-		B672CF9727AA7E2C00391A5D /* APITestView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF9627AA7E2C00391A5D /* APITestView+.swift */; };
 		B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF9F27AAB8DD00391A5D /* FileDrop.swift */; };
 		B673A90227AD0E78005512AB /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A90127AD0E78005512AB /* DatePicker.swift */; };
 		B680A79527A68B35007CB707 /* HTMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79427A68B35007CB707 /* HTMLDecoder.swift */; };
@@ -66,7 +64,6 @@
 		B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */; };
 		B6B5728F27ACFA6E0069DBA7 /* ImageDropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */; };
 		B6BD80EB27B89EA600152AB9 /* ImageOptimaizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EA27B89EA600152AB9 /* ImageOptimaizerView.swift */; };
-		B6BD80ED27B89EE400152AB9 /* NetworkInfomationView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EC27B89EE400152AB9 /* NetworkInfomationView+.swift */; };
 		B6BD80EF27B8A85400152AB9 /* ToolCategory+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */; };
 		B6BD80F127B8A86100152AB9 /* Tool+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80F027B8A86100152AB9 /* Tool+Default.swift */; };
 		B6BD80F427B8AEE700152AB9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6BD80F627B8AEE700152AB9 /* Localizable.strings */; };
@@ -147,8 +144,6 @@
 		B64B209727A532DF00AC2601 /* AppWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowController.swift; sourceTree = "<group>"; };
 		B65DB77F27AC0EB400146A3C /* RegexTesterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegexTesterView+.swift"; sourceTree = "<group>"; };
 		B66850ED27A64D3200A3FE01 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
-		B672CF6427AA763100391A5D /* NetworkSpeedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpeedTest.swift; sourceTree = "<group>"; };
-		B672CF9627AA7E2C00391A5D /* APITestView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APITestView+.swift"; sourceTree = "<group>"; };
 		B672CF9F27AAB8DD00391A5D /* FileDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDrop.swift; sourceTree = "<group>"; };
 		B673A90127AD0E78005512AB /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		B680A79427A68B35007CB707 /* HTMLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLDecoder.swift; sourceTree = "<group>"; };
@@ -171,7 +166,6 @@
 		B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
 		B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropper.swift; sourceTree = "<group>"; };
 		B6BD80EA27B89EA600152AB9 /* ImageOptimaizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageOptimaizerView.swift; sourceTree = "<group>"; };
-		B6BD80EC27B89EE400152AB9 /* NetworkInfomationView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkInfomationView+.swift"; sourceTree = "<group>"; };
 		B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolCategory+Default.swift"; sourceTree = "<group>"; };
 		B6BD80F027B8A86100152AB9 /* Tool+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tool+Default.swift"; sourceTree = "<group>"; };
 		B6BD80F527B8AEE700152AB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -380,16 +374,6 @@
 			path = "Image Optimizer";
 			sourceTree = "<group>";
 		};
-		B6AC27A827AA71B9000FD713 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				B6BD80EC27B89EE400152AB9 /* NetworkInfomationView+.swift */,
-				B672CF6427AA763100391A5D /* NetworkSpeedTest.swift */,
-				B672CF9627AA7E2C00391A5D /* APITestView+.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		B6B5729027ACFE020069DBA7 /* Image Converter */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,7 +387,6 @@
 		B6D1AEDD27A534850022FED2 /* Body */ = {
 			isa = PBXGroup;
 			children = (
-				B6AC27A827AA71B9000FD713 /* Network */,
 				B6D1AEDE27A534960022FED2 /* BodyViewController.swift */,
 				B6D1AEE327A53A560022FED2 /* HomeViewController.swift */,
 				B608542127A67FF7003BF243 /* Convert */,
@@ -556,8 +539,6 @@
 				B680A8AA27A8E106007CB707 /* HashGenerator.swift in Sources */,
 				B64B202027A523A200AC2601 /* ToolmenuCell.swift in Sources */,
 				B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */,
-				B672CF9727AA7E2C00391A5D /* APITestView+.swift in Sources */,
-				B672CF6527AA763100391A5D /* NetworkSpeedTest.swift in Sources */,
 				B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */,
 				B608540B27A66694003BF243 /* SectionButton+.swift in Sources */,
 				B6B5726427AC14D10069DBA7 /* RegexTextView.swift in Sources */,
@@ -606,7 +587,6 @@
 				B608541227A66A90003BF243 /* JSONYamlConverter+.swift in Sources */,
 				B6D1AEFD27A55ED50022FED2 /* CodeTextView.swift in Sources */,
 				B62013B427A9070D00AF5386 /* UUIDGenerator.swift in Sources */,
-				B6BD80ED27B89EE400152AB9 /* NetworkInfomationView+.swift in Sources */,
 				B6D1AEEC27A546810022FED2 /* ControlBackgroundLayer.swift in Sources */,
 				B64B1F7C27A4FFB400AC2601 /* SidebarView+.swift in Sources */,
 				B64B201627A5100800AC2601 /* Separator.swift in Sources */,

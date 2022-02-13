@@ -70,7 +70,7 @@ extension ToolmenuViewController: NSOutlineViewDataSource {
             cell.title = category.name
             cell.icon = category.icon
         } else if let tool = item as? Tool {
-            cell.title = tool.title
+            cell.title = tool.sidebarTitle
             cell.icon = tool.icon
         }
         

@@ -31,3 +31,19 @@
 "tool.date.title" = "Date Converter";
 "tool.date.mintitle" = "Date";
 "tool.date.description" = "Converts date from one format to another";
+
+"tool.html.title" = "HTML Encoder / Decoder";
+"tool.html.mintitle" = "HTML";
+"tool.html.description" = "Encoder or decode all the applicable charactors to their corresponding HTML";
+
+"tool.url.title" = "URL Encoder / Decoder";
+"tool.url.mintitle" = "URL";
+"tool.url.description" = "Encoder or decode all the applicable charactors to their corresponding URL";
+
+"tool.base64.title" = "Base64 Encoder / Decoder";
+"tool.base64.mintitle" = "Base64";
+"tool.base64.description" = "Encode and decode Base64 data";
+
+"tool.jwt.title" = "JWT Encoder / Decoder";
+"tool.jwt.mintitle" = "JWT";
+"tool.jwt.description" = "Decode a JWT header playload and signature";
