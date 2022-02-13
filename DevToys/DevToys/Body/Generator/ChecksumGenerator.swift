@@ -80,18 +80,15 @@ final private class ChecksumGeneratorView: Page {
     let formatSwitch = NSSwitch()
     let hashAlgorithmPicker = EnumPopupButton<HashAlgorithm>()
     let fileSection = FileDropSection()
-    let outputFieldSection = TextFieldSection(title: "Output", isEditable: false)
-    let compareFieldSection = TextFieldSection(title: "Output Comparer", isEditable: true)
+    let outputFieldSection = TextFieldSection(title: "Output".localized(), isEditable: false)
+    let compareFieldSection = TextFieldSection(title: "Output Comparer".localized(), isEditable: true)
     
-    private lazy var formatNumberArea = Area(icon: R.Image.format, title: "Uppercase", control: formatSwitch)
-    private lazy var hashAlgorithmArea = Area(icon: R.Image.convert, title: "Hash Algorithm", message: "Select which algorithm you want to use", control: hashAlgorithmPicker)
-    private lazy var configurationSection = Section(title: "Configuration", items: [
-        formatNumberArea,
-        hashAlgorithmArea
-    ])
+    override func onAwake() {
+        self.addSection(Section(title: "Configuration".localized(), items: [
+            Area(icon: R.Image.format, title: "Uppercase".localized(), control: formatSwitch),
+            Area(icon: R.Image.convert, title: "Hash Algorithm".localized(), message: "Select which algorithm you want to use".localized(), control: hashAlgorithmPicker)
+        ]))
         
-    override func onAwake() {        
-        self.addSection(configurationSection)
         self.addSection(fileSection)
         
         self.addSection(outputFieldSection)

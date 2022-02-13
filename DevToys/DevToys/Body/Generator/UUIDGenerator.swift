@@ -58,7 +58,7 @@ final private class UUIDGeneratorView: Page {
     let hyphensSwitch = NSSwitch()
     let uppercaseSwitch = NSSwitch()
     let generateCount = NumberField()
-    let generateButton = Button(title: "Generate UUIDs")
+    let generateButton = Button(title: "Generate UUIDs".localized())
     let uuidView = TextView() => { $0.isEditable = false }
     let clearButton = SectionButton(image: R.Image.clear)
     
@@ -71,9 +71,9 @@ final private class UUIDGeneratorView: Page {
     }
     
     override func onAwake() {        
-        self.addSection(Section(title: "Configuration", items: [
-            Area(icon: R.Image.hyphen, title: "Hyphens", control: hyphensSwitch),
-            Area(icon: R.Image.format, title: "Uppercase", message: "Whether to use uppercase for generate UUIDs.", control: uppercaseSwitch),
+        self.addSection(Section(title: "Configuration".localized(), items: [
+            Area(icon: R.Image.hyphen, title: "Hyphens".localized(), control: hyphensSwitch),
+            Area(icon: R.Image.format, title: "Uppercase".localized(), control: uppercaseSwitch),
         ]))
         
         self.addSection(NSStackView() => {
@@ -83,7 +83,7 @@ final private class UUIDGeneratorView: Page {
             })
             $0.addArrangedSubview(generateButton)
         })
-        self.addSection(Section(title: "UUIDs", items: [
+        self.addSection(Section(title: "UUIDs".localized(), items: [
             uuidView
         ], toolbarItems: [clearButton]))
     }

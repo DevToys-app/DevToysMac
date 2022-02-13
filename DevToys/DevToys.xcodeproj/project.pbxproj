@@ -392,9 +392,9 @@
 				B608542127A67FF7003BF243 /* Convert */,
 				B680A79327A68B2D007CB707 /* Coder */,
 				B608542227A68008003BF243 /* Format */,
+				B680A8A827A8E0F8007CB707 /* Generator */,
 				B620141F27A926B400AF5386 /* Text */,
 				B620145427A9440E00AF5386 /* Media */,
-				B680A8A827A8E0F8007CB707 /* Generator */,
 			);
 			path = Body;
 			sourceTree = "<group>";

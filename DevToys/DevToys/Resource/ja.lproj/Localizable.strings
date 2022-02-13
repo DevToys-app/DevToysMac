@@ -27,6 +27,18 @@
 "No selection" = "選択なし";
 "Drop Files Here" = "ここにファイルをドロップ";
 "Untitled Tool" = "無名のツール";
+"Uppercase" = "大文字";
+"Hyphens" = "ハイフン";
+"Type" = "種類";
+"Length" = "長さ";
+"Convert" = "変換";
+"Information" = "情報";
+"Charactors" = "文字数";
+"Words" = "単語数";
+"Lines" = "行数";
+"Bytes" = "バイト数";
+"Clear" = "クリア";
+"Delete" = "削除";
 
 // - Category -
 "category.home" = "ホーム";
@@ -97,6 +109,11 @@
 "tool.xmlformat.title" = "XMLのフォーマット";
 "tool.xmlformat.mintitle" = "XML";
 "tool.xmlformat.description" = "XMLデータを美しく表示したり、最小化します";
+"HTML Document" = "HTMLドキュメント";
+"XML Document" = "XMLドキュメント";
+"Document Type" = "ドキュメントの種類";
+"Auto Fix Document" = "自動修正";
+"Pretty Document" = "読みやすい表示";
 
 "tool.hashgen.title" = "Hashを生成";
 "tool.hashgen.mintitle" = "Hash";
@@ -105,14 +122,23 @@
 "tool.uuidgen.title" = "UUIDを生成";
 "tool.uuidgen.mintitle" = "UUID";
 "tool.uuidgen.description" = "UUIDsを生成します";
+"Generate UUIDs" = "UUIDを生成";
 
 "tool.ligen.title" = "Lorem Ipsumを生成";
 "tool.ligen.mintitle" = "Lorem Ipsum";
 "tool.ligen.description" = "Lorem Ipsumの単語・文・段落を生成します";
+"Type of generating Lorem Ipsum" = "生成するLorem Ipsumの種類";
+"Length of generating Lorem Ipsum" = "生成するLorem Ipsumの長さ";
+"Words" = "文字";
+"Sentences" = "文章";
+"Paragraphs" = "段落";
 
 "tool.checksum.title" = "Checksumを生成";
 "tool.checksum.mintitle" = "Checksum";
 "tool.checksum.description" = "ファイルのChecksumを生成・検証します";
+"Output Comparer" = "出力との比較";
+"Hash Algorithm" = "ハッシュのアルゴリズム";
+"Select which algorithm you want to use" = "使いたいアルゴリズムを選んでください";
 
 "tool.textinspect.title" = "テキストデータと文字変換";
 "tool.textinspect.mintitle" = "データと文字変換";
@@ -121,6 +147,7 @@
 "tool.regex.title" = "正規表現のテスト";
 "tool.regex.mintitle" = "正規表現";
 "tool.regex.description" = "正規表現をテストします";
+"Reguler expression" = "正規表現";
 
 "tool.hyphenremove.title" = "ハイフン削除";
 "tool.hyphenremove.mintitle" = "ハイフン削除";
@@ -133,6 +160,10 @@
 "tool.pdfgen.title" = "画像をPDF化";
 "tool.pdfgen.mintitle" = "画像をPDF化";
 "tool.pdfgen.description" = "複数枚の画像を1つのPDFファイルにまとめます";
+"Images" = "画像";
+"Size" = "サイズ";
+"Generate PDF" = "PDFを作成";
+"Page" = "ページ";
 
 "tool.imageconvert.title" = "画像の変換";
 "tool.imageconvert.mintitle" = "画像の変換";

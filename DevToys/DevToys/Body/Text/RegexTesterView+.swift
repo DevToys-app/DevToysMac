@@ -73,8 +73,8 @@ final private class RegexTesterView: Page {
     override func onAwake() {        
         self.regexField.isError = true
         self.regexField.font = .monospacedSystemFont(ofSize: R.Size.controlTitleFontSize, weight: .regular)
-        self.addSection(Section(title: "Reguler expression", items: [regexField]))
-        self.addSection(Section(title: "Text", items: [textView]))
+        self.addSection(Section(title: "Reguler expression".localized(), items: [regexField]))
+        self.addSection(Section(title: "Text".localized(), items: [textView]))
     }
 }
 

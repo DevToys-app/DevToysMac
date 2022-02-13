@@ -13,10 +13,10 @@ final class HashGeneratorViewController: NSViewController {
     
     @RestorableState("hash.upper") var isUppercase = false
     @RestorableState("hash.input") var input = "Hello World"
-    @RestorableState("hash.md5") var md5 = "Hello World"
-    @RestorableState("hash.sha1") var sha1 = "Hello World"
-    @RestorableState("hash.sha256") var sha256 = "Hello World"
-    @RestorableState("hash.sha512") var sha512 = "Hello World"
+    @RestorableState("hash.md5") var md5 = ""
+    @RestorableState("hash.sha1") var sha1 = ""
+    @RestorableState("hash.sha256") var sha256 = ""
+    @RestorableState("hash.sha512") var sha512 = ""
     
     override func loadView() { self.view = cell }
     
@@ -47,15 +47,15 @@ final class HashGeneratorViewController: NSViewController {
 final class HashGeneratorView: Page {
     let formatSwitch = NSSwitch()
     
-    let textInputSection = TextViewSection(title: "Input", options: .all)
+    let textInputSection = TextViewSection(title: "Input".localized(), options: .all)
     
     let md5Section = TextFieldSection(title: "MD5", isEditable: false)
     let sha1Section = TextFieldSection(title: "SHA1", isEditable: false)
     let sha256Section = TextFieldSection(title: "SHA256", isEditable: false)
     let sha512Section = TextFieldSection(title: "SHA512", isEditable: false)
     
-    private lazy var formatNumberArea = Area(icon: R.Image.format, title: "Uppercase", control: formatSwitch)
-    private lazy var configurationSection = Section(title: "Configuration", items: [formatNumberArea])
+    private lazy var formatNumberArea = Area(icon: R.Image.format, title: "Uppercase".localized(), control: formatSwitch)
+    private lazy var configurationSection = Section(title: "Configuration".localized(), items: [formatNumberArea])
 
     override func onAwake() {        
         self.addSection(configurationSection)

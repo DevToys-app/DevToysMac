@@ -27,6 +27,14 @@
 "No selection" = "No selection";
 "Drop Files Here" = "Drop Files Here";
 "Untitled Tool" = "Untitled Tool";
+"Uppercase" = "Uppercase";
+"Hyphens" = "Hyphens";
+"Type" = "Type";
+"Length" = "Length";
+"Convert" = "Convert";
+"Information" = "Information";
+"Clear" = "Clear";
+"Delete" = "Delete";
 
 // - Category -
 "category.home" = "Home";
@@ -97,6 +105,11 @@
 "tool.xmlformat.title" = "XML Formatter";
 "tool.xmlformat.mintitle" = "XML";
 "tool.xmlformat.description" = "Indent or minify XML data";
+"HTML Document" = "HTML Document";
+"XML Document" = "XML Document";
+"Document Type" = "Document Type";
+"Auto Fix Document" = "Auto Fix Document";
+"Pretty Document" = "Pretty Document";
 
 "tool.hashgen.title" = "Hash Generator";
 "tool.hashgen.mintitle" = "Hash";
@@ -105,14 +118,23 @@
 "tool.uuidgen.title" = "UUID Generator";
 "tool.uuidgen.mintitle" = "Hash";
 "tool.uuidgen.description" = "Generate UUIDs";
+"Generate UUIDs" = "Generate UUIDs";
 
 "tool.ligen.title" = "Lorem Ipsum Generator";
 "tool.ligen.mintitle" = "Lorem Ipsum";
 "tool.ligen.description" = "Generate Lorem Ipsum placeholder text";
+"Type of generating Lorem Ipsum" = "Type of generating Lorem Ipsum";
+"Length of generating Lorem Ipsum" = "Length of generating Lorem Ipsum";
+"Words" = "Words";
+"Sentences" = "Sentences";
+"Paragraphs" = "Paragraphs";
 
 "tool.checksum.title" = "Checksum Generator";
 "tool.checksum.mintitle" = "Checksum";
 "tool.checksum.description" = "Generate or Test checksum of a file";
+"Output Comparer" = "Output Comparer";
+"Hash Algorithm" = "Hash Algorithm";
+"Select which algorithm you want to use" = "Select which algorithm you want to use";
 
 "tool.checksum.title" = "Checksum Generator";
 "tool.checksum.mintitle" = "Checksum";
@@ -121,10 +143,15 @@
 "tool.textinspect.title" = "Text Inspector & Case Converter";
 "tool.textinspect.mintitle" = "Inspector & Case Converter";
 "tool.textinspect.description" = "Analyze text and convert it to differenct case";
+"Charactors" = "Charactors";
+"Words" = "Words";
+"Lines" = "Lines";
+"Bytes" = "Bytes";
 
 "tool.regex.title" = "Regex Tester";
 "tool.regex.mintitle" = "Regex";
 "tool.regex.description" = "Test reguler expression";
+"Reguler expression" = "Reguler expression";
 
 "tool.hyphenremove.title" = "Hyphenation Remover";
 "tool.hyphenremove.mintitle" = "Hyphenation";
@@ -137,6 +164,10 @@
 "tool.pdfgen.title" = "PDF Generator";
 "tool.pdfgen.mintitle" = "PDF Generator";
 "tool.pdfgen.description" = "Generate PDF from multiple images";
+"Images" = "Images";
+"Size" = "Size";
+"Generate PDF" = "Generate PDF";
+"Page" = "Page";
 
 "tool.imageconvert.title" = "Image Converter";
 "tool.imageconvert.mintitle" = "Image Converter";

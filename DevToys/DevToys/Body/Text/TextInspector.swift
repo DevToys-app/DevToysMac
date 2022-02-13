@@ -25,10 +25,10 @@ final class TextInspectorViewController: NSViewController {
             result += "\n"
         }
         
-        append("Charactors", data: input.count)
-        append("Words", data: input.split(separator: " ").count)
-        append("Lines", data: input.split(separator: "\n").count)
-        append("Bytes", data: input.data(using: .utf8)!.count)
+        append("Charactors".localized(), data: input.count)
+        append("Words".localized(), data: input.split(separator: " ").count)
+        append("Lines".localized(), data: input.split(separator: "\n").count)
+        append("Bytes".localized(), data: input.data(using: .utf8)!.count)
         
         self.information = result
     }
@@ -91,9 +91,9 @@ private enum ConvertType: String, CaseIterable {
 }
 
 final class TextInspectorView: Page {
-    let inputSection = TextViewSection(title: "Input", options: .defaultInput)
+    let inputSection = TextViewSection(title: "Input".localized(), options: .defaultInput)
     let tagCloudView = TagCloudView()
-    let outputSection = TextViewSection(title: "Output", options: .defaultOutput)
+    let outputSection = TextViewSection(title: "Output".localized(), options: .defaultOutput)
     let informationView = NSTextView()
     
     override func layout() {
@@ -105,7 +105,7 @@ final class TextInspectorView: Page {
     }
     
     override func onAwake() {
-        let convertSection = Section(title: "Convert", items: [tagCloudView])
+        let convertSection = Section(title: "Convert".localized(), items: [tagCloudView])
         self.addSection(convertSection)
         self.tagCloudView.items = ConvertType.allCases.map{ $0.rawValue }
         self.tagCloudView.isSelectable = true
@@ -124,7 +124,7 @@ final class TextInspectorView: Page {
         }
         self.informationView.backgroundColor = .clear
         self.informationView.isEditable = false
-        self.addSection(Section(title: "Information", items: [
+        self.addSection(Section(title: "Information".localized(), items: [
             informationView
         ]))
     }

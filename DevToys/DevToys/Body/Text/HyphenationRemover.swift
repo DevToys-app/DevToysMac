@@ -35,8 +35,8 @@ final class HyphenationRemoverViewController: NSViewController {
 }
 
 final private class HyphenationFormatterView: Page {
-    let inputSection = CodeViewSection(title: "Input", options: .defaultInput, language: .plaintext)
-    let outputSection = CodeViewSection(title: "Output", options: .defaultOutput, language: .plaintext)
+    let inputSection = CodeViewSection(title: "Input".localized(), options: .defaultInput, language: .plaintext)
+    let outputSection = CodeViewSection(title: "Output".localized(), options: .defaultOutput, language: .plaintext)
 
     private lazy var ioStack = self.addSection2(inputSection, outputSection)
 

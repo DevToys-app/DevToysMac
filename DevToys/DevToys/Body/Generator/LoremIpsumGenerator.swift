@@ -59,14 +59,14 @@ enum LoremIpsumGenerateType: String, TextItem {
     case sentences = "Sentences"
     case paragraphs = "Paragraphs"
     
-    var title: String { rawValue }
+    var title: String { rawValue.localized() }
 }
 
 final private class LoremIpsumGeneratorView: Page {
     let typePicker = EnumPopupButton<LoremIpsumGenerateType>()
     let lengthField = NumberField()
     
-    let outputSection = TextViewSection(title: "Output", options: [.outputable, .copyable, .inputable])
+    let outputSection = TextViewSection(title: "Output".localized(), options: [.outputable, .copyable, .inputable])
     
     override func layout() {
         super.layout()
@@ -77,9 +77,9 @@ final private class LoremIpsumGeneratorView: Page {
     }
     
     override func onAwake() {        
-        self.addSection(Section(title: "Configuration", items: [
-            Area(icon: R.Image.text, title: "Type", message: "Type of generating Lorem Ipsum", control: typePicker),
-            Area(icon: R.Image.number, title: "Length", message: "Length of generating Lorem Ipsum", control: lengthField),
+        self.addSection(Section(title: "Configuration".localized(), items: [
+            Area(icon: R.Image.text, title: "Type".localized(), message: "Type of generating Lorem Ipsum".localized(), control: typePicker),
+            Area(icon: R.Image.number, title: "Length".localized(), message: "Length of generating Lorem Ipsum".localized(), control: lengthField),
         ]))
         
         self.addSection(outputSection)

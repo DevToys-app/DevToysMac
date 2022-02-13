@@ -87,7 +87,7 @@ final class PDFGeneratorViewController: NSViewController {
         }
         .receive(on: .main)
         
-        let toast = Toast(message: "Generating PDF...")
+        let toast = Toast(message: "Generating PDF...".localized())
         let indicator = NSProgressIndicator()
         indicator.style = .spinning
         indicator.startAnimation(nil)
@@ -98,24 +98,15 @@ final class PDFGeneratorViewController: NSViewController {
         toast.show(with: { promise.sink($0) })
         
         promise.sink{
-            Toast.show(message: "PDF Exported!")
+            Toast.show(message: "PDF Exported!".localized())
         }
     }
 }
  
-private enum ScaleMode: String, TextItem {
-    case scalePage = "Scale Page"
-    case scaleToFit = "Scale to Fit"
-    case scaleToFill = "Scale to Fill"
-    
-    var title: String { rawValue }
-}
-
 final private class PDFGeneratorView: Page {
     let imageListView = ImageListView()
-    let clearButton = SectionButton(title: "Clear", image: R.Image.clear)
-    let generateButton = Button(title: "Generate PDF")
-    let scaleModePicker = EnumPopupButton<ScaleMode>()
+    let clearButton = SectionButton(title: "Clear".localized(), image: R.Image.clear)
+    let generateButton = Button(title: "Generate PDF".localized())
     let dragPublisher = PassthroughSubject<NSPasteboard, Never>()
     
     override func layout() {
@@ -138,9 +129,8 @@ final private class PDFGeneratorView: Page {
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
         self.addSection2(
-            Section(title: "Images", items: [imageListView], toolbarItems: [clearButton]),
-            Section(title: "Configuration", items: [
-                Area(icon: R.Image.paramators, title: "Scale", control: scaleModePicker),
+            Section(title: "Images".localized(), items: [imageListView], toolbarItems: [clearButton]),
+            Section(title: "Configuration".localized(), items: [
                 generateButton,
             ])
         ) => {
@@ -240,14 +230,14 @@ extension ImageListView: NSTableViewDelegate, NSTableViewDataSource {
         let imageItem = imageItems[row]
         cell.titleLabel.stringValue = imageItem.title
         cell.imageView.image = imageItem.image
-        cell.pageLabel.stringValue = "Page \(row + 1)"
+        cell.pageLabel.stringValue = "\("Page".localized()) \(row + 1)"
         
         return cell
     }
     
     func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
         if edge == .trailing {
-            return [.init(style: .destructive, title: "Delete", handler: { _, row in
+            return [.init(style: .destructive, title: "Delete".localized(), handler: { _, row in
                 self.removePublisher.send([row])
             })]
         }

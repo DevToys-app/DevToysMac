@@ -76,23 +76,23 @@ private enum DocumentType: String, TextItem {
     case htmlDocument = "HTML Document"
     case xmlDocument = "XML Document"
     
-    var title: String { rawValue }
+    var title: String { rawValue.localized() }
 }
 
 final private class XMLFormatterView: Page {
     let prettySwitch = NSSwitch()
     let autoFixSwitch = NSSwitch()
     let documentTypeControl = EnumPopupButton<DocumentType>()
-    let inputSection = CodeViewSection(title: "Input", options: .defaultInput, language: .xml)
-    let outputSection = CodeViewSection(title: "Output", options: .defaultOutput, language: .xml)
+    let inputSection = CodeViewSection(title: "Input".localized(), options: .defaultInput, language: .xml)
+    let outputSection = CodeViewSection(title: "Output".localized(), options: .defaultOutput, language: .xml)
         
-    private lazy var configurationSection = Section(title: "Configuration", items: [
-        Area(icon: R.Image.convert, title: "Document Type", control: documentTypeControl),
+    private lazy var configurationSection = Section(title: "Configuration".localized(), items: [
+        Area(icon: R.Image.convert, title: "Document Type".localized(), control: documentTypeControl),
         NSStackView() => {
             $0.orientation = .horizontal
             $0.distribution = .fillEqually
-            $0.addArrangedSubview(Area(icon: R.Image.format, title: "Auto Fix Document", control: autoFixSwitch))
-            $0.addArrangedSubview(Area(icon: R.Image.format, title: "Pretty Document", control: prettySwitch))
+            $0.addArrangedSubview(Area(icon: R.Image.format, title: "Auto Fix Document".localized(), control: autoFixSwitch))
+            $0.addArrangedSubview(Area(icon: R.Image.format, title: "Pretty Document".localized(), control: prettySwitch))
         }
     ])
     
