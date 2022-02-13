@@ -1,0 +1,190 @@
+/*
+  Localizable.strings
+  DevToys
+
+  Created by wibus on 2022/02/13.
+  
+*/
+
+// - General -
+"Configuration" = "配置";
+"Format" = "格式";
+"Pretty" = "美化";
+"Minified" = "压缩";
+"Encoded" = "编码";
+"Decoded" = "解码";
+"File" = "文件";
+"Text" = "文本";
+"Copy" = "复制";
+"Paste" = "黏贴";
+"Copied!" = "复制!";
+"Pasted!" = "黏贴!";
+"Open" = "打开";
+"Export" = "导出";
+"Import" = "导入";
+"Input" = "输入";
+"Output" = "输出";
+"No selection" = "无选择";
+"Drop Files Here" = "将文件拖入此处";
+"Untitled Tool" = "未命名工具";
+"Uppercase" = "大写";
+"Hyphens" = "连字";
+"Type" = "种类";
+"Length" = "长度";
+"Convert" = "转换";
+"Information" = "信息";
+"Clear" = "清空";
+"Delete" = "删除";
+
+// - Category -
+"category.home" = "首页";
+"category.converters" = "转换类";
+"category.encoders_decoders" = "编码 / 解码类";
+"category.formatters" = "格式类";
+"category.generators" = "生成类";
+"category.text" = "文本类";
+"category.graphic" = "图像类";
+
+// - Tool -
+"tool.home.title" = "首页";
+"tool.home.mintitle" = "首页";
+"tool.home.description" = "在这里搜索所有工具.";
+
+"tool.jsonyaml.title" = "JSON <> Yaml 转换器";
+"tool.jsonyaml.mintitle" = "JSON <> Yaml";
+"tool.jsonyaml.description" = "将json与yaml相互转换";
+
+"tool.numbase.title" = "数字类型转换器";
+"tool.numbase.mintitle" = "数字类型转换";
+"tool.numbase.description" = "将数字从一种类型转换为另一个类型";
+"Format Number" = "格式化数字";
+"Decimal" = "十进制";
+"Hexdecimal" = "十六进制";
+"Octal" = "八进制";
+"Binary" = "二进制";
+
+"tool.date.title" = "日期转换器";
+"tool.date.mintitle" = "日期";
+"tool.date.description" = "将日期从一种格式转换为另一种格式";
+"Now" = "现在时间";
+"Date" = "时间";
+"Unix Time" = "Unix 时间";
+"ISO 8601" = "ISO 8601";
+"Calender" = "日历";
+
+"tool.html.title" = "HTML 编码 / 解码";
+"tool.html.mintitle" = "HTML";
+"tool.html.description" = "将字符编码或解码为相应的HTML";
+
+"tool.url.title" = "URL 编码 / 解码";
+"tool.url.mintitle" = "URL";
+"tool.url.description" = "将字符编码或解码为相应的URL";
+
+"tool.base64.title" = "Base64 编码 / 解码";
+"tool.base64.mintitle" = "Base64";
+"tool.base64.description" = "编码或解码 Base64 数据";
+"Source Type" = "数据来源";
+"Text Source" = "字符串";
+"File Source" = "文件";
+
+"tool.jwt.title" = "JWT 编码 / 解码";
+"tool.jwt.mintitle" = "JWT";
+"tool.jwt.description" = "解码JWT头部的负载和签名";
+"JWT Token" = "JWT 密钥";
+"Header" = "头部";
+"Payload" = "负载";
+
+"tool.jsonformat.title" = "JSON 格式器";
+"tool.jsonformat.mintitle" = "JSON";
+"tool.jsonformat.description" = "缩进或压缩 json 数据";
+"Indentation" = "Indentation";
+"2 Spaces" = "2 Spaces";
+"4 Spaces" = "4 Spaces";
+"1 Tab" = "1 Tab";
+
+"tool.xmlformat.title" = "XML 格式器";
+"tool.xmlformat.mintitle" = "XML";
+"tool.xmlformat.description" = "缩进或压缩 XML 数据";
+"HTML Document" = "HTML 文档";
+"XML Document" = "XML 文档";
+"Document Type" = "文档类型";
+"Auto Fix Document" = "自动修复";
+"Pretty Document" = "美化";
+
+"tool.hashgen.title" = "Hash 生成器";
+"tool.hashgen.mintitle" = "Hash";
+"tool.hashgen.description" = "从文本数据计算MD5, SHA1, SHA256和SHA 512哈希值";
+
+"tool.uuidgen.title" = "UUID 生成器";
+"tool.uuidgen.mintitle" = "Hash";
+"tool.uuidgen.description" = "生成 UUIDs";
+"Generate UUIDs" = "生成 UUIDs";
+
+"tool.ligen.title" = "哑元文本生成器";
+"tool.ligen.mintitle" = "哑元文本";
+"tool.ligen.description" = "生成哑元文本占位符文本";
+"Type of generating Lorem Ipsum" = "生成种类";
+"Length of generating Lorem Ipsum" = "生成数量";
+"Words" = "单词";
+"Sentences" = "句子";
+"Paragraphs" = "段落";
+
+"tool.checksum.title" = "校验测试器";
+"tool.checksum.mintitle" = "校验测试器";
+"tool.checksum.description" = "生成或测试文件的校验和";
+"Output Comparer" = "比较输出";
+"Hash Algorithm" = "散列算法";
+"Select which algorithm you want to use" = "选择要使用的算法";
+
+"tool.checksum.title" = "校验测试器";
+"tool.checksum.mintitle" = "校验测试器";
+"tool.checksum.description" = "生成或测试文件的校验和";
+
+"tool.textinspect.title" = "文本检查 & 大小写转换器";
+"tool.textinspect.mintitle" = "检查 & 大小写 转换器";
+"tool.textinspect.description" = "分析文本并将其转换为不同的大小写";
+"Charactors" = "符号";
+"Words" = "单词";
+"Lines" = "行数";
+"Bytes" = "字节数";
+
+"tool.regex.title" = "正则表达式测试器";
+"tool.regex.mintitle" = "正则表达式";
+"tool.regex.description" = "测试正则表达式";
+"Reguler expression" = "正则表达式";
+
+"tool.hyphenremove.title" = "连字符号去除器";
+"tool.hyphenremove.mintitle" = "连字符号";
+"tool.hyphenremove.description" = "删除从PDF文本复制的连字符";
+
+"tool.imageoptim.title" = "PNG / JPEG 压缩器";
+"tool.imageoptim.mintitle" = "PNG / JPEG 压缩器";
+"tool.imageoptim.description" = "无损的PNG和JPEG压缩器";
+"Optimize Level" = "压缩级别";
+"Low" = "低";
+"Medium" = "中";
+"High" = "高";
+"Very High (Slow)" = "优 (慢)";
+
+"tool.pdfgen.title" = "PDF 生成器";
+"tool.pdfgen.mintitle" = "PDF 生成器";
+"tool.pdfgen.description" = "从多个图像生成PDF";
+"Images" = "图像";
+"Size" = "大小";
+"Generate PDF" = "生成 PDF";
+"Page" = "页面";
+
+"tool.imageconvert.title" = "Image 转换器";
+"tool.imageconvert.mintitle" = "Image 转换器";
+"tool.imageconvert.description" = "转换或调整图像大小";
+"PNG Format" = "PNG 格式";
+"JPEG Format" = "JPEG 格式";
+"TIFF Format" = "TIFF 格式";
+"GIF Format" = "GIF 格式";
+"Scale to Fill" = "缩放使充满容器(未必保持长宽比例)";
+"Scale to Fit" = "保持长宽比缩放";
+"Image Format" = "图像格式";
+"Resize" = "调整大小";
+"Converted Images" = "转换图片";
+"Scale" = "比例";
+"Size" = "大小";
