@@ -116,7 +116,7 @@ extension ToolType {
         case .uuidGenerator: return "Generate UUIDs version 1 and 4"
         case .loremIpsumGenerator: return "Generate Lorem Ipsum placeholder text"
         case .checksumGenerator: return "Generate or Test checksum of a file"
-        case .caseConverter: return "Analyze text and convert it to differenct case"
+        case .caseConverter: return "Analyze text and convert it to different case"
         case .regexTester: return "Test reguler expression"
         case .hyphenationRemover: return "Remove hyphenations copied from PDF text"
         case .pdfGenerator: return "Generate PDF from images"
