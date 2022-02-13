@@ -67,6 +67,8 @@
 		B6B5728F27ACFA6E0069DBA7 /* ImageDropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */; };
 		B6BD80EB27B89EA600152AB9 /* ImageOptimaizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EA27B89EA600152AB9 /* ImageOptimaizerView.swift */; };
 		B6BD80ED27B89EE400152AB9 /* NetworkInfomationView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EC27B89EE400152AB9 /* NetworkInfomationView+.swift */; };
+		B6BD80EF27B8A85400152AB9 /* ToolCategory+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */; };
+		B6BD80F127B8A86100152AB9 /* Tool+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80F027B8A86100152AB9 /* Tool+Default.swift */; };
 		B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEDE27A534960022FED2 /* BodyViewController.swift */; };
 		B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */; };
 		B6D1AEE927A545230022FED2 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* Area.swift */; };
@@ -169,6 +171,8 @@
 		B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropper.swift; sourceTree = "<group>"; };
 		B6BD80EA27B89EA600152AB9 /* ImageOptimaizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageOptimaizerView.swift; sourceTree = "<group>"; };
 		B6BD80EC27B89EE400152AB9 /* NetworkInfomationView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkInfomationView+.swift"; sourceTree = "<group>"; };
+		B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolCategory+Default.swift"; sourceTree = "<group>"; };
+		B6BD80F027B8A86100152AB9 /* Tool+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tool+Default.swift"; sourceTree = "<group>"; };
 		B6D1AEDE27A534960022FED2 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
 		B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllToolCollectionItemView+.swift"; sourceTree = "<group>"; };
 		B6D1AEE827A545230022FED2 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 				B64B1F7127A4FDC800AC2601 /* AppModel.swift */,
 				B64B202527A52DB400AC2601 /* ToolType.swift */,
 				B64844FE27B767EC004FE02B /* ToolManager+.swift */,
+				B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */,
+				B6BD80F027B8A86100152AB9 /* Tool+Default.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,8 +336,8 @@
 		B64B209A27A532E300AC2601 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				B64B1E7527A4F5E200AC2601 /* AppViewController.swift */,
 				B64B209727A532DF00AC2601 /* AppWindowController.swift */,
+				B64B1E7527A4F5E200AC2601 /* AppViewController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -567,7 +573,9 @@
 				B64B202327A52A2D00AC2601 /* R.swift in Sources */,
 				B6B5728227ACCF2F0069DBA7 /* XMLFormatter.swift in Sources */,
 				B64B201D27A5219400AC2601 /* SidebarSearchView+.swift in Sources */,
+				B6BD80EF27B8A85400152AB9 /* ToolCategory+Default.swift in Sources */,
 				B66850EE27A64D3200A3FE01 /* Page.swift in Sources */,
+				B6BD80F127B8A86100152AB9 /* Tool+Default.swift in Sources */,
 				B6D1AEF427A54C440022FED2 /* Section.swift in Sources */,
 				B64B1F7227A4FDC800AC2601 /* AppModel.swift in Sources */,
 				B6D1AEFA27A557280022FED2 /* PopupButton.swift in Sources */,

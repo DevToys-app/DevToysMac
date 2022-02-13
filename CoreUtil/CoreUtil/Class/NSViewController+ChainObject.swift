@@ -11,28 +11,6 @@ import Cocoa
 private var chainObjectKey = 0
 private var chainObjectFlagKey = 0
 
-extension NSWindowController {
-    public var isChainObjectLoaded: Bool {
-        get { objc_getAssociatedObject(self, &chainObjectFlagKey) as? Bool ?? false }
-        set { objc_setAssociatedObject(self, &chainObjectFlagKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
-    }
-    
-    public var chainObject: Any? {
-        get { objc_getAssociatedObject(self, &chainObjectKey) }
-        set {
-            guard let chainObject = newValue else { return }
-            if self.isChainObjectLoaded { return }; self.isChainObjectLoaded = true
-            
-            objc_setAssociatedObject(self, &chainObjectKey, chainObject, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            self.contentViewController?.chainObject = newValue
-            
-            self.chainObjectDidLoad()
-        }
-    }
-    
-    @objc open func chainObjectDidLoad() {}
-}
-
 extension NSViewController {
     public var isChainObjectLoaded: Bool {
         get { objc_getAssociatedObject(self, &chainObjectFlagKey) as? Bool ?? false }

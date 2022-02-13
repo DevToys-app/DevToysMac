@@ -12,9 +12,14 @@ final class AppViewController: NSSplitViewController {
     private let sidebarController = SidebarViewController()
     private let bodyController = BodyViewController()
     
+    override func chainObjectDidLoad() {
+        // The object chain will be broken on `addSplitViewItem`. So call the manual chain.
+        self.sidebarController.chainObject = chainObject
+        self.bodyController.chainObject = chainObject
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.appModel
         
         let sidebarItem = NSSplitViewItem(sidebarWithViewController: sidebarController)
         sidebarItem.minimumThickness = 200

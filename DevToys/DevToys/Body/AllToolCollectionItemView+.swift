@@ -50,7 +50,7 @@ extension AllToolCollectionItemViewController: NSCollectionViewDataSource {
 extension AllToolCollectionItemViewController: NSCollectionViewDelegate {
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         guard let index = indexPaths.first?.item else { return }
-        appModel.toolType = self.allTools[index]
+//        appModel.toolType = self.allTools[index]
         self.collectionView.deselectAll(nil)
     }
 }

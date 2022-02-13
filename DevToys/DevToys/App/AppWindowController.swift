@@ -10,13 +10,9 @@ import Cocoa
 final class AppWindowController: NSWindowController {
     let appModel = AppModel()
     
-    override var contentViewController: NSViewController? {
-        didSet {
-            self.appModel.toolManager.registerTool(
-                Tool(title: "JSON <> Yaml", category: .convertor, icon: R.Image.ToolList.jsonConvert, sidebarTitle: "JSON <> Yaml", viewController: JSONYamlConverterViewController())
-            )
-            
-            self.contentViewController?.chainObject = appModel
-        }
+    override func windowDidLoad() {
+        self.appModel.toolManager.registerTool(.home)
+        self.appModel.toolManager.registerTool(.jsonYamlConverter)
+        self.contentViewController?.chainObject = appModel
     }
 }
