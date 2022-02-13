@@ -36,9 +36,18 @@ final class ImageOptimizerViewController: NSViewController {
         }
     }
     private func processFiles(_ urls: [URL]) {
-        self.tasks.append(contentsOf: urls.compactMap{
-            ImageOptimizer.optimize($0, optimizeLevel: level)
-        })
+        do {
+            self.tasks.append(contentsOf: try urls.compactMap{
+                try ImageOptimizer.optimize($0, optimizeLevel: level)
+            })
+        } catch ImageOptimizeError.noAccessToDirectory(let url) {
+            Toast(message: "No access to directory '\(url.lastPathComponent)'", color: .systemRed).show()
+        } catch ImageOptimizeError.unkownType(let fileExtension) {
+            Toast(message: "Unsupported file type '\(fileExtension)'", color: .systemRed).show()
+        } catch {
+            print(error)
+            Toast(message: "Unkown Error", color: .systemRed).show()
+        }
     }
 }
 

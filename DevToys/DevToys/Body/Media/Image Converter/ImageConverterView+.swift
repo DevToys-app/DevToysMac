@@ -149,11 +149,11 @@ final private class ImageListView: NSLoadView {
         self.listView.dataSource = self
         
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Open Finder", action: {[self] in
+        menu.addItem(title: "Open in Finder".localized()) { [self] in
             if let task = convertTasks.at(listView.clickedRow) {
                 NSWorkspace.shared.activateFileViewerSelecting([task.destinationURL])
             }
-        }))
+        }
         self.listView.menu = menu
     }
 }

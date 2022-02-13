@@ -12,6 +12,11 @@ struct ImageOptimizeTask {
     let result: Promise<String, Error>
 }
 
+enum ImageOptimizeError: Error {
+    case noAccessToDirectory(URL)
+    case unkownType(fileExtension: String)
+}
+
 enum OptimizeLevel: String, TextItem {
     case low = "Low"
     case medium = "Medium"
@@ -22,12 +27,12 @@ enum OptimizeLevel: String, TextItem {
 }
 
 enum ImageOptimizer {
-    static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {
+    static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) throws -> ImageOptimizeTask {
         let ext = url.pathExtension.lowercased()
-        if ext == "png" { return PNGOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
-        if ext == "jpg" || ext == "jpeg" { return JPEGOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
+        if ext == "png" { return try PNGOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
+        if ext == "jpg" || ext == "jpeg" { return try JPEGOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
         
-        return nil
+        throw ImageOptimizeError.unkownType(fileExtension: ext)
     }
 }
 
@@ -35,7 +40,7 @@ enum ImageOptimizer {
 enum PNGOptimizer {
     private static let optpingURL = Bundle.current.url(forResource: "optipng", withExtension: nil)!
     
-    static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {        
+    static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) throws -> ImageOptimizeTask {
         var arguments = [String]()
         switch optimizeLevel {
         case .low: arguments.append("-o1")
@@ -58,7 +63,10 @@ enum PNGOptimizer {
 enum JPEGOptimizer {
     private static let jpegoptimURL = Bundle.current.url(forResource: "jpegoptim", withExtension: nil)!
             
-    static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {
+    static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) throws -> ImageOptimizeTask {
+        let directoryURL = url.deletingLastPathComponent()
+        guard FileAccessChecker.becomeAccessable(to: directoryURL) else { throw ImageOptimizeError.noAccessToDirectory(directoryURL) }
+            
         var arguments = [String]()
         switch optimizeLevel {
         case .low: arguments.append(contentsOf: ["--strip-all"])
@@ -98,5 +106,31 @@ final class FileCompression {
         let percent = currentSize / initialSize * 100
         guard let formattedString = FileCompression.numberFormatter.string(from: NSNumber(value: percent)) else { return "-%" }
         return formattedString + "%"
+    }
+}
+
+enum FileAccessChecker {
+    static func becomeAccessable(to directoryURL: URL) -> Bool {
+        if hasAccess(to: directoryURL) { return true }
+        let panel = NSOpenPanel()
+        panel.message = "Select Open to allow access to '\(directoryURL.lastPathComponent)'"
+        panel.directoryURL = directoryURL
+        panel.canChooseDirectories = true
+        panel.canChooseFiles = false
+        panel.allowsMultipleSelection = false
+        panel.allowsOtherFileTypes = false
+        guard panel.runModal() == .OK else { return false }
+        guard panel.url == directoryURL else { return false }
+        return true
+    }
+    static func hasAccess(to directoryURL: URL) -> Bool {
+        do {
+            let url = directoryURL.deletingLastPathComponent().appendingPathComponent(".devtoys_mac_write_test")
+            try Data().write(to: url)
+            try FileManager.default.removeItem(at: url)
+            return true
+        } catch {
+            return false
+        }
     }
 }

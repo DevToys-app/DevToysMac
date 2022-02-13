@@ -10,34 +10,7 @@ import Cocoa
 final class AppWindowController: NSWindowController {
     let appModel = AppModel()
     
-    override func windowDidLoad() {
-        self.appModel.toolManager.registerTool(.home)
-        
-        self.appModel.toolManager.registerTool(.jsonYamlConverter)
-        self.appModel.toolManager.registerTool(.numberBaseConverter)
-        self.appModel.toolManager.registerTool(.dateConverter)
-        
-        self.appModel.toolManager.registerTool(.htmlCoder)
-        self.appModel.toolManager.registerTool(.urlCoder)
-        self.appModel.toolManager.registerTool(.base64Coder)
-        self.appModel.toolManager.registerTool(.jwtCoder)
-        
-        self.appModel.toolManager.registerTool(.jsonFormatter)
-        self.appModel.toolManager.registerTool(.xmlFormatter)
-        
-        self.appModel.toolManager.registerTool(.hashGenerator)
-        self.appModel.toolManager.registerTool(.uuidGenerator)
-        self.appModel.toolManager.registerTool(.loremIpsumGenerator)
-        self.appModel.toolManager.registerTool(.checksumGenerator)
-        
-        self.appModel.toolManager.registerTool(.textInspector)
-        self.appModel.toolManager.registerTool(.regexTester)
-        self.appModel.toolManager.registerTool(.hyphenationRemover)
-        
-        self.appModel.toolManager.registerTool(.imageOptimizer)
-        self.appModel.toolManager.registerTool(.pdfGenerator)
-        self.appModel.toolManager.registerTool(.imageConverter)
-        
+    override func windowDidLoad() {        
         self.contentViewController?.chainObject = appModel
         
         appModel.$tool

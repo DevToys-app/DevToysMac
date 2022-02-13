@@ -21,6 +21,7 @@
 		B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620141D27A91F6700AF5386 /* LoremIpsumGenerator.swift */; };
 		B620142127A9271500AF5386 /* TextInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142027A9271500AF5386 /* TextInspector.swift */; };
 		B620142327A929B400AF5386 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142227A929B400AF5386 /* TagCloudView.swift */; };
+		B629B93127B8F7E400F573C9 /* ToolManager+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */; };
 		B64844FF27B767EC004FE02B /* ToolManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64844FE27B767EC004FE02B /* ToolManager+.swift */; };
 		B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64AA44F27AD0D3900EC436D /* DateConverter+.swift */; };
 		B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */; };
@@ -123,6 +124,7 @@
 		B620141D27A91F6700AF5386 /* LoremIpsumGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoremIpsumGenerator.swift; sourceTree = "<group>"; };
 		B620142027A9271500AF5386 /* TextInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInspector.swift; sourceTree = "<group>"; };
 		B620142227A929B400AF5386 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
+		B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+Default.swift"; sourceTree = "<group>"; };
 		B64844FE27B767EC004FE02B /* ToolManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+.swift"; sourceTree = "<group>"; };
 		B64AA44F27AD0D3900EC436D /* DateConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateConverter+.swift"; sourceTree = "<group>"; };
 		B64B1E7027A4F5E200AC2601 /* DevToys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevToys.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +309,7 @@
 				B64844FE27B767EC004FE02B /* ToolManager+.swift */,
 				B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */,
 				B6BD80F027B8A86100152AB9 /* Tool+Default.swift */,
+				B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				B680A8A727A8DD5D007CB707 /* JWTDecoder.swift in Sources */,
 				6B42318827AD1BC0002D135A /* HyphenationRemover.swift in Sources */,
 				B6D1AEE427A53A560022FED2 /* HomeViewController.swift in Sources */,
+				B629B93127B8F7E400F573C9 /* ToolManager+Default.swift in Sources */,
 				B6AC276A27AA535A000FD713 /* PDFGeneratorView+.swift in Sources */,
 				B608542027A67E4D003BF243 /* TextField.swift in Sources */,
 				B680A79A27A69324007CB707 /* URLDecoder.swift in Sources */,
