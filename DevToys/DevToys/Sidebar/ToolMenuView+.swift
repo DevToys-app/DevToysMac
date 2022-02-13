@@ -13,32 +13,32 @@ final class ToolmenuViewController: NSViewController {
     private let outlineView = NSOutlineView.list()
     private var searchQuery = Query() { didSet { outlineView.reloadData() } }
     
-    private let homeMenu = ToolMenu(R.Image.Sidebar.home, "All Tools", "all", hasOwnAction: true)
-    private let convertMenu = ToolMenu(R.Image.Sidebar.convert, "Convertors", "convert", [
-        .jsonYamlConvertor, .numberBaseConvertor, .dateConvertor
-    ])
-    private let coderMenu = ToolMenu(R.Image.Sidebar.encoderDecoder, "Encoder / Decoder", "coder", [
-        .htmlDecoder, .urlDecoder, .base64Decoder, .jwtDecoder
-    ])
-    private let formatMenu = ToolMenu(R.Image.Sidebar.formatter, "Formatters", "format", [
-        .jsonFormatter, .xmlFormatter
-    ])
-    private let generatorMenu = ToolMenu(R.Image.Sidebar.generator, "Generators", "generator", [
-        .hashGenerator, .uuidGenerator, .loremIpsumGenerator, .checksumGenerator
-    ])
-    private let textMenu = ToolMenu(R.Image.Sidebar.text, "Text", "text", [
-        .caseConverter, .regexTester, .hyphenationRemover,
-    ])
-    private let graphicMenu = ToolMenu(R.Image.Sidebar.graphic, "Media", "graphic", [
-        .imageCompressor, .pdfGenerator, .imageConverter
-    ])
-    private let networkMenu = ToolMenu(R.Image.Sidebar.network, "Network", "network", [
-        .networkInformation,
-    ])
-    
-    private lazy var toolMenus = [
-        homeMenu, convertMenu, coderMenu, formatMenu, generatorMenu, textMenu, graphicMenu, networkMenu
-    ]
+//    private let homeMenu = ToolMenu(R.Image.Sidebar.home, "All Tools", "all", hasOwnAction: true)
+//    private let convertMenu = ToolMenu(R.Image.Sidebar.convert, "Convertors", "convert", [
+//        .jsonYamlConvertor, .numberBaseConvertor, .dateConvertor
+//    ])
+//    private let coderMenu = ToolMenu(R.Image.Sidebar.encoderDecoder, "Encoder / Decoder", "coder", [
+//        .htmlDecoder, .urlDecoder, .base64Decoder, .jwtDecoder
+//    ])
+//    private let formatMenu = ToolMenu(R.Image.Sidebar.formatter, "Formatters", "format", [
+//        .jsonFormatter, .xmlFormatter
+//    ])
+//    private let generatorMenu = ToolMenu(R.Image.Sidebar.generator, "Generators", "generator", [
+//        .hashGenerator, .uuidGenerator, .loremIpsumGenerator, .checksumGenerator
+//    ])
+//    private let textMenu = ToolMenu(R.Image.Sidebar.text, "Text", "text", [
+//        .caseConverter, .regexTester, .hyphenationRemover,
+//    ])
+//    private let graphicMenu = ToolMenu(R.Image.Sidebar.graphic, "Media", "graphic", [
+//        .imageCompressor, .pdfGenerator, .imageConverter
+//    ])
+//    private let networkMenu = ToolMenu(R.Image.Sidebar.network, "Network", "network", [
+//        .networkInformation,
+//    ])
+//
+//    private lazy var toolMenus = [
+//        homeMenu, convertMenu, coderMenu, formatMenu, generatorMenu, textMenu, graphicMenu, networkMenu
+//    ]
     
     final private class ToolMenu {
         let icon: NSImage
@@ -70,7 +70,7 @@ final class ToolmenuViewController: NSViewController {
         } else if let toolType = item as? ToolType {
             appModel.toolType = toolType
         }
-    }
+    } 
     
     override func loadView() {
         self.view = scrollView
@@ -95,24 +95,14 @@ final class ToolmenuViewController: NSViewController {
 
 extension ToolmenuViewController: NSOutlineViewDataSource {
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
-        guard let menu = item as? ToolMenu else { return false }
-        return !menu.toolTypes.isEmpty
+        print(appModel)
+        fatalError()
     }
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
-        if item == nil {
-            return self.toolMenus
-                .filter{ !$0.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }.isEmpty || $0 === homeMenu }[index]
-        }
-        guard let menu = item as? ToolMenu else { return () }
-        return menu.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }[index]
+        ()
     }
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
-        if item == nil {
-            return self.toolMenus
-                .filter{ !$0.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }.isEmpty || $0 === homeMenu }.count
-        }
-        guard let menu = item as? ToolMenu else { return 0 }
-        return menu.toolTypes.filter{ self.searchQuery.matches(to: $0.toolListTitle) }.count
+        10
     }
     
     public func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
@@ -121,31 +111,24 @@ extension ToolmenuViewController: NSOutlineViewDataSource {
     public func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
         let cell = ToolmenuCell()
         
-        if let menu = item as? ToolMenu {
-            cell.icon = menu.icon
-            cell.title = menu.title
-        } else if let tool = item as? ToolType {
-            cell.icon = tool.sidebarIcon
-            cell.title = tool.sidebarTitle
-        }
         
         return cell
     }
     
-    func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
-        if let menu = item as? ToolMenu {
-            return menu.identifier
-        } else if let tool = item as? ToolType {
-            return tool.rawValue
-        }
-        return nil
-    }
-    func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
-        guard let identifier = object as? String else { return nil }
-        if let toolMenu = self.toolMenus.first(where: { $0.identifier == identifier }) { return toolMenu }
-        if let toolType = ToolType(rawValue: identifier) { return toolType }
-        return nil
-    }
+//    func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
+//        if let menu = item as? ToolMenu {
+//            return menu.identifier
+//        } else if let tool = item as? ToolType {
+//            return tool.rawValue
+//        }
+//        return nil
+//    }
+//    func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
+//        guard let identifier = object as? String else { return nil }
+//        if let toolMenu = self.toolMenus.first(where: { $0.identifier == identifier }) { return toolMenu }
+//        if let toolType = ToolType(rawValue: identifier) { return toolType }
+//        return nil
+//    }
 }
 
 extension ToolmenuViewController: NSOutlineViewDelegate {

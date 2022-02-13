@@ -11,9 +11,9 @@ final class SidebarSearchViewController: NSViewController {
     private let searchView = SidebarSearchView()
     
     override func loadView() { self.view = searchView }
-    
-    override func viewDidLoad() {
-        self.getStatePublisher(for: .appModelChannel).compactMap{ $0?.$searchQuery }.switchToLatest()
+        
+    override func chainObjectDidLoad() {
+        self.appModel.$searchQuery
             .sink{[unowned self] in self.searchView.searchView.stringValue = $0 }.store(in: &objectBag)
         self.searchView.searchView.changeStringPublisher
             .sink{[unowned self] in self.appModel.searchQuery = $0 }.store(in: &objectBag)

@@ -9,7 +9,6 @@ import CoreUtil
 import OrderedCollections
 
 final class ToolManager {
-    
     private var toolMap = [ToolCategory?: [Tool]]()
     private var categoryOrder = OrderedSet<ToolCategory?>()
     
@@ -40,17 +39,24 @@ final class ToolCategory: Hashable {
     }
 }
 
-final class Tool {
-    let name: String
-    let viewController: NSViewController
-    let category: ToolCategory?
-    
-    init(name: String, category: ToolCategory?, viewController: NSViewController) {
-        self.name = name
-        self.category = category
-        self.viewController = viewController
-    }
+extension ToolCategory {
+    static let convertor = ToolCategory(name: "Converters", identifier: "converters")
 }
 
-
-
+final class Tool {
+    let title: String
+    let category: ToolCategory?
+    let icon: NSImage
+    let sidebarTitle: String
+    private(set) lazy var viewController = makeViewController()
+    
+    private let makeViewController: () -> NSViewController
+    
+    init(title: String, category: ToolCategory?, icon: NSImage, sidebarTitle: String? = nil, viewController: @autoclosure @escaping () -> NSViewController) {
+        self.title = title
+        self.category = category
+        self.icon = icon
+        self.sidebarTitle = sidebarTitle ?? title
+        self.makeViewController = viewController
+    }
+}

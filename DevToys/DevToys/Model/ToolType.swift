@@ -57,7 +57,7 @@ extension ToolType {
         case .checksumGenerator: return R.Image.Sidebar.hashGenerator
         case .caseConverter: return R.Image.Sidebar.textInspector
         case .regexTester: return R.Image.Sidebar.regexTester
-        case .hyphenationRemover: return R.Image.Sidebar.textIspector
+        case .hyphenationRemover: return R.Image.Sidebar.textInspector
         case .imageCompressor: return R.Image.Sidebar.imageCompressor
         case .imageConverter: return R.Image.Sidebar.imageCompressor
         case .pdfGenerator: return R.Image.Sidebar.graphic
@@ -83,7 +83,7 @@ extension ToolType {
         case .checksumGenerator: return R.Image.ToolList.hashGenerator
         case .caseConverter: return R.Image.ToolList.textInspector
         case .regexTester: return R.Image.ToolList.regexTester
-        case .hyphenationRemover: return R.Image.ToolList.textIspector
+        case .hyphenationRemover: return R.Image.ToolList.textInspector
         case .imageCompressor: return R.Image.ToolList.imageCompressor
         case .imageConverter: return R.Image.ToolList.imageCompressor
         case .pdfGenerator: return R.Image.ToolList.graphic

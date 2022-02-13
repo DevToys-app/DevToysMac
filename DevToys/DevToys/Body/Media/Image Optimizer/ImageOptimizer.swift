@@ -31,11 +31,9 @@ enum ImageOptimizer {
 
 
 enum PNGOptimizer {
-    private static let optpingURL = Bundle.current.url(forResource: "optipng", withExtension: nil)
+    private static let optpingURL = Bundle.current.url(forResource: "optipng", withExtension: nil)!
     
-    static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {
-        guard let optpingURL = self.optpingURL else { assertionFailure(); return nil }
-        
+    static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {        
         var arguments = [String]()
         switch optimizeLevel {
         case .low: arguments.append("-o1")
@@ -56,7 +54,7 @@ enum PNGOptimizer {
 }
 
 enum JPEGOptimizer {
-    private static let jpegoptimURL = Bundle.current.url(forResource: "jpegoptim", withExtension: nil)
+    private static let jpegoptimURL = Bundle.current.url(forResource: "jpegoptim", withExtension: nil)!
             
     static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) -> ImageOptimizeTask? {
         var arguments = [String]()
@@ -83,6 +81,11 @@ extension String: Error {}
 final class FileCompression {
     let initialSize: Double?
     let url: URL
+    
+    init(url: URL) {
+        self.url = url
+        self.initialSize = try? FileManager.default.attributesOfItem(atPath: url.path)[.size] as? Double
+    }
     
     private static let numberFormatter = NumberFormatter() => { $0.maximumFractionDigits = 2 }
     

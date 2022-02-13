@@ -14,18 +14,17 @@ final class AppViewController: NSSplitViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.appModel
         
         let sidebarItem = NSSplitViewItem(sidebarWithViewController: sidebarController)
         sidebarItem.minimumThickness = 200
         sidebarItem.canCollapse = false
         self.addSplitViewItem(sidebarItem)
-        self.linkState(for: .appModelChannel, to: sidebarController)
         
         let bodyItem = NSSplitViewItem(viewController: bodyController)
         bodyItem.minimumThickness = 480
         bodyItem.canCollapse = false
         self.addSplitViewItem(bodyItem)
-        self.linkState(for: .appModelChannel, to: bodyController)
         
         splitView.setPosition(220, ofDividerAt: 0)
         

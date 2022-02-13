@@ -7,15 +7,13 @@
 
 import CoreUtil
 
-extension StateChannel {
-    static var appModelChannel: StateChannel<AppModel> { .init("AppModel") }
-}
-
 extension NSViewController {
-    var appModel: AppModel! { getState(for: .appModelChannel) }
+    var appModel: AppModel! { chainObject as? AppModel }
 }
 
 final class AppModel {
     @RestorableState("app.tooltype") var toolType: ToolType = ToolType.jsonFormatter
     @RestorableState("app.searchQuery") var searchQuery = ""
+    
+    let toolManager = ToolManager()
 }

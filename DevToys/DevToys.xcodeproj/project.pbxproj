@@ -21,7 +21,6 @@
 		B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620141D27A91F6700AF5386 /* LoremIpsumGenerator.swift */; };
 		B620142127A9271500AF5386 /* TextInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142027A9271500AF5386 /* TextInspector.swift */; };
 		B620142327A929B400AF5386 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142227A929B400AF5386 /* TagCloudView.swift */; };
-		B620145627A9442100AF5386 /* ImageOptimizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620145527A9442100AF5386 /* ImageOptimizerView.swift */; };
 		B64844FF27B767EC004FE02B /* ToolManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64844FE27B767EC004FE02B /* ToolManager+.swift */; };
 		B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64AA44F27AD0D3900EC436D /* DateConverter+.swift */; };
 		B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */; };
@@ -58,7 +57,6 @@
 		B6AC273227AA2BF6000FD713 /* ImageOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */; };
 		B6AC276527AA3D61000FD713 /* jpegoptim in Resources */ = {isa = PBXBuildFile; fileRef = B6AC276427AA3D61000FD713 /* jpegoptim */; };
 		B6AC276A27AA535A000FD713 /* PDFGeneratorView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */; };
-		B6AC277027AA6EFE000FD713 /* NetworkInformationView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC276F27AA6EFE000FD713 /* NetworkInformationView+.swift */; };
 		B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5726127AC14B60069DBA7 /* TextView.swift */; };
 		B6B5726427AC14D10069DBA7 /* RegexTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5726327AC14D10069DBA7 /* RegexTextView.swift */; };
 		B6B5728027ACC3AF0069DBA7 /* ChecksumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5727F27ACC3AE0069DBA7 /* ChecksumGenerator.swift */; };
@@ -67,6 +65,8 @@
 		B6B5728A27ACDA420069DBA7 /* ImageConverterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728927ACDA420069DBA7 /* ImageConverterView+.swift */; };
 		B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */; };
 		B6B5728F27ACFA6E0069DBA7 /* ImageDropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */; };
+		B6BD80EB27B89EA600152AB9 /* ImageOptimaizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EA27B89EA600152AB9 /* ImageOptimaizerView.swift */; };
+		B6BD80ED27B89EE400152AB9 /* NetworkInfomationView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EC27B89EE400152AB9 /* NetworkInfomationView+.swift */; };
 		B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEDE27A534960022FED2 /* BodyViewController.swift */; };
 		B6D1AEE427A53A560022FED2 /* AllToolCollectionItemView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */; };
 		B6D1AEE927A545230022FED2 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* Area.swift */; };
@@ -123,7 +123,6 @@
 		B620141D27A91F6700AF5386 /* LoremIpsumGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoremIpsumGenerator.swift; sourceTree = "<group>"; };
 		B620142027A9271500AF5386 /* TextInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInspector.swift; sourceTree = "<group>"; };
 		B620142227A929B400AF5386 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
-		B620145527A9442100AF5386 /* ImageOptimizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOptimizerView.swift; sourceTree = "<group>"; };
 		B64844FE27B767EC004FE02B /* ToolManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+.swift"; sourceTree = "<group>"; };
 		B64AA44F27AD0D3900EC436D /* DateConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateConverter+.swift"; sourceTree = "<group>"; };
 		B64B1E7027A4F5E200AC2601 /* DevToys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevToys.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +160,6 @@
 		B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOptimizer.swift; sourceTree = "<group>"; };
 		B6AC276427AA3D61000FD713 /* jpegoptim */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = jpegoptim; sourceTree = "<group>"; };
 		B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFGeneratorView+.swift"; sourceTree = "<group>"; };
-		B6AC276F27AA6EFE000FD713 /* NetworkInformationView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkInformationView+.swift"; sourceTree = "<group>"; };
 		B6B5726127AC14B60069DBA7 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		B6B5726327AC14D10069DBA7 /* RegexTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTextView.swift; sourceTree = "<group>"; };
 		B6B5727F27ACC3AE0069DBA7 /* ChecksumGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecksumGenerator.swift; sourceTree = "<group>"; };
@@ -169,6 +167,8 @@
 		B6B5728927ACDA420069DBA7 /* ImageConverterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageConverterView+.swift"; sourceTree = "<group>"; };
 		B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
 		B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropper.swift; sourceTree = "<group>"; };
+		B6BD80EA27B89EA600152AB9 /* ImageOptimaizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageOptimaizerView.swift; sourceTree = "<group>"; };
+		B6BD80EC27B89EE400152AB9 /* NetworkInfomationView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkInfomationView+.swift"; sourceTree = "<group>"; };
 		B6D1AEDE27A534960022FED2 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
 		B6D1AEE327A53A560022FED2 /* AllToolCollectionItemView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllToolCollectionItemView+.swift"; sourceTree = "<group>"; };
 		B6D1AEE827A545230022FED2 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
@@ -364,7 +364,7 @@
 				B6E15A9227B6742300DC4D6B /* libimageoptimjpeg.dylib */,
 				B6AC276427AA3D61000FD713 /* jpegoptim */,
 				B6AC272F27AA1373000FD713 /* optipng */,
-				B620145527A9442100AF5386 /* ImageOptimizerView.swift */,
+				B6BD80EA27B89EA600152AB9 /* ImageOptimaizerView.swift */,
 				B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */,
 			);
 			path = "Image Optimizer";
@@ -373,7 +373,7 @@
 		B6AC27A827AA71B9000FD713 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B6AC276F27AA6EFE000FD713 /* NetworkInformationView+.swift */,
+				B6BD80EC27B89EE400152AB9 /* NetworkInfomationView+.swift */,
 				B672CF6427AA763100391A5D /* NetworkSpeedTest.swift */,
 				B672CF9627AA7E2C00391A5D /* APITestView+.swift */,
 			);
@@ -539,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B62013B627A90B8900AF5386 /* NumberField.swift in Sources */,
+				B6BD80EB27B89EA600152AB9 /* ImageOptimaizerView.swift in Sources */,
 				B608541E27A67B48003BF243 /* NumberBaseConverter+.swift in Sources */,
 				B680A8AA27A8E106007CB707 /* HashGenerator.swift in Sources */,
 				B64B202027A523A200AC2601 /* ToolmenuCell.swift in Sources */,
@@ -554,7 +555,6 @@
 				B6B5728027ACC3AF0069DBA7 /* ChecksumGenerator.swift in Sources */,
 				B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */,
 				B673A90227AD0E78005512AB /* DatePicker.swift in Sources */,
-				B6AC277027AA6EFE000FD713 /* NetworkInformationView+.swift in Sources */,
 				B620141C27A917E000AF5386 /* Button.swift in Sources */,
 				B6AC273227AA2BF6000FD713 /* ImageOptimizer.swift in Sources */,
 				B65DB78027AC0EB400146A3C /* RegexTesterView+.swift in Sources */,
@@ -577,7 +577,6 @@
 				B620142127A9271500AF5386 /* TextInspector.swift in Sources */,
 				B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */,
 				B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */,
-				B620145627A9442100AF5386 /* ImageOptimizerView.swift in Sources */,
 				B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */,
 				B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */,
 				B680A79C27A6947D007CB707 /* Base64Decoder.swift in Sources */,
@@ -593,6 +592,7 @@
 				B608541227A66A90003BF243 /* JSONYamlConverter+.swift in Sources */,
 				B6D1AEFD27A55ED50022FED2 /* CodeTextView.swift in Sources */,
 				B62013B427A9070D00AF5386 /* UUIDGenerator.swift in Sources */,
+				B6BD80ED27B89EE400152AB9 /* NetworkInfomationView+.swift in Sources */,
 				B6D1AEEC27A546810022FED2 /* ControlBackgroundLayer.swift in Sources */,
 				B64B1F7C27A4FFB400AC2601 /* SidebarView+.swift in Sources */,
 				B64B201627A5100800AC2601 /* Separator.swift in Sources */,
