@@ -1,0 +1,190 @@
+/*
+  Localizable.strings
+  DevToys
+
+  Created by RodrigoTomeES on 2022/02/13.
+  
+*/
+
+// - General -
+"Configuration" = "Configuración";
+"Format" = "Formatear";
+"Pretty" = "Pretty";
+"Minified" = "Minificado";
+"Encoded" = "Codificado";
+"Decoded" = "Decodificado";
+"File" = "Archivo";
+"Text" = "Texto";
+"Copy" = "Copiar";
+"Paste" = "Pegar";
+"Copied!" = "Copiado!";
+"Pasted!" = "Pegado";
+"Open" = "Abrir";
+"Export" = "Exportar";
+"Import" = "Importar";
+"Input" = "Entrada";
+"Output" = "Salida";
+"No selection" = "Sin selección";
+"Drop Files Here" = "Suelte los archivos aquí";
+"Untitled Tool" = "Herramienta sin título";
+"Uppercase" = "Mayúscula";
+"Hyphens" = "Guiones";
+"Type" = "Tipo";
+"Length" = "Longitud";
+"Convert" = "Convertir";
+"Information" = "Información";
+"Clear" = "Limpiar";
+"Delete" = "Eliminar";
+
+// - Category -
+"category.home" = "Todas las herramientas";
+"category.converters" = "Conversores";
+"category.encoders_decoders" = "Codificadores / Decodificadores";
+"category.formatters" = "Formateadores";
+"category.generators" = "Generadores";
+"category.text" = "Texto";
+"category.graphic" = "Gráficos";
+
+// - Tool -
+"tool.home.title" = "Todas las herramientas";
+"tool.home.mintitle" = "Todas las herramientas";
+"tool.home.description" = "Busca todas las herramientas aquí.";
+
+"tool.jsonyaml.title" = "Conversor JSON <> Yaml";
+"tool.jsonyaml.mintitle" = "JSON <> Yaml";
+"tool.jsonyaml.description" = "Convertir datos Json a Yaml y viceversa";
+
+"tool.numbase.title" = "Conversor de bases numéricas";
+"tool.numbase.mintitle" = "Base numérica";
+"tool.numbase.description" = "Convertir números desde una base a otra";
+"Format Number" = "Formato del número";
+"Decimal" = "Decimal";
+"Hexdecimal" = "Hexadecimal";
+"Octal" = "Octal";
+"Binary" = "Binario";
+
+"tool.date.title" = "Conversor de fechas";
+"tool.date.mintitle" = "Fecha";
+"tool.date.description" = "Convierte fechas de un formato a otro";
+"Now" = "Ahora";
+"Date" = "Fecha";
+"Unix Time" = "Formato Unix";
+"ISO 8601" = "ISO 8601";
+"Calender" = "Calendario";
+
+"tool.html.title" = "Codificador / Decodificador de HTML";
+"tool.html.mintitle" = "HTML";
+"tool.html.description" = "Codifica o decodifica todos los caracteres aplicables a HTML";
+
+"tool.url.title" = "Codificador / Decodificador de URLs";
+"tool.url.mintitle" = "URL";
+"tool.url.description" = "Codifica o decodifica todos los caracteres aplicables a URLs";
+
+"tool.base64.title" = "Codificador / Decodificador de Base64";
+"tool.base64.mintitle" = "Base64";
+"tool.base64.description" = "Codifica o decodifica datos en Base64";
+"Source Type" = "Tipo de fuente";
+"Text Source" = "Tipo texto";
+"File Source" = "Tipo fichero";
+
+"tool.jwt.title" = "Codificador / Decodificador de JWT";
+"tool.jwt.mintitle" = "JWT";
+"tool.jwt.description" = "Decodifica la carga útil y firma de encabezado de JWT";
+"JWT Token" = "JWT Token";
+"Header" = "Header";
+"Payload" = "Payload";
+
+"tool.jsonformat.title" = "Formateador de JSON";
+"tool.jsonformat.mintitle" = "JSON";
+"tool.jsonformat.description" = "Indenta o minifica JSON";
+"Indentation" = "Indentación";
+"2 Spaces" = "2 espacios";
+"4 Spaces" = "4 espacios";
+"1 Tab" = "1 tab";
+
+"tool.xmlformat.title" = "Formateador de XML";
+"tool.xmlformat.mintitle" = "XML";
+"tool.xmlformat.description" = "Indenta o minifica XML";
+"HTML Document" = "Documento HTML";
+"XML Document" = "Documento XML";
+"Document Type" = "Tipo de documento";
+"Auto Fix Document" = "Corrección automática del documento";
+"Pretty Document" = "Embellecer documento";
+
+"tool.hashgen.title" = "Generador de Hash";
+"tool.hashgen.mintitle" = "Hash";
+"tool.hashgen.description" = "Calcular el hash en MD5, SHA1, SHA256 y SHA 512 de datos de texto";
+
+"tool.uuidgen.title" = "Generador de UUID";
+"tool.uuidgen.mintitle" = "UUID";
+"tool.uuidgen.description" = "Generar UUIDs";
+"Generate UUIDs" = "Generar UUIDs";
+
+"tool.ligen.title" = "Generador de Lorem Ipsum";
+"tool.ligen.mintitle" = "Lorem Ipsum";
+"tool.ligen.description" = "Generar Lorem Ipsum";
+"Type of generating Lorem Ipsum" = "Tipo de generación de Lorem Ipsum";
+"Length of generating Lorem Ipsum" = "Longitud de la generación de Lorem Ipsum";
+"Words" = "Palabras";
+"Sentences" = "Frases";
+"Paragraphs" = "Párrafos";
+
+"tool.checksum.title" = "Generador de Checksum";
+"tool.checksum.mintitle" = "Checksum";
+"tool.checksum.description" = "Genera o comprueba el checksum de un fichero";
+"Output Comparer" = "Comparar resultado";
+"Hash Algorithm" = "Algoritmo de hash";
+"Select which algorithm you want to use" = "Selecciona el algoritmo que quieres usar";
+
+"tool.checksum.title" = "Generador de Checksum";
+"tool.checksum.mintitle" = "Checksum";
+"tool.checksum.description" = "Genera o comprueba el checksum de un fichero";
+
+"tool.textinspect.title" = "Inspector y conversor de texto";
+"tool.textinspect.mintitle" = "Inspector y conversor de mayúsculas";
+"tool.textinspect.description" = "Analiza el texto y convierto a distintos formatos de texto";
+"Charactors" = "Caracteres";
+"Words" = "Palabras";
+"Lines" = "Líneas";
+"Bytes" = "Bytes";
+
+"tool.regex.title" = "Evaluador de expresiones regulares";
+"tool.regex.mintitle" = "Evaluador de Regex";
+"tool.regex.description" = "Comprueba expresiones regulares";
+"Reguler expression" = "Expresión regular";
+
+"tool.hyphenremove.title" = "Eliminador de guiones";
+"tool.hyphenremove.mintitle" = "Eliminador de guiones";
+"tool.hyphenremove.description" = "Elimina guiones de textos copiados de un PDF";
+
+"tool.imageoptim.title" = "Compresor de PNG / JPEG";
+"tool.imageoptim.mintitle" = "Compresor de PNG / JPEG";
+"tool.imageoptim.description" = "Optimizador de JPEG y PNG sin perdida";
+"Optimize Level" = "Nivel de la optimización";
+"Low" = "Bajo";
+"Medium" = "Medio";
+"High" = "Alto";
+"Very High (Slow)" = "Muy alto (lento)";
+
+"tool.pdfgen.title" = "Generador de PDFs";
+"tool.pdfgen.mintitle" = "Generador de PDFs";
+"tool.pdfgen.description" = "Genera un PDF de multiples imágenes";
+"Images" = "Imágenes";
+"Size" = "Tamaño";
+"Generate PDF" = "Generar PDF";
+"Page" = "Página";
+
+"tool.imageconvert.title" = "Conversor de imágenes";
+"tool.imageconvert.mintitle" = "Conversor de imágenes";
+"tool.imageconvert.description" = "Convierte o redimensiona imágenes";
+"PNG Format" = "Formato PNG";
+"JPEG Format" = "Formato JPEG";
+"TIFF Format" = "Formato TIFF";
+"GIF Format" = "Formato GIF";
+"Scale to Fill" = "Scale to Fill";
+"Scale to Fit" = "Scale to Fit";
+"Image Format" = "Formato de imágen";
+"Resize" = "Redimensionar";
+"Converted Images" = "Imágenes convertidas";
+"Scale" = "Escala";
+"Size" = "Tamaño";
