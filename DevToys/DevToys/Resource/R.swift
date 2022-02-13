@@ -50,6 +50,7 @@ enum R {
             static let convert = NSImage(named: "tool/convert")!
             static let jsonConvert = NSImage(named: "tool/json.convert")!
             static let numberBaseConvert = NSImage(named: "tool/number.base.convert")!
+            static let dateConvert = NSImage(named: "tool/date.convert")!
             
             static let encoderDecoder = NSImage(named: "tool/encoder.decoder")!
             static let htmlCoder = NSImage(named: "tool/html.coder")!

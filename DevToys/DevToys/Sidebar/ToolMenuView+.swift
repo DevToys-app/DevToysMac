@@ -30,8 +30,6 @@ final class ToolmenuViewController: NSViewController {
         self.outlineView.setTarget(self, action: #selector(onClick))
         self.outlineView.outlineTableColumn = self.outlineView.tableColumns[0]
         self.outlineView.selectionHighlightStyle = .sourceList
-        self.outlineView.autosaveExpandedItems = true
-        self.outlineView.autosaveName = "sidebar"
         self.outlineView.indentationPerLevel = 4
     }
         
@@ -42,6 +40,8 @@ final class ToolmenuViewController: NSViewController {
         // Datasource uses chainObject, call it in `chainObjectDidLoad`
         self.outlineView.delegate = self
         self.outlineView.dataSource = self
+        self.outlineView.autosaveExpandedItems = true
+        self.outlineView.autosaveName = "sidebar"
     }
 }
 

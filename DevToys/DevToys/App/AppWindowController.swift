@@ -12,9 +12,15 @@ final class AppWindowController: NSWindowController {
     
     override func windowDidLoad() {
         self.appModel.toolManager.registerTool(.home)
+        
         self.appModel.toolManager.registerTool(.jsonYamlConverter)
         self.appModel.toolManager.registerTool(.numberBaseConverter)
         self.appModel.toolManager.registerTool(.dateConverter)
+        
+        self.appModel.toolManager.registerTool(.htmlCoder)
+        self.appModel.toolManager.registerTool(.urlCoder)
+        self.appModel.toolManager.registerTool(.base64Coder)
+        self.appModel.toolManager.registerTool(.jwtCoder)
         
         self.contentViewController?.chainObject = appModel
         
