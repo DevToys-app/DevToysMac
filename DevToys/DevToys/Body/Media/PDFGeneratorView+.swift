@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class PDFGeneratorViewController: PageViewController {
+final class PDFGeneratorViewController: NSViewController {
     private let cell = PDFGeneratorView()
     
     @RestorableData("pdf.input") var images = [ImageItem]()

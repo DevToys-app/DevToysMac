@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   DevToys
 
@@ -6,10 +6,24 @@
   
 */
 
+// - Category -
 "category.home" = "Home";
 "category.converters" = "Converters";
-"category.encoder_decoder" = "Encoders / Decoders";
+"category.encoders_decoders" = "Encoders / Decoders";
 "category.formatters" = "Formatters";
 "category.generators" = "Generators";
-"category.text" = = "Text";
+"category.text" = "Text";
 "category.graphic" = "Graphic";
+
+// - Tool -
+"tool.home.title" = "Home";
+"tool.home.mintitle" = "Home";
+"tool.home.description" = "Search all tools here.";
+
+"tool.jsonyaml.title" = "JSON <> Yaml Converter";
+"tool.jsonyaml.mintitle" = "JSON <> Yaml";
+"tool.jsonyaml.description" = "Convert Json data to Yaml and vice versa";
+
+"tool.numbase.title" = "Number Base Converter";
+"tool.numbase.mintitle" = "Number Base";
+"tool.numbase.description" = "Convert numbers from one base to another";

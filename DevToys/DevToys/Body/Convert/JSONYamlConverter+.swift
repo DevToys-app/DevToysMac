@@ -9,7 +9,7 @@ import CoreUtil
 import Yams
 import SwiftJSONFormatter
 
-final class JSONYamlConverterViewController: PageViewController {
+final class JSONYamlConverterViewController: NSViewController {
     private let cell = JSONYamlConverterView()
     
     @RestorableState("jy.format") private var formatStyle: FormatStyle = .pretty

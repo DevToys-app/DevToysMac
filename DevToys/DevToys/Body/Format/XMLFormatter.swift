@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class XMLFormatterViewController: PageViewController {
+final class XMLFormatterViewController: NSViewController {
     @RestorableState("xml.rawCode") private var rawCode: String = ""
     @RestorableState("xml.formattedCode") private var formattedCode: String = ""
     @RestorableState("xml.documentType") private var documentType: DocumentType = .xmlDocument

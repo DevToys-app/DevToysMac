@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class ImageConverterViewController: PageViewController {
+final class ImageConverterViewController: NSViewController {
     private let cell = ImageConverterView()
     
     @RestorableState("imc.format") private var format = ImageFormatType.png

@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class JWTDecoderViewController: PageViewController {
+final class JWTDecoderViewController: NSViewController {
     private let cell = JWTDecoderView()
     
     @RestorableState("jwt.token") var token = defaultToken

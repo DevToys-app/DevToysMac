@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class DateConverterViewController: PageViewController {
+final class DateConverterViewController: NSViewController {
     private let cell = DateConverterView()
     
     @Observable var date = Date()

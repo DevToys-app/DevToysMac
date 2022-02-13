@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class NumberBaseConverterViewController: PageViewController {
+final class NumberBaseConverterViewController: NSViewController {
     private let cell = NumberBaseConverterView()
     
     @RestorableState("numbase.format") private var formatNumber = true

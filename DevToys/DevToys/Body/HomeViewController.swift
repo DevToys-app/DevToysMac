@@ -31,10 +31,6 @@ final class HomeViewController: NSViewController {
         self.collectionView.register(ToolCollectionItem.self, forItemWithIdentifier: ToolCollectionItem.identifier)
     }
     
-    override func viewDidAppear() {
-        self.view.window?.title = "Home"
-    }
-    
     override func chainObjectDidLoad() {
         self.tools = appModel.toolManager.allTools().filter{ $0.showOnHome }
     }

@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class ImageOptimizerViewController: PageViewController {
+final class ImageOptimizerViewController: NSViewController {
     private let cell = ImageOptimizerView()
     
     @Observable var tasks = [ImageOptimizeTask]()

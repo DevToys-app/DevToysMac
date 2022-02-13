@@ -5,3 +5,26 @@
   Created by yuki on 2022/02/13.
   
 */
+
+// - Category -
+"category.home" = "ホーム";
+"category.converters" = "変換";
+"category.encoders_decoders" = "エンコード / デコード";
+"category.formatters" = "フォーマット";
+"category.generators" = "生成機";
+"category.text" = "テキスト";
+"category.graphic" = "メディア";
+
+// - Tool -
+"tool.home.title" = "ホーム";
+"tool.home.mintitle" = "ホーム";
+"tool.home.description" = "全てのツールをここで探せます";
+
+"tool.jsonyaml.title" = "JSON <> Yaml 変換";
+"tool.jsonyaml.mintitle" = "JSON <> Yaml";
+"tool.jsonyaml.description" = "JSONとYamlを相互に変換します";
+
+"tool.numbase.title" = "基数変換";
+"tool.numbase.mintitle" = "基数変換";
+"tool.numbase.description" = "数値の進法を変換します";
+

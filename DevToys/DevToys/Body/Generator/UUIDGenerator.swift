@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class UUIDGeneratorViewController: PageViewController {
+final class UUIDGeneratorViewController: NSViewController {
     private let cell = UUIDGeneratorView()
     
     @RestorableState("uuid.isHyphened") var isHyphened = true

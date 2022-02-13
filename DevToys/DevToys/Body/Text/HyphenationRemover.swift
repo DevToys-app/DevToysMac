@@ -1,6 +1,6 @@
 import CoreUtil
 
-final class HyphenationRemoverViewController: PageViewController {
+final class HyphenationRemoverViewController: NSViewController {
     @RestorableState("hyphenation.rawCode") private var rawCode: String = ""
     @RestorableState("hyphenation.formattedCode") private var formattedCode: String = ""
 

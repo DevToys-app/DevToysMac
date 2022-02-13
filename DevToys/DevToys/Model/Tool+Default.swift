@@ -9,18 +9,18 @@ import CoreUtil
 
 extension Tool {
     static let home = Tool(
-        title: "category.home".localized(), identifier: "home", category: .home, icon: R.Image.Sidebar.home,
-        toolDescription: "All tools", showAlways: true, showOnHome: false,
+        title: "tool.home.title".localized(), identifier: "home", category: .home, icon: R.Image.Sidebar.home,
+        toolDescription: "tool.home.description".localized(), showAlways: true, showOnHome: false,
         viewController: HomeViewController()
     )
     static let jsonYamlConverter = Tool(
-        title: "JSON <> Yaml Converter", identifier: "json.yaml", category: .converter, icon: R.Image.ToolList.jsonConvert,
-        sidebarTitle: "JSON <> Yaml", toolDescription: "Convert Json data to Yaml and vice versa",
+        title: "tool.jsonyaml.title".localized(), identifier: "jsonyaml", category: .converter, icon: R.Image.ToolList.jsonConvert,
+        sidebarTitle: "tool.jsonyaml.minTitle".localized(), toolDescription: "tool.jsonyaml.description".localized(),
         viewController: JSONYamlConverterViewController()
     )
     static let numberBaseConverter = Tool(
-        title: "Number Base Converter", identifier: "num.base", category: .converter, icon: R.Image.ToolList.jsonConvert,
-        sidebarTitle: "Number Base", toolDescription: "Convert JSON to Yaml",
+        title: "tool.numbase.title".localized(), identifier: "numbase", category: .converter, icon: R.Image.ToolList.jsonConvert,
+        sidebarTitle: "tool.numbase.minTitle".localized(), toolDescription: "tool.numbase.description".localized(),
         viewController: JSONYamlConverterViewController()
     )
 }

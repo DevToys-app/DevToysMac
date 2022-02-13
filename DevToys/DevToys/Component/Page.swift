@@ -64,9 +64,3 @@ class Page: NSLoadView {
 private class FlipClipView: NSClipView {
     override var isFlipped: Bool { true }
 }
-
-class PageViewController: NSViewController {
-    override func viewDidAppear() {
-        view.window?.title = (view as? Page)?.title ?? "DevToys"
-    }
-}

@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class RegexTesterViewController: PageViewController {
+final class RegexTesterViewController: NSViewController {
     private let cell = RegexTesterView()
     
     @RestorableState("rx.pattern") var pattern = #"(macOS|OS X) \d+\.\d+"#

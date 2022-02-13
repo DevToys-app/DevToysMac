@@ -7,7 +7,7 @@
 
 import CoreUtil
 
-final class ChecksumGeneratorViewController: PageViewController {
+final class ChecksumGeneratorViewController: NSViewController {
     
     @RestorableState("checksum.uppercase") private var isUppercase = false
     @RestorableState("checksum.alg") private var hashAlgorithm = HashAlgorithm.md5

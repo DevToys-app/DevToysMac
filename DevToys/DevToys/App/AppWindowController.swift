@@ -13,6 +13,10 @@ final class AppWindowController: NSWindowController {
     override func windowDidLoad() {
         self.appModel.toolManager.registerTool(.home)
         self.appModel.toolManager.registerTool(.jsonYamlConverter)
+        self.appModel.toolManager.registerTool(.numberBaseConverter)
         self.contentViewController?.chainObject = appModel
+        
+        appModel.$tool
+            .sink{[unowned self] in self.window?.title = $0.title }.store(in: &objectBag)
     }
 }

@@ -8,7 +8,7 @@
 import CoreUtil
 import HTMLEntities
 
-final class HTMLDecoderViewController: PageViewController {
+final class HTMLDecoderViewController: NSViewController {
     private let cell = HTMLDecoderView()
     
     @RestorableState("html.rawString") var rawString = "<script>alert(\"abc\")</script>"
