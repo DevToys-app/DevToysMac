@@ -75,7 +75,6 @@ final private class JSONFormatterView: Page {
     }
     
     override func onAwake() {
-        self.title = "Json Formatter"
         self.addSection(configurationSection)
     }
 }

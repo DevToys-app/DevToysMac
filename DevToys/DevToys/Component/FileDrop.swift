@@ -14,11 +14,11 @@ final class FileDropSection: Section {
     }
     
     private let fileDrop = FileDrop()
-    private let openButton = OpenSectionButton(title: "Open File", image: R.Image.open)
+    private let openButton = OpenSectionButton(title: "Open".localized(), image: R.Image.open)
     
     override func onAwake() {
         super.onAwake()
-        self.title = "File"
+        self.title = "File".localized()
         self.addToolbarItem(openButton)
         self.addStackItem(fileDrop)
         self.snp.makeConstraints{ make in
@@ -33,7 +33,7 @@ final class FileDrop: NSLoadView {
     
     private let backgroundLayer = ControlBackgroundLayer.animationDisabled()
     private let imageView = NSImageView(image: R.Image.drop)
-    private let titleLabel = NSTextField(labelWithString: "Drop Files Here")
+    private let titleLabel = NSTextField(labelWithString: "Drop Files Here".localized())
     private let stackView = NSStackView()
     
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {

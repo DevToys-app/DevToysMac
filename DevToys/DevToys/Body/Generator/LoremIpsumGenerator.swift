@@ -76,9 +76,7 @@ final private class LoremIpsumGeneratorView: Page {
         }
     }
     
-    override func onAwake() {
-        self.title = "Lorem Ipsum Generator"
-        
+    override func onAwake() {        
         self.addSection(Section(title: "Configuration", items: [
             Area(icon: R.Image.text, title: "Type", message: "Type of generating Lorem Ipsum", control: typePicker),
             Area(icon: R.Image.number, title: "Length", message: "Length of generating Lorem Ipsum", control: lengthField),

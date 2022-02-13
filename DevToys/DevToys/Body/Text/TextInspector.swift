@@ -105,11 +105,8 @@ final class TextInspectorView: Page {
     }
     
     override func onAwake() {
-        self.title = "Text Case Converter and Inspector"
-        
         let convertSection = Section(title: "Convert", items: [tagCloudView])
         self.addSection(convertSection)
-//        self.stackView.setCustomSpacing(32, after: convertSection)
         self.tagCloudView.items = ConvertType.allCases.map{ $0.rawValue }
         self.tagCloudView.isSelectable = true
         

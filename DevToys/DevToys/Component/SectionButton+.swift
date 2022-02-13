@@ -26,7 +26,7 @@ final class OpenSectionButton: SectionButton {
     
     override func onAwake() {
         super.onAwake()
-        self.toolTip = "Open File"
+        self.toolTip = "Open".localized()
         self.title = ""
         self.image = R.Image.open
         self.setTarget(self, action: #selector(buttonAction))
@@ -40,7 +40,7 @@ final class CopySectionButton: SectionButton {
     convenience init(hasTitle: Bool) {
         self.init()
         if hasTitle {
-            self.title = "Copy"
+            self.title = "Copy".localized()
         } else {
             self.title = ""
         }
@@ -49,14 +49,14 @@ final class CopySectionButton: SectionButton {
     override func onAwake() {
         super.onAwake()
         self.image = R.Image.copy
-        self.toolTip = "Copy"
+        self.toolTip = "Copy".localized()
         
         self.actionPublisher
             .sink{[unowned self] in
                 guard let stringContent = self.stringContent else { return NSSound.beep() }
                 NSPasteboard.general.prepareForNewContents(with: .none)
                 NSPasteboard.general.setString(stringContent, forType: .string)
-                Toast.show(message: "Copied!")
+                Toast.show(message: "Copied!".localized())
             }
             .store(in: &objectBag)
     }
@@ -65,15 +65,15 @@ final class CopySectionButton: SectionButton {
 final class PasteSectionButton: SectionButton {
     var stringPublisher: AnyPublisher<String?, Never> {
         self.actionPublisher
-            .peek{ Toast.show(message: "Pasted!") }
+            .peek{ Toast.show(message: "Pasted!".localized()) }
             .map{ return NSPasteboard.general.string(forType: .string) }
             .eraseToAnyPublisher()
     }
     
     override func onAwake() {
         super.onAwake()
-        self.toolTip = "Paste"
-        self.title = "Paste"
+        self.toolTip = "Paste".localized()
+        self.title = "Paste".localized()
         self.image = R.Image.paste
     }
 }

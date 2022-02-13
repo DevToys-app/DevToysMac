@@ -57,9 +57,7 @@ final class HashGeneratorView: Page {
     private lazy var formatNumberArea = Area(icon: R.Image.format, title: "Uppercase", control: formatSwitch)
     private lazy var configurationSection = Section(title: "Configuration", items: [formatNumberArea])
 
-    override func onAwake() {
-        self.title = "Hash Generator"
-        
+    override func onAwake() {        
         self.addSection(configurationSection)
         
         self.addSection(textInputSection)

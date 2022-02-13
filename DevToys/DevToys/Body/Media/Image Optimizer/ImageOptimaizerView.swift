@@ -77,7 +77,6 @@ final private class ImageOptimizerView: Page {
     }
     
     override func onAwake() {
-        self.title = "Image Optimizer"
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
         self.addSection(Section(title: "Configuration", items: [

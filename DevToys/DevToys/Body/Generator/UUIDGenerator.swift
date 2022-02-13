@@ -70,9 +70,7 @@ final private class UUIDGeneratorView: Page {
         }
     }
     
-    override func onAwake() {
-        self.title = "UUID Generator"
-        
+    override func onAwake() {        
         self.addSection(Section(title: "Configuration", items: [
             Area(icon: R.Image.hyphen, title: "Hyphens", control: hyphensSwitch),
             Area(icon: R.Image.format, title: "Uppercase", message: "Whether to use uppercase for generate UUIDs.", control: uppercaseSwitch),

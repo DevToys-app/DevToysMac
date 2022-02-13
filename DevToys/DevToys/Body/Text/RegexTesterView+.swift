@@ -70,9 +70,7 @@ final private class RegexTesterView: Page {
         }
     }
     
-    override func onAwake() {
-        self.title = "Regex Tester"
-        
+    override func onAwake() {        
         self.regexField.isError = true
         self.regexField.font = .monospacedSystemFont(ofSize: R.Size.controlTitleFontSize, weight: .regular)
         self.addSection(Section(title: "Reguler expression", items: [regexField]))

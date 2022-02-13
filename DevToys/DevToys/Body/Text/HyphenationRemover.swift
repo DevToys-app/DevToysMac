@@ -47,8 +47,4 @@ final private class HyphenationFormatterView: Page {
             make.height.equalTo(max(240, self.frame.height - 150))
         }
     }
-
-    override func onAwake() {
-        self.title = "Hyphenation Remover"
-    }
 }

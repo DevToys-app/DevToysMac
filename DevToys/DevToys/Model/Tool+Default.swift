@@ -23,7 +23,7 @@ extension Tool {
     static let numberBaseConverter = Tool(
         title: "tool.numbase.title".localized(), identifier: "numbase", category: .converter, icon: R.Image.Tool.numberBaseConvert,
         sidebarTitle: "tool.numbase.mintitle".localized(), toolDescription: "tool.numbase.description".localized(),
-        viewController: JSONYamlConverterViewController()
+        viewController: NumberBaseConverterViewController()
     )
     static let dateConverter = Tool(
         title: "tool.date.title".localized(), identifier: "date.converter", category: .converter, icon: R.Image.Tool.dateConvert,
@@ -102,5 +102,22 @@ extension Tool {
         title: "tool.hyphenremove.title".localized(), identifier: "hyphenremove", category: .text, icon: R.Image.Tool.textInspector,
         sidebarTitle: "tool.hyphenremove.mintitle".localized(), toolDescription: "tool.hyphenremove.description".localized(),
         viewController: HyphenationRemoverViewController()
+    )
+    
+    // MARK: - Graphic -
+    static let imageOptimizer = Tool(
+        title: "tool.imageoptim.title".localized(), identifier: "imageoptim", category: .graphic, icon: R.Image.Tool.imageCompressor,
+        sidebarTitle: "tool.imageoptim.mintitle".localized(), toolDescription: "tool.imageoptim.description".localized(),
+        viewController: ImageOptimizerViewController()
+    )
+    static let pdfGenerator = Tool(
+        title: "tool.pdfgen.title".localized(), identifier: "pdfgen", category: .graphic, icon: R.Image.Tool.pdfGenerator,
+        sidebarTitle: "tool.pdfgen.mintitle".localized(), toolDescription: "tool.pdfgen.description".localized(),
+        viewController: PDFGeneratorViewController()
+    )
+    static let imageConverter = Tool(
+        title: "tool.imageconvert.title".localized(), identifier: "imageconvert", category: .graphic, icon: R.Image.Tool.imageConverter,
+        sidebarTitle: "tool.imageconvert.mintitle".localized(), toolDescription: "tool.imageconvert.description".localized(),
+        viewController: ImageConverterViewController()
     )
 }

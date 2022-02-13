@@ -112,7 +112,6 @@ final private class ImageConverterView: Page {
     }
     
     override func onAwake() {
-        self.title = "Image Converter"
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
 
         self.addSection(

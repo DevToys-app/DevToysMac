@@ -49,9 +49,7 @@ final private class URLDecoderView: Page {
         }
     }
     
-    override func onAwake() {
-        self.title = "URL Encoder / Decoder"
-        
+    override func onAwake() {        
         self.addSection(encodeTextSection)
         self.addSection(decodeTextSection)
     }

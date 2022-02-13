@@ -7,10 +7,7 @@
 
 import CoreUtil
  
-class Page: NSLoadView {
-    
-    var title: String = "Untitled Tool"
-    
+class Page: NSLoadView {    
     private let stackView = NSStackView()
     private let scrollView = NSScrollView()
     

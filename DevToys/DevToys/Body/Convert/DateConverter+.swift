@@ -52,9 +52,7 @@ final private class DateConverterView: Page {
     let isoDateField = TextField(showCopyButton: false)
     let graphicDatePicker = NSDatePicker()
     
-    override func onAwake() {
-        self.title = "Date Converter"
-        
+    override func onAwake() {        
         self.addSection(Section(title: "Date", items: [
             NSStackView() => {
                 $0.distribution = .equalSpacing

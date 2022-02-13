@@ -34,11 +34,11 @@ final class EnumPopupButton<Item: TextItem>: PopupButton {
 class PopupButton: NSLoadButton {
 
     var menuItems = [NSMenuItem]()
-    var selectedMenuTitle: String? { didSet { self.titleLabel.stringValue = selectedMenuTitle ?? "No selection" } }
+    var selectedMenuTitle: String? { didSet { self.titleLabel.stringValue = selectedMenuTitle ?? "No selection".localized() } }
     
     func makeMenuItems() -> [NSMenuItem] { menuItems }
     
-    private let titleLabel = NSTextField(labelWithString: "No selection")
+    private let titleLabel = NSTextField(labelWithString: "No selection".localized())
     private let pulldownIndicator = NSImageView(image: R.Image.Tool.convert)
     private let stackView = NSStackView()
     private let backgroundLayer = ControlBackgroundLayer.animationDisabled()

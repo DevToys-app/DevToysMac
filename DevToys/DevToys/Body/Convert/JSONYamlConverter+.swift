@@ -97,7 +97,7 @@ private enum FormatStyle: String, TextItem {
     case pretty = "Pretty"
     case minified = "Minified"
     
-    var title: String { rawValue }
+    var title: String { rawValue.localized() }
 }
 
 final private class JSONYamlConverterView: Page {
@@ -107,8 +107,8 @@ final private class JSONYamlConverterView: Page {
     let jsonSection = CodeViewSection(title: "JSON", options: .all, language: .javascript)
     let yamlSection = CodeViewSection(title: "Yaml", options: .all, language: .yaml)
     
-    private lazy var formatStyleArea = Area(icon: R.Image.format, title: "Format", control: formatStylePicker)
-    private lazy var configurationSection = Section(title: "Configuration", items: [formatStyleArea])
+    private lazy var formatStyleArea = Area(icon: R.Image.format, title: "Format".localized(), control: formatStylePicker)
+    private lazy var configurationSection = Section(title: "Configuration".localized(), items: [formatStyleArea])
     private lazy var ioStack = self.addSection2(jsonSection, yamlSection)
     
     override func layout() {
@@ -120,8 +120,6 @@ final private class JSONYamlConverterView: Page {
     }
     
     override func onAwake() {
-        self.title = "JSON <> Yaml Converter"
-        
         self.addSection(configurationSection)
     }
 }

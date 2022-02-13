@@ -6,6 +6,27 @@
   
 */
 
+// - General -
+"Configuration" = "Configuration";
+"Format" = "Format";
+"Pretty" = "Pretty";
+"Minified" = "Minified";
+"Encoded" = "Encoded";
+"Decoded" = "Decoded";
+"File" = "File";
+"Copy" = "Copy";
+"Paste" = "Paste";
+"Copied!" = "Copied!";
+"Pasted!" = "Pasted";
+"Open" = "Open";
+"Export" = "Export";
+"Import" = "Import";
+"Input" = "Input";
+"Output" = "Output";
+"No selection" = "No selection";
+"Drop Files Here" = "Drop Files Here";
+"Untitled Tool" = "Untitled Tool";
+
 // - Category -
 "category.home" = "Home";
 "category.converters" = "Converters";
@@ -27,10 +48,19 @@
 "tool.numbase.title" = "Number Base Converter";
 "tool.numbase.mintitle" = "Number Base";
 "tool.numbase.description" = "Convert numbers from one base to another";
+"Format Number" = "Format Number";
+"Decimal" = "Decimal";
+"Hexdecimal" = "Hexdecimal";
+"Octal" = "Octal";
+"Binary" = "Binary";
 
 "tool.date.title" = "Date Converter";
 "tool.date.mintitle" = "Date";
 "tool.date.description" = "Converts date from one format to another";
+"Date" = "Date";
+"Unix Time" = "Unix Time";
+"ISO 8601" = "ISO 8601";
+"Calender" = "Calender";
 
 "tool.html.title" = "HTML Encoder / Decoder";
 "tool.html.mintitle" = "HTML";
@@ -87,3 +117,15 @@
 "tool.hyphenremove.title" = "Hyphenation Remover";
 "tool.hyphenremove.mintitle" = "Hyphenation";
 "tool.hyphenremove.description" = "Remove hyphenations copied from PDF text";
+
+"tool.imageoptim.title" = "PNG / JPEG Compressor";
+"tool.imageoptim.mintitle" = "PNG / JPEG Compressor";
+"tool.imageoptim.description" = "Lossless PNG and JPEG optimizer";
+
+"tool.pdfgen.title" = "PDF Generator";
+"tool.pdfgen.mintitle" = "PDF Generator";
+"tool.pdfgen.description" = "Generate PDF from multiple images";
+
+"tool.imageconvert.title" = "Image Converter";
+"tool.imageconvert.mintitle" = "Image Converter";
+"tool.imageconvert.description" = "Convert or Resize images";

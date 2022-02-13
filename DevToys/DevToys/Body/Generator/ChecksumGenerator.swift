@@ -90,9 +90,7 @@ final private class ChecksumGeneratorView: Page {
         hashAlgorithmArea
     ])
         
-    override func onAwake() {
-        self.title = "Checksum Generator"
-        
+    override func onAwake() {        
         self.addSection(configurationSection)
         self.addSection(fileSection)
         

@@ -6,6 +6,27 @@
   
 */
 
+// - General -
+"Configuration" = "設定";
+"Format" = "フォーマット";
+"Pretty" = "美しく";
+"Minified" = "小さく";
+"Encoded" = "エンコード";
+"Decoded" = "デコード";
+"File" = "ファイル";
+"Copy" = "コピー";
+"Paste" = "ペースト";
+"Copied!" = "コピーされました";
+"Pasted!" = "ペーストされました";
+"Open" = "開く";
+"Export" = "書き出し";
+"Import" = "開く...";
+"Input" = "入力";
+"Output" = "出力";
+"No selection" = "選択なし";
+"Drop Files Here" = "ここにファイルをドロップ";
+"Untitled Tool" = "無名のツール";
+
 // - Category -
 "category.home" = "ホーム";
 "category.converters" = "変換";
@@ -20,23 +41,32 @@
 "tool.home.mintitle" = "ホーム";
 "tool.home.description" = "全てのツールをここで探せます";
 
-"tool.jsonyaml.title" = "JSON/Yaml変換";
+"tool.jsonyaml.title" = "JSONとYamlの変換";
 "tool.jsonyaml.mintitle" = "JSON/Yaml";
 "tool.jsonyaml.description" = "JSONとYamlを相互に変換します";
 
-"tool.numbase.title" = "基数変換";
-"tool.numbase.mintitle" = "基数変換";
+"tool.numbase.title" = "基数の変換";
+"tool.numbase.mintitle" = "基数の変換";
 "tool.numbase.description" = "数値の進法を変換します";
+"Format Number" = "数値をフォーマット";
+"Decimal" = "10進数";
+"Hexdecimal" = "16進数";
+"Octal" = "8進数";
+"Binary" = "2進数";
 
-"tool.date.title" = "日付変換";
-"tool.date.mintitle" = "日付変換";
+"tool.date.title" = "日付の変換";
+"tool.date.mintitle" = "日付の変換";
 "tool.date.description" = "日付の表現を変換します";
+"Date" = "日付";
+"Unix Time" = "Unix時";
+"ISO 8601" = "ISO 8601";
+"Calender" = "カレンダー";
 
-"tool.html.title" = "HTMLエンコード・デコード";
+"tool.html.title" = "HTMLのエンコード・デコード";
 "tool.html.mintitle" = "HTML";
 "tool.html.description" = "文字をHTMLエスケープ・アンエスケープします";
 
-"tool.url.title" = "URLエンコード・デコード";
+"tool.url.title" = "URLのエンコード・デコード";
 "tool.url.mintitle" = "URL";
 "tool.url.description" = "文字をURLパーセントエンコード・逆パーセントエンコードします";
 
@@ -44,31 +74,31 @@
 "tool.base64.mintitle" = "Base64";
 "tool.base64.description" = "文字・ファイルをBase64にエンコード・デコードします";
 
-"tool.jwt.title" = "JWTデコード";
+"tool.jwt.title" = "JWTのデコード";
 "tool.jwt.mintitle" = "JWT";
 "tool.jwt.description" = "JWTのヘッダ・ペイロードをデコードします";
 
-"tool.jsonformat.title" = "JSONフォーマット";
+"tool.jsonformat.title" = "JSONのフォーマット";
 "tool.jsonformat.mintitle" = "JSON";
 "tool.jsonformat.description" = "JSONデータを美しく表示したり、最小化します";
 
-"tool.xmlformat.title" = "XMLフォーマット";
+"tool.xmlformat.title" = "XMLのフォーマット";
 "tool.xmlformat.mintitle" = "XML";
 "tool.xmlformat.description" = "XMLデータを美しく表示したり、最小化します";
 
-"tool.hashgen.title" = "Hashジェネレータ";
+"tool.hashgen.title" = "Hashを生成";
 "tool.hashgen.mintitle" = "Hash";
 "tool.hashgen.description" = "テキストのMD5・SHA1・SHA256・SHA512を計算します";
 
-"tool.uuidgen.title" = "UUIDジェネレータ";
+"tool.uuidgen.title" = "UUIDを生成";
 "tool.uuidgen.mintitle" = "UUID";
 "tool.uuidgen.description" = "UUIDsを生成します";
 
-"tool.ligen.title" = "Lorem Ipsumジェネレータ";
+"tool.ligen.title" = "Lorem Ipsumを生成";
 "tool.ligen.mintitle" = "Lorem Ipsum";
 "tool.ligen.description" = "Lorem Ipsumの単語・文・段落を生成します";
 
-"tool.checksum.title" = "Checksumジェネレータ";
+"tool.checksum.title" = "Checksumを生成";
 "tool.checksum.mintitle" = "Checksum";
 "tool.checksum.description" = "ファイルのChecksumを生成・検証します";
 
@@ -76,10 +106,22 @@
 "tool.textinspect.mintitle" = "データと文字変換";
 "tool.textinspect.description" = "テキストのデータの解析・文字変換を行います";
 
-"tool.regex.title" = "正規表現テスター";
+"tool.regex.title" = "正規表現のテスト";
 "tool.regex.mintitle" = "正規表現";
 "tool.regex.description" = "正規表現をテストします";
 
 "tool.hyphenremove.title" = "ハイフン削除";
 "tool.hyphenremove.mintitle" = "ハイフン削除";
 "tool.hyphenremove.description" = "PDFテキストからコピーされたハイフンを削除します";
+
+"tool.imageoptim.title" = "PNG・JPEG最適化";
+"tool.imageoptim.mintitle" = "PNG・JPEG最適化";
+"tool.imageoptim.description" = "PNG・JPEG形式の画像を最適化してファイルサイズを小さくします";
+
+"tool.pdfgen.title" = "画像をPDF化";
+"tool.pdfgen.mintitle" = "画像をPDF化";
+"tool.pdfgen.description" = "複数枚の画像を1つのPDFファイルにまとめます";
+
+"tool.imageconvert.title" = "画像の変換";
+"tool.imageconvert.mintitle" = "画像の変換";
+"tool.imageconvert.description" = "画像のフォーマットの変換やリサイズを行います";

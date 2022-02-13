@@ -107,7 +107,6 @@ final private class XMLFormatterView: Page {
     }
     
     override func onAwake() {
-        self.title = "XML Formatter"
         self.addSection(configurationSection)
     }
 }

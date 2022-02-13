@@ -11,7 +11,7 @@ class SectionButton: NSLoadButton {
     override var title: String { didSet { updateTitle()  } }
     override var image: NSImage? { didSet { iconView.image = image } }
     
-    private let titleLabel = NSTextField(labelWithString: "Paste")
+    private let titleLabel = NSTextField(labelWithString: "Paste".localized())
     private let iconView = NSImageView(image: R.Image.Tool.convert)
     
     private let stackView = NSStackView()

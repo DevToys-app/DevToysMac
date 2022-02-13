@@ -99,9 +99,7 @@ final private class Base64DecoderView: Page {
         }
     }
     
-    override func onAwake() {
-        self.title = "Base64 Encoder / Decoder"
-            
+    override func onAwake() {            
         self.addSection(Section(title: "Configuration", items: [
             Area(icon: R.Image.convert, title: "Source Type", control: sourceTypePicker)
         ]))

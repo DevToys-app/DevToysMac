@@ -34,6 +34,10 @@ final class AppWindowController: NSWindowController {
         self.appModel.toolManager.registerTool(.regexTester)
         self.appModel.toolManager.registerTool(.hyphenationRemover)
         
+        self.appModel.toolManager.registerTool(.imageOptimizer)
+        self.appModel.toolManager.registerTool(.pdfGenerator)
+        self.appModel.toolManager.registerTool(.imageConverter)
+        
         self.contentViewController?.chainObject = appModel
         
         appModel.$tool

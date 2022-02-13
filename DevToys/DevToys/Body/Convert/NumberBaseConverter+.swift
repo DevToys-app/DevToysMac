@@ -100,18 +100,16 @@ final class NumberBaseConverterViewController: NSViewController {
 final private class NumberBaseConverterView: Page {
     let formatSwitch = NSSwitch()
     
-    let decimalSection = TextFieldSection(title: "Decimal")
-    let hexSection = TextFieldSection(title: "Hexdecimal")
-    let octalSection = TextFieldSection(title: "Octal")
-    let binarySection = TextFieldSection(title: "Binary")
+    let decimalSection = TextFieldSection(title: "Decimal".localized())
+    let hexSection = TextFieldSection(title: "Hexdecimal".localized())
+    let octalSection = TextFieldSection(title: "Octal".localized())
+    let binarySection = TextFieldSection(title: "Binary".localized())
     
-    private lazy var formatNumberArea = Area(icon: R.Image.format, title: "Format number", control: formatSwitch)
+    private lazy var formatNumberArea = Area(icon: R.Image.format, title: "Format Number".localized(), control: formatSwitch)
     
-    private lazy var configurationSection = Section(title: "Configuration", items: [formatNumberArea])
+    private lazy var configurationSection = Section(title: "Configuration".localized(), items: [formatNumberArea])
     
-    override func onAwake() {
-        self.title = "Number Base Converter"
-        
+    override func onAwake() {        
         self.addSection(configurationSection)
         
         self.addSection(decimalSection)

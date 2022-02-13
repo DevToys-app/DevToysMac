@@ -135,7 +135,6 @@ final private class PDFGeneratorView: Page {
     }
     
     override func onAwake() {
-        self.title = "PDF Generator"
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
         self.addSection2(

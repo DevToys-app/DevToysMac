@@ -74,8 +74,10 @@ enum R {
             static let markdownPreview = NSImage(named: "tool/markdown.preview")!
             
             static let graphic = NSImage(named: "tool/graphic")!
+            static let pdfGenerator = NSImage(named: "tool/pdf")!
             static let colorBlindnessSimulator = NSImage(named: "tool/color.blindness.simulator")!
             static let imageCompressor = NSImage(named: "tool/image.compressor")!
+            static let imageConverter = NSImage(named: "tool/image.converter")!
             
             static let network = NSImage(named: "tool/network")!
             static let api = NSImage(named: "tool/api")!

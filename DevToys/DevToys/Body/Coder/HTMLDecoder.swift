@@ -46,9 +46,7 @@ final private class HTMLDecoderView: Page {
         }
     }
     
-    override func onAwake() {
-        self.title = "HTML Encoder / Decoder"
-        
+    override func onAwake() {        
         self.addSection(encodeTextSection)
         self.addSection(decodeTextSection)
     }

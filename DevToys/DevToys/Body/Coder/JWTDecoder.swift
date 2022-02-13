@@ -64,9 +64,7 @@ final private class JWTDecoderView: Page {
     let headerCodeSection = CodeViewSection(title: "Header", options: .defaultOutput, language: .javascript)
     let payloadCodeSection = CodeViewSection(title: "Payload", options: .defaultOutput, language: .javascript)
     
-    override func onAwake() {
-        self.title = "JWT Decoder"
-        
+    override func onAwake() {        
         self.addSection(tokenTextSection)
         self.tokenTextSection.textView.snp.remakeConstraints{ make in
             make.height.equalTo(85)
