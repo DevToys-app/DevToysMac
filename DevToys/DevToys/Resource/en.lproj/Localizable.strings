@@ -14,6 +14,7 @@
 "Encoded" = "Encoded";
 "Decoded" = "Decoded";
 "File" = "File";
+"Text" = "Text";
 "Copy" = "Copy";
 "Paste" = "Paste";
 "Copied!" = "Copied!";
@@ -57,6 +58,7 @@
 "tool.date.title" = "Date Converter";
 "tool.date.mintitle" = "Date";
 "tool.date.description" = "Converts date from one format to another";
+"Now" = "Now";
 "Date" = "Date";
 "Unix Time" = "Unix Time";
 "ISO 8601" = "ISO 8601";
@@ -73,14 +75,24 @@
 "tool.base64.title" = "Base64 Encoder / Decoder";
 "tool.base64.mintitle" = "Base64";
 "tool.base64.description" = "Encode and decode Base64 data";
+"Source Type" = "Source Type";
+"Text Source" = "Text Source";
+"File Source" = "File Source";
 
 "tool.jwt.title" = "JWT Encoder / Decoder";
 "tool.jwt.mintitle" = "JWT";
 "tool.jwt.description" = "Decode a JWT header playload and signature";
+"JWT Token" = "JWT Token";
+"Header" = "Header";
+"Payload" = "Payload";
 
 "tool.jsonformat.title" = "JSON Formatter";
 "tool.jsonformat.mintitle" = "JSON";
 "tool.jsonformat.description" = "Indent or minify Json data";
+"Indentation" = "Indentation";
+"2 Spaces" = "2 Spaces";
+"4 Spaces" = "4 Spaces";
+"1 Tab" = "1 Tab";
 
 "tool.xmlformat.title" = "XML Formatter";
 "tool.xmlformat.mintitle" = "XML";

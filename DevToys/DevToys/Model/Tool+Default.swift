@@ -50,7 +50,7 @@ extension Tool {
     static let jwtCoder = Tool(
         title: "tool.jwt.title".localized(), identifier: "jwt.converter", category: .encoderDecoder, icon: R.Image.Tool.jwtCoder,
         sidebarTitle: "tool.jwt.mintitle".localized(), toolDescription: "tool.jwt.description".localized(),
-        viewController: Base64DecoderViewController()
+        viewController: JWTDecoderViewController()
     )
     
     // MARK: - Formatter -

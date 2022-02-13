@@ -60,9 +60,9 @@ final class JWTDecoderViewController: NSViewController {
 
 final private class JWTDecoderView: Page {
     
-    let tokenTextSection = TextViewSection(title: "JWT Token", options: .defaultInput)
-    let headerCodeSection = CodeViewSection(title: "Header", options: .defaultOutput, language: .javascript)
-    let payloadCodeSection = CodeViewSection(title: "Payload", options: .defaultOutput, language: .javascript)
+    let tokenTextSection = TextViewSection(title: "JWT Token".localized(), options: .defaultInput)
+    let headerCodeSection = CodeViewSection(title: "Header".localized(), options: .defaultOutput, language: .javascript)
+    let payloadCodeSection = CodeViewSection(title: "Payload".localized(), options: .defaultOutput, language: .javascript)
     
     override func onAwake() {        
         self.addSection(tokenTextSection)

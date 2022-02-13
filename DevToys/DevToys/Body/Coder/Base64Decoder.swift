@@ -70,19 +70,19 @@ final class Base64DecoderViewController: NSViewController {
 private enum SourceType: String, TextItem {
     case text = "Text Source"
     case file = "File Source"
-    var title: String { rawValue }
+    var title: String { rawValue.localized() }
 }
 
 final private class Base64DecoderView: Page {
     let sourceTypePicker = EnumPopupButton<SourceType>()
     
     let fileDrop = FileDrop()
-    let exportButton = SectionButton(title: "Export", image: R.Image.export)
+    let exportButton = SectionButton(title: "Export".localized(), image: R.Image.export)
     let encodeSectionContainer = NSPlaceholderView()
-    let encodeTextSection = TextViewSection(title: "Text", options: [.all])
-    lazy var fileDropSection = Section(title: "File", items: [fileDrop], toolbarItems: [exportButton])
+    let encodeTextSection = TextViewSection(title: "Text".localized(), options: [.all])
+    lazy var fileDropSection = Section(title: "File".localized(), items: [fileDrop], toolbarItems: [exportButton])
     
-    let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])
+    let decodeTextSection = TextViewSection(title: "Decoded".localized(), options: [.all])
     
     override func layout() {
         super.layout()
@@ -100,8 +100,8 @@ final private class Base64DecoderView: Page {
     }
     
     override func onAwake() {            
-        self.addSection(Section(title: "Configuration", items: [
-            Area(icon: R.Image.convert, title: "Source Type", control: sourceTypePicker)
+        self.addSection(Section(title: "Configuration".localized(), items: [
+            Area(icon: R.Image.convert, title: "Source Type".localized(), control: sourceTypePicker)
         ]))
         self.encodeSectionContainer.contentView = encodeTextSection
         self.addSection(encodeSectionContainer)

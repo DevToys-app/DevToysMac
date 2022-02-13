@@ -34,8 +34,8 @@ final class URLDecoderViewController: NSViewController {
 }
 
 final private class URLDecoderView: Page {
-    let encodeTextSection = TextViewSection(title: "Encoded", options: [.all])
-    let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])
+    let encodeTextSection = TextViewSection(title: "Encoded".localized(), options: [.all])
+    let decodeTextSection = TextViewSection(title: "Decoded".localized(), options: [.all])
     
     override func layout() {
         super.layout()

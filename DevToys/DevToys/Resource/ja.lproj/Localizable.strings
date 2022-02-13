@@ -14,6 +14,7 @@
 "Encoded" = "エンコード";
 "Decoded" = "デコード";
 "File" = "ファイル";
+"Text" = "テキスト";
 "Copy" = "コピー";
 "Paste" = "ペースト";
 "Copied!" = "コピーされました";
@@ -57,6 +58,7 @@
 "tool.date.title" = "日付の変換";
 "tool.date.mintitle" = "日付の変換";
 "tool.date.description" = "日付の表現を変換します";
+"Now" = "現在";
 "Date" = "日付";
 "Unix Time" = "Unix時";
 "ISO 8601" = "ISO 8601";
@@ -73,14 +75,24 @@
 "tool.base64.title" = "Base64エンコード・デコード";
 "tool.base64.mintitle" = "Base64";
 "tool.base64.description" = "文字・ファイルをBase64にエンコード・デコードします";
+"Source Type" = "入力";
+"Text Source" = "テキストを入力";
+"File Source" = "ファイルを入力";
 
 "tool.jwt.title" = "JWTのデコード";
 "tool.jwt.mintitle" = "JWT";
 "tool.jwt.description" = "JWTのヘッダ・ペイロードをデコードします";
+"JWT Token" = "JWTトークン";
+"Header" = "ヘッダ";
+"Payload" = "ペイロード";
 
 "tool.jsonformat.title" = "JSONのフォーマット";
 "tool.jsonformat.mintitle" = "JSON";
 "tool.jsonformat.description" = "JSONデータを美しく表示したり、最小化します";
+"Indentation" = "インデント";
+"2 Spaces" = "2スペース";
+"4 Spaces" = "4スペース";
+"1 Tab" = "1タブ";
 
 "tool.xmlformat.title" = "XMLのフォーマット";
 "tool.xmlformat.mintitle" = "XML";

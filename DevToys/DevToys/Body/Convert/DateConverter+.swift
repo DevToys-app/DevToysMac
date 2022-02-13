@@ -53,7 +53,7 @@ final private class DateConverterView: Page {
     let graphicDatePicker = NSDatePicker()
     
     override func onAwake() {        
-        self.addSection(Section(title: "Date", items: [
+        self.addSection(Section(title: "Date".localized(), items: [
             NSStackView() => {
                 $0.distribution = .equalSpacing
                 $0.addArrangedSubview(datePicker)
@@ -64,14 +64,14 @@ final private class DateConverterView: Page {
             make.right.equalTo(nowButton.snp.left).inset(-8)
         }
         
-        self.addSection(Section(title: "Unix Time", items: [unixTimeField]))
+        self.addSection(Section(title: "Unix Time".localized(), items: [unixTimeField]))
         self.unixTimeField.showStepper = false
         self.unixTimeField.snp.remakeConstraints{ make in
             make.height.equalTo(R.Size.controlHeight)
         }
-        self.addSection(Section(title: "ISO 8601", items: [isoDateField]))
+        self.addSection(Section(title: "ISO 8601".localized(), items: [isoDateField]))
         
-        self.addSection(Section(title: "Calender", items: [graphicDatePicker]))
+        self.addSection(Section(title: "Calender".localized(), items: [graphicDatePicker]))
         self.graphicDatePicker.datePickerStyle = .clockAndCalendar
     }
 }

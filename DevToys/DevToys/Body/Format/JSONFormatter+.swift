@@ -53,17 +53,17 @@ enum JSONSpacingType: String, TextItem {
     case tab1 = "1 Tab"
     case minified = "Minified"
     
-    var title: String { rawValue }
+    var title: String { rawValue.localized() }
 }
 
 final private class JSONFormatterView: Page {
     
     let indentControl = EnumPopupButton<JSONSpacingType>()
-    let inputSection = CodeViewSection(title: "Input", options: .defaultInput, language: .javascript)
-    let outputSection = CodeViewSection(title: "Output", options: .defaultOutput, language: .javascript)
+    let inputSection = CodeViewSection(title: "Input".localized(), options: .defaultInput, language: .javascript)
+    let outputSection = CodeViewSection(title: "Output".localized(), options: .defaultOutput, language: .javascript)
         
-    private lazy var indentArea = Area(icon: R.Image.spacing, title: "Indentation", control: indentControl)
-    private lazy var configurationSection = Section(title: "Configuration", items: [indentArea])
+    private lazy var indentArea = Area(icon: R.Image.spacing, title: "Indentation".localized(), control: indentControl)
+    private lazy var configurationSection = Section(title: "Configuration".localized(), items: [indentArea])
     private lazy var ioStack = self.addSection2(inputSection, outputSection)
     
     override func layout() {

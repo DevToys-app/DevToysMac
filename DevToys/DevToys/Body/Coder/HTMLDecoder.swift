@@ -31,8 +31,8 @@ final class HTMLDecoderViewController: NSViewController {
 
 final private class HTMLDecoderView: Page {
     
-    let encodeTextSection = CodeViewSection(title: "Encoded", options: [.all], language: .xml)
-    let decodeTextSection = TextViewSection(title: "Decoded", options: [.all])
+    let encodeTextSection = CodeViewSection(title: "Encoded".localized(), options: [.all], language: .xml)
+    let decodeTextSection = TextViewSection(title: "Decoded".localized(), options: [.all])
     
     override func layout() {
         super.layout()
