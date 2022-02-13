@@ -25,6 +25,15 @@ final class AppWindowController: NSWindowController {
         self.appModel.toolManager.registerTool(.jsonFormatter)
         self.appModel.toolManager.registerTool(.xmlFormatter)
         
+        self.appModel.toolManager.registerTool(.hashGenerator)
+        self.appModel.toolManager.registerTool(.uuidGenerator)
+        self.appModel.toolManager.registerTool(.loremIpsumGenerator)
+        self.appModel.toolManager.registerTool(.checksumGenerator)
+        
+        self.appModel.toolManager.registerTool(.textInspector)
+        self.appModel.toolManager.registerTool(.regexTester)
+        self.appModel.toolManager.registerTool(.hyphenationRemover)
+        
         self.contentViewController?.chainObject = appModel
         
         appModel.$tool

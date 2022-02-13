@@ -11,7 +11,7 @@
 "category.converters" = "変換";
 "category.encoders_decoders" = "エンコード / デコード";
 "category.formatters" = "フォーマット";
-"category.generators" = "生成機";
+"category.generators" = "生成";
 "category.text" = "テキスト";
 "category.graphic" = "メディア";
 
@@ -55,3 +55,31 @@
 "tool.xmlformat.title" = "XMLフォーマット";
 "tool.xmlformat.mintitle" = "XML";
 "tool.xmlformat.description" = "XMLデータを美しく表示したり、最小化します";
+
+"tool.hashgen.title" = "Hashジェネレータ";
+"tool.hashgen.mintitle" = "Hash";
+"tool.hashgen.description" = "テキストのMD5・SHA1・SHA256・SHA512を計算します";
+
+"tool.uuidgen.title" = "UUIDジェネレータ";
+"tool.uuidgen.mintitle" = "UUID";
+"tool.uuidgen.description" = "UUIDsを生成します";
+
+"tool.ligen.title" = "Lorem Ipsumジェネレータ";
+"tool.ligen.mintitle" = "Lorem Ipsum";
+"tool.ligen.description" = "Lorem Ipsumの単語・文・段落を生成します";
+
+"tool.checksum.title" = "Checksumジェネレータ";
+"tool.checksum.mintitle" = "Checksum";
+"tool.checksum.description" = "ファイルのChecksumを生成・検証します";
+
+"tool.textinspect.title" = "テキストデータと文字変換";
+"tool.textinspect.mintitle" = "データと文字変換";
+"tool.textinspect.description" = "テキストのデータの解析・文字変換を行います";
+
+"tool.regex.title" = "正規表現テスター";
+"tool.regex.mintitle" = "正規表現";
+"tool.regex.description" = "正規表現をテストします";
+
+"tool.hyphenremove.title" = "ハイフン削除";
+"tool.hyphenremove.mintitle" = "ハイフン削除";
+"tool.hyphenremove.description" = "PDFテキストからコピーされたハイフンを削除します";

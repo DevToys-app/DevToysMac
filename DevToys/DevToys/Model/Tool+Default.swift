@@ -64,4 +64,43 @@ extension Tool {
         sidebarTitle: "tool.xmlformat.mintitle".localized(), toolDescription: "tool.xmlformat.description".localized(),
         viewController: XMLFormatterViewController()
     )
+    
+    // MARK: - Generators -
+    static let hashGenerator = Tool(
+        title: "tool.hashgen.title".localized(), identifier: "hash.generator", category: .generator, icon: R.Image.Tool.hashGenerator,
+        sidebarTitle: "tool.hashgen.mintitle".localized(), toolDescription: "tool.hashgen.description".localized(),
+        viewController: HashGeneratorViewController()
+    )
+    static let uuidGenerator = Tool(
+        title: "tool.uuidgen.title".localized(), identifier: "uuid.generator", category: .generator, icon: R.Image.Tool.uuidGenerator,
+        sidebarTitle: "tool.uuidgen.mintitle".localized(), toolDescription: "tool.uuidgen.description".localized(),
+        viewController: UUIDGeneratorViewController()
+    )
+    static let loremIpsumGenerator = Tool(
+        title: "tool.ligen.title".localized(), identifier: "loremIpsum.generator", category: .generator, icon: R.Image.Tool.loremIpsumGenerator,
+        sidebarTitle: "tool.ligen.mintitle".localized(), toolDescription: "tool.ligen.description".localized(),
+        viewController: LoremIpsumGeneratorViewController()
+    )
+    static let checksumGenerator = Tool(
+        title: "tool.checksum.title".localized(), identifier: "checksum.generator", category: .generator, icon: R.Image.Tool.hashGenerator,
+        sidebarTitle: "tool.checksum.mintitle".localized(), toolDescription: "tool.checksum.description".localized(),
+        viewController: ChecksumGeneratorViewController()
+    )
+    
+    // MARK: - Text -
+    static let textInspector = Tool(
+        title: "tool.textinspect.title".localized(), identifier: "textinspect", category: .text, icon: R.Image.Tool.textInspector,
+        sidebarTitle: "tool.textinspect.mintitle".localized(), toolDescription: "tool.textinspect.description".localized(),
+        viewController: TextInspectorViewController()
+    )
+    static let regexTester = Tool(
+        title: "tool.regex.title".localized(), identifier: "regex", category: .text, icon: R.Image.Tool.regexTester,
+        sidebarTitle: "tool.regex.mintitle".localized(), toolDescription: "tool.regex.description".localized(),
+        viewController: RegexTesterViewController()
+    )
+    static let hyphenationRemover = Tool(
+        title: "tool.hyphenremove.title".localized(), identifier: "hyphenremove", category: .text, icon: R.Image.Tool.textInspector,
+        sidebarTitle: "tool.hyphenremove.mintitle".localized(), toolDescription: "tool.hyphenremove.description".localized(),
+        viewController: HyphenationRemoverViewController()
+    )
 }
