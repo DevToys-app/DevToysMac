@@ -17,6 +17,8 @@ enum OptimizeLevel: String, TextItem {
     case medium = "Medium"
     case high = "High"
     case veryHigh = "Very High (Slow)"
+    
+    var title: String { rawValue.localized() }
 }
 
 enum ImageOptimizer {

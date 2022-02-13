@@ -79,11 +79,11 @@ final private class ImageOptimizerView: Page {
     override func onAwake() {
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
-        self.addSection(Section(title: "Configuration", items: [
-            Area(title: "Optimize Level", control: levelPicker),
+        self.addSection(Section(title: "Configuration".localized(), items: [
+            Area(title: "Optimize Level".localized(), control: levelPicker),
         ]))
         
-        self.addSection(Section(title: "Images", items: [listView]))
+        self.addSection(Section(title: "Images".localized(), items: [listView]))
         self.listView.snp.makeConstraints{ make in
             make.height.greaterThanOrEqualTo(1) // AppKitのバグ対処用
         }

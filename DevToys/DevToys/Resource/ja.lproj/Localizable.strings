@@ -156,6 +156,11 @@
 "tool.imageoptim.title" = "PNG・JPEG最適化";
 "tool.imageoptim.mintitle" = "PNG・JPEG最適化";
 "tool.imageoptim.description" = "PNG・JPEG形式の画像を最適化してファイルサイズを小さくします";
+"Optimize Level" = "最適化レベル";
+"Low" = "低レベル";
+"Medium" = "中レベル";
+"High" = "高レベル";
+"Very High (Slow)" = "非常に高レベル (時間がかかります)";
 
 "tool.pdfgen.title" = "画像をPDF化";
 "tool.pdfgen.mintitle" = "画像をPDF化";
@@ -168,3 +173,14 @@
 "tool.imageconvert.title" = "画像の変換";
 "tool.imageconvert.mintitle" = "画像の変換";
 "tool.imageconvert.description" = "画像のフォーマットの変換やリサイズを行います";
+"PNG Format" = "PNG形式";
+"JPEG Format" = "JPEG形式";
+"TIFF Format" = "TIFF形式";
+"GIF Format" = "GIF形式";
+"Scale to Fill" = "サイズを埋める";
+"Scale to Fit" = "サイズ内に収める";
+"Image Format" = "フォーマット";
+"Resize" = "リサイズ";
+"Converted Images" = "変換した画像";
+"Scale" = "大きさの変換";
+"Size" = "サイズ";

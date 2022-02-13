@@ -160,6 +160,11 @@
 "tool.imageoptim.title" = "PNG / JPEG Compressor";
 "tool.imageoptim.mintitle" = "PNG / JPEG Compressor";
 "tool.imageoptim.description" = "Lossless PNG and JPEG optimizer";
+"Optimize Level" = "Optimize Level";
+"Low" = "Low";
+"Medium" = "Medium";
+"High" = "High";
+"Very High (Slow)" = "Very High (Slow)";
 
 "tool.pdfgen.title" = "PDF Generator";
 "tool.pdfgen.mintitle" = "PDF Generator";
@@ -172,3 +177,14 @@
 "tool.imageconvert.title" = "Image Converter";
 "tool.imageconvert.mintitle" = "Image Converter";
 "tool.imageconvert.description" = "Convert or Resize images";
+"PNG Format" = "PNG Format";
+"JPEG Format" = "JPEG Format";
+"TIFF Format" = "TIFF Format";
+"GIF Format" = "GIF Format";
+"Scale to Fill" = "Scale to Fill";
+"Scale to Fit" = "Scale to Fit";
+"Image Format" = "Image Format";
+"Resize" = "Resize";
+"Converted Images" = "Converted Images";
+"Scale" = "Scale";
+"Size" = "Size";

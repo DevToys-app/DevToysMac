@@ -377,8 +377,8 @@
 		B6B5729027ACFE020069DBA7 /* Image Converter */ = {
 			isa = PBXGroup;
 			children = (
-				B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */,
 				B6B5728927ACDA420069DBA7 /* ImageConverterView+.swift */,
+				B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */,
 				B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */,
 			);
 			path = "Image Converter";

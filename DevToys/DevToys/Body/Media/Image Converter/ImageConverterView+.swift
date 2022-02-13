@@ -65,11 +65,15 @@ enum ImageFormatType: String, TextItem {
     case jpg = "JPEG Format"
     case tiff = "TIFF Format"
     case gif = "GIF Format"
+    
+    var title: String { rawValue.localized() }
 }
 
 enum ImageScaleMode: String, TextItem {
     case scaleToFill = "Scale to Fill"
     case scaleToFit = "Scale to Fit"
+    
+    var title: String { rawValue.localized() }
 }
 
 final private class ImageConverterView: Page {
@@ -87,8 +91,8 @@ final private class ImageConverterView: Page {
         $0.distribution = .fillProportionally
         $0.addArrangedSubview(spacer)
         $0.setCustomSpacing(0, after: spacer)
-        $0.addArrangedSubview(Area(title: "Scale", control: scaleModePicker))
-        $0.addArrangedSubview(Area(title: "Size", control: NSStackView() => {
+        $0.addArrangedSubview(Area(title: "Scale".localized(), control: scaleModePicker))
+        $0.addArrangedSubview(Area(title: "Size".localized(), control: NSStackView() => {
             $0.addArrangedSubview(widthField)
             $0.addArrangedSubview(NSTextField(labelWithString: "x"))
             $0.addArrangedSubview(heightField)
@@ -115,14 +119,14 @@ final private class ImageConverterView: Page {
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
 
         self.addSection(
-            Section(title: "Configuration", items: [
-                Area(icon: R.Image.format, title: "Image Format", control: formatTypePicker),
-                Area(icon: R.Image.paramators, title: "Resize", control: resizeSwitch),
+            Section(title: "Configuration".localized(), items: [
+                Area(icon: R.Image.format, title: "Image Format".localized(), control: formatTypePicker),
+                Area(icon: R.Image.paramators, title: "Resize".localized(), control: resizeSwitch),
                 resizeOptionStack
             ])
         )
         
-        self.addSection(Section(title: "Converted Images", items: [listView]))
+        self.addSection(Section(title: "Converted Images".localized(), items: [listView]))
     }
 }
 
