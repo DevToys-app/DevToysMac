@@ -60,6 +60,7 @@ enum R {
             
             static let formatter = NSImage(named: "tool/formatter")!
             static let jsonFormatter = NSImage(named: "tool/json.formatter")!
+            static let xmlFormatter = NSImage(named: "tool/xml.formatter")!
             
             static let generator = NSImage(named: "tool/generator")!
             static let uuidGenerator = NSImage(named: "tool/uuid.generator")!

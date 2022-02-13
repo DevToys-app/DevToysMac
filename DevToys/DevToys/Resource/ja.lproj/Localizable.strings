@@ -47,3 +47,11 @@
 "tool.jwt.title" = "JWTデコード";
 "tool.jwt.mintitle" = "JWT";
 "tool.jwt.description" = "JWTのヘッダ・ペイロードをデコードします";
+
+"tool.jsonformat.title" = "JSONフォーマット";
+"tool.jsonformat.mintitle" = "JSON";
+"tool.jsonformat.description" = "JSONデータを美しく表示したり、最小化します";
+
+"tool.xmlformat.title" = "XMLフォーマット";
+"tool.xmlformat.mintitle" = "XML";
+"tool.xmlformat.description" = "XMLデータを美しく表示したり、最小化します";

@@ -47,3 +47,11 @@
 "tool.jwt.title" = "JWT Encoder / Decoder";
 "tool.jwt.mintitle" = "JWT";
 "tool.jwt.description" = "Decode a JWT header playload and signature";
+
+"tool.jsonformat.title" = "JSON Formatter";
+"tool.jsonformat.mintitle" = "JSON";
+"tool.jsonformat.description" = "Indent or minify Json data";
+
+"tool.xmlformat.title" = "XML Formatter";
+"tool.xmlformat.mintitle" = "XML";
+"tool.xmlformat.description" = "Indent or minify XML data";

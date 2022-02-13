@@ -14,6 +14,7 @@ extension Tool {
         viewController: HomeViewController()
     )
     
+    // MARK: - Converters -
     static let jsonYamlConverter = Tool(
         title: "tool.jsonyaml.title".localized(), identifier: "jsonyaml", category: .converter, icon: R.Image.Tool.jsonConvert,
         sidebarTitle: "tool.jsonyaml.mintitle".localized(), toolDescription: "tool.jsonyaml.description".localized(),
@@ -30,6 +31,7 @@ extension Tool {
         viewController: DateConverterViewController()
     )
     
+    // MARK: - Encoder / Decoder -
     static let htmlCoder = Tool(
         title: "tool.html.title".localized(), identifier: "html.converter", category: .encoderDecoder, icon: R.Image.Tool.htmlCoder,
         sidebarTitle: "tool.html.mintitle".localized(), toolDescription: "tool.html.description".localized(),
@@ -49,5 +51,17 @@ extension Tool {
         title: "tool.jwt.title".localized(), identifier: "jwt.converter", category: .encoderDecoder, icon: R.Image.Tool.jwtCoder,
         sidebarTitle: "tool.jwt.mintitle".localized(), toolDescription: "tool.jwt.description".localized(),
         viewController: Base64DecoderViewController()
+    )
+    
+    // MARK: - Formatter -
+    static let jsonFormatter = Tool(
+        title: "tool.jsonformat.title".localized(), identifier: "json.formatter", category: .formatter, icon: R.Image.Tool.jsonFormatter,
+        sidebarTitle: "tool.jsonformat.mintitle".localized(), toolDescription: "tool.jsonformat.description".localized(),
+        viewController: JSONFormatterViewController()
+    )
+    static let xmlFormatter = Tool(
+        title: "tool.xmlformat.title".localized(), identifier: "xml.formatter", category: .formatter, icon: R.Image.Tool.xmlFormatter,
+        sidebarTitle: "tool.xmlformat.mintitle".localized(), toolDescription: "tool.xmlformat.description".localized(),
+        viewController: XMLFormatterViewController()
     )
 }

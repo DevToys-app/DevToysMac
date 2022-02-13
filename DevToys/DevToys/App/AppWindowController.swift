@@ -22,6 +22,9 @@ final class AppWindowController: NSWindowController {
         self.appModel.toolManager.registerTool(.base64Coder)
         self.appModel.toolManager.registerTool(.jwtCoder)
         
+        self.appModel.toolManager.registerTool(.jsonFormatter)
+        self.appModel.toolManager.registerTool(.xmlFormatter)
+        
         self.contentViewController?.chainObject = appModel
         
         appModel.$tool
