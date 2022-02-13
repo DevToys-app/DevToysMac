@@ -764,7 +764,7 @@
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuki.DevToys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
@@ -795,7 +795,7 @@
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuki.DevToys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;

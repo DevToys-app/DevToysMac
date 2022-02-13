@@ -147,6 +147,14 @@ final private class ImageListView: NSLoadView {
         self.scrollView.documentView = listView
         self.listView.delegate = self
         self.listView.dataSource = self
+        
+        let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: "Open Finder", action: {[self] in
+            if let task = convertTasks.at(listView.clickedRow) {
+                NSWorkspace.shared.activateFileViewerSelecting([task.destinationURL])
+            }
+        }))
+        self.listView.menu = menu
     }
 }
 
@@ -165,7 +173,13 @@ extension ImageListView: NSTableViewDataSource, NSTableViewDelegate {
                 cell.checkImageView.isHidden = false
                 cell.progressIndicator.isHidden = true
             }
-            .sink({ cell.checkImageView.image = R.Image.check }, {_ in cell.checkImageView.image = R.Image.error })
+            .sink({
+                cell.checkImageView.image = R.Image.check
+                }, {
+                    print($0)
+                    cell.checkImageView.image = R.Image.error
+                }
+            )
         
         return cell
     }

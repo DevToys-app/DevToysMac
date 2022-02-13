@@ -11,23 +11,27 @@ struct ImageConvertTask {
     let image: NSImage
     let title: String
     let size: CGSize
+    let destinationURL: URL
     let isDone: Promise<Void, Error>
 }
 
 enum ImageConverter {
-    private static let destinationDirectory = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0].appendingPathComponent("Converted Images") => {
+    private static let destinationDirectory = FileManager.default.urls(for: .picturesDirectory, in: .userDomainMask)[0].appendingPathComponent("DevToys") => {
         try? FileManager.default.createDirectory(at: $0, withIntermediateDirectories: true, attributes: nil)
     }
     
     static func convert(_ item: ImageItem, format: ImageFormatType, resize: Bool, size: CGSize, scale: ImageScaleMode) -> ImageConvertTask {
         var image = item.image
-        print(resize, size, scale)
+        
         if resize {
             switch scale {
             case .scaleToFill: if let rimage = image.resizedAspectFill(to: size) { image = rimage }
             case .scaleToFit: if let rimage = image.resizedAspectFit(to: size) { image = rimage }
             }
         }
+        
+        let filename = "\(item.title.split(separator: ".").dropLast().joined(separator: ".")).\(format.exp)"
+        let destinationURL = destinationDirectory.appendingPathComponent(filename)
         
         let isDone = Promise<Data, Error>.asyncError{ resolve, reject in
             switch format {
@@ -42,13 +46,13 @@ enum ImageConverter {
             }
         }
         .tryPeek{ data in
-            let url = destinationDirectory.appendingPathComponent("\(item.title).\(format.exp)")
-            try data.write(to: url)
+            try data.write(to: destinationURL)
+            NSWorkspace.shared.activateFileViewerSelecting([destinationURL])
         }
         .receive(on: .main)
         .eraseToVoid()
         
-        return ImageConvertTask(image: item.image, title: item.title, size: item.image.size, isDone: isDone)
+        return ImageConvertTask(image: item.image, title: item.title, size: item.image.size, destinationURL: destinationURL, isDone: isDone)
     }
 }
 
