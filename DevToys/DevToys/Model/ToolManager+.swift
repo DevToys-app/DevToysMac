@@ -25,6 +25,9 @@ final class ToolManager {
         self.toolIdentifierMap[tool.identifier] = tool
     }
     
+    func allTools() -> [Tool] {
+        self.categories.compactMap{ toolCategoryMap[$0] }.reduce(into: [], +=)
+    }
     func toolForIdentifier(_ identifier: String) -> Tool? {
         self.toolIdentifierMap[identifier]
     }
@@ -77,11 +80,12 @@ final class Tool {
     let sidebarTitle: String
     let toolDescription: String
     let showAlways: Bool
+    let showOnHome: Bool
     private(set) lazy var viewController = makeViewController()
     
     private let makeViewController: () -> NSViewController
     
-    init(title: String, identifier: String, category: ToolCategory, icon: NSImage, sidebarTitle: String? = nil, toolDescription: String, showAlways: Bool = false, viewController: @autoclosure @escaping () -> NSViewController) {
+    init(title: String, identifier: String, category: ToolCategory, icon: NSImage, sidebarTitle: String? = nil, toolDescription: String, showAlways: Bool = false, showOnHome: Bool = true, viewController: @autoclosure @escaping () -> NSViewController) {
         self.title = title
         self.identifier = identifier
         self.category = category
@@ -89,6 +93,7 @@ final class Tool {
         self.sidebarTitle = sidebarTitle ?? title
         self.toolDescription = toolDescription
         self.showAlways = showAlways
+        self.showOnHome = showOnHome
         self.makeViewController = viewController
     }
 }

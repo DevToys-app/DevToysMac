@@ -1,5 +1,5 @@
 //
-//  AllToolCollectionItemView+.swift
+//  HomeViewController+.swift
 //  DevToys
 //
 //  Created by yuki on 2022/01/29.
@@ -7,11 +7,13 @@
 
 import CoreUtil
 
-final class AllToolCollectionItemViewController: PageViewController {
+final class HomeViewController: NSViewController {
     private let scrollView = NSScrollView()
     private let collectionView = NSCollectionView()
     
-    private let allTools = ToolType.allCases.filter{ $0 != .allTools }
+    private var tools: [Tool] = [] {
+        didSet { collectionView.reloadData() }
+    }
     
     override func loadView() {
         self.view = scrollView
@@ -26,37 +28,45 @@ final class AllToolCollectionItemViewController: PageViewController {
         self.collectionView.delegate = self
         self.collectionView.isSelectable = true
         self.collectionView.collectionViewLayout = flowLayout
-        self.collectionView.register(AllToolCollectionItem.self, forItemWithIdentifier: AllToolCollectionItem.identifier)
+        self.collectionView.register(ToolCollectionItem.self, forItemWithIdentifier: ToolCollectionItem.identifier)
+    }
+    
+    override func viewDidAppear() {
+        self.view.window?.title = "Home"
+    }
+    
+    override func chainObjectDidLoad() {
+        self.tools = appModel.toolManager.allTools().filter{ $0.showOnHome }
     }
 }
 
-extension AllToolCollectionItemViewController: NSCollectionViewDataSource {
+extension HomeViewController: NSCollectionViewDataSource {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.allTools.count
+        self.tools.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: AllToolCollectionItem.identifier, for: indexPath) as! AllToolCollectionItem
-        let tool = self.allTools[indexPath.item]
+        let item = collectionView.makeItem(withIdentifier: ToolCollectionItem.identifier, for: indexPath) as! ToolCollectionItem
+        let tool = self.tools[indexPath.item]
         
-        item.cell.icon = tool.toolListIcon
-        item.cell.title = tool.toolListTitle
+        item.cell.icon = tool.icon
+        item.cell.title = tool.title
         item.cell.toolDescription = tool.toolDescription
         
         return item
     }
 }
 
-extension AllToolCollectionItemViewController: NSCollectionViewDelegate {
+extension HomeViewController: NSCollectionViewDelegate {
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         guard let index = indexPaths.first?.item else { return }
-//        appModel.toolType = self.allTools[index]
+        appModel.tool = self.tools[index]
         self.collectionView.deselectAll(nil)
     }
 }
 
-final private class AllToolCollectionItem: NSCollectionViewItem {
-    static let identifier = NSUserInterfaceItemIdentifier("AllToolCollectionItem")
+final private class ToolCollectionItem: NSCollectionViewItem {
+    static let identifier = NSUserInterfaceItemIdentifier("ToolCollectionItem")
     
     let cell = AllToolCell()
     

@@ -53,6 +53,7 @@
 		B6AC27A427AA6F5C000FD713 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC27A227AA6F5C000FD713 /* Reachability.swift */; };
 		B6B5727A27AC223A0069DBA7 /* RestorableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5727927AC223A0069DBA7 /* RestorableState.swift */; };
 		B6B5727D27AC22480069DBA7 /* RestorableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5727C27AC22480069DBA7 /* RestorableData.swift */; };
+		B6BD80FA27B8B06900152AB9 /* Ex+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80F927B8B06900152AB9 /* Ex+Localize.swift */; };
 		B6D1AF3D27A60A210022FED2 /* ExceptionHanlder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AF3A27A60A210022FED2 /* ExceptionHanlder.m */; };
 		B6D1AF3E27A60A210022FED2 /* ExceptionHanlder.h in Headers */ = {isa = PBXBuildFile; fileRef = B6D1AF3B27A60A210022FED2 /* ExceptionHanlder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6D1AF3F27A60A210022FED2 /* ExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AF3C27A60A210022FED2 /* ExceptionHandler.swift */; };
@@ -102,6 +103,7 @@
 		B6AC27A227AA6F5C000FD713 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B6B5727927AC223A0069DBA7 /* RestorableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorableState.swift; sourceTree = "<group>"; };
 		B6B5727C27AC22480069DBA7 /* RestorableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorableData.swift; sourceTree = "<group>"; };
+		B6BD80F927B8B06900152AB9 /* Ex+Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+Localize.swift"; sourceTree = "<group>"; };
 		B6D1AF3A27A60A210022FED2 /* ExceptionHanlder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionHanlder.m; sourceTree = "<group>"; };
 		B6D1AF3B27A60A210022FED2 /* ExceptionHanlder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionHanlder.h; sourceTree = "<group>"; };
 		B6D1AF3C27A60A210022FED2 /* ExceptionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionHandler.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				B64B1EEC27A4F7AA00AC2601 /* Ex+Array.swift */,
 				B64B1EF227A4F7AA00AC2601 /* Ex+OptionSet.swift */,
 				B64B1EF327A4F7AA00AC2601 /* Ex+Clamp.swift */,
+				B6BD80F927B8B06900152AB9 /* Ex+Localize.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				B64B1F3627A4F83500AC2601 /* Ex+NSColor.swift in Sources */,
 				B64B209527A5323A00AC2601 /* Combine+ObjectBag.swift in Sources */,
 				B64B1EDC27A4F75600AC2601 /* PipeOperator.swift in Sources */,
+				B6BD80FA27B8B06900152AB9 /* Ex+Localize.swift in Sources */,
 				B64B1F1827A4F80800AC2601 /* Ex+CGPoint.swift in Sources */,
 				B680A86527A8C58C007CB707 /* Combine+Peek.swift in Sources */,
 				B64B1ED027A4F71200AC2601 /* ViewPlaceholder.swift in Sources */,

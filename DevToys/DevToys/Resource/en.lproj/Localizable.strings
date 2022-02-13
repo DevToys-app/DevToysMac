@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  DevToys
+
+  Created by yuki on 2022/02/13.
+  
+*/
+
+"category.home" = "Home";
+"category.converters" = "Converters";
+"category.encoder_decoder" = "Encoders / Decoders";
+"category.formatters" = "Formatters";
+"category.generators" = "Generators";
+"category.text" = = "Text";
+"category.graphic" = "Graphic";
