@@ -44,74 +44,39 @@ enum R {
         static let drop = NSImage(named: "drop")!
         static let export = NSImage(named: "export")!
         
-        enum Sidebar {
-            static let home = NSImage(named: "sidebar/home")!
+        enum Tool {
+            static let home = NSImage(named: "tool/home")!
             
-            static let convert = NSImage(named: "sidebar/convert")!
-            static let jsonConvert = NSImage(named: "sidebar/json.convert")!
-            static let numberBaseConvert = NSImage(named: "sidebar/number.base.convert")!
+            static let convert = NSImage(named: "tool/convert")!
+            static let jsonConvert = NSImage(named: "tool/json.convert")!
+            static let numberBaseConvert = NSImage(named: "tool/number.base.convert")!
             
-            static let encoderDecoder = NSImage(named: "sidebar/encoder.decoder")!
-            static let htmlCoder = NSImage(named: "sidebar/html.coder")!
-            static let urlCoder = NSImage(named: "sidebar/url.coder")!
-            static let base64Coder = NSImage(named: "sidebar/base64.coder")!
-            static let jwtCoder = NSImage(named: "sidebar/jwt.coder")!
+            static let encoderDecoder = NSImage(named: "tool/encoder.decoder")!
+            static let htmlCoder = NSImage(named: "tool/html.coder")!
+            static let urlCoder = NSImage(named: "tool/url.coder")!
+            static let base64Coder = NSImage(named: "tool/base64.coder")!
+            static let jwtCoder = NSImage(named: "tool/jwt.coder")!
             
-            static let formatter = NSImage(named: "sidebar/formatter")!
-            static let jsonFormatter = NSImage(named: "sidebar/json.formatter")!
+            static let formatter = NSImage(named: "tool/formatter")!
+            static let jsonFormatter = NSImage(named: "tool/json.formatter")!
             
-            static let generator = NSImage(named: "sidebar/generator")!
-            static let uuidGenerator = NSImage(named: "sidebar/uuid.generator")!
-            static let hashGenerator = NSImage(named: "sidebar/hash.generator")!
-            static let loremIpsumGenerator = NSImage(named: "sidebar/lorem.ipsum.generator")!
+            static let generator = NSImage(named: "tool/generator")!
+            static let uuidGenerator = NSImage(named: "tool/uuid.generator")!
+            static let hashGenerator = NSImage(named: "tool/hash.generator")!
+            static let loremIpsumGenerator = NSImage(named: "tool/lorem.ipsum.generator")!
             
-            static let text = NSImage(named: "sidebar/text")!
-            static let textInspector = NSImage(named: "sidebar/text.inspector")!
-            static let regexTester = NSImage(named: "sidebar/regex.tester")!
-            static let textDiff = NSImage(named: "sidebar/text.diff")!
-            static let markdownPreview = NSImage(named: "sidebar/markdown.preview")!
+            static let text = NSImage(named: "tool/text")!
+            static let textInspector = NSImage(named: "tool/text.inspector")!
+            static let regexTester = NSImage(named: "tool/regex.tester")!
+            static let textDiff = NSImage(named: "tool/text.diff")!
+            static let markdownPreview = NSImage(named: "tool/markdown.preview")!
             
-            static let graphic = NSImage(named: "sidebar/graphic")!
-            static let colorBlindnessSimulator = NSImage(named: "sidebar/color.blindness.simulator")!
-            static let imageCompressor = NSImage(named: "sidebar/image.compressor")!
+            static let graphic = NSImage(named: "tool/graphic")!
+            static let colorBlindnessSimulator = NSImage(named: "tool/color.blindness.simulator")!
+            static let imageCompressor = NSImage(named: "tool/image.compressor")!
             
-            static let network = NSImage(named: "sidebar/network")!
-            static let api = NSImage(named: "sidebar/api")!
-        }
-        
-        enum ToolList {
-            static let home = NSImage(named: "toollist/home")!
-            
-            static let convert = NSImage(named: "toollist/convert")!
-            static let jsonConvert = NSImage(named: "toollist/json.convert")!
-            static let numberBaseConvert = NSImage(named: "toollist/number.base.convert")!
-            
-            static let encoderDecoder = NSImage(named: "toollist/encoder.decoder")!
-            static let htmlCoder = NSImage(named: "toollist/html.coder")!
-            static let urlCoder = NSImage(named: "toollist/url.coder")!
-            static let base64Coder = NSImage(named: "toollist/base64.coder")!
-            static let jwtCoder = NSImage(named: "toollist/jwt.coder")!
-            
-            static let formatter = NSImage(named: "toollist/formatter")!
-            static let jsonFormatter = NSImage(named: "toollist/json.formatter")!
-            
-            static let generator = NSImage(named: "toollist/generator")!
-            static let uuidGenerator = NSImage(named: "toollist/uuid.generator")!
-            static let hashGenerator = NSImage(named: "toollist/hash.generator")!
-            static let loremIpsumGenerator = NSImage(named: "toollist/lorem.ipsum.generator")!
-            
-            static let text = NSImage(named: "toollist/text")!
-            static let textInspector = NSImage(named: "toollist/text.inspector")!
-            static let regexTester = NSImage(named: "toollist/regex.tester")!
-            static let textDiff = NSImage(named: "toollist/text.diff")!
-            static let markdownPreview = NSImage(named: "toollist/markdown.preview")!
-            
-            static let graphic = NSImage(named: "toollist/graphic")!
-            static let colorBlindnessSimulator = NSImage(named: "toollist/color.blindness.simulator")!
-            static let imageCompressor = NSImage(named: "toollist/image.compressor")!
-            
-            static let network = NSImage(named: "toollist/network")!
-            static let api = NSImage(named: "toollist/api")!
+            static let network = NSImage(named: "tool/network")!
+            static let api = NSImage(named: "tool/api")!
         }
     }
 }

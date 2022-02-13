@@ -20,11 +20,14 @@
 "tool.home.mintitle" = "ホーム";
 "tool.home.description" = "全てのツールをここで探せます";
 
-"tool.jsonyaml.title" = "JSON <> Yaml 変換";
-"tool.jsonyaml.mintitle" = "JSON <> Yaml";
+"tool.jsonyaml.title" = "JSON/Yaml 変換";
+"tool.jsonyaml.mintitle" = "JSON/Yaml";
 "tool.jsonyaml.description" = "JSONとYamlを相互に変換します";
 
 "tool.numbase.title" = "基数変換";
 "tool.numbase.mintitle" = "基数変換";
 "tool.numbase.description" = "数値の進法を変換します";
 
+"tool.date.title" = "日付変換";
+"tool.date.mintitle" = "日付変換";
+"tool.date.description" = "日付の表現を変換します";

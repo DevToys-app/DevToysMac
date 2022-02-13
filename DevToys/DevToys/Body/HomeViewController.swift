@@ -180,7 +180,7 @@ final private class AllToolCellIconView: NSLoadView {
         self.backgroundLayer.shadowOffset = [0, 2]
         
         self.addSubview(iconView)
-        self.iconView.image = R.Image.ToolList.base64Coder
+        self.iconView.image = R.Image.Tool.base64Coder
         self.iconView.contentTintColor = .textColor
         self.iconView.snp.makeConstraints{ make in
             make.size.equalTo(40)

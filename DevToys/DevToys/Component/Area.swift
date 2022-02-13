@@ -79,7 +79,7 @@ final class Area: NSLoadView {
         }
         
         self.stackView.addArrangedSubview(iconView)
-        self.iconView.image = R.Image.ToolList.base64Coder
+        self.iconView.image = R.Image.Tool.base64Coder
         self.iconView.snp.makeConstraints{ make in
             make.size.equalTo(24)
         }

@@ -27,3 +27,7 @@
 "tool.numbase.title" = "Number Base Converter";
 "tool.numbase.mintitle" = "Number Base";
 "tool.numbase.description" = "Convert numbers from one base to another";
+
+"tool.date.title" = "Date Converter";
+"tool.date.mintitle" = "Date";
+"tool.date.description" = "Converts date from one format to another";

@@ -14,6 +14,8 @@ final class AppWindowController: NSWindowController {
         self.appModel.toolManager.registerTool(.home)
         self.appModel.toolManager.registerTool(.jsonYamlConverter)
         self.appModel.toolManager.registerTool(.numberBaseConverter)
+        self.appModel.toolManager.registerTool(.dateConverter)
+        
         self.contentViewController?.chainObject = appModel
         
         appModel.$tool

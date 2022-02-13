@@ -12,7 +12,7 @@ class SectionButton: NSLoadButton {
     override var image: NSImage? { didSet { iconView.image = image } }
     
     private let titleLabel = NSTextField(labelWithString: "Paste")
-    private let iconView = NSImageView(image: R.Image.ToolList.convert)
+    private let iconView = NSImageView(image: R.Image.Tool.convert)
     
     private let stackView = NSStackView()
     private let backgroundLayer = ControlButtonBackgroundLayer.animationDisabled()

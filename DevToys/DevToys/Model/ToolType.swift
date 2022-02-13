@@ -41,56 +41,10 @@ enum ToolType: String, CaseIterable {
 
 extension ToolType {
     var sidebarIcon: NSImage {
-        switch self {
-        case .allTools: return R.Image.Sidebar.home
-        case .jsonYamlConvertor: return R.Image.Sidebar.jsonConvert
-        case .numberBaseConvertor: return R.Image.Sidebar.numberBaseConvert
-        case .htmlDecoder: return R.Image.Sidebar.htmlCoder
-        case .urlDecoder: return R.Image.Sidebar.urlCoder
-        case .base64Decoder: return R.Image.Sidebar.base64Coder
-        case .jwtDecoder: return R.Image.Sidebar.jwtCoder
-        case .jsonFormatter: return R.Image.Sidebar.jsonFormatter
-        case .xmlFormatter: return R.Image.Sidebar.jsonFormatter
-        case .hashGenerator: return R.Image.Sidebar.hashGenerator
-        case .uuidGenerator: return R.Image.Sidebar.uuidGenerator
-        case .loremIpsumGenerator: return R.Image.Sidebar.loremIpsumGenerator
-        case .checksumGenerator: return R.Image.Sidebar.hashGenerator
-        case .caseConverter: return R.Image.Sidebar.textInspector
-        case .regexTester: return R.Image.Sidebar.regexTester
-        case .hyphenationRemover: return R.Image.Sidebar.textInspector
-        case .imageCompressor: return R.Image.Sidebar.imageCompressor
-        case .imageConverter: return R.Image.Sidebar.imageCompressor
-        case .pdfGenerator: return R.Image.Sidebar.graphic
-        case .networkInformation: return R.Image.Sidebar.network
-        case .apiTest: return R.Image.Sidebar.api
-        case .dateConvertor: return R.Image.speed
-        }
+        fatalError("ToolType will be removed.")
     }
     var toolListIcon: NSImage {
-        switch self {
-        case .allTools: return R.Image.ToolList.home
-        case .jsonYamlConvertor: return R.Image.ToolList.jsonConvert
-        case .numberBaseConvertor: return R.Image.ToolList.numberBaseConvert
-        case .htmlDecoder: return R.Image.ToolList.htmlCoder
-        case .urlDecoder: return R.Image.ToolList.urlCoder
-        case .base64Decoder: return R.Image.ToolList.base64Coder
-        case .jwtDecoder: return R.Image.ToolList.jwtCoder
-        case .jsonFormatter: return R.Image.ToolList.jsonFormatter
-        case .xmlFormatter: return R.Image.ToolList.jsonFormatter
-        case .hashGenerator: return R.Image.ToolList.hashGenerator
-        case .uuidGenerator: return R.Image.ToolList.uuidGenerator
-        case .loremIpsumGenerator: return R.Image.ToolList.loremIpsumGenerator
-        case .checksumGenerator: return R.Image.ToolList.hashGenerator
-        case .caseConverter: return R.Image.ToolList.textInspector
-        case .regexTester: return R.Image.ToolList.regexTester
-        case .hyphenationRemover: return R.Image.ToolList.textInspector
-        case .imageCompressor: return R.Image.ToolList.imageCompressor
-        case .imageConverter: return R.Image.ToolList.imageCompressor
-        case .pdfGenerator: return R.Image.ToolList.graphic
-        case .networkInformation: return R.Image.ToolList.network
-        case .apiTest: return R.Image.ToolList.api
-        case .dateConvertor: return R.Image.speed
-        }
+        fatalError("ToolType will be removed.")
     }
     
     var sidebarTitle: String {
