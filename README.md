@@ -1,6 +1,6 @@
 # DevToysMac
 
-![Dribbble Shot](https://user-images.githubusercontent.com/20896810/151813062-75292bd5-c254-4eb4-b95a-01026a06d559.png)
+![Dribbble Shot](https://user-images.githubusercontent.com/20896810/153749432-62dd401b-40b1-4fd4-8fe1-856232bfc54f.png)
 
 This is the mac app version of [DevToys](https://github.com/veler/DevToys)!
 
