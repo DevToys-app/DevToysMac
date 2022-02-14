@@ -8,11 +8,7 @@
 import Cocoa
 
 @main
-class AppDelegate: NSObject, NSApplicationDelegate {
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-//        NSApplication.shared.appearance = NSAppearance(named: .darkAqua)
-    }
-    
+class AppDelegate: NSObject, NSApplicationDelegate { 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         true
     }

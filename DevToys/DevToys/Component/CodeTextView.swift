@@ -46,7 +46,7 @@ final class CodeTextView: NSLoadView {
     }
     
     override func onAwake() {
-        viewDidChangeEffectiveAppearance()
+        self.viewDidChangeEffectiveAppearance()
         self.wantsLayer = true
         self.layer?.cornerRadius = R.Size.corner
         
