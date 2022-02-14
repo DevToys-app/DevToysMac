@@ -31,15 +31,22 @@ final class CodeTextView: NSLoadView {
     }
     
     private var textView: _CodeTextView!
-    private let highlightr = Highlightr()! => { highlightr in
-        highlightr.setTheme(to: "vs2015")
-        highlightr.theme.setCodeFont(.monospacedSystemFont(ofSize: R.Size.codeFontSize, weight: .regular))
-    }
+    private let highlightr = Highlightr()!
     private lazy var textStorage = CodeAttributedString(highlightr: highlightr) => {
         $0.language = "Json"
     }
     
+    override func viewDidChangeEffectiveAppearance() {
+        if self.effectiveAppearance.name == .darkAqua {
+            highlightr.setTheme(to: "vs2015")
+        } else {
+            highlightr.setTheme(to: "vs")
+        }
+        highlightr.theme.setCodeFont(.monospacedSystemFont(ofSize: R.Size.codeFontSize, weight: .regular))
+    }
+    
     override func onAwake() {
+        viewDidChangeEffectiveAppearance()
         self.wantsLayer = true
         self.layer?.cornerRadius = R.Size.corner
         
