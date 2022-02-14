@@ -1,0 +1,186 @@
+/*
+  Localizable.strings
+  DevToys
+
+  Created by daniel bertoldi on 2022/02/14.
+  
+*/
+
+// - General -
+"Configuration" = "Configuração";
+"Format" = "Formatar";
+"Pretty" = "Embelezar";
+"Minified" = "Minificar";
+"Encoded" = "Codificar";
+"Decoded" = "Decodificar";
+"File" = "Arquivo";
+"Text" = "Texto";
+"Copy" = "Copiar";
+"Paste" = "Colar";
+"Copied!" = "Copiado!";
+"Pasted!" = "Colado";
+"Open" = "Abrir";
+"Export" = "Exportar";
+"Import" = "Importar";
+"Input" = "Entrada";
+"Output" = "Saída";
+"No selection" = "Sem seleção";
+"Drop Files Here" = "Arraste Os Arquivos Aqui";
+"Untitled Tool" = "Ferramenta Sem Nome";
+"Uppercase" = "Maíusculo";
+"Hyphens" = "Hífens";
+"Type" = "Tipo";
+"Length" = "Comprimento";
+"Convert" = "Converter";
+"Information" = "Informação";
+"Clear" = "Limpar";
+"Delete" = "Deletar";
+
+// - Category -
+"category.home" = "Menu Principal";
+"category.converters" = "Conversores";
+"category.encoders_decoders" = "Codificadores / Decodificadores";
+"category.formatters" = "Formatadores";
+"category.generators" = "Geradores";
+"category.text" = "Texto";
+"category.graphic" = "Gráficos";
+
+// - Tool -
+"tool.home.title" = "Menu Principal";
+"tool.home.mintitle" = "Menu Principal";
+"tool.home.description" = "Procure por ferramentas aqui.";
+
+"tool.jsonyaml.title" = "Conversor JSON <> Yaml";
+"tool.jsonyaml.mintitle" = "JSON <> Yaml";
+"tool.jsonyaml.description" = "Converta dados em JSON para YAML e vice-versa";
+
+"tool.numbase.title" = "Conversor de Base Numérica";
+"tool.numbase.mintitle" = "Base Numérica";
+"tool.numbase.description" = "Converta números de uma base para outra";
+"Format Number" = "Formatar Número";
+"Decimal" = "Decimal";
+"Hexdecimal" = "Hexadecimal";
+"Octal" = "Octal";
+"Binary" = "Binário";
+
+"tool.date.title" = "Conversor de Data";
+"tool.date.mintitle" = "Data";
+"tool.date.description" = "Converte um formato de data para outro";
+"Now" = "Agora";
+"Date" = "Data";
+"Unix Time" = "Tempo Unix";
+"ISO 8601" = "ISO 8601";
+"Calender" = "Calendário";
+
+"tool.html.title" = "Codificador / Decodificador de HTML";
+"tool.html.mintitle" = "HTML";
+"tool.html.description" = "Codifica ou decodifica todos os caracteres aplicáveis ao seu HTML correspondente";
+
+"tool.url.title" = "Codificador / Decodificador de URL";
+"tool.url.mintitle" = "URL";
+"tool.url.description" = "Codifica ou decodifica todos os caracteres aplicáveis ao seu URL correspondente";
+
+"tool.base64.title" = "Codificador / Decodificador de Base64";
+"tool.base64.mintitle" = "Base64";
+"tool.base64.description" = "Codifica e decodifica dados em Base64";
+"Source Type" = "Tipo de Fonte";
+"Text Source" = "Fonte de Texto";
+"File Source" = "Fonte de Arquivo";
+
+"tool.jwt.title" = "Codificador / Decodificador de JWT";
+"tool.jwt.mintitle" = "JWT";
+"tool.jwt.description" = "Decodifica um payload e assinatura de um header JWT";
+"JWT Token" = "Token JWT";
+"Header" = "Header";
+"Payload" = "Payload";
+
+"tool.jsonformat.title" = "Formatador de JSON";
+"tool.jsonformat.mintitle" = "JSON";
+"tool.jsonformat.description" = "Indenta ou minifica um JSON";
+"Indentation" = "Indentação";
+"2 Spaces" = "2 Espaços";
+"4 Spaces" = "4 Espaços";
+"1 Tab" = "1 Tab";
+
+"tool.xmlformat.title" = "Formatador XML";
+"tool.xmlformat.mintitle" = "XML";
+"tool.xmlformat.description" = "Indenta ou minifica um XML";
+"HTML Document" = "Documento HTML";
+"XML Document" = "Documento XML";
+"Document Type" = "Tipo de Documento";
+"Auto Fix Document" = "Corrigir Documento Automaticamente";
+"Pretty Document" = "Embelezar Documento";
+
+"tool.hashgen.title" = "Gerador de Hash";
+"tool.hashgen.mintitle" = "Hash";
+"tool.hashgen.description" = "Calcula hashes MD5, SHA1, SHA256 e SHA 512 a partir de um texto";
+
+"tool.uuidgen.title" = "Gerador de UUID";
+"tool.uuidgen.mintitle" = "Hash";
+"tool.uuidgen.description" = "Gera UUIDs";
+"Generate UUIDs" = "Gerar UUIDs";
+
+"tool.ligen.title" = "Gerador de Lorem Ipsum";
+"tool.ligen.mintitle" = "Lorem Ipsum";
+"tool.ligen.description" = "Gera texto de Lorem Ipsum";
+"Type of generating Lorem Ipsum" = "Tipo de  geração de Lorem Ipsum";
+"Length of generating Lorem Ipsum" = "Tamanho do Lorem Ipsum a ser gerado";
+"Words" = "Palavras";
+"Sentences" = "Frases";
+"Paragraphs" = "Parágrafos";
+
+"tool.checksum.title" = "Gerador de Checksum";
+"tool.checksum.mintitle" = "Checksum";
+"tool.checksum.description" = "Gera ou testa o checksum de um arquivo";
+"Output Comparer" = "Comparador de Saída";
+"Hash Algorithm" = "Algoritmo de Hash";
+"Select which algorithm you want to use" = "Selecione qual algoritmo você quer usar";
+
+"tool.textinspect.title" = "Inspetor de Texto e Conversor de Case";
+"tool.textinspect.mintitle" = "Inspetor de Texto e Conversor de Case";
+"tool.textinspect.description" = " Analisa o texto e converte para um case diferente";
+"Charactors" = "Caracteres";
+"Words" = "Palavras";
+"Lines" = "Linhas";
+"Bytes" = "Bytes";
+
+"tool.regex.title" = "Testador de Regex";
+"tool.regex.mintitle" = "Regex";
+"tool.regex.description" = "Testar expressão regular";
+"Reguler expression" = "Expressão Regular";
+
+"tool.hyphenremove.title" = "Removedor de Hifenação";
+"tool.hyphenremove.mintitle" = "Hifenação";
+"tool.hyphenremove.description" = "Remove hifenações copiados de um texto PDF";
+
+"tool.imageoptim.title" = "Compressor de PNG / JPEG";
+"tool.imageoptim.mintitle" = "Compressor de PNG / JPEG";
+"tool.imageoptim.description" = "Otimizador sem perdas de PNG e JPEG";
+"Optimize Level" = "Nível de Otimização";
+"Low" = "Baixo";
+"Medium" = "Médio";
+"High" = "Alto";
+"Very High (Slow)" = "Muito Alto (Lento)";
+
+"tool.pdfgen.title" = "Gerador de PDF";
+"tool.pdfgen.mintitle" = "Gerador de PDF";
+"tool.pdfgen.description" = "Gera PDF a partir de múltipas imagens";
+"Images" = "Imagens";
+"Size" = "Tamanho";
+"Generate PDF" = "Gerar PDF";
+"Page" = "Página";
+
+"tool.imageconvert.title" = "Conversor de Image";
+"tool.imageconvert.mintitle" = "Conversor de Image";
+"tool.imageconvert.description" = "Converte ou redimensiona imagens";
+"PNG Format" = "Formato PNG";
+"JPEG Format" = "Formato JPEG";
+"TIFF Format" = "Formato TIFF";
+"GIF Format" = "Formato GIF";
+"Scale to Fill" = "Escalar para preencher";
+"Scale to Fit" = "Escalar para encaixar";
+"Image Format" = "Formatar Imagem";
+"Resize" = "Redimensionar";
+"Converted Images" = "Imagens Convertidas";
+"Scale" = "Escalar";
+"Size" = "Tamanho";
