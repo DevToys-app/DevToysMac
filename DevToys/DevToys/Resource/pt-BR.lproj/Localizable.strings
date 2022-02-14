@@ -170,8 +170,8 @@
 "Generate PDF" = "Gerar PDF";
 "Page" = "Página";
 
-"tool.imageconvert.title" = "Conversor de Image";
-"tool.imageconvert.mintitle" = "Conversor de Image";
+"tool.imageconvert.title" = "Conversor de Imagem";
+"tool.imageconvert.mintitle" = "Conversor de Imagem";
 "tool.imageconvert.description" = "Converte ou redimensiona imagens";
 "PNG Format" = "Formato PNG";
 "JPEG Format" = "Formato JPEG";
