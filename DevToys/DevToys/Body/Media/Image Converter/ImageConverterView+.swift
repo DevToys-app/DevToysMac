@@ -135,11 +135,15 @@ final private class ImageListView: NSLoadView {
     let listView = NSTableView.list()
     var convertTasks = [ImageConvertTask]() { didSet { listView.reloadData() } }
     
+    override func updateLayer() {
+        self.layer?.backgroundColor = R.Color.controlBackgroundColor.cgColor
+    }
+    
     override func onAwake() {
+        self.wantsLayer = true
+        self.layer?.cornerRadius = R.Size.corner
         self.addSubview(scrollView)
-        self.scrollView.wantsLayer = true
-        self.scrollView.layer?.cornerRadius = R.Size.corner
-        self.scrollView.backgroundColor = .quaternaryLabelColor
+        self.scrollView.drawsBackground = false
         self.scrollView.snp.makeConstraints{ make in
             make.edges.equalToSuperview()
         }
