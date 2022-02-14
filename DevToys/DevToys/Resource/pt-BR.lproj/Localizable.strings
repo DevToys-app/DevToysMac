@@ -116,7 +116,7 @@
 "tool.hashgen.description" = "Calcula hashes MD5, SHA1, SHA256 e SHA 512 a partir de um texto";
 
 "tool.uuidgen.title" = "Gerador de UUID";
-"tool.uuidgen.mintitle" = "Hash";
+"tool.uuidgen.mintitle" = "UUID";
 "tool.uuidgen.description" = "Gera UUIDs";
 "Generate UUIDs" = "Gerar UUIDs";
 
