@@ -107,20 +107,20 @@ final private class JSONYamlConverterView: Page {
     let jsonSection = CodeViewSection(title: "JSON", options: .all, language: .javascript)
     let yamlSection = CodeViewSection(title: "Yaml", options: .all, language: .yaml)
     
-    private lazy var formatStyleArea = Area(icon: R.Image.format, title: "Format".localized(), control: formatStylePicker)
-    private lazy var configurationSection = Section(title: "Configuration".localized(), items: [formatStyleArea])
     private lazy var ioStack = self.addSection2(jsonSection, yamlSection)
     
     override func layout() {
         super.layout()
         
         self.ioStack.snp.remakeConstraints{ make in
-            make.height.equalTo(max(240, self.frame.height - 160))
+            make.height.equalTo(max(240, self.frame.height - 170))
         }
     }
     
     override func onAwake() {
-        self.addSection(configurationSection)
+        self.addSection(Section(title: "Configuration".localized(), items: [
+            Area(icon: R.Image.format, title: "Format".localized(), control: formatStylePicker)
+        ]))
     }
 }
 
@@ -141,11 +141,11 @@ private let defaultJsonCode = """
 """
 
 private let defaultYamlCode = """
+type: members
 members:
 - age: 16
   name: Alice
 - age: 24
   name: Bob
-type: members
-
 """
+

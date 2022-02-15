@@ -8,8 +8,8 @@
 import CoreUtil
  
 class Page: NSLoadView {    
-    private let stackView = NSStackView()
-    private let scrollView = NSScrollView()
+    let stackView = NSStackView()
+    let scrollView = NSScrollView()
     
     func addSection(_ section: NSView) {
         self.stackView.addArrangedSubview(section)
