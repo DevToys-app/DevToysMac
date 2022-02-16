@@ -16,15 +16,15 @@ final class URLDecoderViewController: NSViewController {
     override func loadView() { self.view = cell }
     
     override func viewDidLoad() {
-        self.cell.encodeTextSection.stringPublisher
-            .sink{[unowned self] in self.rawString = $0; self.formattedString = encodeToURL($0) }.store(in: &objectBag)
         self.cell.decodeTextSection.stringPublisher
+            .sink{[unowned self] in self.rawString = $0; self.formattedString = encodeToURL($0) }.store(in: &objectBag)
+        self.cell.encodeTextSection.stringPublisher
             .sink{[unowned self] in self.formattedString = $0; if let s = $0.removingPercentEncoding { self.rawString = s } }.store(in: &objectBag)
         
         self.$rawString
-            .sink{[unowned self] in self.cell.encodeTextSection.string = $0 }.store(in: &objectBag)
-        self.$formattedString
             .sink{[unowned self] in self.cell.decodeTextSection.string = $0 }.store(in: &objectBag)
+        self.$formattedString
+            .sink{[unowned self] in self.cell.encodeTextSection.string = $0 }.store(in: &objectBag)
     }
     
     private func encodeToURL(_ string: String) -> String {
@@ -34,23 +34,23 @@ final class URLDecoderViewController: NSViewController {
 }
 
 final private class URLDecoderView: Page {
-    let encodeTextSection = TextViewSection(title: "Encoded".localized(), options: [.all])
     let decodeTextSection = TextViewSection(title: "Decoded".localized(), options: [.all])
+    let encodeTextSection = TextViewSection(title: "Encoded".localized(), options: [.all])
     
     override func layout() {
         super.layout()
         let halfHeight = max(200, (self.frame.height - 80) / 2)
         
-        self.encodeTextSection.snp.remakeConstraints{ make in
+        self.decodeTextSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)
         }
-        self.decodeTextSection.snp.remakeConstraints{ make in
+        self.encodeTextSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)
         }
     }
     
     override func onAwake() {        
-        self.addSection(encodeTextSection)
         self.addSection(decodeTextSection)
+        self.addSection(encodeTextSection)
     }
 }

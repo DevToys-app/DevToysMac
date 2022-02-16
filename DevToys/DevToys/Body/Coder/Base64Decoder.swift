@@ -17,9 +17,9 @@ final class Base64DecoderViewController: NSViewController {
     override func loadView() { self.view = cell }
     
     override func viewDidLoad() {
-        self.cell.encodeTextSection.stringPublisher
+        self.cell.inputTextSection.stringPublisher
             .sink{[unowned self] in self.rawString = $0; self.formattedString = encode($0) }.store(in: &objectBag)
-        self.cell.decodeTextSection.stringPublisher
+        self.cell.inputTextSection.stringPublisher
             .sink{[unowned self] in self.formattedString = $0; self.rawString = decode($0) }.store(in: &objectBag)
         self.cell.sourceTypePicker.itemPublisher
             .sink{[unowned self] in self.sourceType = $0 }.store(in: &objectBag)
@@ -31,17 +31,17 @@ final class Base64DecoderViewController: NSViewController {
         self.$sourceType
             .sink{[unowned self] in self.cell.sourceTypePicker.selectedItem = $0; updateEncodeView($0) }.store(in: &objectBag)
         self.$rawString
-            .sink{[unowned self] in self.cell.encodeTextSection.string = $0 }.store(in: &objectBag)
+            .sink{[unowned self] in self.cell.inputTextSection.string = $0 }.store(in: &objectBag)
         self.$formattedString
-            .sink{[unowned self] in self.cell.decodeTextSection.string = $0 }.store(in: &objectBag)
+            .sink{[unowned self] in self.cell.inputTextSection.string = $0 }.store(in: &objectBag)
     }
     
     private func updateEncodeView(_ sourceType: SourceType) {
         switch sourceType {
         case .file:
-            self.cell.encodeSectionContainer.contentView = cell.fileDropSection
+            self.cell.inputSectionContainer.contentView = cell.fileDropSection
         case .text:
-            self.cell.encodeSectionContainer.contentView = cell.encodeTextSection
+            self.cell.inputSectionContainer.contentView = cell.inputTextSection
             self.formattedString = self.encode(rawString)
         }
     }
@@ -78,11 +78,11 @@ final private class Base64DecoderView: Page {
     
     let fileDrop = FileDrop()
     let exportButton = SectionButton(title: "Export".localized(), image: R.Image.export)
-    let encodeSectionContainer = NSPlaceholderView()
-    let encodeTextSection = TextViewSection(title: "Text".localized(), options: [.all])
+    let inputSectionContainer = NSPlaceholderView()
+    let inputTextSection = TextViewSection(title: "Text".localized(), options: [.all])
     lazy var fileDropSection = Section(title: "File".localized(), items: [fileDrop], toolbarItems: [exportButton])
     
-    let decodeTextSection = TextViewSection(title: "Decoded".localized(), options: [.all])
+    let encodeTextSection = TextViewSection(title: "Encoded".localized(), options: [.all])
     
     override func layout() {
         super.layout()
@@ -91,10 +91,10 @@ final private class Base64DecoderView: Page {
         self.fileDropSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)
         }
-        self.encodeTextSection.snp.remakeConstraints{ make in
+        self.inputTextSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)
         }
-        self.decodeTextSection.snp.remakeConstraints{ make in
+        self.inputTextSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)
         }
     }
@@ -103,9 +103,9 @@ final private class Base64DecoderView: Page {
         self.addSection(Section(title: "Configuration".localized(), items: [
             Area(icon: R.Image.convert, title: "Source Type".localized(), control: sourceTypePicker)
         ]))
-        self.encodeSectionContainer.contentView = encodeTextSection
-        self.addSection(encodeSectionContainer)
-        self.addSection(decodeTextSection)
+        self.inputSectionContainer.contentView = inputTextSection
+        self.addSection(inputSectionContainer)
+        self.addSection(inputTextSection)
     }
 }
 
