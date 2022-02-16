@@ -116,7 +116,7 @@
 "tool.hashgen.description" = "从文本数据计算MD5, SHA1, SHA256和SHA 512哈希值";
 
 "tool.uuidgen.title" = "UUID 生成器";
-"tool.uuidgen.mintitle" = "Hash";
+"tool.uuidgen.mintitle" = "UUID";
 "tool.uuidgen.description" = "生成 UUIDs";
 "Generate UUIDs" = "生成 UUIDs";
 
