@@ -13,4 +13,5 @@ extension ToolCategory {
     static let generator = ToolCategory(name: "category.generators".localized(), icon: R.Image.Tool.generator, identifier: "generator")
     static let text = ToolCategory(name: "category.text".localized(), icon: R.Image.Tool.text, identifier: "text")
     static let graphic = ToolCategory(name: "category.graphic".localized(), icon: R.Image.Tool.graphic, identifier: "graphic")
+    static let settings = ToolCategory(name: "Settings", icon: nil, identifier: "settings", shouldHideCategory: true)
 }

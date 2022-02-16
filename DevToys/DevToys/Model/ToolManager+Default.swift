@@ -35,5 +35,7 @@ extension ToolManager {
         toolManager.registerTool(.imageOptimizer)
         toolManager.registerTool(.pdfGenerator)
         toolManager.registerTool(.imageConverter)
+        
+        toolManager.registerTool(.settings)
     }
 }

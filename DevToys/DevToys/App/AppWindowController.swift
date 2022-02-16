@@ -13,7 +13,16 @@ final class AppWindowController: NSWindowController {
     override func windowDidLoad() {        
         self.contentViewController?.chainObject = appModel
         
-        appModel.$tool
+        self.appModel.$tool
             .sink{[unowned self] in self.window?.title = $0.title }.store(in: &objectBag)
+        self.appModel.settings.$appearanceType
+            .sink{
+                switch $0 {
+                case .useSystemSettings: NSApp.appearance = nil
+                case .darkMode: NSApp.appearance = NSAppearance(named: .darkAqua)
+                case .lightMode: NSApp.appearance = NSAppearance(named: .aqua)
+                }
+            }
+            .store(in: &objectBag)
     }
 }
