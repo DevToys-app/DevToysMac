@@ -33,9 +33,9 @@ final class ToolMenuCell: NSLoadView {
        self.addSubview(titleLabel)
 
        self.titleLabel.lineBreakMode = .byTruncatingTail
-       self.titleLabel.font = .systemFont(ofSize: R.Size.controlTitleFontSize)
+       self.titleLabel.font = .systemFont(ofSize: 12)
        self.titleLabel.snp.makeConstraints{ make in
-           make.left.equalTo(self.iconView.snp.right).offset(4)
+           make.left.equalTo(self.iconView.snp.right).offset(8)
            make.right.equalToSuperview().inset(4)
            make.centerY.equalToSuperview()
        }

@@ -8,7 +8,6 @@
 import CoreUtil
 
 final class TextView: NSLoadView {
-    
     private class _TextView: NSTextView {
         let stringPublisher = PassthroughSubject<String, Never>()
         var sendingValue = false
@@ -28,17 +27,27 @@ final class TextView: NSLoadView {
     var isEditable: Bool { get { textView.isEditable } set { textView.isEditable = newValue } }
     var isSelectable: Bool { get { textView.isSelectable } set { textView.isSelectable = newValue } }
     
+    override func layout() {
+        super.layout()
+        self.backgroudLayer.frame = bounds
+    }
+    
+    override func updateLayer() {
+        self.backgroudLayer.update()
+    }
+    
     private let scrollView = _TextView.scrollableTextView()
+    private let backgroudLayer = ControlBackgroundLayer.animationDisabled()
     private lazy var textView = scrollView.documentView as! _TextView
 
     override func onAwake() {
         self.wantsLayer = true
-        self.layer?.cornerRadius = R.Size.corner
+        self.layer?.addSublayer(backgroudLayer)
         
         self.addSubview(scrollView)
         self.textView.allowsUndo = true
-        self.textView.font = .monospacedSystemFont(ofSize: R.Size.codeFontSize, weight: .medium)
-        self.textView.backgroundColor = .quaternaryLabelColor
+        self.textView.font = .monospacedSystemFont(ofSize: R.Size.codeFontSize, weight: .regular)
+        self.textView.drawsBackground = false
         self.textView.textContainerInset = [0, 4]
         self.scrollView.snp.makeConstraints{ make in
             make.edges.equalToSuperview()
