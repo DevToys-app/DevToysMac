@@ -81,11 +81,12 @@ final class Tool {
     let toolDescription: String
     let showAlways: Bool
     let showOnHome: Bool
+    let showOnSidebar: Bool
     private(set) lazy var viewController = makeViewController()
     
     private let makeViewController: () -> NSViewController
     
-    init(title: String, identifier: String, category: ToolCategory, icon: NSImage, sidebarTitle: String? = nil, toolDescription: String, showAlways: Bool = false, showOnHome: Bool = true, viewController: @autoclosure @escaping () -> NSViewController) {
+    init(title: String, identifier: String, category: ToolCategory, icon: NSImage, sidebarTitle: String? = nil, toolDescription: String, showAlways: Bool = false, showOnHome: Bool = true, showOnSidebar: Bool = true, viewController: @autoclosure @escaping () -> NSViewController) {
         self.title = title
         self.identifier = identifier
         self.category = category
@@ -94,6 +95,7 @@ final class Tool {
         self.toolDescription = toolDescription
         self.showAlways = showAlways
         self.showOnHome = showOnHome
+        self.showOnSidebar = showOnSidebar
         self.makeViewController = viewController
     }
 }
