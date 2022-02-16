@@ -13,12 +13,27 @@ final class SettingViewController: NSViewController {
     override func loadView() { self.view = cell }
     
     override func chainObjectDidLoad() {
+        self.appModel.settings.$appearanceType
+            .sink{[unowned self] in self.cell.appearancePicker.selectedItem = $0 }.store(in: &objectBag)
         
+        self.cell.appearancePicker.itemPublisher
+            .sink{[unowned self] in self.appModel.settings.appearanceType = $0 }.store(in: &objectBag)
     }
 }
 
+extension Settings.AppearanceType: TextItem {
+    static let allCases: [Self] = [.useSystemSettings, .lightMode, .darkMode]
+    
+    var title: String { rawValue }
+}
+
 final private class SettingView: Page {
+    
+    let appearancePicker = EnumPopupButton<Settings.AppearanceType>()
+    
     override func onAwake() {
-        
+        self.addSection(
+            Area(icon: R.Image.paramators, title: "App Theme", message: "Select which app theme to display", control: appearancePicker)
+        )
     }
 }
