@@ -17,6 +17,7 @@ final class AppModel {
     @RestorableState("app.searchQuery") var searchQuery = ""
     
     let toolManager = ToolManager.shared
+    let settings = Settings()
     
     init() {
         self.tool = toolManager.toolForIdentifier(toolIdentifier) ?? .home

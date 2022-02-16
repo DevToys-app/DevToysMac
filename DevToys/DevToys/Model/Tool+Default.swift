@@ -13,6 +13,11 @@ extension Tool {
         toolDescription: "tool.home.description".localized(), showAlways: true, showOnHome: false,
         viewController: HomeViewController()
     )
+    static let settings = Tool(
+        title: "Settings", identifier: "settings", category: .settings, icon: R.Image.Tool.settings,
+        toolDescription: "Setting of application", showAlways: true, showOnHome: true, showOnSidebar: false,
+        viewController: SettingViewController()
+    )
     
     // MARK: - Converters -
     static let jsonYamlConverter = Tool(

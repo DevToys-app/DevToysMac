@@ -46,6 +46,7 @@ enum R {
         
         enum Tool {
             static let home = NSImage(named: "tool/home")!
+            static let settings = NSImage(named: "tool/settings")!
             
             static let convert = NSImage(named: "tool/convert")!
             static let jsonConvert = NSImage(named: "tool/json.convert")!

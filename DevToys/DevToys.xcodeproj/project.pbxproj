@@ -16,6 +16,8 @@
 		B608541E27A67B48003BF243 /* NumberBaseConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608541D27A67B48003BF243 /* NumberBaseConverter+.swift */; };
 		B608542027A67E4D003BF243 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608541F27A67E4D003BF243 /* TextField.swift */; };
 		B61796C527BCB3090054660E /* ToolCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C427BCB3090054660E /* ToolCategoryCell.swift */; };
+		B61796C727BCB6F00054660E /* SettingView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C627BCB6F00054660E /* SettingView+.swift */; };
+		B61796C927BCB84A0054660E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C827BCB84A0054660E /* Settings.swift */; };
 		B62013B427A9070D00AF5386 /* UUIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62013B327A9070D00AF5386 /* UUIDGenerator.swift */; };
 		B62013B627A90B8900AF5386 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62013B527A90B8900AF5386 /* NumberField.swift */; };
 		B620141C27A917E000AF5386 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620141B27A917E000AF5386 /* Button.swift */; };
@@ -120,6 +122,8 @@
 		B608541D27A67B48003BF243 /* NumberBaseConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberBaseConverter+.swift"; sourceTree = "<group>"; };
 		B608541F27A67E4D003BF243 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		B61796C427BCB3090054660E /* ToolCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolCategoryCell.swift; sourceTree = "<group>"; };
+		B61796C627BCB6F00054660E /* SettingView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingView+.swift"; sourceTree = "<group>"; };
+		B61796C827BCB84A0054660E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B62013B327A9070D00AF5386 /* UUIDGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDGenerator.swift; sourceTree = "<group>"; };
 		B62013B527A90B8900AF5386 /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
 		B620141B27A917E000AF5386 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -306,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				B64B1F7127A4FDC800AC2601 /* AppModel.swift */,
+				B61796C827BCB84A0054660E /* Settings.swift */,
 				B64B202527A52DB400AC2601 /* ToolType.swift */,
 				B64844FE27B767EC004FE02B /* ToolManager+.swift */,
 				B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */,
@@ -393,6 +398,7 @@
 			children = (
 				B6D1AEDE27A534960022FED2 /* BodyViewController.swift */,
 				B6D1AEE327A53A560022FED2 /* HomeViewController.swift */,
+				B61796C627BCB6F00054660E /* SettingView+.swift */,
 				B608542127A67FF7003BF243 /* Convert */,
 				B680A79327A68B2D007CB707 /* Coder */,
 				B608542227A68008003BF243 /* Format */,
@@ -584,12 +590,14 @@
 				B680A79527A68B35007CB707 /* HTMLDecoder.swift in Sources */,
 				B680A8A727A8DD5D007CB707 /* JWTDecoder.swift in Sources */,
 				6B42318827AD1BC0002D135A /* HyphenationRemover.swift in Sources */,
+				B61796C727BCB6F00054660E /* SettingView+.swift in Sources */,
 				B6D1AEE427A53A560022FED2 /* HomeViewController.swift in Sources */,
 				B629B93127B8F7E400F573C9 /* ToolManager+Default.swift in Sources */,
 				B6AC276A27AA535A000FD713 /* PDFGeneratorView+.swift in Sources */,
 				B608542027A67E4D003BF243 /* TextField.swift in Sources */,
 				B680A79A27A69324007CB707 /* URLDecoder.swift in Sources */,
 				B64B202627A52DB400AC2601 /* ToolType.swift in Sources */,
+				B61796C927BCB84A0054660E /* Settings.swift in Sources */,
 				B608541227A66A90003BF243 /* JSONYamlConverter+.swift in Sources */,
 				B6D1AEFD27A55ED50022FED2 /* CodeTextView.swift in Sources */,
 				B62013B427A9070D00AF5386 /* UUIDGenerator.swift in Sources */,
