@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /*
   Localizable.strings
   DevToys
@@ -9,20 +10,38 @@
 // - General -
 "Configuration" = "配置";
 "Format" = "格式";
+=======
+// Localizable.strings
+//   DevToys
+// 
+//   Created by yuki on 2022/02/13.
+// 
+// - General -
+"Configuration" = "设置";
+"Format" = "格式化";
+>>>>>>> Stashed changes
 "Pretty" = "美化";
 "Minified" = "压缩";
 "Encoded" = "编码";
 "Decoded" = "解码";
 "File" = "文件";
 "Text" = "文本";
+<<<<<<< Updated upstream
 "Copy" = "复制";
 "Paste" = "黏贴";
 "Copied!" = "复制!";
 "Pasted!" = "黏贴!";
+=======
+"Copy" = "拷贝";
+"Paste" = "粘贴";
+"Copied!" = "已拷贝";
+"Pasted!" = "已粘贴";
+>>>>>>> Stashed changes
 "Open" = "打开";
 "Export" = "导出";
 "Import" = "导入";
 "Input" = "输入";
+<<<<<<< Updated upstream
 "Output" = "输出";
 "No selection" = "无选择";
 "Drop Files Here" = "将文件拖入此处";
@@ -30,11 +49,21 @@
 "Uppercase" = "大写";
 "Hyphens" = "连字";
 "Type" = "种类";
+=======
+"Output" = "输出";
+"No selection" = "未选择";
+"Drop Files Here" = "将文件拖拽到此";
+"Untitled Tool" = "未命名工具";
+"Uppercase" = "大写字母";
+"Hyphens" = "连字符";
+"Type" = "类型";
+>>>>>>> Stashed changes
 "Length" = "长度";
 "Convert" = "转换";
 "Information" = "信息";
 "Clear" = "清空";
 "Delete" = "删除";
+<<<<<<< Updated upstream
 
 // - Category -
 "category.home" = "首页";
@@ -58,10 +87,31 @@
 "tool.numbase.mintitle" = "数字类型转换";
 "tool.numbase.description" = "将数字从一种类型转换为另一个类型";
 "Format Number" = "格式化数字";
+=======
+"category.converters" = "转换";
+"category.encoders_decoders" = "编码器";
+"category.formatters" = "格式化";
+"category.generators" = "生成器";
+"category.text" = "文本";
+"category.graphic" = "图像";
+
+// - Tool -
+"tool.home.title" = "主目录";
+"tool.home.mintitle" = "主目录";
+"tool.home.description" = "搜索全部工具";
+"tool.jsonyaml.title" = "JSON YAML 互转";
+"tool.jsonyaml.mintitle" = "JSON YAML 互转";
+"tool.jsonyaml.description" = "JSON/YAML 互转";
+"tool.numbase.title" = "进制转换";
+"tool.numbase.mintitle" = "进制转换";
+"tool.numbase.description" = "数字进制转换";
+"Format Number" = "数字格式化";
+>>>>>>> Stashed changes
 "Decimal" = "十进制";
 "Hexdecimal" = "十六进制";
 "Octal" = "八进制";
 "Binary" = "二进制";
+<<<<<<< Updated upstream
 
 "tool.date.title" = "日期转换器";
 "tool.date.mintitle" = "日期";
@@ -188,3 +238,96 @@
 "Converted Images" = "转换图片";
 "Scale" = "比例";
 "Size" = "大小";
+=======
+"tool.date.title" = "时间转换";
+"tool.date.mintitle" = "时间转换";
+"tool.date.description" = "从…转换时间";
+"Now" = "现在";
+"Date" = "日期";
+"Unix Time" = "Unix 时间";
+"ISO 8601" = "ISO 8601";
+"Calender" = "日历";
+"tool.html.title" = "HTML 编解码";
+"tool.html.mintitle" = "HTML";
+"tool.html.description" = "HTML 编解码";
+"tool.url.title" = "URL 编解码";
+"tool.url.mintitle" = "URL";
+"tool.url.description" = "编解码";
+"tool.base64.title" = "Base64 编解码";
+"tool.base64.mintitle" = "Base64";
+"tool.base64.description" = "编解码";
+"Source Type" = "源类型";
+"Text Source" = "文本来源";
+"File Source" = "文件来源";
+"tool.jwt.title" = "JWT 编码";
+"tool.jwt.mintitle" = "JWT";
+"tool.jwt.description" = "解码 JWT";
+"JWT Token" = "JWT Token";
+"Header" = "头文件";
+"Payload" = "载荷";
+"tool.jsonformat.title" = "JSON 格式化";
+"tool.jsonformat.mintitle" = "JSON";
+"tool.jsonformat.description" = "JSON 缩进和压缩";
+"Indentation" = "缩进";
+"2 Spaces" = "两个空格";
+"4 Spaces" = "四个空格";
+"1 Tab" = "一个制表符";
+"tool.xmlformat.title" = "XML 格式化";
+"tool.xmlformat.mintitle" = "XML";
+"tool.xmlformat.description" = "XML 缩进和压缩";
+"HTML Document" = "HTML 文件";
+"XML Document" = "XML 文件";
+"Document Type" = "文件类型";
+"Auto Fix Document" = "自动修复文件";
+"Pretty Document" = "文件美化";
+"tool.hashgen.title" = "生成哈希值";
+"tool.hashgen.mintitle" = "哈希";
+"tool.hashgen.description" = "计算 MD5 值";
+"tool.uuidgen.title" = "生成 UUID";
+"tool.uuidgen.mintitle" = "UUID";
+"tool.uuidgen.description" = "生成 UUID";
+"Generate UUIDs" = "生成 UUID";
+"tool.ligen.title" = "生成 Lorem Ipsum";
+"tool.ligen.mintitle" = "Lorem Ipsum";
+"tool.ligen.description" = "生成 Lorem Ipsum";
+"Type of generating Lorem Ipsum" = "生成 Lorem Ipsum 的类型";
+"Length of generating Lorem Ipsum" = "生成的长度";
+"Words" = "文字";
+"Sentences" = "文章";
+"Paragraphs" = "段落";
+"tool.checksum.title" = "生成 Checksum";
+"tool.checksum.mintitle" = "Checksum";
+"tool.checksum.description" = "生成或测试";
+"Output Comparer" = "对比输出";
+"Hash Algorithm" = "哈希算法";
+"Select which algorithm you want to use" = "选择你想使用的算法";
+"tool.textinspect.title" = "文本检测和大小写转换";
+"tool.textinspect.mintitle" = "文本检测和大小写转换";
+"tool.textinspect.description" = "分析文本并";
+"Charactors" = "字符数";
+"Lines" = "行数";
+"Bytes" = "字节";
+"tool.regex.title" = "测试正则表达式";
+"tool.regex.mintitle" = "正则表达式";
+"tool.regex.description" = "测试正则表达式";
+"Reguler expression" = "正则表达式";
+"tool.hyphenremove.title" = "移除连字符";
+"tool.hyphenremove.mintitle" = "移除连字符";
+"tool.hyphenremove.description" = "移除";
+"tool.imageoptim.title" = "PNG/JPEG 压缩";
+"tool.imageoptim.mintitle" = "PNG/JPEG 压缩";
+"tool.imageoptim.description" = "无损 PNG/JPEG 压缩";
+"tool.pdfgen.title" = "生成 PDF";
+"tool.pdfgen.mintitle" = "生成 PDF";
+"tool.pdfgen.description" = "从…生成 PDF";
+"Images" = "图像";
+"Size" = "大小";
+"Generate PDF" = "生成 PDF";
+"Page" = "页";
+"tool.imageconvert.title" = "图像转换";
+"tool.imageconvert.mintitle" = "图像转换";
+"tool.imageconvert.description" = "转换和调整图像大小";
+
+// - Category -
+"category.home" = "主目录";
+>>>>>>> Stashed changes

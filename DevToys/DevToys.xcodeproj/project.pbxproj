@@ -114,6 +114,7 @@
 
 /* Begin PBXFileReference section */
 		6B42318727AD1BC0002D135A /* HyphenationRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyphenationRemover.swift; sourceTree = "<group>"; };
+		7B54497E5DF67C8D7D1DE40C /* zh-hans */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; lastKnownFileType = text.plist.strings; name = "zh-hans"; path = "zh-hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B608540A27A66694003BF243 /* SectionButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SectionButton+.swift"; sourceTree = "<group>"; };
 		B608541127A66A90003BF243 /* JSONYamlConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONYamlConverter+.swift"; sourceTree = "<group>"; };
 		B608541D27A67B48003BF243 /* NumberBaseConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberBaseConverter+.swift"; sourceTree = "<group>"; };
@@ -621,6 +622,7 @@
 			children = (
 				B6BD80F527B8AEE700152AB9 /* en */,
 				B6BD80F827B8AF1800152AB9 /* ja */,
+				7B54497E5DF67C8D7D1DE40C /* zh-hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
