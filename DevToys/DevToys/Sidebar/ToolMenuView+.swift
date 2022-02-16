@@ -7,10 +7,10 @@
 
 import CoreUtil
 
-final class ToolmenuViewController: NSViewController {
+final class ToolMenuViewController: NSViewController {
     
     private let scrollView = NSScrollView()
-    private let outlineView = NSOutlineView.list()
+    private let outlineView = ToolMenuOutlineView.list()
     private var searchQuery = Query() { didSet { outlineView.reloadData() } }
         
     @objc func onClick(_ outlineView: NSOutlineView) {
@@ -30,7 +30,7 @@ final class ToolmenuViewController: NSViewController {
         self.outlineView.setTarget(self, action: #selector(onClick))
         self.outlineView.outlineTableColumn = self.outlineView.tableColumns[0]
         self.outlineView.selectionHighlightStyle = .sourceList
-        self.outlineView.indentationPerLevel = 4
+        self.outlineView.indentationPerLevel = 0
     }
         
     override func chainObjectDidLoad() {
@@ -45,7 +45,16 @@ final class ToolmenuViewController: NSViewController {
     }
 }
 
-extension ToolmenuViewController: NSOutlineViewDataSource {
+final private class ToolMenuOutlineView: NSOutlineView {
+//    override func makeView(withIdentifier identifier: NSUserInterfaceItemIdentifier, owner: Any?) -> NSView? {
+//        if identifier == NSOutlineView.disclosureButtonIdentifier {
+//            return nil
+//        }
+//        return super.makeView(withIdentifier: identifier, owner: owner)
+//    }
+}
+
+extension ToolMenuViewController: NSOutlineViewDataSource {
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         item is ToolCategory
     }
@@ -61,20 +70,37 @@ extension ToolmenuViewController: NSOutlineViewDataSource {
     }
     
     public func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
-        return ToolmenuCell.height
+        if item is ToolCategory {
+            return ToolCategoryCell.height
+        } else {
+            return ToolMenuCell.height
+        }
     }
     public func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
-        let cell = ToolmenuCell()
-        
         if let category = item as? ToolCategory {
-            cell.title = category.name
-            cell.icon = category.icon
+            let cell = ToolCategoryCell()
+            
+//            cell.title = category.name
+//            cell.icon = category.icon
+            
+            return cell
         } else if let tool = item as? Tool {
+            let cell = ToolMenuCell()
+            
             cell.title = tool.sidebarTitle
             cell.icon = tool.icon
+            
+            return cell
         }
         
-        return cell
+        return nil
+    }
+    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
+        if item is ToolCategory { return ToolCategoryRowView() }
+        return NSTableRowView()
+    }
+    func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool {
+        item is Tool
     }
     
     func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
@@ -85,13 +111,9 @@ extension ToolmenuViewController: NSOutlineViewDataSource {
         }
         return nil
     }
-    func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
-        guard let identifier = object as? String else { return nil }
-        return appModel.toolManager.toolForIdentifier(identifier) ?? appModel.toolManager.categoryForIdentifier(identifier)
-    }
 }
 
-extension ToolmenuViewController: NSOutlineViewDelegate {
+extension ToolMenuViewController: NSOutlineViewDelegate {
     func outlineViewSelectionDidChange(_ notification: Notification) {
         self.onSelect(row: outlineView.selectedRow)
     }

@@ -33,7 +33,7 @@
 		B64B1F7C27A4FFB400AC2601 /* SidebarView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1F7B27A4FFB400AC2601 /* SidebarView+.swift */; };
 		B64B201627A5100800AC2601 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B201527A5100800AC2601 /* Separator.swift */; };
 		B64B201D27A5219400AC2601 /* SidebarSearchView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B201C27A5219400AC2601 /* SidebarSearchView+.swift */; };
-		B64B202027A523A200AC2601 /* ToolmenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B201F27A523A200AC2601 /* ToolmenuCell.swift */; };
+		B64B202027A523A200AC2601 /* ToolMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B201F27A523A200AC2601 /* ToolMenuCell.swift */; };
 		B64B202327A52A2D00AC2601 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B202227A52A2D00AC2601 /* R.swift */; };
 		B64B202627A52DB400AC2601 /* ToolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B202527A52DB400AC2601 /* ToolType.swift */; };
 		B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B209727A532DF00AC2601 /* AppWindowController.swift */; };
@@ -140,7 +140,7 @@
 		B64B1F7B27A4FFB400AC2601 /* SidebarView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SidebarView+.swift"; sourceTree = "<group>"; };
 		B64B201527A5100800AC2601 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 		B64B201C27A5219400AC2601 /* SidebarSearchView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SidebarSearchView+.swift"; sourceTree = "<group>"; };
-		B64B201F27A523A200AC2601 /* ToolmenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolmenuCell.swift; sourceTree = "<group>"; };
+		B64B201F27A523A200AC2601 /* ToolMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolMenuCell.swift; sourceTree = "<group>"; };
 		B64B202227A52A2D00AC2601 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		B64B202527A52DB400AC2601 /* ToolType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolType.swift; sourceTree = "<group>"; };
 		B64B209727A532DF00AC2601 /* AppWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowController.swift; sourceTree = "<group>"; };
@@ -319,7 +319,7 @@
 			children = (
 				B64B201427A50FFF00AC2601 /* View */,
 				B64B1F7627A4FF8B00AC2601 /* ToolMenuView+.swift */,
-				B64B201F27A523A200AC2601 /* ToolmenuCell.swift */,
+				B64B201F27A523A200AC2601 /* ToolMenuCell.swift */,
 				B64B1F7B27A4FFB400AC2601 /* SidebarView+.swift */,
 				B64B201C27A5219400AC2601 /* SidebarSearchView+.swift */,
 			);
@@ -540,7 +540,7 @@
 				B6BD80EB27B89EA600152AB9 /* ImageOptimaizerView.swift in Sources */,
 				B608541E27A67B48003BF243 /* NumberBaseConverter+.swift in Sources */,
 				B680A8AA27A8E106007CB707 /* HashGenerator.swift in Sources */,
-				B64B202027A523A200AC2601 /* ToolmenuCell.swift in Sources */,
+				B64B202027A523A200AC2601 /* ToolMenuCell.swift in Sources */,
 				B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */,
 				B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */,
 				B608540B27A66694003BF243 /* SectionButton+.swift in Sources */,

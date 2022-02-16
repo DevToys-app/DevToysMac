@@ -10,7 +10,7 @@ import CoreUtil
 final class SidebarViewController: NSViewController {
     private let searchView = SidebarSearchViewController()
     private let sidebarView = SidebarView()
-    private let toolMenuController = ToolmenuViewController()
+    private let toolMenuController = ToolMenuViewController()
     
     override func loadView() {
         self.view = sidebarView
