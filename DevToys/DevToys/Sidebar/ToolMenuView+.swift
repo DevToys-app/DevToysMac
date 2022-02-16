@@ -10,8 +10,10 @@ import CoreUtil
 final class ToolMenuViewController: NSViewController {
     
     private let scrollView = NSScrollView()
-    private let outlineView = ToolMenuOutlineView.list()
+    private let outlineView = NSOutlineView.list()
     private var searchQuery = Query() { didSet { outlineView.reloadData() } }
+    
+    @RestorableState("toolmenu.initial") var isInitial = true
         
     @objc func onClick(_ outlineView: NSOutlineView) {
         self.onSelect(row: outlineView.clickedRow)
@@ -30,7 +32,7 @@ final class ToolMenuViewController: NSViewController {
         self.outlineView.setTarget(self, action: #selector(onClick))
         self.outlineView.outlineTableColumn = self.outlineView.tableColumns[0]
         self.outlineView.selectionHighlightStyle = .sourceList
-        self.outlineView.indentationPerLevel = 0
+        self.outlineView.floatsGroupRows = false
     }
         
     override func chainObjectDidLoad() {
@@ -42,21 +44,22 @@ final class ToolMenuViewController: NSViewController {
         self.outlineView.dataSource = self
         self.outlineView.autosaveExpandedItems = true
         self.outlineView.autosaveName = "sidebar"
+        if self.isInitial {
+            self.isInitial = false
+            self.outlineView.expandItem(nil, expandChildren: true)
+        }
     }
 }
 
-final private class ToolMenuOutlineView: NSOutlineView {
-//    override func makeView(withIdentifier identifier: NSUserInterfaceItemIdentifier, owner: Any?) -> NSView? {
-//        if identifier == NSOutlineView.disclosureButtonIdentifier {
-//            return nil
-//        }
-//        return super.makeView(withIdentifier: identifier, owner: owner)
-//    }
-}
-
 extension ToolMenuViewController: NSOutlineViewDataSource {
+    func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool {
+        item is ToolCategory
+    }
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         item is ToolCategory
+    }
+    func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool {
+        item is Tool
     }
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         if item == nil { return appModel.toolManager.flattenRootItems(searchQuery)[index] }
@@ -69,38 +72,26 @@ extension ToolMenuViewController: NSOutlineViewDataSource {
         return appModel.toolManager.toolsForCategory(category, searchQuery).count
     }
     
-    public func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
+    func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
         if item is ToolCategory {
             return ToolCategoryCell.height
         } else {
             return ToolMenuCell.height
         }
     }
-    public func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
+    func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
         if let category = item as? ToolCategory {
             let cell = ToolCategoryCell()
-            
-//            cell.title = category.name
-//            cell.icon = category.icon
-            
+            cell.title = category.name
             return cell
         } else if let tool = item as? Tool {
             let cell = ToolMenuCell()
-            
             cell.title = tool.sidebarTitle
             cell.icon = tool.icon
-            
             return cell
         }
         
         return nil
-    }
-    func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
-        if item is ToolCategory { return ToolCategoryRowView() }
-        return NSTableRowView()
-    }
-    func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool {
-        item is Tool
     }
     
     func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
@@ -109,6 +100,12 @@ extension ToolMenuViewController: NSOutlineViewDataSource {
         } else if let tool = item as? Tool {
             return tool.identifier
         }
+        return nil
+    }
+    func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
+        guard let identifier = object as? String else { return nil }
+        if let category = appModel.toolManager.categoryForIdentifier(identifier) { return category }
+        if let tool = appModel.toolManager.toolForIdentifier(identifier) { return tool }
         return nil
     }
 }
