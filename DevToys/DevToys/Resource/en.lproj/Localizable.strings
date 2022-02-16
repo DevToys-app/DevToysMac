@@ -59,7 +59,7 @@
 "tool.numbase.description" = "Convert numbers from one base to another";
 "Format Number" = "Format Number";
 "Decimal" = "Decimal";
-"Hexdecimal" = "Hexdecimal";
+"Hexdecimal" = "Hexadecimal";
 "Octal" = "Octal";
 "Binary" = "Binary";
 
@@ -74,11 +74,11 @@
 
 "tool.html.title" = "HTML Encoder / Decoder";
 "tool.html.mintitle" = "HTML";
-"tool.html.description" = "Encoder or decode all the applicable charactors to their corresponding HTML";
+"tool.html.description" = "Encoder or decoder all the applicable characters to their corresponding HTML";
 
 "tool.url.title" = "URL Encoder / Decoder";
 "tool.url.mintitle" = "URL";
-"tool.url.description" = "Encoder or decode all the applicable charactors to their corresponding URL";
+"tool.url.description" = "Encoder or decode all the applicable characters to their corresponding URL";
 
 "tool.base64.title" = "Base64 Encoder / Decoder";
 "tool.base64.mintitle" = "Base64";
@@ -142,16 +142,16 @@
 
 "tool.textinspect.title" = "Text Inspector & Case Converter";
 "tool.textinspect.mintitle" = "Inspector & Case Converter";
-"tool.textinspect.description" = "Analyze text and convert it to differenct case";
-"Charactors" = "Charactors";
+"tool.textinspect.description" = "Analyze text and convert it to different case";
+"Charactors" = "Characters";
 "Words" = "Words";
 "Lines" = "Lines";
 "Bytes" = "Bytes";
 
 "tool.regex.title" = "Regex Tester";
 "tool.regex.mintitle" = "Regex";
-"tool.regex.description" = "Test reguler expression";
-"Reguler expression" = "Reguler expression";
+"tool.regex.description" = "Test regular expression";
+"Reguler expression" = "Regular expression";
 
 "tool.hyphenremove.title" = "Hyphenation Remover";
 "tool.hyphenremove.mintitle" = "Hyphenation";
