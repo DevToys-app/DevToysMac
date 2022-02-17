@@ -72,7 +72,7 @@ final private class LoremIpsumGeneratorView: Page {
         super.layout()
     
         self.outputSection.snp.remakeConstraints{ make in
-            make.height.equalTo(max(240, self.frame.height - 220))
+            make.height.equalTo(max(240, self.frame.height - 230))
         }
     }
     

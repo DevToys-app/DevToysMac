@@ -39,7 +39,7 @@ final private class URLDecoderView: Page {
     
     override func layout() {
         super.layout()
-        let halfHeight = max(200, (self.frame.height - 80) / 2)
+        let halfHeight = max(200, (self.frame.height - 100) / 2)
         
         self.decodeTextSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)

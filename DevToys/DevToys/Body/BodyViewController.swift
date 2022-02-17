@@ -17,12 +17,12 @@ final class BodyViewController: NSViewController {
         self.appModel.$tool
             .sink{[unowned self] in replaceTool($0) }.store(in: &objectBag)
         self.appModel.$searchQuery
-            .sink{[unowned self] in handleQuery(Query($0)) }.store(in: &objectBag)
+            .sink{[unowned self] in handleQuery($0) }.store(in: &objectBag)
     }
     
-    private func handleQuery(_ query: Query) {
+    private func handleQuery(_ query: String) {
         if query.isEmpty {
-            replaceTool(appModel.tool)
+            self.replaceTool(appModel.tool)
         } else {
             self.replaceTool(.search)
         }

@@ -66,7 +66,7 @@ final private class UUIDGeneratorView: Page {
         super.layout()
         
         self.uuidView.snp.remakeConstraints{ make in
-            make.height.equalTo(max(200, self.frame.height - 290))
+            make.height.equalTo(max(200, self.frame.height - 300))
         }
     }
     
