@@ -37,6 +37,8 @@ public struct Query {
         self.components = []
     }
     
+    public var isEmpty: Bool { self.components.isEmpty }
+    
     /// マッチ判定を行う。詳細は`Query`のDiscussionを参照。
     public func matches(to contents: String...) -> Bool {
         if self.components.isEmpty { return true }

@@ -34,16 +34,15 @@ final class ToolManager {
     func categoryForIdentifier(_ identifier: String) -> ToolCategory? {
         self.categoryIdentifierMap[identifier]
     }
-    func toolsForCategory(_ category: ToolCategory, _ query: Query) -> [Tool] {
-        guard let tools = self.toolCategoryMap[category] else { return [] }
-        return tools.filter{ $0.showAlways || query.matches(to: $0.title, $0.sidebarTitle) }
+    func toolsForCategory(_ category: ToolCategory) -> [Tool] {
+        self.toolCategoryMap[category] ?? []
     }
-    func flattenRootItems(_ query: Query) -> [Any] {
+    func flattenRootItems() -> [Any] {
         var items = [Any]()
         for category in categories {
             if category.shouldHideCategory {
-                items.append(contentsOf: toolsForCategory(category, query))
-            } else if !toolsForCategory(category, query).isEmpty {
+                items.append(contentsOf: toolsForCategory(category))
+            } else if !toolsForCategory(category).isEmpty {
                 items.append(category)
             }
         }

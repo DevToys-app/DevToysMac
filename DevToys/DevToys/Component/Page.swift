@@ -7,7 +7,8 @@
 
 import CoreUtil
  
-class Page: NSLoadView {    
+class Page: NSLoadView { 
+    
     let stackView = NSStackView()
     let scrollView = NSScrollView()
     

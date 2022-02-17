@@ -59,10 +59,26 @@ final class JWTDecoderViewController: NSViewController {
 }
 
 final private class JWTDecoderView: Page {
-    
+        
     let tokenTextSection = TextViewSection(title: "JWT Token".localized(), options: .defaultInput)
     let headerCodeSection = CodeViewSection(title: "Header".localized(), options: .defaultOutput, language: .javascript)
     let payloadCodeSection = CodeViewSection(title: "Payload".localized(), options: .defaultOutput, language: .javascript)
+    
+    override func layout() {
+        super.layout()
+        
+        let contentHeight = max(100, (self.frame.height - 100) / 3)
+        
+        self.tokenTextSection.snp.remakeConstraints{ make in
+            make.height.equalTo(contentHeight)
+        }
+        self.headerCodeSection.snp.remakeConstraints{ make in
+            make.height.equalTo(contentHeight)
+        }
+        self.payloadCodeSection.snp.remakeConstraints{ make in
+            make.height.equalTo(contentHeight)
+        }
+    }
     
     override func onAwake() {        
         self.addSection(tokenTextSection)

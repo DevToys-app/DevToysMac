@@ -7,11 +7,19 @@
 
 import CoreUtil
 
-final class HomeViewController: NSViewController {
+class SearchViewController: HomeViewController {
+    override func chainObjectDidLoad() {
+        self.appModel.$searchQuery.map{ Query($0) }
+            .sink{[unowned self] query in self.tools = appModel.toolManager.allTools().filter{ query.matches(to: $0.title) } }
+            .store(in: &objectBag)
+    }
+}
+
+class HomeViewController: NSViewController {
     private let scrollView = NSScrollView()
     private let collectionView = NSCollectionView()
     
-    private var tools: [Tool] = [] {
+    var tools: [Tool] = [] {
         didSet { collectionView.reloadData() }
     }
     

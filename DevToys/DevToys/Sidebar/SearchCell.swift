@@ -15,7 +15,7 @@ final class SidebarSearchCellController: NSViewController {
     override func chainObjectDidLoad() {
         self.appModel.$searchQuery
             .sink{[unowned self] in self.cell.searchView.stringValue = $0 }.store(in: &objectBag)
-        self.cell.searchView.changeStringPublisher
+        self.cell.searchView.changeStringPublisher.merge(with: self.cell.searchView.endEditingStringPublisher)
             .sink{[unowned self] in self.appModel.searchQuery = $0 }.store(in: &objectBag)
     }
 }
