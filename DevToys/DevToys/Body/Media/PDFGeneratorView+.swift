@@ -112,7 +112,7 @@ final private class PDFGeneratorView: Page {
     override func layout() {
         super.layout()
         self.imageListView.snp.remakeConstraints{ make in
-            make.height.equalTo(max(240, self.frame.height - 100))
+            make.height.equalTo(max(240, self.frame.height - 120))
         }
     }
     

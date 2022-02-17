@@ -14,13 +14,24 @@ final class BodyViewController: NSViewController {
     override func loadView() { self.view = placeholderView }
     
     override func chainObjectDidLoad() {
-        appModel.$tool
-            .sink{[unowned self] tool in
-                self.contentViewController?.removeFromParent()
-                self.addChild(tool.viewController)
-                self.contentViewController = tool.viewController
-                self.placeholderView.contentView = tool.viewController.view
-            }
-            .store(in: &objectBag)
+        self.appModel.$tool
+            .sink{[unowned self] in replaceTool($0) }.store(in: &objectBag)
+        self.appModel.$searchQuery
+            .sink{[unowned self] in handleQuery($0) }.store(in: &objectBag)
+    }
+    
+    private func handleQuery(_ query: String) {
+        if query.isEmpty {
+            self.replaceTool(appModel.tool)
+        } else {
+            self.replaceTool(.search)
+        }
+    }
+    
+    private func replaceTool(_ tool: Tool) {
+        self.contentViewController?.removeFromParent()
+        self.addChild(tool.viewController)
+        self.contentViewController = tool.viewController
+        self.placeholderView.contentView = tool.viewController.view
     }
 }

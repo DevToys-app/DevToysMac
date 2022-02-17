@@ -12,7 +12,6 @@ final class SidebarViewController: NSViewController {
     private let searchViewController = SidebarSearchCellController()
     private let outlineView = SidebarOutlineView.list()
     private let scrollView = NSScrollView()
-    private var searchQuery = Query() { didSet { outlineView.reloadData() } }
     
     @RestorableState("toolmenu.initial") private var isInitial = true
         
@@ -38,9 +37,6 @@ final class SidebarViewController: NSViewController {
     }
         
     override func chainObjectDidLoad() {
-        self.appModel.$searchQuery
-            .sink{[unowned self] in self.searchQuery = Query($0) }.store(in: &objectBag)
-        
         // Datasource uses chainObject, call it in `chainObjectDidLoad`
         self.outlineView.delegate = self
         self.outlineView.dataSource = self
@@ -56,8 +52,11 @@ final class SidebarViewController: NSViewController {
 final private class SidebarOutlineView: NSOutlineView {
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
+        
         let row = row(at: event.location(in: self))
-        if row >= 0, let cell = self.view(atColumn: 0, row: row, makeIfNecessary: false) as? SidebarSearchCell {
+        if row >= 0, let cell = self.view(atColumn: 0, row: row, makeIfNecessary: false) as? SidebarSearchCell,
+           window?.firstResponder !== cell.searchView
+        {
             window?.makeFirstResponder(cell.searchView)
         }
     }
@@ -78,16 +77,16 @@ extension SidebarViewController: NSOutlineViewDataSource {
             if index == 0 {
                 return ()
             } else {
-                return appModel.toolManager.flattenRootItems(searchQuery)[index-1]
+                return appModel.toolManager.flattenRootItems()[index-1]
             }
         }
         guard let category = item as? ToolCategory else { return () }
-        return appModel.toolManager.toolsForCategory(category, searchQuery)[index]
+        return appModel.toolManager.toolsForCategory(category)[index]
     }
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
-        if item == nil { return appModel.toolManager.flattenRootItems(searchQuery).count + 1 }
+        if item == nil { return appModel.toolManager.flattenRootItems().count + 1 }
         guard let category = item as? ToolCategory else { return 0 }
-        return appModel.toolManager.toolsForCategory(category, searchQuery).count
+        return appModel.toolManager.toolsForCategory(category).count
     }
     
     func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {

@@ -13,6 +13,11 @@ extension Tool {
         toolDescription: "tool.home.description".localized(), showAlways: true, showOnHome: false,
         viewController: HomeViewController()
     )
+    static let search = Tool(
+        title: "Search".localized(), identifier: "search", category: .home, icon: R.Image.Tool.home,
+        toolDescription: "Search tools".localized(), showAlways: false, showOnHome: false,
+        viewController: SearchViewController()
+    )
     static let settings = Tool(
         title: "Settings", identifier: "settings", category: .settings, icon: R.Image.Tool.settings,
         toolDescription: "Setting of application", showAlways: true, showOnHome: true, showOnSidebar: false,

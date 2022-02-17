@@ -7,11 +7,19 @@
 
 import CoreUtil
 
-final class HomeViewController: NSViewController {
+class SearchViewController: HomeViewController {
+    override func chainObjectDidLoad() {
+        self.appModel.$searchQuery.map{ Query($0) }
+            .sink{[unowned self] query in self.tools = appModel.toolManager.allTools().filter{ query.matches(to: $0.title) } }
+            .store(in: &objectBag)
+    }
+}
+
+class HomeViewController: NSViewController {
     private let scrollView = NSScrollView()
     private let collectionView = NSCollectionView()
     
-    private var tools: [Tool] = [] {
+    var tools: [Tool] = [] {
         didSet { collectionView.reloadData() }
     }
     
@@ -25,10 +33,17 @@ final class HomeViewController: NSViewController {
         flowLayout.minimumInteritemSpacing = 8
         
         self.collectionView.dataSource = self
-        self.collectionView.delegate = self
-        self.collectionView.isSelectable = true
         self.collectionView.collectionViewLayout = flowLayout
         self.collectionView.register(ToolCollectionItem.self, forItemWithIdentifier: ToolCollectionItem.identifier)
+        self.collectionView.addGestureRecognizer(NSClickGestureRecognizer(target: self, action: #selector(onClick)))
+    }
+    
+    @objc private func onClick(_ recognizer: NSGestureRecognizer) {
+        guard let indexPath = collectionView.indexPathForItem(at: recognizer.location(in: collectionView)),
+              let tool = self.tools.at(indexPath.item)
+        else { return }
+        
+        self.appModel.tool = tool
     }
     
     override func chainObjectDidLoad() {
@@ -50,14 +65,6 @@ extension HomeViewController: NSCollectionViewDataSource {
         item.cell.toolDescription = tool.toolDescription
         
         return item
-    }
-}
-
-extension HomeViewController: NSCollectionViewDelegate {
-    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-        guard let index = indexPaths.first?.item else { return }
-        appModel.tool = self.tools[index]
-        self.collectionView.deselectAll(nil)
     }
 }
 
@@ -105,6 +112,9 @@ final private class AllToolCell: NSLoadView {
         self.isMouseInside = true
     }
     override func mouseExited(with event: NSEvent) {
+        self.isMouseInside = false
+    }
+    override func viewDidHide() {
         self.isMouseInside = false
     }
     

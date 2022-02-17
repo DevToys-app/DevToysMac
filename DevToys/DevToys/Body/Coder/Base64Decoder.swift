@@ -86,7 +86,7 @@ final private class Base64DecoderView: Page {
     
     override func layout() {
         super.layout()
-        let halfHeight = max(200, (self.frame.height - 200) / 2)
+        let halfHeight = max(200, (self.frame.height - 190) / 2)
         
         self.fileDropSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)
@@ -94,7 +94,7 @@ final private class Base64DecoderView: Page {
         self.inputTextSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)
         }
-        self.inputTextSection.snp.remakeConstraints{ make in
+        self.encodeTextSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)
         }
     }
@@ -106,6 +106,7 @@ final private class Base64DecoderView: Page {
         self.inputSectionContainer.contentView = inputTextSection
         self.addSection(inputSectionContainer)
         self.addSection(inputTextSection)
+        self.addSection(encodeTextSection)
     }
 }
 

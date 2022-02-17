@@ -70,7 +70,7 @@ final private class JSONFormatterView: Page {
         super.layout()
         
         self.ioStack.snp.remakeConstraints{ make in
-            make.height.equalTo(max(240, self.frame.height - 160))
+            make.height.equalTo(max(240, self.frame.height - 180))
         }
     }
     
