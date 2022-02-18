@@ -26,6 +26,7 @@
 		B620142327A929B400AF5386 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142227A929B400AF5386 /* TagCloudView.swift */; };
 		B627294F27BFB7680034D70C /* WebpConvertrer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627294E27BFB7680034D70C /* WebpConvertrer.swift */; };
 		B627295227BFB8CB0034D70C /* cwebp in Resources */ = {isa = PBXBuildFile; fileRef = B627295127BFB8CB0034D70C /* cwebp */; };
+		B627295727BFCCC40034D70C /* HeicConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627295627BFCCC40034D70C /* HeicConverter.swift */; };
 		B629B93127B8F7E400F573C9 /* ToolManager+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */; };
 		B64844FF27B767EC004FE02B /* ToolManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64844FE27B767EC004FE02B /* ToolManager+.swift */; };
 		B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64AA44F27AD0D3900EC436D /* DateConverter+.swift */; };
@@ -133,6 +134,7 @@
 		B620142227A929B400AF5386 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
 		B627294E27BFB7680034D70C /* WebpConvertrer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebpConvertrer.swift; sourceTree = "<group>"; };
 		B627295127BFB8CB0034D70C /* cwebp */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = cwebp; sourceTree = "<group>"; };
+		B627295627BFCCC40034D70C /* HeicConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeicConverter.swift; sourceTree = "<group>"; };
 		B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+Default.swift"; sourceTree = "<group>"; };
 		B64844FE27B767EC004FE02B /* ToolManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+.swift"; sourceTree = "<group>"; };
 		B64AA44F27AD0D3900EC436D /* DateConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateConverter+.swift"; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */,
 				B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */,
 				B627294E27BFB7680034D70C /* WebpConvertrer.swift */,
+				B627295627BFCCC40034D70C /* HeicConverter.swift */,
 			);
 			path = "Image Converter";
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				B6B5726427AC14D10069DBA7 /* RegexTextView.swift in Sources */,
 				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
 				B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */,
+				B627295727BFCCC40034D70C /* HeicConverter.swift in Sources */,
 				B620142327A929B400AF5386 /* TagCloudView.swift in Sources */,
 				B6B5728027ACC3AF0069DBA7 /* ChecksumGenerator.swift in Sources */,
 				B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */,

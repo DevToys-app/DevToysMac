@@ -38,14 +38,11 @@ enum ImageConverter {
         switch format {
         case .webp:
             isDone = WebpConvertrer.convert(image, to: destinationURL).eraseToVoid()
-        default:
-            isDone = Promise<Data, Error>.asyncError{ resolve, reject in
-                resolve(try convertNonWebp(image, to: format))
-            }
-            .tryPeek{ try $0.write(to: destinationURL) }
-            .eraseToVoid()
+        case .heic:
+            isDone = HeicConverter.export(image, to: destinationURL)
+        case .png, .jpg, .tiff, .gif:
+            isDone = exportNonWebp(image, to: format, to: destinationURL)
         }
-        
         
         return ImageConvertTask(
             image: item.image, title: item.title, size: item.image.size, destinationURL: destinationURL,
@@ -56,20 +53,25 @@ enum ImageConverter {
         )
     }
     
-    private static func convertNonWebp(_ image: NSImage, to format: ImageFormatType) throws -> Data {
-        switch format {
-        case .png:
-            guard let data = image.png else { throw "Data failed." }; return data
-        case .jpg:
-            guard let data = image.jpeg else { throw "Data failed." }; return data
-        case .tiff:
-            guard let data = image.tiffRepresentation else { throw "Data failed." }; return data
-        case .gif:
-            guard let data = image.gif else { throw "Data failed." }; return data
-        case .webp:
-            assertionFailure("Webp not supported!")
-            return Data()
-        }
+    
+    private static func exportNonWebp(_ image: NSImage, to format: ImageFormatType, to url: URL) -> Promise<Void, Error> {
+        Promise(output: { () throws -> Data in
+            switch format {
+            case .png:
+                guard let data = image.png else { throw "Data failed." }; return data
+            case .jpg:
+                guard let data = image.jpeg else { throw "Data failed." }; return data
+            case .tiff:
+                guard let data = image.tiffRepresentation else { throw "Data failed." }; return data
+            case .gif:
+                guard let data = image.gif else { throw "Data failed." }; return data
+            default:
+                assertionFailure("Format not supported!")
+                return Data()
+            }
+        })
+        .tryPeek{ try $0.write(to: url) }
+        .eraseToVoid()
     }
 }
 
@@ -81,10 +83,10 @@ extension ImageFormatType {
         case .gif: return "gif"
         case .tiff: return "tiff"
         case .webp: return "webp"
+        case .heic: return "heic"
         }
     }
 }
-
 
 extension NSImage {
     public var png: Data? { self.data(for: .png) }
@@ -108,15 +110,6 @@ extension CGImage {
     public var size: CGSize { CGSize(width: self.width, height: self.height) }
 }
 
-extension Promise {
-    public func tryPeek(_ receiveOutput: @escaping (Output) throws -> ()) -> Promise<Output, Error> {
-        Promise<Output, Error> { resolve, reject in
-            self.sink({ output in
-                do { try receiveOutput(output); resolve(output) } catch { reject(error) }
-            }, reject)
-        }
-    }
-}
 
 extension NSImage {
     var pngData: Data { png! }
