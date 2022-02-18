@@ -51,7 +51,16 @@ enum ImageConverter {
     }    
 }
 
-extension ImageFormatType {
+enum ImageFormatType: String, TextItem {
+    case png = "PNG Format"
+    case jpg = "JPEG Format"
+    case tiff = "TIFF Format"
+    case gif = "GIF Format"
+    case webp = "Webp Format"
+    case heic = "Heic Format"
+    
+    var title: String { rawValue.localized() }
+    
     var exp: String {
         switch self {
         case .png: return "png"
@@ -62,6 +71,13 @@ extension ImageFormatType {
         case .heic: return "heic"
         }
     }
+}
+
+enum ImageScaleMode: String, TextItem {
+    case scaleToFill = "Scale to Fill"
+    case scaleToFit = "Scale to Fit"
+    
+    var title: String { rawValue.localized() }
 }
 
 extension NSImage {

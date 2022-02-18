@@ -60,24 +60,6 @@ final class ImageConverterViewController: NSViewController {
     }
 }
 
-enum ImageFormatType: String, TextItem {
-    case png = "PNG Format"
-    case jpg = "JPEG Format"
-    case tiff = "TIFF Format"
-    case gif = "GIF Format"
-    case webp = "Webp Format"
-    case heic = "Heic Format"
-    
-    var title: String { rawValue.localized() }
-}
-
-enum ImageScaleMode: String, TextItem {
-    case scaleToFill = "Scale to Fill"
-    case scaleToFit = "Scale to Fit"
-    
-    var title: String { rawValue.localized() }
-}
-
 final private class ImageConverterView: Page {
     
     let formatTypePicker = EnumPopupButton<ImageFormatType>()
