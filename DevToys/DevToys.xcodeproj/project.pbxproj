@@ -24,6 +24,8 @@
 		B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620141D27A91F6700AF5386 /* LoremIpsumGenerator.swift */; };
 		B620142127A9271500AF5386 /* TextInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142027A9271500AF5386 /* TextInspector.swift */; };
 		B620142327A929B400AF5386 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620142227A929B400AF5386 /* TagCloudView.swift */; };
+		B627294F27BFB7680034D70C /* WebpConvertrer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627294E27BFB7680034D70C /* WebpConvertrer.swift */; };
+		B627295227BFB8CB0034D70C /* cwebp in Resources */ = {isa = PBXBuildFile; fileRef = B627295127BFB8CB0034D70C /* cwebp */; };
 		B629B93127B8F7E400F573C9 /* ToolManager+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */; };
 		B64844FF27B767EC004FE02B /* ToolManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64844FE27B767EC004FE02B /* ToolManager+.swift */; };
 		B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64AA44F27AD0D3900EC436D /* DateConverter+.swift */; };
@@ -129,6 +131,8 @@
 		B620141D27A91F6700AF5386 /* LoremIpsumGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoremIpsumGenerator.swift; sourceTree = "<group>"; };
 		B620142027A9271500AF5386 /* TextInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInspector.swift; sourceTree = "<group>"; };
 		B620142227A929B400AF5386 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
+		B627294E27BFB7680034D70C /* WebpConvertrer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebpConvertrer.swift; sourceTree = "<group>"; };
+		B627295127BFB8CB0034D70C /* cwebp */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = cwebp; sourceTree = "<group>"; };
 		B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+Default.swift"; sourceTree = "<group>"; };
 		B64844FE27B767EC004FE02B /* ToolManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+.swift"; sourceTree = "<group>"; };
 		B64AA44F27AD0D3900EC436D /* DateConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateConverter+.swift"; sourceTree = "<group>"; };
@@ -385,9 +389,11 @@
 		B6B5729027ACFE020069DBA7 /* Image Converter */ = {
 			isa = PBXGroup;
 			children = (
+				B627295127BFB8CB0034D70C /* cwebp */,
 				B6B5728927ACDA420069DBA7 /* ImageConverterView+.swift */,
 				B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */,
 				B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */,
+				B627294E27BFB7680034D70C /* WebpConvertrer.swift */,
 			);
 			path = "Image Converter";
 			sourceTree = "<group>";
@@ -528,6 +534,7 @@
 			files = (
 				B6E15A9427B6745100DC4D6B /* libimageoptimjpeg.dylib in Resources */,
 				B6BD80F427B8AEE700152AB9 /* Localizable.strings in Resources */,
+				B627295227BFB8CB0034D70C /* cwebp in Resources */,
 				B6AC276527AA3D61000FD713 /* jpegoptim in Resources */,
 				B6AC273027AA1373000FD713 /* optipng in Resources */,
 				B64B1E7827A4F5E300AC2601 /* Assets.xcassets in Resources */,
@@ -582,6 +589,7 @@
 				B620142127A9271500AF5386 /* TextInspector.swift in Sources */,
 				B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */,
 				B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */,
+				B627294F27BFB7680034D70C /* WebpConvertrer.swift in Sources */,
 				B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */,
 				B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */,
 				B680A79C27A6947D007CB707 /* Base64Decoder.swift in Sources */,

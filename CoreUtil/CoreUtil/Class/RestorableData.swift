@@ -7,11 +7,13 @@
 
 import Cocoa
 
-private let temporaryDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.noname.app")
+extension FileManager {
+    public static let temporaryDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.noname.app")
+}
 
 private let encoder = JSONEncoder()
 private let decoder = JSONDecoder()
-private let restorableDataURL = temporaryDirectoryURL.appendingPathComponent("RestorableData") => {
+private let restorableDataURL = FileManager.temporaryDirectoryURL.appendingPathComponent("RestorableData") => {
     try? FileManager.default.createDirectory(at: $0, withIntermediateDirectories: true, attributes: nil)
 }
 
@@ -57,7 +59,7 @@ public struct RestorableData<Value: Codable> {
 }
 
 final public class NSImageContainer: Codable {
-    static let dataDirectoryURL = temporaryDirectoryURL.appendingPathComponent("NSImageContainer") => {
+    static let dataDirectoryURL = FileManager.temporaryDirectoryURL.appendingPathComponent("NSImageContainer") => {
         try? FileManager.default.createDirectory(at: $0, withIntermediateDirectories: true, attributes: nil)
     }
     

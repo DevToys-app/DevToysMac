@@ -33,26 +33,43 @@ enum ImageConverter {
         let filename = "\(item.title.split(separator: ".").dropLast().joined(separator: ".")).\(format.exp)"
         let destinationURL = destinationDirectory.appendingPathComponent(filename)
         
-        let isDone = Promise<Data, Error>.asyncError{ resolve, reject in
-            switch format {
-            case .png:
-                guard let data = image.png else { return reject("Data failed.") }; resolve(data)
-            case .jpg:
-                guard let data = image.jpeg else { return reject("Data failed.") }; resolve(data)
-            case .tiff:
-                guard let data = image.tiffRepresentation else { return reject("Data failed.") }; resolve(data)
-            case .gif:
-                guard let data = image.gif else { return reject("Data failed.") }; resolve(data)
-            }
-        }
-        .tryPeek{ data in
-            try data.write(to: destinationURL)
-            NSWorkspace.shared.activateFileViewerSelecting([destinationURL])
-        }
-        .receive(on: .main)
-        .eraseToVoid()
+        let isDone: Promise<Void, Error>
         
-        return ImageConvertTask(image: item.image, title: item.title, size: item.image.size, destinationURL: destinationURL, isDone: isDone)
+        switch format {
+        case .webp:
+            isDone = WebpConvertrer.convert(image, to: destinationURL).eraseToVoid()
+        default:
+            isDone = Promise<Data, Error>.asyncError{ resolve, reject in
+                resolve(try convertNonWebp(image, to: format))
+            }
+            .tryPeek{ try $0.write(to: destinationURL) }
+            .eraseToVoid()
+        }
+        
+        
+        return ImageConvertTask(
+            image: item.image, title: item.title, size: item.image.size, destinationURL: destinationURL,
+            isDone:
+                isDone
+                .receive(on: .main)
+                .peek{ NSWorkspace.shared.activateFileViewerSelecting([destinationURL]) }
+        )
+    }
+    
+    private static func convertNonWebp(_ image: NSImage, to format: ImageFormatType) throws -> Data {
+        switch format {
+        case .png:
+            guard let data = image.png else { throw "Data failed." }; return data
+        case .jpg:
+            guard let data = image.jpeg else { throw "Data failed." }; return data
+        case .tiff:
+            guard let data = image.tiffRepresentation else { throw "Data failed." }; return data
+        case .gif:
+            guard let data = image.gif else { throw "Data failed." }; return data
+        case .webp:
+            assertionFailure("Webp not supported!")
+            return Data()
+        }
     }
 }
 
@@ -63,6 +80,7 @@ extension ImageFormatType {
         case .jpg: return "jpg"
         case .gif: return "gif"
         case .tiff: return "tiff"
+        case .webp: return "webp"
         }
     }
 }

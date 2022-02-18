@@ -65,6 +65,7 @@ enum ImageFormatType: String, TextItem {
     case jpg = "JPEG Format"
     case tiff = "TIFF Format"
     case gif = "GIF Format"
+    case webp = "Webp Format"
     
     var title: String { rawValue.localized() }
 }
