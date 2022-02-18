@@ -32,43 +32,23 @@ enum ImageConverter {
         
         let filename = "\(item.title.split(separator: ".").dropLast().joined(separator: ".")).\(format.exp)"
         let destinationURL = destinationDirectory.appendingPathComponent(filename)
+        let isDone = exportPromise(image, to: format, destinationURL: destinationURL)
+            .receive(on: .main)
+            .peek{ NSWorkspace.shared.activateFileViewerSelecting([destinationURL]) }
         
-        let isDone: Promise<Void, Error>
-        
-        
-        return ImageConvertTask(
-            image: item.image, title: item.title, size: item.image.size, destinationURL: destinationURL,
-            isDone: isDone.receive(on: .main).peek{ NSWorkspace.shared.activateFileViewerSelecting([destinationURL]) }
-        )
+        return ImageConvertTask(image: item.image, title: item.title, size: item.image.size, destinationURL: destinationURL, isDone: isDone)
     }
     
     private static func exportPromise(_ image: NSImage, to format: ImageFormatType, destinationURL: URL) -> Promise<Void, Error> {
         switch format {
-        case .webp: return WebpExporter.convert(image, to: destinationURL).eraseToVoid()
-        case .heic: return HeicConverter.export(image, to: destinationURL)
-        case .png, .jpg, .tiff, .gif: return exportNonWebp(image, to: format, to: destinationURL)
+        case .webp: return WebpImageExporter.export(image, to: destinationURL)
+        case .heic: return HeicImageExporter.export(image, to: destinationURL)
+        case .png: return DefaultImageExporter.exportPNG(image, to: destinationURL)
+        case .jpg: return DefaultImageExporter.exportJPEG(image, to: destinationURL)
+        case .gif: return DefaultImageExporter.exportGIF(image, to: destinationURL)
+        case .tiff: return DefaultImageExporter.exportTIFF(image, to: destinationURL)
         }
-    }
-    
-    private static func exportNonWebp(_ image: NSImage, to format: ImageFormatType, to url: URL) -> Promise<Void, Error> {
-        Promise(output: { () throws -> Data in
-            switch format {
-            case .png:
-                guard let data = image.png else { throw "Data failed." }; return data
-            case .jpg:
-                guard let data = image.jpeg else { throw "Data failed." }; return data
-            case .tiff:
-                guard let data = image.tiffRepresentation else { throw "Data failed." }; return data
-            case .gif:
-                guard let data = image.gif else { throw "Data failed." }; return data
-            default:
-                assertionFailure("Format not supported!")
-                return Data()
-            }
-        })
-        .tryPeek{ try $0.write(to: url) }
-        .eraseToVoid()
-    }
+    }    
 }
 
 extension ImageFormatType {
@@ -85,31 +65,6 @@ extension ImageFormatType {
 }
 
 extension NSImage {
-    public var png: Data? { self.data(for: .png) }
-    public var jpeg: Data? {  self.data(for: .jpeg) }
-    public var gif: Data? {  self.data(for: .gif)  }
-    
-    public convenience init(cgImage: CGImage) { self.init(cgImage: cgImage, size: cgImage.size) }
-    
-    public func data(for fileType: NSBitmapImageRep.FileType, properties: [NSBitmapImageRep.PropertyKey : Any] = [:]) -> Data? {
-        guard
-            let tiffRepresentation = self.tiffRepresentation,
-            let bitmap = NSBitmapImageRep(data: tiffRepresentation),
-            let rep = bitmap.representation(using: fileType, properties: properties)
-        else { return nil }
-        
-        return rep
-    }
-}
-
-extension CGImage {
-    public var size: CGSize { CGSize(width: self.width, height: self.height) }
-}
-
-
-extension NSImage {
-    var pngData: Data { png! }
-    
     func resizedAspectFill(to newSize: CGSize) -> NSImage? {
         guard let bitmapRep = NSBitmapImageRep(
             bitmapDataPlanes: nil, pixelsWide: Int(newSize.width), pixelsHigh: Int(newSize.height),

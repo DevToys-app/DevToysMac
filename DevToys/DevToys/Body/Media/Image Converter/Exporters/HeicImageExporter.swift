@@ -16,7 +16,7 @@ enum HeicExportError: Error {
 
 enum HeicImageExporter {
     static func export(_ image: NSImage, to url: URL) -> Promise<Void, Error> {
-        Promise.asyncError{
+        Promise.tryAsync{
             let data = NSMutableData()
             guard let cgImage = image.cgImage else { throw HeicExportError.cgImageMissing }
             guard let destination = CGImageDestinationCreateWithData(data, AVFileType.heic as CFString, 1, nil) else { throw HeicExportError.heicNotSupported }

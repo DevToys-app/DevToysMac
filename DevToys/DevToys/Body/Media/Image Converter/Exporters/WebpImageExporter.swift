@@ -18,11 +18,11 @@ enum WebpImageExporter {
     }
     
     static func export(_ image: NSImage, to url: URL) -> Promise<Void, Error> {
-        Promise<URL, Error>.asyncError { resolve, reject in
+        Promise<URL, Error>.tryAsync{
             let url = inputDataURL.appendingPathComponent(UUID().uuidString)
-            guard let data = image.tiffRepresentation else { return reject(WebpExportError.noImageData) }
+            guard let data = image.tiffRepresentation else { throw WebpExportError.noImageData }
             try data.write(to: url)
-            resolve(url)
+            return url
         }
         .flatPeek{ Terminal.run(cwebpURL, arguments: [$0.path, "-o", url.path]) }
         .tryPeek{ try FileManager.default.removeItem(at: $0) }

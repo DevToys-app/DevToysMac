@@ -28,7 +28,7 @@ public enum Terminal {
         task.standardOutput = outputPipe
         task.standardError = errorPipe
         
-        return Promise<String, Error>.asyncError(on: queue) { resolve, reject in
+        return Promise<String, Error>.tryAsync(on: queue) { resolve, reject in
             try task.run()
             task.waitUntilExit()
             

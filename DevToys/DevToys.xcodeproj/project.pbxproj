@@ -394,7 +394,6 @@
 			isa = PBXGroup;
 			children = (
 				B6ED863427BFE12400A17474 /* Exporters */,
-				B627295127BFB8CB0034D70C /* cwebp */,
 				B6B5728927ACDA420069DBA7 /* ImageConverterView+.swift */,
 				B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */,
 				B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */,
@@ -447,6 +446,7 @@
 		B6ED863427BFE12400A17474 /* Exporters */ = {
 			isa = PBXGroup;
 			children = (
+				B627295127BFB8CB0034D70C /* cwebp */,
 				B627295627BFCCC40034D70C /* HeicImageExporter.swift */,
 				B627294E27BFB7680034D70C /* WebpImageExporter.swift */,
 				B6ED863527BFE7DC00A17474 /* DefaultImageExporter.swift */,
