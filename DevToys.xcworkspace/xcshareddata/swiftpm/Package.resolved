@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
         "state": {
           "branch": null,
-          "revision": "4b0565384d3c4c588af09e660535b2c7c9bf5b39",
-          "version": "1.4.2"
+          "revision": "12f2389aca4a07e0dd54c86ec23d0721ed88b8db",
+          "version": "1.4.3"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/ObuchiYuki/Promise.git",
         "state": {
           "branch": null,
-          "revision": "82a60b1db74d3ccaf3e648b7c1df2dc9d3e364f5",
-          "version": "1.0.10"
+          "revision": "69be3d8006ce3e789e435bc8f2d8ebafa5b654e1",
+          "version": "1.0.11"
         }
       },
       {

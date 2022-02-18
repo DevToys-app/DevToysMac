@@ -35,24 +35,20 @@ enum ImageConverter {
         
         let isDone: Promise<Void, Error>
         
-        switch format {
-        case .webp:
-            isDone = WebpConvertrer.convert(image, to: destinationURL).eraseToVoid()
-        case .heic:
-            isDone = HeicConverter.export(image, to: destinationURL)
-        case .png, .jpg, .tiff, .gif:
-            isDone = exportNonWebp(image, to: format, to: destinationURL)
-        }
         
         return ImageConvertTask(
             image: item.image, title: item.title, size: item.image.size, destinationURL: destinationURL,
-            isDone:
-                isDone
-                .receive(on: .main)
-                .peek{ NSWorkspace.shared.activateFileViewerSelecting([destinationURL]) }
+            isDone: isDone.receive(on: .main).peek{ NSWorkspace.shared.activateFileViewerSelecting([destinationURL]) }
         )
     }
     
+    private static func exportPromise(_ image: NSImage, to format: ImageFormatType, destinationURL: URL) -> Promise<Void, Error> {
+        switch format {
+        case .webp: return WebpExporter.convert(image, to: destinationURL).eraseToVoid()
+        case .heic: return HeicConverter.export(image, to: destinationURL)
+        case .png, .jpg, .tiff, .gif: return exportNonWebp(image, to: format, to: destinationURL)
+        }
+    }
     
     private static func exportNonWebp(_ image: NSImage, to format: ImageFormatType, to url: URL) -> Promise<Void, Error> {
         Promise(output: { () throws -> Data in
