@@ -68,9 +68,10 @@
 		B67A4CC027C0F4BA009277FB /* BoxHSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4CBF27C0F4BA009277FB /* BoxHSBColorPicker.swift */; };
 		B67A4CC327C0F4D4009277FB /* CircleHueBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4CC227C0F4D4009277FB /* CircleHueBarView.swift */; };
 		B67A4CC527C0F50D009277FB /* R+ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4CC427C0F50D009277FB /* R+ColorPicker.swift */; };
-		B67A4CC727C0F546009277FB /* CircleHSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4CC627C0F546009277FB /* CircleHSBColorPicker.swift */; };
+		B67A4CC727C0F546009277FB /* CircleBoxHSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4CC627C0F546009277FB /* CircleBoxHSBColorPicker.swift */; };
 		B67A4CC927C10493009277FB /* SaturationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4CC827C10493009277FB /* SaturationBarView.swift */; };
 		B67A4CCB27C10548009277FB /* BrightnessBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4CCA27C10548009277FB /* BrightnessBarView.swift */; };
+		B67A4CCD27C12C09009277FB /* CircleBarsHSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4CCC27C12C09009277FB /* CircleBarsHSBColorPicker.swift */; };
 		B680A79527A68B35007CB707 /* HTMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79427A68B35007CB707 /* HTMLDecoder.swift */; };
 		B680A79827A69268007CB707 /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = B680A79727A69268007CB707 /* HTMLEntities */; };
 		B680A79A27A69324007CB707 /* URLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79927A69324007CB707 /* URLDecoder.swift */; };
@@ -206,9 +207,10 @@
 		B67A4CBF27C0F4BA009277FB /* BoxHSBColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxHSBColorPicker.swift; sourceTree = "<group>"; };
 		B67A4CC227C0F4D4009277FB /* CircleHueBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleHueBarView.swift; sourceTree = "<group>"; };
 		B67A4CC427C0F50D009277FB /* R+ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+ColorPicker.swift"; sourceTree = "<group>"; };
-		B67A4CC627C0F546009277FB /* CircleHSBColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleHSBColorPicker.swift; sourceTree = "<group>"; };
+		B67A4CC627C0F546009277FB /* CircleBoxHSBColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBoxHSBColorPicker.swift; sourceTree = "<group>"; };
 		B67A4CC827C10493009277FB /* SaturationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationBarView.swift; sourceTree = "<group>"; };
 		B67A4CCA27C10548009277FB /* BrightnessBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessBarView.swift; sourceTree = "<group>"; };
+		B67A4CCC27C12C09009277FB /* CircleBarsHSBColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBarsHSBColorPicker.swift; sourceTree = "<group>"; };
 		B680A79427A68B35007CB707 /* HTMLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLDecoder.swift; sourceTree = "<group>"; };
 		B680A79927A69324007CB707 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
 		B680A79B27A6947D007CB707 /* Base64Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Decoder.swift; sourceTree = "<group>"; };
@@ -451,7 +453,7 @@
 			isa = PBXGroup;
 			children = (
 				B67A4CBF27C0F4BA009277FB /* BoxHSBColorPicker.swift */,
-				B67A4CC627C0F546009277FB /* CircleHSBColorPicker.swift */,
+				B67A4CC627C0F546009277FB /* CircleBoxHSBColorPicker.swift */,
 				B67A4C0627C0B9FF009277FB /* ColorBoxView.swift */,
 				B67A4C0227C0B9FF009277FB /* ColorPickerHandleLayer.swift */,
 				B67A4CBD27C0EEEF009277FB /* ColorSampleView.swift */,
@@ -460,6 +462,7 @@
 				B67A4CC227C0F4D4009277FB /* CircleHueBarView.swift */,
 				B67A4CC827C10493009277FB /* SaturationBarView.swift */,
 				B67A4CCA27C10548009277FB /* BrightnessBarView.swift */,
+				B67A4CCC27C12C09009277FB /* CircleBarsHSBColorPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -690,7 +693,7 @@
 				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
 				B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */,
 				B627295727BFCCC40034D70C /* HeicImageExporter.swift in Sources */,
-				B67A4CC727C0F546009277FB /* CircleHSBColorPicker.swift in Sources */,
+				B67A4CC727C0F546009277FB /* CircleBoxHSBColorPicker.swift in Sources */,
 				B67A4C5827C0EA84009277FB /* ACOverlayWrapper.swift in Sources */,
 				B67A4C5427C0EA84009277FB /* Ex+CGImage.swift in Sources */,
 				B620142327A929B400AF5386 /* TagCloudView.swift in Sources */,
@@ -724,6 +727,7 @@
 				B64B1F7227A4FDC800AC2601 /* AppModel.swift in Sources */,
 				B6D1AEFA27A557280022FED2 /* PopupButton.swift in Sources */,
 				B6B5728A27ACDA420069DBA7 /* ImageConverterView+.swift in Sources */,
+				B67A4CCD27C12C09009277FB /* CircleBarsHSBColorPicker.swift in Sources */,
 				B6D1AEF027A547B90022FED2 /* JSONFormatter+.swift in Sources */,
 				B64844FF27B767EC004FE02B /* ToolManager+.swift in Sources */,
 				B620142127A9271500AF5386 /* TextInspector.swift in Sources */,

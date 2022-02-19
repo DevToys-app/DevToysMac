@@ -272,7 +272,7 @@ final private class ColorPickerView: Page {
         
         self.addSection(componentsStack)
         
-        self.addSection(Section(title: "Color Hex", orientation: .horizontal, items: [
+        self.addSection(Section(title: "Color Hex", orientation: .horizontal, fillWidth: false, items: [
             hex3TextField, hex6TextField, hex8TextField
         ]))
                 

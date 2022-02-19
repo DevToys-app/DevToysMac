@@ -22,8 +22,13 @@ class Section: NSLoadView {
         get { contentStackView.orientation } set { contentStackView.orientation = newValue }
     }
     
-    func addStackItem(_ item: NSView) {
+    func addStackItem(_ item: NSView, fillWidth: Bool = true) {
         self.contentStackView.addArrangedSubview(item)
+        if fillWidth {
+            item.snp.makeConstraints{ make in
+                make.right.left.equalToSuperview()
+            }
+        }
     }
     func addToolbarItem(_ item: NSView) {
         self.titleStackView.addArrangedSubview(item)
@@ -35,18 +40,18 @@ class Section: NSLoadView {
         self.titleStackView.subviews.removeAll(where: { $0 !== titleLabel && $0 !== spacer })
     }
     
-    convenience init(title: String, orientation: NSUserInterfaceLayoutOrientation = .vertical, items: [NSView] = [], toolbarItems: [NSView] = []) {
+    convenience init(title: String, orientation: NSUserInterfaceLayoutOrientation = .vertical, fillWidth: Bool = true, items: [NSView] = [], toolbarItems: [NSView] = []) {
         self.init()
         self.title = title
         self.orientation = orientation
-        for item in items { self.addStackItem(item) }
+        for item in items { self.addStackItem(item, fillWidth: fillWidth) }
         for toolbarItem in toolbarItems { self.addToolbarItem(toolbarItem) }
     }
     
     private let titleLabel = NSTextField(labelWithString: "Title")
     private let spacer = NSView()
     private let titleStackView = NSStackView()
-    let contentStackView = NSStackView()
+    private let contentStackView = NSStackView()
     
     override func onAwake() {
         self.addSubview(titleStackView)

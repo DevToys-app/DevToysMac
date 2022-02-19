@@ -28,7 +28,6 @@ final class CircleHueBarView: NSLoadView {
     private func sendLocation(_ location: CGPoint) {
         let delta = bounds.center - location
         let radius = atan2(delta.y, delta.x) / (2 * .pi) + 0.5
-        print(delta, radius)
         huePublisher.send(radius.clamped(0...1))
     }
     
@@ -46,13 +45,15 @@ final class CircleHueBarView: NSLoadView {
             .copy(strokingWithWidth: R.ColorPicker.barWidth-1, lineCap: CGLineCap.butt, lineJoin: .miter, miterLimit: .infinity)
         self.updateHandle()
         
-        self.placeholder.frame = bounds.slimmed(by: 50)
+        let half = (bounds.width)/2
+        let delta = half - half/sqrt(2)
+        self.placeholder.frame = bounds.slimmed(by: delta+R.ColorPicker.barWidth)
     }
     
     override func onAwake() {
         self.wantsLayer = true
         self.snp.makeConstraints{ make in
-            make.size.equalTo(R.ColorPicker.pickerHeight)
+            make.width.equalTo(self.snp.height)
         }
         
         self.layer?.addSublayer(hueLayer)
