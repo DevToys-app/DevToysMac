@@ -46,6 +46,10 @@ final class TextView: NSLoadView {
         
         self.addSubview(scrollView)
         self.textView.allowsUndo = true
+        self.textView.isAutomaticSpellingCorrectionEnabled = false
+        self.textView.isAutomaticQuoteSubstitutionEnabled = false
+        self.textView.isAutomaticDashSubstitutionEnabled = false
+        self.textView.isAutomaticLinkDetectionEnabled = false
         self.textView.font = .monospacedSystemFont(ofSize: R.Size.codeFontSize, weight: .regular)
         self.textView.drawsBackground = false
         self.textView.textContainerInset = [0, 4]

@@ -73,6 +73,11 @@ final class CodeTextView: NSLoadView {
         textView.allowsUndo = true
         self.textView = textView
         
+        self.textView.isAutomaticSpellingCorrectionEnabled = false
+        self.textView.isAutomaticQuoteSubstitutionEnabled = false
+        self.textView.isAutomaticDashSubstitutionEnabled = false
+        self.textView.isAutomaticLinkDetectionEnabled = false
+        
         self.contentInsets = [0, 4]
         self.textView?.backgroundColor = .quaternaryLabelColor
     }
