@@ -48,12 +48,3 @@ final class ControlButtonBackgroundLayer: CALoadLayer {
         self.areAnimationsEnabled = false
     }
 }
-
-
-extension R {
-    enum Color {
-        static var controlBackgroundColor: NSColor { NSColor.textColor.withAlphaComponent(0.08) }
-        static var controlHighlightedBackgroundColor: NSColor { NSColor.textColor.withAlphaComponent(0.15) }
-    }
-}
-

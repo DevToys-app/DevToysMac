@@ -17,6 +17,11 @@ enum R {
         
         static let controlHeight: CGFloat = 26
     }
+    enum Color {
+        static var controlBackgroundColor: NSColor { NSColor.textColor.withAlphaComponent(0.08) }
+        static var controlHighlightedBackgroundColor: NSColor { NSColor.textColor.withAlphaComponent(0.15) }
+        static let transparentBackground = NSColor(patternImage: NSImage(named: "transparent_background")!)
+    }
     enum Image {
         static let check = NSImage(named: "check")!
         static let error = NSImage(named: "error")!
