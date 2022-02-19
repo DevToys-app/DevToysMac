@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="ECQ-9M-Pkg" customClass="ACOverlayController" customModule="PixelPicker" customModuleProvider="target">
+        <customObject id="ECQ-9M-Pkg" customClass="ACOverlayController" customModule="DevToys" customModuleProvider="target">
             <connections>
                 <outlet property="infoDetailField" destination="Re2-GH-fyd" id="K03-75-cf9"/>
                 <outlet property="infoPanel" destination="OMO-LB-w57" id="GGj-Y6-LfU"/>
@@ -19,16 +20,16 @@
                 <outlet property="wrapper" destination="acW-WA-gq2" id="Mpu-0H-rtC"/>
             </connections>
         </customObject>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="gZA-A3-IZ5" customClass="ACOverlayPanel" customModule="PixelPicker" customModuleProvider="target">
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="gZA-A3-IZ5" customClass="ACOverlayPanel" customModule="DevToys" customModuleProvider="target">
             <windowStyleMask key="styleMask" utility="YES" nonactivatingPanel="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="132" width="101" height="101"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
-            <view key="contentView" id="acW-WA-gq2" customClass="PPOverlayWrapper" customModule="PixelPicker" customModuleProvider="target">
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+            <view key="contentView" id="acW-WA-gq2" customClass="PPOverlayWrapper" customModule="DevToys" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="oj3-ml-2qo" customClass="ACOverlayPreview" customModule="PixelPicker" customModuleProvider="target">
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="oj3-ml-2qo" customClass="ACOverlayPreview" customModule="DevToys" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
                     </customView>
                 </subviews>
@@ -41,10 +42,10 @@
             </view>
             <point key="canvasLocation" x="236" y="82"/>
         </window>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="OMO-LB-w57" customClass="ACOverlayPanel" customModule="PixelPicker" customModuleProvider="target">
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="OMO-LB-w57" customClass="ACOverlayPanel" customModule="DevToys" customModuleProvider="target">
             <windowStyleMask key="styleMask" utility="YES" nonactivatingPanel="YES"/>
             <rect key="contentRect" x="926" y="538" width="100" height="29"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <view key="contentView" id="HED-rR-FDP">
                 <rect key="frame" x="0.0" y="0.0" width="100" height="29"/>
                 <autoresizingMask key="autoresizingMask"/>

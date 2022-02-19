@@ -7,8 +7,9 @@
 
 import CoreUtil
 
+private let handleSize: CGFloat = 16
+
 final class ColorPickerHandleLayer: CALoadLayer {
-    
     var color: CGColor = .white {
         didSet { colorLayer.backgroundColor = color }
     }
@@ -16,9 +17,9 @@ final class ColorPickerHandleLayer: CALoadLayer {
     private let colorLayer = CALayer.animationDisabled()
     
     override func onAwake() {
-        self.frame.size = [25, 25]
+        self.frame.size = [handleSize, handleSize]
         self.areAnimationsEnabled = false
-        self.cornerRadius = 25/2
+        self.cornerRadius = handleSize/2
         self.borderWidth = 2
         self.borderColor = .white
         self.backgroundColor = R.Color.transparentBackground.cgColor

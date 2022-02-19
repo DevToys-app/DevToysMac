@@ -13,6 +13,7 @@ precedencegroup PipePrecedence {
 
 infix operator =>: PipePrecedence
 infix operator |>: PipePrecedence
+infix operator <=>: PipePrecedence
 
 @discardableResult
 @inlinable public func => <T>(lhs: T, rhs: (T) throws -> Void) rethrows -> T {
@@ -23,4 +24,11 @@ infix operator |>: PipePrecedence
 @discardableResult
 @inlinable public func |> <T, U>(lhs: T, rhs: (T) throws -> U) rethrows -> U {
     try rhs(lhs)
+}
+
+@discardableResult
+@inlinable public func <=> <T>(lhs: T, rhs: (inout T) throws -> Void) rethrows -> T {
+    var lhs = lhs
+    try rhs(&lhs)
+    return lhs
 }

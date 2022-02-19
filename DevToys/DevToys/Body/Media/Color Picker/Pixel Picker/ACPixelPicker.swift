@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import CoreUtil
 
 class ACPixelPicker {
 
@@ -25,6 +26,14 @@ class ACPixelPicker {
     func show(_ completion: @escaping (Color?) -> Void) {
         controller.showPicker {
             completion(Color(nsColor: $0))
+        }
+    }
+}
+
+extension ACPixelPicker {
+    func show() -> Promise<Color, PromiseCancelError> {
+        Promise{ resolve, reject in
+            self.show{ if let color = $0 { resolve(color) } else { reject(.shared) } }
         }
     }
 }

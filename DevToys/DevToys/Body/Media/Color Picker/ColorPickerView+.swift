@@ -11,7 +11,8 @@ import CoreUtil
 final class ColorPickerViewController: NSViewController {
     private let cell = ColorPickerView()
     
-    @RestorableData("color") var color: Color = .default
+    @RestorableData("color.color") var color: Color = .default
+    @RestorableState("color.pickertype") var pickerType: ColorPickerType = .hsbBox
     
     @Observable var hex3: String? = nil
     @Observable var hex6: String = "000000"
@@ -53,6 +54,12 @@ final class ColorPickerViewController: NSViewController {
         return "\(charactors[0])\(charactors[2])\(charactors[4])"
     }
     
+    private func pickColor() {
+        ACPixelPicker().show()
+            .peek{[self] in self.color = $0; updateComponents() }
+            .catchCancel{}
+    }
+    
     override func viewDidLoad() {
         self.$hex3.sink{[unowned self] in self.cell.hex3TextField.string = $0 ?? "" }.store(in: &objectBag)
         self.$hex6.sink{[unowned self] in self.cell.hex6TextField.string = $0 }.store(in: &objectBag)
@@ -66,10 +73,30 @@ final class ColorPickerViewController: NSViewController {
         self.$magenta.sink{[unowned self] in self.cell.magentaField.value = $0 }.store(in: &objectBag)
         self.$yellow.sink{[unowned self] in self.cell.yellowField.value = $0 }.store(in: &objectBag)
         self.$key.sink{[unowned self] in self.cell.keyField.value = $0 }.store(in: &objectBag)
+        self.$pickerType.sink{[unowned self] in self.cell.pickerTypePicker.selectedItem = $0 }.store(in: &objectBag)
+        
+        self.$pickerType
+            .map{[unowned self] type -> NSView in
+                switch type {
+                case .hsbBox: return self.cell.boxHSBPicker
+                case .hsbCircle: return self.cell.circleBoxHSBPicker
+                case .hsbCircleAndBars: return self.cell.circleBarsHSBPicker
+                }
+            }
+            .sink{[unowned self] in self.cell.pickerPlaceholder.contentView = $0 }
+            .store(in: &objectBag)
         
         self.$color
-            .sink{[unowned self] in cell.colorBox.color = $0; cell.hueBar.color = $0; cell.opacityBar.color = $0 }.store(in: &objectBag)
+            .sink{[unowned self] in
+                cell.boxHSBPicker.color = $0
+                cell.circleBoxHSBPicker.color = $0
+                cell.circleBarsHSBPicker.color = $0
+                cell.colorSampleView.color = $0.cgColor
+            }
+            .store(in: &objectBag)
         
+        self.cell.pickerTypePicker.itemPublisher
+            .sink{[unowned self] in self.pickerType = $0 }.store(in: &objectBag)
         self.cell.hex3TextField.endEditingStringPublisher
             .sink{[unowned self] in self.color = Color(hex3: $0, alpha: color.alpha) ?? color; updateComponents() }.store(in: &objectBag)
         self.cell.hex6TextField.endEditingStringPublisher
@@ -77,12 +104,8 @@ final class ColorPickerViewController: NSViewController {
         self.cell.hex8TextField.endEditingStringPublisher
             .sink{[unowned self] in self.color = Color(hex8: $0) ?? color; updateComponents() }.store(in: &objectBag)
         
-        self.cell.colorBox.valuePublisher
-            .sink{[unowned self] in self.color = self.color.withSB($0.saturation, $0.brightness); updateComponents() }.store(in: &objectBag)
-        self.cell.hueBar.huePublisher
-            .sink{[unowned self] in self.color.hue = $0; updateComponents() }.store(in: &objectBag)
-        self.cell.opacityBar.opacityPublisher
-            .sink{[unowned self] in self.color.alpha = $0; updateComponents() }.store(in: &objectBag)
+        self.cell.boxHSBPicker.colorPublisher.merge(with: cell.circleBoxHSBPicker.colorPublisher, cell.circleBarsHSBPicker.colorPublisher)
+            .sink{[unowned self] in self.color = $0; updateComponents() }.store(in: &objectBag)
         
         self.cell.redField.publisher
             .sink{[unowned self] in self.color = self.color.withRed($0/255); updateComponents() }.store(in: &objectBag)
@@ -91,14 +114,33 @@ final class ColorPickerViewController: NSViewController {
         self.cell.blueField.publisher
             .sink{[unowned self] in self.color = self.color.withBlue($0/255); updateComponents() }.store(in: &objectBag)
         
+        self.cell.pixelPickerButton.actionPublisher
+            .sink{[unowned self] in self.pickColor() }.store(in: &objectBag)
+        
         self.updateComponents()
     }
 }
 
+enum ColorPickerType: String, TextItem {
+    case hsbBox = "HSB Box"
+    case hsbCircle = "HSB Circle"
+    case hsbCircleAndBars = "HSB Circle and Bars"
+    
+    var title: String { rawValue }
+}
+
 final private class ColorPickerView: Page {
-    let colorBox = ColorBoxView()
-    let hueBar = HueBarView()
-    let opacityBar = OpacityBarView()
+    let pickerTypePicker = EnumPopupButton<ColorPickerType>()
+    
+    let boxHSBPicker = BoxHSBColorPicker()
+    let circleBoxHSBPicker = CircleBoxHSBColorPicker()
+    let circleBarsHSBPicker = CircleBarsHSBColorPicker()
+    
+    let pickerPlaceholder = NSPlaceholderView()
+    
+    let colorSampleView = ColorSampleView()
+    let pixelPickerButton = SectionButton(title: "Pick Color", image: R.Image.spuit)
+    
     let hex3TextField = TextField() => { $0.placeholder = "#XXX" }
     let hex6TextField = TextField() => { $0.placeholder = "#XXXXXX" }
     let hex8TextField = TextField() => { $0.placeholder = "#XXXXXXXX" }
@@ -113,16 +155,16 @@ final private class ColorPickerView: Page {
     let keyField = NumberField() => { $0.snp.makeConstraints{ make in make.width.equalTo(100) } }
     
     override func onAwake() {
-        self.addSection(NSStackView() => {
-            $0.orientation = .horizontal
-            $0.spacing = 16
-            $0.addArrangedSubview(colorBox)
-            $0.addArrangedSubview(hueBar)
-            $0.addArrangedSubview(opacityBar)
-            $0.snp.makeConstraints{ make in
-                make.height.equalTo(200)
-            }
-        })
+        self.addSection(Area(icon: R.Image.settings, title: "Picker Type", control: pickerTypePicker))
+        self.pickerPlaceholder.contentView = circleBarsHSBPicker
+        self.addSection(pickerPlaceholder)
+        
+        let componentsStack = NSStackView()
+        componentsStack.orientation = .horizontal
+        componentsStack.addArrangedSubview(colorSampleView)
+        componentsStack.addArrangedSubview(pixelPickerButton)
+        
+        self.addSection(componentsStack)
         
         self.addSection(Section(title: "Color Hex", orientation: .horizontal, items: [
             hex3TextField, hex6TextField, hex8TextField

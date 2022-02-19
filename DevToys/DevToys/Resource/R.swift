@@ -23,6 +23,7 @@ enum R {
         static let transparentBackground = NSColor(patternImage: NSImage(named: "transparent_background")!)
     }
     enum Image {
+        static let spuit = NSImage(named: "spuit")!
         static let check = NSImage(named: "check")!
         static let error = NSImage(named: "error")!
         

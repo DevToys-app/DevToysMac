@@ -39,7 +39,7 @@ final class HueBarView: NSLoadView {
     
     override func onAwake() {
         self.snp.makeConstraints{ make in
-            make.width.equalTo(32)
+            make.width.equalTo(R.ColorPicker.barWidth)
         }
         self.wantsLayer = true
         self.layer?.addSublayer(hueLayer)
@@ -52,4 +52,4 @@ final class HueBarView: NSLoadView {
     }
 }
 
-private let hueColors = stride(from: 0, to: 1, by: 0.1).map{ NSColor(colorSpace: .current, hue: CGFloat($0), saturation: 1, brightness: 1, alpha: 1).cgColor }
+let hueColors = stride(from: 0, to: 1, by: 0.01).map{ NSColor(colorSpace: .current, hue: CGFloat($0), saturation: 1, brightness: 1, alpha: 1).cgColor }
