@@ -11,9 +11,9 @@ import CoreUtil
 final class ColorPickerViewController: NSViewController {
     private let cell = ColorPickerView()
     
-    @RestorableData("color.color") var color: Color = .default
-    @RestorableState("color.pickertype") var pickerType: ColorPickerType = .hsbBox
-    @RestorableState("color.copyType") var copyType: ColorCopyType = .components
+    @RestorableData("colorpick.color") var color: Color = Color(hue: 0.48, saturation: 0.9, brightness: 0.9, alpha: 1)
+    @RestorableState("colorpick.pickertype") var pickerType: ColorPickerType = .hsbBox
+    @RestorableState("colorpick.copyType") var copyType: ColorCopyType = .webRGBA
     
     @Observable var hex3: String? = nil
     @Observable var hex6: String = ""

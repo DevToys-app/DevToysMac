@@ -46,7 +46,7 @@ final class CircleHueBarView: NSLoadView {
             .copy(strokingWithWidth: R.ColorPicker.barWidth-1, lineCap: CGLineCap.butt, lineJoin: .miter, miterLimit: .infinity)
         self.updateHandle()
         
-        self.placeholder.frame = bounds.slimmed(by: 54)
+        self.placeholder.frame = bounds.slimmed(by: 50)
     }
     
     override func onAwake() {
