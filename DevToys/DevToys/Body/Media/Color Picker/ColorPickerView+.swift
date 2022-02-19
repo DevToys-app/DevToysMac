@@ -13,7 +13,7 @@ final class ColorPickerViewController: NSViewController {
     
     @RestorableData("color") var color: Color = .default
     
-    @Observable var hex3: String = "000"
+    @Observable var hex3: String? = nil
     @Observable var hex6: String = "000000"
     @Observable var hex8: String = "00000000"
     
@@ -32,11 +32,13 @@ final class ColorPickerViewController: NSViewController {
         let (red, green, blue) = color.rgb
         let (cyan, magenta, yellow, key) = color.cmyk
         
-        self.hex6 = String(format: "%2X%2X%2X", red, green, blue)
+        self.hex6 = String(format: "%02X%02X%02X", Int(red * 255), Int(green * 255), Int(blue * 255))
+        self.hex3 = self.makeHex3(hex6: hex6)
+        self.hex8 = String(format: "%02X%02X%02X%02X", Int(red * 255), Int(green * 255), Int(blue * 255), Int(color.alpha * 255))
         
-        self.red = round(red * 225)
-        self.green = round(green * 225)
-        self.blue = round(blue * 225)
+        self.red = round(red * 255)
+        self.green = round(green * 255)
+        self.blue = round(blue * 255)
         
         self.cyan = round(cyan * 100)
         self.magenta = round(magenta * 100)
@@ -44,8 +46,17 @@ final class ColorPickerViewController: NSViewController {
         self.key = round(key * 100)
     }
     
+    private func makeHex3(hex6: String) -> String? {
+        guard hex6.count == 6 else { return nil }
+        let charactors = hex6.map{ $0 }
+        guard charactors[0] == charactors[1], charactors[2] == charactors[3], charactors[4] == charactors[5] else { return nil }
+        return "\(charactors[0])\(charactors[2])\(charactors[4])"
+    }
+    
     override func viewDidLoad() {
+        self.$hex3.sink{[unowned self] in self.cell.hex3TextField.string = $0 ?? "" }.store(in: &objectBag)
         self.$hex6.sink{[unowned self] in self.cell.hex6TextField.string = $0 }.store(in: &objectBag)
+        self.$hex8.sink{[unowned self] in self.cell.hex8TextField.string = $0 }.store(in: &objectBag)
         
         self.$red.sink{[unowned self] in self.cell.redField.value = $0 }.store(in: &objectBag)
         self.$green.sink{[unowned self] in self.cell.greenField.value = $0 }.store(in: &objectBag)
@@ -57,15 +68,17 @@ final class ColorPickerViewController: NSViewController {
         self.$key.sink{[unowned self] in self.cell.keyField.value = $0 }.store(in: &objectBag)
         
         self.$color
-            .sink{[unowned self] in
-                cell.colorBox.color = $0
-                cell.hueBar.color = $0
-                cell.opacityBar.color = $0
-            }
-            .store(in: &objectBag)
+            .sink{[unowned self] in cell.colorBox.color = $0; cell.hueBar.color = $0; cell.opacityBar.color = $0 }.store(in: &objectBag)
+        
+        self.cell.hex3TextField.endEditingStringPublisher
+            .sink{[unowned self] in self.color = Color(hex3: $0, alpha: color.alpha) ?? color; updateComponents() }.store(in: &objectBag)
+        self.cell.hex6TextField.endEditingStringPublisher
+            .sink{[unowned self] in self.color = Color(hex6: $0, alpha: color.alpha) ?? color; updateComponents() }.store(in: &objectBag)
+        self.cell.hex8TextField.endEditingStringPublisher
+            .sink{[unowned self] in self.color = Color(hex8: $0) ?? color; updateComponents() }.store(in: &objectBag)
         
         self.cell.colorBox.valuePublisher
-            .sink{[unowned self] in self.color = Color(hue: color.hue, saturation: $0.saturation, brightness: $0.brightness, alpha: color.alpha); updateComponents() }.store(in: &objectBag)
+            .sink{[unowned self] in self.color = self.color.withSB($0.saturation, $0.brightness); updateComponents() }.store(in: &objectBag)
         self.cell.hueBar.huePublisher
             .sink{[unowned self] in self.color.hue = $0; updateComponents() }.store(in: &objectBag)
         self.cell.opacityBar.opacityPublisher
