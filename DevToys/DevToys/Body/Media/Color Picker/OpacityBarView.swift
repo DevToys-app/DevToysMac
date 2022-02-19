@@ -8,7 +8,8 @@
 import CoreUtil
 
 final class OpacityBarView: NSLoadView {
-    var color: Color = .default { didSet { self.updateHandle() } }
+    var color: Color = .default { didSet { self.updateHandle(); updateColorLayer() } }
+    let opacityPublisher = PassthroughSubject<CGFloat, Never>()
     
     private let handleLayer = ColorPickerHandleLayer()
     private let colorLayer = CAGradientLayer.animationDisabled()
@@ -19,9 +20,24 @@ final class OpacityBarView: NSLoadView {
         self.updateHandle()
     }
     
+    override func mouseDown(with event: NSEvent) {
+        self.sendLocation(event.location(in: self))
+    }
+    override func mouseDragged(with event: NSEvent) {
+        self.sendLocation(event.location(in: self))
+    }
+    
+    private func sendLocation(_ location: CGPoint) {
+        self.opacityPublisher.send((location.y / bounds.height).clamped(0...1))
+    }
+    
+    private func updateColorLayer() {
+        self.colorLayer.colors = [CGColor.clear, color.cgColor.copy(alpha: 1)!]
+    }
+    
     private func updateHandle() {
-        handleLayer.color = Color(hue: color.hue, saturation: color.saturation, brightness: color.brightness, alpha: 1).cgColor
-        handleLayer.frame.center = [bounds.midX, color.alpha * bounds.height]
+        self.handleLayer.color = color.cgColor.copy(alpha: 1)!
+        self.handleLayer.frame.center = [bounds.midX, color.alpha * bounds.height]
     }
     
     override func onAwake() {
@@ -29,8 +45,8 @@ final class OpacityBarView: NSLoadView {
             make.width.equalTo(32)
         }
         self.wantsLayer = true
-        self.layer?.addSublayer(handleLayer)
         self.layer?.addSublayer(colorLayer)
+        self.layer?.addSublayer(handleLayer)
         self.layer?.cornerRadius = R.Size.corner
         self.layer?.borderWidth = 1
         self.layer?.borderColor = CGColor.black.copy(alpha: 0.2)!

@@ -369,10 +369,10 @@
 		B67A4C0127C0B9FF009277FB /* Color Picker */ = {
 			isa = PBXGroup;
 			children = (
+				B67A4C0527C0B9FF009277FB /* ColorPickerView+.swift */,
 				B67A4C0227C0B9FF009277FB /* ColorPickerHandleLayer.swift */,
 				B67A4C0327C0B9FF009277FB /* OpacityBarView.swift */,
 				B67A4C0427C0B9FF009277FB /* HueBarView.swift */,
-				B67A4C0527C0B9FF009277FB /* ColorPickerView+.swift */,
 				B67A4C0627C0B9FF009277FB /* ColorBoxView.swift */,
 				B67A4C0727C0B9FF009277FB /* Color.swift */,
 			);
