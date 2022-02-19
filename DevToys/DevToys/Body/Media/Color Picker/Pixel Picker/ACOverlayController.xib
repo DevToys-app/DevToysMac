@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="ECQ-9M-Pkg" customClass="ACOverlayController" customModule="PixelPicker" customModuleProvider="target">
+            <connections>
+                <outlet property="infoDetailField" destination="Re2-GH-fyd" id="K03-75-cf9"/>
+                <outlet property="infoPanel" destination="OMO-LB-w57" id="GGj-Y6-LfU"/>
+                <outlet property="infoWrapper" destination="HED-rR-FDP" id="21H-Tc-c4W"/>
+                <outlet property="overlayPanel" destination="gZA-A3-IZ5" id="DUd-MU-oD4"/>
+                <outlet property="preview" destination="oj3-ml-2qo" id="xLc-pu-U90"/>
+                <outlet property="window" destination="gZA-A3-IZ5" id="GLv-sO-WxM"/>
+                <outlet property="wrapper" destination="acW-WA-gq2" id="Mpu-0H-rtC"/>
+            </connections>
+        </customObject>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="gZA-A3-IZ5" customClass="ACOverlayPanel" customModule="PixelPicker" customModuleProvider="target">
+            <windowStyleMask key="styleMask" utility="YES" nonactivatingPanel="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="132" width="101" height="101"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" id="acW-WA-gq2" customClass="PPOverlayWrapper" customModule="PixelPicker" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="oj3-ml-2qo" customClass="ACOverlayPreview" customModule="PixelPicker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oj3-ml-2qo" firstAttribute="top" secondItem="acW-WA-gq2" secondAttribute="top" id="HXK-hi-eiB"/>
+                    <constraint firstAttribute="bottom" secondItem="oj3-ml-2qo" secondAttribute="bottom" id="UTp-UT-EH9"/>
+                    <constraint firstAttribute="trailing" secondItem="oj3-ml-2qo" secondAttribute="trailing" id="gd3-Pq-3Cn"/>
+                    <constraint firstItem="oj3-ml-2qo" firstAttribute="leading" secondItem="acW-WA-gq2" secondAttribute="leading" id="jC3-qE-mqJ"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="236" y="82"/>
+        </window>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="OMO-LB-w57" customClass="ACOverlayPanel" customModule="PixelPicker" customModuleProvider="target">
+            <windowStyleMask key="styleMask" utility="YES" nonactivatingPanel="YES"/>
+            <rect key="contentRect" x="926" y="538" width="100" height="29"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" id="HED-rR-FDP">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="29"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Re2-GH-fyd">
+                        <rect key="frame" x="-2" y="8" width="104" height="14"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="IYd-1Y-7cd">
+                            <font key="font" metaFont="label" size="11"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Re2-GH-fyd" firstAttribute="leading" secondItem="HED-rR-FDP" secondAttribute="leading" id="aZf-QY-Lpd"/>
+                    <constraint firstAttribute="bottom" secondItem="Re2-GH-fyd" secondAttribute="bottom" constant="8" id="amm-jV-oWa"/>
+                    <constraint firstAttribute="trailing" secondItem="Re2-GH-fyd" secondAttribute="trailing" id="jWO-5f-uxW"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="236" y="236.5"/>
+        </window>
+    </objects>
+</document>

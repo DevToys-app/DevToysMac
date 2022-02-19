@@ -52,6 +52,18 @@
 		B67A4C0B27C0BA00009277FB /* ColorPickerView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C0527C0B9FF009277FB /* ColorPickerView+.swift */; };
 		B67A4C0C27C0BA00009277FB /* ColorBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C0627C0B9FF009277FB /* ColorBoxView.swift */; };
 		B67A4C0D27C0BA00009277FB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C0727C0B9FF009277FB /* Color.swift */; };
+		B67A4C4D27C0EA84009277FB /* ACPixelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C3F27C0EA84009277FB /* ACPixelPicker.swift */; };
+		B67A4C4E27C0EA84009277FB /* ACOverlayPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C4027C0EA84009277FB /* ACOverlayPreview.swift */; };
+		B67A4C4F27C0EA84009277FB /* Ex+NSBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C4227C0EA84009277FB /* Ex+NSBezierPath.swift */; };
+		B67A4C5027C0EA84009277FB /* Util+PixelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C4427C0EA84009277FB /* Util+PixelPicker.swift */; };
+		B67A4C5127C0EA84009277FB /* ShowAndHideCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C4527C0EA84009277FB /* ShowAndHideCursor.swift */; };
+		B67A4C5227C0EA84009277FB /* ShowAndHideCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C4627C0EA84009277FB /* ShowAndHideCursor.m */; };
+		B67A4C5327C0EA84009277FB /* Ex+NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C4727C0EA84009277FB /* Ex+NSColor.swift */; };
+		B67A4C5427C0EA84009277FB /* Ex+CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C4827C0EA84009277FB /* Ex+CGImage.swift */; };
+		B67A4C5527C0EA84009277FB /* ACOverlayPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C4927C0EA84009277FB /* ACOverlayPanel.swift */; };
+		B67A4C5627C0EA84009277FB /* ACOverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C4A27C0EA84009277FB /* ACOverlayController.swift */; };
+		B67A4C5727C0EA84009277FB /* ACOverlayController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B67A4C4B27C0EA84009277FB /* ACOverlayController.xib */; };
+		B67A4C5827C0EA84009277FB /* ACOverlayWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C4C27C0EA84009277FB /* ACOverlayWrapper.swift */; };
 		B680A79527A68B35007CB707 /* HTMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79427A68B35007CB707 /* HTMLDecoder.swift */; };
 		B680A79827A69268007CB707 /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = B680A79727A69268007CB707 /* HTMLEntities */; };
 		B680A79A27A69324007CB707 /* URLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680A79927A69324007CB707 /* URLDecoder.swift */; };
@@ -169,6 +181,20 @@
 		B67A4C0527C0B9FF009277FB /* ColorPickerView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorPickerView+.swift"; sourceTree = "<group>"; };
 		B67A4C0627C0B9FF009277FB /* ColorBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBoxView.swift; sourceTree = "<group>"; };
 		B67A4C0727C0B9FF009277FB /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B67A4C3F27C0EA84009277FB /* ACPixelPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACPixelPicker.swift; sourceTree = "<group>"; };
+		B67A4C4027C0EA84009277FB /* ACOverlayPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACOverlayPreview.swift; sourceTree = "<group>"; };
+		B67A4C4227C0EA84009277FB /* Ex+NSBezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ex+NSBezierPath.swift"; sourceTree = "<group>"; };
+		B67A4C4327C0EA84009277FB /* ShowAndHideCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAndHideCursor.h; sourceTree = "<group>"; };
+		B67A4C4427C0EA84009277FB /* Util+PixelPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Util+PixelPicker.swift"; sourceTree = "<group>"; };
+		B67A4C4527C0EA84009277FB /* ShowAndHideCursor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAndHideCursor.swift; sourceTree = "<group>"; };
+		B67A4C4627C0EA84009277FB /* ShowAndHideCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAndHideCursor.m; sourceTree = "<group>"; };
+		B67A4C4727C0EA84009277FB /* Ex+NSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ex+NSColor.swift"; sourceTree = "<group>"; };
+		B67A4C4827C0EA84009277FB /* Ex+CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ex+CGImage.swift"; sourceTree = "<group>"; };
+		B67A4C4927C0EA84009277FB /* ACOverlayPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACOverlayPanel.swift; sourceTree = "<group>"; };
+		B67A4C4A27C0EA84009277FB /* ACOverlayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACOverlayController.swift; sourceTree = "<group>"; };
+		B67A4C4B27C0EA84009277FB /* ACOverlayController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACOverlayController.xib; sourceTree = "<group>"; };
+		B67A4C4C27C0EA84009277FB /* ACOverlayWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACOverlayWrapper.swift; sourceTree = "<group>"; };
+		B67A4C5C27C0EB51009277FB /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		B680A79427A68B35007CB707 /* HTMLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLDecoder.swift; sourceTree = "<group>"; };
 		B680A79927A69324007CB707 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
 		B680A79B27A6947D007CB707 /* Base64Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Decoder.swift; sourceTree = "<group>"; };
@@ -301,6 +327,7 @@
 				B64B1F7527A4FF8700AC2601 /* Sidebar */,
 				B6D1AEE727A544F20022FED2 /* Component */,
 				B6D1AEDD27A534850022FED2 /* Body */,
+				B67A4C5C27C0EB51009277FB /* Bridging-Header.h */,
 			);
 			path = DevToys;
 			sourceTree = "<group>";
@@ -369,6 +396,7 @@
 		B67A4C0127C0B9FF009277FB /* Color Picker */ = {
 			isa = PBXGroup;
 			children = (
+				B67A4C3E27C0EA84009277FB /* Pixel Picker */,
 				B67A4C0527C0B9FF009277FB /* ColorPickerView+.swift */,
 				B67A4C0227C0B9FF009277FB /* ColorPickerHandleLayer.swift */,
 				B67A4C0327C0B9FF009277FB /* OpacityBarView.swift */,
@@ -377,6 +405,34 @@
 				B67A4C0727C0B9FF009277FB /* Color.swift */,
 			);
 			path = "Color Picker";
+			sourceTree = "<group>";
+		};
+		B67A4C3E27C0EA84009277FB /* Pixel Picker */ = {
+			isa = PBXGroup;
+			children = (
+				B67A4C3F27C0EA84009277FB /* ACPixelPicker.swift */,
+				B67A4C4027C0EA84009277FB /* ACOverlayPreview.swift */,
+				B67A4C4127C0EA84009277FB /* Utils */,
+				B67A4C4927C0EA84009277FB /* ACOverlayPanel.swift */,
+				B67A4C4A27C0EA84009277FB /* ACOverlayController.swift */,
+				B67A4C4B27C0EA84009277FB /* ACOverlayController.xib */,
+				B67A4C4C27C0EA84009277FB /* ACOverlayWrapper.swift */,
+			);
+			path = "Pixel Picker";
+			sourceTree = "<group>";
+		};
+		B67A4C4127C0EA84009277FB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B67A4C4227C0EA84009277FB /* Ex+NSBezierPath.swift */,
+				B67A4C4427C0EA84009277FB /* Util+PixelPicker.swift */,
+				B67A4C4527C0EA84009277FB /* ShowAndHideCursor.swift */,
+				B67A4C4327C0EA84009277FB /* ShowAndHideCursor.h */,
+				B67A4C4627C0EA84009277FB /* ShowAndHideCursor.m */,
+				B67A4C4727C0EA84009277FB /* Ex+NSColor.swift */,
+				B67A4C4827C0EA84009277FB /* Ex+CGImage.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		B680A79327A68B2D007CB707 /* Coder */ = {
@@ -571,6 +627,7 @@
 			files = (
 				B6E15A9427B6745100DC4D6B /* libimageoptimjpeg.dylib in Resources */,
 				B6BD80F427B8AEE700152AB9 /* Localizable.strings in Resources */,
+				B67A4C5727C0EA84009277FB /* ACOverlayController.xib in Resources */,
 				B627295227BFB8CB0034D70C /* cwebp in Resources */,
 				B6AC276527AA3D61000FD713 /* jpegoptim in Resources */,
 				B6AC273027AA1373000FD713 /* optipng in Resources */,
@@ -595,12 +652,17 @@
 				B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */,
 				B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */,
 				B608540B27A66694003BF243 /* SectionButton+.swift in Sources */,
+				B67A4C4E27C0EA84009277FB /* ACOverlayPreview.swift in Sources */,
 				B67A4C0C27C0BA00009277FB /* ColorBoxView.swift in Sources */,
 				B6B5726427AC14D10069DBA7 /* RegexTextView.swift in Sources */,
+				B67A4C5227C0EA84009277FB /* ShowAndHideCursor.m in Sources */,
 				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
 				B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */,
 				B627295727BFCCC40034D70C /* HeicImageExporter.swift in Sources */,
+				B67A4C5827C0EA84009277FB /* ACOverlayWrapper.swift in Sources */,
+				B67A4C5427C0EA84009277FB /* Ex+CGImage.swift in Sources */,
 				B620142327A929B400AF5386 /* TagCloudView.swift in Sources */,
+				B67A4C5627C0EA84009277FB /* ACOverlayController.swift in Sources */,
 				B67A4C0927C0BA00009277FB /* OpacityBarView.swift in Sources */,
 				B6B5728027ACC3AF0069DBA7 /* ChecksumGenerator.swift in Sources */,
 				B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */,
@@ -613,10 +675,12 @@
 				B680A89A27A8D9DD007CB707 /* Toast.swift in Sources */,
 				B6D1AEF727A54F750022FED2 /* SectionButton.swift in Sources */,
 				B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */,
+				B67A4C5327C0EA84009277FB /* Ex+NSColor.swift in Sources */,
 				B6D1AEE927A545230022FED2 /* Area.swift in Sources */,
 				B64B1F7727A4FF8B00AC2601 /* SidebarView+.swift in Sources */,
 				B64B202327A52A2D00AC2601 /* R.swift in Sources */,
 				B6B5728227ACCF2F0069DBA7 /* XMLFormatter.swift in Sources */,
+				B67A4C4F27C0EA84009277FB /* Ex+NSBezierPath.swift in Sources */,
 				B64B201D27A5219400AC2601 /* SearchCell.swift in Sources */,
 				B6BD80EF27B8A85400152AB9 /* ToolCategory+Default.swift in Sources */,
 				B67A4C0827C0BA00009277FB /* ColorPickerHandleLayer.swift in Sources */,
@@ -634,7 +698,9 @@
 				B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */,
 				B627294F27BFB7680034D70C /* WebpImageExporter.swift in Sources */,
 				B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */,
+				B67A4C5027C0EA84009277FB /* Util+PixelPicker.swift in Sources */,
 				B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */,
+				B67A4C5127C0EA84009277FB /* ShowAndHideCursor.swift in Sources */,
 				B680A79C27A6947D007CB707 /* Base64Decoder.swift in Sources */,
 				B680A86827A8D4D1007CB707 /* TextFieldSection.swift in Sources */,
 				B680A79527A68B35007CB707 /* HTMLDecoder.swift in Sources */,
@@ -645,6 +711,7 @@
 				B629B93127B8F7E400F573C9 /* ToolManager+Default.swift in Sources */,
 				B6AC276A27AA535A000FD713 /* PDFGeneratorView+.swift in Sources */,
 				B608542027A67E4D003BF243 /* TextField.swift in Sources */,
+				B67A4C5527C0EA84009277FB /* ACOverlayPanel.swift in Sources */,
 				B680A79A27A69324007CB707 /* URLDecoder.swift in Sources */,
 				B6ED863627BFE7DC00A17474 /* DefaultImageExporter.swift in Sources */,
 				B61796C927BCB84A0054660E /* Settings.swift in Sources */,
@@ -653,6 +720,7 @@
 				B6D1AEFD27A55ED50022FED2 /* CodeTextView.swift in Sources */,
 				B62013B427A9070D00AF5386 /* UUIDGenerator.swift in Sources */,
 				B6D1AEEC27A546810022FED2 /* ControlBackgroundLayer.swift in Sources */,
+				B67A4C4D27C0EA84009277FB /* ACPixelPicker.swift in Sources */,
 				B64B201627A5100800AC2601 /* Separator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -833,6 +901,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuki.DevToys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
+				SWIFT_OBJC_BRIDGING_HEADER = "DevToys/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -865,6 +934,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuki.DevToys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
+				SWIFT_OBJC_BRIDGING_HEADER = "DevToys/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

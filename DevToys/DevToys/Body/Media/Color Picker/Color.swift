@@ -83,16 +83,16 @@ struct Color: Codable {
     var cgColor: CGColor { nsColor.cgColor }
     
     func withRed(_ value: CGFloat) -> Color {
-        Color(nsColor: NSColor(red: value, green: nsColor.greenComponent, blue: nsColor.blueComponent, alpha: alpha))
+        Color(nsColor: NSColor(red: value.clamped(0...1), green: nsColor.greenComponent, blue: nsColor.blueComponent, alpha: alpha))
     }
     func withGreen(_ value: CGFloat) -> Color {
-        Color(nsColor: NSColor(red: nsColor.redComponent, green: value, blue: nsColor.blueComponent, alpha: alpha))
+        Color(nsColor: NSColor(red: nsColor.redComponent, green: value.clamped(0...1), blue: nsColor.blueComponent, alpha: alpha))
     }
     func withBlue(_ value: CGFloat) -> Color {
-        Color(nsColor: NSColor(red: nsColor.redComponent, green: nsColor.greenComponent, blue: value, alpha: alpha))
+        Color(nsColor: NSColor(red: nsColor.redComponent, green: nsColor.greenComponent, blue: value.clamped(0...1), alpha: alpha))
     }
     func withSB(_ saturation: CGFloat, _ brightness: CGFloat) -> Color {
-        Color(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
+        Color(hue: hue, saturation: saturation.clamped(0...1), brightness: brightness.clamped(0...1), alpha: alpha)
     }
     
 }

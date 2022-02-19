@@ -84,6 +84,13 @@ final class ColorPickerViewController: NSViewController {
         self.cell.opacityBar.opacityPublisher
             .sink{[unowned self] in self.color.alpha = $0; updateComponents() }.store(in: &objectBag)
         
+        self.cell.redField.publisher
+            .sink{[unowned self] in self.color = self.color.withRed($0/255); updateComponents() }.store(in: &objectBag)
+        self.cell.greenField.publisher
+            .sink{[unowned self] in self.color = self.color.withGreen($0/255); updateComponents() }.store(in: &objectBag)
+        self.cell.blueField.publisher
+            .sink{[unowned self] in self.color = self.color.withBlue($0/255); updateComponents() }.store(in: &objectBag)
+        
         self.updateComponents()
     }
 }
@@ -128,5 +135,11 @@ final private class ColorPickerView: Page {
         self.addSection(Section(title: "CMYK", orientation: .horizontal, items: [
             cyanField, magentaField, yellowField, keyField
         ]), fillWidth: false)
+    }
+}
+
+extension NumberField {
+    var publisher: AnyPublisher<CGFloat, Never> {
+        valuePublisher.map{ CGFloat($0.reduce(self.value.native)) }.eraseToAnyPublisher()
     }
 }
