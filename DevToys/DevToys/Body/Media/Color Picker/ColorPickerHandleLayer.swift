@@ -21,6 +21,7 @@ final class ColorPickerHandleLayer: CALoadLayer {
         self.cornerRadius = 25/2
         self.borderWidth = 2
         self.borderColor = .white
+        self.backgroundColor = R.Color.transparentBackground.cgColor
         
         self.shadowOpacity = 0.2
         self.shadowOffset = .zero

@@ -46,7 +46,7 @@ final class HueBarView: NSLoadView {
         self.layer?.addSublayer(handleLayer)
         self.layer?.cornerRadius = R.Size.corner
         self.layer?.borderWidth = 1
-        self.layer?.borderColor = CGColor.black.copy(alpha: 0.2)!
+        self.layer?.borderColor = CGColor.black.withAlpha(0.2)
         
         self.hueLayer.colors = hueColors
     }

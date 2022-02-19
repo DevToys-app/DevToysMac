@@ -32,11 +32,11 @@ final class OpacityBarView: NSLoadView {
     }
     
     private func updateColorLayer() {
-        self.colorLayer.colors = [CGColor.clear, color.cgColor.copy(alpha: 1)!]
+        self.colorLayer.colors = [color.cgColor.withAlpha(0), color.cgColor.withAlpha(1)]
     }
     
     private func updateHandle() {
-        self.handleLayer.color = color.cgColor.copy(alpha: 1)!
+        self.handleLayer.color = color.cgColor
         self.handleLayer.frame.center = [bounds.midX, color.alpha * bounds.height]
     }
     
@@ -49,7 +49,7 @@ final class OpacityBarView: NSLoadView {
         self.layer?.addSublayer(handleLayer)
         self.layer?.cornerRadius = R.Size.corner
         self.layer?.borderWidth = 1
-        self.layer?.borderColor = CGColor.black.copy(alpha: 0.2)!
+        self.layer?.borderColor = CGColor.black.withAlpha(0.2)
         self.layer?.backgroundColor = R.Color.transparentBackground.cgColor
     }
 }

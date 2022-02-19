@@ -36,7 +36,7 @@ final class ColorBoxView: NSLoadView {
         let centerX = color.saturation * bounds.width
         let centerY = color.brightness * bounds.height
         
-        self.handleLayer.color = color.cgColor
+        self.handleLayer.color = color.cgColor.withAlpha(1)
         self.handleLayer.frame.center = bounds.origin + [centerX, centerY]
     }
     
@@ -54,7 +54,7 @@ final class ColorBoxView: NSLoadView {
         self.layer?.addSublayer(handleLayer)
         self.layer?.cornerRadius = R.Size.corner
         self.layer?.borderWidth = 1
-        self.layer?.borderColor = CGColor.black.copy(alpha: 0.2)!
+        self.layer?.borderColor = CGColor.black.withAlpha(0.2)
         
         self.hueLayer.startPoint = [0, 0.5]
         self.hueLayer.endPoint = [1, 0.5]
@@ -65,3 +65,8 @@ final class ColorBoxView: NSLoadView {
     }
 }
 
+extension CGColor {
+    func withAlpha(_ alpha: CGFloat) -> CGColor {
+        self.copy(alpha: alpha)!
+    }
+}
