@@ -7,7 +7,7 @@
 
 extension R {
     enum ColorPicker {
-        static let pickerHeight: CGFloat = 240
+        static let pickerHeight: CGFloat = 200
         static let barWidth: CGFloat = 20
     }
 }

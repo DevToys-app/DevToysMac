@@ -13,10 +13,11 @@ final class ColorPickerViewController: NSViewController {
     
     @RestorableData("color.color") var color: Color = .default
     @RestorableState("color.pickertype") var pickerType: ColorPickerType = .hsbBox
+    @RestorableState("color.copyType") var copyType: ColorCopyType = .components
     
     @Observable var hex3: String? = nil
-    @Observable var hex6: String = "000000"
-    @Observable var hex8: String = "00000000"
+    @Observable var hex6: String = ""
+    @Observable var hex8: String = ""
     
     @Observable var red: CGFloat = 0
     @Observable var green: CGFloat = 0
@@ -26,6 +27,7 @@ final class ColorPickerViewController: NSViewController {
     @Observable var magenta: CGFloat = 0
     @Observable var yellow: CGFloat = 0
     @Observable var key: CGFloat = 0
+    @Observable var copyValue = ""
     
     override func loadView() { self.view = cell }
     
@@ -45,6 +47,51 @@ final class ColorPickerViewController: NSViewController {
         self.magenta = round(magenta * 100)
         self.yellow = round(yellow * 100)
         self.key = round(key * 100)
+        
+        switch copyType {
+        case .components: break
+        case .iosUIColor: self.copyValue = "UIColor(red: \(red.cf), green: \(green.cf), blue: \(blue.cf), alpha: \(color.alpha.cf))"
+        case .macNSColor: self.copyValue = "NSColor(red: \(red.cf), green: \(green.cf), blue: \(blue.cf), alpha: \(color.alpha.cf))"
+        case .swiftuiRGBColor: self.copyValue = "Color(red: \(red.cf), green: \(green.cf), blue: \(blue.cf), opacity: \(color.alpha.cf))"
+        case .swiftuiHSBColor: self.copyValue = "Color(hue: \(color.hue.cf), saturation: \(color.saturation.cf), brightness: \(color.brightness.cf), opacity: \(color.alpha.cf))"
+        case .androidARGB:
+            if color.alpha == 1 {
+                self.copyValue = "Color.rgb(\(Int(red * 255)), \(Int(green * 255)), \(Int(blue * 255)))"
+            } else {
+                self.copyValue = "Color.argb(\(Int(color.alpha * 255)), \(Int(red * 255)), \(Int(green * 255)), \(Int(blue * 255)))"
+            }
+        case .androidHEX:
+            if color.alpha == 1 {
+                self.copyValue = "Color.parseColor(\"#\(self.hex6)\")"
+            } else {
+                self.copyValue = "Color.parseColor(\"#\(self.hex8)\")"
+            }
+        case .androidXML:
+            if color.alpha == 1 {
+                self.copyValue = "<color name=\"color\">#\(self.hex6)</color>"
+            } else {
+                self.copyValue = "<color name=\"color\">#\(self.hex8)</color>"
+            }
+        case .webHEX:
+            if color.alpha == 1 {
+                self.copyValue = "#\(self.hex6)"
+            } else {
+                self.copyValue = "#\(self.hex8)"
+            }
+        case .webRGBA:
+            if color.alpha == 1 {
+                self.copyValue = "rgb(\(Int(red * 255)), \(Int(green * 255)), \(Int(blue * 255)))"
+            } else {
+                self.copyValue = "rgba(\(Int(red * 255)), \(Int(green * 255)), \(Int(blue * 255)), \(color.alpha.formattedString()))"
+            }
+        case .webHSLA:
+            let (h, s, l) = color.hsl
+            if color.alpha == 1 {
+                self.copyValue = "hsl(\(Int(h * 360))deg, \(Int(s * 100))%, \(Int(l * 100))%)"
+            } else {
+                self.copyValue = "hsla(\(Int(h * 360))deg, \(Int(s * 100))%, \(Int(l * 100))%, \(color.alpha.formattedString()))"
+            }
+        }
     }
     
     private func makeHex3(hex6: String) -> String? {
@@ -74,6 +121,8 @@ final class ColorPickerViewController: NSViewController {
         self.$yellow.sink{[unowned self] in self.cell.yellowField.value = $0 }.store(in: &objectBag)
         self.$key.sink{[unowned self] in self.cell.keyField.value = $0 }.store(in: &objectBag)
         self.$pickerType.sink{[unowned self] in self.cell.pickerTypePicker.selectedItem = $0 }.store(in: &objectBag)
+        self.$copyType.sink{[unowned self] in self.cell.colorCopyTypePicker.selectedItem = $0 }.store(in: &objectBag)
+        self.$copyValue.sink{[unowned self] in self.cell.textCopyField.string = $0 }.store(in: &objectBag)
         
         self.$pickerType
             .map{[unowned self] type -> NSView in
@@ -86,17 +135,30 @@ final class ColorPickerViewController: NSViewController {
             .sink{[unowned self] in self.cell.pickerPlaceholder.contentView = $0 }
             .store(in: &objectBag)
         
+        self.$copyType
+            .map{[unowned self] type -> NSView in
+                switch type {
+                case .components: return cell.paramatorsStack
+                default: return cell.textCopyField
+                }
+            }
+            .sink{[unowned self] in self.cell.colorCopyPlaceholder.contentView = $0 }
+            .store(in: &objectBag)
+        
         self.$color
             .sink{[unowned self] in
                 cell.boxHSBPicker.color = $0
                 cell.circleBoxHSBPicker.color = $0
                 cell.circleBarsHSBPicker.color = $0
                 cell.colorSampleView.color = $0.cgColor
+                cell.alphaField.value = round($0.alpha * 100)
             }
             .store(in: &objectBag)
         
         self.cell.pickerTypePicker.itemPublisher
             .sink{[unowned self] in self.pickerType = $0 }.store(in: &objectBag)
+        self.cell.colorCopyTypePicker.itemPublisher
+            .sink{[unowned self] in self.copyType = $0; updateComponents() }.store(in: &objectBag)
         self.cell.hex3TextField.endEditingStringPublisher
             .sink{[unowned self] in self.color = Color(hex3: $0, alpha: color.alpha) ?? color; updateComponents() }.store(in: &objectBag)
         self.cell.hex6TextField.endEditingStringPublisher
@@ -107,6 +169,8 @@ final class ColorPickerViewController: NSViewController {
         self.cell.boxHSBPicker.colorPublisher.merge(with: cell.circleBoxHSBPicker.colorPublisher, cell.circleBarsHSBPicker.colorPublisher)
             .sink{[unowned self] in self.color = $0; updateComponents() }.store(in: &objectBag)
         
+        self.cell.alphaField.publisher
+            .sink{[unowned self] in self.color = self.color.withAlpha($0/100); updateComponents() }.store(in: &objectBag)
         self.cell.redField.publisher
             .sink{[unowned self] in self.color = self.color.withRed($0/255); updateComponents() }.store(in: &objectBag)
         self.cell.greenField.publisher
@@ -129,6 +193,22 @@ enum ColorPickerType: String, TextItem {
     var title: String { rawValue }
 }
 
+enum ColorCopyType: String, TextItem {
+    case components = "Components"
+    case iosUIColor = "iOS UIColor"
+    case macNSColor = "mac NSColor"
+    case swiftuiHSBColor = "SwiftUI HSB Color"
+    case swiftuiRGBColor = "SwiftUI RGB Color"
+    case androidARGB = "Android RGB"
+    case androidHEX = "Android HEX"
+    case androidXML = "Android XML"
+    case webHEX = "Web HEX"
+    case webRGBA = "Web RGB"
+    case webHSLA = "Web HSL"
+    
+    var title: String { rawValue }
+}
+
 final private class ColorPickerView: Page {
     let pickerTypePicker = EnumPopupButton<ColorPickerType>()
     
@@ -140,6 +220,10 @@ final private class ColorPickerView: Page {
     
     let colorSampleView = ColorSampleView()
     let pixelPickerButton = SectionButton(title: "Pick Color", image: R.Image.spuit)
+    let alphaField = NumberField() => { $0.snp.makeConstraints{ make in make.width.equalTo(100) } }
+    
+    let colorCopyTypePicker = EnumPopupButton<ColorCopyType>()
+    let colorCopyPlaceholder = NSPlaceholderView()
     
     let hex3TextField = TextField() => { $0.placeholder = "#XXX" }
     let hex6TextField = TextField() => { $0.placeholder = "#XXXXXX" }
@@ -154,6 +238,26 @@ final private class ColorPickerView: Page {
     let yellowField = NumberField() => { $0.snp.makeConstraints{ make in make.width.equalTo(100) } }
     let keyField = NumberField() => { $0.snp.makeConstraints{ make in make.width.equalTo(100) } }
     
+    let hueField = NumberField() => { $0.snp.makeConstraints{ make in make.width.equalTo(100) } }
+    let saturationField = NumberField() => { $0.snp.makeConstraints{ make in make.width.equalTo(100) } }
+    let brightnessField = NumberField() => { $0.snp.makeConstraints{ make in make.width.equalTo(100) } }
+    
+    let textCopyField = TextField()
+    
+    lazy var paramatorsStack = NSStackView() => { paramatorsStack in
+        paramatorsStack.alignment = .top
+        paramatorsStack.orientation = .horizontal
+        paramatorsStack.addArrangedSubview(Section(title: "RGB", orientation: .vertical, items: [
+            redField, greenField, blueField
+        ]))
+        paramatorsStack.addArrangedSubview(Section(title: "HSB", orientation: .vertical, items: [
+            hueField, saturationField, brightnessField
+        ]))
+        paramatorsStack.addArrangedSubview(Section(title: "CMYK", orientation: .vertical, items: [
+            cyanField, magentaField, yellowField, keyField
+        ]))
+    }
+    
     override func onAwake() {
         self.addSection(Area(icon: R.Image.settings, title: "Picker Type", control: pickerTypePicker))
         self.pickerPlaceholder.contentView = circleBarsHSBPicker
@@ -163,25 +267,37 @@ final private class ColorPickerView: Page {
         componentsStack.orientation = .horizontal
         componentsStack.addArrangedSubview(colorSampleView)
         componentsStack.addArrangedSubview(pixelPickerButton)
+        componentsStack.addArrangedSubview(NSView())
+        componentsStack.addArrangedSubview(alphaField)
         
         self.addSection(componentsStack)
         
         self.addSection(Section(title: "Color Hex", orientation: .horizontal, items: [
             hex3TextField, hex6TextField, hex8TextField
-        ]), fillWidth: false)
+        ]))
                 
-        self.addSection(Section(title: "RGB", orientation: .horizontal, items: [
-            redField, greenField, blueField
-        ]), fillWidth: false)
-        
-        self.addSection(Section(title: "CMYK", orientation: .horizontal, items: [
-            cyanField, magentaField, yellowField, keyField
-        ]), fillWidth: false)
+        self.addSection(Section(title: "Color Copy", items: [
+            Area(icon: R.Image.copy, title: "Type", control: colorCopyTypePicker),
+            self.colorCopyPlaceholder
+        ]))
+
+        self.textCopyField.font = .monospacedSystemFont(ofSize: R.Size.controlTitleFontSize, weight: .regular)
     }
 }
 
 extension NumberField {
     var publisher: AnyPublisher<CGFloat, Never> {
         valuePublisher.map{ CGFloat($0.reduce(self.value.native)) }.eraseToAnyPublisher()
+    }
+}
+
+
+extension CGFloat {
+    private static let numberFormatter = NumberFormatter() => {
+        $0.maximumFractionDigits = 2
+        $0.minimumFractionDigits = 2
+    }
+    fileprivate var cf: String {
+        Self.numberFormatter.string(from: NSNumber(value: native)) ?? "0"
     }
 }
