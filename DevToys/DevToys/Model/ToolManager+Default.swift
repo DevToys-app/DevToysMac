@@ -35,6 +35,7 @@ extension ToolManager {
         toolManager.registerTool(.imageOptimizer)
         toolManager.registerTool(.pdfGenerator)
         toolManager.registerTool(.imageConverter)
+        toolManager.registerTool(.colorPicker)
         
         toolManager.registerTool(.settings)
     }
