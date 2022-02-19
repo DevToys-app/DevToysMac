@@ -77,9 +77,17 @@ final private class ImageConverterView: Page {
         $0.setCustomSpacing(0, after: spacer)
         $0.addArrangedSubview(Area(title: "Scale".localized(), control: scaleModePicker))
         $0.addArrangedSubview(Area(title: "Size".localized(), control: NSStackView() => {
-            $0.addArrangedSubview(widthField)
+            $0.addArrangedSubview(widthField => {
+                $0.snp.makeConstraints{ make in
+                    make.width.equalTo(80)
+                }
+            })
             $0.addArrangedSubview(NSTextField(labelWithString: "x"))
-            $0.addArrangedSubview(heightField)
+            $0.addArrangedSubview(heightField => {
+                $0.snp.makeConstraints{ make in
+                    make.width.equalTo(80)
+                }
+            })
         }))
     }
     
