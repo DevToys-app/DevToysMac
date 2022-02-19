@@ -9,6 +9,7 @@ import CoreUtil
 
 struct ImageOptimizeTask {
     let title: String
+    let url: URL
     let result: Promise<String, Error>
 }
 
@@ -56,7 +57,7 @@ enum PNGOptimizer {
                 fileCompression.currentCompressionRatioString()
             }
         
-        return ImageOptimizeTask(title: url.lastPathComponent, result: promise)
+        return ImageOptimizeTask(title: url.lastPathComponent, url: url, result: promise)
     }
 }
 
@@ -82,7 +83,7 @@ enum JPEGOptimizer {
                 fileCompression.currentCompressionRatioString()
             }
         
-        return ImageOptimizeTask(title: url.lastPathComponent, result: promise)
+        return ImageOptimizeTask(title: url.lastPathComponent, url: url, result: promise)
     }
 }
 

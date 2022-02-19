@@ -26,6 +26,14 @@ final class ImageOptimizerViewController: NSViewController {
             .sink{[unowned self] in self.cell.tasks = $0 }.store(in: &objectBag)
         self.$level
             .sink{[unowned self] in self.cell.levelPicker.selectedItem = $0 }.store(in: &objectBag)
+        
+        self.cell.listView.menu = NSMenu() => { menu in
+            menu.addItem(title: "Open in Finder".localized()) { [self] in
+                if let task = tasks.at(cell.listView.clickedRow) {
+                    NSWorkspace.shared.activateFileViewerSelecting([task.url])
+                }
+            }
+        }
     }
     
     private func deleteResult(_ indexes: [Int]) {
@@ -53,7 +61,8 @@ final class ImageOptimizerViewController: NSViewController {
 
 
 final private class ImageOptimizerView: Page {
-    private let listView = NSTableView.list()
+    let listView = ImageListView.list()
+    let listScrollView = NSScrollView()
     
     let urlPublisher = PassthroughSubject<[URL], Never>()
     let deletePublisher = PassthroughSubject<[Int], Never>()
@@ -85,6 +94,13 @@ final private class ImageOptimizerView: Page {
         return true
     }
     
+    override func layout() {
+        listScrollView.snp.remakeConstraints{ make in
+            make.height.equalTo(max(200, self.frame.height - 210))
+        }
+        super.layout()
+    }
+    
     override func onAwake() {
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
@@ -92,7 +108,9 @@ final private class ImageOptimizerView: Page {
             Area(title: "Optimize Level".localized(), control: levelPicker),
         ]))
         
-        self.addSection(Section(title: "Images".localized(), items: [listView]))
+        self.listScrollView.documentView = listView
+        
+        self.addSection(Section(title: "Images".localized(), items: [listScrollView]))
         self.listView.snp.makeConstraints{ make in
             make.height.greaterThanOrEqualTo(1) // AppKitのバグ対処用
         }
@@ -129,6 +147,22 @@ extension ImageOptimizerView: NSTableViewDataSource, NSTableViewDelegate {
             })
         
         return cell
+    }
+}
+
+final private class ImageListView: NSLoadTableView {
+    private let backgroundLayer = ControlBackgroundLayer.animationDisabled()
+    
+    override func layout() {
+        super.layout()
+        self.backgroundLayer.frame = bounds
+    }
+    override func updateLayer() {
+        self.backgroundLayer.update()
+    }
+    override func onAwake() {
+        self.wantsLayer = true
+        self.layer?.addSublayer(backgroundLayer)
     }
 }
 

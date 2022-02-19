@@ -195,6 +195,19 @@ final private class ImageListCell: NSLoadStackView {
         self.imageView.wantsLayer = true
         self.imageView.layer?.cornerRadius = R.Size.corner
         
+        self.addArrangedSubview(checkImageView)
+        self.checkImageView.isHidden = true
+        self.checkImageView.snp.makeConstraints{ make in
+            make.size.equalTo(16)
+        }
+        
+        self.addArrangedSubview(progressIndicator)
+        self.progressIndicator.style = .spinning
+        self.progressIndicator.startAnimation(nil)
+        self.progressIndicator.snp.makeConstraints{ make in
+            make.size.equalTo(16)
+        }
+        
         self.addArrangedSubview(imageView)
         self.spacing = 16
         self.edgeInsets = .init(x: 16, y: 4)
@@ -213,19 +226,6 @@ final private class ImageListCell: NSLoadStackView {
         titleStack.addArrangedSubview(sizeLabel)
         titleStack.snp.makeConstraints{ make in
             make.right.equalToSuperview().inset(16)
-        }
-        
-        self.addArrangedSubview(checkImageView)
-        self.checkImageView.isHidden = true
-        self.checkImageView.snp.makeConstraints{ make in
-            make.size.equalTo(16)
-        }
-        
-        self.addArrangedSubview(progressIndicator)
-        self.progressIndicator.style = .spinning
-        self.progressIndicator.startAnimation(nil)
-        self.progressIndicator.snp.makeConstraints{ make in
-            make.size.equalTo(16)
         }
     }
 }
