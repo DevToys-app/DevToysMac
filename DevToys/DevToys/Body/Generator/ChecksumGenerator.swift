@@ -63,7 +63,7 @@ final class ChecksumGeneratorViewController: NSViewController {
 
 extension Data {
     func hexString(uppercase: Bool) -> String {
-        self.map{ String($0, radix: 16, uppercase: uppercase) }.joined()
+        self.map{ String(format: uppercase ? "%02X" : "%02x", $0) }.joined()
     }
 }
 
