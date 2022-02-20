@@ -131,7 +131,7 @@ extension Tool {
         viewController: ImageConverterViewController()
     )
     static let colorPicker = Tool(
-        title: "Color Picker", identifier: "colorpicker", category: .graphic, icon: R.Image.Tool.imageConverter,
+        title: "Color Picker", identifier: "colorpicker", category: .graphic, icon: R.Image.Tool.colorPicker,
         sidebarTitle: "Color Picker", toolDescription: "Picker the color and copy components",
         viewController: ColorPickerViewController()
     )

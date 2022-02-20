@@ -312,7 +312,7 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
-		B620145427A9440E00AF5386 /* Media */ = {
+		B620145427A9440E00AF5386 /* Graphic */ = {
 			isa = PBXGroup;
 			children = (
 				B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */,
@@ -320,7 +320,7 @@
 				B6AC276827AA532B000FD713 /* Image Optimizer */,
 				B6B5729027ACFE020069DBA7 /* Image Converter */,
 			);
-			path = Media;
+			path = Graphic;
 			sourceTree = "<group>";
 		};
 		B64B1E6727A4F5E200AC2601 = {
@@ -533,7 +533,7 @@
 				B608542227A68008003BF243 /* Format */,
 				B680A8A827A8E0F8007CB707 /* Generator */,
 				B620141F27A926B400AF5386 /* Text */,
-				B620145427A9440E00AF5386 /* Media */,
+				B620145427A9440E00AF5386 /* Graphic */,
 			);
 			path = Body;
 			sourceTree = "<group>";

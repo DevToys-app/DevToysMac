@@ -85,6 +85,7 @@ enum R {
             static let colorBlindnessSimulator = NSImage(named: "tool/color.blindness.simulator")!
             static let imageCompressor = NSImage(named: "tool/image.compressor")!
             static let imageConverter = NSImage(named: "tool/image.converter")!
+            static let colorPicker = NSImage(named: "tool/color.picker")!
             
             static let network = NSImage(named: "tool/network")!
             static let api = NSImage(named: "tool/api")!
