@@ -98,6 +98,9 @@
 		B6BD80EF27B8A85400152AB9 /* ToolCategory+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */; };
 		B6BD80F127B8A86100152AB9 /* Tool+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80F027B8A86100152AB9 /* Tool+Default.swift */; };
 		B6BD80F427B8AEE700152AB9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6BD80F627B8AEE700152AB9 /* Localizable.strings */; };
+		B6C5292427C20D520019BCB0 /* MovieToGifView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5292327C20D520019BCB0 /* MovieToGifView+.swift */; };
+		B6C5292727C20DC60019BCB0 /* FFMpegExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5292627C20DC60019BCB0 /* FFMpegExecutor.swift */; };
+		B6C5292927C20FB50019BCB0 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = B6C5292827C20FB50019BCB0 /* ffmpeg */; };
 		B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEDE27A534960022FED2 /* BodyViewController.swift */; };
 		B6D1AEE427A53A560022FED2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE327A53A560022FED2 /* HomeViewController.swift */; };
 		B6D1AEE927A545230022FED2 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEE827A545230022FED2 /* Area.swift */; };
@@ -245,6 +248,9 @@
 		B6BD80F027B8A86100152AB9 /* Tool+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tool+Default.swift"; sourceTree = "<group>"; };
 		B6BD80F527B8AEE700152AB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6BD80F827B8AF1800152AB9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B6C5292327C20D520019BCB0 /* MovieToGifView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieToGifView+.swift"; sourceTree = "<group>"; };
+		B6C5292627C20DC60019BCB0 /* FFMpegExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFMpegExecutor.swift; sourceTree = "<group>"; };
+		B6C5292827C20FB50019BCB0 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		B6D1AEDE27A534960022FED2 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
 		B6D1AEE327A53A560022FED2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B6D1AEE827A545230022FED2 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
@@ -315,6 +321,8 @@
 		B620145427A9440E00AF5386 /* Graphic */ = {
 			isa = PBXGroup;
 			children = (
+				B6C5292527C20DAF0019BCB0 /* ffmpeg */,
+				B6C5292327C20D520019BCB0 /* MovieToGifView+.swift */,
 				B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */,
 				B67A4C0127C0B9FF009277FB /* Color Picker */,
 				B6AC276827AA532B000FD713 /* Image Optimizer */,
@@ -522,6 +530,15 @@
 			path = "Image Converter";
 			sourceTree = "<group>";
 		};
+		B6C5292527C20DAF0019BCB0 /* ffmpeg */ = {
+			isa = PBXGroup;
+			children = (
+				B6C5292827C20FB50019BCB0 /* ffmpeg */,
+				B6C5292627C20DC60019BCB0 /* FFMpegExecutor.swift */,
+			);
+			path = ffmpeg;
+			sourceTree = "<group>";
+		};
 		B6D1AEDD27A534850022FED2 /* Body */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6E15A9427B6745100DC4D6B /* libimageoptimjpeg.dylib in Resources */,
+				B6C5292927C20FB50019BCB0 /* ffmpeg in Resources */,
 				B6BD80F427B8AEE700152AB9 /* Localizable.strings in Resources */,
 				B627295227BFB8CB0034D70C /* cwebp in Resources */,
 				B6AC276527AA3D61000FD713 /* jpegoptim in Resources */,
@@ -698,6 +716,7 @@
 				B67A4CC927C10493009277FB /* SaturationBarView.swift in Sources */,
 				B64B202027A523A200AC2601 /* ToolMenuCell.swift in Sources */,
 				B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */,
+				B6C5292727C20DC60019BCB0 /* FFMpegExecutor.swift in Sources */,
 				B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */,
 				B608540B27A66694003BF243 /* SectionButton+.swift in Sources */,
 				B67A4C4E27C0EA84009277FB /* ACOverlayPreview.swift in Sources */,
@@ -706,6 +725,7 @@
 				B67A4C5227C0EA84009277FB /* ShowAndHideCursor.m in Sources */,
 				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
 				B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */,
+				B6C5292427C20D520019BCB0 /* MovieToGifView+.swift in Sources */,
 				B627295727BFCCC40034D70C /* HeicImageExporter.swift in Sources */,
 				B67A4CC727C0F546009277FB /* CircleBoxHSBColorPicker.swift in Sources */,
 				B67A4C5827C0EA84009277FB /* ACOverlayWrapper.swift in Sources */,

@@ -13,10 +13,14 @@ struct Color: Codable {
     var brightness: CGFloat
     var alpha: CGFloat
     
+    var nsColor: NSColor { NSColor(colorSpace: .current, hue: hue, saturation: saturation, brightness: brightness, alpha: alpha) }
+    var cgColor: CGColor { nsColor.cgColor }
+    
     var rgb: (CGFloat, CGFloat, CGFloat) {
         let nsColor = self.nsColor
         return (nsColor.redComponent, nsColor.greenComponent, nsColor.blueComponent)
     }
+    
     var cmyk: (cyan: CGFloat, magenta: CGFloat, yellow: CGFloat, black:CGFloat) {
         let (r, g, b) = self.rgb
 
@@ -61,9 +65,11 @@ struct Color: Codable {
         self.brightness = brightness
         self.alpha = alpha
     }
+    
     init(nsColor: NSColor) {
         self.init(hue: nsColor.hueComponent, saturation: nsColor.saturationComponent, brightness: nsColor.brightnessComponent, alpha: nsColor.alphaComponent)
     }
+    
     init?(hex3: String, alpha: CGFloat) {
         if hex3.isEmpty { return nil }
         guard hex3.count == 3 else { NSSound.beep(); return nil }
@@ -89,6 +95,7 @@ struct Color: Codable {
         
         self.init(nsColor: NSColor(red: r, green: g, blue: b, alpha: alpha))
     }
+    
     init?(hex8: String) {
         guard hex8.count == 8 else { NSSound.beep(); return nil }
         let scanner = Scanner(string: hex8)
@@ -101,9 +108,6 @@ struct Color: Codable {
         
         self.init(nsColor: NSColor(red: r, green: g, blue: b, alpha: a))
     }
-    
-    var nsColor: NSColor { NSColor(colorSpace: .current, hue: hue, saturation: saturation, brightness: brightness, alpha: alpha) }
-    var cgColor: CGColor { nsColor.cgColor }
     
     func withAlpha(_ alpha: CGFloat) -> Color {
         Color(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha.clamped(0...1))
