@@ -28,6 +28,7 @@
 		B627295227BFB8CB0034D70C /* cwebp in Resources */ = {isa = PBXBuildFile; fileRef = B627295127BFB8CB0034D70C /* cwebp */; };
 		B627295727BFCCC40034D70C /* HeicImageExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627295627BFCCC40034D70C /* HeicImageExporter.swift */; };
 		B629B93127B8F7E400F573C9 /* ToolManager+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */; };
+		B63A034B27C2130A009FD2AD /* GifConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A034A27C2130A009FD2AD /* GifConverter.swift */; };
 		B64844FF27B767EC004FE02B /* ToolManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64844FE27B767EC004FE02B /* ToolManager+.swift */; };
 		B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64AA44F27AD0D3900EC436D /* DateConverter+.swift */; };
 		B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */; };
@@ -98,7 +99,7 @@
 		B6BD80EF27B8A85400152AB9 /* ToolCategory+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */; };
 		B6BD80F127B8A86100152AB9 /* Tool+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80F027B8A86100152AB9 /* Tool+Default.swift */; };
 		B6BD80F427B8AEE700152AB9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6BD80F627B8AEE700152AB9 /* Localizable.strings */; };
-		B6C5292427C20D520019BCB0 /* MovieToGifView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5292327C20D520019BCB0 /* MovieToGifView+.swift */; };
+		B6C5292427C20D520019BCB0 /* GifConverterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5292327C20D520019BCB0 /* GifConverterView+.swift */; };
 		B6C5292727C20DC60019BCB0 /* FFMpegExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C5292627C20DC60019BCB0 /* FFMpegExecutor.swift */; };
 		B6C5292927C20FB50019BCB0 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = B6C5292827C20FB50019BCB0 /* ffmpeg */; };
 		B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEDE27A534960022FED2 /* BodyViewController.swift */; };
@@ -165,6 +166,7 @@
 		B627295127BFB8CB0034D70C /* cwebp */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = cwebp; sourceTree = "<group>"; };
 		B627295627BFCCC40034D70C /* HeicImageExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeicImageExporter.swift; sourceTree = "<group>"; };
 		B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+Default.swift"; sourceTree = "<group>"; };
+		B63A034A27C2130A009FD2AD /* GifConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifConverter.swift; sourceTree = "<group>"; };
 		B64844FE27B767EC004FE02B /* ToolManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+.swift"; sourceTree = "<group>"; };
 		B64AA44F27AD0D3900EC436D /* DateConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateConverter+.swift"; sourceTree = "<group>"; };
 		B64B1E7027A4F5E200AC2601 /* DevToys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevToys.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,7 +250,7 @@
 		B6BD80F027B8A86100152AB9 /* Tool+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tool+Default.swift"; sourceTree = "<group>"; };
 		B6BD80F527B8AEE700152AB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6BD80F827B8AF1800152AB9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B6C5292327C20D520019BCB0 /* MovieToGifView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieToGifView+.swift"; sourceTree = "<group>"; };
+		B6C5292327C20D520019BCB0 /* GifConverterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GifConverterView+.swift"; sourceTree = "<group>"; };
 		B6C5292627C20DC60019BCB0 /* FFMpegExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFMpegExecutor.swift; sourceTree = "<group>"; };
 		B6C5292827C20FB50019BCB0 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		B6D1AEDE27A534960022FED2 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
@@ -322,13 +324,22 @@
 			isa = PBXGroup;
 			children = (
 				B6C5292527C20DAF0019BCB0 /* ffmpeg */,
-				B6C5292327C20D520019BCB0 /* MovieToGifView+.swift */,
+				B63A034927C212FE009FD2AD /* Movie to Gif */,
 				B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */,
 				B67A4C0127C0B9FF009277FB /* Color Picker */,
 				B6AC276827AA532B000FD713 /* Image Optimizer */,
 				B6B5729027ACFE020069DBA7 /* Image Converter */,
 			);
 			path = Graphic;
+			sourceTree = "<group>";
+		};
+		B63A034927C212FE009FD2AD /* Movie to Gif */ = {
+			isa = PBXGroup;
+			children = (
+				B6C5292327C20D520019BCB0 /* GifConverterView+.swift */,
+				B63A034A27C2130A009FD2AD /* GifConverter.swift */,
+			);
+			path = "Movie to Gif";
 			sourceTree = "<group>";
 		};
 		B64B1E6727A4F5E200AC2601 = {
@@ -720,12 +731,13 @@
 				B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */,
 				B608540B27A66694003BF243 /* SectionButton+.swift in Sources */,
 				B67A4C4E27C0EA84009277FB /* ACOverlayPreview.swift in Sources */,
+				B63A034B27C2130A009FD2AD /* GifConverter.swift in Sources */,
 				B67A4C0C27C0BA00009277FB /* ColorBoxView.swift in Sources */,
 				B6B5726427AC14D10069DBA7 /* RegexTextView.swift in Sources */,
 				B67A4C5227C0EA84009277FB /* ShowAndHideCursor.m in Sources */,
 				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
 				B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */,
-				B6C5292427C20D520019BCB0 /* MovieToGifView+.swift in Sources */,
+				B6C5292427C20D520019BCB0 /* GifConverterView+.swift in Sources */,
 				B627295727BFCCC40034D70C /* HeicImageExporter.swift in Sources */,
 				B67A4CC727C0F546009277FB /* CircleBoxHSBColorPicker.swift in Sources */,
 				B67A4C5827C0EA84009277FB /* ACOverlayWrapper.swift in Sources */,

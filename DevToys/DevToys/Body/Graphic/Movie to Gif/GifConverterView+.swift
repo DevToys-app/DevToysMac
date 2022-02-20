@@ -7,8 +7,8 @@
 
 import CoreUtil
 
-final class MovieToGifViewController: NSViewController {
-    private let cell = MovieToGitView()
+final class GifConverterViewController: NSViewController {
+    private let cell = GifConverterView()
     
     override func loadView() { self.view = cell }
     
@@ -17,7 +17,7 @@ final class MovieToGifViewController: NSViewController {
     }
 }
 
-final private class MovieToGifView: Page {
+final private class GifConverterView: Page {
     override func onAwake() {
         
     }
