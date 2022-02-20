@@ -15,7 +15,7 @@ struct GifConvertOptions {
 struct GifConvertTask {
     let title: String
     let movieURL: URL
-    let result: Promise<Void, Error>
+    let result: Progress<Void, Error>
 }
 
 enum GifConverter {
@@ -27,8 +27,12 @@ enum GifConverter {
         
         var complex = [String]()
         complex.append("[0:v]")
-        com
-        complex += "fps=\(options.fps)"
+        complex.append("fps=\(options.fps)")
+        complex.append("scale=\(options.width):-1")
+        complex.append("split [a][b];[a] palettegen [p];[b][p] paletteuse=dither=sierra2")
+        arguments.append(complex.joined(separator: ","))
+        
+        FFMpegExecutor.execute(arguments)
     }
 }
 

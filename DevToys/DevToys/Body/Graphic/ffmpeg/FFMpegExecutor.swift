@@ -39,19 +39,26 @@ enum FFMpegExecutor {
 }
 
 
-public final class Progress {
-    public let taskCount: Int
+public final class Progress<Failure: Error> {
+    public enum Status {
+        case progressing(Double)
+        case failed(Failure)
+        case completed
+    }
     
-    @Observable public var completedTaskCount = 0
-    @Observable public var isCompleted = false
-    @Observable public var progress = 0.0
+    public let taskCount: Int
+    public var completedTaskCount = 0
+    public var status: Status = .progressing(0)
     
     public func complete(_ count: Int) {
-        self.completedTaskCount = min(taskCount, completedTaskCount + count)
-        self.progress = Double(completedTaskCount) / Double(taskCount)
+        guard case .progressing = status else { return }
         
-        if !self.isCompleted, self.completedTaskCount == self.taskCount {
-            self.isCompleted = true
+        self.completedTaskCount = min(taskCount, completedTaskCount + count)
+        
+        if self.completedTaskCount == self.taskCount {
+            self.status = .fullfill
+        } else {
+            self.status = .progressing(Double(completedTaskCount) / Double(taskCount))
         }
     }
     
