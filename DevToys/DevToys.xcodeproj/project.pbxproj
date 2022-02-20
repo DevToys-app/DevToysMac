@@ -215,12 +215,12 @@
 		B67A4CCF27C1E01C009277FB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B67A4CD027C1E036009277FB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		B67A4CD127C1E03C009277FB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		B67A4CD227C1E0D5009277FB /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Main.strings"; sourceTree = "<group>"; };
 		B67A4CD427C1E0DC009277FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B67A4CD527C1E0DF009277FB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		B67A4CD627C1E0E4009277FB /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B67A4CD727C1E0F1009277FB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		B67A4CD827C1E0F8009277FB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B67A4CD927C1E469009277FB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		B67A4CDA27C1E46A009277FB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B680A79427A68B35007CB707 /* HTMLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLDecoder.swift; sourceTree = "<group>"; };
 		B680A79927A69324007CB707 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
 		B680A79B27A6947D007CB707 /* Base64Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Decoder.swift; sourceTree = "<group>"; };
@@ -347,13 +347,13 @@
 				B64B1E7D27A4F5E300AC2601 /* DevToys.entitlements */,
 				B64B1E7C27A4F5E300AC2601 /* Info.plist */,
 				B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */,
+				B67A4C5C27C0EB51009277FB /* Bridging-Header.h */,
 				B64B1E9D27A4F6A700AC2601 /* Resource */,
 				B64B1F7027A4FDBC00AC2601 /* Model */,
 				B64B209A27A532E300AC2601 /* App */,
 				B64B1F7527A4FF8700AC2601 /* Sidebar */,
 				B6D1AEE727A544F20022FED2 /* Component */,
 				B6D1AEDD27A534850022FED2 /* Body */,
-				B67A4C5C27C0EB51009277FB /* Bridging-Header.h */,
 			);
 			path = DevToys;
 			sourceTree = "<group>";
@@ -629,8 +629,8 @@
 				ja,
 				"zh-Hans",
 				"pt-BR",
-				"pt-PT",
 				de,
+				es,
 			);
 			mainGroup = B64B1E6727A4F5E200AC2601;
 			packageReferences = (
@@ -796,10 +796,10 @@
 				B64B1E7A27A4F5E300AC2601 /* Base */,
 				B67A4CCE27C1E010009277FB /* zh-Hans */,
 				B67A4CD027C1E036009277FB /* pt-BR */,
-				B67A4CD227C1E0D5009277FB /* pt-PT */,
 				B67A4CD427C1E0DC009277FB /* en */,
 				B67A4CD527C1E0DF009277FB /* ja */,
 				B67A4CD727C1E0F1009277FB /* de */,
+				B67A4CD927C1E469009277FB /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -811,8 +811,8 @@
 				B6BD80F827B8AF1800152AB9 /* ja */,
 				B67A4CCF27C1E01C009277FB /* zh-Hans */,
 				B67A4CD127C1E03C009277FB /* pt-BR */,
-				B67A4CD627C1E0E4009277FB /* pt-PT */,
 				B67A4CD827C1E0F8009277FB /* de */,
+				B67A4CDA27C1E46A009277FB /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -961,7 +961,7 @@
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.0.8;
+				MARKETING_VERSION = 0.0.8.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuki.DevToys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
@@ -994,7 +994,7 @@
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.0.8;
+				MARKETING_VERSION = 0.0.8.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuki.DevToys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
