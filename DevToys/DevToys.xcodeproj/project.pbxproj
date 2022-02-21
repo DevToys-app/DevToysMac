@@ -30,6 +30,8 @@
 		B629B93127B8F7E400F573C9 /* ToolManager+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */; };
 		B63A034B27C2130A009FD2AD /* GifConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A034A27C2130A009FD2AD /* GifConverter.swift */; };
 		B63A034D27C21A99009FD2AD /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = B63A034C27C21A99009FD2AD /* ffmpeg */; };
+		B63A035027C24BA0009FD2AD /* FFProgressReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A034F27C24BA0009FD2AD /* FFProgressReport.swift */; };
+		B63A035227C25B29009FD2AD /* FFTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A035127C25B29009FD2AD /* FFTime.swift */; };
 		B64844FF27B767EC004FE02B /* ToolManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64844FE27B767EC004FE02B /* ToolManager+.swift */; };
 		B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64AA44F27AD0D3900EC436D /* DateConverter+.swift */; };
 		B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B1E7327A4F5E200AC2601 /* AppDelegate.swift */; };
@@ -113,6 +115,8 @@
 		B6D1AEFD27A55ED50022FED2 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEFC27A55ED50022FED2 /* CodeTextView.swift */; };
 		B6D1AF0627A5603B0022FED2 /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = B6D1AF0527A5603B0022FED2 /* Highlightr */; };
 		B6E15A9427B6745100DC4D6B /* libimageoptimjpeg.dylib in Resources */ = {isa = PBXBuildFile; fileRef = B6E15A9227B6742300DC4D6B /* libimageoptimjpeg.dylib */; };
+		B6E294B327C3351F00314132 /* FFTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E294B227C3351F00314132 /* FFTask.swift */; };
+		B6E294E527C337F300314132 /* FFThumnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E294E427C337F300314132 /* FFThumnailGenerator.swift */; };
 		B6ED863627BFE7DC00A17474 /* DefaultImageExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED863527BFE7DC00A17474 /* DefaultImageExporter.swift */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +172,8 @@
 		B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+Default.swift"; sourceTree = "<group>"; };
 		B63A034A27C2130A009FD2AD /* GifConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifConverter.swift; sourceTree = "<group>"; };
 		B63A034C27C21A99009FD2AD /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
+		B63A034F27C24BA0009FD2AD /* FFProgressReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFProgressReport.swift; sourceTree = "<group>"; };
+		B63A035127C25B29009FD2AD /* FFTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFTime.swift; sourceTree = "<group>"; };
 		B64844FE27B767EC004FE02B /* ToolManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+.swift"; sourceTree = "<group>"; };
 		B64AA44F27AD0D3900EC436D /* DateConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateConverter+.swift"; sourceTree = "<group>"; };
 		B64B1E7027A4F5E200AC2601 /* DevToys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevToys.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +269,8 @@
 		B6D1AEF927A557280022FED2 /* PopupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupButton.swift; sourceTree = "<group>"; };
 		B6D1AEFC27A55ED50022FED2 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		B6E15A9227B6742300DC4D6B /* libimageoptimjpeg.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libimageoptimjpeg.dylib; sourceTree = "<group>"; };
+		B6E294B227C3351F00314132 /* FFTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFTask.swift; sourceTree = "<group>"; };
+		B6E294E427C337F300314132 /* FFThumnailGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFThumnailGenerator.swift; sourceTree = "<group>"; };
 		B6ED863527BFE7DC00A17474 /* DefaultImageExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageExporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -546,6 +554,10 @@
 			children = (
 				B63A034C27C21A99009FD2AD /* ffmpeg */,
 				B6C5292627C20DC60019BCB0 /* FFMpegExecutor.swift */,
+				B63A034F27C24BA0009FD2AD /* FFProgressReport.swift */,
+				B63A035127C25B29009FD2AD /* FFTime.swift */,
+				B6E294B227C3351F00314132 /* FFTask.swift */,
+				B6E294E427C337F300314132 /* FFThumnailGenerator.swift */,
 			);
 			path = ffmpeg;
 			sourceTree = "<group>";
@@ -727,6 +739,7 @@
 				B67A4CC927C10493009277FB /* SaturationBarView.swift in Sources */,
 				B64B202027A523A200AC2601 /* ToolMenuCell.swift in Sources */,
 				B64AA45027AD0D3900EC436D /* DateConverter+.swift in Sources */,
+				B6E294E527C337F300314132 /* FFThumnailGenerator.swift in Sources */,
 				B6C5292727C20DC60019BCB0 /* FFMpegExecutor.swift in Sources */,
 				B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */,
 				B608540B27A66694003BF243 /* SectionButton+.swift in Sources */,
@@ -756,8 +769,10 @@
 				B6B5728F27ACFA6E0069DBA7 /* ImageDropper.swift in Sources */,
 				B680A89A27A8D9DD007CB707 /* Toast.swift in Sources */,
 				B6D1AEF727A54F750022FED2 /* SectionButton.swift in Sources */,
+				B63A035027C24BA0009FD2AD /* FFProgressReport.swift in Sources */,
 				B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */,
 				B67A4C5327C0EA84009277FB /* Ex+NSColor.swift in Sources */,
+				B6E294B327C3351F00314132 /* FFTask.swift in Sources */,
 				B6D1AEE927A545230022FED2 /* Area.swift in Sources */,
 				B64B1F7727A4FF8B00AC2601 /* SidebarView+.swift in Sources */,
 				B64B202327A52A2D00AC2601 /* R.swift in Sources */,
@@ -799,6 +814,7 @@
 				B608542027A67E4D003BF243 /* TextField.swift in Sources */,
 				B67A4C5527C0EA84009277FB /* ACOverlayPanel.swift in Sources */,
 				B680A79A27A69324007CB707 /* URLDecoder.swift in Sources */,
+				B63A035227C25B29009FD2AD /* FFTime.swift in Sources */,
 				B6ED863627BFE7DC00A17474 /* DefaultImageExporter.swift in Sources */,
 				B61796C927BCB84A0054660E /* Settings.swift in Sources */,
 				B67A4C0B27C0BA00009277FB /* ColorPickerView+.swift in Sources */,

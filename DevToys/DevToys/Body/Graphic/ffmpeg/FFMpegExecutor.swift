@@ -7,90 +7,82 @@
 
 import CoreUtil
 
-enum FFMpegExecutor {
-    static let ffmpegURL = Bundle.current.url(forResource: "ffmpeg", withExtension: nil)!
+enum FFExecutor {
+    private static let ffmpegURL = Bundle.current.url(forResource: "ffmpeg", withExtension: nil)!
     
-    static func execute(_ arguments: [String]) -> Promise<String, Error> {
+    static func execute(_ arguments: [String], inputURL: URL, destinationURL: URL) -> Promise<FFTask, Never> {
+        let arguments = ["-i", inputURL.path, "-y"] + arguments + [destinationURL.path]
+                
         let task = Process()
         let outputPipe = Pipe()
         let errorPipe = Pipe()
-        
-        task.executableURL = executableURL
+        task.executableURL = ffmpegURL
         task.arguments = arguments
-        
-        if options.contains(.standardOutput) {
-            task.standardOutput = outputPipe
-        }
-        if options.contains(.standardError) {
-            task.standardError = errorPipe
-        }
-        
-        return Promise<String, Error>.tryAsync(on: queue) { resolve, reject in
+        task.standardOutput = outputPipe
+        task.standardError = errorPipe
+                        
+        var duration: FFTime? { didSet { durationPromise.fullfill(duration) } }
+        let durationPromise = Promise<FFTime?, Never>()
+                
+        let completePromise = Promise<Void, Error>.tryAsync{ resolve, reject in
             try task.run()
             task.waitUntilExit()
             
             if task.terminationStatus != 0 {
                 reject(TerminalError.nonZeroExit(errorPipe.readStringToEndOfFile ?? "[binary]"))
             } else {
-                resolve(outputPipe.readStringToEndOfFile ?? "[binary]")
+                resolve(())
             }
         }
+        
+        let dtask = durationPromise
+            .map{ FFTask(duration: $0, complete: completePromise) }
+        let ctask = completePromise
+            .replaceError(with: ())
+            .map{ FFTask(duration: nil, complete: completePromise) }
+        
+        let taskPromise = Promise.first([dtask, ctask])!
+                
+        DispatchQueue.global().async {
+            while let data = errorPipe.fileHandleForReading.availableData.nonEmptyOrNil() {
+                guard let nsString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else { continue }
+                                
+                if duration == nil, let fduration = findDuration(in: nsString) {
+                    duration = fduration
+                } else if case .fulfilled(let task) = taskPromise.state, let report = FFProgressReport(progressString: nsString as String) {
+                    task.sendReport(report)
+                }
+            }
+        }
+        
+        return taskPromise
+    }
+    
+    private static func findDuration(in nsString: NSString) -> FFTime? {
+        enum __ {
+            static let rx = try! NSRegularExpression(pattern: "Duration: (.*?),", options: [])
+        }
+        let matches = __.rx.matches(in: nsString as String, options: [], range: NSRange(location: 0, length: nsString.length))
+        guard let match = matches.first, match.numberOfRanges == 2 else { return nil }
+        
+        let timeString = nsString.substring(with: match.range(at: 1))
+        return FFTime(timeString: timeString)
     }
 }
 
+extension Data {
+    func nonEmptyOrNil() -> Data? {
+        if isEmpty { return nil }
+        return self
+    }
+}
 
-public final class Progress<Failure: Error> {
-    public enum State {
-        case progressing(Double)
-        case rejected(Failure)
-        case completed
-    }
-    
-    struct Subscriber {
-        let progress: (Double) -> ()
-        let complete: () -> ()
-        let reject: (Failure) -> ()
-    }
-    
-    public let taskCount: Int
-    public private(set) var completedTaskCount = 0
-    public private(set) var state: State = .progressing(0)
-    
-    var subscribers = [Subscriber]()
-    
-    public init(taskCount: Int) {
-        assert(taskCount > 0)
-        self.taskCount = taskCount
-    }
+extension Promise {
+    public static func first(_ promises: [Promise<Output, Failure>]) -> Promise<Output, Failure>? {
+        if promises.isEmpty { return nil }
         
-    public func reject(_ failure: Failure) {
-        guard case .progressing = state else { return }
-        self.state = .rejected(failure)
-        for subscriber in subscribers { subscriber.reject(failure) }
-        self.subscribers.removeAll()
-    }
-    
-    public func progress(_ count: Int) {
-        guard case .progressing = state else { return }
-        
-        self.completedTaskCount = min(taskCount, completedTaskCount + count)
-        
-        if self.completedTaskCount == self.taskCount {
-            self.state = .completed
-            for subscriber in subscribers { subscriber.complete() }
-            self.subscribers.removeAll()
-        } else {
-            let progress = Double(completedTaskCount) / Double(taskCount)
-            self.state = .progressing(progress)
-            for subscriber in subscribers { subscriber.progress(progress) }
-        }
-    }
-    
-    func subscribe(_ resolve: @escaping (Output) -> (), _ reject: @escaping (Failure) -> ()) {
-        switch self.state {
-        case .pending: self.subscribers.append(Subscriber(resolve: resolve, reject: reject))
-        case .fulfilled(let output): resolve(output)
-        case .rejected(let failure): reject(failure)
+        return Promise{ resolve, reject in
+            for promise in promises { promise.sink(resolve, reject) }
         }
     }
 }

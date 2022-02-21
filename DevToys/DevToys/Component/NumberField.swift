@@ -6,6 +6,7 @@
 //
 
 import CoreUtil
+import CoreGraphics
 
 final class NumberField: NSLoadView {
     
@@ -28,6 +29,17 @@ final class NumberField: NSLoadView {
     private let textField = CustomFocusRingTextField()
     private let backgroundLayer = ControlBackgroundLayer.animationDisabled()
     private let valueSubject = PassthroughSubject<Delta<Double>, Never>()
+    
+    convenience init(autoWidth: Void) {
+        self.init(width: 100)
+    }
+    
+    convenience init(width: CGFloat) {
+        self.init()
+        self.snp.makeConstraints{ make in
+            make.width.equalTo(width)
+        }
+    }
     
     override func layout() {
         self.backgroundLayer.frame = bounds

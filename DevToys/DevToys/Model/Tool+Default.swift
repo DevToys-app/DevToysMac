@@ -135,4 +135,11 @@ extension Tool {
         sidebarTitle: "Color Picker", toolDescription: "Picker the color and copy components",
         viewController: ColorPickerViewController()
     )
+    static let gifConverter = Tool(
+        title: "Gif Converter", identifier: "gifconverter", category: .graphic, icon: R.Image.Tool.colorPicker,
+        sidebarTitle: "Gif Converter", toolDescription: "Convert movie to animation gif file",
+        viewController: GifConverterViewController()
+    )
 }
+
+

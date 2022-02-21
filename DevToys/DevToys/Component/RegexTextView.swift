@@ -13,7 +13,7 @@ final class RegexTextView: NSLoadView {
     var stringPublisher: AnyPublisher<String, Never> { textView.stringPublisher.eraseToAnyPublisher() }
     
     var isEditable: Bool { get { textView.isEditable } set { textView.isEditable = newValue } }
-    var isSelectable: Bool { get { textView.isSelectable } set { textView.isSelectable = newValue } }
+    override var isSelectable: Bool { get { textView.isSelectable } set { textView.isSelectable = newValue } }
     
     private let scrollView = _TextView.scrollableTextView()
     private lazy var textView = scrollView.documentView as! _TextView

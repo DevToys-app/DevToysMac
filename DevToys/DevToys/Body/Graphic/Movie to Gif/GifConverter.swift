@@ -6,35 +6,52 @@
 //
 
 import CoreUtil
+import CoreGraphics
 
 struct GifConvertOptions {
+    let thumbsize: CGSize
     let width: CGFloat
     let fps: Int
+    let removeSourceFile: Bool
 }
 
 struct GifConvertTask {
+    let thumbnail: NSImage?
     let title: String
     let movieURL: URL
-    let result: Progress<Void, Error>
+    let destinationURL: URL
+    let fftask: Promise<FFTask, Never>
 }
 
 enum GifConverter {
-    static func convert(_ movieURL: URL, options: GifConvertOptions, to destinationURL: URL) -> GifConvertTask {
+    static func convert(_ movieURL: URL, options: GifConvertOptions, to destinationURL: URL) -> Promise<GifConvertTask, Never> {
         var arguments = [String]()
         
-        arguments.append(contentsOf: ["-i", movieURL.path])
         arguments.append("-filter_complex")
+        arguments.append("[0:v] fps=\(options.fps),scale=\(options.width):-1,split [a][b];[a] palettegen [p];[b][p] paletteuse")
+                
+        let fftask = FFExecutor.execute(arguments, inputURL: movieURL, destinationURL: destinationURL)
+        let thumbnail = FFThumnailGenerator.thumbnail(of: movieURL, size: options.thumbsize)
         
-        var complex = [String]()
-        complex.append("[0:v]")
-        complex.append("fps=\(options.fps)")
-        complex.append("scale=\(options.width):-1")
-        complex.append("split [a][b];[a] palettegen [p];[b][p] paletteuse=dither=sierra2")
-        arguments.append(complex.joined(separator: ","))
+        fftask.eraseToError().flatMap{ $0.complete }
+            .peek{
+                if options.removeSourceFile {
+                    NSWorkspace.shared.recycle([movieURL], completionHandler: nil)
+                    NSSound.dragToTrash?.play()
+                }
+            }
+            .catch({_ in })
         
-        FFMpegExecutor.execute(arguments)
+        return thumbnail.map{
+            GifConvertTask(thumbnail: $0, title: movieURL.lastPathComponent, movieURL: movieURL, destinationURL: destinationURL, fftask: fftask)
+        }
     }
 }
+
+extension NSSound {
+    static let dragToTrash = NSSound(contentsOfFile: "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/dock/drag to trash.aif", byReference: true)
+}
+
 
 /*
 

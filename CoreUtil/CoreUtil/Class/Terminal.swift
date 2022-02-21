@@ -27,7 +27,7 @@ public enum Terminal {
         public static let standardError = ExecuteOption(rawValue: 1 << 1)
     }
     
-    public static func run(_ executableURL: URL, arguments: [String], queue: DispatchQueue = .global(), options: ExecuteOption = []) -> Promise<String, Error> {
+    public static func run(_ executableURL: URL, arguments: [String], queue: DispatchQueue = .global(), options: ExecuteOption = .all) -> Promise<String, Error> {
         let task = Process()
         let outputPipe = Pipe()
         let errorPipe = Pipe()

@@ -12,7 +12,7 @@ final class CodeTextView: NSLoadView {
     
     var string: String { get { textView.string } set { textView.setString(newValue) } }
     var isEditable: Bool { get { textView.isEditable } set { textView.isEditable = newValue } }
-    var isSelectable: Bool { get { textView.isSelectable } set { textView.isSelectable = newValue } }
+    override var isSelectable: Bool { get { textView.isSelectable } set { textView.isSelectable = newValue } }
     
     var language: Language = .json { didSet { textStorage.language = language.rawValue } }
     var contentInsets = NSSize.zero {
