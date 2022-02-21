@@ -136,10 +136,51 @@ extension Tool {
         viewController: ColorPickerViewController()
     )
     static let gifConverter = Tool(
-        title: "Gif Converter", identifier: "gifconverter", category: .graphic, icon: R.Image.Tool.colorPicker,
+        title: "Gif Converter", identifier: "gifconverter", category: .graphic, icon: R.Image.Tool.gif,
         sidebarTitle: "Gif Converter", toolDescription: "Convert movie to animation gif file",
         viewController: GifConverterViewController()
     )
+    
+    // MARK: - Media -
+    static let audioConverter = Tool(
+        title: "Audio Converter", identifier: "audioconverter", category: .media, icon: R.Image.Tool.audioConverter,
+        sidebarTitle: "Audio Converter", toolDescription: "Convert audio from one format to another",
+        viewController: AudioConverterViewController()
+    )
 }
 
+extension ToolManager {
+    static let shared = ToolManager() => { toolManager in
+        toolManager.registerTool(.home)
 
+        toolManager.registerTool(.jsonYamlConverter)
+        toolManager.registerTool(.numberBaseConverter)
+        toolManager.registerTool(.dateConverter)
+
+        toolManager.registerTool(.htmlCoder)
+        toolManager.registerTool(.urlCoder)
+        toolManager.registerTool(.base64Coder)
+        toolManager.registerTool(.jwtCoder)
+
+        toolManager.registerTool(.jsonFormatter)
+        toolManager.registerTool(.xmlFormatter)
+
+        toolManager.registerTool(.hashGenerator)
+        toolManager.registerTool(.uuidGenerator)
+        toolManager.registerTool(.loremIpsumGenerator)
+        toolManager.registerTool(.checksumGenerator)
+
+        toolManager.registerTool(.textInspector)
+        toolManager.registerTool(.regexTester)
+        toolManager.registerTool(.hyphenationRemover)
+
+        toolManager.registerTool(.imageOptimizer)
+        toolManager.registerTool(.pdfGenerator)
+        toolManager.registerTool(.imageConverter)
+        toolManager.registerTool(.colorPicker)
+        toolManager.registerTool(.gifConverter)
+        toolManager.registerTool(.audioConverter)
+        
+        toolManager.registerTool(.settings)
+    }
+}

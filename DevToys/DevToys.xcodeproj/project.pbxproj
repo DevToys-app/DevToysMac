@@ -27,7 +27,6 @@
 		B627294F27BFB7680034D70C /* WebpImageExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627294E27BFB7680034D70C /* WebpImageExporter.swift */; };
 		B627295227BFB8CB0034D70C /* cwebp in Resources */ = {isa = PBXBuildFile; fileRef = B627295127BFB8CB0034D70C /* cwebp */; };
 		B627295727BFCCC40034D70C /* HeicImageExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627295627BFCCC40034D70C /* HeicImageExporter.swift */; };
-		B629B93127B8F7E400F573C9 /* ToolManager+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */; };
 		B63A034B27C2130A009FD2AD /* GifConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A034A27C2130A009FD2AD /* GifConverter.swift */; };
 		B63A034D27C21A99009FD2AD /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = B63A034C27C21A99009FD2AD /* ffmpeg */; };
 		B63A035027C24BA0009FD2AD /* FFProgressReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A034F27C24BA0009FD2AD /* FFProgressReport.swift */; };
@@ -98,6 +97,8 @@
 		B6B5728A27ACDA420069DBA7 /* ImageConverterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728927ACDA420069DBA7 /* ImageConverterView+.swift */; };
 		B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */; };
 		B6B5728F27ACFA6E0069DBA7 /* ImageDropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */; };
+		B6BBA90727C392E3000FE7D3 /* AudioConverterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BBA90627C392E3000FE7D3 /* AudioConverterView+.swift */; };
+		B6BBA90927C39528000FE7D3 /* AudioConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BBA90827C39528000FE7D3 /* AudioConverter.swift */; };
 		B6BD80EB27B89EA600152AB9 /* ImageOptimaizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EA27B89EA600152AB9 /* ImageOptimaizerView.swift */; };
 		B6BD80EF27B8A85400152AB9 /* ToolCategory+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */; };
 		B6BD80F127B8A86100152AB9 /* Tool+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD80F027B8A86100152AB9 /* Tool+Default.swift */; };
@@ -169,7 +170,6 @@
 		B627294E27BFB7680034D70C /* WebpImageExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebpImageExporter.swift; sourceTree = "<group>"; };
 		B627295127BFB8CB0034D70C /* cwebp */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = cwebp; sourceTree = "<group>"; };
 		B627295627BFCCC40034D70C /* HeicImageExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeicImageExporter.swift; sourceTree = "<group>"; };
-		B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolManager+Default.swift"; sourceTree = "<group>"; };
 		B63A034A27C2130A009FD2AD /* GifConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifConverter.swift; sourceTree = "<group>"; };
 		B63A034C27C21A99009FD2AD /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		B63A034F27C24BA0009FD2AD /* FFProgressReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFProgressReport.swift; sourceTree = "<group>"; };
@@ -252,6 +252,8 @@
 		B6B5728927ACDA420069DBA7 /* ImageConverterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageConverterView+.swift"; sourceTree = "<group>"; };
 		B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
 		B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropper.swift; sourceTree = "<group>"; };
+		B6BBA90627C392E3000FE7D3 /* AudioConverterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioConverterView+.swift"; sourceTree = "<group>"; };
+		B6BBA90827C39528000FE7D3 /* AudioConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioConverter.swift; sourceTree = "<group>"; };
 		B6BD80EA27B89EA600152AB9 /* ImageOptimaizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageOptimaizerView.swift; sourceTree = "<group>"; };
 		B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolCategory+Default.swift"; sourceTree = "<group>"; };
 		B6BD80F027B8A86100152AB9 /* Tool+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tool+Default.swift"; sourceTree = "<group>"; };
@@ -412,7 +414,6 @@
 				B64844FE27B767EC004FE02B /* ToolManager+.swift */,
 				B6BD80EE27B8A85400152AB9 /* ToolCategory+Default.swift */,
 				B6BD80F027B8A86100152AB9 /* Tool+Default.swift */,
-				B629B93027B8F7E400F573C9 /* ToolManager+Default.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -549,6 +550,23 @@
 			path = "Image Converter";
 			sourceTree = "<group>";
 		};
+		B6BBA90427C391EE000FE7D3 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				B6BBA90527C392D5000FE7D3 /* Audio Converter */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		B6BBA90527C392D5000FE7D3 /* Audio Converter */ = {
+			isa = PBXGroup;
+			children = (
+				B6BBA90627C392E3000FE7D3 /* AudioConverterView+.swift */,
+				B6BBA90827C39528000FE7D3 /* AudioConverter.swift */,
+			);
+			path = "Audio Converter";
+			sourceTree = "<group>";
+		};
 		B6C5292527C20DAF0019BCB0 /* ffmpeg */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,6 +592,7 @@
 				B680A8A827A8E0F8007CB707 /* Generator */,
 				B620141F27A926B400AF5386 /* Text */,
 				B620145427A9440E00AF5386 /* Graphic */,
+				B6BBA90427C391EE000FE7D3 /* Media */,
 			);
 			path = Body;
 			sourceTree = "<group>";
@@ -807,9 +826,10 @@
 				B67A4CCB27C10548009277FB /* BrightnessBarView.swift in Sources */,
 				B680A8A727A8DD5D007CB707 /* JWTDecoder.swift in Sources */,
 				6B42318827AD1BC0002D135A /* HyphenationRemover.swift in Sources */,
+				B6BBA90927C39528000FE7D3 /* AudioConverter.swift in Sources */,
+				B6BBA90727C392E3000FE7D3 /* AudioConverterView+.swift in Sources */,
 				B61796C727BCB6F00054660E /* SettingView+.swift in Sources */,
 				B6D1AEE427A53A560022FED2 /* HomeViewController.swift in Sources */,
-				B629B93127B8F7E400F573C9 /* ToolManager+Default.swift in Sources */,
 				B6AC276A27AA535A000FD713 /* PDFGeneratorView+.swift in Sources */,
 				B608542027A67E4D003BF243 /* TextField.swift in Sources */,
 				B67A4C5527C0EA84009277FB /* ACOverlayPanel.swift in Sources */,

@@ -86,6 +86,10 @@ enum R {
             static let imageCompressor = NSImage(named: "tool/image.compressor")!
             static let imageConverter = NSImage(named: "tool/image.converter")!
             static let colorPicker = NSImage(named: "tool/color.picker")!
+            static let gif = NSImage(named: "tool/gif")!
+            
+            static let media = NSImage(named: "tool/media")!
+            static let audioConverter = NSImage(named: "tool/audio.convert")!
             
             static let network = NSImage(named: "tool/network")!
             static let api = NSImage(named: "tool/api")!
