@@ -15,6 +15,9 @@
 		B608541B27A672E3003BF243 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = B608541A27A672E3003BF243 /* Yams */; };
 		B608541E27A67B48003BF243 /* NumberBaseConverter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608541D27A67B48003BF243 /* NumberBaseConverter+.swift */; };
 		B608542027A67E4D003BF243 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608541F27A67E4D003BF243 /* TextField.swift */; };
+		B6113ECD27C4B96C00ACC6E8 /* EmptyImageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6113ECC27C4B96C00ACC6E8 /* EmptyImageTableView.swift */; };
+		B6113ECF27C4BF2300ACC6E8 /* FileConflictAvoider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6113ECE27C4BF2300ACC6E8 /* FileConflictAvoider.swift */; };
+		B6113F0127C4BF7700ACC6E8 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6113F0027C4BF7700ACC6E8 /* Identifier.swift */; };
 		B61796C527BCB3090054660E /* ToolCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C427BCB3090054660E /* ToolCategoryCell.swift */; };
 		B61796C727BCB6F00054660E /* SettingView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C627BCB6F00054660E /* SettingView+.swift */; };
 		B61796C927BCB84A0054660E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C827BCB84A0054660E /* Settings.swift */; };
@@ -47,6 +50,7 @@
 		B65DB78027AC0EB400146A3C /* RegexTesterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65DB77F27AC0EB400146A3C /* RegexTesterView+.swift */; };
 		B66850EE27A64D3200A3FE01 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66850ED27A64D3200A3FE01 /* Page.swift */; };
 		B66850F227A65FC200A3FE01 /* SwiftJSONFormatter in Frameworks */ = {isa = PBXBuildFile; productRef = B66850F127A65FC200A3FE01 /* SwiftJSONFormatter */; };
+		B66BE8BC27C49AD4003B5ED0 /* AudioFileScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66BE8BB27C49AD4003B5ED0 /* AudioFileScanner.swift */; };
 		B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF9F27AAB8DD00391A5D /* FileDrop.swift */; };
 		B673A90227AD0E78005512AB /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A90127AD0E78005512AB /* DatePicker.swift */; };
 		B67A4C0827C0BA00009277FB /* ColorPickerHandleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C0227C0B9FF009277FB /* ColorPickerHandleLayer.swift */; };
@@ -158,6 +162,9 @@
 		B608541127A66A90003BF243 /* JSONYamlConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONYamlConverter+.swift"; sourceTree = "<group>"; };
 		B608541D27A67B48003BF243 /* NumberBaseConverter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberBaseConverter+.swift"; sourceTree = "<group>"; };
 		B608541F27A67E4D003BF243 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		B6113ECC27C4B96C00ACC6E8 /* EmptyImageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyImageTableView.swift; sourceTree = "<group>"; };
+		B6113ECE27C4BF2300ACC6E8 /* FileConflictAvoider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileConflictAvoider.swift; sourceTree = "<group>"; };
+		B6113F0027C4BF7700ACC6E8 /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		B61796C427BCB3090054660E /* ToolCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolCategoryCell.swift; sourceTree = "<group>"; };
 		B61796C627BCB6F00054660E /* SettingView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingView+.swift"; sourceTree = "<group>"; };
 		B61796C827BCB84A0054660E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -193,6 +200,7 @@
 		B64B209727A532DF00AC2601 /* AppWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowController.swift; sourceTree = "<group>"; };
 		B65DB77F27AC0EB400146A3C /* RegexTesterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegexTesterView+.swift"; sourceTree = "<group>"; };
 		B66850ED27A64D3200A3FE01 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		B66BE8BB27C49AD4003B5ED0 /* AudioFileScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileScanner.swift; sourceTree = "<group>"; };
 		B672CF9F27AAB8DD00391A5D /* FileDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDrop.swift; sourceTree = "<group>"; };
 		B673A90127AD0E78005512AB /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		B67A4C0227C0B9FF009277FB /* ColorPickerHandleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerHandleLayer.swift; sourceTree = "<group>"; };
@@ -333,9 +341,8 @@
 		B620145427A9440E00AF5386 /* Graphic */ = {
 			isa = PBXGroup;
 			children = (
-				B6C5292527C20DAF0019BCB0 /* ffmpeg */,
-				B63A034927C212FE009FD2AD /* Movie to Gif */,
 				B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */,
+				B63A034927C212FE009FD2AD /* Movie to Gif */,
 				B67A4C0127C0B9FF009277FB /* Color Picker */,
 				B6AC276827AA532B000FD713 /* Image Optimizer */,
 				B6B5729027ACFE020069DBA7 /* Image Converter */,
@@ -447,6 +454,17 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		B66BE8BD27C49B28003B5ED0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B6113F0027C4BF7700ACC6E8 /* Identifier.swift */,
+				B6113ECE27C4BF2300ACC6E8 /* FileConflictAvoider.swift */,
+				B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */,
+				B6C5292527C20DAF0019BCB0 /* ffmpeg */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		B67A4C0127C0B9FF009277FB /* Color Picker */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,7 +562,6 @@
 			children = (
 				B6ED863427BFE12400A17474 /* Exporters */,
 				B6B5728927ACDA420069DBA7 /* ImageConverterView+.swift */,
-				B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */,
 				B6B5728B27ACE5600069DBA7 /* ImageConverter.swift */,
 			);
 			path = "Image Converter";
@@ -561,6 +578,7 @@
 		B6BBA90527C392D5000FE7D3 /* Audio Converter */ = {
 			isa = PBXGroup;
 			children = (
+				B66BE8BB27C49AD4003B5ED0 /* AudioFileScanner.swift */,
 				B6BBA90627C392E3000FE7D3 /* AudioConverterView+.swift */,
 				B6BBA90827C39528000FE7D3 /* AudioConverter.swift */,
 			);
@@ -583,6 +601,7 @@
 		B6D1AEDD27A534850022FED2 /* Body */ = {
 			isa = PBXGroup;
 			children = (
+				B66BE8BD27C49B28003B5ED0 /* Utils */,
 				B6D1AEDE27A534960022FED2 /* BodyViewController.swift */,
 				B6D1AEE327A53A560022FED2 /* HomeViewController.swift */,
 				B61796C627BCB6F00054660E /* SettingView+.swift */,
@@ -619,6 +638,7 @@
 				B6B5726127AC14B60069DBA7 /* TextView.swift */,
 				B6B5726327AC14D10069DBA7 /* RegexTextView.swift */,
 				B673A90127AD0E78005512AB /* DatePicker.swift */,
+				B6113ECC27C4B96C00ACC6E8 /* EmptyImageTableView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -770,12 +790,14 @@
 				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
 				B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */,
 				B6C5292427C20D520019BCB0 /* GifConverterView+.swift in Sources */,
+				B66BE8BC27C49AD4003B5ED0 /* AudioFileScanner.swift in Sources */,
 				B627295727BFCCC40034D70C /* HeicImageExporter.swift in Sources */,
 				B67A4CC727C0F546009277FB /* CircleBoxHSBColorPicker.swift in Sources */,
 				B67A4C5827C0EA84009277FB /* ACOverlayWrapper.swift in Sources */,
 				B67A4C5427C0EA84009277FB /* Ex+CGImage.swift in Sources */,
 				B620142327A929B400AF5386 /* TagCloudView.swift in Sources */,
 				B67A4C5627C0EA84009277FB /* ACOverlayController.swift in Sources */,
+				B6113ECF27C4BF2300ACC6E8 /* FileConflictAvoider.swift in Sources */,
 				B67A4C0927C0BA00009277FB /* OpacityBarView.swift in Sources */,
 				B6B5728027ACC3AF0069DBA7 /* ChecksumGenerator.swift in Sources */,
 				B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */,
@@ -784,6 +806,7 @@
 				B620141C27A917E000AF5386 /* Button.swift in Sources */,
 				B6AC273227AA2BF6000FD713 /* ImageOptimizer.swift in Sources */,
 				B67A4C0A27C0BA00009277FB /* HueBarView.swift in Sources */,
+				B6113F0127C4BF7700ACC6E8 /* Identifier.swift in Sources */,
 				B65DB78027AC0EB400146A3C /* RegexTesterView+.swift in Sources */,
 				B6B5728F27ACFA6E0069DBA7 /* ImageDropper.swift in Sources */,
 				B680A89A27A8D9DD007CB707 /* Toast.swift in Sources */,
@@ -814,6 +837,7 @@
 				B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */,
 				B620141E27A91F6700AF5386 /* LoremIpsumGenerator.swift in Sources */,
 				B627294F27BFB7680034D70C /* WebpImageExporter.swift in Sources */,
+				B6113ECD27C4B96C00ACC6E8 /* EmptyImageTableView.swift in Sources */,
 				B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */,
 				B67A4C5027C0EA84009277FB /* Util+PixelPicker.swift in Sources */,
 				B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */,

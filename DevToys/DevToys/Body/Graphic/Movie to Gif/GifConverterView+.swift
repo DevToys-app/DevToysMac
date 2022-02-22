@@ -105,7 +105,7 @@ final private class GifConverterView: Page {
 
 final private class GifConvertListView: NSLoadView, QLPreviewPanelDataSource, QLPreviewPanelDelegate {
     let scrollView = NSScrollView()
-    let listView = NSTableView.list()
+    let listView = EmptyImageTableView.list() => { $0.setFileDropEmptyView() }
     let removePublisher = PassthroughSubject<IndexSet, Never>()
     var convertTasks = [GifConvertTask]() { didSet { listView.reloadData() } }
     

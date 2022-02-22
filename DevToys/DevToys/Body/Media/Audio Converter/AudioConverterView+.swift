@@ -33,20 +33,30 @@ final class AudioConverterViewController: NSViewController {
             .sink{[unowned self] in handleDrop($0) }.store(in: &objectBag)
         self.cell.listView.removePublisher
             .sink{[unowned self] in removeItems($0) }.store(in: &objectBag)
+        self.cell.clearButton.actionPublisher
+            .sink{[unowned self] in clearTasks() }.store(in: &objectBag)
     }
     
+    private func clearTasks() {
+        tasks = tasks.filter{ $0.completePromise.state.isSettled }
+    }
     
     private func removeItems(_ indexSet: IndexSet) {
         for index in indexSet.reversed() {
-            self.tasks.remove(at: index)
+            if !tasks[index].completePromise.state.isSettled {
+                self.tasks.remove(at: index)
+            } else {
+                NSSound.beep()
+            }
         }
     }
     
     private func handleDrop(_ urls: [URL]) {
+        let urls = urls.flatMap{ AudioFileScanner.scan($0) }
         var newTasks = [AudioConvertTask]()
         
         for url in urls {
-            let destinationURL = url.deletingPathExtension().appendingPathExtension(format.ext)
+            let destinationURL = FileConflictAvoider.avoidConflict(url.deletingPathExtension().appendingPathExtension(format.ext))
             let options = AudioConvertOptions(thumbsize: AudioConvertTaskCell.thumbnailSize, removeSourceFile: removeSource)
             let task = AudioConverter.convert(from: url, format: format, options: options, destinationURL: destinationURL)
             newTasks.append(task)
@@ -60,6 +70,7 @@ final private class AudioConverterView: Page {
     let formatPicker = PopupButton()
     let removeFileSwitch = NSSwitch()
     let listView = AudioConvertListView()
+    let clearButton = SectionButton(title: "Clear".localized(), image: R.Image.clear)
     
     let formatPublisher = PassthroughSubject<AudioConvertFormat, Never>()
     let dropPublisher = PassthroughSubject<[URL], Never>()
@@ -85,12 +96,12 @@ final private class AudioConverterView: Page {
         
         self.addSection(Section(title: "Configuration".localized(), items: [
             Area(icon: R.Image.format, title: "Format".localized(), control: formatPicker),
-            Area(icon: R.Image.paramators, title: "Remove source file".localized(), message: "Whether to delete the source file after exporting a Gif".localized(), control: removeFileSwitch)
+            Area(icon: R.Image.paramators, title: "Remove source file".localized(), message: "Whether to delete the source file after exporting a Audio".localized(), control: removeFileSwitch)
         ]))
         
-        self.addSection(Section(title: "Images".localized(), items: [
+        self.addSection(Section(title: "Files".localized(), items: [
             listView
-        ]))
+        ], toolbarItems: [clearButton]))
         
         self.registerFormats(convertGroups)
     }
@@ -112,7 +123,7 @@ final private class AudioConverterView: Page {
 
 final private class AudioConvertListView: NSLoadView, QLPreviewPanelDataSource, QLPreviewPanelDelegate {
     let scrollView = NSScrollView()
-    let listView = NSTableView.list()
+    let listView = EmptyImageTableView.list()
     let removePublisher = PassthroughSubject<IndexSet, Never>()
     var convertTasks = [AudioConvertTask]() { didSet { listView.reloadData() } }
     
@@ -145,6 +156,7 @@ final private class AudioConvertListView: NSLoadView, QLPreviewPanelDataSource, 
         }
         
         self.scrollView.documentView = listView
+        self.listView.setFileDropEmptyView()
         self.listView.delegate = self
         self.listView.dataSource = self
         self.listView.allowsMultipleSelection = true

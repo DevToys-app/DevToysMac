@@ -17,6 +17,10 @@ struct AudioConvertTask {
     let sourceURL: URL
     let destinationURL: URL
     let fftask: Promise<FFTask, Never>
+    
+    var completePromise: Promise<Void, Never> {
+        fftask.flatMap{ $0.complete.replaceError(with: ()) }
+    }
 }
 
 struct AudioConvertGroup {
