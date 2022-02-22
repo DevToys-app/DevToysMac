@@ -8,7 +8,7 @@
             <sparkle:version>1</sparkle:version>
             <sparkle:shortVersionString>0.0.9</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>10.15</sparkle:minimumSystemVersion>
-            <enclosure url="https://obuchiyuki.github.io/DevToysMac/sparkle/DevToys.app.zip" length="32166769" type="application/octet-stream" sparkle:edSignature="fkhCRpII+DvevaEZyEKK78qZirQwDPDY8HfwAFeO6m8bs1McPQhY6YlBcri9OImENBMGlCSPT0r33LfkwMhcBA=="/>
+            <enclosure url="https://github.com/ObuchiYuki/DevToysMac/releases/download/0.0.9-pre/DevToys.app.zip" length="32166769" type="application/octet-stream" sparkle:edSignature="fkhCRpII+DvevaEZyEKK78qZirQwDPDY8HfwAFeO6m8bs1McPQhY6YlBcri9OImENBMGlCSPT0r33LfkwMhcBA=="/>
         </item>
     </channel>
 </rss>

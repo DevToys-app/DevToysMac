@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconFile</key>
@@ -28,5 +30,9 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>https://obuchiyuki.github.io/DevToysMac/sparkle/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>DOsNciodUTmm6TgsE6uTJtoYBAZqvCjSzztuz+7I+4w=</string>
 </dict>
 </plist>
