@@ -18,6 +18,7 @@
 		B6113ECD27C4B96C00ACC6E8 /* EmptyImageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6113ECC27C4B96C00ACC6E8 /* EmptyImageTableView.swift */; };
 		B6113ECF27C4BF2300ACC6E8 /* FileConflictAvoider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6113ECE27C4BF2300ACC6E8 /* FileConflictAvoider.swift */; };
 		B6113F0127C4BF7700ACC6E8 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6113F0027C4BF7700ACC6E8 /* Identifier.swift */; };
+		B6113F0927C4C6C900ACC6E8 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B6113F0827C4C6C900ACC6E8 /* Sparkle */; };
 		B61796C527BCB3090054660E /* ToolCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C427BCB3090054660E /* ToolCategoryCell.swift */; };
 		B61796C727BCB6F00054660E /* SettingView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C627BCB6F00054660E /* SettingView+.swift */; };
 		B61796C927BCB84A0054660E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C827BCB84A0054660E /* Settings.swift */; };
@@ -290,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D1AF0627A5603B0022FED2 /* Highlightr in Frameworks */,
+				B6113F0927C4C6C900ACC6E8 /* Sparkle in Frameworks */,
 				B608541527A66CC9003BF243 /* CoreUtil.framework in Frameworks */,
 				B680A79827A69268007CB707 /* HTMLEntities in Frameworks */,
 				B608541B27A672E3003BF243 /* Yams in Frameworks */,
@@ -679,6 +681,7 @@
 				B680A79727A69268007CB707 /* HTMLEntities */,
 				B680A8AC27A8E31C007CB707 /* CryptoSwift */,
 				B6B5728727ACD2F20069DBA7 /* Kanna */,
+				B6113F0827C4C6C900ACC6E8 /* Sparkle */,
 			);
 			productName = DevToys;
 			productReference = B64B1E7027A4F5E200AC2601 /* DevToys.app */;
@@ -719,6 +722,7 @@
 				B680A79627A69268007CB707 /* XCRemoteSwiftPackageReference "swift-html-entities" */,
 				B680A8AB27A8E31C007CB707 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
 				B6B5728627ACD2F20069DBA7 /* XCRemoteSwiftPackageReference "Kanna" */,
+				B6113F0727C4C6C900ACC6E8 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = B64B1E7127A4F5E200AC2601 /* Products */;
 			projectDirPath = "";
@@ -1127,6 +1131,14 @@
 				kind = branch;
 			};
 		};
+		B6113F0727C4C6C900ACC6E8 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		B66850F027A65FC200A3FE01 /* XCRemoteSwiftPackageReference "SwiftJSONFormatter" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ObuchiYuki/SwiftJSONFormatter";
@@ -1174,6 +1186,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B608541927A672E3003BF243 /* XCRemoteSwiftPackageReference "Yams" */;
 			productName = Yams;
+		};
+		B6113F0827C4C6C900ACC6E8 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6113F0727C4C6C900ACC6E8 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 		B66850F127A65FC200A3FE01 /* SwiftJSONFormatter */ = {
 			isa = XCSwiftPackageProductDependency;
