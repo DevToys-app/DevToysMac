@@ -35,6 +35,8 @@
 "Information" = "Information";
 "Clear" = "Clear";
 "Delete" = "Delete";
+"Open in Finder" = "Open in Finder";
+"Quick Look" = "Quick Look";
 
 // - Category -
 "category.home" = "Home";
@@ -44,6 +46,7 @@
 "category.generators" = "Generators";
 "category.text" = "Text";
 "category.graphic" = "Graphic";
+"Media" = "Media";
 
 // - Tool -
 "tool.home.title" = "Home";
@@ -188,3 +191,38 @@
 "Converted Images" = "Converted Images";
 "Scale" = "Scale";
 "Size" = "Size";
+
+"Settings" = "Settings";
+"Setting of application" = "Setting of application";
+"App Theme" = "App Theme";
+"Select which app theme to display" = "Select which app theme to display";
+"Use system setting" = "Use system setting";
+"Light mode" = "Light mode";
+"Dark mode" = "Dark mode";
+
+"Color Picker" = "Color Picker";
+"Picker the color and copy components" = "Pick a color and copy the formatted color";
+"HSB Box" = "HSB Box";
+"HSB Circle" = "HSB Circle";
+"HSB Circle and Bars" = "HSB Circle and Bars";
+"Pick Color" = "Pick Color";
+"Picker Type" = "Picker Type";
+"Color Hex" = "Color Hex";
+"Color Copy" = "Color Copy";
+"Color Copy Type" = "Type";
+
+"Gif Converter" = "Gif Converter";
+"Convert a movie to an animated GIF file" = "Convert a movie to an animated GIF file";
+"Width" = "Width";
+"The width of the Gif file" = "The width of the Gif file (height will be determined)";
+"FPS" = "FPS";
+"FPS of the Gif file to be exported" = "FPS of the Gif file to be exported";
+"Remove source file" = "Remove source file";
+"Whether to delete the source file after exporting a Gif" = "Whether to delete the source file after exporting a Gif";
+
+"Audio Converter" = "Audio Converter";
+"Convert audio from one format to another" = "Convert audio from one format to another";
+"Whether to delete the source file after exporting a Audio" = "Whether to delete the source file after exporting a Audio";
+"Starting..." = "Starting...";
+"Complete" = "Complete";
+"Convert Failed" = "Convert Failed";

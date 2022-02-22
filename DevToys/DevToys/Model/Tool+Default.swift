@@ -19,8 +19,8 @@ extension Tool {
         viewController: SearchViewController()
     )
     static let settings = Tool(
-        title: "Settings", identifier: "settings", category: .settings, icon: R.Image.Tool.settings,
-        toolDescription: "Setting of application", showAlways: true, showOnHome: true, showOnSidebar: false,
+        title: "Settings".localized(), identifier: "settings", category: .settings, icon: R.Image.Tool.settings,
+        toolDescription: "Setting of application".localized(), showAlways: true, showOnHome: true, showOnSidebar: false,
         viewController: SettingViewController()
     )
     
@@ -131,20 +131,20 @@ extension Tool {
         viewController: ImageConverterViewController()
     )
     static let colorPicker = Tool(
-        title: "Color Picker", identifier: "colorpicker", category: .graphic, icon: R.Image.Tool.colorPicker,
-        sidebarTitle: "Color Picker", toolDescription: "Picker the color and copy components",
+        title: "Color Picker".localized(), identifier: "colorpicker", category: .graphic, icon: R.Image.Tool.colorPicker,
+        sidebarTitle: "Color Picker".localized(), toolDescription: "Picker the color and copy components".localized(),
         viewController: ColorPickerViewController()
     )
     static let gifConverter = Tool(
-        title: "Gif Converter", identifier: "gifconverter", category: .graphic, icon: R.Image.Tool.gif,
-        sidebarTitle: "Gif Converter", toolDescription: "Convert movie to animation gif file",
+        title: "Gif Converter".localized(), identifier: "gifconverter", category: .graphic, icon: R.Image.Tool.gif,
+        sidebarTitle: "Gif Converter".localized(), toolDescription: "Convert a movie to an animated GIF file".localized(),
         viewController: GifConverterViewController()
     )
     
     // MARK: - Media -
     static let audioConverter = Tool(
-        title: "Audio Converter", identifier: "audioconverter", category: .media, icon: R.Image.Tool.audioConverter,
-        sidebarTitle: "Audio Converter", toolDescription: "Convert audio from one format to another",
+        title: "Audio Converter".localized(), identifier: "audioconverter", category: .media, icon: R.Image.Tool.audioConverter,
+        sidebarTitle: "Audio Converter".localized(), toolDescription: "Convert audio from one format to another".localized(),
         viewController: AudioConverterViewController()
     )
 }

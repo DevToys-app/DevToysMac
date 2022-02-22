@@ -190,7 +190,7 @@ enum ColorPickerType: String, TextItem {
     case hsbCircle = "HSB Circle"
     case hsbCircleAndBars = "HSB Circle and Bars"
     
-    var title: String { rawValue }
+    var title: String { rawValue.localized() }
 }
 
 enum ColorCopyType: String, TextItem {
@@ -259,7 +259,7 @@ final private class ColorPickerView: Page {
     }
     
     override func onAwake() {
-        self.addSection(Area(icon: R.Image.settings, title: "Picker Type", control: pickerTypePicker))
+        self.addSection(Area(icon: R.Image.settings, title: "Picker Type".localized(), control: pickerTypePicker))
         self.pickerPlaceholder.contentView = circleBarsHSBPicker
         self.addSection(pickerPlaceholder)
         
@@ -272,12 +272,12 @@ final private class ColorPickerView: Page {
         
         self.addSection(componentsStack)
         
-        self.addSection(Section(title: "Color Hex", orientation: .horizontal, fillWidth: false, items: [
+        self.addSection(Section(title: "Color Hex".localized(), orientation: .horizontal, fillWidth: false, items: [
             hex3TextField, hex6TextField, hex8TextField
         ]))
                 
-        self.addSection(Section(title: "Color Copy", items: [
-            Area(icon: R.Image.copy, title: "Type", control: colorCopyTypePicker),
+        self.addSection(Section(title: "Color Copy".localized(), items: [
+            Area(icon: R.Image.copy, title: "Color Copy Type".localized(), control: colorCopyTypePicker),
             self.colorCopyPlaceholder
         ]))
 

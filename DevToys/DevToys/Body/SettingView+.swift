@@ -24,7 +24,7 @@ final class SettingViewController: NSViewController {
 extension Settings.AppearanceType: TextItem {
     static let allCases: [Self] = [.useSystemSettings, .lightMode, .darkMode]
     
-    var title: String { rawValue }
+    var title: String { rawValue.localized() }
 }
 
 final private class SettingView: Page {
@@ -33,7 +33,7 @@ final private class SettingView: Page {
     
     override func onAwake() {
         self.addSection(
-            Area(icon: R.Image.paramators, title: "App Theme", message: "Select which app theme to display", control: appearancePicker)
+            Area(icon: R.Image.paramators, title: "App Theme".localized(), message: "Select which app theme to display".localized(), control: appearancePicker)
         )
     }
 }

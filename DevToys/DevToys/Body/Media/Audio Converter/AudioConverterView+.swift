@@ -198,8 +198,7 @@ extension AudioConvertListView: NSTableViewDataSource, NSTableViewDelegate {
         let task = convertTasks[row]
         
         cell.titleLabel.stringValue = task.title
-        cell.infoLabel.stringValue = "Starting..."
-//        cell.thumbnailImageView.image = task.thumbnail
+        cell.infoLabel.stringValue = "Starting...".localized()
         
         task.fftask
             .receive(on: .main)
@@ -216,10 +215,10 @@ extension AudioConvertListView: NSTableViewDataSource, NSTableViewDelegate {
                 task.complete
                     .receive(on: .main)
                     .sink({
-                        cell.infoLabel.stringValue = "Complete"
+                        cell.infoLabel.stringValue = "Complete".localized()
                     }, { error in
                         cell.infoLabel.textColor = .systemRed
-                        cell.infoLabel.stringValue = "Convert Failed \(error)"
+                        cell.infoLabel.stringValue = "Convert Failed".localized()
                     })
             }
         

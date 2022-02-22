@@ -92,7 +92,7 @@ final private class GifConverterView: Page {
         self.registerForDraggedTypes([.fileURL])
         
         self.addSection(Section(title: "Configuration".localized(), items: [
-            Area(icon: R.Image.spacing, title: "Width".localized(), message: "The width of the Gif file (height will be determined)".localized(), control: widthField),
+            Area(icon: R.Image.spacing, title: "Width".localized(), message: "The width of the Gif file".localized(), control: widthField),
             Area(icon: R.Image.paramators, title: "FPS".localized(), message: "FPS of the Gif file to be exported".localized(), control: fpsField),
             Area(icon: R.Image.paramators, title: "Remove source file".localized(), message: "Whether to delete the source file after exporting a Gif".localized(), control: removeFileSwitch)
         ]))
@@ -179,7 +179,7 @@ extension GifConvertListView: NSTableViewDataSource, NSTableViewDelegate {
         let task = convertTasks[row]
         
         cell.titleLabel.stringValue = task.title
-        cell.infoLabel.stringValue = "Starting..."
+        cell.infoLabel.stringValue = "Starting...".localized()
         cell.thumbnailImageView.image = task.thumbnail
         
         task.fftask
@@ -197,10 +197,10 @@ extension GifConvertListView: NSTableViewDataSource, NSTableViewDelegate {
                 task.complete
                     .receive(on: .main)
                     .sink({
-                        cell.infoLabel.stringValue = "Complete"
+                        cell.infoLabel.stringValue = "Complete".localized()
                     }, { error in
                         cell.infoLabel.textColor = .systemRed
-                        cell.infoLabel.stringValue = "Convert Failed \(error)"
+                        cell.infoLabel.stringValue = "Convert Failed".localized()
                     })
             }
         
