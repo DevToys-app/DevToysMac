@@ -108,11 +108,17 @@ extension Tool {
         sidebarTitle: "tool.regex.mintitle".localized(), toolDescription: "tool.regex.description".localized(),
         viewController: RegexTesterViewController()
     )
+    static let textDiff = Tool(
+        title: "Text Diff".localized(), identifier: "textdiff", category: .text, icon: R.Image.Tool.textInspector,
+        sidebarTitle: "Text Diff".localized(), toolDescription: "Compare two Text and display Diff".localized(),
+        viewController: TextDiffViewController()
+    )
     static let hyphenationRemover = Tool(
         title: "tool.hyphenremove.title".localized(), identifier: "hyphenremove", category: .text, icon: R.Image.Tool.textInspector,
         sidebarTitle: "tool.hyphenremove.mintitle".localized(), toolDescription: "tool.hyphenremove.description".localized(),
         viewController: HyphenationRemoverViewController()
     )
+    
     
     // MARK: - Graphic -
     static let imageOptimizer = Tool(
@@ -172,6 +178,7 @@ extension ToolManager {
 
         toolManager.registerTool(.textInspector)
         toolManager.registerTool(.regexTester)
+        toolManager.registerTool(.textDiff)
         toolManager.registerTool(.hyphenationRemover)
 
         toolManager.registerTool(.imageOptimizer)

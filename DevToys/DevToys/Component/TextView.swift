@@ -8,7 +8,7 @@
 import CoreUtil
 
 final class TextView: NSLoadView {
-    private class _TextView: NSTextView {
+    class _TextView: NSTextView {
         let stringPublisher = PassthroughSubject<String, Never>()
         var sendingValue = false
         override var string: String {
@@ -38,7 +38,7 @@ final class TextView: NSLoadView {
     
     private let scrollView = _TextView.scrollableTextView()
     private let backgroudLayer = ControlBackgroundLayer.animationDisabled()
-    private lazy var textView = scrollView.documentView as! _TextView
+    lazy var textView = scrollView.documentView as! _TextView
 
     override func onAwake() {
         self.wantsLayer = true
