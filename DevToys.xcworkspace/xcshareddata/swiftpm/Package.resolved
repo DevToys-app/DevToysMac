@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "DiffMatchPatch",
+        "repositoryURL": "https://github.com/ObuchiYuki/DiffMatchPatch",
+        "state": {
+          "branch": null,
+          "revision": "7f79f4a473e0e81d6864b425f101c78bccfd169b",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "Highlightr",
         "repositoryURL": "https://github.com/raspu/Highlightr",
         "state": {
