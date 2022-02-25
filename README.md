@@ -1,11 +1,8 @@
 # DevToysMac
 
+This is the mac app version of [DevToys or Windows](https://github.com/veler/DevToys)!
 
 ![Dribbble Shot](https://user-images.githubusercontent.com/20896810/154781951-f4c6fa80-2fcc-40fe-a94b-fccfc0f2ccf1.png)
-
-
-
-This is the mac app version of [DevToys](https://github.com/veler/DevToys)!
 
 # How to install
 
@@ -15,6 +12,14 @@ This is the mac app version of [DevToys](https://github.com/veler/DevToys)!
 
 ## Homebrew
 - Install [Homebrew](https://brew.sh/). Then install DevToysMac with `brew install --cask devtoys`.
+
+
+
+# How to Build
+
+
+
+
 
 # Screenshots
 

@@ -33,7 +33,7 @@ final class Base64DecoderViewController: NSViewController {
         self.$rawString
             .sink{[unowned self] in self.cell.inputTextSection.string = $0 }.store(in: &objectBag)
         self.$formattedString
-            .sink{[unowned self] in self.cell.inputTextSection.string = $0 }.store(in: &objectBag)
+            .sink{[unowned self] in self.cell.encodeTextSection.string = $0 }.store(in: &objectBag)
     }
     
     private func updateEncodeView(_ sourceType: SourceType) {

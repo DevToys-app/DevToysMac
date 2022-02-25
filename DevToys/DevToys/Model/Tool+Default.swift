@@ -146,6 +146,11 @@ extension Tool {
         sidebarTitle: "Gif Converter".localized(), toolDescription: "Convert a movie to an animated GIF file".localized(),
         viewController: GifConverterViewController()
     )
+    static let qrConverter = Tool(
+        title: "QR Code Generator".localized(), identifier: "qrgenerator", category: .graphic, icon: R.Image.Tool.qrgenerator,
+        sidebarTitle: "QR Code Generator".localized(), toolDescription: "Create QR code from text".localized(),
+        viewController: QRCodeGeneratorViewController()
+    )
     
     // MARK: - Media -
     static let audioConverter = Tool(
@@ -186,6 +191,8 @@ extension ToolManager {
         toolManager.registerTool(.imageConverter)
         toolManager.registerTool(.colorPicker)
         toolManager.registerTool(.gifConverter)
+        toolManager.registerTool(.qrConverter)
+        
         toolManager.registerTool(.audioConverter)
         
         toolManager.registerTool(.settings)

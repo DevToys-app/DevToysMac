@@ -92,6 +92,7 @@
 		B680A8AD27A8E31C007CB707 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B680A8AC27A8E31C007CB707 /* CryptoSwift */; };
 		B684EA2627C5EFDB0014802F /* DiffMatchPatch in Frameworks */ = {isa = PBXBuildFile; productRef = B684EA2527C5EFDB0014802F /* DiffMatchPatch */; };
 		B684EA2827C5EFE90014802F /* TextDiffView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B684EA2727C5EFE90014802F /* TextDiffView+.swift */; };
+		B684EA2A27C609620014802F /* QRCodeGeneratorView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B684EA2927C609620014802F /* QRCodeGeneratorView+.swift */; };
 		B6AC273027AA1373000FD713 /* optipng in Resources */ = {isa = PBXBuildFile; fileRef = B6AC272F27AA1373000FD713 /* optipng */; };
 		B6AC273227AA2BF6000FD713 /* ImageOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */; };
 		B6AC276527AA3D61000FD713 /* jpegoptim in Resources */ = {isa = PBXBuildFile; fileRef = B6AC276427AA3D61000FD713 /* jpegoptim */; };
@@ -253,6 +254,7 @@
 		B680A8A627A8DD5D007CB707 /* JWTDecoderView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JWTDecoderView+.swift"; sourceTree = "<group>"; };
 		B680A8A927A8E106007CB707 /* HashGeneratorView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HashGeneratorView+.swift"; sourceTree = "<group>"; };
 		B684EA2727C5EFE90014802F /* TextDiffView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextDiffView+.swift"; sourceTree = "<group>"; };
+		B684EA2927C609620014802F /* QRCodeGeneratorView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QRCodeGeneratorView+.swift"; sourceTree = "<group>"; };
 		B6AC272F27AA1373000FD713 /* optipng */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = optipng; sourceTree = "<group>"; };
 		B6AC273127AA2BF6000FD713 /* ImageOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOptimizer.swift; sourceTree = "<group>"; };
 		B6AC276427AA3D61000FD713 /* jpegoptim */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = jpegoptim; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */,
+				B684EA2927C609620014802F /* QRCodeGeneratorView+.swift */,
 				B63A034927C212FE009FD2AD /* Movie to Gif */,
 				B67A4C0127C0B9FF009277FB /* Color Picker */,
 				B6AC276827AA532B000FD713 /* Image Optimizer */,
@@ -782,6 +785,7 @@
 			files = (
 				B62013B627A90B8900AF5386 /* NumberField.swift in Sources */,
 				B6BD80EB27B89EA600152AB9 /* ImageOptimaizerView.swift in Sources */,
+				B684EA2A27C609620014802F /* QRCodeGeneratorView+.swift in Sources */,
 				B67A4C0D27C0BA00009277FB /* Color.swift in Sources */,
 				B608541E27A67B48003BF243 /* NumberBaseConverterView+.swift in Sources */,
 				B680A8AA27A8E106007CB707 /* HashGeneratorView+.swift in Sources */,
