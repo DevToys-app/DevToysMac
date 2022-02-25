@@ -23,8 +23,8 @@ enum R {
         static let transparentBackground = NSColor(patternImage: NSImage(named: "transparent_background")!)
     }
     enum Image {
-        
         static let sidebarDisclosure = NSImage(named: "sidebar.disclosure")!
+        static let pulldownIndicator = NSImage(named: "pulldown.indicator")!
         
         static let spuit = NSImage(named: "spuit")!
         static let search = NSImage(named: "search")!

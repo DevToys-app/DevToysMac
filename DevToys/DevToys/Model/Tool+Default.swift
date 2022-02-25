@@ -190,7 +190,7 @@ extension ToolManager {
         toolManager.registerTool(.regexTester)
         toolManager.registerTool(.textDiff)
         toolManager.registerTool(.hyphenationRemover)
-        toolManager.registerTool(.jsonSearch)
+//        toolManager.registerTool(.jsonSearch)
 
         toolManager.registerTool(.imageOptimizer)
         toolManager.registerTool(.pdfGenerator)

@@ -21,6 +21,7 @@
 		B6113F0927C4C6C900ACC6E8 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B6113F0827C4C6C900ACC6E8 /* Sparkle */; };
 		B61157C027C8C3F9004D77A5 /* JSONSearchView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61157BF27C8C3F9004D77A5 /* JSONSearchView+.swift */; };
 		B61157C327C8C78A004D77A5 /* JSONNormalSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61157C227C8C78A004D77A5 /* JSONNormalSearchView.swift */; };
+		B61157C527C8D77A004D77A5 /* DragImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61157C427C8D77A004D77A5 /* DragImageView.swift */; };
 		B61796C527BCB3090054660E /* ToolCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C427BCB3090054660E /* ToolCategoryCell.swift */; };
 		B61796C727BCB6F00054660E /* SettingView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C627BCB6F00054660E /* SettingView+.swift */; };
 		B61796C927BCB84A0054660E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C827BCB84A0054660E /* Settings.swift */; };
@@ -173,6 +174,7 @@
 		B6113F0027C4BF7700ACC6E8 /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		B61157BF27C8C3F9004D77A5 /* JSONSearchView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONSearchView+.swift"; sourceTree = "<group>"; };
 		B61157C227C8C78A004D77A5 /* JSONNormalSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNormalSearchView.swift; sourceTree = "<group>"; };
+		B61157C427C8D77A004D77A5 /* DragImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragImageView.swift; sourceTree = "<group>"; };
 		B61796C427BCB3090054660E /* ToolCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolCategoryCell.swift; sourceTree = "<group>"; };
 		B61796C627BCB6F00054660E /* SettingView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingView+.swift"; sourceTree = "<group>"; };
 		B61796C827BCB84A0054660E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -663,6 +665,7 @@
 				B6B5726327AC14D10069DBA7 /* RegexTextView.swift */,
 				B673A90127AD0E78005512AB /* DatePicker.swift */,
 				B6113ECC27C4B96C00ACC6E8 /* EmptyImageTableView.swift */,
+				B61157C427C8D77A004D77A5 /* DragImageView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -873,6 +876,7 @@
 				B67A4C5027C0EA84009277FB /* Util+PixelPicker.swift in Sources */,
 				B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */,
 				B67A4C5127C0EA84009277FB /* ShowAndHideCursor.swift in Sources */,
+				B61157C527C8D77A004D77A5 /* DragImageView.swift in Sources */,
 				B680A79C27A6947D007CB707 /* Base64DecoderView+.swift in Sources */,
 				B67A4CC527C0F50D009277FB /* R+ColorPicker.swift in Sources */,
 				B680A86827A8D4D1007CB707 /* TextFieldSection.swift in Sources */,
