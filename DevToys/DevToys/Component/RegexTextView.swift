@@ -25,7 +25,7 @@ final class RegexTextView: NSLoadView {
             textStorage.removeAttribute(NSAttributedString.Key.backgroundColor, range: NSRange(location: 0, length: textStorage.length))
             
             for range in highlightRanges {
-                textStorage.addAttribute(NSAttributedString.Key.backgroundColor, value: NSColor.systemOrange.withAlphaComponent(0.7), range: range)
+                textStorage.addAttribute(NSAttributedString.Key.backgroundColor, value: NSColor.systemBlue.withAlphaComponent(0.5), range: range)
             }
         } catch: { error in
             print(error)
@@ -38,7 +38,7 @@ final class RegexTextView: NSLoadView {
         
         self.addSubview(scrollView)
         self.textView.allowsUndo = true
-        self.textView.font = .monospacedSystemFont(ofSize: R.Size.codeFontSize, weight: .medium)
+        self.textView.font = .monospacedSystemFont(ofSize: R.Size.codeFontSize, weight: .regular)
         self.textView.backgroundColor = .quaternaryLabelColor
         self.textView.textContainerInset = [0, 4]
         self.scrollView.snp.makeConstraints{ make in

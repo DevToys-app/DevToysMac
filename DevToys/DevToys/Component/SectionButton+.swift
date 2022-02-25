@@ -7,6 +7,29 @@
 
 import CoreUtil
 
+final class SearchSectionButton: SectionButton {
+    
+    private let selector = NSSelectorFromString("performFindPanelAction")
+    weak var textView: TextViewType?
+    
+    override func onAwake() {
+        super.onAwake()
+        
+        self.image = R.Image.search
+        self.actionPublisher
+            .sink{[unowned self] in
+                guard let textView = textView else { return assertionFailure() }
+                textView.becomeFocused()
+                
+                guard let findMenu = NSApp.mainMenu?.item(withTag: 1001)?.submenu?.item(withTag: 1002)?.submenu else { return }
+                let index = findMenu.indexOfItem(withTag: 1)
+                
+                findMenu.performActionForItem(at: index)
+            }
+            .store(in: &objectBag)
+    }
+}
+
 final class OpenSectionButton: SectionButton {
     
     let urlPublisher = PassthroughSubject<URL, Never>()

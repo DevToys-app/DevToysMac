@@ -19,6 +19,8 @@
 		B6113ECF27C4BF2300ACC6E8 /* FileConflictAvoider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6113ECE27C4BF2300ACC6E8 /* FileConflictAvoider.swift */; };
 		B6113F0127C4BF7700ACC6E8 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6113F0027C4BF7700ACC6E8 /* Identifier.swift */; };
 		B6113F0927C4C6C900ACC6E8 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B6113F0827C4C6C900ACC6E8 /* Sparkle */; };
+		B61157C027C8C3F9004D77A5 /* JSONSearchView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61157BF27C8C3F9004D77A5 /* JSONSearchView+.swift */; };
+		B61157C327C8C78A004D77A5 /* JSONNormalSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61157C227C8C78A004D77A5 /* JSONNormalSearchView.swift */; };
 		B61796C527BCB3090054660E /* ToolCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C427BCB3090054660E /* ToolCategoryCell.swift */; };
 		B61796C727BCB6F00054660E /* SettingView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C627BCB6F00054660E /* SettingView+.swift */; };
 		B61796C927BCB84A0054660E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61796C827BCB84A0054660E /* Settings.swift */; };
@@ -169,6 +171,8 @@
 		B6113ECC27C4B96C00ACC6E8 /* EmptyImageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyImageTableView.swift; sourceTree = "<group>"; };
 		B6113ECE27C4BF2300ACC6E8 /* FileConflictAvoider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileConflictAvoider.swift; sourceTree = "<group>"; };
 		B6113F0027C4BF7700ACC6E8 /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
+		B61157BF27C8C3F9004D77A5 /* JSONSearchView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONSearchView+.swift"; sourceTree = "<group>"; };
+		B61157C227C8C78A004D77A5 /* JSONNormalSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNormalSearchView.swift; sourceTree = "<group>"; };
 		B61796C427BCB3090054660E /* ToolCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolCategoryCell.swift; sourceTree = "<group>"; };
 		B61796C627BCB6F00054660E /* SettingView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingView+.swift"; sourceTree = "<group>"; };
 		B61796C827BCB84A0054660E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -336,9 +340,19 @@
 			path = Format;
 			sourceTree = "<group>";
 		};
+		B61157C127C8C76A004D77A5 /* JSON Search */ = {
+			isa = PBXGroup;
+			children = (
+				B61157BF27C8C3F9004D77A5 /* JSONSearchView+.swift */,
+				B61157C227C8C78A004D77A5 /* JSONNormalSearchView.swift */,
+			);
+			path = "JSON Search";
+			sourceTree = "<group>";
+		};
 		B620141F27A926B400AF5386 /* Text */ = {
 			isa = PBXGroup;
 			children = (
+				B61157C127C8C76A004D77A5 /* JSON Search */,
 				B620142027A9271500AF5386 /* TextInspectorView+.swift */,
 				B65DB77F27AC0EB400146A3C /* RegexTesterView+.swift */,
 				6B42318727AD1BC0002D135A /* HyphenationRemoverView+.swift */,
@@ -853,6 +867,7 @@
 				B64B1E7427A4F5E200AC2601 /* AppDelegate.swift in Sources */,
 				B620141E27A91F6700AF5386 /* LoremIpsumGeneratorView+.swift in Sources */,
 				B627294F27BFB7680034D70C /* WebpImageExporter.swift in Sources */,
+				B61157C027C8C3F9004D77A5 /* JSONSearchView+.swift in Sources */,
 				B6113ECD27C4B96C00ACC6E8 /* EmptyImageTableView.swift in Sources */,
 				B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */,
 				B67A4C5027C0EA84009277FB /* Util+PixelPicker.swift in Sources */,
@@ -874,6 +889,7 @@
 				B608542027A67E4D003BF243 /* TextField.swift in Sources */,
 				B67A4C5527C0EA84009277FB /* ACOverlayPanel.swift in Sources */,
 				B680A79A27A69324007CB707 /* URLDecoderView+.swift in Sources */,
+				B61157C327C8C78A004D77A5 /* JSONNormalSearchView.swift in Sources */,
 				B63A035227C25B29009FD2AD /* FFTime.swift in Sources */,
 				B6ED863627BFE7DC00A17474 /* DefaultImageExporter.swift in Sources */,
 				B61796C927BCB84A0054660E /* Settings.swift in Sources */,

@@ -36,6 +36,10 @@ final class TextView: NSLoadView {
         self.backgroudLayer.update()
     }
     
+    func becomeFocused() {
+        self.window?.makeFirstResponder(self.textView)
+    }
+    
     private let scrollView = _TextView.scrollableTextView()
     private let backgroudLayer = ControlBackgroundLayer.animationDisabled()
     lazy var textView = scrollView.documentView as! _TextView
@@ -45,6 +49,7 @@ final class TextView: NSLoadView {
         self.layer?.addSublayer(backgroudLayer)
         
         self.addSubview(scrollView)
+        self.textView.usesFindBar = true
         self.textView.allowsUndo = true
         self.textView.isAutomaticSpellingCorrectionEnabled = false
         self.textView.isAutomaticQuoteSubstitutionEnabled = false

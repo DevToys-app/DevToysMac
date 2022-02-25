@@ -76,5 +76,6 @@ final private class JSONFormatterView: Page {
     
     override func onAwake() {
         self.addSection(configurationSection)
+        self.outputSection.textView.textView.usesFindBar = true
     }
 }

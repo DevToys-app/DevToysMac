@@ -118,6 +118,11 @@ extension Tool {
         sidebarTitle: "tool.hyphenremove.mintitle".localized(), toolDescription: "tool.hyphenremove.description".localized(),
         viewController: HyphenationRemoverViewController()
     )
+    static let jsonSearch = Tool(
+        title: "JSON Search".localized(), identifier: "jsonsearch", category: .text, icon: R.Image.Tool.jsonSearch,
+        sidebarTitle: "JSON Search".localized(), toolDescription: "Extract data from JSON in several ways".localized(),
+        viewController: JSONSearchViewController()
+    )
     
     
     // MARK: - Graphic -
@@ -185,6 +190,7 @@ extension ToolManager {
         toolManager.registerTool(.regexTester)
         toolManager.registerTool(.textDiff)
         toolManager.registerTool(.hyphenationRemover)
+        toolManager.registerTool(.jsonSearch)
 
         toolManager.registerTool(.imageOptimizer)
         toolManager.registerTool(.pdfGenerator)

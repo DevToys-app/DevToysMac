@@ -23,7 +23,11 @@ enum R {
         static let transparentBackground = NSColor(patternImage: NSImage(named: "transparent_background")!)
     }
     enum Image {
+        
+        static let sidebarDisclosure = NSImage(named: "sidebar.disclosure")!
+        
         static let spuit = NSImage(named: "spuit")!
+        static let search = NSImage(named: "search")!
         static let check = NSImage(named: "check")!
         static let error = NSImage(named: "error")!
         
@@ -79,6 +83,7 @@ enum R {
             static let regexTester = NSImage(named: "tool/regex.tester")!
             static let textDiff = NSImage(named: "tool/text.diff")!
             static let markdownPreview = NSImage(named: "tool/markdown.preview")!
+            static let jsonSearch = NSImage(named: "tool/json.search")!
             
             static let graphic = NSImage(named: "tool/graphic")!
             static let pdfGenerator = NSImage(named: "tool/pdf")!
