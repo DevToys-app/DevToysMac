@@ -18,17 +18,31 @@ public enum TerminalError: Error, CustomStringConvertible {
 }
 
 public enum Terminal {
-    public static func run(_ executableURL: URL, arguments: [String], queue: DispatchQueue = .global()) -> Promise<String, Error> {
+    public struct ExecuteOption: OptionSet {
+        public let rawValue: UInt64
+        
+        public init(rawValue: UInt64) { self.rawValue = rawValue }
+        
+        public static let standardOutput = ExecuteOption(rawValue: 1 << 0)
+        public static let standardError = ExecuteOption(rawValue: 1 << 1)
+    }
+    
+    public static func run(_ executableURL: URL, arguments: [String], queue: DispatchQueue = .global(), options: ExecuteOption = .all) -> Promise<String, Error> {
         let task = Process()
         let outputPipe = Pipe()
         let errorPipe = Pipe()
         
         task.executableURL = executableURL
         task.arguments = arguments
-        task.standardOutput = outputPipe
-        task.standardError = errorPipe
         
-        return Promise<String, Error>.asyncError(on: queue) { resolve, reject in
+        if options.contains(.standardOutput) {
+            task.standardOutput = outputPipe
+        }
+        if options.contains(.standardError) {
+            task.standardError = errorPipe
+        }
+        
+        return Promise<String, Error>.tryAsync(on: queue) { resolve, reject in
             try task.run()
             task.waitUntilExit()
             

@@ -6,8 +6,17 @@
         "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
         "state": {
           "branch": null,
-          "revision": "4b0565384d3c4c588af09e660535b2c7c9bf5b39",
-          "version": "1.4.2"
+          "revision": "12f2389aca4a07e0dd54c86ec23d0721ed88b8db",
+          "version": "1.4.3"
+        }
+      },
+      {
+        "package": "DiffMatchPatch",
+        "repositoryURL": "https://github.com/ObuchiYuki/DiffMatchPatch",
+        "state": {
+          "branch": null,
+          "revision": "5db22e8f9ac588a130f62733105bbe5c5bdd7bc3",
+          "version": "1.0.3"
         }
       },
       {
@@ -33,8 +42,8 @@
         "repositoryURL": "https://github.com/ObuchiYuki/Promise.git",
         "state": {
           "branch": null,
-          "revision": "82a60b1db74d3ccaf3e648b7c1df2dc9d3e364f5",
-          "version": "1.0.10"
+          "revision": "cf504f07706a11f9cf2af339e9b1ffca2b95d4ac",
+          "version": "1.0.13"
         }
       },
       {
@@ -44,6 +53,15 @@
           "branch": null,
           "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
           "version": "5.0.1"
+        }
+      },
+      {
+        "package": "Sparkle",
+        "repositoryURL": "https://github.com/sparkle-project/Sparkle",
+        "state": {
+          "branch": null,
+          "revision": "286edd1fa22505a9e54d170e9fd07d775ea233f2",
+          "version": "2.1.0"
         }
       },
       {

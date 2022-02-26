@@ -17,7 +17,17 @@ enum R {
         
         static let controlHeight: CGFloat = 26
     }
+    enum Color {
+        static var controlBackgroundColor: NSColor { NSColor.textColor.withAlphaComponent(0.08) }
+        static var controlHighlightedBackgroundColor: NSColor { NSColor.textColor.withAlphaComponent(0.15) }
+        static let transparentBackground = NSColor(patternImage: NSImage(named: "transparent_background")!)
+    }
     enum Image {
+        static let sidebarDisclosure = NSImage(named: "sidebar.disclosure")!
+        static let pulldownIndicator = NSImage(named: "pulldown.indicator")!
+        
+        static let spuit = NSImage(named: "spuit")!
+        static let search = NSImage(named: "search")!
         static let check = NSImage(named: "check")!
         static let error = NSImage(named: "error")!
         
@@ -46,6 +56,7 @@ enum R {
         
         enum Tool {
             static let home = NSImage(named: "tool/home")!
+            static let settings = NSImage(named: "tool/settings")!
             
             static let convert = NSImage(named: "tool/convert")!
             static let jsonConvert = NSImage(named: "tool/json.convert")!
@@ -61,6 +72,7 @@ enum R {
             static let formatter = NSImage(named: "tool/formatter")!
             static let jsonFormatter = NSImage(named: "tool/json.formatter")!
             static let xmlFormatter = NSImage(named: "tool/xml.formatter")!
+            static let sqlFormatter = NSImage(named: "tool/sql.formatter")!
             
             static let generator = NSImage(named: "tool/generator")!
             static let uuidGenerator = NSImage(named: "tool/uuid.generator")!
@@ -72,12 +84,19 @@ enum R {
             static let regexTester = NSImage(named: "tool/regex.tester")!
             static let textDiff = NSImage(named: "tool/text.diff")!
             static let markdownPreview = NSImage(named: "tool/markdown.preview")!
+            static let jsonSearch = NSImage(named: "tool/json.search")!
             
             static let graphic = NSImage(named: "tool/graphic")!
             static let pdfGenerator = NSImage(named: "tool/pdf")!
             static let colorBlindnessSimulator = NSImage(named: "tool/color.blindness.simulator")!
             static let imageCompressor = NSImage(named: "tool/image.compressor")!
             static let imageConverter = NSImage(named: "tool/image.converter")!
+            static let colorPicker = NSImage(named: "tool/color.picker")!
+            static let gif = NSImage(named: "tool/gif")!
+            static let qrgenerator = NSImage(named: "tool/qr.generator")!
+            
+            static let media = NSImage(named: "tool/media")!
+            static let audioConverter = NSImage(named: "tool/audio.convert")!
             
             static let network = NSImage(named: "tool/network")!
             static let api = NSImage(named: "tool/api")!

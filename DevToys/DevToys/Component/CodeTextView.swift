@@ -7,12 +7,13 @@
 
 import CoreUtil
 import Highlightr
+import AppKit
 
 final class CodeTextView: NSLoadView {
     
     var string: String { get { textView.string } set { textView.setString(newValue) } }
     var isEditable: Bool { get { textView.isEditable } set { textView.isEditable = newValue } }
-    var isSelectable: Bool { get { textView.isSelectable } set { textView.isSelectable = newValue } }
+    override var isSelectable: Bool { get { textView.isSelectable } set { textView.isSelectable = newValue } }
     
     var language: Language = .json { didSet { textStorage.language = language.rawValue } }
     var contentInsets = NSSize.zero {
@@ -30,16 +31,28 @@ final class CodeTextView: NSLoadView {
         self.language = language
     }
     
-    private var textView: _CodeTextView!
-    private let highlightr = Highlightr()! => { highlightr in
-        highlightr.setTheme(to: "vs2015")
-        highlightr.theme.setCodeFont(.monospacedSystemFont(ofSize: R.Size.codeFontSize, weight: .regular))
+    func becomeFocused() {
+        self.window?.makeFirstResponder(self.textView)
     }
+    
+    private(set) var scrollView: NSScrollView!
+    private(set) var textView: _CodeTextView!
+    private let highlightr = Highlightr()!
     private lazy var textStorage = CodeAttributedString(highlightr: highlightr) => {
         $0.language = "Json"
     }
     
+    override func viewDidChangeEffectiveAppearance() {
+        if self.effectiveAppearance.name == .darkAqua {
+            highlightr.setTheme(to: "vs2015")
+        } else {
+            highlightr.setTheme(to: "vs")
+        }
+        highlightr.theme.setCodeFont(.monospacedSystemFont(ofSize: R.Size.codeFontSize, weight: .regular))
+    }
+    
     override func onAwake() {
+        self.viewDidChangeEffectiveAppearance()
         self.wantsLayer = true
         self.layer?.cornerRadius = R.Size.corner
         
@@ -54,6 +67,7 @@ final class CodeTextView: NSLoadView {
 
         _CodeTextView.textContainer = textContainer
         let scrollView = _CodeTextView.scrollableTextView()
+        self.scrollView = scrollView
         _CodeTextView.textContainer = nil
         
         self.addSubview(scrollView)
@@ -63,15 +77,21 @@ final class CodeTextView: NSLoadView {
         }
         
         let textView = scrollView.documentView as! _CodeTextView
-        textView.allowsUndo = true
+        
         self.textView = textView
+        self.textView.allowsUndo = true
+        self.textView.usesFindBar = true
+        self.textView.isAutomaticSpellingCorrectionEnabled = false
+        self.textView.isAutomaticQuoteSubstitutionEnabled = false
+        self.textView.isAutomaticDashSubstitutionEnabled = false
+        self.textView.isAutomaticLinkDetectionEnabled = false
         
         self.contentInsets = [0, 4]
         self.textView?.backgroundColor = .quaternaryLabelColor
     }
 }
  
-private class _CodeTextView: NSTextView {
+final class _CodeTextView: NSTextView {
     static var textContainer: NSTextContainer?
     
     let stringSubject = PassthroughSubject<Void, Never>()
@@ -84,10 +104,14 @@ private class _CodeTextView: NSTextView {
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
+        self.commonInit()
     }
     override init(frame frameRect: NSRect, textContainer container: NSTextContainer?) {
         super.init(frame: frameRect, textContainer: _CodeTextView.textContainer)
+        self.commonInit()
     }
+    
+    private func commonInit() {}
     
     override func didChangeText() {
         sendingValue = true
@@ -149,7 +173,6 @@ private class _CodeTextView: NSTextView {
             self.insertText("\n" + String(repeating: "    ", count: indent), replacementRange: selectedRange)
         }
     }
-    
     override func moveToBeginningOfLineAndModifySelection(_ sender: Any?) {
         guard let selectedRange = self.selectedRanges.first?.rangeValue else { return super.moveToBeginningOfLineAndModifySelection(sender) }
         

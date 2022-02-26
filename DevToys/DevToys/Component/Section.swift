@@ -22,16 +22,12 @@ class Section: NSLoadView {
         get { contentStackView.orientation } set { contentStackView.orientation = newValue }
     }
     
-    func setContentView(_ item: NSView) {
-        self.contentStackView.addSubview(item)
-        item.snp.makeConstraints{ make in
-            make.edges.equalToSuperview()
-        }
-    }
-    func addStackItem(_ item: NSView) {
+    func addStackItem(_ item: NSView, fillWidth: Bool = true) {
         self.contentStackView.addArrangedSubview(item)
-        item.snp.makeConstraints{ make in
-            make.right.left.equalToSuperview()
+        if fillWidth {
+            item.snp.makeConstraints{ make in
+                make.right.left.equalToSuperview()
+            }
         }
     }
     func addToolbarItem(_ item: NSView) {
@@ -44,10 +40,11 @@ class Section: NSLoadView {
         self.titleStackView.subviews.removeAll(where: { $0 !== titleLabel && $0 !== spacer })
     }
     
-    convenience init(title: String, items: [NSView] = [], toolbarItems: [NSView] = []) {
+    convenience init(title: String, orientation: NSUserInterfaceLayoutOrientation = .vertical, fillWidth: Bool = true, items: [NSView] = [], toolbarItems: [NSView] = []) {
         self.init()
         self.title = title
-        for item in items { self.addStackItem(item) }
+        self.orientation = orientation
+        for item in items { self.addStackItem(item, fillWidth: fillWidth) }
         for toolbarItem in toolbarItems { self.addToolbarItem(toolbarItem) }
     }
     

@@ -39,6 +39,9 @@
 "Bytes" = "バイト数";
 "Clear" = "クリア";
 "Delete" = "削除";
+"Open in Finder" = "Finderで開く";
+"Quick Look" = "クイックルック";
+"Default" = "デフォルト";
 
 // - Category -
 "category.home" = "ホーム";
@@ -47,7 +50,8 @@
 "category.formatters" = "フォーマット";
 "category.generators" = "生成";
 "category.text" = "テキスト";
-"category.graphic" = "メディア";
+"category.graphic" = "画像";
+"Media" = "メディア";
 
 // - Tool -
 "tool.home.title" = "ホーム";
@@ -184,3 +188,53 @@
 "Converted Images" = "変換した画像";
 "Scale" = "大きさの変換";
 "Size" = "サイズ";
+"Override original file" = "元のファイルを上書き";
+
+"QR Code Generator" = "QRコード作成";
+"Create a QR code from text" = "テキストからQRコードを作成します";
+"Correction Level" = "誤り復元";
+"QR Code" = "QRコード";
+
+"Settings" = "設定";
+"Setting of application" = "アプリの設定を行います";
+"App Theme" = "アプリのテーマ";
+"Select which app theme to display" = "表示に用いるテーマの選択";
+"Use system setting" = "自動";
+"Light mode" = "ライト";
+"Dark mode" = "ダーク";
+
+"Color Picker" = "カラーピッカー";
+"Picker the color and copy components" = "色を選択してフォーマットした文字列をコピーします";
+"HSB Box" = "HSBボックス";
+"HSB Circle" = "HSBサークル";
+"HSB Circle and Bars" = "HSB バー&サークル";
+"Pick Color" = "色を選択";
+"Picker Type" = "選択のタイプ";
+"Color Hex" = "Hex値";
+"Color Copy" = "色をコピー";
+"Color Copy Type" = "型";
+
+"Gif Converter" = "Gifへの変換";
+"Convert a movie to an animated GIF file" = "動画をアニメーションGifに変換します";
+"Width" = "幅";
+"The width of the Gif file" = "Gifファイルの横幅 (高さは自動決定されます)";
+"FPS" = "FPS";
+"FPS of the Gif file to be exported" = "書き出すGifファイルのFPS";
+"Remove source file" = "元ファイルを削除";
+"Whether to delete the source file after exporting a Gif" = "Gifファイル書き出し後に元ファイルを削除するか";
+
+"Audio Converter" = "音声フォーマット変換";
+"Convert audio from one format to another" = "音声ファイルのフォーマット・音質の変更を行います";
+"Whether to delete the source file after exporting a Audio" = "ファイル書き出し後に元ファイルを削除するか";
+"Starting..." = "初期化中...";
+"Complete" = "完了";
+"Convert Failed" = "変換失敗";
+
+"Text Diff" = "テキストの比較";
+"Compare two Text and display Diff" = "2つのテキストを比べて差分を表示します";
+"By Characters" = "文字";
+"By Words" = "単語";
+"By Lines" = "行";
+"Input 1" = "元のテキスト";
+"Input 2" = "変更後のテキスト";
+"Diff Style" = "差分の取り方";

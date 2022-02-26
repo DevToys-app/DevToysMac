@@ -34,16 +34,15 @@ final class ToolManager {
     func categoryForIdentifier(_ identifier: String) -> ToolCategory? {
         self.categoryIdentifierMap[identifier]
     }
-    func toolsForCategory(_ category: ToolCategory, _ query: Query) -> [Tool] {
-        guard let tools = self.toolCategoryMap[category] else { return [] }
-        return tools.filter{ $0.showAlways || query.matches(to: $0.title, $0.sidebarTitle) }
+    func toolsForCategory(_ category: ToolCategory) -> [Tool] {
+        self.toolCategoryMap[category] ?? []
     }
-    func flattenRootItems(_ query: Query) -> [Any] {
+    func flattenRootItems() -> [Any] {
         var items = [Any]()
         for category in categories {
             if category.shouldHideCategory {
-                items.append(contentsOf: toolsForCategory(category, query))
-            } else if !toolsForCategory(category, query).isEmpty {
+                items.append(contentsOf: toolsForCategory(category))
+            } else if !toolsForCategory(category).isEmpty {
                 items.append(category)
             }
         }
@@ -81,11 +80,12 @@ final class Tool {
     let toolDescription: String
     let showAlways: Bool
     let showOnHome: Bool
+    let showOnSidebar: Bool
     private(set) lazy var viewController = makeViewController()
     
     private let makeViewController: () -> NSViewController
     
-    init(title: String, identifier: String, category: ToolCategory, icon: NSImage, sidebarTitle: String? = nil, toolDescription: String, showAlways: Bool = false, showOnHome: Bool = true, viewController: @autoclosure @escaping () -> NSViewController) {
+    init(title: String, identifier: String, category: ToolCategory, icon: NSImage, sidebarTitle: String? = nil, toolDescription: String, showAlways: Bool = false, showOnHome: Bool = true, showOnSidebar: Bool = true, viewController: @autoclosure @escaping () -> NSViewController) {
         self.title = title
         self.identifier = identifier
         self.category = category
@@ -94,6 +94,7 @@ final class Tool {
         self.toolDescription = toolDescription
         self.showAlways = showAlways
         self.showOnHome = showOnHome
+        self.showOnSidebar = showOnSidebar
         self.makeViewController = viewController
     }
 }

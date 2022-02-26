@@ -16,9 +16,10 @@ struct TextSectionOptions: OptionSet {
     static let fileImportable = TextSectionOptions(rawValue: 1 << 3)
     static let outputable = TextSectionOptions(rawValue: 1 << 4)
     static let copyable = TextSectionOptions(rawValue: 1 << 5)
+    static let searchable = TextSectionOptions(rawValue: 1 << 6)
     
-    static let defaultInput = TextSectionOptions([.inputable, .clearable, .pastable, .fileImportable, .outputable])
-    static let defaultOutput = TextSectionOptions([.outputable, .copyable])
+    static let defaultInput = TextSectionOptions([.inputable, .clearable, .pastable, .fileImportable, .outputable, .searchable])
+    static let defaultOutput = TextSectionOptions([.outputable, .copyable, .searchable])
 }
 
 protocol TextViewType: NSView {
@@ -27,6 +28,8 @@ protocol TextViewType: NSView {
     
     var isEditable: Bool { get set }
     var isSelectable: Bool { get set }
+    
+    func becomeFocused() 
 }
 
 extension TextView: TextViewType {}
@@ -76,6 +79,9 @@ class TextViewSectionBase<TextView: TextViewType>: Section {
     private lazy var openButton = OpenSectionButton()
     private lazy var clearButton = SectionButton(image: R.Image.clear)
     private lazy var copyButton = CopySectionButton()
+    private lazy var searchButton = SearchSectionButton() => {
+        $0.textView = textView
+    }
     
     private func updateToolbar() {
         self.textView.isEditable = textSectionOptions.contains(.inputable)
@@ -91,6 +97,9 @@ class TextViewSectionBase<TextView: TextViewType>: Section {
         }
         if self.textSectionOptions.contains(.fileImportable) {
             self.addToolbarItem(openButton)
+        }
+        if self.textSectionOptions.contains(.searchable) {
+            self.addToolbarItem(searchButton)
         }
     }
     

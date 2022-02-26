@@ -6,10 +6,11 @@
 //
 
 import CoreUtil
+import CoreGraphics
 
 final class NumberField: NSLoadView {
     
-    var value: Double = 0 {
+    var value: CGFloat = 0 {
         didSet { textField.stringValue = value.formattedString() }
     }
     var valuePublisher: AnyPublisher<Delta<Double>, Never> {
@@ -28,6 +29,17 @@ final class NumberField: NSLoadView {
     private let textField = CustomFocusRingTextField()
     private let backgroundLayer = ControlBackgroundLayer.animationDisabled()
     private let valueSubject = PassthroughSubject<Delta<Double>, Never>()
+    
+    convenience init(autoWidth: Void) {
+        self.init(width: 100)
+    }
+    
+    convenience init(width: CGFloat) {
+        self.init()
+        self.snp.makeConstraints{ make in
+            make.width.equalTo(width)
+        }
+    }
     
     override func layout() {
         self.backgroundLayer.frame = bounds
@@ -54,7 +66,6 @@ final class NumberField: NSLoadView {
     override func onAwake() {
         self.snp.makeConstraints{ make in
             make.height.equalTo(R.Size.controlHeight)
-            make.width.equalTo(70)
         }
         self.wantsLayer = true
         self.layer?.cornerRadius = R.Size.corner

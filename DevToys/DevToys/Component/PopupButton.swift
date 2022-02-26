@@ -39,7 +39,7 @@ class PopupButton: NSLoadButton {
     func makeMenuItems() -> [NSMenuItem] { menuItems }
     
     private let titleLabel = NSTextField(labelWithString: "No selection".localized())
-    private let pulldownIndicator = NSImageView(image: R.Image.Tool.convert)
+    private let pulldownIndicator = NSImageView(image: R.Image.pulldownIndicator)
     private let stackView = NSStackView()
     private let backgroundLayer = ControlBackgroundLayer.animationDisabled()
     

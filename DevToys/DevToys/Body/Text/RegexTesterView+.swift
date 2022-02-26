@@ -66,7 +66,7 @@ final private class RegexTesterView: Page {
     override func layout() {
         super.layout()
         self.textView.snp.remakeConstraints{ make in
-            make.height.equalTo(max(240, self.frame.height - 150))
+            make.height.equalTo(max(240, self.frame.height - 190))
         }
     }
     

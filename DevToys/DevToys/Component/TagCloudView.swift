@@ -23,8 +23,8 @@ final class TagCloudView: NSLoadView {
             }
         }
     }
-    var isSelectable = false {
-        didSet { collectionView.isSelectable = isSelectable; collectionView.reloadData() }
+    override var isSelectable: Bool {
+        get { collectionView.isSelectable } set { collectionView.isSelectable = newValue; collectionView.reloadData() }
     }
     var items: [String] = ["Hello", "World"] {
         didSet {

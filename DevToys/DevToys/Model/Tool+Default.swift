@@ -13,6 +13,16 @@ extension Tool {
         toolDescription: "tool.home.description".localized(), showAlways: true, showOnHome: false,
         viewController: HomeViewController()
     )
+    static let search = Tool(
+        title: "Search".localized(), identifier: "search", category: .home, icon: R.Image.Tool.home,
+        toolDescription: "Search tools".localized(), showAlways: false, showOnHome: false,
+        viewController: SearchViewController()
+    )
+    static let settings = Tool(
+        title: "Settings".localized(), identifier: "settings", category: .settings, icon: R.Image.Tool.settings,
+        toolDescription: "Setting of application".localized(), showAlways: true, showOnHome: true, showOnSidebar: false,
+        viewController: SettingViewController()
+    )
     
     // MARK: - Converters -
     static let jsonYamlConverter = Tool(
@@ -64,6 +74,11 @@ extension Tool {
         sidebarTitle: "tool.xmlformat.mintitle".localized(), toolDescription: "tool.xmlformat.description".localized(),
         viewController: XMLFormatterViewController()
     )
+    static let sqlFormatter = Tool(
+        title: "SQL Formatter".localized(), identifier: "sql.formatter", category: .formatter, icon: R.Image.Tool.sqlFormatter,
+        sidebarTitle: "SQL Formatter".localized(), toolDescription: "".localized(),
+        viewController: SQLFormatterViewController()
+    )
     
     // MARK: - Generators -
     static let hashGenerator = Tool(
@@ -98,11 +113,22 @@ extension Tool {
         sidebarTitle: "tool.regex.mintitle".localized(), toolDescription: "tool.regex.description".localized(),
         viewController: RegexTesterViewController()
     )
+    static let textDiff = Tool(
+        title: "Text Diff".localized(), identifier: "textdiff", category: .text, icon: R.Image.Tool.textInspector,
+        sidebarTitle: "Text Diff".localized(), toolDescription: "Compare two Text and display Diff".localized(),
+        viewController: TextDiffViewController()
+    )
     static let hyphenationRemover = Tool(
         title: "tool.hyphenremove.title".localized(), identifier: "hyphenremove", category: .text, icon: R.Image.Tool.textInspector,
         sidebarTitle: "tool.hyphenremove.mintitle".localized(), toolDescription: "tool.hyphenremove.description".localized(),
         viewController: HyphenationRemoverViewController()
     )
+    static let jsonSearch = Tool(
+        title: "JSON Search".localized(), identifier: "jsonsearch", category: .text, icon: R.Image.Tool.jsonSearch,
+        sidebarTitle: "JSON Search".localized(), toolDescription: "Extract data from JSON in several ways".localized(),
+        viewController: JSONSearchViewController()
+    )
+    
     
     // MARK: - Graphic -
     static let imageOptimizer = Tool(
@@ -120,4 +146,66 @@ extension Tool {
         sidebarTitle: "tool.imageconvert.mintitle".localized(), toolDescription: "tool.imageconvert.description".localized(),
         viewController: ImageConverterViewController()
     )
+    static let colorPicker = Tool(
+        title: "Color Picker".localized(), identifier: "colorpicker", category: .graphic, icon: R.Image.Tool.colorPicker,
+        sidebarTitle: "Color Picker".localized(), toolDescription: "Picker the color and copy components".localized(),
+        viewController: ColorPickerViewController()
+    )
+    static let gifConverter = Tool(
+        title: "Gif Converter".localized(), identifier: "gifconverter", category: .graphic, icon: R.Image.Tool.gif,
+        sidebarTitle: "Gif Converter".localized(), toolDescription: "Convert a movie to an animated GIF file".localized(),
+        viewController: GifConverterViewController()
+    )
+    static let qrConverter = Tool(
+        title: "QR Code Generator".localized(), identifier: "qrgenerator", category: .graphic, icon: R.Image.Tool.qrgenerator,
+        sidebarTitle: "QR Code Generator".localized(), toolDescription: "Create a QR code from text".localized(),
+        viewController: QRCodeGeneratorViewController()
+    )
+    
+    // MARK: - Media -
+    static let audioConverter = Tool(
+        title: "Audio Converter".localized(), identifier: "audioconverter", category: .media, icon: R.Image.Tool.audioConverter,
+        sidebarTitle: "Audio Converter".localized(), toolDescription: "Convert audio from one format to another".localized(),
+        viewController: AudioConverterViewController()
+    )
+}
+
+extension ToolManager {
+    static let shared = ToolManager() => { toolManager in
+        toolManager.registerTool(.home)
+
+        toolManager.registerTool(.jsonYamlConverter)
+        toolManager.registerTool(.numberBaseConverter)
+        toolManager.registerTool(.dateConverter)
+
+        toolManager.registerTool(.htmlCoder)
+        toolManager.registerTool(.urlCoder)
+        toolManager.registerTool(.base64Coder)
+        toolManager.registerTool(.jwtCoder)
+
+        toolManager.registerTool(.jsonFormatter)
+        toolManager.registerTool(.xmlFormatter)
+        toolManager.registerTool(.sqlFormatter)
+
+        toolManager.registerTool(.hashGenerator)
+        toolManager.registerTool(.uuidGenerator)
+        toolManager.registerTool(.loremIpsumGenerator)
+        toolManager.registerTool(.checksumGenerator)
+
+        toolManager.registerTool(.textInspector)
+        toolManager.registerTool(.regexTester)
+        toolManager.registerTool(.textDiff)
+        toolManager.registerTool(.hyphenationRemover)
+
+        toolManager.registerTool(.imageOptimizer)
+        toolManager.registerTool(.pdfGenerator)
+        toolManager.registerTool(.imageConverter)
+        toolManager.registerTool(.colorPicker)
+        toolManager.registerTool(.gifConverter)
+        toolManager.registerTool(.qrConverter)
+        
+        toolManager.registerTool(.audioConverter)
+        
+        toolManager.registerTool(.settings)
+    }
 }

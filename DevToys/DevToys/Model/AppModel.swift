@@ -14,9 +14,10 @@ extension NSViewController {
 final class AppModel {
     @Observable var tool: Tool = .home { didSet { toolIdentifier = tool.identifier } }
     @RestorableState("app.toolIdentifier") var toolIdentifier = ""
-    @RestorableState("app.searchQuery") var searchQuery = ""
+    @Observable var searchQuery = ""
     
     let toolManager = ToolManager.shared
+    let settings = Settings()
     
     init() {
         self.tool = toolManager.toolForIdentifier(toolIdentifier) ?? .home

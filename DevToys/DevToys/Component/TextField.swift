@@ -11,6 +11,10 @@ final class TextField: NSLoadView {
     var string: String {
         get { textField.textField.stringValue } set { textField.textField.stringValue = newValue; copyButton.stringContent = newValue }
     }
+    var placeholder: String? {
+        get { textField.textField.placeholderString } set { textField.textField.placeholderString = newValue }
+    }
+    
     var changeStringPublisher: AnyPublisher<String, Never> {
         textField.textField.changeStringPublisher
     }

@@ -36,6 +36,7 @@ extension HotKey {
     public static let backtab = HotKey(.tab, .shift)
     public static let escape = HotKey(.escape)
     public static let enter = HotKey(.keypadEnter)
+    public static let space = HotKey(.space)
     public static let `return` = HotKey(.return)
     public static let leftArrow = HotKey(.leftArrow, [.numericPad, .function])
     public static let rightArrow = HotKey(.rightArrow, [.numericPad, .function])

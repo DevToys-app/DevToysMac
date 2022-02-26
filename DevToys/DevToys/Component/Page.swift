@@ -7,14 +7,17 @@
 
 import CoreUtil
  
-class Page: NSLoadView {    
-    private let stackView = NSStackView()
-    private let scrollView = NSScrollView()
+class Page: NSLoadView { 
     
-    func addSection(_ section: NSView) {
+    let stackView = NSStackView()
+    let scrollView = NSScrollView()
+    
+    func addSection(_ section: NSView, fillWidth: Bool = true) {
         self.stackView.addArrangedSubview(section)
-        section.snp.makeConstraints{ make in
-            make.right.left.equalToSuperview().inset(16)
+        if fillWidth {
+            section.snp.makeConstraints{ make in
+                make.right.left.equalToSuperview().inset(16)
+            }
         }
     }
     
