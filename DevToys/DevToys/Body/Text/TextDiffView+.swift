@@ -10,9 +10,9 @@ import CoreUtil
 
 final class TextDiffViewController: NSViewController {
     
-    @RestorableState("textdiff.operation") var operation: TextCheckOperation = .characters
-    @RestorableState("textdiff.input1") var input1 = ""
-    @RestorableState("textdiff.input2") var input2 = ""
+    @RestorableState("txtdiff.operation") var operation: TextCheckOperation = .characters
+    @RestorableState("txtdiff.input1") var input1 = "Hello World!"
+    @RestorableState("txtdiff.input2") var input2 = "Hello DevToys!"
     
     @Observable var diffAttributedString = NSAttributedString()
     
@@ -76,9 +76,9 @@ extension TextCheckOperation: TextItem {
     
     var title: String {
         switch self {
-        case .characters: return "Characters"
-        case .words: return "Words"
-        case .lines: return "Lines"
+        case .characters: return "By Characters".localized()
+        case .words: return "By Words".localized()
+        case .lines: return "By Lines".localized()
         }
     }
 }
@@ -97,7 +97,7 @@ final private class TextDiffView: Page {
     
     override func onAwake() {
         self.addSection(Section(title: "Configuration".localized(), items: [
-            Area(icon: R.Image.format, title: "Diff Style", control: checkOperationPicker)
+            Area(icon: R.Image.format, title: "Diff Style".localized(), control: checkOperationPicker)
         ]))
         
         self.addSection2(input1Section, input2Section)

@@ -28,10 +28,10 @@ enum OptimizeLevel: String, TextItem {
 }
 
 enum ImageOptimizer {
-    static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) throws -> ImageOptimizeTask {
+    static func optimize(_ url: URL, override: Bool, optimizeLevel: OptimizeLevel) throws -> ImageOptimizeTask {
         let ext = url.pathExtension.lowercased()
-        if ext == "png" { return try PNGOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
-        if ext == "jpg" || ext == "jpeg" { return try JPEGOptimizer.optimize(url, optimizeLevel: optimizeLevel) }
+        if ext == "png" { return try PNGOptimizer.optimize(url, override: override, optimizeLevel: optimizeLevel) }
+        if ext == "jpg" || ext == "jpeg" { return try JPEGOptimizer.optimize(url, override: override, optimizeLevel: optimizeLevel) }
         
         throw ImageOptimizeError.unkownType(fileExtension: ext)
     }
@@ -41,13 +41,17 @@ enum ImageOptimizer {
 enum PNGOptimizer {
     private static let optpingURL = Bundle.current.url(forResource: "optipng", withExtension: nil)!
     
-    static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) throws -> ImageOptimizeTask {
+    static func optimize(_ url: URL, override: Bool, optimizeLevel: OptimizeLevel) throws -> ImageOptimizeTask {
         var arguments = [String]()
         switch optimizeLevel {
         case .low: arguments.append("-o1")
         case .medium: arguments.append("-o2")
         case .high: arguments.append("-o3")
         case .veryHigh: arguments.append("-o7")
+        }
+        if !override {
+            let destinationURL = FileConflictAvoider.avoidConflict(url)
+            arguments.append(contentsOf: ["-out", destinationURL.path])
         }
         arguments.append(url.path)
         
@@ -64,7 +68,7 @@ enum PNGOptimizer {
 enum JPEGOptimizer {
     private static let jpegoptimURL = Bundle.current.url(forResource: "jpegoptim", withExtension: nil)!
             
-    static func optimize(_ url: URL, optimizeLevel: OptimizeLevel) throws -> ImageOptimizeTask {
+    static func optimize(_ url: URL, override: Bool, optimizeLevel: OptimizeLevel) throws -> ImageOptimizeTask {
         let directoryURL = url.deletingLastPathComponent()
         guard FileAccessChecker.becomeAccessable(to: directoryURL) else { throw ImageOptimizeError.noAccessToDirectory(directoryURL) }
             
@@ -75,7 +79,12 @@ enum JPEGOptimizer {
         case .high: arguments.append(contentsOf: ["--strip-all", "-m90"])
         case .veryHigh: arguments.append(contentsOf: ["--strip-all", "-m80"])
         }
+        if !override {
+            let destinationURL = FileConflictAvoider.avoidConflict(url)
+            arguments.append(contentsOf: ["--dest", destinationURL.path])
+        }
         arguments.append(url.path)
+        
         
         let fileCompression = FileCompression(url: url)
         let promise = Terminal.run(jpegoptimURL, arguments: arguments)

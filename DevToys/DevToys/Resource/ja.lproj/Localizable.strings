@@ -41,6 +41,7 @@
 "Delete" = "削除";
 "Open in Finder" = "Finderで開く";
 "Quick Look" = "クイックルック";
+"Default" = "デフォルト";
 
 // - Category -
 "category.home" = "ホーム";
@@ -187,6 +188,12 @@
 "Converted Images" = "変換した画像";
 "Scale" = "大きさの変換";
 "Size" = "サイズ";
+"Override original file" = "元のファイルを上書き";
+
+"QR Code Generator" = "QRコード作成";
+"Create a QR code from text" = "テキストからQRコードを作成します";
+"Correction Level" = "誤り復元";
+"QR Code" = "QRコード";
 
 "Settings" = "設定";
 "Setting of application" = "アプリの設定を行います";
@@ -222,3 +229,12 @@
 "Starting..." = "初期化中...";
 "Complete" = "完了";
 "Convert Failed" = "変換失敗";
+
+"Text Diff" = "テキストの比較";
+"Compare two Text and display Diff" = "2つのテキストを比べて差分を表示します";
+"By Characters" = "文字";
+"By Words" = "単語";
+"By Lines" = "行";
+"Input 1" = "元のテキスト";
+"Input 2" = "変更後のテキスト";
+"Diff Style" = "差分の取り方";

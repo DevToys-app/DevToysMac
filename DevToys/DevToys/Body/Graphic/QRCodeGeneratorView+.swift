@@ -84,7 +84,7 @@ enum QRInputCorrectionLevel: String, TextItem {
     case medium = "Medium"
     case low = "Low"
     
-    var title: String { rawValue }
+    var title: String { rawValue.localized() }
 }
 
 final private class URLDecoderView: Page {
@@ -96,7 +96,7 @@ final private class URLDecoderView: Page {
     
     override func onAwake() {
         self.addSection(Section(title: "Configuration".localized(), items: [
-            Area(icon: R.Image.paramators, title: "Correction Level", control: correctionLevelPicker)
+            Area(icon: R.Image.paramators, title: "Correction Level".localized(), control: correctionLevelPicker)
         ]))
         self.addSection(inputTextSection)
         self.inputTextSection.snp.makeConstraints{ make in
@@ -105,7 +105,7 @@ final private class URLDecoderView: Page {
         
         self.imageView.delegate = imageViewDelegate
         
-        self.addSection(Section(title: "QR Code", items: [
+        self.addSection(Section(title: "QR Code".localized(), items: [
             NSStackView() => {
                 $0.alignment = .centerX
                 $0.addArrangedSubview(imageView)

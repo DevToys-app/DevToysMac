@@ -37,6 +37,7 @@
 "Delete" = "Delete";
 "Open in Finder" = "Open in Finder";
 "Quick Look" = "Quick Look";
+"Default" = "Default";
 
 // - Category -
 "category.home" = "Home";
@@ -168,6 +169,7 @@
 "Medium" = "Medium";
 "High" = "High";
 "Very High (Slow)" = "Very High (Slow)";
+"Override original file" = "Override original file";
 
 "tool.pdfgen.title" = "PDF Generator";
 "tool.pdfgen.mintitle" = "PDF Generator";
@@ -191,6 +193,11 @@
 "Converted Images" = "Converted Images";
 "Scale" = "Scale";
 "Size" = "Size";
+
+"QR Code Generator" = "QR Code Generator";
+"Create a QR code from text" = "Create a QR code from text";
+"Correction Level" = "Correction Level";
+"QR Code" = "QR Code";
 
 "Settings" = "Settings";
 "Setting of application" = "Setting of application";
@@ -226,3 +233,12 @@
 "Starting..." = "Starting...";
 "Complete" = "Complete";
 "Convert Failed" = "Convert Failed";
+
+"Text Diff" = "Text Diff";
+"Compare two Text and display Diff" = "Compare two Text and display Diff";
+"By Characters" = "Characters";
+"By Words" = "Words";
+"By Lines" = "Lines";
+"Input 1" = "Input 1";
+"Input 2" = "Input 2";
+"Diff Style" = "Diff Style";

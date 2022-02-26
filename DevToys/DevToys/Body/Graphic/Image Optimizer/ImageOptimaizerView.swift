@@ -12,6 +12,7 @@ final class ImageOptimizerViewController: NSViewController {
     
     @Observable var tasks = [ImageOptimizeTask]()
     @RestorableState("imop.level") var level = OptimizeLevel.medium
+    @RestorableState("imop.override") var overrideSource = false
     
     override func loadView() { self.view = cell }
     
@@ -22,10 +23,15 @@ final class ImageOptimizerViewController: NSViewController {
             .sink{[unowned self] in deleteResult($0) }.store(in: &objectBag)
         self.cell.levelPicker.itemPublisher
             .sink{[unowned self] in self.level = $0 }.store(in: &objectBag)
+        self.cell.overrideSwiftch.isOnPublisher
+            .sink{[unowned self] in self.overrideSource = $0 }.store(in: &objectBag)
+        
         self.$tasks
             .sink{[unowned self] in self.cell.tasks = $0 }.store(in: &objectBag)
         self.$level
             .sink{[unowned self] in self.cell.levelPicker.selectedItem = $0 }.store(in: &objectBag)
+        self.$overrideSource
+            .sink{[unowned self] in self.cell.overrideSwiftch.isOn = $0 }.store(in: &objectBag)
         
         self.cell.listView.menu = NSMenu() => { menu in
             menu.addItem(title: "Open in Finder".localized()) { [self] in
@@ -46,7 +52,7 @@ final class ImageOptimizerViewController: NSViewController {
     private func processFiles(_ urls: [URL]) {
         do {
             self.tasks.append(contentsOf: try urls.compactMap{
-                try ImageOptimizer.optimize($0, optimizeLevel: level)
+                try ImageOptimizer.optimize($0, override: overrideSource, optimizeLevel: level)
             })
         } catch ImageOptimizeError.noAccessToDirectory(let url) {
             Toast(message: "No access to directory '\(url.lastPathComponent)'", color: .systemRed).show()
@@ -61,6 +67,7 @@ final class ImageOptimizerViewController: NSViewController {
 
 
 final private class ImageOptimizerView: Page {
+    let overrideSwiftch = NSSwitch()
     let listView = ImageListView.list()
     let listScrollView = NSScrollView()
     
@@ -96,7 +103,7 @@ final private class ImageOptimizerView: Page {
     
     override func layout() {
         listScrollView.snp.remakeConstraints{ make in
-            make.height.equalTo(max(200, self.frame.height - 210))
+            make.height.equalTo(max(200, self.frame.height - 260))
         }
         super.layout()
     }
@@ -105,7 +112,8 @@ final private class ImageOptimizerView: Page {
         self.registerForDraggedTypes([.URL, .fileURL, .fileContents])
         
         self.addSection(Section(title: "Configuration".localized(), items: [
-            Area(title: "Optimize Level".localized(), control: levelPicker),
+            Area(icon: R.Image.paramators, title: "Optimize Level".localized(), control: levelPicker),
+            Area(icon: R.Image.export, title: "Override original file".localized(), control: overrideSwiftch)
         ]))
         
         self.listScrollView.documentView = listView

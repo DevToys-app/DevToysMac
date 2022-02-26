@@ -52,6 +52,8 @@
 		B64B202327A52A2D00AC2601 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B202227A52A2D00AC2601 /* R.swift */; };
 		B64B209827A532DF00AC2601 /* AppWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B209727A532DF00AC2601 /* AppWindowController.swift */; };
 		B65DB78027AC0EB400146A3C /* RegexTesterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65DB77F27AC0EB400146A3C /* RegexTesterView+.swift */; };
+		B66536CE27C9BA4000CA1CEC /* Slugify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66536CD27C9BA4000CA1CEC /* Slugify.swift */; };
+		B66536D027C9C56600CA1CEC /* SQLFormatterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66536CF27C9C56600CA1CEC /* SQLFormatterView+.swift */; };
 		B66850EE27A64D3200A3FE01 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66850ED27A64D3200A3FE01 /* Page.swift */; };
 		B66850F227A65FC200A3FE01 /* SwiftJSONFormatter in Frameworks */ = {isa = PBXBuildFile; productRef = B66850F127A65FC200A3FE01 /* SwiftJSONFormatter */; };
 		B66BE8BC27C49AD4003B5ED0 /* AudioFileScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66BE8BB27C49AD4003B5ED0 /* AudioFileScanner.swift */; };
@@ -209,6 +211,8 @@
 		B64B202227A52A2D00AC2601 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		B64B209727A532DF00AC2601 /* AppWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowController.swift; sourceTree = "<group>"; };
 		B65DB77F27AC0EB400146A3C /* RegexTesterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegexTesterView+.swift"; sourceTree = "<group>"; };
+		B66536CD27C9BA4000CA1CEC /* Slugify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slugify.swift; sourceTree = "<group>"; };
+		B66536CF27C9C56600CA1CEC /* SQLFormatterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SQLFormatterView+.swift"; sourceTree = "<group>"; };
 		B66850ED27A64D3200A3FE01 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		B66BE8BB27C49AD4003B5ED0 /* AudioFileScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileScanner.swift; sourceTree = "<group>"; };
 		B672CF9F27AAB8DD00391A5D /* FileDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDrop.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 			children = (
 				B6D1AEEF27A547B90022FED2 /* JSONFormatterView+.swift */,
 				B6B5728127ACCF2F0069DBA7 /* XMLFormatterView+.swift */,
+				B66536CF27C9C56600CA1CEC /* SQLFormatterView+.swift */,
 			);
 			path = Format;
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 				B6113ECE27C4BF2300ACC6E8 /* FileConflictAvoider.swift */,
 				B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */,
 				B6C5292527C20DAF0019BCB0 /* ffmpeg */,
+				B66536CD27C9BA4000CA1CEC /* Slugify.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -836,6 +842,7 @@
 				B67A4CC027C0F4BA009277FB /* BoxHSBColorPicker.swift in Sources */,
 				B673A90227AD0E78005512AB /* DatePicker.swift in Sources */,
 				B620141C27A917E000AF5386 /* Button.swift in Sources */,
+				B66536CE27C9BA4000CA1CEC /* Slugify.swift in Sources */,
 				B6AC273227AA2BF6000FD713 /* ImageOptimizer.swift in Sources */,
 				B67A4C0A27C0BA00009277FB /* HueBarView.swift in Sources */,
 				B6113F0127C4BF7700ACC6E8 /* Identifier.swift in Sources */,
@@ -877,6 +884,7 @@
 				B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */,
 				B67A4C5127C0EA84009277FB /* ShowAndHideCursor.swift in Sources */,
 				B61157C527C8D77A004D77A5 /* DragImageView.swift in Sources */,
+				B66536D027C9C56600CA1CEC /* SQLFormatterView+.swift in Sources */,
 				B680A79C27A6947D007CB707 /* Base64DecoderView+.swift in Sources */,
 				B67A4CC527C0F50D009277FB /* R+ColorPicker.swift in Sources */,
 				B680A86827A8D4D1007CB707 /* TextFieldSection.swift in Sources */,

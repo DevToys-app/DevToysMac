@@ -74,6 +74,11 @@ extension Tool {
         sidebarTitle: "tool.xmlformat.mintitle".localized(), toolDescription: "tool.xmlformat.description".localized(),
         viewController: XMLFormatterViewController()
     )
+    static let sqlFormatter = Tool(
+        title: "SQL Formatter".localized(), identifier: "sql.formatter", category: .formatter, icon: R.Image.Tool.sqlFormatter,
+        sidebarTitle: "SQL Formatter".localized(), toolDescription: "".localized(),
+        viewController: SQLFormatterViewController()
+    )
     
     // MARK: - Generators -
     static let hashGenerator = Tool(
@@ -153,7 +158,7 @@ extension Tool {
     )
     static let qrConverter = Tool(
         title: "QR Code Generator".localized(), identifier: "qrgenerator", category: .graphic, icon: R.Image.Tool.qrgenerator,
-        sidebarTitle: "QR Code Generator".localized(), toolDescription: "Create QR code from text".localized(),
+        sidebarTitle: "QR Code Generator".localized(), toolDescription: "Create a QR code from text".localized(),
         viewController: QRCodeGeneratorViewController()
     )
     
@@ -180,6 +185,7 @@ extension ToolManager {
 
         toolManager.registerTool(.jsonFormatter)
         toolManager.registerTool(.xmlFormatter)
+        toolManager.registerTool(.sqlFormatter)
 
         toolManager.registerTool(.hashGenerator)
         toolManager.registerTool(.uuidGenerator)
@@ -190,7 +196,6 @@ extension ToolManager {
         toolManager.registerTool(.regexTester)
         toolManager.registerTool(.textDiff)
         toolManager.registerTool(.hyphenationRemover)
-//        toolManager.registerTool(.jsonSearch)
 
         toolManager.registerTool(.imageOptimizer)
         toolManager.registerTool(.pdfGenerator)

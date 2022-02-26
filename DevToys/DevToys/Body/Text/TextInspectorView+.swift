@@ -65,6 +65,8 @@ final class TextInspectorViewController: NSViewController {
         case .kebabCase: self.output = input.lowercased().split(separator: " ").joined(separator: "-")
         case .cobolCase: self.output = input.uppercased().split(separator: " ").joined(separator: "-")
         case .trainCase: self.output = input.capitalized.split(separator: " ").joined(separator: "-")
+        case .urlLowerSlugify: self.output = input.slugify(lowercase: true)
+        case .urlPascalSlugify: self.output = input.slugify(lowercase: false)
         }
     }
 }
@@ -73,7 +75,6 @@ extension String {
     func capitalizingFirstLetter() -> String { prefix(1).capitalized + dropFirst() }
     func lowercaseFirstLetter() -> String { prefix(1).lowercased() + dropFirst() }
 }
-
 
 private enum ConvertType: String, CaseIterable {
     case originalCase = "OriginalCase"
@@ -88,6 +89,8 @@ private enum ConvertType: String, CaseIterable {
     case kebabCase = "kebab-case"
     case cobolCase = "COBOL-CASE"
     case trainCase = "Traint-Case"
+    case urlPascalSlugify = "URL-slugify"
+    case urlLowerSlugify = "url-lower-slugify"
 }
 
 final class TextInspectorView: Page {
