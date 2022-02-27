@@ -26,6 +26,12 @@ enum R {
         static let sidebarDisclosure = NSImage(named: "sidebar.disclosure")!
         static let pulldownIndicator = NSImage(named: "pulldown.indicator")!
         
+        static let iphone = NSImage(named: "iphone")!
+        static let ipad = NSImage(named: "ipad")!
+        static let mac = NSImage(named: "mac")!
+        static let carplay = NSImage(named: "carplay")!
+        static let appleWatch = NSImage(named: "applewatch")!
+        
         static let spuit = NSImage(named: "spuit")!
         static let search = NSImage(named: "search")!
         static let check = NSImage(named: "check")!

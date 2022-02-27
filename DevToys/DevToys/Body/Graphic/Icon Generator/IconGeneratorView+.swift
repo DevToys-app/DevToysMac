@@ -11,7 +11,7 @@ final class IconGeneratorViewController: NSViewController {
     private let cell = IconGeneratorView()
     
     @RestorableState("icongen.exporttype") var exportType: IconExportType = .icns
-    @RestorableState("icongen.iosopt") var iosExportOptions = IOSIconGenerator.ExportOptions.iphone
+    @RestorableState("icongen.iosopt") var iosOptions: IOSIconGenerator.ExportOptions = [.iphone, .ipad]
     @RestorableData("icongen.image") var imageItem: ImageItem? = nil
     
     override func loadView() { self.view = cell }
@@ -21,15 +21,44 @@ final class IconGeneratorViewController: NSViewController {
             .sink{[unowned self] in self.cell.imageDropView.image = $0?.image }.store(in: &objectBag)
         self.$exportType
             .sink{[unowned self] in self.cell.exportTypePicker.selectedItem = $0 }.store(in: &objectBag)
+        self.$iosOptions
+            .sink{[unowned self] in self.bindiOSOptionsView($0) }.store(in: &objectBag)
         
         self.cell.clearButton.actionPublisher
             .sink{[unowned self] in self.imageItem = nil }.store(in: &objectBag)
         self.cell.imageDropView.imagePublisher
             .sink{[unowned self] in self.imageItem = $0 }.store(in: &objectBag)
         self.cell.exportTypePicker.itemPublisher
-            .sink{[unowned self] in self.exportType = $0 }.store(in: &objectBag)
+            .sink{[unowned self] in self.exportType = $0; updateOptionView() }.store(in: &objectBag)
         self.cell.exportButton.actionPublisher
             .sink{[unowned self] in self.exportIcon() }.store(in: &objectBag)
+        
+        self.cell.iosOptionsView.iPhoneSwitch.isOnPublisher
+            .sink{[unowned self] in self.iosOptions = $0 ? iosOptions.union(.iphone) : iosOptions.subtracting(.iphone) }.store(in: &objectBag)
+        self.cell.iosOptionsView.iPadSwitch.isOnPublisher
+            .sink{[unowned self] in self.iosOptions = $0 ? iosOptions.union(.ipad) : iosOptions.subtracting(.ipad) }.store(in: &objectBag)
+        self.cell.iosOptionsView.appleWatchSwitch.isOnPublisher
+            .sink{[unowned self] in self.iosOptions = $0 ? iosOptions.union(.applewatch) : iosOptions.subtracting(.applewatch) }.store(in: &objectBag)
+        self.cell.iosOptionsView.carplaySwitch.isOnPublisher
+            .sink{[unowned self] in self.iosOptions = $0 ? iosOptions.union(.carplay) : iosOptions.subtracting(.carplay) }.store(in: &objectBag)
+        self.cell.iosOptionsView.macSwitch.isOnPublisher
+            .sink{[unowned self] in self.iosOptions = $0 ? iosOptions.union(.mac) : iosOptions.subtracting(.mac) }.store(in: &objectBag)
+    }
+    
+    private func bindiOSOptionsView(_ options: IOSIconGenerator.ExportOptions) {
+        self.cell.iosOptionsView.iPhoneSwitch.isOn = options.contains(.iphone)
+        self.cell.iosOptionsView.iPadSwitch.isOn = options.contains(.ipad)
+        self.cell.iosOptionsView.appleWatchSwitch.isOn = options.contains(.applewatch)
+        self.cell.iosOptionsView.carplaySwitch.isOn = options.contains(.carplay)
+        self.cell.iosOptionsView.macSwitch.isOn = options.contains(.mac)
+    }
+    
+    private func updateOptionView() {
+        self.cell.iosOptionsView.isHidden = true
+        switch self.exportType {
+        case .iosAssets: self.cell.iosOptionsView.isHidden = false
+        default: break
+        }
     }
     
     private func exportIcon() {
@@ -40,7 +69,7 @@ final class IconGeneratorViewController: NSViewController {
         
         switch self.exportType {
         case .iconFolder: IconFolderGenerator.make(item: item, to: url) => registerTask(_:)
-        case .iosAssets: IOSIconGenerator.make(item: item, options: .iphone, to: url) => registerTask(_:)
+        case .iosAssets: IOSIconGenerator.make(item: item, options: iosOptions, to: url) => registerTask(_:)
         case .icns: IcnsGenerator.make(item: item, to: url) => registerTask(_:)
         case .iconset: IconsetGenerator.make(item: item, to: url) => registerTask(_:)
         }
@@ -85,7 +114,6 @@ final private class IconGeneratorView: Page {
             Area(icon: R.Image.export, title: "Icon Export Type", control: exportTypePicker)
         ]))
         
-        
         let sourceView = Section(title: "Source".localized(), items: [
             imageDropView => {
                 $0.snp.makeConstraints{ make in
@@ -94,20 +122,16 @@ final private class IconGeneratorView: Page {
             }
         ], toolbarItems: [clearButton])
         
-        let optionsView = NSStackView() => {
-            $0.orientation = .vertical
-            $0.addArrangedSubview(iosOptionsView)
-            $0.addArrangedSubview(exportButton)
-            exportButton.snp.makeConstraints{ make in
-                make.width.equalToSuperview()
-            }
-        }
+        let optionsView = Section(title: "Options", items: [
+            iosOptionsView,
+            exportButton
+        ])
         
         self.addSection2(sourceView, optionsView)
     }
 }
 
-final private class iOSOptionsView: Section {
+final private class iOSOptionsView: NSLoadStackView {
     let iPhoneSwitch = NSSwitch()
     let iPadSwitch = NSSwitch()
     let appleWatchSwitch = NSSwitch()
@@ -115,12 +139,12 @@ final private class iOSOptionsView: Section {
     let macSwitch = NSSwitch()
     
     override func onAwake() {
-        super.onAwake()
-        self.addStackItem(Area(title: "iPhone", control: iPhoneSwitch))
-        self.addStackItem(Area(title: "iPad", control: iPadSwitch))
-        self.addStackItem(Area(title: "Apple Watch", control: appleWatchSwitch))
-        self.addStackItem(Area(title: "CarPlay", control: carplaySwitch))
-        self.addStackItem(Area(title: "Mac", control: macSwitch))
+        self.orientation = .vertical
+        self.addArrangedSubview(Area(icon: R.Image.iphone, title: "iPhone", control: iPhoneSwitch))
+        self.addArrangedSubview(Area(icon: R.Image.iphone, title: "iPad", control: iPadSwitch))
+        self.addArrangedSubview(Area(icon: R.Image.appleWatch, title: "Apple Watch", control: appleWatchSwitch))
+        self.addArrangedSubview(Area(icon: R.Image.carplay, title: "CarPlay", control: carplaySwitch))
+        self.addArrangedSubview(Area(icon: R.Image.mac, title: "Mac", control: macSwitch))
     }
 }
 
@@ -168,7 +192,7 @@ final private class ImageDropView: NSLoadView {
         
         self.addSubview(imageView)
         self.imageView.snp.makeConstraints{ make in
-            make.width.equalTo(240)
+            make.width.equalTo(180)
             make.top.bottom.equalToSuperview().inset(16)
             make.centerX.equalToSuperview()
         }
