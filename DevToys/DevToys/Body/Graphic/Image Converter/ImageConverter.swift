@@ -30,13 +30,13 @@ enum ImageConverter {
             }
         }
         
-        let filename = "\(item.title.split(separator: ".").dropLast().joined(separator: ".")).\(format.exp)"
+        let filename = "\(item.filenameWithoutExtension).\(format.exp)"
         let destinationURL = destinationDirectory.appendingPathComponent(filename)
         let isDone = exportPromise(image, to: format, destinationURL: destinationURL)
             .receive(on: .main)
             .peek{ NSWorkspace.shared.activateFileViewerSelecting([destinationURL]) }
         
-        return ImageConvertTask(image: item.image, title: item.title, size: item.image.size, destinationURL: destinationURL, isDone: isDone)
+        return ImageConvertTask(image: item.image, title: item.filename, size: item.image.size, destinationURL: destinationURL, isDone: isDone)
     }
     
     private static func exportPromise(_ image: NSImage, to format: ImageFormatType, destinationURL: URL) -> Promise<Void, Error> {
@@ -100,7 +100,7 @@ extension NSImage {
         return resizedImage
     }
     
-    func resizedAspectFit(to newSize: CGSize) -> NSImage? {
+    func resizedAspectFit(to newSize: CGSize, fillColor: NSColor = .black) -> NSImage? {
         guard let bitmapRep = NSBitmapImageRep(
             bitmapDataPlanes: nil, pixelsWide: Int(newSize.width), pixelsHigh: Int(newSize.height),
             bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false,
@@ -112,9 +112,9 @@ extension NSImage {
         bitmapRep.size = newSize
         NSGraphicsContext.saveGraphicsState()
         NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmapRep)
-        NSColor.black.setFill()
+        fillColor.setFill()
         NSRect(size: newSize).fill()
-        draw(in: CGRect(center: newSize.convertToPoint()/2, size: self.size * scale), from: .zero, operation: .copy, fraction: 1.0)
+        draw(in: CGRect(center: newSize.convertToPoint()/2, size: self.size * scale), from: .zero, operation: .sourceOver, fraction: 1.0)
         NSGraphicsContext.restoreGraphicsState()
         
         let resizedImage = NSImage(size: newSize)

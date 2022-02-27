@@ -87,19 +87,9 @@ final class PDFGeneratorViewController: NSViewController {
         }
         .receive(on: .main)
         
-        let toast = Toast(message: "Generating PDF...".localized())
-        let indicator = NSProgressIndicator()
-        indicator.style = .spinning
-        indicator.startAnimation(nil)
-        indicator.snp.makeConstraints{ make in
-            make.size.equalTo(16)
-        }
-        toast.addAttributeView(indicator, position: .right)
-        toast.show(with: { promise.sink($0) })
-        
-        promise.sink{
-            Toast.show(message: "PDF Exported!".localized())
-        }
+        promise
+            .peekProgressIndicator("Generating PDF...".localized())
+            .sinkWithToast({_ in "PDF Exported!".localized() })
     }
 }
  
@@ -140,13 +130,27 @@ final private class PDFGeneratorView: Page {
 }
 
 struct ImageItem: Codable {
-    let title: String
+    let fileURL: URL
+    var filename: String { fileURL.lastPathComponent }
+    var filenameWithoutExtension: String { fileURL.lastPathComponentWithoutPathExtension }
     var image: NSImage { imageContainer.image }
+    
     private let imageContainer: NSImageContainer
     
-    init(title: String, image: NSImage) {
-        self.title = title
+    init(fileURL: URL, image: NSImage) {
+        self.fileURL = fileURL
         self.imageContainer = .wrap(image)
+    }
+    init?(fileURL: URL) {
+        guard let image = NSImage(contentsOf: fileURL) else { return nil }
+        self.imageContainer = .wrap(image)
+        self.fileURL = fileURL
+    }
+}
+
+extension URL {
+    var lastPathComponentWithoutPathExtension: String {
+        self.deletingPathExtension().lastPathComponent
     }
 }
 
@@ -228,7 +232,7 @@ extension ImageListView: NSTableViewDelegate, NSTableViewDataSource {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = Cell()
         let imageItem = imageItems[row]
-        cell.titleLabel.stringValue = imageItem.title
+        cell.titleLabel.stringValue = imageItem.filename
         cell.imageView.image = imageItem.image
         cell.pageLabel.stringValue = "\("Page".localized()) \(row + 1)"
         

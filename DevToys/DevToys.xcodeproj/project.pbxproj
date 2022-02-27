@@ -59,6 +59,13 @@
 		B66BE8BC27C49AD4003B5ED0 /* AudioFileScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66BE8BB27C49AD4003B5ED0 /* AudioFileScanner.swift */; };
 		B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF9F27AAB8DD00391A5D /* FileDrop.swift */; };
 		B673A90227AD0E78005512AB /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A90127AD0E78005512AB /* DatePicker.swift */; };
+		B6789EBA27CA43E200D8B58C /* IconGeneratorView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EB927CA43E100D8B58C /* IconGeneratorView+.swift */; };
+		B6789EBC27CA48A300D8B58C /* IOSIconGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EBB27CA48A300D8B58C /* IOSIconGenerator.swift */; };
+		B6789EDF27CA5F5D00D8B58C /* IconsetGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EDE27CA5F5D00D8B58C /* IconsetGenerator.swift */; };
+		B6789EE127CA5F6900D8B58C /* IcnsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EE027CA5F6900D8B58C /* IcnsGenerator.swift */; };
+		B6789EE327CA5F7A00D8B58C /* IconFolderGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EE227CA5F7A00D8B58C /* IconFolderGenerator.swift */; };
+		B6789EE527CA5F9500D8B58C /* IconGenerator+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EE427CA5F9500D8B58C /* IconGenerator+Model.swift */; };
+		B6789EE727CB334D00D8B58C /* AndroidIconGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EE627CB334D00D8B58C /* AndroidIconGenerator.swift */; };
 		B67A4C0827C0BA00009277FB /* ColorPickerHandleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C0227C0B9FF009277FB /* ColorPickerHandleLayer.swift */; };
 		B67A4C0927C0BA00009277FB /* OpacityBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C0327C0B9FF009277FB /* OpacityBarView.swift */; };
 		B67A4C0A27C0BA00009277FB /* HueBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A4C0427C0B9FF009277FB /* HueBarView.swift */; };
@@ -217,6 +224,13 @@
 		B66BE8BB27C49AD4003B5ED0 /* AudioFileScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileScanner.swift; sourceTree = "<group>"; };
 		B672CF9F27AAB8DD00391A5D /* FileDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDrop.swift; sourceTree = "<group>"; };
 		B673A90127AD0E78005512AB /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		B6789EB927CA43E100D8B58C /* IconGeneratorView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconGeneratorView+.swift"; sourceTree = "<group>"; };
+		B6789EBB27CA48A300D8B58C /* IOSIconGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSIconGenerator.swift; sourceTree = "<group>"; };
+		B6789EDE27CA5F5D00D8B58C /* IconsetGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsetGenerator.swift; sourceTree = "<group>"; };
+		B6789EE027CA5F6900D8B58C /* IcnsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcnsGenerator.swift; sourceTree = "<group>"; };
+		B6789EE227CA5F7A00D8B58C /* IconFolderGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFolderGenerator.swift; sourceTree = "<group>"; };
+		B6789EE427CA5F9500D8B58C /* IconGenerator+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconGenerator+Model.swift"; sourceTree = "<group>"; };
+		B6789EE627CB334D00D8B58C /* AndroidIconGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidIconGenerator.swift; sourceTree = "<group>"; };
 		B67A4C0227C0B9FF009277FB /* ColorPickerHandleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerHandleLayer.swift; sourceTree = "<group>"; };
 		B67A4C0327C0B9FF009277FB /* OpacityBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpacityBarView.swift; sourceTree = "<group>"; };
 		B67A4C0427C0B9FF009277FB /* HueBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HueBarView.swift; sourceTree = "<group>"; };
@@ -373,6 +387,7 @@
 			children = (
 				B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */,
 				B684EA2927C609620014802F /* QRCodeGeneratorView+.swift */,
+				B6789EB827CA438800D8B58C /* Icon Generator */,
 				B63A034927C212FE009FD2AD /* Movie to Gif */,
 				B67A4C0127C0B9FF009277FB /* Color Picker */,
 				B6AC276827AA532B000FD713 /* Image Optimizer */,
@@ -495,6 +510,28 @@
 				B66536CD27C9BA4000CA1CEC /* Slugify.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B6789EB827CA438800D8B58C /* Icon Generator */ = {
+			isa = PBXGroup;
+			children = (
+				B6789EB927CA43E100D8B58C /* IconGeneratorView+.swift */,
+				B6789EDD27CA5F5400D8B58C /* Generators */,
+			);
+			path = "Icon Generator";
+			sourceTree = "<group>";
+		};
+		B6789EDD27CA5F5400D8B58C /* Generators */ = {
+			isa = PBXGroup;
+			children = (
+				B6789EBB27CA48A300D8B58C /* IOSIconGenerator.swift */,
+				B6789EDE27CA5F5D00D8B58C /* IconsetGenerator.swift */,
+				B6789EE027CA5F6900D8B58C /* IcnsGenerator.swift */,
+				B6789EE227CA5F7A00D8B58C /* IconFolderGenerator.swift */,
+				B6789EE427CA5F9500D8B58C /* IconGenerator+Model.swift */,
+				B6789EE627CB334D00D8B58C /* AndroidIconGenerator.swift */,
+			);
+			path = Generators;
 			sourceTree = "<group>";
 		};
 		B67A4C0127C0B9FF009277FB /* Color Picker */ = {
@@ -812,6 +849,7 @@
 				B67A4C0D27C0BA00009277FB /* Color.swift in Sources */,
 				B608541E27A67B48003BF243 /* NumberBaseConverterView+.swift in Sources */,
 				B680A8AA27A8E106007CB707 /* HashGeneratorView+.swift in Sources */,
+				B6789EBC27CA48A300D8B58C /* IOSIconGenerator.swift in Sources */,
 				B67A4CC327C0F4D4009277FB /* CircleHueBarView.swift in Sources */,
 				B67A4CC927C10493009277FB /* SaturationBarView.swift in Sources */,
 				B64B202027A523A200AC2601 /* ToolMenuCell.swift in Sources */,
@@ -825,6 +863,7 @@
 				B67A4C0C27C0BA00009277FB /* ColorBoxView.swift in Sources */,
 				B6B5726427AC14D10069DBA7 /* RegexTextView.swift in Sources */,
 				B67A4C5227C0EA84009277FB /* ShowAndHideCursor.m in Sources */,
+				B6789EBA27CA43E200D8B58C /* IconGeneratorView+.swift in Sources */,
 				B680A83327A8BF7D007CB707 /* TextViewSection.swift in Sources */,
 				B6B5726227AC14B60069DBA7 /* TextView.swift in Sources */,
 				B6C5292427C20D520019BCB0 /* GifConverterView+.swift in Sources */,
@@ -844,6 +883,8 @@
 				B620141C27A917E000AF5386 /* Button.swift in Sources */,
 				B66536CE27C9BA4000CA1CEC /* Slugify.swift in Sources */,
 				B6AC273227AA2BF6000FD713 /* ImageOptimizer.swift in Sources */,
+				B6789EDF27CA5F5D00D8B58C /* IconsetGenerator.swift in Sources */,
+				B6789EE727CB334D00D8B58C /* AndroidIconGenerator.swift in Sources */,
 				B67A4C0A27C0BA00009277FB /* HueBarView.swift in Sources */,
 				B6113F0127C4BF7700ACC6E8 /* Identifier.swift in Sources */,
 				B65DB78027AC0EB400146A3C /* RegexTesterView+.swift in Sources */,
@@ -851,6 +892,7 @@
 				B680A89A27A8D9DD007CB707 /* Toast.swift in Sources */,
 				B6D1AEF727A54F750022FED2 /* SectionButton.swift in Sources */,
 				B684EA2827C5EFE90014802F /* TextDiffView+.swift in Sources */,
+				B6789EE127CA5F6900D8B58C /* IcnsGenerator.swift in Sources */,
 				B63A035027C24BA0009FD2AD /* FFProgressReport.swift in Sources */,
 				B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */,
 				B67A4C5327C0EA84009277FB /* Ex+NSColor.swift in Sources */,
@@ -869,6 +911,7 @@
 				B6D1AEF427A54C440022FED2 /* Section.swift in Sources */,
 				B64B1F7227A4FDC800AC2601 /* AppModel.swift in Sources */,
 				B6D1AEFA27A557280022FED2 /* PopupButton.swift in Sources */,
+				B6789EE327CA5F7A00D8B58C /* IconFolderGenerator.swift in Sources */,
 				B6B5728A27ACDA420069DBA7 /* ImageConverterView+.swift in Sources */,
 				B67A4CCD27C12C09009277FB /* CircleBarsHSBColorPicker.swift in Sources */,
 				B6D1AEF027A547B90022FED2 /* JSONFormatterView+.swift in Sources */,
@@ -881,6 +924,7 @@
 				B6113ECD27C4B96C00ACC6E8 /* EmptyImageTableView.swift in Sources */,
 				B6B5728C27ACE5600069DBA7 /* ImageConverter.swift in Sources */,
 				B67A4C5027C0EA84009277FB /* Util+PixelPicker.swift in Sources */,
+				B6789EE527CA5F9500D8B58C /* IconGenerator+Model.swift in Sources */,
 				B6D1AEDF27A534960022FED2 /* BodyViewController.swift in Sources */,
 				B67A4C5127C0EA84009277FB /* ShowAndHideCursor.swift in Sources */,
 				B61157C527C8D77A004D77A5 /* DragImageView.swift in Sources */,

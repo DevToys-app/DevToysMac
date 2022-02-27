@@ -51,23 +51,24 @@ open class EmptyImageTableView: NSLoadTableView {
 
 extension EmptyImageTableView {
     public func setFileDropEmptyView(_ title: String = "Drop Files Here".localized()) {
-        final class DropIndicatorView: NSLoadStackView {
-            private let imageView = NSImageView(image: R.Image.drop)
-            private let titleLabel = NSTextField(labelWithString: "Title")
-            
-            convenience init(title: String) {
-                self.init()
-                self.titleLabel.stringValue = title
-            }
-            
-            override func onAwake() {
-                self.alignment = .centerX
-                self.orientation = .vertical
-                self.addArrangedSubview(imageView)
-                self.addArrangedSubview(titleLabel)
-            }
-        }
-
         self.emptyView = DropIndicatorView(title: title)
+    }
+}
+
+final class DropIndicatorView: NSLoadStackView {
+    private let imageView = NSImageView(image: R.Image.drop)
+    private let titleLabel = NSTextField(labelWithString: "Title")
+    
+    convenience init(title: String) {
+        self.init()
+        self.titleLabel.stringValue = title
+    }
+    
+    override func onAwake() {
+        self.unregisterDraggedTypes()
+        self.alignment = .centerX
+        self.orientation = .vertical
+        self.addArrangedSubview(imageView)
+        self.addArrangedSubview(titleLabel)
     }
 }

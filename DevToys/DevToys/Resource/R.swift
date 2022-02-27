@@ -94,6 +94,7 @@ enum R {
             static let colorPicker = NSImage(named: "tool/color.picker")!
             static let gif = NSImage(named: "tool/gif")!
             static let qrgenerator = NSImage(named: "tool/qr.generator")!
+            static let iconGenerator = NSImage(named: "tool/icon.generator")!
             
             static let media = NSImage(named: "tool/media")!
             static let audioConverter = NSImage(named: "tool/audio.convert")!

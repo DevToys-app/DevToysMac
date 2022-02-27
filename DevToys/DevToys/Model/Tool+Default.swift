@@ -146,11 +146,6 @@ extension Tool {
         sidebarTitle: "tool.imageconvert.mintitle".localized(), toolDescription: "tool.imageconvert.description".localized(),
         viewController: ImageConverterViewController()
     )
-    static let colorPicker = Tool(
-        title: "Color Picker".localized(), identifier: "colorpicker", category: .graphic, icon: R.Image.Tool.colorPicker,
-        sidebarTitle: "Color Picker".localized(), toolDescription: "Picker the color and copy components".localized(),
-        viewController: ColorPickerViewController()
-    )
     static let gifConverter = Tool(
         title: "Gif Converter".localized(), identifier: "gifconverter", category: .graphic, icon: R.Image.Tool.gif,
         sidebarTitle: "Gif Converter".localized(), toolDescription: "Convert a movie to an animated GIF file".localized(),
@@ -161,8 +156,19 @@ extension Tool {
         sidebarTitle: "QR Code Generator".localized(), toolDescription: "Create a QR code from text".localized(),
         viewController: QRCodeGeneratorViewController()
     )
+    static let iconGenerator = Tool(
+        title: "Icon Generator".localized(), identifier: "icongenerator", category: .graphic, icon: R.Image.Tool.iconGenerator,
+        sidebarTitle: "Icon Generator".localized(), toolDescription: "Create a Icon from image".localized(),
+        viewController: IconGeneratorViewController()
+    )
     
     // MARK: - Media -
+    static let colorPicker = Tool(
+        title: "Color Picker".localized(), identifier: "colorpicker", category: .media, icon: R.Image.Tool.colorPicker,
+        sidebarTitle: "Color Picker".localized(), toolDescription: "Picker the color and copy components".localized(),
+        viewController: ColorPickerViewController()
+    )
+    
     static let audioConverter = Tool(
         title: "Audio Converter".localized(), identifier: "audioconverter", category: .media, icon: R.Image.Tool.audioConverter,
         sidebarTitle: "Audio Converter".localized(), toolDescription: "Convert audio from one format to another".localized(),
@@ -200,10 +206,11 @@ extension ToolManager {
         toolManager.registerTool(.imageOptimizer)
         toolManager.registerTool(.pdfGenerator)
         toolManager.registerTool(.imageConverter)
-        toolManager.registerTool(.colorPicker)
         toolManager.registerTool(.gifConverter)
         toolManager.registerTool(.qrConverter)
+        toolManager.registerTool(.iconGenerator)
         
+        toolManager.registerTool(.colorPicker)
         toolManager.registerTool(.audioConverter)
         
         toolManager.registerTool(.settings)

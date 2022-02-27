@@ -255,3 +255,44 @@ extension NSString {
         self.draw(with: drawRect, options: .usesLineFragmentOrigin, attributes: attributes)
     }
 }
+
+extension Promise {
+    public func peekProgressIndicator(_ message: String) -> Promise<Output, Failure> {
+        Toast.showProgressIndicator(message: message, self)
+        return self
+    }
+        
+    public func sinkWithToast(_ successMessage: @escaping (Output) -> String) where Failure == Never {
+        func neverhandler<T>(_ output: T) -> String { "Never" }
+        self.sinkWithToast(successMessage, neverhandler)
+    }
+    
+    public func sinkWithToast(_ successMessage: @escaping (Output) -> String, _ failureMessage: @escaping (Failure) -> String) {
+        let toast = Toast()
+        self
+            .receive(on: .main)
+            .sink({ output in
+                toast.color = nil
+                toast.message = successMessage(output)
+                toast.show()
+            }, { error in
+                toast.color = .systemRed
+                toast.message = failureMessage(error)
+                toast.show()
+            })
+    }
+}
+
+extension Toast {
+    fileprivate static func showProgressIndicator<T, F>(message: String, _ promise: Promise<T, F>) {
+        let toast = Toast(message: message)
+        let indicator = NSProgressIndicator()
+        indicator.style = .spinning
+        indicator.startAnimation(nil)
+        indicator.snp.makeConstraints{ make in
+            make.size.equalTo(16)
+        }
+        toast.addAttributeView(indicator, position: .right)
+        toast.show(with: { close in promise.receive(on: .main).finally { close() } })
+    }
+}

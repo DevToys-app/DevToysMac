@@ -12,14 +12,13 @@ enum ImageDropper {
         var newImageItems = [ImageItem]()
         guard let items = pasteboard.pasteboardItems else { return [] }
         
-        if items.count == 1 {
+        if items.count == 1, let url = (pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL])?.first {
             guard let image = NSImage(pasteboard: pasteboard) else { return [] }
-            let imageName = (pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL])?.first?.lastPathComponent ?? "Image"
-            newImageItems =  [ImageItem(title: imageName, image: image)]
+            newImageItems = [ImageItem(fileURL: url, image: image)]
         } else {
             guard let urls = pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL] else { return [] }
             let images = urls.compactMap{ url in
-                NSImage(contentsOf: url).map{ ImageItem(title: url.lastPathComponent, image: $0) }
+                NSImage(contentsOf: url).map{ ImageItem(fileURL: url, image: $0) }
             }
             newImageItems = images
         }

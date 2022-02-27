@@ -65,7 +65,7 @@ final class Area: NSLoadView {
         self.wantsLayer = true
         self.layer?.addSublayer(backgroundLayer)
         self.snp.makeConstraints{ make in
-            make.height.equalTo(48)
+            make.height.equalTo(42)
         }
         
         self.addSubview(stackView)
