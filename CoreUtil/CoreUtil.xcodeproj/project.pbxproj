@@ -49,6 +49,7 @@
 		B680A8A027A8DA78007CB707 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = B680A89F27A8DA78007CB707 /* OrderedCollections */; };
 		B680A8A227A8DA78007CB707 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = B680A8A127A8DA78007CB707 /* DequeModule */; };
 		B680A8A427A8DA78007CB707 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = B680A8A327A8DA78007CB707 /* Collections */; };
+		B6A93D2B27CBA2EB003A6D7F /* Zip3Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A93D2A27CBA2EB003A6D7F /* Zip3Sequence.swift */; };
 		B6AC27A327AA6F5C000FD713 /* Reachability+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC27A127AA6F5B000FD713 /* Reachability+Publisher.swift */; };
 		B6AC27A427AA6F5C000FD713 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC27A227AA6F5C000FD713 /* Reachability.swift */; };
 		B6B5727A27AC223A0069DBA7 /* RestorableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5727927AC223A0069DBA7 /* RestorableState.swift */; };
@@ -99,6 +100,7 @@
 		B680A79027A681F8007CB707 /* NSTextField+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextField+Combine.swift"; sourceTree = "<group>"; };
 		B680A86427A8C58C007CB707 /* Combine+Peek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Peek.swift"; sourceTree = "<group>"; };
 		B680A89B27A8DA16007CB707 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		B6A93D2A27CBA2EB003A6D7F /* Zip3Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zip3Sequence.swift; sourceTree = "<group>"; };
 		B6AC27A127AA6F5B000FD713 /* Reachability+Publisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reachability+Publisher.swift"; sourceTree = "<group>"; };
 		B6AC27A227AA6F5C000FD713 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B6B5727927AC223A0069DBA7 /* RestorableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorableState.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		B64B1F6D27A4FC9100AC2601 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				B6A93D2A27CBA2EB003A6D7F /* Zip3Sequence.swift */,
 				B6AC27A227AA6F5C000FD713 /* Reachability.swift */,
 				B6AC27A127AA6F5B000FD713 /* Reachability+Publisher.swift */,
 				B64B201027A50E5200AC2601 /* NSColorView.swift */,
@@ -382,6 +385,7 @@
 				B64B1F1827A4F80800AC2601 /* Ex+CGPoint.swift in Sources */,
 				B680A86527A8C58C007CB707 /* Combine+Peek.swift in Sources */,
 				B64B1ED027A4F71200AC2601 /* ViewPlaceholder.swift in Sources */,
+				B6A93D2B27CBA2EB003A6D7F /* Zip3Sequence.swift in Sources */,
 				B64B1F3127A4F83500AC2601 /* Ex+Image.swift in Sources */,
 				B64B1ED627A4F72D00AC2601 /* Query.swift in Sources */,
 				B64B1F2B27A4F83500AC2601 /* Ex+UI.swift in Sources */,

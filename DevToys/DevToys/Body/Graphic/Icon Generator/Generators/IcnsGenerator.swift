@@ -13,11 +13,11 @@ enum IcnsGenerator {
         try? FileManager.default.createDirectory(at: $0, withIntermediateDirectories: true, attributes: nil)
     }
     
-    static func make(item: ImageItem, to destinationURL: URL) -> IconGenerateTask {
+    static func make(item: ImageItem, templete: IconTemplete, to destinationURL: URL) -> IconGenerateTask {
         let complete = Promise<URL, Error>
             .tryAsync{
                 let iconsetURL = temporaryDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("iconset")
-                try IconsetGenerator.generateIconset(image: item.image, to: iconsetURL)
+                try IconsetGenerator.generateIconset(image: item.image, templete: templete, to: iconsetURL)
                 return iconsetURL
             }
             .flatPeek{ Terminal.run(iconutilURL, arguments: ["-c", "icns", "--output", destinationURL.path, $0.path]) }

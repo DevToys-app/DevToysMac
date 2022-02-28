@@ -14,3 +14,17 @@ extension NSImage {
         return cgImage(forProposedRect: &imageRect, context: nil, hints: nil)
     }
 }
+
+
+extension CGImage {
+    public func convertToGrayscale() -> CGImage {
+        let imageRect = CGRect(size: CGSize(width: width, height: height))
+        let context = CGContext(
+            data: nil, width: self.width, height: self.height,
+            bitsPerComponent: 8, bytesPerRow: 0,
+            space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGImageAlphaInfo.none.rawValue
+        )!
+        context.draw(self, in: imageRect)
+        return context.makeImage()!
+    }
+}

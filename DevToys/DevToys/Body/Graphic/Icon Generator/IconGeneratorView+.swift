@@ -13,26 +13,32 @@ final class IconGeneratorViewController: NSViewController {
     @RestorableState("icongen.exporttype") var exportType: IconExportType = .icns
     @RestorableState("icongen.iosopt") var iosOptions: IOSIconGenerator.ExportOptions = [.iphone, .ipad]
     @RestorableData("icongen.image") var imageItem: ImageItem? = nil
+    @RestorableData("icongen.templete") var templeteName = "original"
+    @Observable var iconTemplete: IconTemplete? = nil { didSet { templeteName = iconTemplete?.identifier ?? "original" } }
+    @Observable var previewImage: NSImage? = nil
+    
+    let iconTempleteManager = IconImageManager.shared
     
     override func loadView() { self.view = cell }
     
     override func viewDidLoad() {
-        self.$imageItem
-            .sink{[unowned self] in self.cell.imageDropView.image = $0?.image }.store(in: &objectBag)
+        self.$previewImage
+            .sink{[unowned self] in self.cell.imageDropView.image = $0 }.store(in: &objectBag)
         self.$exportType
             .sink{[unowned self] in self.cell.exportTypePicker.selectedItem = $0 }.store(in: &objectBag)
         self.$iosOptions
             .sink{[unowned self] in self.bindiOSOptionsView($0) }.store(in: &objectBag)
+        self.$iconTemplete
+            .sink{[unowned self] in self.cell.iconTempletePicker.selectedMenuTitle = $0?.title }.store(in: &objectBag)
         
         self.cell.clearButton.actionPublisher
-            .sink{[unowned self] in self.imageItem = nil }.store(in: &objectBag)
+            .sink{[unowned self] in self.imageItem = nil; updatePreviewImage() }.store(in: &objectBag)
         self.cell.imageDropView.imagePublisher
-            .sink{[unowned self] in self.imageItem = $0 }.store(in: &objectBag)
+            .sink{[unowned self] in self.imageItem = $0; updatePreviewImage() }.store(in: &objectBag)
         self.cell.exportTypePicker.itemPublisher
             .sink{[unowned self] in self.exportType = $0; updateOptionView() }.store(in: &objectBag)
         self.cell.exportButton.actionPublisher
             .sink{[unowned self] in self.exportIcon() }.store(in: &objectBag)
-        
         self.cell.iosOptionsView.iPhoneSwitch.isOnPublisher
             .sink{[unowned self] in self.iosOptions = $0 ? iosOptions.union(.iphone) : iosOptions.subtracting(.iphone) }.store(in: &objectBag)
         self.cell.iosOptionsView.iPadSwitch.isOnPublisher
@@ -43,6 +49,27 @@ final class IconGeneratorViewController: NSViewController {
             .sink{[unowned self] in self.iosOptions = $0 ? iosOptions.union(.carplay) : iosOptions.subtracting(.carplay) }.store(in: &objectBag)
         self.cell.iosOptionsView.macSwitch.isOnPublisher
             .sink{[unowned self] in self.iosOptions = $0 ? iosOptions.union(.mac) : iosOptions.subtracting(.mac) }.store(in: &objectBag)
+        
+        for templete in self.iconTempleteManager.templetes {
+            self.cell.iconTempletePicker.menuItems.append(NSMenuItem(title: templete.title) {
+                self.iconTemplete = templete
+                self.updatePreviewImage()
+            })
+        }
+        
+        self.iconTemplete = self.iconTempleteManager.templete(for: self.templeteName) ?? self.iconTempleteManager.templetes.first
+        self.updatePreviewImage()
+        self.updateOptionView()
+    }
+    
+    private func updatePreviewImage() {
+        guard let imageItem = imageItem else { return previewImage = nil }
+        
+        if let iconTemplete = iconTemplete {
+            self.previewImage = iconTemplete.bake(image: imageItem.image, scale: .x512)
+        } else {
+            self.previewImage = imageItem.image
+        }
     }
     
     private func bindiOSOptionsView(_ options: IOSIconGenerator.ExportOptions) {
@@ -62,16 +89,16 @@ final class IconGeneratorViewController: NSViewController {
     }
     
     private func exportIcon() {
-        guard let item = imageItem, let filename = exportFilename() else { return }
+        guard let item = imageItem, let filename = exportFilename(), let templete = iconTemplete else { return }
         let panel = NSSavePanel()
         panel.nameFieldStringValue = filename
         guard panel.runModal() == .OK, let url = panel.url else { return }
-        
+                
         switch self.exportType {
-        case .iconFolder: IconFolderGenerator.make(item: item, to: url) => registerTask(_:)
+        case .iconFolder: IconFolderGenerator.make(item: item, templete: templete, to: url) => registerTask(_:)
         case .iosAssets: IOSIconGenerator.make(item: item, options: iosOptions, to: url) => registerTask(_:)
-        case .icns: IcnsGenerator.make(item: item, to: url) => registerTask(_:)
-        case .iconset: IconsetGenerator.make(item: item, to: url) => registerTask(_:)
+        case .icns: IcnsGenerator.make(item: item, templete: templete, to: url) => registerTask(_:)
+        case .iconset: IconsetGenerator.make(item: item, templete: templete, to: url) => registerTask(_:)
         }
     }
     
@@ -104,6 +131,7 @@ enum IconExportType: String, TextItem {
 
 final private class IconGeneratorView: Page {
     let exportTypePicker = EnumPopupButton<IconExportType>()
+    let iconTempletePicker = PopupButton()
     let imageDropView = ImageDropView()
     let iosOptionsView = iOSOptionsView()
     let clearButton = SectionButton(title: "Clear".localized(), image: R.Image.clear)
@@ -111,23 +139,24 @@ final private class IconGeneratorView: Page {
     
     override func onAwake() {
         self.addSection(Section(title: "Configuration".localized(), items: [
-            Area(icon: R.Image.export, title: "Icon Export Type", control: exportTypePicker)
+            Area(icon: R.Image.export, title: "Icon Export Type", control: exportTypePicker),
+            Area(icon: R.Image.paramators, title: "Templetes", control: iconTempletePicker)
         ]))
         
-        let sourceView = Section(title: "Source".localized(), items: [
-            imageDropView => {
-                $0.snp.makeConstraints{ make in
-                    make.height.equalTo(320)
+        self.addSection2(
+            Section(title: "Source".localized(), items: [
+                imageDropView => {
+                    $0.snp.makeConstraints{ make in
+                        make.height.equalTo(320)
+                    }
                 }
-            }
-        ], toolbarItems: [clearButton])
-        
-        let optionsView = Section(title: "Options", items: [
-            iosOptionsView,
-            exportButton
-        ])
-        
-        self.addSection2(sourceView, optionsView)
+            ], toolbarItems: [clearButton]),
+            
+            Section(title: "Options", items: [
+                iosOptionsView,
+                exportButton
+            ])
+        )
     }
 }
 
