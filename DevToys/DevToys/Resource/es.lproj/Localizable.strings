@@ -228,7 +228,7 @@
 "Whether to delete the source file after exporting a Gif" = "Determina si se debe eliminar el fichero original después de exportar el GIF";
 
 "Audio Converter" = "Conversor de audio";
-"Convert audio from one format to another" = "Convierte audio a distintos formatos";
+"Convert audio from one format to another" = "Convierte audio de un formato a otro";
 "Whether to delete the source file after exporting a Audio" = "Determina si se debe eliminar el fichero original después de exportar el audio";
 "Starting..." = "Comenzando...";
 "Complete" = "Completado";
