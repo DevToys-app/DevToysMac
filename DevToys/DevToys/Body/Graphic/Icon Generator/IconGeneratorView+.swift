@@ -11,7 +11,8 @@ final class IconGeneratorViewController: NSViewController {
     private let cell = IconGeneratorView()
     
     @RestorableState("icongen.exporttype") var exportType: IconExportType = .icns
-    @RestorableState("icongen.iosopt") var iosOptions: IOSIconGenerator.ExportOptions = [.iphone, .ipad]
+    @RestorableState("icongen.iosopt") var iosOptions: IosIconGenerator.ExportOptions = [.iphone, .ipad]
+    @RestorableState("icongen.scale") var scale: IconSet.Scale = .x1024
     @RestorableData("icongen.image") var imageItem: ImageItem? = nil
     @RestorableData("icongen.templete") var templeteName = "original"
     @Observable var iconTemplete: IconTemplete? = nil { didSet { templeteName = iconTemplete?.identifier ?? "original" } }
@@ -30,9 +31,13 @@ final class IconGeneratorViewController: NSViewController {
             .sink{[unowned self] in self.bindiOSOptionsView($0) }.store(in: &objectBag)
         self.$iconTemplete
             .sink{[unowned self] in self.cell.iconTempletePicker.selectedMenuTitle = $0?.title }.store(in: &objectBag)
+        self.$scale
+            .sink{[unowned self] in self.cell.scalePicker.selectedItem = $0 }.store(in: &objectBag)
         
         self.cell.clearButton.actionPublisher
             .sink{[unowned self] in self.imageItem = nil; updatePreviewImage() }.store(in: &objectBag)
+        self.cell.scalePicker.itemPublisher
+            .sink{[unowned self] in self.scale = $0 }.store(in: &objectBag)
         self.cell.imageDropView.imagePublisher
             .sink{[unowned self] in self.imageItem = $0; updatePreviewImage() }.store(in: &objectBag)
         self.cell.exportTypePicker.itemPublisher
@@ -72,7 +77,7 @@ final class IconGeneratorViewController: NSViewController {
         }
     }
     
-    private func bindiOSOptionsView(_ options: IOSIconGenerator.ExportOptions) {
+    private func bindiOSOptionsView(_ options: IosIconGenerator.ExportOptions) {
         self.cell.iosOptionsView.iPhoneSwitch.isOn = options.contains(.iphone)
         self.cell.iosOptionsView.iPadSwitch.isOn = options.contains(.ipad)
         self.cell.iosOptionsView.appleWatchSwitch.isOn = options.contains(.applewatch)
@@ -82,8 +87,10 @@ final class IconGeneratorViewController: NSViewController {
     
     private func updateOptionView() {
         self.cell.iosOptionsView.isHidden = true
+        self.cell.scalePickerArea.isHidden = true
         switch self.exportType {
         case .iosAssets: self.cell.iosOptionsView.isHidden = false
+        case .png, .jpeg, .gif: self.cell.scalePickerArea.isHidden = false
         default: break
         }
     }
@@ -96,9 +103,14 @@ final class IconGeneratorViewController: NSViewController {
                 
         switch self.exportType {
         case .iconFolder: IconFolderGenerator.make(item: item, templete: templete, to: url) => registerTask(_:)
-        case .iosAssets: IOSIconGenerator.make(item: item, options: iosOptions, to: url) => registerTask(_:)
+        case .iosAssets: IosIconGenerator.make(item: item, options: iosOptions, to: url) => registerTask(_:)
         case .icns: IcnsGenerator.make(item: item, templete: templete, to: url) => registerTask(_:)
         case .iconset: IconsetGenerator.make(item: item, templete: templete, to: url) => registerTask(_:)
+        case .androidAssets: AndroidIconGenerator.make(item: item, templete: templete, to: url) => registerTask(_:)
+        case .ico: IcoGenerator.make(item: item, templete: templete, to: url) => registerTask(_:)
+        case .png: PngIconGenerator.make(item: item, templete: templete, scale: scale, to: url) => registerTask(_:)
+        case .jpeg: JpegIconGenerator.make(item: item, templete: templete, scale: scale, to: url) => registerTask(_:)
+        case .gif: GifIconGenerator.make(item: item, templete: templete, scale: scale, to: url) => registerTask(_:)
         }
     }
     
@@ -116,6 +128,11 @@ final class IconGeneratorViewController: NSViewController {
         case .iconFolder: return item.filenameWithoutExtension
         case .iconset: return "\(item.filenameWithoutExtension).iconset"
         case .iosAssets: return "\(item.filenameWithoutExtension) (iOS Icon)"
+        case .androidAssets: return "\(item.filenameWithoutExtension) (Android Icon)"
+        case .ico: return "\(item.filenameWithoutExtension).ico"
+        case .png: return "\(item.filenameWithoutExtension).png"
+        case .jpeg: return "\(item.filenameWithoutExtension).jpg"
+        case .gif: return "\(item.filenameWithoutExtension).gif"
         }
     }
 }
@@ -123,10 +140,31 @@ final class IconGeneratorViewController: NSViewController {
 enum IconExportType: String, TextItem {
     case iconFolder = "Icon Folder"
     case iosAssets = "iOS"
+    case androidAssets = "Android"
     case icns = "ICNS"
     case iconset = "Icon Set"
+    case ico = "ICO"
+    case png = "PNG"
+    case jpeg = "JPEG"
+    case gif = "GIF"
     
     var title: String { rawValue }
+}
+
+extension IconSet.Scale: TextItem {
+    static let allCases: [IconSet.Scale] = [.x16, .x32, .x64, .x128, .x256, .x512, .x1024]
+    
+    var title: String {
+        switch self {
+        case .x16: return "16px"
+        case .x32: return "32px"
+        case .x64: return "64px"
+        case .x128: return "128px"
+        case .x256: return "256px"
+        case .x512: return "512px"
+        case .x1024: return "1024px"
+        }
+    }
 }
 
 final private class IconGeneratorView: Page {
@@ -134,6 +172,8 @@ final private class IconGeneratorView: Page {
     let iconTempletePicker = PopupButton()
     let imageDropView = ImageDropView()
     let iosOptionsView = iOSOptionsView()
+    let scalePicker = EnumPopupButton<IconSet.Scale>()
+    lazy var scalePickerArea = Area(icon: R.Image.paramators, title: "Scale", control: scalePicker)
     let clearButton = SectionButton(title: "Clear".localized(), image: R.Image.clear)
     let exportButton = Button(title: "Export")
     
@@ -153,6 +193,7 @@ final private class IconGeneratorView: Page {
             ], toolbarItems: [clearButton]),
             
             Section(title: "Options", items: [
+                scalePickerArea,
                 iosOptionsView,
                 exportButton
             ])
@@ -177,58 +218,3 @@ final private class iOSOptionsView: NSLoadStackView {
     }
 }
 
-final private class ImageDropView: NSLoadView {
-    
-    var image: NSImage? {
-        get { imageView.image }
-        set {
-            self.imageView.image = newValue
-            self.dropIndicator.isHidden = newValue != nil
-        }
-    }
-    
-    let imagePublisher = PassthroughSubject<ImageItem, Never>()
-    
-    private let backgroundLayer = ControlBackgroundLayer.animationDisabled()
-    private let imageView = NSImageView()
-    private let dropIndicator = DropIndicatorView(title: "Drop Image Here")
-    
-    override func layout() {
-        super.layout()
-        self.backgroundLayer.frame = bounds
-    }
-    
-    override func updateLayer() {
-        self.backgroundLayer.update()
-    }
-    
-    override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation { return .copy }
-    
-    override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
-        let images = ImageDropper.images(fromPasteboard: sender.draggingPasteboard)
-        guard let image = images.first else { return false }
-        
-        imagePublisher.send(image)
-        
-        return true
-    }
-    
-    override func onAwake() {
-        self.imageView.unregisterDraggedTypes()
-        self.registerForDraggedTypes([.fileURL, .URL, .fileContents])
-        self.wantsLayer = true
-        self.layer?.addSublayer(backgroundLayer)
-        
-        self.addSubview(imageView)
-        self.imageView.snp.makeConstraints{ make in
-            make.width.equalTo(180)
-            make.top.bottom.equalToSuperview().inset(16)
-            make.centerX.equalToSuperview()
-        }
-        
-        self.addSubview(dropIndicator)
-        self.dropIndicator.snp.makeConstraints{ make in
-            make.center.equalToSuperview()
-        }
-    }
-}

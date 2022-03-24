@@ -30,9 +30,12 @@ struct RoundedRectIconTemplete: IconTemplete {
             let image = IconTempleteHelper.fillToRect(rect: imageRect, image: image, size: size).cgImage!
             let cornerRadius = 64 * scaleFactor
             let circlePath = CGPath(roundedRect: imageRect, cornerWidth: cornerRadius, cornerHeight: cornerRadius, transform: nil)
+            context.saveGState()
+            context.setFillColor(.white)
             context.addPath(circlePath)
             context.setShadow(offset: [0, -7] * scaleFactor, blur: 20 * scaleFactor, color: NSColor.black.withAlphaComponent(0.5).cgColor)
             context.fillPath()
+            context.restoreGState()
             
             context.addPath(circlePath)
             context.clip()
@@ -54,9 +57,12 @@ struct CircleIconTemplete: IconTemplete {
             let imageRect = CGRect(size: size).slimmed(by: 64 * scaleFactor)
             let image = IconTempleteHelper.fillToRect(rect: imageRect, image: image, size: size).cgImage!
             let circlePath = CGPath(ellipseIn: imageRect, transform: nil)
+            context.saveGState()
+            context.setFillColor(.white)
             context.addPath(circlePath)
             context.setShadow(offset: [0, -7] * scaleFactor, blur: 20 * scaleFactor, color: NSColor.black.withAlphaComponent(0.5).cgColor)
             context.fillPath()
+            context.restoreGState()
             
             context.addPath(circlePath)
             context.clip()
@@ -79,6 +85,8 @@ struct AndroidIconTemplete: IconTemplete {
             let image = IconTempleteHelper.fillToRect(rect: CGRect(size: size), image: image, size: size).cgImage!
             
             context.clip(to: context.bounds, mask: mask.cgImage!.convertToGrayscale())
+            context.setFillColor(.white)
+            context.fill(context.bounds)
             context.draw(image, in: context.bounds)
         })
     }

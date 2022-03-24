@@ -10,7 +10,7 @@ import CoreUtil
 
 
 struct IconSet {
-    enum Scale {
+    enum Scale: Int {
         case x16, x32, x64, x128, x256, x512, x1024
         
         var size: CGFloat {

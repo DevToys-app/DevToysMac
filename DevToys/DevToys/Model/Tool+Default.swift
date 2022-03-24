@@ -101,6 +101,11 @@ extension Tool {
         sidebarTitle: "tool.checksum.mintitle".localized(), toolDescription: "tool.checksum.description".localized(),
         viewController: ChecksumGeneratorViewController()
     )
+    static let qrGenerator = Tool(
+        title: "QR Code Generator".localized(), identifier: "qrgenerator", category: .generator, icon: R.Image.Tool.qrgenerator,
+        sidebarTitle: "QR Code Generator".localized(), toolDescription: "Create a QR code from text".localized(),
+        viewController: QRCodeGeneratorViewController()
+    )
     
     // MARK: - Text -
     static let textInspector = Tool(
@@ -146,21 +151,17 @@ extension Tool {
         sidebarTitle: "tool.imageconvert.mintitle".localized(), toolDescription: "tool.imageconvert.description".localized(),
         viewController: ImageConverterViewController()
     )
-    static let gifConverter = Tool(
-        title: "Gif Converter".localized(), identifier: "gifconverter", category: .graphic, icon: R.Image.Tool.gif,
-        sidebarTitle: "Gif Converter".localized(), toolDescription: "Convert a movie to an animated GIF file".localized(),
-        viewController: GifConverterViewController()
-    )
-    static let qrConverter = Tool(
-        title: "QR Code Generator".localized(), identifier: "qrgenerator", category: .graphic, icon: R.Image.Tool.qrgenerator,
-        sidebarTitle: "QR Code Generator".localized(), toolDescription: "Create a QR code from text".localized(),
-        viewController: QRCodeGeneratorViewController()
-    )
     static let iconGenerator = Tool(
         title: "Icon Generator".localized(), identifier: "icongenerator", category: .graphic, icon: R.Image.Tool.iconGenerator,
         sidebarTitle: "Icon Generator".localized(), toolDescription: "Create a Icon from image".localized(),
         viewController: IconGeneratorViewController()
     )
+    static let qrReader = Tool(
+        title: "QR Code Reader".localized(), identifier: "qrreader", category: .graphic, icon: R.Image.Tool.iconGenerator,
+        sidebarTitle: "QR Code Reader".localized(), toolDescription: "Read QR Code from image or device camera".localized(),
+        viewController: QRCodeReaderViewController()
+    )
+    
     
     // MARK: - Media -
     static let colorPicker = Tool(
@@ -168,12 +169,17 @@ extension Tool {
         sidebarTitle: "Color Picker".localized(), toolDescription: "Picker the color and copy components".localized(),
         viewController: ColorPickerViewController()
     )
-    
     static let audioConverter = Tool(
         title: "Audio Converter".localized(), identifier: "audioconverter", category: .media, icon: R.Image.Tool.audioConverter,
         sidebarTitle: "Audio Converter".localized(), toolDescription: "Convert audio from one format to another".localized(),
         viewController: AudioConverterViewController()
     )
+    static let gifConverter = Tool(
+        title: "Gif Converter".localized(), identifier: "gifconverter", category: .media, icon: R.Image.Tool.gif,
+        sidebarTitle: "Gif Converter".localized(), toolDescription: "Convert a movie to an animated GIF file".localized(),
+        viewController: GifConverterViewController()
+    )
+    
 }
 
 extension ToolManager {
@@ -197,6 +203,7 @@ extension ToolManager {
         toolManager.registerTool(.uuidGenerator)
         toolManager.registerTool(.loremIpsumGenerator)
         toolManager.registerTool(.checksumGenerator)
+        toolManager.registerTool(.qrGenerator)
 
         toolManager.registerTool(.textInspector)
         toolManager.registerTool(.regexTester)
@@ -206,12 +213,12 @@ extension ToolManager {
         toolManager.registerTool(.imageOptimizer)
         toolManager.registerTool(.pdfGenerator)
         toolManager.registerTool(.imageConverter)
-        toolManager.registerTool(.gifConverter)
-        toolManager.registerTool(.qrConverter)
         toolManager.registerTool(.iconGenerator)
+        toolManager.registerTool(.qrReader)
         
         toolManager.registerTool(.colorPicker)
         toolManager.registerTool(.audioConverter)
+        toolManager.registerTool(.gifConverter)
         
         toolManager.registerTool(.settings)
     }

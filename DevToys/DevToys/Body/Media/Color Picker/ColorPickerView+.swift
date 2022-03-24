@@ -246,7 +246,6 @@ final private class ColorPickerView: Page {
     
     lazy var paramatorsStack = NSStackView() => { paramatorsStack in
         paramatorsStack.alignment = .top
-        paramatorsStack.orientation = .horizontal
         paramatorsStack.addArrangedSubview(Section(title: "RGB", orientation: .vertical, items: [
             redField, greenField, blueField
         ]))

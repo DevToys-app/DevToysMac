@@ -46,9 +46,7 @@ enum FFExecutor {
         DispatchQueue.global().async {
             while let data = errorPipe.fileHandleForReading.availableData.nonEmptyOrNil() {
                 guard let nsString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else { continue }
-                
-                print("nsString", nsString)
-                
+                                
                 if duration == nil, let fduration = findDuration(in: nsString) {
                     duration = fduration
                 } else if case .fulfilled(let task) = taskPromise.state, let report = FFProgressReport(progressString: nsString as String) {

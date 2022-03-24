@@ -60,7 +60,7 @@
 		B672CFA027AAB8DD00391A5D /* FileDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B672CF9F27AAB8DD00391A5D /* FileDrop.swift */; };
 		B673A90227AD0E78005512AB /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A90127AD0E78005512AB /* DatePicker.swift */; };
 		B6789EBA27CA43E200D8B58C /* IconGeneratorView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EB927CA43E100D8B58C /* IconGeneratorView+.swift */; };
-		B6789EBC27CA48A300D8B58C /* IOSIconGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EBB27CA48A300D8B58C /* IOSIconGenerator.swift */; };
+		B6789EBC27CA48A300D8B58C /* IosIconGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EBB27CA48A300D8B58C /* IosIconGenerator.swift */; };
 		B6789EDF27CA5F5D00D8B58C /* IconsetGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EDE27CA5F5D00D8B58C /* IconsetGenerator.swift */; };
 		B6789EE127CA5F6900D8B58C /* IcnsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EE027CA5F6900D8B58C /* IcnsGenerator.swift */; };
 		B6789EE327CA5F7A00D8B58C /* IconFolderGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789EE227CA5F7A00D8B58C /* IconFolderGenerator.swift */; };
@@ -106,6 +106,8 @@
 		B684EA2827C5EFE90014802F /* TextDiffView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B684EA2727C5EFE90014802F /* TextDiffView+.swift */; };
 		B684EA2A27C609620014802F /* QRCodeGeneratorView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B684EA2927C609620014802F /* QRCodeGeneratorView+.swift */; };
 		B69980D427CCCF0A0063F63D /* android_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = B69980D327CCCF0A0063F63D /* android_mask.png */; };
+		B69980D727CCE09A0063F63D /* IcoGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69980D627CCE09A0063F63D /* IcoGenerator.swift */; };
+		B69980D927CCEB320063F63D /* PngIconGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69980D827CCEB320063F63D /* PngIconGenerator.swift */; };
 		B69F0E8327CBC2100032F96A /* folder_back_64_bs.png in Resources */ = {isa = PBXBuildFile; fileRef = B69F0E7C27CBC20F0032F96A /* folder_back_64_bs.png */; };
 		B69F0E8427CBC2100032F96A /* folder_back_128_bs.png in Resources */ = {isa = PBXBuildFile; fileRef = B69F0E7D27CBC20F0032F96A /* folder_back_128_bs.png */; };
 		B69F0E8527CBC2100032F96A /* folder_back_256_bs.png in Resources */ = {isa = PBXBuildFile; fileRef = B69F0E7E27CBC20F0032F96A /* folder_back_256_bs.png */; };
@@ -125,6 +127,8 @@
 		B69F0E9F27CC76A50032F96A /* IconImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0E9E27CC76A50032F96A /* IconImageManager.swift */; };
 		B69F0EA627CC7CF40032F96A /* watermark_mask_bs.png in Resources */ = {isa = PBXBuildFile; fileRef = B69F0EA427CC7CF40032F96A /* watermark_mask_bs.png */; };
 		B69F0EA727CC7CF40032F96A /* watermark_mask_dark_bs.png in Resources */ = {isa = PBXBuildFile; fileRef = B69F0EA527CC7CF40032F96A /* watermark_mask_dark_bs.png */; };
+		B6A4F2A227CD05F000BBDE7E /* QRCodeReaderView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4F2A127CD05F000BBDE7E /* QRCodeReaderView+.swift */; };
+		B6A4F2A427CD078100BBDE7E /* ImageDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4F2A327CD078100BBDE7E /* ImageDropView.swift */; };
 		B6A93D3227CBBC97003A6D7F /* IconTemplete+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A93D2F27CBBC97003A6D7F /* IconTemplete+.swift */; };
 		B6A93D3327CBBC97003A6D7F /* IconSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A93D3027CBBC97003A6D7F /* IconSet.swift */; };
 		B6A93D3427CBBC97003A6D7F /* IconTemplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A93D3127CBBC97003A6D7F /* IconTemplete.swift */; };
@@ -182,6 +186,7 @@
 		B6D1AEFA27A557280022FED2 /* PopupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEF927A557280022FED2 /* PopupButton.swift */; };
 		B6D1AEFD27A55ED50022FED2 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1AEFC27A55ED50022FED2 /* CodeTextView.swift */; };
 		B6D1AF0627A5603B0022FED2 /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = B6D1AF0527A5603B0022FED2 /* Highlightr */; };
+		B6D88A8B27D07204002E71EA /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D88A8A27D07204002E71EA /* CameraViewController.swift */; };
 		B6E15A9427B6745100DC4D6B /* libimageoptimjpeg.dylib in Resources */ = {isa = PBXBuildFile; fileRef = B6E15A9227B6742300DC4D6B /* libimageoptimjpeg.dylib */; };
 		B6E294B327C3351F00314132 /* FFTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E294B227C3351F00314132 /* FFTask.swift */; };
 		B6E294E527C337F300314132 /* FFThumnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E294E427C337F300314132 /* FFThumnailGenerator.swift */; };
@@ -272,7 +277,7 @@
 		B672CF9F27AAB8DD00391A5D /* FileDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDrop.swift; sourceTree = "<group>"; };
 		B673A90127AD0E78005512AB /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		B6789EB927CA43E100D8B58C /* IconGeneratorView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconGeneratorView+.swift"; sourceTree = "<group>"; };
-		B6789EBB27CA48A300D8B58C /* IOSIconGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSIconGenerator.swift; sourceTree = "<group>"; };
+		B6789EBB27CA48A300D8B58C /* IosIconGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosIconGenerator.swift; sourceTree = "<group>"; };
 		B6789EDE27CA5F5D00D8B58C /* IconsetGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsetGenerator.swift; sourceTree = "<group>"; };
 		B6789EE027CA5F6900D8B58C /* IcnsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcnsGenerator.swift; sourceTree = "<group>"; };
 		B6789EE227CA5F7A00D8B58C /* IconFolderGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFolderGenerator.swift; sourceTree = "<group>"; };
@@ -327,6 +332,8 @@
 		B684EA2727C5EFE90014802F /* TextDiffView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextDiffView+.swift"; sourceTree = "<group>"; };
 		B684EA2927C609620014802F /* QRCodeGeneratorView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QRCodeGeneratorView+.swift"; sourceTree = "<group>"; };
 		B69980D327CCCF0A0063F63D /* android_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = android_mask.png; sourceTree = "<group>"; };
+		B69980D627CCE09A0063F63D /* IcoGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcoGenerator.swift; sourceTree = "<group>"; };
+		B69980D827CCEB320063F63D /* PngIconGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PngIconGenerator.swift; sourceTree = "<group>"; };
 		B69F0E7C27CBC20F0032F96A /* folder_back_64_bs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_back_64_bs.png; sourceTree = "<group>"; };
 		B69F0E7D27CBC20F0032F96A /* folder_back_128_bs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_back_128_bs.png; sourceTree = "<group>"; };
 		B69F0E7E27CBC20F0032F96A /* folder_back_256_bs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_back_256_bs.png; sourceTree = "<group>"; };
@@ -346,6 +353,8 @@
 		B69F0E9E27CC76A50032F96A /* IconImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImageManager.swift; sourceTree = "<group>"; };
 		B69F0EA427CC7CF40032F96A /* watermark_mask_bs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watermark_mask_bs.png; sourceTree = "<group>"; };
 		B69F0EA527CC7CF40032F96A /* watermark_mask_dark_bs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watermark_mask_dark_bs.png; sourceTree = "<group>"; };
+		B6A4F2A127CD05F000BBDE7E /* QRCodeReaderView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QRCodeReaderView+.swift"; sourceTree = "<group>"; };
+		B6A4F2A327CD078100BBDE7E /* ImageDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropView.swift; sourceTree = "<group>"; };
 		B6A93D2F27CBBC97003A6D7F /* IconTemplete+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IconTemplete+.swift"; sourceTree = "<group>"; };
 		B6A93D3027CBBC97003A6D7F /* IconSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconSet.swift; sourceTree = "<group>"; };
 		B6A93D3127CBBC97003A6D7F /* IconTemplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconTemplete.swift; sourceTree = "<group>"; };
@@ -402,6 +411,7 @@
 		B6D1AEF627A54F750022FED2 /* SectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionButton.swift; sourceTree = "<group>"; };
 		B6D1AEF927A557280022FED2 /* PopupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupButton.swift; sourceTree = "<group>"; };
 		B6D1AEFC27A55ED50022FED2 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
+		B6D88A8A27D07204002E71EA /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B6E15A9227B6742300DC4D6B /* libimageoptimjpeg.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libimageoptimjpeg.dylib; sourceTree = "<group>"; };
 		B6E294B227C3351F00314132 /* FFTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFTask.swift; sourceTree = "<group>"; };
 		B6E294E427C337F300314132 /* FFThumnailGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFThumnailGenerator.swift; sourceTree = "<group>"; };
@@ -480,10 +490,8 @@
 			isa = PBXGroup;
 			children = (
 				B6AC276927AA535A000FD713 /* PDFGeneratorView+.swift */,
-				B684EA2927C609620014802F /* QRCodeGeneratorView+.swift */,
+				B6A4F2A127CD05F000BBDE7E /* QRCodeReaderView+.swift */,
 				B6789EB827CA438800D8B58C /* Icon Generator */,
-				B63A034927C212FE009FD2AD /* Movie to Gif */,
-				B67A4C0127C0B9FF009277FB /* Color Picker */,
 				B6AC276827AA532B000FD713 /* Image Optimizer */,
 				B6B5729027ACFE020069DBA7 /* Image Converter */,
 			);
@@ -597,6 +605,7 @@
 		B66BE8BD27C49B28003B5ED0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B6D88A8A27D07204002E71EA /* CameraViewController.swift */,
 				B6113F0027C4BF7700ACC6E8 /* Identifier.swift */,
 				B6113ECE27C4BF2300ACC6E8 /* FileConflictAvoider.swift */,
 				B6B5728E27ACFA6D0069DBA7 /* ImageDropper.swift */,
@@ -610,6 +619,8 @@
 			isa = PBXGroup;
 			children = (
 				B6789EB927CA43E100D8B58C /* IconGeneratorView+.swift */,
+				B6789EE827CB3D6300D8B58C /* Resource */,
+				B6A93D2E27CBBC97003A6D7F /* Icon Templete */,
 				B6789EDD27CA5F5400D8B58C /* Generators */,
 			);
 			path = "Icon Generator";
@@ -618,14 +629,14 @@
 		B6789EDD27CA5F5400D8B58C /* Generators */ = {
 			isa = PBXGroup;
 			children = (
-				B6A93D2E27CBBC97003A6D7F /* Icon Templete */,
-				B6789EE827CB3D6300D8B58C /* Resource */,
-				B6789EBB27CA48A300D8B58C /* IOSIconGenerator.swift */,
+				B6789EBB27CA48A300D8B58C /* IosIconGenerator.swift */,
 				B6789EDE27CA5F5D00D8B58C /* IconsetGenerator.swift */,
 				B6789EE027CA5F6900D8B58C /* IcnsGenerator.swift */,
 				B6789EE227CA5F7A00D8B58C /* IconFolderGenerator.swift */,
 				B6789EE427CA5F9500D8B58C /* IconGenerator+Model.swift */,
 				B6789EE627CB334D00D8B58C /* AndroidIconGenerator.swift */,
+				B69980D627CCE09A0063F63D /* IcoGenerator.swift */,
+				B69980D827CCEB320063F63D /* PngIconGenerator.swift */,
 			);
 			path = Generators;
 			sourceTree = "<group>";
@@ -714,6 +725,7 @@
 				B62013B327A9070D00AF5386 /* UUIDGeneratorView+.swift */,
 				B620141D27A91F6700AF5386 /* LoremIpsumGeneratorView+.swift */,
 				B6B5727F27ACC3AE0069DBA7 /* ChecksumGeneratorView+.swift */,
+				B684EA2927C609620014802F /* QRCodeGeneratorView+.swift */,
 			);
 			path = Generator;
 			sourceTree = "<group>";
@@ -806,6 +818,8 @@
 		B6BBA90427C391EE000FE7D3 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				B63A034927C212FE009FD2AD /* Movie to Gif */,
+				B67A4C0127C0B9FF009277FB /* Color Picker */,
 				B6BBA90527C392D5000FE7D3 /* Audio Converter */,
 			);
 			path = Media;
@@ -914,6 +928,7 @@
 				B673A90127AD0E78005512AB /* DatePicker.swift */,
 				B6113ECC27C4B96C00ACC6E8 /* EmptyImageTableView.swift */,
 				B61157C427C8D77A004D77A5 /* DragImageView.swift */,
+				B6A4F2A327CD078100BBDE7E /* ImageDropView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1097,7 +1112,8 @@
 				B67A4C0D27C0BA00009277FB /* Color.swift in Sources */,
 				B608541E27A67B48003BF243 /* NumberBaseConverterView+.swift in Sources */,
 				B680A8AA27A8E106007CB707 /* HashGeneratorView+.swift in Sources */,
-				B6789EBC27CA48A300D8B58C /* IOSIconGenerator.swift in Sources */,
+				B6A4F2A427CD078100BBDE7E /* ImageDropView.swift in Sources */,
+				B6789EBC27CA48A300D8B58C /* IosIconGenerator.swift in Sources */,
 				B67A4CC327C0F4D4009277FB /* CircleHueBarView.swift in Sources */,
 				B67A4CC927C10493009277FB /* SaturationBarView.swift in Sources */,
 				B64B202027A523A200AC2601 /* ToolMenuCell.swift in Sources */,
@@ -1140,11 +1156,13 @@
 				B65DB78027AC0EB400146A3C /* RegexTesterView+.swift in Sources */,
 				B6B5728F27ACFA6E0069DBA7 /* ImageDropper.swift in Sources */,
 				B680A89A27A8D9DD007CB707 /* Toast.swift in Sources */,
+				B6A4F2A227CD05F000BBDE7E /* QRCodeReaderView+.swift in Sources */,
 				B6D1AEF727A54F750022FED2 /* SectionButton.swift in Sources */,
 				B684EA2827C5EFE90014802F /* TextDiffView+.swift in Sources */,
 				B6789EE127CA5F6900D8B58C /* IcnsGenerator.swift in Sources */,
 				B63A035027C24BA0009FD2AD /* FFProgressReport.swift in Sources */,
 				B6A93D3327CBBC97003A6D7F /* IconSet.swift in Sources */,
+				B6D88A8B27D07204002E71EA /* CameraViewController.swift in Sources */,
 				B64B1E7627A4F5E200AC2601 /* AppViewController.swift in Sources */,
 				B67A4C5327C0EA84009277FB /* Ex+NSColor.swift in Sources */,
 				B6E294B327C3351F00314132 /* FFTask.swift in Sources */,
@@ -1162,9 +1180,11 @@
 				B6D1AEF427A54C440022FED2 /* Section.swift in Sources */,
 				B64B1F7227A4FDC800AC2601 /* AppModel.swift in Sources */,
 				B6D1AEFA27A557280022FED2 /* PopupButton.swift in Sources */,
+				B69980D727CCE09A0063F63D /* IcoGenerator.swift in Sources */,
 				B6789EE327CA5F7A00D8B58C /* IconFolderGenerator.swift in Sources */,
 				B6B5728A27ACDA420069DBA7 /* ImageConverterView+.swift in Sources */,
 				B67A4CCD27C12C09009277FB /* CircleBarsHSBColorPicker.swift in Sources */,
+				B69980D927CCEB320063F63D /* PngIconGenerator.swift in Sources */,
 				B6D1AEF027A547B90022FED2 /* JSONFormatterView+.swift in Sources */,
 				B64844FF27B767EC004FE02B /* ToolManager+.swift in Sources */,
 				B620142127A9271500AF5386 /* TextInspectorView+.swift in Sources */,

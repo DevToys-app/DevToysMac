@@ -8,17 +8,33 @@
 import CoreUtil
 
 enum AndroidIconGenerator {
-    struct ExportOptions: OptionSet {
-        let rawValue: UInt64
+    static func make(item: ImageItem, templete: IconTemplete, to destinationURL: URL) -> IconGenerateTask {
+        let image = templete.bake(image: item.image, scale: .x512) 
         
-        static let iphone = ExportOptions(rawValue: 1 << 0)
-        static let ipad = ExportOptions(rawValue: 1 << 1)
-        static let carplay = ExportOptions(rawValue: 1 << 2)
-        static let mac = ExportOptions(rawValue: 1 << 3)
-        static let applewatch = ExportOptions(rawValue: 1 << 4)
-    }
-    
-    static func make(item: ImageItem, options: ExportOptions, to destinationURL: URL) -> IconGenerateTask {
-        fatalError()
+        let complete = Promise<Void, Error>.tryAsync{
+            guard
+                let s48 = image.resizedAspectFit(to: [48, 48], fillColor: .clear).png,
+                let s72 = image.resizedAspectFit(to: [72, 72], fillColor: .clear).png,
+                let s96 = image.resizedAspectFit(to: [96, 96], fillColor: .clear).png,
+                let s144 = image.resizedAspectFit(to: [144, 144], fillColor: .clear).png,
+                let s192 = image.resizedAspectFit(to: [192, 192], fillColor: .clear).png,
+                let s512 = image.resizedAspectFit(to: [512, 512], fillColor: .clear).png
+            else { throw IconGenerateError.convertError }
+            
+            do {
+                try FileManager.default.createDirectory(at: destinationURL, withIntermediateDirectories: true, attributes: nil)
+                
+                try s48.write(to: destinationURL.appendingPathComponent("icon_mdpi.png"))
+                try s72.write(to: destinationURL.appendingPathComponent("icon_hdpi.png"))
+                try s96.write(to: destinationURL.appendingPathComponent("icon_xhdpi.png"))
+                try s144.write(to: destinationURL.appendingPathComponent("icon_xxhdpi.png"))
+                try s192.write(to: destinationURL.appendingPathComponent("icon_xxxhdpi.png"))
+                try s512.write(to: destinationURL.appendingPathComponent("play_store.png"))
+            } catch {
+                throw IconGenerateError.exportError(error)
+            }
+        }
+            
+        return .init(imageItem: item, complete: complete)
     }
 }
