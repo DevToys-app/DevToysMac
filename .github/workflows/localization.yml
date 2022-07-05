@@ -5,8 +5,8 @@ name: Crowdin Action
 
 # Controls when the action will run.
 on:
-  schedule:
-    - cron: '0 */6 * * *' # Every 6 hours - https://crontab.guru/#0_*/6_*_*_*
+  #schedule:
+    #- cron: '0 */6 * * *' # Every 6 hours - https://crontab.guru/#0_*/6_*_*_*
   push: #temporary
     branches: [ main ]
 
