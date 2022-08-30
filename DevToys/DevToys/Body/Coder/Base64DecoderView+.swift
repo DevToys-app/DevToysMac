@@ -19,7 +19,7 @@ final class Base64DecoderViewController: NSViewController {
     override func viewDidLoad() {
         self.cell.inputTextSection.stringPublisher
             .sink{[unowned self] in self.rawString = $0; self.formattedString = encode($0) }.store(in: &objectBag)
-        self.cell.inputTextSection.stringPublisher
+        self.cell.encodeTextSection.stringPublisher
             .sink{[unowned self] in self.formattedString = $0; self.rawString = decode($0) }.store(in: &objectBag)
         self.cell.sourceTypePicker.itemPublisher
             .sink{[unowned self] in self.sourceType = $0 }.store(in: &objectBag)
