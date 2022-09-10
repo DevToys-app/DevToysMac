@@ -50,6 +50,7 @@ final private class DateConverterView: Page {
     let nowButton = Button(title: "Now")
     let unixTimeField = NumberField()
     let isoDateField = TextField(showCopyButton: false)
+    let timestampDateField = TextField(showCopyButton: false)
     let graphicDatePicker = NSDatePicker()
     
     override func onAwake() {        
@@ -70,6 +71,7 @@ final private class DateConverterView: Page {
             make.height.equalTo(R.Size.controlHeight)
         }
         self.addSection(Section(title: "ISO 8601".localized(), items: [isoDateField]))
+        self.addSection(Section(title: "Timestamp".localized(), items: [timestampDateField]))
         
         self.addSection(Section(title: "Calender".localized(), items: [graphicDatePicker]))
         self.graphicDatePicker.datePickerStyle = .clockAndCalendar
