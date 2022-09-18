@@ -1412,7 +1412,7 @@
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.0.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuki.DevToys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1445,7 +1445,7 @@
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 					"$(PROJECT_DIR)/DevToys/Body/Media/Image\\ Optimizer",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.0.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuki.DevToys;
 				PRODUCT_NAME = "$(TARGET_NAME)";

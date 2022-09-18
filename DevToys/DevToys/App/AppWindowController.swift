@@ -12,7 +12,6 @@ import AppKit
 final class AppWindowController: NSWindowController {
     private let appModel = AppModel()
     
-    @available(macOS 11.0, *)
     private lazy var separatorItem = NSTrackingSeparatorToolbarItem(
         identifier: AppWindowController.separatorItemIdentifier, splitView: splitViewController.splitView, dividerIndex: 0
     )

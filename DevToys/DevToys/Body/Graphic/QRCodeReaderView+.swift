@@ -29,6 +29,8 @@ final class QRCodeReaderViewController: NSViewController {
             .sink{[unowned self] in self.image = $0.image.ciImage; updateDetection() }.store(in: &objectBag)
         self.cell.inputTypePicker.itemPublisher
             .sink{[unowned self] in self.inputType = $0; updateCameraState() }.store(in: &objectBag)
+        self.cell.inputClearButton.actionPublisher
+            .sink{[unowned self] in self.image = nil; resetDetectionState() }.store(in: &objectBag)
         
         self.$image.map{ $0.map{ NSImage(ciImage: $0) } }
             .sink{[unowned self] in self.cell.imageDropView.image = $0 }.store(in: &objectBag)
@@ -59,9 +61,14 @@ final class QRCodeReaderViewController: NSViewController {
         self.cameraManager.stopSession()
     }
     
+    private func resetDetectionState() {
+        self.detectedBound = nil
+        self.detectedMessage = ""
+    }
+    
     private func updateDetection() {
         guard abs(lastUpdate.timeIntervalSinceNow) > 1 else { return }
-        guard let image = image else { detectedBound = nil; return }
+        guard let image = image else { resetDetectionState(); return }
         
         self.lastUpdate = Date()
         self.readQRCode(image)
@@ -101,6 +108,7 @@ enum QRCodeInputType: String, TextItem {
 final private class QRCodeReaderView: Page {
     
     let inputTypePicker = EnumPopupButton<QRCodeInputType>()
+    let inputClearButton = SectionButton(image: R.Image.clear)
     let imageDropView = QRImageDropView()
     let outputTextView = TextViewSection(title: "Output".localized(), options: .defaultOutput)
     
@@ -113,11 +121,12 @@ final private class QRCodeReaderView: Page {
     }
     
     override func onAwake() {
-        self.addSection(Section(title: "Configuration".localized(), items: [
+        self.addSection(Section(
+            title: "Configuration".localized(), items: [
             Area(icon: R.Image.paramators, title: "QR Code Input Type", control: inputTypePicker)
         ]))
         self.addSection2(
-            Section(title: "Input".localized(), items: [imageDropView]),
+            Section(title: "Input".localized(), items: [imageDropView], toolbarItems: [inputClearButton]),
             outputTextView
         )
         
