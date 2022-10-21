@@ -21,7 +21,7 @@ class ImageDropView: NSLoadView {
     let imageView = NSImageView()
     
     private let backgroundLayer = ControlBackgroundLayer.animationDisabled()
-    private let dropIndicator = DropIndicatorView(title: "Drop Image Here")
+    private let dropIndicator = DropIndicatorView(title: "Drop Image Here".localized())
     
     override func layout() {
         super.layout()

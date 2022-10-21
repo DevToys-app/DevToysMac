@@ -175,12 +175,12 @@ final private class IconGeneratorView: Page {
     let scalePicker = EnumPopupButton<IconSet.Scale>()
     lazy var scalePickerArea = Area(icon: R.Image.paramators, title: "Scale", control: scalePicker)
     let clearButton = SectionButton(title: "Clear".localized(), image: R.Image.clear)
-    let exportButton = Button(title: "Export")
+    let exportButton = Button(title: "Export".localized())
     
     override func onAwake() {
         self.addSection(Section(title: "Configuration".localized(), items: [
-            Area(icon: R.Image.export, title: "Icon Export Type", control: exportTypePicker),
-            Area(icon: R.Image.paramators, title: "Templetes", control: iconTempletePicker)
+            Area(icon: R.Image.export, title: "Icon Export Type".localized(), control: exportTypePicker),
+            Area(icon: R.Image.paramators, title: "Templates".localized(), control: iconTempletePicker)
         ]))
         
         self.addSection2(
@@ -192,7 +192,7 @@ final private class IconGeneratorView: Page {
                 }
             ], toolbarItems: [clearButton]),
             
-            Section(title: "Options", items: [
+            Section(title: "Options".localized(), items: [
                 scalePickerArea,
                 iosOptionsView,
                 exportButton
