@@ -48,7 +48,7 @@
 "6dh-zS-Vam.title" = "Opakovat akci";
 
 /* Class = "NSMenuItem"; title = "Correct Spelling Automatically"; ObjectID = "78Y-hA-62v"; */
-"78Y-hA-62v.title" = "Automaticky opravovat pravopips";
+"78Y-hA-62v.title" = "Automaticky opravovat pravopis";
 
 /* Class = "NSMenu"; title = "Writing Direction"; ObjectID = "8mr-sm-Yjd"; */
 "8mr-sm-Yjd.title" = "Směr psaní";
@@ -138,7 +138,7 @@
 "Kd2-mp-pUS.title" = "Zobrazit vše";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
-"LE2-aR-0XJ.title" = "Převést vše do popředí";
+"LE2-aR-0XJ.title" = "Přenést vše do popředí";
 
 /* Class = "NSMenuItem"; title = "Paste Ruler"; ObjectID = "LVM-kO-fVI"; */
 "LVM-kO-fVI.title" = "Vložit pravítko";
