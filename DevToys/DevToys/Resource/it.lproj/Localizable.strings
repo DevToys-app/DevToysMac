@@ -1,0 +1,241 @@
+/*
+  Localizable.strings
+  DevToys
+
+  Created by ookiisan on 2022/11/07.
+  
+*/
+
+// - General -
+"Configuration" = "Configurazione";
+"Format" = "Formato";
+"Pretty" = "Leggibile";
+"Minified" = "Compatto";
+"Encoded" = "Codificato";
+"Decoded" = "Decodificato";
+"File" = "File";
+"Text" = "Testo";
+"Copy" = "Copia";
+"Paste" = "Incolla";
+"Copied!" = "Copiato!";
+"Pasted!" = "Incollato";
+"Open" = "Apri";
+"Export" = "Esporta";
+"Import" = "Importa";
+"Input" = "Input";
+"Output" = "Output";
+"No selection" = "Nessuna selezione";
+"Drop Files Here" = "Rilascia i file qui";
+"Untitled Tool" = "Strumento senza nome";
+"Uppercase" = "Maiuscolo";
+"Hyphens" = "Trattini";
+"Type" = "Tipo";
+"Length" = "Lunghezza";
+"Convert" = "Converti";
+"Information" = "Informazione";
+"Clear" = "Pulisci";
+"Delete" = "Cancella";
+"Open in Finder" = "Apri in Finder";
+"Quick Look" = "Visualizzazione rapida";
+"Default" = "Predefinito";
+
+// - Category -
+"category.home" = "Home";
+"category.converters" = "Convertitori";
+"category.encoders_decoders" = "Codificatori / Decodificatori";
+"category.formatters" = "Formattatori";
+"category.generators" = "Generatori";
+"category.text" = "Testo";
+"category.graphic" = "Grafica";
+"Media" = "Media";
+
+// - Tool -
+"tool.home.title" = "Home";
+"tool.home.mintitle" = "Home";
+"tool.home.description" = "Cerca qui gli strumenti.";
+
+"tool.jsonyaml.title" = "Convertitore JSON <> YAML";
+"tool.jsonyaml.mintitle" = "JSON <> YAML";
+"tool.jsonyaml.description" = "Converte dati da JSON a YAML e viceversa";
+
+"tool.numbase.title" = "Convertitore di base numerica";
+"tool.numbase.mintitle" = "Base numerica";
+"tool.numbase.description" = "Converte numberi da una base numerica all'altra";
+"Format Number" = "Formatta numero";
+"Decimal" = "Decimale";
+"Hexdecimal" = "Esadecimale";
+"Octal" = "Ottale";
+"Binary" = "Binario";
+
+"tool.date.title" = "Convertitore di data";
+"tool.date.mintitle" = "Data";
+"tool.date.description" = "Converte date da un formato all'altro";
+"Now" = "Adesso";
+"Date" = "Data";
+"Unix Time" = "Tempo Unix";
+"ISO 8601" = "ISO 8601";
+"Timestamp" = "Marca temporale";
+"Calender" = "Calendario";
+
+"tool.html.title" = "Codificatore / Decodificatore HTML";
+"tool.html.mintitle" = "HTML";
+"tool.html.description" = "Codifica o decodifica tutti i caratteri speciali presenti nel codice HTML";
+
+"tool.url.title" = "Codificatore / Decodificatore URL";
+"tool.url.mintitle" = "URL";
+"tool.url.description" = "Codifica o decodifica tutti i caratteri speciali presenti nel URL";
+
+"tool.base64.title" = "Codificatore / Decodificatore  Base64";
+"tool.base64.mintitle" = "Base64";
+"tool.base64.description" = "Codifica o decodifica dati espressi in Base64";
+"Source Type" = "Tipo della sorgente";
+"Text Source" = "Testo";
+"File Source" = "File";
+
+"tool.jwt.title" = "Codificatore / Decodificatore JWT";
+"tool.jwt.mintitle" = "JWT";
+"tool.jwt.description" = "Codifica o decodifica header e payload del JSON Web Token";
+"JWT Token" = "JSON Web Token";
+"Header" = "Header";
+"Payload" = "Payload";
+
+"tool.jsonformat.title" = "Formattatore JSON";
+"tool.jsonformat.mintitle" = "JSON";
+"tool.jsonformat.description" = "Indenta o compatta dati in formato JSON";
+"Indentation" = "Indentazione";
+"2 Spaces" = "2 Spazi";
+"4 Spaces" = "4 Spazi";
+"1 Tab" = "1 Tabulatore";
+
+"tool.xmlformat.title" = "Formattatore XML";
+"tool.xmlformat.mintitle" = "XML";
+"tool.xmlformat.description" = "Indenta o compatta dati in formato XML";
+"HTML Document" = "Documento HTML";
+"XML Document" = "Documento XML";
+"Document Type" = "Tipo di documento";
+"Auto Fix Document" = "Correzione automatica";
+"Pretty Document" = "Rendi leggibile";
+
+"tool.hashgen.title" = "Generatore di Hash";
+"tool.hashgen.mintitle" = "Hash";
+"tool.hashgen.description" = "Calcola hash MD5, SHA1, SHA256 e SHA512 a partire da un testo";
+
+"tool.uuidgen.title" = "Generatore di UUID";
+"tool.uuidgen.mintitle" = "UUID";
+"tool.uuidgen.description" = "Genera UUID";
+"Generate UUIDs" = "Genera UUID";
+
+"tool.ligen.title" = "Generatore di Lorem Ipsum";
+"tool.ligen.mintitle" = "Lorem Ipsum";
+"tool.ligen.description" = "Genera del testo segnaposto Lorem Ipsum";
+"Type of generating Lorem Ipsum" = "Tipo di generazione del Lorem Ipsum";
+"Length of generating Lorem Ipsum" = "Lunghezza del Lorem Ipsum";
+"Words" = "Parole";
+"Sentences" = "Frasi";
+"Paragraphs" = "Paragrafi";
+
+"tool.checksum.title" = "Generatore di Checksum";
+"tool.checksum.mintitle" = "Checksum";
+"tool.checksum.description" = "Genera o verifica la checksum di un file";
+"Output Comparer" = "Comparatore di output";
+"Hash Algorithm" = "Algoritmo di hashing";
+"Select which algorithm you want to use" = "Seleziona l'algoritmo da usare";
+
+"tool.textinspect.title" = "Convertitore maiuscolo/minuscolo";
+"tool.textinspect.mintitle" = "Convertitore maiuscolo/minuscolo";
+"tool.textinspect.description" = "Analizza il testo e lo converte in maiuscolo/minuscolo";
+"Charactors" = "Caratteri";
+"Words" = "Parole";
+"Lines" = "Linee";
+"Bytes" = "Bytes";
+
+"tool.regex.title" = "Verifica espressione regolare";
+"tool.regex.mintitle" = "Espressione regolare";
+"tool.regex.description" = "Verifica espressioni regolari";
+"Reguler expression" = "Espressione regolare";
+
+"tool.hyphenremove.title" = "Rimozione di sillabazione";
+"tool.hyphenremove.mintitle" = "Sillabazione";
+"tool.hyphenremove.description" = "Rimuove la sillabazione derivante dalla copia di testo da un file PDF";
+
+"tool.imageoptim.title" = "Compressore PNG / JPEG";
+"tool.imageoptim.mintitle" = "Compressore PNG / JPEG";
+"tool.imageoptim.description" = "Ottimizzatore PNG / JPEG senza perdita di qualità";
+"Optimize Level" = "Livello di ottimizzazione";
+"Low" = "Basso";
+"Medium" = "Medio";
+"High" = "Alto";
+"Very High (Slow)" = "Molto alto (Lento)";
+"Override original file" = "Sovrascrivi file originale";
+
+"tool.pdfgen.title" = "Generatore PDF";
+"tool.pdfgen.mintitle" = "Generatore PDF";
+"tool.pdfgen.description" = "Genera PDF da più immagini";
+"Images" = "Immagini";
+"Size" = "Dimensione";
+"Generate PDF" = "Genera PDF";
+"Page" = "Pagina";
+
+"tool.imageconvert.title" = "Convertitore di immagini";
+"tool.imageconvert.mintitle" = "Convertitore di immagini";
+"tool.imageconvert.description" = "Converte o ridimensiona immagini";
+"PNG Format" = "Formato PNG";
+"JPEG Format" = "Formato JPEG";
+"TIFF Format" = "Formato TIFF";
+"GIF Format" = "Formato GIF";
+"Scale to Fill" = "Scala per riempire";
+"Scale to Fit" = "Scala per adattare";
+"Image Format" = "Formato dell'immagine";
+"Resize" = "Ridimensiona";
+"Converted Images" = "Immagini convertite";
+"Scale" = "Scala";
+"Size" = "Dimensione";
+
+"QR Code Generator" = "Generatore di QR code";
+"Create a QR code from text" = "Crea un QR code da un testo";
+"Correction Level" = "Livello di correzione";
+"QR Code" = "QR Code";
+
+"Settings" = "Impostazioni";
+"Setting of application" = "Impostazioni dell'applicazione";
+"App Theme" = "Tema grafico";
+"Select which app theme to display" = "Seleziona quale tema grafico usare";
+"Use system setting" = "Usa le impostazioni di sistema";
+"Light mode" = "Modalità chiara";
+"Dark mode" = "Modalità scura";
+
+"Color Picker" = "Selettore di colore";
+"Picker the color and copy components" = "A partire da un colore selezionato ne genera la rapprentazione in uno specifico modello di colore";
+"HSB Box" = "Box HSB";
+"HSB Circle" = "Cerchio HSB";
+"HSB Circle and Bars" = "Cerchio e barre HSB";
+"Pick Color" = "Seleziona un colore";
+"Picker Type" = "Tipo di selezione";
+"Color Hex" = "Esadecimale";
+"Color Copy" = "Rappresentazione del colore";
+"Color Copy Type" = "Tipo";
+
+"Gif Converter" = "Convertitore di GIF";
+"Convert a movie to an animated GIF file" = "Converte un filamto in una file GIF animato";
+"Width" = "Larghezza";
+"The width of the Gif file" = "Larghezza GIF (l'altezza è calcolata automaticamente)";
+"FPS" = "FPS";
+"FPS of the Gif file to be exported" = "FPS del file GIF da esportare";
+"Remove source file" = "Rimuovi file sorgente";
+"Whether to delete the source file after exporting a Gif" = "Indica se eliminare il file sorgente dopo l'esportazione del file GIF";
+
+"Audio Converter" = "Convertitore Audio";
+"Convert audio from one format to another" = "Converte un file audio da un formato all'altro";
+"Whether to delete the source file after exporting a Audio" = "Indica se eliminare il file sorgente dopo l'esportazione del file audio";
+"Starting..." = "Inizio...";
+"Complete" = "Completato";
+"Convert Failed" = "Errore di conversione";
+
+"Text Diff" = "Differenze di testo";
+"Compare two Text and display Diff" = "Confronta due testi e mostra le differenze";
+"By Characters" = "Caratteri";
+"By Words" = "Parole";
+"By Lines" = "Linee";
+"Input 1" = "Testo 1";
+"Input 2" = "Testo 2";
+"Diff Style" = "Stile di confronto";
