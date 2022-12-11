@@ -416,6 +416,8 @@
 		B6E294B227C3351F00314132 /* FFTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFTask.swift; sourceTree = "<group>"; };
 		B6E294E427C337F300314132 /* FFThumnailGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFThumnailGenerator.swift; sourceTree = "<group>"; };
 		B6ED863527BFE7DC00A17474 /* DefaultImageExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageExporter.swift; sourceTree = "<group>"; };
+		C08A00142943CCE700C687A0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		C08A00152943CCE800C687A0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1002,6 +1004,7 @@
 				"pt-BR",
 				de,
 				es,
+				fr,
 			);
 			mainGroup = B64B1E6727A4F5E200AC2601;
 			packageReferences = (
@@ -1252,6 +1255,7 @@
 				B67A4CD527C1E0DF009277FB /* ja */,
 				B67A4CD727C1E0F1009277FB /* de */,
 				B67A4CD927C1E469009277FB /* es */,
+				C08A00142943CCE700C687A0 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1265,6 +1269,7 @@
 				B67A4CD127C1E03C009277FB /* pt-BR */,
 				B67A4CD827C1E0F8009277FB /* de */,
 				B67A4CDA27C1E46A009277FB /* es */,
+				C08A00152943CCE800C687A0 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
