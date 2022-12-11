@@ -1,0 +1,244 @@
+/*
+  Localizable.strings
+  DevToys
+
+  Created by Nils on 2022/12/11.
+  
+*/
+
+// - General -
+"Configuration" = "Configuration";
+"Format" = "Formater";
+"Pretty" = "Joli";
+"Minified" = "Minifé";
+"Encoded" = "Encodé";
+"Decoded" = "Décodé";
+"File" = "Fichier";
+"Text" = "Texte";
+"Copy" = "Copier";
+"Paste" = "Coller";
+"Copied!" = "Copié!";
+"Pasted!" = "Collé!";
+"Open" = "Ouvrir";
+"Export" = "Exporter";
+"Import" = "Importer";
+"Input" = "Entrée";
+"Output" = "Sortie";
+"No selection" = "Aucune sélection";
+"Drop Files Here" = "Déposer les fichiers ici";
+"Untitled Tool" = "Outil sans nom";
+"Uppercase" = "Majuscule";
+"Hyphens" = "Traits d'union";
+"Type" = "Type";
+"Length" = "Longeur";
+"Convert" = "Convertir";
+"Information" = "Information";
+"Clear" = "Réinitaliser";
+"Delete" = "Suprimer";
+"Open in Finder" = "Ouvrir dans Finder";
+"Quick Look" = "Coup d'oeil";
+"Default" = "Defaut";
+
+// - Category -
+"category.home" = "Maison";
+"category.converters" = "Convertisseur";
+"category.encoders_decoders" = "Encodeurs / Décodeurs";
+"category.formatters" = "Formateurs";
+"category.generators" = "Générateurs";
+"category.text" = "Texte";
+"category.graphic" = "Graphiques";
+"Media" = "Media";
+
+// - Tool -
+"tool.home.title" = "Maison";
+"tool.home.mintitle" = "Maison";
+"tool.home.description" = "Rechercher tous les outils ici";
+
+"tool.jsonyaml.title" = "Convertiseur JSON <> Yaml";
+"tool.jsonyaml.mintitle" = "JSON <> Yaml";
+"tool.jsonyaml.description" = "Convertie des données Json en donnée Yaml et vice versa";
+
+"tool.numbase.title" = "Convertisseur de bases";
+"tool.numbase.mintitle" = "Base";
+"tool.numbase.description" = "Convertis un nombre d'une base à une autre";
+"Format Number" = "Formater le nombre";
+"Decimal" = "Décimal";
+"Hexdecimal" = "Hexadecimal";
+"Octal" = "Octal";
+"Binary" = "Binaire";
+
+"tool.date.title" = "Convertisseur de Dates";
+"tool.date.mintitle" = "Date";
+"tool.date.description" = "Convertie des dates d'un format à un autre";
+"Now" = "Maintenant";
+"Date" = "Date";
+"Unix Time" = "Heure Unix";
+"ISO 8601" = "ISO 8601";
+"Calender" = "Calendrier";
+
+"tool.html.title" = "Encodeur / Décodeur HTML";
+"tool.html.mintitle" = "HTML";
+"tool.html.description" = "Encode et décode tout les caractères spéciaux en HTML";
+
+"tool.url.title" = "Encodeur / Décodeur d'URL";
+"tool.url.mintitle" = "URL";
+"tool.url.description" = "Encode et décode tout les caractères spéciaux d'une URL";
+
+"tool.base64.title" = "Encodeur / Decodeur de Base64";
+"tool.base64.mintitle" = "Base64";
+"tool.base64.description" = "Encode et décode des données en Base64";
+"Source Type" = "Type de source";
+"Text Source" = "Source texte";
+"File Source" = "Fichier source";
+
+"tool.jwt.title" = "Encodeur / Decodeur JWT";
+"tool.jwt.mintitle" = "JWT";
+"tool.jwt.description" = "Décode la tête et le corps d'un message JWT";
+"JWT Token" = "JWT Token";
+"Header" = "Tête";
+"Payload" = "Corp";
+
+"tool.jsonformat.title" = "Formateur de JSON";
+"tool.jsonformat.mintitle" = "JSON";
+"tool.jsonformat.description" = "Indente ou minify des données Json";
+"Indentation" = "Indentation";
+"2 Spaces" = "2 espaces";
+"4 Spaces" = "4 espaces";
+"1 Tab" = "1 Tabulation";
+
+"tool.xmlformat.title" = "Formateur XML";
+"tool.xmlformat.mintitle" = "XML";
+"tool.xmlformat.description" = "Indente ou minify des données XML";
+"HTML Document" = "Document HTML";
+"XML Document" = "Document XML";
+"Document Type" = "Type de document";
+"Auto Fix Document" = "Réparer automatiquement";
+"Pretty Document" = "Enjolifer le document";
+
+"tool.hashgen.title" = "Générateur de Hash";
+"tool.hashgen.mintitle" = "Hash";
+"tool.hashgen.description" = "Calcule MD5, SHA1, SHA256 and SHA 512 hash apart du texte";
+
+"tool.uuidgen.title" = "Générateur UUID";
+"tool.uuidgen.mintitle" = "UUID";
+"tool.uuidgen.description" = "Génère des UUIDs";
+"Generate UUIDs" = "Générez UUIDs";
+
+"tool.ligen.title" = "Générateur de Lorem Ipsum";
+"tool.ligen.mintitle" = "Lorem Ipsum";
+"tool.ligen.description" = "Génère du texte Lorem Ipsum";
+"Type of generating Lorem Ipsum" = "Type de génération de Lorem Ipsum";
+"Length of generating Lorem Ipsum" = "Longueurs de la génération du Lorem Ipsum";
+"Words" = "Mots";
+"Sentences" = "Phrases";
+"Paragraphs" = "Paragraphes";
+
+"tool.checksum.title" = "Vérificateur de Checksum";
+"tool.checksum.mintitle" = "Checksum";
+"tool.checksum.description" = "Génère ou vérifie le Checksum";
+"Output Comparer" = "Comparer les sorties";
+"Hash Algorithm" = "Algoritme de Hash";
+"Select which algorithm you want to use" = "Sélectionner l'algorithme";
+
+"tool.checksum.title" = "Générateur de Checksum";
+"tool.checksum.mintitle" = "Checksum";
+"tool.checksum.description" = "Génère ou vérifie le Checksum";
+
+"tool.textinspect.title" = "Inspecteur de texte et convertisseur de casse";
+"tool.textinspect.mintitle" = "Inspecteur & convertisseur de casse";
+"tool.textinspect.description" = "Analyse un texte et convertis la casse";
+"Charactors" = "Characters";
+"Words" = "Mots";
+"Lines" = "Lignes";
+"Bytes" = "Bites";
+
+"tool.regex.title" = "Vérificateur de Regex";
+"tool.regex.mintitle" = "Regex";
+"tool.regex.description" = "Vérifie une expression régulière";
+"Reguler expression" = "Expression régulière";
+
+"tool.hyphenremove.title" = "Spresseur de césure";
+"tool.hyphenremove.mintitle" = "Césure";
+"tool.hyphenremove.description" = "Retire les césures du texte copié d'un PDF";
+
+"tool.imageoptim.title" = "Compresseur PNG / JPEG";
+"tool.imageoptim.mintitle" = "Compresseur PNG / JPEG";
+"tool.imageoptim.description" = "Optimise sans perte les PNG et JPEG";
+"Optimize Level" = "Niveau d'optimisation";
+"Low" = "Faible";
+"Medium" = "Moyenne";
+"High" = "Fort";
+"Very High (Slow)" = "Très fort (lent)";
+"Override original file" = "Écrase le fichier original";
+
+"tool.pdfgen.title" = "Générateur de PDF";
+"tool.pdfgen.mintitle" = "Générateur de PDF";
+"tool.pdfgen.description" = "Génère un PDF avec plusieurs images";
+"Images" = "Images";
+"Size" = "Tailles";
+"Generate PDF" = "Générer le PDF";
+"Page" = "Page";
+
+"tool.imageconvert.title" = "Convertisseur d'images";
+"tool.imageconvert.mintitle" = "Convertisseur d'images";
+"tool.imageconvert.description" = "Convertis ou redimensionne une image";
+"PNG Format" = "Format PNG";
+"JPEG Format" = "Format JPEG";
+"TIFF Format" = "Format TIFF";
+"GIF Format" = "Format GIF";
+"Scale to Fill" = "Ajuster pour remplir";
+"Scale to Fit" = "Ajuster pour adapter";
+"Image Format" = "Format de l'image";
+"Resize" = "Redimensioner";
+"Converted Images" = "Images converties";
+"Scale" = "Échel";
+"Size" = "Tailles";
+
+"QR Code Generator" = "Générateur de code QR";
+"Create a QR code from text" = "Crée un code QR à partir d'un texte";
+"Correction Level" = "Niveau de correction";
+"QR Code" = "Code QR";
+
+"Settings" = "Paramètre";
+"Setting of application" = "Paramètre de l'application";
+"App Theme" = "Thème de l’application";
+"Select which app theme to display" = "Sélectionner le thème à afficher";
+"Use system setting" = "Utiliser les paramètres système";
+"Light mode" = "Thème clair";
+"Dark mode" = "Thème sombre";
+
+"Color Picker" = "Pipette de couleurs";
+"Picker the color and copy components" = "Sélectionne une couleur et copie la couleur formatée";
+"HSB Box" = "Boite HSB";
+"HSB Circle" = "Cercle HSB";
+"HSB Circle and Bars" = "Bar et cercle HSB";
+"Pick Color" = "Choisir une couleur";
+"Picker Type" = "Type de pipette";
+"Color Hex" = "Couleur Hex";
+"Color Copy" = "Copier la couleur";
+"Color Copy Type" = "Type";
+
+"Gif Converter" = "Convertisseur de GIF";
+"Convert a movie to an animated GIF file" = "Convertis une vidéo vers un GIF animé";
+"Width" = "Largeur";
+"The width of the Gif file" = "La largeur du GIF (la hauteur va être calculée)";
+"FPS" = "FPS";
+"FPS of the Gif file to be exported" = "FPS du GIF à exporter";
+"Remove source file" = "Suprimer le ficher source";
+"Whether to delete the source file after exporting a Gif" = "Chois si l'on veut supprimer le fichier source ou pas après l'exportation";
+
+"Audio Converter" = "Convertisseur audio";
+"Convert audio from one format to another" = "Convertis un format vers un autre";
+"Whether to delete the source file after exporting a Audio" = "Choisie si l'on veut supprimer la fichue source ou pas après l'exportation";
+"Starting..." = "Débute...";
+"Complete" = "Complété";
+"Convert Failed" = "Convertion échoué";
+
+"Text Diff" = "Différence de texte";
+"Compare two Text and display Diff" = "Compare deux textes et affiche les différences";
+"By Characters" = "Charactère";
+"By Words" = "Mots";
+"By Lines" = "Lignes";
+"Input 1" = "Entrée 1";
+"Input 2" = "Entrée 2";
+"Diff Style" = "Style de différence";
