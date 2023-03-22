@@ -16,9 +16,9 @@
 "File" = "文件";
 "Text" = "文本";
 "Copy" = "复制";
-"Paste" = "黏贴";
+"Paste" = "粘贴";
 "Copied!" = "复制!";
-"Pasted!" = "黏贴!";
+"Pasted!" = "粘贴!";
 "Open" = "打开";
 "Export" = "导出";
 "Import" = "导入";
