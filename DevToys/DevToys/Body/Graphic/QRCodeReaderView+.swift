@@ -102,7 +102,7 @@ enum QRCodeInputType: String, TextItem {
     case photo = "Photo"
     case camera = "Camera"
     
-    var title: String { rawValue }
+    var title: String { rawValue.localized() }
 }
 
 final private class QRCodeReaderView: Page {
@@ -123,7 +123,7 @@ final private class QRCodeReaderView: Page {
     override func onAwake() {
         self.addSection(Section(
             title: "Configuration".localized(), items: [
-            Area(icon: R.Image.paramators, title: "QR Code Input Type", control: inputTypePicker)
+                Area(icon: R.Image.paramators, title: "QR Code Input Type".localized(), control: inputTypePicker)
         ]))
         self.addSection2(
             Section(title: "Input".localized(), items: [imageDropView], toolbarItems: [inputClearButton]),

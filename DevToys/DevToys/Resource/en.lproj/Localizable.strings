@@ -93,7 +93,7 @@
 
 "tool.jwt.title" = "JWT Encoder / Decoder";
 "tool.jwt.mintitle" = "JWT";
-"tool.jwt.description" = "Decode a JWT header playload and signature";
+"tool.jwt.description" = "Decode a JWT header payload and signature";
 "JWT Token" = "JWT Token";
 "Header" = "Header";
 "Payload" = "Payload";

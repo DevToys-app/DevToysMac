@@ -1,0 +1,258 @@
+/*
+  Localizable.strings
+  DevToys
+
+  Created by JiriSko on 2022/10/21.
+  
+*/
+
+// - General -
+"Configuration" = "Konfigurace";
+"Format" = "Formát";
+"Pretty" = "Čitelný";
+"Minified" = "Minifikovaný";
+"Encoded" = "Zakódováno";
+"Decoded" = "Dekódováno";
+"File" = "Soubor";
+"Text" = "Text";
+"Copy" = "Kopírovat";
+"Paste" = "Vložit";
+"Copied!" = "Zkopírováno!";
+"Pasted!" = "Vloženo";
+"Open" = "Otevřít";
+"Export" = "Exportovat";
+"Import" = "Importovat";
+"Input" = "Vstup";
+"Output" = "Výstup";
+"No selection" = "Nevybráno";
+"Drop Files Here" = "Sem přetáhněte soubory";
+"Drop Image Here" = "Sem přetáhněte obrázek";
+"Untitled Tool" = "Nepojmenovaný nástroj";
+"Uppercase" = "Velká písmena";
+"Hyphens" = "Pomlčky";
+"Type" = "Typ";
+"Length" = "Délka";
+"Convert" = "Převést";
+"Information" = "Informace";
+"Clear" = "Vyčistit";
+"Delete" = "Smazat";
+"Open in Finder" = "Zobrazit ve Finderu";
+"Quick Look" = "Rychlý náhled";
+"Default" = "Výchozí";
+"Files" = "Soubory";
+
+// - Category -
+"category.home" = "Všechny nástroje";
+"category.converters" = "Převodníky";
+"category.encoders_decoders" = "Kodéry / dekodéry";
+"category.formatters" = "Formátovače";
+"category.generators" = "Generátory";
+"category.text" = "Text";
+"category.graphic" = "Grafika";
+"Media" = "Média";
+
+// - Tool -
+"tool.home.title" = "Všechny nástroje";
+"tool.home.mintitle" = "Všechny";
+"tool.home.description" = "Projít všechny nástroje";
+
+"tool.jsonyaml.title" = "Převodník JSON <> YAML";
+"tool.jsonyaml.mintitle" = "JSON <> YAML";
+"tool.jsonyaml.description" = "Převod JSON na YAML a naoopak";
+
+"tool.numbase.title" = "Převodník číselných soustav";
+"tool.numbase.mintitle" = "Číselné soustavy";
+"tool.numbase.description" = "Převod čísel z jedné soustavy do jiné";
+"Format Number" = "Formátovat čísla";
+"Decimal" = "Desítková";
+"Hexdecimal" = "Šestnáctková";
+"Octal" = "Osmičková";
+"Binary" = "Dvojková";
+
+"tool.date.title" = "Převodník data";
+"tool.date.mintitle" = "Datum";
+"tool.date.description" = "Převod data z jednoho formátu do jiného";
+"Now" = "Nyní";
+"Date" = "Datum";
+"Unix Time" = "Unixový čas";
+"ISO 8601" = "ISO 8601";
+"Calender" = "Kalendář";
+
+"tool.html.title" = "Kodér / dekodér HTML";
+"tool.html.mintitle" = "HTML";
+"tool.html.description" = "Kódovat nebo dekódovat všechny použitelné znaky na jim odpovídající HTML entity";
+
+"tool.url.title" = "Kodér / dekodér URL";
+"tool.url.mintitle" = "URL";
+"tool.url.description" = "Kódovat nebo dekódovat všechny použitelné znaky na jim odpovídající URL";
+
+"tool.base64.title" = "Kodér / dekodér Base64";
+"tool.base64.mintitle" = "Base64";
+"tool.base64.description" = "Kódování a dekódování Base64 dat";
+"Source Type" = "Typ zdroje";
+"Text Source" = "Text";
+"File Source" = "Soubor";
+
+"tool.jwt.title" = "Kodér / dekodér JWT";
+"tool.jwt.mintitle" = "JWT";
+"tool.jwt.description" = "Dekódování hlavičky a datového obsahu z JWT tokenu";
+"JWT Token" = "JWT token";
+"Header" = "Hlavička";
+"Payload" = "Datový obsah";
+
+"tool.jsonformat.title" = "Formátování JSON";
+"tool.jsonformat.mintitle" = "JSON";
+"tool.jsonformat.description" = "Odsadit nebo minifikovat JSON data";
+"Indentation" = "Odsazení";
+"2 Spaces" = "2 mezery";
+"4 Spaces" = "4 mezery";
+"1 Tab" = "1 tabulátor";
+
+"tool.xmlformat.title" = "Formátování XML";
+"tool.xmlformat.mintitle" = "XML";
+"tool.xmlformat.description" = "Odsadit nebo minifikovat XML data";
+"HTML Document" = "HTML dokument";
+"XML Document" = "XML dokument";
+"Document Type" = "Typ dokumentu";
+"Auto Fix Document" = "Automaticky opravovat dokument";
+"Pretty Document" = "Čitelný dokument";
+
+"tool.hashgen.title" = "Hash generátor";
+"tool.hashgen.mintitle" = "Hash";
+"tool.hashgen.description" = "Výpočet hashe MD5, SHA1, SHA256 a SHA 512 z textu";
+
+"tool.uuidgen.title" = "UUID generátor";
+"tool.uuidgen.mintitle" = "UUID";
+"tool.uuidgen.description" = "Generování univerzálního unikátního identifikátoru";
+"Generate UUIDs" = "Generovat UUID";
+
+"tool.ligen.title" = "Lorem Ipsum generátor";
+"tool.ligen.mintitle" = "Lorem Ipsum";
+"tool.ligen.description" = "Generování dočasného Lorem Ipsum textu";
+"Type of generating Lorem Ipsum" = "Typ generovaného Lorem Ipsum textu";
+"Length of generating Lorem Ipsum" = "Délka generovaného Lorem Ipsum textu";
+"Words" = "Slova";
+"Sentences" = "Věty";
+"Paragraphs" = "Odstavce";
+
+"tool.checksum.title" = "Generátor kontrolního součtu";
+"tool.checksum.mintitle" = "Kontrolní součet";
+"tool.checksum.description" = "Generování hashe s kontrolním součtem souboru";
+"Output Comparer" = "Porovnání s výstupem";
+"Hash Algorithm" = "Hashovací algoritmus";
+"Select which algorithm you want to use" = "Zvolte, který algoritmus chcete použít";
+
+"tool.textinspect.title" = "Převodník a inspektor velikosti písmen textu";
+"tool.textinspect.mintitle" = "Velikost písmen";
+"tool.textinspect.description" = "Analýza a převod velikosti písmen textu";
+"Charactors" = "Znaky";
+"Words" = "Slova";
+"Lines" = "Řádky";
+"Bytes" = "Bajty";
+
+"tool.regex.title" = "Tester regulárních výrazů";
+"tool.regex.mintitle" = "Regex";
+"tool.regex.description" = "Ověřování a testování regulárních výrazů";
+"Reguler expression" = "Regulární výraz";
+
+"tool.hyphenremove.title" = "Odstraňovač rozdělených slov";
+"tool.hyphenremove.mintitle" = "Rozdělování slov";
+"tool.hyphenremove.description" = "Odstranění zalomení slov v textu zkopírovaného z PDF";
+
+"tool.imageoptim.title" = "Kompresor PNG / JPEG";
+"tool.imageoptim.mintitle" = "Komprimování PNG / JPEG";
+"tool.imageoptim.description" = "Bezztrátová optimalizace PNG a JPEG";
+"Optimize Level" = "Úroveň optimalizace";
+"Low" = "Nízká";
+"Medium" = "Střední";
+"High" = "Vysoká";
+"Very High (Slow)" = "Velmi vysoká (pomalé)";
+"Override original file" = "Přepsat původní soubor";
+
+"tool.pdfgen.title" = "Generátor PDF";
+"tool.pdfgen.mintitle" = "Generátor PDF";
+"tool.pdfgen.description" = "Generování PDF z několika obrázků";
+"Images" = "Obrázky";
+"Size" = "Velikost";
+"Generate PDF" = "Generovat PDF";
+"Page" = "Strana";
+
+"tool.imageconvert.title" = "Převodník obrázků";
+"tool.imageconvert.mintitle" = "Převodník obrázků";
+"tool.imageconvert.description" = "Konverze obrázků a změna rozměrů";
+"PNG Format" = "PNG";
+"JPEG Format" = "JPEG";
+"TIFF Format" = "TIFF";
+"GIF Format" = "GIF";
+"Webp Format" = "WEBP";
+"Heic Format" = "HEIC";
+"Scale to Fill" = "Vyplnit plochu";
+"Scale to Fit" = "Neořezávat";
+"Image Format" = "Formát obrázku";
+"Resize" = "Změnit rozměry";
+"Converted Images" = "Převést obrázky";
+"Scale" = "Měřítko";
+
+"QR Code Generator" = "Generátor QR kódu";
+"Create a QR code from text" = "Vytvoření QR kódu z textu";
+"Correction Level" = "Úroveň korekce";
+"QR Code" = "QR kód";
+
+"Settings" = "Nastavení";
+"Setting of application" = "Nastavení aplikace";
+"App Theme" = "Téma";
+"Select which app theme to display" = "Zvolte, v jakém režimu se má aplikace zobrazit";
+"Use system setting" = "Použít systémové nastavení";
+"Light mode" = "Světlý režim";
+"Dark mode" = "Tmavý režim";
+
+"Color Picker" = "Výběr barvy";
+"Picker the color and copy components" = "Výběr a kopírování zformátované barvy";
+"HSB Box" = "HSB box";
+"HSB Circle" = "HSB kruh";
+"HSB Circle and Bars" = "HSB kruh a sloupce";
+"Pick Color" = "Vybrat barvu";
+"Picker Type" = "Typ výběru";
+"Color Hex" = "Barva hexadecimálně";
+"Color Copy" = "Kopírovat barvu";
+"Color Copy Type" = "Typ";
+
+"Gif Converter" = "GIF převodník";
+"Convert a movie to an animated GIF file" = "Převod videa do animovaného GIFu";
+"Width" = "Šířka";
+"The width of the Gif file" = "Šířka GIF souboru (výška se určí automaticky)";
+"FPS" = "FPS";
+"FPS of the Gif file to be exported" = "Snímkovací frekvence exportovaného GIF souboru";
+"Remove source file" = "Odstranit zdrojový soubor";
+"Whether to delete the source file after exporting a Gif" = "Zda odstranit zdrojový soubor po exportu GIFu";
+
+"Audio Converter" = "Audio převodník";
+"Convert audio from one format to another" = "Převod audia z jednoho formátu do jiného";
+"Whether to delete the source file after exporting a Audio" = "Zda odstranit zdrojový soubor po exportu audia";
+"Starting..." = "Spouštění...";
+"Complete" = "Dokončeno";
+"Convert Failed" = "Převod selhal";
+
+"Text Diff" = "Porovnávač textu";
+"Compare two Text and display Diff" = "Porovnání dvojice textů";
+"By Characters" = "Dle znaků";
+"By Words" = "Dle slov";
+"By Lines" = "Dle řádků";
+"Input 1" = "Vstup 1";
+"Input 2" = "Vstup 2";
+"Diff Style" = "Porovnávat";
+
+"Icon Generator" = "Generátor ikon";
+"Create a Icon from image" = "Vytvoření ikony z obrázku";
+"Icon Export Type" = "Typ exportované ikony";
+"Templates" = "Šablony";
+"Source" = "Zdroj";
+"Options" = "Možnosti";
+
+"QR Code Reader" = "Čtečka QR kódu";
+"Read QR Code from image or device camera" = "Čtení QR kódu z obrázku nebo fotoaparátu";
+"QR Code Input Type" = "Vstup QR kódu";
+"Photo" = "Fotka";
+"Camera" = "Fotoaparát";
+
+"SQL Formatter" = "Formátování SQL";

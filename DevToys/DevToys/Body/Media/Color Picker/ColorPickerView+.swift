@@ -219,7 +219,7 @@ final private class ColorPickerView: Page {
     let pickerPlaceholder = NSPlaceholderView()
     
     let colorSampleView = ColorSampleView()
-    let pixelPickerButton = SectionButton(title: "Pick Color", image: R.Image.spuit)
+    let pixelPickerButton = SectionButton(title: "Pick Color".localized(), image: R.Image.spuit)
     let alphaField = NumberField() => { $0.snp.makeConstraints{ make in make.width.equalTo(100) } }
     
     let colorCopyTypePicker = EnumPopupButton<ColorCopyType>()

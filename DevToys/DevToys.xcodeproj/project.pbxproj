@@ -225,6 +225,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		69F211362902EAEE006417C7 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Main.strings; sourceTree = "<group>"; };
+		69F211372902EAEE006417C7 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B42318727AD1BC0002D135A /* HyphenationRemoverView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HyphenationRemoverView+.swift"; sourceTree = "<group>"; };
 		B608540A27A66694003BF243 /* SectionButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SectionButton+.swift"; sourceTree = "<group>"; };
 		B608541127A66A90003BF243 /* JSONYamlConverterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONYamlConverterView+.swift"; sourceTree = "<group>"; };
@@ -1002,6 +1004,7 @@
 				"pt-BR",
 				de,
 				es,
+				cs,
 			);
 			mainGroup = B64B1E6727A4F5E200AC2601;
 			packageReferences = (
@@ -1252,6 +1255,7 @@
 				B67A4CD527C1E0DF009277FB /* ja */,
 				B67A4CD727C1E0F1009277FB /* de */,
 				B67A4CD927C1E469009277FB /* es */,
+				69F211362902EAEE006417C7 /* cs */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1265,6 +1269,7 @@
 				B67A4CD127C1E03C009277FB /* pt-BR */,
 				B67A4CD827C1E0F8009277FB /* de */,
 				B67A4CDA27C1E46A009277FB /* es */,
+				69F211372902EAEE006417C7 /* cs */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

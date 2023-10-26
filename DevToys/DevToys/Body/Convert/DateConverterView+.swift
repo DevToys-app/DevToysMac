@@ -47,7 +47,7 @@ final private class DateConverterView: Page {
     
     let datePicker = DatePicker()
     let utcDatePicker = DatePicker()
-    let nowButton = Button(title: "Now")
+    let nowButton = Button(title: "Now".localized())
     let unixTimeField = NumberField()
     let isoDateField = TextField(showCopyButton: false)
     let timestampDateField = TextField(showCopyButton: false)
