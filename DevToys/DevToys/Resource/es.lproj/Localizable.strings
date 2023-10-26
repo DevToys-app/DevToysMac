@@ -35,6 +35,9 @@
 "Information" = "Información";
 "Clear" = "Limpiar";
 "Delete" = "Eliminar";
+"Open in Finder" = "Abrir en Finder";
+"Quick Look" = "Vista previa";
+"Default" = "Por defecto";
 
 // - Category -
 "category.home" = "Todas las herramientas";
@@ -44,6 +47,7 @@
 "category.generators" = "Generadores";
 "category.text" = "Texto";
 "category.graphic" = "Gráficos";
+"Media" = "Multimedia";
 
 // - Tool -
 "tool.home.title" = "Todas las herramientas";
@@ -165,6 +169,7 @@
 "Medium" = "Medio";
 "High" = "Alto";
 "Very High (Slow)" = "Muy alto (lento)";
+"Override original file" = "Sobreescribir el fichero original";
 
 "tool.pdfgen.title" = "Generador de PDFs";
 "tool.pdfgen.mintitle" = "Generador de PDFs";
@@ -188,3 +193,52 @@
 "Converted Images" = "Imágenes convertidas";
 "Scale" = "Escala";
 "Size" = "Tamaño";
+
+"QR Code Generator" = "Generador de códigos QR";
+"Create a QR code from text" = "Crear un código QR del texto";
+"Correction Level" = "Nivel de correción";
+"QR Code" = "Código QR";
+
+"Settings" = "Ajustes";
+"Setting of application" = "Ajustes de la aplicación";
+"App Theme" = "Tema";
+"Select which app theme to display" = "Selecciona el tema a mostrar";
+"Use system setting" = "Usar ajustes del sistema";
+"Light mode" = "Tema claro";
+"Dark mode" = "Tema oscuro";
+
+"Color Picker" = "Selector de color";
+"Picker the color and copy components" = "Selecciona un color y copia el color formateado";
+"HSB Box" = "Formato caja HSB";
+"HSB Circle" = "Formato cirular HSB";
+"HSB Circle and Bars" = "Formato circular HSB y barras";
+"Pick Color" = "Selecciona un color";
+"Picker Type" = "Tipo de selector";
+"Color Hex" = "Color Hexadecimal";
+"Color Copy" = "Copiar color";
+"Color Copy Type" = "Tipo";
+
+"Gif Converter" = "Conversor de GIF";
+"Convert a movie to an animated GIF file" = "Convierte un vídeo a un GIF";
+"Width" = "Anchura";
+"The width of the Gif file" = "La anchura del GIF determinará su altura";
+"FPS" = "FPS";
+"FPS of the Gif file to be exported" = "FPS que tendrá el GIF exportado";
+"Remove source file" = "Eliminar el fichero original";
+"Whether to delete the source file after exporting a Gif" = "Determina si se debe eliminar el fichero original después de exportar el GIF";
+
+"Audio Converter" = "Conversor de audio";
+"Convert audio from one format to another" = "Convierte audio de un formato a otro";
+"Whether to delete the source file after exporting a Audio" = "Determina si se debe eliminar el fichero original después de exportar el audio";
+"Starting..." = "Comenzando...";
+"Complete" = "Completado";
+"Convert Failed" = "Conversión fallida";
+
+"Text Diff" = "Comparador de texto";
+"Compare two Text and display Diff" = "Compara dos textos y muestra sus diferencias";
+"By Characters" = "Caracteres";
+"By Words" = "Palabras";
+"By Lines" = "Líneas";
+"Input 1" = "Texto original";
+"Input 2" = "Texto nuevo";
+"Diff Style" = "Tipo de comparación";
