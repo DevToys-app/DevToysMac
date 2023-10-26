@@ -15,12 +15,6 @@ This is the mac app version of [DevToys for Windows](https://github.com/veler/De
 
 
 
-# How to Build
-
-
-
-
-
 # Screenshots
 
 ### Home
