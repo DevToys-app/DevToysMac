@@ -6,6 +6,7 @@
 //
 
 import CoreUtil
+import Foundation
 
 final class RegexTesterViewController: NSViewController {
     private let cell = RegexTesterView()
@@ -16,6 +17,8 @@ final class RegexTesterViewController: NSViewController {
     @Observable var regex: NSRegularExpression? = nil
     @Observable var isError = false
     @Observable var matches = [NSRange]()
+    private lazy var execQueue = DispatchQueue(label: "com.yuki.DevToys.regexExecQueue", qos: .background)
+    private var regexExecWorkItem: DispatchWorkItem?
     
     override func loadView() { self.view = cell }
     
@@ -47,15 +50,17 @@ final class RegexTesterViewController: NSViewController {
     
     private func executeRegex() {
         guard let regex = self.regex else { return }
+        regexExecWorkItem?.cancel()
         let nsstring = text as NSString
-        
-        let matches = regex.matches(in: text, options: .none, range: NSRange(location: 0, length: nsstring.length))
-        var ranges = [NSRange]()
-        for matche in matches {
-            ranges.append(matche.range)
+        let workItem = DispatchWorkItem(qos: .background) { [weak self, text] in
+            let matches = regex.matches(in: text, options: .none, range: NSRange(location: 0, length: nsstring.length))
+            let ranges = matches.compactMap { $0.range }
+            DispatchQueue.main.async { [weak self] in
+                self?.matches = ranges
+            }
         }
-        
-        self.matches = ranges
+        execQueue.async(execute: workItem)
+        regexExecWorkItem = workItem
     }
 }
 
