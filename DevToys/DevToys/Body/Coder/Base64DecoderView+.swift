@@ -7,6 +7,38 @@
 
 import CoreUtil
 
+extension Data {
+
+    /// Hexadecimal string representation of `Data` object.
+    var hexadecimal: String {
+        return map { String(format: "%02X ", $0) }
+            .joined()
+    }
+}
+
+extension String {
+    
+    /// Create `Data` from hexadecimal string representation
+    ///
+    /// This creates a `Data` object from hex string. Note, if the string has any spaces or non-hex characters (e.g. starts with '<' and with a '>'), those are ignored and only hex characters are processed.
+    ///
+    /// - returns: Data represented by this hexadecimal string.
+    var hexadecimal: Data? {
+        var data = Data(capacity: count / 2)
+        
+        let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
+        regex.enumerateMatches(in: self, range: NSRange(startIndex..., in: self)) { match, _, _ in
+            let byteString = (self as NSString).substring(with: match!.range)
+            let num = UInt8(byteString, radix: 16)!
+            data.append(num)
+        }
+        
+        guard data.count > 0 else { return nil }
+        
+        return data
+    }
+}
+
 final class Base64DecoderViewController: NSViewController {
     private let cell = Base64DecoderView()
     
@@ -19,8 +51,10 @@ final class Base64DecoderViewController: NSViewController {
     override func viewDidLoad() {
         self.cell.inputTextSection.stringPublisher
             .sink{[unowned self] in self.rawString = $0; self.formattedString = encode($0) }.store(in: &objectBag)
+        self.cell.hexTextSection.stringPublisher
+            .sink{[unowned self] in self.rawString = $0; self.formattedString = encodeHex($0) }.store(in: &objectBag)
         self.cell.encodeTextSection.stringPublisher
-            .sink{[unowned self] in self.formattedString = $0; self.rawString = decode($0) }.store(in: &objectBag)
+            .sink{[unowned self] in self.formattedString = $0; self.rawString = sourceType == SourceType.hex ? decodeHex($0) : decode($0) }.store(in: &objectBag)
         self.cell.sourceTypePicker.itemPublisher
             .sink{[unowned self] in self.sourceType = $0 }.store(in: &objectBag)
         self.cell.fileDrop.urlsPublisher.compactMap{ $0.first }
@@ -32,6 +66,8 @@ final class Base64DecoderViewController: NSViewController {
             .sink{[unowned self] in self.cell.sourceTypePicker.selectedItem = $0; updateEncodeView($0) }.store(in: &objectBag)
         self.$rawString
             .sink{[unowned self] in self.cell.inputTextSection.string = $0 }.store(in: &objectBag)
+        self.$rawString
+            .sink{[unowned self] in self.cell.hexTextSection.string = $0 }.store(in: &objectBag)
         self.$formattedString
             .sink{[unowned self] in self.cell.encodeTextSection.string = $0 }.store(in: &objectBag)
     }
@@ -43,6 +79,9 @@ final class Base64DecoderViewController: NSViewController {
         case .text:
             self.cell.inputSectionContainer.contentView = cell.inputTextSection
             self.formattedString = self.encode(rawString)
+        case .hex:
+            self.cell.inputSectionContainer.contentView = cell.hexTextSection
+            self.formattedString = self.encodeHex(rawString)
         }
     }
     
@@ -62,14 +101,21 @@ final class Base64DecoderViewController: NSViewController {
     private func encode(_ string: String) -> String {
         string.data(using: .utf8)!.base64EncodedString()
     }
+    private func encodeHex(_ string: String) -> String {
+        string.replacingOccurrences(of: " ", with: "").hexadecimal?.base64EncodedString() ?? "Not Hex String"
+    }
     private func decode(_ string: String) -> String {
         String(data: Data(base64Encoded: string) ?? Data(), encoding: .utf8) ?? "Not String"
+    }
+    private func decodeHex(_ string: String) -> String {
+        Data(base64Encoded: string)?.hexadecimal ?? "Not Hex String"
     }
 }
 
 private enum SourceType: String, TextItem {
     case text = "Text Source"
     case file = "File Source"
+    case hex = "Hex Source"
     var title: String { rawValue.localized() }
 }
 
@@ -80,6 +126,7 @@ final private class Base64DecoderView: Page {
     let exportButton = SectionButton(title: "Export".localized(), image: R.Image.export)
     let inputSectionContainer = NSPlaceholderView()
     let inputTextSection = TextViewSection(title: "Text".localized(), options: [.all])
+    let hexTextSection = TextViewSection(title: "Hex".localized(), options: [.all])
     lazy var fileDropSection = Section(title: "File".localized(), items: [fileDrop], toolbarItems: [exportButton])
     
     let encodeTextSection = TextViewSection(title: "Encoded".localized(), options: [.all])
@@ -94,6 +141,9 @@ final private class Base64DecoderView: Page {
         self.inputTextSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)
         }
+        self.hexTextSection.snp.remakeConstraints{ make in
+            make.height.equalTo(halfHeight)
+        }
         self.encodeTextSection.snp.remakeConstraints{ make in
             make.height.equalTo(halfHeight)
         }
@@ -106,6 +156,7 @@ final private class Base64DecoderView: Page {
         self.inputSectionContainer.contentView = inputTextSection
         self.addSection(inputSectionContainer)
         self.addSection(inputTextSection)
+        self.addSection(hexTextSection)
         self.addSection(encodeTextSection)
     }
 }

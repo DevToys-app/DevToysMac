@@ -90,6 +90,7 @@
 "Source Type" = "Source Type";
 "Text Source" = "Text Source";
 "File Source" = "File Source";
+"Hex Source" = "Hex Source";
 
 "tool.jwt.title" = "JWT Encoder / Decoder";
 "tool.jwt.mintitle" = "JWT";
