@@ -11,7 +11,7 @@ extension Data {
 
     /// Hexadecimal string representation of `Data` object.
     var hexadecimal: String {
-        return map { String(format: "%02x", $0) }
+        return map { String(format: "%02X ", $0) }
             .joined()
     }
 }
@@ -102,13 +102,13 @@ final class Base64DecoderViewController: NSViewController {
         string.data(using: .utf8)!.base64EncodedString()
     }
     private func encodeHex(_ string: String) -> String {
-        (string.count % 2 != 0) ? "must be even length" : (string.hexadecimal?.base64EncodedString() ?? "not hex string")
+        string.replacingOccurrences(of: " ", with: "").hexadecimal?.base64EncodedString() ?? "Not Hex String"
     }
     private func decode(_ string: String) -> String {
         String(data: Data(base64Encoded: string) ?? Data(), encoding: .utf8) ?? "Not String"
     }
     private func decodeHex(_ string: String) -> String {
-        Data(base64Encoded: string)?.hexadecimal.uppercased() ?? "Not Hex String"
+        Data(base64Encoded: string)?.hexadecimal ?? "Not Hex String"
     }
 }
 
