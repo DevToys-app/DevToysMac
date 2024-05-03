@@ -21,7 +21,7 @@ This is the macOS version of [DevToys](https://github.com/veler/DevToys).
 <img width="500" alt="screenshot of the DevToys home page" src="https://user-images.githubusercontent.com/20896810/151695286-7984d264-e590-43b8-9ed7-03853967b0e4.png">
 
 
-### Json <> Yaml Converter
+### JSON <> YAML Converter
 
 <img width="500" alt="screenshot of the JSON to YAML converter within DevToys" src="https://user-images.githubusercontent.com/20896810/151695289-cf2a4c2f-8ca9-4537-a896-5fc944b706ac.png">
 
