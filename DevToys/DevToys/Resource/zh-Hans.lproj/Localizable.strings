@@ -50,8 +50,8 @@
 "tool.home.mintitle" = "首页";
 "tool.home.description" = "在这里搜索所有工具.";
 
-"tool.jsonyaml.title" = "JSON <> Yaml 转换器";
-"tool.jsonyaml.mintitle" = "JSON <> Yaml";
+"tool.jsonyaml.title" = "JSON <> YAML 转换器";
+"tool.jsonyaml.mintitle" = "JSON <> YAML";
 "tool.jsonyaml.description" = "将json与yaml相互转换";
 
 "tool.numbase.title" = "数字类型转换器";

@@ -50,8 +50,8 @@
 "tool.home.mintitle" = "Todas las herramientas";
 "tool.home.description" = "Busca todas las herramientas aquí.";
 
-"tool.jsonyaml.title" = "Conversor JSON <> Yaml";
-"tool.jsonyaml.mintitle" = "JSON <> Yaml";
+"tool.jsonyaml.title" = "Conversor JSON <> YAML";
+"tool.jsonyaml.mintitle" = "JSON <> YAML";
 "tool.jsonyaml.description" = "Convertir datos Json a Yaml y viceversa";
 
 "tool.numbase.title" = "Conversor de bases numéricas";
