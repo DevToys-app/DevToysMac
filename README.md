@@ -1,6 +1,6 @@
 # DevToysMac
 
-This is the mac app version of [DevToys for Windows](https://github.com/veler/DevToys)!
+This is the macOS version of [DevToys](https://github.com/veler/DevToys).
 
 ![Dribbble Shot](https://user-images.githubusercontent.com/20896810/154781951-f4c6fa80-2fcc-40fe-a94b-fccfc0f2ccf1.png)
 
