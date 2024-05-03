@@ -11,8 +11,9 @@ This is the macOS version of [DevToys](https://github.com/veler/DevToys).
 - Extract `DevToys.app` from `DevToys.app.zip`
 
 ## Homebrew
-- Install [Homebrew](https://brew.sh/). Then install DevToysMac with `brew install --cask devtoys`.
-
+```
+brew install --cask devtoys
+```
 
 
 # Screenshots
